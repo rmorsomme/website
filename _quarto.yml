@@ -1,13 +1,14 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   page-navigation: true
-  title: "STA 210 - Spring 2022"
-  description: "Homepage for STA 210 - Regression Analysis at Duke University, Spring 2022."
-  site-url: "https://sta210-s22.github.io/website/"
+  title: "STA 101L - Summer I 2022"
+  description: "Homepage for STA 101L - Data Analysis and Statistical Inference at Duke University, Summer I 2022."
+  site-url: "https://sta101L-suI22.github.io/website/"
 
-  repo-url: https://github.com/sta210-s22/website
+  repo-url: https://github.com/sta10L-suI22/website
   repo-actions: [edit, issue]
 
   opengraph: true
@@ -17,21 +18,15 @@ website:
 
   page-footer:
     right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
-    left: "&copy; Copyright 2022, Mine Çetinkaya-Rundel"
+    left: "&copy; Copyright 2022, Raphael Morsomme"
     background: "#D9E3E4"
 
   sidebar:
     background: "#D9E3E4"
-    logo: "images/logo.png"
+    logo: "images/logo.jpg"
     pinned: true
     align: center
     tools:
-      - icon: github
-        href: https://github.com/sta210-s22
-        text: "GitHub organization"
-      - icon: code-square
-        href: https://cmgr.oit.duke.edu/containers
-        text: "RStudio Containers"
       - icon: person-fill
         text: "Sakai"
         menu:
@@ -39,8 +34,6 @@ website:
             url: https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/tool/13b6446a-a6c6-4222-8cfb-c36d1f70802b
           - text: Gradescope
             url: https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/page/aec742dc-2972-4f02-a35b-1dd3315af889
-          - text: Gradebook
-            url: https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/tool/69078433-67a6-4054-a2e7-9e6c202ecdc3/
 
     style: "docked"
     search: true
@@ -62,62 +55,24 @@ website:
             text: Useful links
           - href: course-faq.qmd
             text: FAQ
-      - section: "Computing"
-        contents:
-          - href: computing-access.qmd
-            text: Access
-          - href: computing-troubleshooting.qmd
-            text: Troubleshooting
+      #- section: "Computing"
+      #  contents:
+      #    - href: computing-access.qmd
+      #      text: Access
       - section: "Project"
         contents:
           - href: project-description.qmd
             text: Description
           - href: project-tips-resources.qmd
             text: Tips + resources
-      - section: "Weekly materials"
-        contents:
-          - href: weeks/week-1.qmd
-            text: "Week 1"
-          - href: weeks/week-2.qmd
-            text: "Week 2"
-          - href: weeks/week-3.qmd
-            text: "Week 3"
-          - href: weeks/week-4.qmd
-            text: "Week 4"
-          - href: weeks/week-5.qmd
-            text: "Week 5"
-          - href: weeks/week-6.qmd
-            text: "Week 6"
-          - href: weeks/week-7.qmd
-            text: "Week 7"
-          - href: weeks/week-8.qmd
-            text: "Week 8"
-          - href: weeks/week-9.qmd
-            text: "Week 9"
-          - href: weeks/week-10.qmd
-            text: "Week 10"
-          - href: weeks/week-11.qmd
-            text: "Week 11"
-          - href: weeks/week-12.qmd
-            text: "Week 12"
-          - href: weeks/week-13.qmd
-            text: "Week 13"
-          - href: weeks/week-14.qmd
-            text: "Week 14"
-          - href: weeks/week-15.qmd
-            text: "Week 15"
-      - section: "Supplemental notes"
-        contents:
-          - href: supplemental/slr-derivations.qmd
-            text: SLR derivations
-          - href: supplemental/model-diagnostics-matrix.qmd
-            text: Model diagnostics
-          - href: supplemental/mlr-matrix.qmd
-            text: MLR matrix notation
-          - href: supplemental/log-transformations.qmd
-            text: Log transformations
-          - href: supplemental/model-selection-criteria.qmd
-            text: Model selection criteria
+      # - section: "Weekly materials"
+      #   contents:
+      #     - href: weeks/week-1.qmd
+      #       text: "Week 1"
+      # - section: "Supplemental notes"
+      #   contents:
+      #     - href: supplemental/slr-derivations.qmd
+      #       text: SLR derivations
 
 format:
   html:

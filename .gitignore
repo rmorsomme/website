@@ -13,3 +13,6 @@ staging/
 _site/
 *.key
 *speaker.html
+.Rdata
+.httr-oauth
+.DS_Store

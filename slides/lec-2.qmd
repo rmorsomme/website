@@ -1,15 +1,16 @@
 ---
-title: "Simple Linear Regression"
-subtitle: "STA 210 - Spring 2022"
-author: "Dr. Mine Çetinkaya-Rundel"
-footer:  "[sta210-s22.github.io/website](https://sta210-s22.github.io/website/)"
-logo: "images/logo.png"
+title: "Introduction to Data"
+subtitle: "STA 101 - Summer I 2022"
+author: "Raphael Morsomme"
+footer:  "[sta101-suI22.github.io/website](https://sta101-suI22.github.io/website/)"
+logo: "images/logo.jpg"
 format: 
   revealjs: 
     theme: slides.scss
     multiplex: true
     transition: fade
     slide-number: true
+    scrollable: true
 editor: visual
 execute:
   freeze: auto
@@ -18,6 +19,11 @@ execute:
 ```{r setup}
 #| include: false
 library(countdown)
+library(openintro)
+library(tidyverse)
+library(kableExtra)
+library(fivethirtyeight)
+library(janitor)
 knitr::opts_chunk$set(
   fig.width = 6,
   fig.asp = 0.618,
@@ -30,400 +36,463 @@ knitr::opts_chunk$set(
 
 ## Announcements
 
--   If you're just joining the class, welcome! Go to the [course website](https://sta210-s22.github.io/website) and review content you've missed, read the syllabus, and complete the *Getting to know you* survey.
--   Lab 1 is due Friday, at 5pm, on Gradescope.
+-   If you're just joining the class, welcome! Go to the [course website](https://sta101-suI22.github.io/website) and review content you've missed, read the syllabus, and complete the *Getting to know you* survey.
 
-## Dorianne Gray says...
+## Franklin says...
 
 [![](images/lec-2/dorianne-gray.jpeg){fig-alt="Picture of my cat Dorianne Gray (a gray, furry tabby) with a speech bubble that says \"Read the syllabus and make Mine happy!\"" width="800"}](https://sta210-s22.github.io/website/course-syllabus.html)
 
 ## Outline
 
--   Use simple linear regression to describe the relationship between a quantitative predictor and quantitative outcome variable
--   Estimate the slope and intercept of the regression line using the least squares method
--   Interpret the slope and intercept of the regression line
+-   Motivating example - stent and stroke
+-   Principles of Statistical Inference
+-   Types of variable
+-   Experiments and observational studies
 
-## Computational setup
+# Motivating example - stent and stroke
 
-```{r packages}
-#| echo: true
-#| message: false
+## Example - Stents and strokes
 
-# load packages
-library(tidyverse)       # for data wrangling
-library(tidymodels)      # for modeling
-library(fivethirtyeight) # for the fandango dataset
+-   Stents are known to reduce the risk of an additional heart attack or death after a cardiac event.
+-   Similar benefits for patients at risk of stroke? . . .
+-   If so, we can use this well-known procedure to reduce the risk of stroke
+-   If not, the procedure (surgery) should be avoided.
 
-# set default theme and larger font size for ggplot2
-ggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))
+## Does the use of stents reduce the risk of stroke?
 
-# set default figure parameters for knitr
-knitr::opts_chunk$set(
-  fig.width = 8,
-  fig.asp = 0.618,
-  fig.retina = 3,
-  dpi = 300,
-  out.width = "80%"
-)
-```
+-   Experiment with 451 at-risk patients
+-   Each volunteer patient was randomly assigned to either the treatment (stent) or the control (no stent) group
+-   Check with patients 30 days and 365 days later
 
-# Data
+------------------------------------------------------------------------
 
-## Movie ratings
-
-::: columns
-::: {.column width="70%"}
--   Data behind the FiveThirtyEight story [*Be Suspicious Of Online Movie Ratings, Especially Fandango's*](%22Be%20Suspicious%20Of%20Online%20Movie%20Ratings,%20Especially%20Fandango's%22)
--   In the **fivethirtyeight** package: [`fandango`](https://fivethirtyeight-r.netlify.app/reference/fandango.html)
--   Contains every film that has at least 30 fan reviews on Fandango, an IMDb score, Rotten Tomatoes critic and user ratings, and Metacritic critic and user scores
-:::
-
-::: {.column width="30%"}
-![](images/lec-2/fandango.png){fig-alt="Fandango logo" width="200"}
-
-![](images/lec-2/imdb.png){fig-alt="IMDB logo" width="200"}
-
-![](images/lec-2/rotten-tomatoes.png){fig-alt="Rotten Tomatoes logo" width="200"}
-
-![](images/lec-2/metacritic.png){fig-alt="Metacritic logo" width="200"}
-:::
-:::
-
-## Data prep
-
--   Rename Rotten Tomatoes columns as `critics` and `audience`
--   Rename the dataset as `movie_scores`
-
-```{r data-prep}
-#| echo: true
-movie_scores <- fandango %>%
-  rename(
-    critics = rottentomatoes, 
-    audience = rottentomatoes_user
+```{r stentStudyResultsDF}
+data("stent30")
+data("stent365")
+stent30_renamed <- stent30 %>% rename(`30 days` = outcome)
+stent365_renamed <- stent365 %>% rename(`365 days` = outcome)
+stent <- stent30_renamed %>%
+  select(-group) %>%
+  bind_cols(stent365_renamed) %>% 
+  relocate(group) %>%
+  mutate(
+    group        = fct_rev(group),
+    `30 days`    = fct_rev(`30 days`),
+    `365 days`   = fct_rev(`365 days`),
   )
+stent %>%
+  sample_n(5) %>% 
+  arrange(group) %>%
+  mutate(patient = 1:n()) %>%
+  relocate(patient) %>%
+  kbl(linesep = "", booktabs = TRUE, caption = "Results for five patients from the stent study.",
+      align = "llll") %>%
+  kable_styling(bootstrap_options = c("striped", "condensed"), 
+                latex_options = c("striped", "hold_position"),
+                full_width = FALSE) %>%
+  column_spec(1:4, width = "8em")
 ```
 
-## Data overview
+------------------------------------------------------------------------
 
-```{r data-overview}
-#| echo: true
-glimpse(movie_scores)
+```{r stentStudyResultsDFsummary}
+stent %>%
+  mutate(group = str_to_title(group)) %>%
+  pivot_longer(cols = c(`30 days`, `365 days`), 
+               names_to = "stage", 
+               values_to = "outcome") %>%
+  count(group, stage, outcome) %>%
+  pivot_wider(names_from = c(stage, outcome), values_from = n) %>%
+  adorn_totals(where = "row") %>%
+  kbl(linesep = "", booktabs = TRUE, caption = "Descriptive statistics for the stent study.",
+      col.names = c("Group", "Stroke", "No event", "Stroke", "No event")) %>%
+  add_header_above(c(" " = 1, "30 days" = 2, "365 days" = 2), extra_css = "border-bottom: 2px solid") %>%
+  row_spec(1, extra_css = "border-top: 2px solid") %>%
+  row_spec(3, extra_css = "border-top: 2px solid") %>%
+  kable_styling(bootstrap_options = c("striped", "condensed"), 
+                latex_options = c("striped", "hold_position"))
 ```
 
-## Data visualization
+-   Contrary to expectation, we observe more strokes in the treatment group
+-   Do the data show a *real* difference between the groups?
 
-```{r}
-ggplot(movie_scores, 
-       aes(x = critics, y = audience)) +
-  geom_point(alpha = 0.5) + 
-  labs(
-    x = "Critics Score" , 
-    y = "Audience Score"
-    )
-```
+## Dealing with Randomness
 
-# Regression model
+Suppose I flip a coin $100$ times and count the number of times I obtain heads.
 
-## Fit a line
-
-... to *describe* the relationship between the critics and audience score
-
-```{r}
-#| out.width: "70%"
-p <- ggplot(data = movie_scores, 
-       mapping = aes(x = critics, y = audience)) +
-  geom_point(alpha = 0.5) + 
-  geom_smooth(method = "lm", color = "purple", se = FALSE) +
-  labs(
-    x = "Critics Score" , 
-    y = "Audience Score"
-    )
-
-p
-```
-
-## Terminology
-
-::: columns
-::: {.column width="30%"}
--   **Outcome, *Y***: variable describing the outcome of interest
--   **Predictor, X**: variable used to help understand the variability in the outcome
-:::
-
-::: {.column width="70%"}
-```{r}
-#| out.width: "100%"
-p
-```
-:::
-:::
-
-## Regression model {#regression-model-1}
-
-A **regression model** is a function that describes the relationship between the outcome, $Y$, and the predictor, $X$.
-
-$$\begin{aligned} Y &= \color{black}{\textbf{Model}} + \text{Error} \\[8pt]
-&= \color{black}{\mathbf{f(X)}} + \epsilon \\[8pt]
-&= \color{black}{\boldsymbol{\mu_{Y|X}}} + \epsilon \end{aligned}$$
-
-## Regression model
-
-::: columns
-::: {.column width="30%"}
-$$
-\begin{aligned} Y &= \color{purple}{\textbf{Model}} + \text{Error} \\[8pt]
-&= \color{purple}{\mathbf{f(X)}} + \epsilon \\[8pt]
-&= \color{purple}{\boldsymbol{\mu_{Y|X}}} + \epsilon 
-\end{aligned}
-$$
-:::
-
-::: {.column width="70%"}
-```{r}
-m <- lm(audience ~ critics, data = movie_scores)
-
-ggplot(data = movie_scores, 
-       mapping = aes(x = critics, y = audience)) +
-  geom_point(alpha = 0.5) + 
-  geom_smooth(method = "lm", color = "purple", se = FALSE) +
-  labs(x = "X", y = "Y") +
-  theme_minimal() +
-  theme(
-    axis.text = element_blank(),
-    axis.ticks.x = element_blank(), 
-    axis.ticks.y = element_blank()
-    )
-```
-:::
-:::
-
-## Regression model + residuals
-
-::: columns
-::: {.column width="30%"}
-$$\begin{aligned} Y &= \color{purple}{\textbf{Model}} + \color{blue}{\textbf{Error}} \\[8pt]
-&= \color{purple}{\mathbf{f(X)}} + \color{blue}{\boldsymbol{\epsilon}} \\[8pt]
-&= \color{purple}{\boldsymbol{\mu_{Y|X}}} + \color{blue}{\boldsymbol{\epsilon}} \\[8pt]
- \end{aligned}$$
-:::
-
-::: {.column width="70%"}
-```{r}
-#| echo: false
-ggplot(data = movie_scores,
-       mapping = aes(x = critics, y = audience)) +
-  geom_point(alpha = 0.5) +
-  geom_smooth(method = "lm", color = "purple", se = FALSE) +
-  geom_segment(aes(x = critics, xend = critics, 
-                   y = audience, yend = predict(m)), 
-               color = "blue") +
-  labs(x = "X", y = "Y") +
-  theme(
-    axis.text = element_blank(),
-    axis.ticks.x = element_blank(),
-    axis.ticks.y = element_blank()
-  )
-```
-:::
-:::
-
-# Simple linear regression
-
-## Simple linear regression
-
-Use **simple linear regression** to model the relationthip between a quantitative outcome ($Y$) and a single quantitative predictor ($X$): $$\Large{Y = \beta_0 + \beta_1 X + \epsilon}$$
-
-::: incremental
--   $\beta_1$: True slope of the relationship between $X$ and $Y$
--   $\beta_0$: True intercept of the relationship between $X$ and $Y$
--   $\epsilon$: Error (residual)
-:::
-
-## Simple linear regression
-
-$$\Large{\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X}$$
-
--   $\hat{\beta}_1$: Estimated slope of the relationship between $X$ and $Y$
--   $\hat{\beta}_0$: Estimated intercept of the relationship between $X$ and $Y$
--   No error term!
-
-## Choosing values for $\hat{\beta}_1$ and $\hat{\beta}_0$
-
-```{r}
-ggplot(data = movie_scores, 
-       mapping = aes(x = critics, y = audience)) +
-  geom_point(alpha = 0.4) + 
-  geom_abline(intercept = 32.3155, slope = 0.5187, color = "purple", size = 1) +
-  geom_abline(intercept = 25, slope = 0.7, color = "gray") +
-  geom_abline(intercept = 21, slope = 0.9, color = "gray") +
-  geom_abline(intercept = 35, slope = 0.3, color = "gray") +
-  labs(x = "Critics Score", y = "Audience Score")
-```
-
-## Residuals
-
-```{r}
-#| warning: false
-#| message: false
-ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
-  geom_point(alpha = 0.5) +
-  geom_smooth(method = "lm", color = "purple", se = FALSE) +
-  geom_segment(aes(x = critics, xend = critics, y = audience, yend = predict(m)), color = "steel blue") +
-  labs(x = "Critics Score", y = "Audience Score") +
-  theme(legend.position = "none")
-```
-
-$$\text{residual} = \text{observed} - \text{predicted} = y - \hat{y}$$
-
-## Least squares line
-
--   The residual for the $i^{th}$ observation is
-
-$$e_i = \text{observed} - \text{predicted} = y_i - \hat{y}_i$$
-
--   The **sum of squared** residuals is
-
-$$e^2_1 + e^2_2 + \dots + e^2_n$$
-
--   The **least squares line** is the one that minimizes the sum of squared residuals
-
-```{r}
-sx <- round(sqrt(var(movie_scores$critics)), 4)
-sy <- round(sqrt(var(movie_scores$audience)), 4)
-r <- round(cor(movie_scores$critics, movie_scores$audience), 4)
-xbar <- round(mean(movie_scores$critics), 4)
-ybar <- round(mean(movie_scores$audience), 4)
-```
-
-# Slope and intercept
-
-## Properties of least squares regression
-
--   The regression line goes through the center of mass point, the coordinates corresponding to average $X$ and average $Y$: $\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X}$
-
--   The slope has the same sign as the correlation coefficient: $\hat{\beta}_1 = r \frac{s_Y}{s_X}$
-
--   The sum of the residuals is zero: $\sum_{i = 1}^n \epsilon_i = 0$
-
--   The residuals and $X$ values are uncorrelated
-
-## Estimating the slope
-
-$$\large{\hat{\beta}_1 = r \frac{s_Y}{s_X}}$$
-
-::: columns
-::: {.column width="50%"}
-$$
-\begin{aligned} 
-s_X &= 30.1688 \\
-s_Y &=  20.0244 \\
-r &= 0.7814
-\end{aligned}
-$$
-:::
-
-::: {.column width="50%"}
-$$
-\begin{aligned}
-\hat{\beta}_1 &= 0.7814 \times \frac{20.0244}{30.1688} \\
-&= 0.5187\end{aligned}
-$$
-:::
-:::
-
-## Estimating the intercept
-
-$$\large{\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X}}$$
-
-::: columns
-::: {.column width="50%"}
-$$\begin{aligned}
-&\bar{x} = 60.8493 \\
-&\bar{y} = 63.8767 \\
-&\hat{\beta}_1 = 0.5187
-\end{aligned}$$
-:::
-
-::: {.column width="50%"}
-$$
-\begin{aligned}\hat{\beta}_0 &= 63.8767 - 0.5187 \times 60.8493 \\
-&= 32.3142
-\end{aligned}
-$$
-:::
-:::
-
-## Interpreting the slope {.smaller}
-
-**Poll:** The slope of the model for predicting audience score from critics score is 32.3142.
-Which of the following is the best interpretation of this value?
-
--   For every one point increase in the critics score, the audience score goes up by 0.5187 points, on average.
--   For every one point increase in the critics score, we expect the audience score to be higher by 0.5187 points, on average.
--   For every one point increase in the critics score, the audience score goes up by 0.5187 points.
--   For every one point increase in the audience score, the critics score goes up by 0.5187 points, on average.
-
-## Interpreting slope & intercept
-
-$$\widehat{\text{audience}} = 32.3142 + 0.5187 \times \text{critics}$$
-
-::: incremental
--   **Slope:** For every one point increase in the critics score, we expect the audience score to be higher by 0.5187 points, on average.
--   **Intercept:** If the critics score is 0 points, we expect the audience score to be 32.3142 points.
-:::
-
-## Is the intercept meaningful?
-
-✅ The intercept is meaningful in context of the data if
-
--   the predictor can feasibly take values equal to or near zero or
--   the predictor has values near zero in the observed data
+-   I expect to observe *around* $50$ heads
+-   Imagine that I observe $85$ heads. That would be alarming; the coin is probably not fair
+-   If I had observed $55$ heads then I would not be alarmed; this is a plausible result with a fair coin
 
 . . .
 
-🛑 Otherwise, it might not be meaningful!
+In the stent study, is the observed difference plausible if stents had no effect?
 
-# Prediction
+## Intuition about randomness
 
-## Making a prediction
+::: {.callout-tip icon="false"}
+## Group exercise - gut feeling about randomness
 
-Suppose that a movie has a critics score of 50.
-According to this model, what is the movie's predicted audience score?
-
-$$
-\begin{aligned}
-\widehat{\text{audience}} &= 32.3142 + 0.5187 \times \text{critics} \\
-&= 32.3142 + 0.5187 \times 50 \\
-&= 58.2492
-\end{aligned}
-$$
-
-## Extrapolation
-
-Suppose that a movie has a critics score of 0.
-According to this model, what is the movie's predicted audience score?
+1.  In the coin example, what number of heads would start to make you doubt that the coin is fair?
+2.  In the stent study, is the difference large enough to make you doubt that the stents have no effect?
+:::
 
 ```{r}
-p + coord_cartesian(xlim = c(0, 100))
+countdown(minutes = 4)
+```
+
+# Principles of Statistical Inference
+
+## Observations and variables
+
+```{r small_sample}
+stent %>%
+  sample_n(3) %>% 
+  arrange(group) %>%
+  mutate(patient = 1:n()) %>%
+  relocate(patient) %>%
+  kbl(linesep = "", booktabs = TRUE, caption = "Results for three patients from the stent study.",
+      align = "llll") %>%
+  kable_styling(bootstrap_options = c("striped", "condensed"), 
+                latex_options = c("striped", "hold_position"),
+                full_width = FALSE) %>%
+  column_spec(1:4, width = "8em")
+```
+
+. . .
+
+-   Each row represents an **observation**
+-   Each column represents a **variable**
+
+## Some examples
+
+Observational units: individuals, families, student cohort, cities, counties, countries, cells (biology), animals, books, courses, apples, etc
+
+Variables: height, weight, age, size, year, latitude, longitude, type, sex, diet, number of pages, genre, level, color, etc
+
+## Population, census and sample
+
+-   **Population** of interest
+    -   Large, but with well-defined limits
+    -   Example: patients at risk of stroke, Duke students, trees in Duke Forest, US counties
+    -   Want to investigate the relation between variables
+
+. . .
+
+-   **Census**: collect data on the whole population
+    -   typically impractical, expensive
+
+. . .
+
+-   **Sample**: small fraction of the population
+
+## Statistical inference
+
+-   Population **parameter**, e.g. average number of hours Duke students sleep per night
+    -   Greek letter: $\mu$, $\beta$, but also $p$.
+-   Sample **statistic**, e.g. *observed* average number of hours Duke students sleep per night
+    -   Roman letter: $\bar{x}$, $b$, $\hat{p}$
+
+. . .
+
+-   How to learn about the population from a sample?
+    -   from sample statistics to population parameters
+    -   **Statistical inference** provides a rigorous framework
+
+------------------------------------------------------------------------
+
+::: {.callout-tip icon="false"}
+## Group exercise - observation and variables
+
+1.  Consider a study that investigate the effect of diet on sleep among students at Duke. What is the population? What is the observational unit? Give three variables that you would measure.
+2.  Exercise 1.13 a
+3.  Exercise 2.7
+4.  Give an example of a dataset in your field. What is the population? What are the observational units? What variables are measured?
+:::
+
+```{r}
+countdown(minutes = 6)
+```
+
+## Statistics as an art -- sampling
+
+-   There is no need to drink the whole pot (population) to know if the soup is seasoned enough
+    -   Tasting a spoonful (sample) is typically sufficient
+    -   Such sample is **representative** of the population
+
+![](images/lec-2/soup.png){fig-alt="Illustration of a bowl of soup" fig-align="center" width="300"}
+
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercise - sampling
+
+Back to the study on the effect of diet on sleep among Duke students. How would you obtain a sample of student for your study if you had (i) 1 hour, (ii) 1 week?
+:::
+
+```{r, echo = F}
+countdown(minutes = 2)
+```
+
+## 
+
+What can go wrong?
+
+-   small sample
+-   convenience sampling, e.g. students on campus
+-   blind spots, e.g. voters with no phone
+-   ...
+
+## 
+
+The gold standard is a **random sample**
+
+-   but even then, we can have non-response bias
+
+. . .
+
+🛑 Obtaining a representative sample is difficult.
+
+✅ But surprisingly small samples can do the job!
+
+-   e.g. 1,500 for a whole country (later in class)
+
+## Sampling is natural {.smaller}
+
+-   When you taste a spoonful of soup and decide the spoonful you tasted isn't salty enough, that's exploratory analysis
+-   If you generalize and conclude that your entire soup needs salt, that's an inference
+-   For your inference to be valid, the spoonful you tasted (the sample) needs to be representative of the entire pot (the population)
+
+# Types of variable
+
+## Numerical variables
+
+-   Takes a numerical value
+-   Examples: age, height, number of children
+
+. . .
+
+-   Not all numbers are numerical variables, e.g. zip code, phone number
+-   Heuristic: is the average meaningful? Yes
+
+. . .
+
+-   Discrete, or continuous; not always clear cut
+
+## Categorical variables
+
+-   Takes a level (a category)
+-   Examples: eye color, place of birth, education level
+
+. . .
+
+-   May be numbers, e.g. zip code, phone number
+-   Heuristic: is the average meaningful? No
+
+. . .
+
+-   Ordinal, or nominal
+
+------------------------------------------------------------------------
+
+```{r variables, fig.cap = "Breakdown of variables into their respective types.", fig.asp = 0.5, fig.alt = "Types of variables are broken down into numerical (which can be discrete or continuous) and categorical (which can be ordinal or nominal)."}
+par_og <- par(no.readonly = TRUE) # save original par
+par(mar = rep(0, 4))
+plot(c(-0.15, 1.3), 0:1, type = "n", axes = FALSE)
+text(0.6, 0.9, "all variables")
+rect(0.4, 0.8, 0.8, 1)
+text(0.25, 0.5, "numerical")
+rect(0.1, 0.4, 0.4, 0.6)
+arrows(0.45, 0.78, 0.34, 0.62, length = 0.08)
+text(0.9, 0.5, "categorical")
+rect(0.73, 0.4, 1.07, 0.6)
+arrows(0.76, 0.78, 0.85, 0.62, length = 0.08)
+text(0, 0.1, "discrete")
+rect(-0.17, 0, 0.17, 0.2)
+arrows(0.13, 0.38, 0.05, 0.22, length = 0.08)
+text(0.39, 0.1, "continuous")
+rect(0.25, 0, 0.53, 0.2)
+arrows(0.35, 0.38, 0.4, 0.22, length = 0.08)
+text(0.77, 0.105, "ordinal")
+rect(0.64, 0, 0.9, 0.2)
+arrows(0.82, 0.38, 0.77, 0.22, length = 0.08)
+text(1.12, 0.1, "nominal")
+rect(0.99, 0, 1.25, 0.2)
+arrows(1.02, 0.38, 1.1, 0.22, length = 0.08)
+par(par_og) # restore original par
+```
+
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercise - types of variables
+
+1.  Exercise 1.13 b
+2.  Consider the dataset you proposed in point 3 of the previous group exercise. Can you identify a numerical and a categorical variable? What are they?
+3.  Does you dataset contain a variable of each of the four types? Can you come up with a variable of each type?
+:::
+
+```{r}
+countdown(minutes = 4)
+```
+
+# Experiments and observational studies
+
+## Relationship between variables
+
+-   Two variables can either be independent or associated.
+
+-   Association can be linear (positive, or negative) but it can take any form.
+
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercise - types of associations
+
+1.  Provide two numerical variables that are likely to be linearly associated. Is the association positive or negative?
+2.  Provide two numerical variable that are likely to be associated in a non linear way e.g. U-shape, inverted-J-shape (like a square root).
+:::
+
+```{r}
+countdown(minutes = 3)
+```
+
+## Explanatory and response variable
+
+-   When two variables are associated, we sometimes hypothesize that changes in one result in changes in the other.
+
+. . .
+
+-   Explanatory variable $\Rightarrow$ response variable
+
+. . .
+
+-   ...but association $\neq$ causation; examples:
+    -   fire, damage and firemen; ice-cream and shark attack
+    -   counties and kidney cancer death rate; the best classrooms are small classrooms.
+
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercise - counties and kidney cancer death rate
+
+::: panel-tabset
+## Instructions
+
+Why are most of the shaded counties in the middle of the country?
+
+```{r, echo = F}
+countdown(minutes = 3)
+```
+
+## Group 1
+
+![The counties of the United Sates with the highest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980--1989.](images/lec-2/kidney_highest.jpg){width="600"}
+
+## Group 2
+
+![The counties of the United Sates with the lowest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980--1989.](images/lec-2/kidney_lowest.jpg){width="600"}
+
+Source: [Bayesian Data Analysis](http://www.stat.columbia.edu/~gelman/book/)
+:::
+:::
+
+## Experiments
+
+-   The value of the explanatory variable is **assigned** by the researcher
+-   **Randomized** experiment: the value of the explanatory variable is randomly assigned
+    -   removes any counfounding (luking) variable
+-   **Blind**, or even double-blind, to avoid biases
+    -   placebo
+    -   can go wrong, e.g. vitamins in prison
+
+------------------------------------------------------------------------
+
+✅ Experiments lead to causal claims; gold standard
+
+. . .
+
+But experiments are not always applicable:
+
+-   not all variables can be assigned, e.g. age
+-   ethical considerations, e.g. smoking cigarette, sham surgery (placebo)
+-   practical consideration, e.g. red meat consumption
+
+## Observational Studies
+
+-   The value of the explanatory variable is **not assigned** by the researcher
+    -   there is no interference
+-   Example: survey
+
+. . .
+
+🛑 Does not easily lead to causal claims due to the potential presence of counfounding variables
+
+```{r sun-causes-cancer, out.width = "80%", fig.asp = 0.4, fig.alt = "Three boxes are shown in a triangle arrangement representing: sun exposure, using sunscreen, and skin cancer.  A solid arrow connects sun exposure as a causal mechanism to using sunscreen; a solid arrow also connects sun exposure as a causal mechanism to skin cancer.  A questioning arrow indicates that the causal effect of using sunscreen on skin cancer is unknown."}
+par_og <- par(no.readonly = TRUE) # save original par
+par(mar = rep(0, 4))
+plot(c(-0.05, 1.2),
+     c(0.39, 1),
+     type = 'n',
+     axes = FALSE)
+text(0.59, 0.89, 'sun exposure', cex = 1.4)
+rect(0.4, 0.8, 0.78, 1)
+text(0.3, 0.49, 'use sunscreen', cex = 1.4)
+rect(0.1, 0.4, 0.48, 0.6)
+arrows(0.49, 0.78, 0.38, 0.62,
+       length = 0.08, lwd = 1.5)
+text(0.87, 0.5, 'skin cancer', cex = 1.4)
+rect(0.71,0.4, 1.01, 0.6)
+arrows(0.67, 0.78, 0.8, 0.62,
+       length = 0.08, lwd = 1.5)
+arrows(0.5, 0.5, 0.69, 0.5,
+       length = 0.08, col = IMSCOL["gray", "f1"])
+text(0.595, 0.565, "?",
+     cex = 1.5, col = IMSCOL["gray", "full"])
+par(par_og) # restore original par
+```
+
+Source: [IMS](https://www.openintro.org/book/ims/)
+
+. . .
+
+...but they can do so, e.g. smoking causes cancer.
+
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercise - experiment and observational study
+
+You want to investigate the effect of caffeine on class participation among students at Duke
+
+1.  Design an observational study.
+2.  Design an experiment.
+3.  Is your experiment double-blind? Can you make it double-blind?
+4.  Any ethical or practical concern with the experiment?
+
+Provide an example of an observational study that you would not turn into an experiment due to:
+
+1.  practical considerations
+2.  ethical considerations
+
+Exercise 2.12
+:::
+
+```{r}
+countdown(minutes = 8)
 ```
 
 # Recap
 
-## Recap {.smaller}
+## Recap
 
 ::: incremental
--   Used simple linear regression to describe the relationship between a quantitative predictor and quantitative outcome variable.
-
--   Used the least squares method to estimate the slope and intercept.å
-
--   We interpreted the slope and intercept.
-
-    ::: incremental
-    -   **Slope:** For every one unit increase in $x$, we expect y to be higher/lower by $\hat{\beta}_1$ units, on average.
-    -   **Intercept:** If $x$ is 0, then we expect $y$ to be $\hat{\beta}_0$ units.
-    :::
-
--   Predicted the response given a value of the predictor variable.
-
--   Defined extrapolation and why we should avoid it.
+-   observations (row) and variables (column)
+-   population parameters and sample statistics
+-   statistical inference
+-   sampling
+-   four types of variables
+    -   numerical: continuous, discrete
+    -   categorical: nominal, ordinal
+-   experiments, observational studies and causal claims
 :::
