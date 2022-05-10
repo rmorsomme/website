@@ -8,13 +8,13 @@ website:
   description: "Homepage for STA 101L - Data Analysis and Statistical Inference at Duke University, Summer I 2022."
   site-url: "https://sta101L-suI22.github.io/website/"
 
-  repo-url: https://github.com/sta10L-suI22/website
+  repo-url: https://github.com/rmorsomme/website
   repo-actions: [edit, issue]
 
-  opengraph: true
-  twitter-card:
-    creator: "@minebocek"
-    image: "images/twitter-card.png"
+  # opengraph: true
+  # twitter-card:
+  #   creator: "@minebocek"
+  #   image: "images/twitter-card.png"
 
   page-footer:
     right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
@@ -28,12 +28,11 @@ website:
     align: center
     tools:
       - icon: person-fill
-        text: "Sakai"
-        menu:
-          - text: Discussion forum
-            url: https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/tool/13b6446a-a6c6-4222-8cfb-c36d1f70802b
-          - text: Gradescope
-            url: https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/page/aec742dc-2972-4f02-a35b-1dd3315af889
+        text: "Gradescope"
+        url: https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/tool/13b6446a-a6c6-4222-8cfb-c36d1f70802b
+        # menu:
+        #   - text: Gradescope
+        #     url: https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/page/aec742dc-2972-4f02-a35b-1dd3315af889
 
     style: "docked"
     search: true
@@ -59,12 +58,16 @@ website:
       #  contents:
       #    - href: computing-access.qmd
       #      text: Access
-      # - section: "Project"
-      #   contents:
-      #     - href: project-description.qmd
-      #       text: Description
-      #     - href: project-tips-resources.qmd
-      #       text: Tips + resources
+      - section: "Project"
+        contents:
+          # - href: project-description.qmd
+          #   text: Description
+          # - href: project-tips-resources.qmd
+          #   text: Tips + resources
+          - href: project-prediction.qmd
+            text: Prediction project
+          - href: project-inference.qmd
+            text: Inference project
       # - section: "Weekly materials"
       #   contents:
       #     - href: weeks/week-1.qmd

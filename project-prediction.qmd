@@ -1,0 +1,5 @@
+---
+title: "Prediction project"
+---
+
+Details about the inference project will be provided during week 1.

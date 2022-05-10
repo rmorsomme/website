@@ -1,5 +1,5 @@
 ---
-title: "Syllabus"
+title: "Syllabus - STA101L suI22"
 ---
 
 [**Click here**](/documents/course-syllabus.pdf) **to download a PDF copy of the syllabus.**
@@ -13,9 +13,9 @@ title: "Syllabus"
 
 ## Overview
 
-Welcome to STA101L Data Analysis and Statistical Inference. The goal of this class is to prepare you to be critical consumers of statistical analyses in your scientific fields of practice and future professions. Our point of departure will be to think about data collection: how to (not) collect data, and how the way in which data are collected impacts the analysis that we conduct. We will then quickly delve into data visualization. Ever heard of a mozaic plot or an inter-quartile range? This is an area of data analysis where creativity and an eye for good design can make a difference. Once we have good grasp of how to visualize data, we will construct statistical models to understand the relations that exist between variables and to make predictions.
+Welcome to STA101L Data Analysis and Statistical Inference. The goal of this class is to prepare you to be critical consumers of statistical analyses in your scientific fields of practice and future professions. Our point of departure will be to think about data collection: how to (not) collect data, and how the way in which data are collected impacts the analysis that we conduct. We will then quickly delve into data visualization. Ever heard of a mozaic plot or an inter-quartile range? This is an area of data analysis where creativity and an eye for good design can make a difference. Once we have good grasp of how to visualize data, we will construct statistical models to make predictions and to understand the relations that exist between variables.
 
-While models can be useful (especially if their predictions are accurate!), all models are inherently \textit{wrong}. The statistical tests that we will learn in the second half of the course will help us quantify how (un)certain we are that the models we construct pick up real patterns in the data and not just background noise.
+While models can be useful (especially if their predictions are accurate!), all models are inherently *wrong*. The statistical tests that we will learn in the second half of the course will help us quantify how (un)certain we are that the models we construct pick up real patterns in the data and not just background noise.
 
 Throughout the class, you will attend hands-on labs in which you will learn to implement all these techniques in the statistical computing software R.
 
@@ -23,15 +23,15 @@ Throughout the class, you will attend hands-on labs in which you will learn to i
 
 By the end of the term you will be able to...
 
--   visualize and summarize data sets with continuous and categorical variables;
--   construct and investigate linear regression models for forecasting; this includes fitting, evaluating, comparing and selecting models as well as interpreting their output;
+-   visualize and summarize data sets with numerical and categorical variables;
+-   construct and investigate linear regression models for forecasting; this includes fitting, evaluating, comparing and selecting models, as well as interpreting their output;
 -   conduct hypothesis tests and construct confidence intervals for proportions, differences between proportions, means, differences between means and regression coefficients;
 -   implement these techniques in R, and use RMarkdown to write reproducible reports;
 -   plan and complete a statistical analysis of a real-world phenomenon using visual and numerical summaries, hypothesis tests, confidence intervals and regression models.
 
 ## Prerequisite
 
-The course has no prerequisite
+There is no prerequisite for this class.
 
 ## Community
 
@@ -60,21 +60,21 @@ The [Student Disability Access Office (SDAO)](https://access.duke.edu/students) 
 
 ### Communication
 
-All lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website at [sta101L-suI22.github.io/website](https://sta101L-suI22.github.io/website).
+All lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website at [rmorsomme.github.io/website](https://rmorsomme.github.io/website).
 
-I will regularly send course announcements via email and Sakai, make sure to check one or the other of these regularly. If an announcement is sent Monday through Thursday, I will assume that you have read the announcement by the next day. If an announcement is sent on a Friday or over the weekend, I will assume that you have read it by Monday.
+I will regularly send course announcements via email, make sure to check your mail box regularly. If an announcement is sent Monday through Thursday, I will assume that you have read the announcement by the next day. If an announcement is sent on a Friday or over the weekend, I will assume that you have read it by Monday.
 
 ### Where to get help
 
 -   If you have a question during lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.
 -   The teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!
--   **If you email me, please include "STA 101" in the subject line.** Barring extenuating circumstances, I will respond to STA 101 emails within 48 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday.
+-   **If you email me, please include "STA 101" in the subject line.** Barring extenuating circumstances, I will respond to STA 101 emails within 24 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday.
 
 Check out the [Support](/course-support.html) page for more resources.
 
 ## Textbook
 
-The class will closely follow the book [Introduction to Modern Statistics](https://openintro-ims.netlify.app/)(first edition) by Mine \c{C}etinkaya-Rundel and Johanna Hardin. This is an open-source book freely available online. You're welcomed to read on screen or print it out. If you prefer a paperback version you can buy it at the cost of printing (around $20$) on Amazon. The textbook store will not carry copies of this text.
+The class will closely follow the book [Introduction to Modern Statistics](https://openintro-ims.netlify.app/) (first edition) by Mine Cetinkaya-Rundel and Johanna Hardin. This is an open-source book freely available online. You're welcomed to read on screen or print it out. If you prefer a paperback version you can buy it at the cost of printing (around \$20) on Amazon. The textbook store will not carry copies of this text.
 
 Chapters 1-7 of the book [R for Data Science](https://r4ds.had.co.nz/) by Garret Grolemund and Hadley Wickham (also open-source and freely available) will also be useful.
 
@@ -86,19 +86,17 @@ You are expected to bring a laptop to each class so that you can take part in th
 
 ## Assessment
 
-Assessment for the course is comprised of six components: application exercises, homework assignments, labs, exams, projects, and teamwork.
+Assessment for the course is comprised of three components: homework assignments and two projects.
 
-### Homework and labs
+### Homework assignments
 
-In labs, you will apply the concepts discussed in lecture to various data analysis scenarios, with a focus on the computation.
+To reduce the number of assignments during the summer session, problem sets and lab exercises will be merged. In these homework assignments, you will apply what you've learned during lectures and labs to show conceptual understanding of the content and complete data analysis tasks in `R`. You may discuss homework assignments with other students; however, homework should be completed and submitted individually. Homework must be typed up using RMarkdown and submitted as a PDF on Gradescope.
 
-To reduce the number of assignments, problem sets and lab exercises will be merged. In these homework, you will apply what you've learned during lectures and labs to show conceptual understanding of the content and complete data analysis tasks. You may discuss homework assignments with other students; however, homework should be completed and submitted individually. Homework must be typed up using RMarkdown and submitted as a PDF on Gradescope.
-
-*The homework set with the lowest grade will be dropped at the end of the term.*
+*The homework asignment with the lowest grade will be dropped at the end of the term.*
 
 ### Projects
 
-There will be two group projects. Through these projects, you have the opportunity to demonstrate what you've learned in the course thus far. The two projects will focus on the two pillars of statistics and data science: prediction and inference. In the first project, you will construct a regression model for prediction. The goal will be to build a model that provides accurate predictions. In the second project, you will analyze a phenomenon that interests you using real-world data. More detail about the projects will be given during the term.
+There will be two group projects. Through these, you have the opportunity to demonstrate what you've learned in the course thus far. The projects will focus on the two pillars of statistics and data science: *prediction* and *inference*. In the first project, you will construct a regression model for prediction. The goal will be to build a model that provides predictions that are as accurate as possible. In the second project, you will analyze a phenomenon that interests you using real-world data. More detail about the projects will be given during the term.
 
 ## Grading
 
@@ -127,15 +125,17 @@ The final letter grade will be determined based on the following thresholds:
 | D-           | 60 - 62.99         |
 | F            | \< 60              |
 
+Note that the final grade may be curved.
+
 ## Five tips for success
 
-Your success on this course depends very much on you and the effort you put into it. The course has been organized so that the burden of learning is on you. Your TA and I will help you be providing you with materials and answering questions and setting a pace, but for this to work you must do the following:
+Your success on this course depends very much on you and the effort you put into it. The course has been organized so that the burden of learning is on you. Your TA and I will help you by providing you with materials and answering questions, but for this to work you need to do the following:
 
 1.  complete the reading before the lectures;
-2.  ask questions *quickly*. Don't let a day pass by with lingering questions;
-3.  Do the homework and lab.
-4.  Practice, practice, practice.
-5.  Don't procrastinate. Start on the HW/lab assignments and the projects early.
+2.  ask questions *quickly*; don't let a day pass by with lingering questions;
+3.  do the homework and lab;
+4.  practice, practice, practice;
+5.  don't procrastinate; start on the homework assignments and the projects early.
 
 ## Course policies
 
@@ -159,7 +159,7 @@ Regardless of course delivery format, it is your responsibility to understand an
 
 Only work that is clearly assigned as team work should be completed collaboratively.
 
--   The homework assignments must be completed individually and you are welcomed to discuss the assignment with classmates at a high level (e.g., discuss what's the best way for approaching a problem, what functions are useful for accomplishing a particular task, etc.). However you may not directly share answers to homework questions (including any code) with anyone other than myself and the teaching assistants.
+-   The homework assignments must be completed individually and you are welcomed to discuss the assignment with classmates at a high level (e.g., discuss what's the best way for approaching a problem, what functions are useful for accomplishing a particular task, etc.). However you may not directly share answers to homework questions (including any code) with anyone other than myself and the TA.
 -   For the projects, collaboration between teams at a high level is also allowed; however, you may not share code or components of the project with other teams.
 
 ### Policy on sharing and reusing code
@@ -223,3 +223,7 @@ I want to make sure that you learn everything you were hoping to learn from this
 -   **June 23**: Last assignment
 
 Click [here](https://registrar.duke.edu/sumemr-2022-academic-calendar) for the full Duke academic calendar.
+
+## Attribution
+
+Some portions of this syllabus are based on the syllabus of [STA 210 - Spring 2022](https://sta210-s22.github.io/website/) by Prof. Mine Çetinkaya-Rundel.

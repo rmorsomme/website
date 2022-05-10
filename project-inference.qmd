@@ -1,0 +1,5 @@
+---
+title: "Inference project"
+---
+
+Details about the inference project will be provided during week 4.
