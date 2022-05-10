@@ -26,10 +26,10 @@ website:
     logo: "images/logo.jpg"
     pinned: true
     align: center
-    tools:
-      - icon: person-fill
-        text: "Gradescope"
-        url: https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/tool/13b6446a-a6c6-4222-8cfb-c36d1f70802b
+    # tools:
+    #   - icon: person-fill
+    #     text: "Gradescope"
+    #     url: https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/tool/13b6446a-a6c6-4222-8cfb-c36d1f70802b
         # menu:
         #   - text: Gradescope
         #     url: https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/page/aec742dc-2972-4f02-a35b-1dd3315af889
