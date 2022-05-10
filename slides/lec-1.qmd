@@ -63,7 +63,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_analysis)
 ::: incremental
 -   **What background is assumed for the course?** There is no prerequisite.
 -   **Will we be doing coding?** Yes. We will use R.
--   **What if I have never coded?** We do not expect students to have any experience with R or any other programming languages.
+-   **What if I have never coded?** We do not expect students to have any experience with R or any other programming language.
 -   **Will we learn the mathematical theory of statistics?** Yes and no. The course is primarily focused on application; however, we will discuss some of the mathematics of hypothesis testing and simple linear regression.
 :::
 

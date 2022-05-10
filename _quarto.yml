@@ -59,12 +59,12 @@ website:
       #  contents:
       #    - href: computing-access.qmd
       #      text: Access
-      - section: "Project"
-        contents:
-          - href: project-description.qmd
-            text: Description
-          - href: project-tips-resources.qmd
-            text: Tips + resources
+      # - section: "Project"
+      #   contents:
+      #     - href: project-description.qmd
+      #       text: Description
+      #     - href: project-tips-resources.qmd
+      #       text: Tips + resources
       # - section: "Weekly materials"
       #   contents:
       #     - href: weeks/week-1.qmd

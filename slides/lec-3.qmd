@@ -57,6 +57,12 @@ knitr::opts_chunk$set(
 -   If you're just joining the class, welcome! Go to the [course website](https://sta210-s22.github.io/website) and review content you've missed, read the syllabus, and complete the *Getting to know you* survey.
 -   Drop/Add for Term 1 ends tomorrow.
 
+
+## Franklin and Gilman have read the syllabus...
+
+[![](images/lec-3/frank_gil.jpeg){fig-alt="Picture of two of guinea pigs, Franklin (albino) and Gilman" width="800"}](https://rmorsomme.github.io/website/course-syllabus.html)
+
+
 ## Recap of last lecture
 
 ::: incremental

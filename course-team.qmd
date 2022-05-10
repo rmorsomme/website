@@ -9,14 +9,14 @@ title: "Teaching team"
 Raphael Morsomme (he/him/his) is a Ph.D. candidate at the Department of Statistical Science at Duke University. Raphael's work focuses on the development of flexible and scalable stochastic epidemic models along with efficient Markov Chain Monte Carlo algorithms to fit these models. In addition, he uses data augmentation to study the overdiagnosis rate of breast cancer.
 
 | Office hours      | Location                                                                                                                                          |
-|----------------|--------------------------------------------------------|
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
 | TBD-days TBD time | Old Chem 213 or [Zoom](https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/page/d5eef508-07a4-4c6d-b7bd-4614a9631562) \[TBD\] |
 | TBD-days TBD time | Old Chem 213 or [Zoom](https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/page/d5eef508-07a4-4c6d-b7bd-4614a9631562) \[TBD\] |
 
 If these times don't work for you or you'd like to schedule a one-on-one meeting, simply send an email to [rnm16\@duke.edu](mailto:rnm16@duke.edu).
 
-## Teaching assistants
+## Teaching assistant
 
-|                              | Name | Office hours | Location                                                                                                                  |
-|:---------:|-----------|-----------|----------------------------------------|
-| ![](images/team/unknown.png) | TBD  | TBD          | [Zoom](https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/page/d5eef508-07a4-4c6d-b7bd-4614a9631562) |
+|                            | Name                                                              | Office hours | Location                                                                                                                            |
+|:--------------------------:|-------------------------------------------------------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| ![](images/team/rohit.jpg) | Rohit Roy - \[rohit.roy\\\@duke.edu\](mailto:rohit.roy\@duke.edu) | TBD          | [Zoom](https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/page/d5eef508-07a4-4c6d-b7bd-4614a9631562)/in person |

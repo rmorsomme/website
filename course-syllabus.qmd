@@ -2,7 +2,7 @@
 title: "Syllabus"
 ---
 
-[**Click here**](/documents/sta210-s22-syllabus.pdf "PDF of syllabus") **to download a PDF copy of the syllabus.**
+[**Click here**](/documents/course-syllabus.pdf) **to download a PDF copy of the syllabus.**
 
 ## Course info
 
@@ -127,17 +127,15 @@ The final letter grade will be determined based on the following thresholds:
 | D-           | 60 - 62.99         |
 | F            | \< 60              |
 
-## Six tips for success
+## Five tips for success
 
 Your success on this course depends very much on you and the effort you put into it. The course has been organized so that the burden of learning is on you. Your TA and I will help you be providing you with materials and answering questions and setting a pace, but for this to work you must do the following:
-
 
 1.  complete the reading before the lectures;
 2.  ask questions *quickly*. Don't let a day pass by with lingering questions;
 3.  Do the homework and lab.
 4.  Practice, practice, practice.
 5.  Don't procrastinate. Start on the HW/lab assignments and the projects early.
-
 
 ## Course policies
 
@@ -170,27 +168,25 @@ I am well aware that a huge volume of code is available on the web to solve any 
 
 ### Late work policy
 
-The due dates for assignments are there to help you keep up with the course material and to ensure the teaching team can provide feedback within a timely manner. Given the past pace of a summer class, **any assignment submitted after the deadline will not be graded**.
-The homework assignments will be published early to give you ample time to work on them.
-Note that the lowest homework will be dropped.
+The due dates for assignments are there to help you keep up with the course material and to ensure the teaching team can provide feedback within a timely manner. Given the fast pace of a summer class, **any assignment submitted after the deadline will not be graded**. The homework assignments will be published early to give you ample time to work on them. Note that the lowest homework will be dropped.
 
 ### Waiver for extenuating circumstances
 
-If there are circumstances that prevent you from completing a lab or homework assignment by the stated due date, you may email [Raphael Morsomme](mailto:rnm16@duke.edu) **and** our TA [Rick Presman](mailto:rick.presman@duke.edu) before the deadline to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide explanation. This waiver may only be used for once in the semester, so only use it for a truly extenuating circumstance.
+If there are circumstances that prevent you from completing a lab or homework assignment by the stated due date, you may email [Raphael Morsomme](mailto:raphael.morsomme@duke.edu) **and** our TA [Rohit Roy](mailto:rohit.roy@duke.edu) before the deadline to obtain a 24-hour extension. In your email, you only need to request the waiver; you do not need to provide explanation. This waiver may only be used for once in the semester, so only use it for a truly extenuating circumstance.
 
-If there are circumstances that are having a longer-term impact on your academic performance, please let your academic dean know, as they can be a resource. Please let Dr. Çetinkaya-Rundel know if you need help contacting your academic dean.
+If there are circumstances that are having a longer-term impact on your academic performance, please let your academic dean know, as they can be a resource. Please let a member of the instruction team know if you need help contacting your academic dean.
 
 ### Regrade request policy
 
-Regrade requests must be submitted on Gradescope within a week of when an assignment is returned. Regrade requests will be considered if there was an error in the grade calculation or if you feel a correct answer was mistakenly marked as incorrect. Requests to dispute the number of points deducted for an incorrect response will not be considered. Note that by submitting a regrade request, the entire question will be graded which could potentially result in losing points.
+Regrade requests must be submitted on Gradescope within 48 hours of when an assignment is returned. Regrade requests will be considered if there was an error in the grade calculation or if you feel a correct answer was mistakenly marked as incorrect. Requests to dispute the number of points deducted for an incorrect response will not be considered. Note that by submitting a regrade request, the entire question will be graded which could potentially result in losing points.
 
-*No grades will be changed after the final project presentations.*
+*No grades will be changed after the inference project report is due.*
 
 ### Attendance policy
 
 Responsibility for class attendance rests with individual students. Since regular and punctual class attendance is expected, students must accept the consequences of failure to attend. More details on Trinity attendance policies are available [here](https://trinity.duke.edu/undergraduate/academic-policies/class-attendance-and-missed-work).
 
-However, there may be many reasons why you cannot be in class on a given day, particularly with possible extra personal and academic stress and health concerns this semester. All course lectures will be recorded and available to enrolled students after class. If you miss a lecture, make sure to watch the recording and review the material before the next class session. Lab time is dedicated to working on your lab assignments and collaborating with your teammates on your project. If you miss a lab session, make sure to communicate with your team about how you can make up your contribution. Given the technologies we use in the course, this is straightforward to do asynchronously. If you know you're going to miss a lab session and you're feeling well enough to do so, notify your teammates ahead of time. Overall these policies are put in place to ensure communication between team members, respect for each others' time, and also to give you a safety net in the case of illness or other reasons that keep you away from attending class.
+However, there may be many reasons why you cannot be in class on a given day, particularly with possible extra personal and academic stress and health concerns this term. Lab time is dedicated to working on your lab assignments and collaborating with your teammates on your project. If you miss a lab session, make sure to communicate with your team about how you can make up your contribution. If you know you're going to miss a lab session and you're feeling well enough to do so, notify your teammates ahead of time. Overall these policies are put in place to ensure communication between team members, respect for each others' time, and also to give you a safety net in the case of illness or other reasons that keep you away from attending class.
 
 ### Attendance policy related to COVID symptoms, exposure, or infection
 
@@ -202,7 +198,7 @@ In the event of inclement weather or other connectivity-related events that proh
 
 ### Policy on video recording course content
 
-All lectures will be recorded and available on [Panopto](https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx#folderID=%22d6c1d58a-cb6d-4732-9d4b-ae0c011bf767%22), so students should not need to create their own recordings of lectures. If you feel that you need record the lectures yourself, you must get permission from me ahead of time and these recordings should be used for personal study only, no for distribution. The full policy on recording of lectures falls under the Duke University Policy on Intellectual Property Rights, available at [provost.duke.edu/sites/default/files/FHB_App_P.pdf](https://provost.duke.edu/sites/default/files/FHB_App_P.pdf). Unauthorized distribution is a cause for disciplinary action by the Judicial Board.
+If you feel that you need record the lectures, you must get permission from the instructor ahead of time and these recordings should be used for personal study only, no for distribution. The full policy on recording of lectures falls under the Duke University Policy on Intellectual Property Rights, available at [provost.duke.edu/sites/default/files/FHB_App_P.pdf](https://provost.duke.edu/sites/default/files/FHB_App_P.pdf). Unauthorized distribution is a cause for disciplinary action by the Judicial Board.
 
 ## **Learning during a pandemic**
 
@@ -210,20 +206,20 @@ I want to make sure that you learn everything you were hoping to learn from this
 
 -   You *never* owe me personal information about your health (mental or physical) but you're always welcome to talk to me. If I can't help, I likely know someone who can.
 
--   I want you to learn lots of things from this class, but I primarily want you to stay healthy, balanced, and grounded during this crisis.
+-   I want you to learn lots of things from this class, but I primarily want you to stay healthy, balanced, and grounded during this health crisis.
 
 *Note:* If you've read this far in the syllabus, email me a picture of your pet if you have one or your favourite meme!
 
 ## Important dates
 
--   **January 5:** Classes begin (Monday meeting schedule)
--   **January 6:** Regular class meeting schedule begins
--   **January 17:** Martin Luther King, Jr. Day holiday, no classes are held
--   **January 19:** Drop/add ends
--   **March 7-11:** Spring recess, no classes are held
--   **March 23**: Last day to withdraw with W
--   **April 20**: Classes end
--   **April 21-24**: Reading period
--   **April 25-30**: Final exams
+-   **May 11:** Classes begin (Monday meeting schedule)
+-   **May 13:** Drop/add ends
+-   **May 16:** Regular class meeting schedule begins
+-   **May 30:** Memorial Day holiday, no classes are held
+-   **June 8:** Last day to withdraw with W
+-   **June 17**: Classes end
+-   **June 20:** Juneteenth holiday
+-   **June 21**: Reading period
+-   **June 23**: Last assignment
 
-Click [here](https://registrar.duke.edu/spring-2022-academic-calendar) for the full Duke academic calendar.
+Click [here](https://registrar.duke.edu/sumemr-2022-academic-calendar) for the full Duke academic calendar.

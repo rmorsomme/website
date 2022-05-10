@@ -38,10 +38,6 @@ knitr::opts_chunk$set(
 
 -   If you're just joining the class, welcome! Go to the [course website](https://sta101-suI22.github.io/website) and review content you've missed, read the syllabus, and complete the *Getting to know you* survey.
 
-## Franklin says...
-
-[![](images/lec-2/dorianne-gray.jpeg){fig-alt="Picture of my cat Dorianne Gray (a gray, furry tabby) with a speech bubble that says \"Read the syllabus and make Mine happy!\"" width="800"}](https://sta210-s22.github.io/website/course-syllabus.html)
-
 ## Outline
 
 -   Motivating example - stent and stroke

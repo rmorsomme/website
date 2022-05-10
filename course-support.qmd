@@ -13,6 +13,7 @@ If you have a question during lecture or lab, feel free to ask it! There are lik
 The teaching team is here to help you be successful in the course. You are encouraged to attend office hours during the times posted on the home page to ask questions about the course content and assignments. A lot of questions are most effectively answered in-person, so office hours are a valuable resource. I encourage each and every one of you to take advantage of this resource! Make a pledge to stop by office hours at least once during the first week of class. If you truly have no questions to ask, just stop by and say hi and introduce yourself. You can find a list of everyone's office hours [here](/course-team.html).
 
 ## Email
+
 You can email Dr. Raphael Morsomme at [rnm16\@duke.edu](mailto:rnm16@duke.edu). **please include "STA 101" in the subject line.** Barring extenuating circumstances, I will respond to STA101L emails within 24 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday.
 
 ## Academic support
