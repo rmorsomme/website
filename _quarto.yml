@@ -6,7 +6,7 @@ website:
   page-navigation: true
   title: "STA 101L - Summer I 2022"
   description: "Homepage for STA 101L - Data Analysis and Statistical Inference at Duke University, Summer I 2022."
-  site-url: "https://sta101L-suI22.github.io/website/"
+  site-url: "https://rmorsomme.github.io/website/"
 
   repo-url: https://github.com/rmorsomme/website
   repo-actions: [edit, issue]
