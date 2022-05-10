@@ -2,4 +2,4 @@
 title: "Prediction project"
 ---
 
-Details about the inference project will be provided during week 1.
+Details about the prediction project will be provided during week 1.
