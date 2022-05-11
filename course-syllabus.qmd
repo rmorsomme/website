@@ -1,5 +1,5 @@
 ---
-title: "Syllabus - STA101L suI22"
+title: "Syllabus - STA101L Summer I 2022"
 ---
 
 [**Click here**](/documents/course-syllabus.pdf) **to download a PDF copy of the syllabus.**
@@ -74,7 +74,7 @@ Check out the [Support](/course-support.html) page for more resources.
 
 ## Textbook
 
-The class will closely follow the book [Introduction to Modern Statistics](https://openintro-ims.netlify.app/) (first edition) by Mine Cetinkaya-Rundel and Johanna Hardin. This is an open-source book freely available online. You're welcomed to read on screen or print it out. If you prefer a paperback version you can buy it at the cost of printing (around \$20) on Amazon. The textbook store will not carry copies of this text.
+The class will closely follow the book [Introduction to Modern Statistics](https://openintro-ims.netlify.app/) (first edition) by Mine Çetinkaya-Rundel and Johanna Hardin. This is an open-source book freely available online. You're welcomed to read on screen or print it out. If you prefer a paperback version you can buy it at the cost of printing (around \$20) on Amazon. The textbook store will not carry copies of this text.
 
 Chapters 1-7 of the book [R for Data Science](https://r4ds.had.co.nz/) by Garret Grolemund and Hadley Wickham (also open-source and freely available) will also be useful.
 

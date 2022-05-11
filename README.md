@@ -1,4 +1,4 @@
-# Website for STA 101 at Duke University (Summer I 2022)
+# Website for STAL 101 at Duke University (Summer I 2022)
 
 :link: <https://rmorsomme.github.io/website/>
 
