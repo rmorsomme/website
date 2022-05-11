@@ -1,6 +1,6 @@
 # Website for STA 101 at Duke University (Summer I 2022)
 
-:link: <https://sta101-suI22.github.io/website/>
+:link: <https://rmorsomme.github.io/website/>
 
 ## Colors
 
