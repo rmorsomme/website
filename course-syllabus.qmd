@@ -1,5 +1,8 @@
 ---
 title: "Syllabus - STA101L Summer I 2022"
+#format: 
+#  pdf:
+#    colorlinks: true
 ---
 
 [**Click here**](/documents/course-syllabus.pdf) **to download a PDF copy of the syllabus.**
@@ -43,6 +46,7 @@ As a student in this course, you have agreed to uphold the [Duke Community Stand
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_KN97j30ST4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 ```
+
 ### Inclusive community
 
 It is my intent that students from all backgrounds and perspectives be well-served by this course, that students' learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. It is my intent to present materials and organize activities that are respectful of diversity and in alignment with [Duke's Commitment to Diversity and Inclusion](https://provost.duke.edu/initiatives/commitment-to-diversity-and-inclusion). Your suggestions are encouraged and appreciated. Please let me know ways to improve the effectiveness of the course for you personally, or for other students or student groups.
@@ -68,7 +72,8 @@ I will regularly send course announcements via email, make sure to check your ma
 
 -   If you have a question during lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.
 -   The teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!
--   **If you email me, please include "STA 101" in the subject line.** Barring extenuating circumstances, I will respond to STA 101 emails within 24 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday.
+-   Outside of class and office hours, any general questions about course content or assignments should be posted on the course forum [Conversations](https://sakai.duke.edu/portal/site/37c2d38d-400d-4210-8e42-83e19f9099b3/tool/bab0d8c9-88e8-4138-9490-2c2ad1a33858). There is a chance another student has already asked a similar question, so please check the other posts in Conversations before adding a new question. If you know the answer to a question posted in the discussion forum, I encourage you to respond!
+-   Emails should be reserved for questions not appropriate for the public forum. **If you email me, please include "STA 101" in the subject line.** Barring extenuating circumstances, I will respond to STA 101 emails within 24 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday.
 
 Check out the [Support](/course-support.html) page for more resources.
 
@@ -86,13 +91,13 @@ You are expected to bring a laptop to each class so that you can take part in th
 
 ## Assessment
 
-Assessment for the course is comprised of three components: homework assignments and two projects.
+Assessment for the course is comprised of three components: regular homework assignments, a prediction group project and an inference group project.
 
 ### Homework assignments
 
-To reduce the number of assignments during the summer session, problem sets and lab exercises will be merged. In these homework assignments, you will apply what you've learned during lectures and labs to show conceptual understanding of the content and complete data analysis tasks in `R`. You may discuss homework assignments with other students; however, homework should be completed and submitted individually. Homework must be typed up using RMarkdown and submitted as a PDF on Gradescope.
+To reduce the number of assignments during the summer session, problem sets and lab exercises will be merged. In these homework assignments, you will apply what you've learned during lectures and labs to show conceptual understanding of the content and complete data analysis tasks in `R`. You may discuss homework assignments with other students; however, homework should be completed and submitted individually. Homework must be typed up using RMarkdown and submitted as a PDF on [Gradescope](https://www.gradescope.com/courses/394638).
 
-*The homework asignment with the lowest grade will be dropped at the end of the term.*
+*The homework assignment with the lowest grade will be dropped at the end of the term.*
 
 ### Projects
 
@@ -131,9 +136,9 @@ Note that the final grade may be curved.
 
 Your success on this course depends very much on you and the effort you put into it. The course has been organized so that the burden of learning is on you. Your TA and I will help you by providing you with materials and answering questions, but for this to work you need to do the following:
 
-1.  complete the reading before the lectures;
+1.  complete the assigned reading before the lectures;
 2.  ask questions *quickly*; don't let a day pass by with lingering questions;
-3.  do the homework and lab;
+3.  do the homework assignments thoroughly;
 4.  practice, practice, practice;
 5.  don't procrastinate; start on the homework assignments and the projects early.
 
@@ -178,7 +183,7 @@ If there are circumstances that are having a longer-term impact on your academic
 
 ### Regrade request policy
 
-Regrade requests must be submitted on Gradescope within 48 hours of when an assignment is returned. Regrade requests will be considered if there was an error in the grade calculation or if you feel a correct answer was mistakenly marked as incorrect. Requests to dispute the number of points deducted for an incorrect response will not be considered. Note that by submitting a regrade request, the entire question will be graded which could potentially result in losing points.
+Regrade requests must be submitted on [Gradescope](https://www.gradescope.com/courses/394638) within 48 hours of when an assignment is returned. Regrade requests will be considered if there was an error in the grade calculation or if you feel a correct answer was mistakenly marked as incorrect. Requests to dispute the number of points deducted for an incorrect response will not be considered. Note that by submitting a regrade request, the entire question will be graded which could potentially result in losing points.
 
 *No grades will be changed after the inference project report is due.*
 
@@ -191,6 +196,8 @@ However, there may be many reasons why you cannot be in class on a given day, pa
 ### Attendance policy related to COVID symptoms, exposure, or infection
 
 Student health, safety, and well-being are the university's top priorities. To help ensure your well-being and the well-being of those around you, please do not come to class if you have symptoms related to COVID-19, have had a known exposure to COVID-19, or have tested positive for COVID-19. If any of these situations apply to you, you must follow university guidance related to the ongoing COVID-19 pandemic and current health and safety protocols. If you are experiencing any COVID-19 symptoms, contact student health at 919-681-9355. To keep the university community as safe and healthy as possible, you will be expected to follow these guidelines. Please reach out to me and your academic dean as soon as possible if you need to quarantine or isolate so that we can discuss arrangements for your continued participation in class.
+
+Please read and follow university guidance [here](https://coronavirus.duke.edu/). The current guidelines are for students and instructors to **wear masks during class**.
 
 ### Inclement weather policy
 
@@ -215,12 +222,14 @@ I want to make sure that you learn everything you were hoping to learn from this
 -   **May 11:** Classes begin (Monday meeting schedule)
 -   **May 13:** Drop/add ends
 -   **May 16:** Regular class meeting schedule begins
--   **May 30:** Memorial Day holiday, no classes are held
+-   **May 30:** Memorial Day holiday, no class is held
+-   **May 31:** Prediction project
 -   **June 8:** Last day to withdraw with W
+-   **June 16**: Inference project presentation
 -   **June 17**: Classes end
 -   **June 20:** Juneteenth holiday
 -   **June 21**: Reading period
--   **June 23**: Last assignment
+-   **June 23**: Last assignment: inference project report
 
 Click [here](https://registrar.duke.edu/sumemr-2022-academic-calendar) for the full Duke academic calendar.
 

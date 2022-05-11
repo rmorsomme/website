@@ -158,7 +158,7 @@
     "href": "course-syllabus.html#community",
     "title": "Syllabus - STA101L Summer I 2022",
     "section": "Community",
-    "text": "Community\n\nDuke Community Standard\nAs a student in this course, you have agreed to uphold the Duke Community Standard as well as the practices specific to this course.\n\n\n\n\nInclusive community\nIt is my intent that students from all backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. It is my intent to present materials and organize activities that are respectful of diversity and in alignment with Duke’s Commitment to Diversity and Inclusion. Your suggestions are encouraged and appreciated. Please let me know ways to improve the effectiveness of the course for you personally, or for other students or student groups.\nFurthermore, I would like to create a learning environment for my students that supports a diversity of thoughts, perspectives and experiences, and honors your identities. To help accomplish this:\n\nif you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me; if you prefer to speak with someone outside of the course, your academic dean is an excellent resource;\nI (like many people) am still in the process of learning about diverse perspectives and identities; if something was said in class (by anyone) that made you feel uncomfortable, please let me or a member of the teaching team know.\n\n\n\nAccessibility\nIf there is any portion of the course that is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations.\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments. Students should be in touch with the Student Disability Access Office to request or update accommodations under these circumstances.\n\n\nCommunication\nAll lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website at rmorsomme.github.io/website.\nI will regularly send course announcements via email, make sure to check your mail box regularly. If an announcement is sent Monday through Thursday, I will assume that you have read the announcement by the next day. If an announcement is sent on a Friday or over the weekend, I will assume that you have read it by Monday.\n\n\nWhere to get help\n\nIf you have a question during lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!\nIf you email me, please include “STA 101” in the subject line. Barring extenuating circumstances, I will respond to STA 101 emails within 24 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday.\n\nCheck out the Support page for more resources."
+    "text": "Community\n\nDuke Community Standard\nAs a student in this course, you have agreed to uphold the Duke Community Standard as well as the practices specific to this course.\n\n\n\n\nInclusive community\nIt is my intent that students from all backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. It is my intent to present materials and organize activities that are respectful of diversity and in alignment with Duke’s Commitment to Diversity and Inclusion. Your suggestions are encouraged and appreciated. Please let me know ways to improve the effectiveness of the course for you personally, or for other students or student groups.\nFurthermore, I would like to create a learning environment for my students that supports a diversity of thoughts, perspectives and experiences, and honors your identities. To help accomplish this:\n\nif you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me; if you prefer to speak with someone outside of the course, your academic dean is an excellent resource;\nI (like many people) am still in the process of learning about diverse perspectives and identities; if something was said in class (by anyone) that made you feel uncomfortable, please let me or a member of the teaching team know.\n\n\n\nAccessibility\nIf there is any portion of the course that is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations.\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments. Students should be in touch with the Student Disability Access Office to request or update accommodations under these circumstances.\n\n\nCommunication\nAll lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website at rmorsomme.github.io/website.\nI will regularly send course announcements via email, make sure to check your mail box regularly. If an announcement is sent Monday through Thursday, I will assume that you have read the announcement by the next day. If an announcement is sent on a Friday or over the weekend, I will assume that you have read it by Monday.\n\n\nWhere to get help\n\nIf you have a question during lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!\nOutside of class and office hours, any general questions about course content or assignments should be posted on the course forum Conversations. There is a chance another student has already asked a similar question, so please check the other posts in Conversations before adding a new question. If you know the answer to a question posted in the discussion forum, I encourage you to respond!\nEmails should be reserved for questions not appropriate for the public forum. If you email me, please include “STA 101” in the subject line. Barring extenuating circumstances, I will respond to STA 101 emails within 24 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday.\n\nCheck out the Support page for more resources."
   },
   {
     "objectID": "course-syllabus.html#textbook",
@@ -179,7 +179,7 @@
     "href": "course-syllabus.html#assessment",
     "title": "Syllabus - STA101L Summer I 2022",
     "section": "Assessment",
-    "text": "Assessment\nAssessment for the course is comprised of three components: homework assignments and two projects.\n\nHomework assignments\nTo reduce the number of assignments during the summer session, problem sets and lab exercises will be merged. In these homework assignments, you will apply what you’ve learned during lectures and labs to show conceptual understanding of the content and complete data analysis tasks in R. You may discuss homework assignments with other students; however, homework should be completed and submitted individually. Homework must be typed up using RMarkdown and submitted as a PDF on Gradescope.\nThe homework asignment with the lowest grade will be dropped at the end of the term.\n\n\nProjects\nThere will be two group projects. Through these, you have the opportunity to demonstrate what you’ve learned in the course thus far. The projects will focus on the two pillars of statistics and data science: prediction and inference. In the first project, you will construct a regression model for prediction. The goal will be to build a model that provides predictions that are as accurate as possible. In the second project, you will analyze a phenomenon that interests you using real-world data. More detail about the projects will be given during the term."
+    "text": "Assessment\nAssessment for the course is comprised of three components: regular homework assignments, a prediction group project and an inference group project.\n\nHomework assignments\nTo reduce the number of assignments during the summer session, problem sets and lab exercises will be merged. In these homework assignments, you will apply what you’ve learned during lectures and labs to show conceptual understanding of the content and complete data analysis tasks in R. You may discuss homework assignments with other students; however, homework should be completed and submitted individually. Homework must be typed up using RMarkdown and submitted as a PDF on Gradescope.\nThe homework assignment with the lowest grade will be dropped at the end of the term.\n\n\nProjects\nThere will be two group projects. Through these, you have the opportunity to demonstrate what you’ve learned in the course thus far. The projects will focus on the two pillars of statistics and data science: prediction and inference. In the first project, you will construct a regression model for prediction. The goal will be to build a model that provides predictions that are as accurate as possible. In the second project, you will analyze a phenomenon that interests you using real-world data. More detail about the projects will be given during the term."
   },
   {
     "objectID": "course-syllabus.html#grading",
@@ -193,14 +193,14 @@
     "href": "course-syllabus.html#five-tips-for-success",
     "title": "Syllabus - STA101L Summer I 2022",
     "section": "Five tips for success",
-    "text": "Five tips for success\nYour success on this course depends very much on you and the effort you put into it. The course has been organized so that the burden of learning is on you. Your TA and I will help you by providing you with materials and answering questions, but for this to work you need to do the following:\n\ncomplete the reading before the lectures;\nask questions quickly; don’t let a day pass by with lingering questions;\ndo the homework and lab;\npractice, practice, practice;\ndon’t procrastinate; start on the homework assignments and the projects early."
+    "text": "Five tips for success\nYour success on this course depends very much on you and the effort you put into it. The course has been organized so that the burden of learning is on you. Your TA and I will help you by providing you with materials and answering questions, but for this to work you need to do the following:\n\ncomplete the assigned reading before the lectures;\nask questions quickly; don’t let a day pass by with lingering questions;\ndo the homework assignments thoroughly;\npractice, practice, practice;\ndon’t procrastinate; start on the homework assignments and the projects early."
   },
   {
     "objectID": "course-syllabus.html#course-policies",
     "href": "course-syllabus.html#course-policies",
     "title": "Syllabus - STA101L Summer I 2022",
     "section": "Course policies",
-    "text": "Course policies\n\nAcademic integrity\nDon’t cheat!\nAll students must adhere to the Duke Community Standard (DCS): Duke University is a community dedicated to scholarship, leadership, and service and to the principles of honesty, fairness, and accountability. Citizens of this community commit to reflect upon these principles in all academic and non-academic endeavors, and to protect and promote a culture of integrity.\nTo uphold the Duke Community Standard:\nStudents affirm their commitment to uphold the values of the Duke University community by signing a pledge that states:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors;\nI will act if the Standard is compromised\n\nRegardless of course delivery format, it is your responsibility to understand and follow Duke policies regarding academic integrity, including doing one’s own work, following proper citation of sources, and adhering to guidance around group work projects. Ignoring these requirements is a violation of the Duke Community Standard. If you have any questions about how to follow these requirements, please contact Jeanna McCullers (jeanna.mccullers@duke.edu), Director of the Office of Student Conduct.\n\n\nCollaboration policy\nOnly work that is clearly assigned as team work should be completed collaboratively.\n\nThe homework assignments must be completed individually and you are welcomed to discuss the assignment with classmates at a high level (e.g., discuss what’s the best way for approaching a problem, what functions are useful for accomplishing a particular task, etc.). However you may not directly share answers to homework questions (including any code) with anyone other than myself and the TA.\nFor the projects, collaboration between teams at a high level is also allowed; however, you may not share code or components of the project with other teams.\n\n\n\nPolicy on sharing and reusing code\nI am well aware that a huge volume of code is available on the web to solve any number of problems. You may make use of any online resources (e.g. RStudio Community, StackOverflow) but you must explicitly cite where you obtained any code you directly use (or use as inspiration). Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism. On homework assignments you may not directly share code with another student in this class, and on the projects you may not directly share code with another team.\n\n\nLate work policy\nThe due dates for assignments are there to help you keep up with the course material and to ensure the teaching team can provide feedback within a timely manner. Given the fast pace of a summer class, any assignment submitted after the deadline will not be graded. The homework assignments will be published early to give you ample time to work on them. Note that the lowest homework will be dropped.\n\n\nWaiver for extenuating circumstances\nIf there are circumstances that prevent you from completing a lab or homework assignment by the stated due date, you may email Raphael Morsomme and our TA Rohit Roy before the deadline to obtain a 24-hour extension. In your email, you only need to request the waiver; you do not need to provide explanation. This waiver may only be used for once in the semester, so only use it for a truly extenuating circumstance.\nIf there are circumstances that are having a longer-term impact on your academic performance, please let your academic dean know, as they can be a resource. Please let a member of the instruction team know if you need help contacting your academic dean.\n\n\nRegrade request policy\nRegrade requests must be submitted on Gradescope within 48 hours of when an assignment is returned. Regrade requests will be considered if there was an error in the grade calculation or if you feel a correct answer was mistakenly marked as incorrect. Requests to dispute the number of points deducted for an incorrect response will not be considered. Note that by submitting a regrade request, the entire question will be graded which could potentially result in losing points.\nNo grades will be changed after the inference project report is due.\n\n\nAttendance policy\nResponsibility for class attendance rests with individual students. Since regular and punctual class attendance is expected, students must accept the consequences of failure to attend. More details on Trinity attendance policies are available here.\nHowever, there may be many reasons why you cannot be in class on a given day, particularly with possible extra personal and academic stress and health concerns this term. Lab time is dedicated to working on your lab assignments and collaborating with your teammates on your project. If you miss a lab session, make sure to communicate with your team about how you can make up your contribution. If you know you’re going to miss a lab session and you’re feeling well enough to do so, notify your teammates ahead of time. Overall these policies are put in place to ensure communication between team members, respect for each others’ time, and also to give you a safety net in the case of illness or other reasons that keep you away from attending class.\n\n\nAttendance policy related to COVID symptoms, exposure, or infection\nStudent health, safety, and well-being are the university’s top priorities. To help ensure your well-being and the well-being of those around you, please do not come to class if you have symptoms related to COVID-19, have had a known exposure to COVID-19, or have tested positive for COVID-19. If any of these situations apply to you, you must follow university guidance related to the ongoing COVID-19 pandemic and current health and safety protocols. If you are experiencing any COVID-19 symptoms, contact student health at 919-681-9355. To keep the university community as safe and healthy as possible, you will be expected to follow these guidelines. Please reach out to me and your academic dean as soon as possible if you need to quarantine or isolate so that we can discuss arrangements for your continued participation in class.\n\n\nInclement weather policy\nIn the event of inclement weather or other connectivity-related events that prohibit class attendance, I will notify you how we will make up missed course content and work. This might entail holding the class on Zoom synchronously or watching a recording of the class.\n\n\nPolicy on video recording course content\nIf you feel that you need record the lectures, you must get permission from the instructor ahead of time and these recordings should be used for personal study only, no for distribution. The full policy on recording of lectures falls under the Duke University Policy on Intellectual Property Rights, available at provost.duke.edu/sites/default/files/FHB_App_P.pdf. Unauthorized distribution is a cause for disciplinary action by the Judicial Board."
+    "text": "Course policies\n\nAcademic integrity\nDon’t cheat!\nAll students must adhere to the Duke Community Standard (DCS): Duke University is a community dedicated to scholarship, leadership, and service and to the principles of honesty, fairness, and accountability. Citizens of this community commit to reflect upon these principles in all academic and non-academic endeavors, and to protect and promote a culture of integrity.\nTo uphold the Duke Community Standard:\nStudents affirm their commitment to uphold the values of the Duke University community by signing a pledge that states:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors;\nI will act if the Standard is compromised\n\nRegardless of course delivery format, it is your responsibility to understand and follow Duke policies regarding academic integrity, including doing one’s own work, following proper citation of sources, and adhering to guidance around group work projects. Ignoring these requirements is a violation of the Duke Community Standard. If you have any questions about how to follow these requirements, please contact Jeanna McCullers (jeanna.mccullers@duke.edu), Director of the Office of Student Conduct.\n\n\nCollaboration policy\nOnly work that is clearly assigned as team work should be completed collaboratively.\n\nThe homework assignments must be completed individually and you are welcomed to discuss the assignment with classmates at a high level (e.g., discuss what’s the best way for approaching a problem, what functions are useful for accomplishing a particular task, etc.). However you may not directly share answers to homework questions (including any code) with anyone other than myself and the TA.\nFor the projects, collaboration between teams at a high level is also allowed; however, you may not share code or components of the project with other teams.\n\n\n\nPolicy on sharing and reusing code\nI am well aware that a huge volume of code is available on the web to solve any number of problems. You may make use of any online resources (e.g. RStudio Community, StackOverflow) but you must explicitly cite where you obtained any code you directly use (or use as inspiration). Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism. On homework assignments you may not directly share code with another student in this class, and on the projects you may not directly share code with another team.\n\n\nLate work policy\nThe due dates for assignments are there to help you keep up with the course material and to ensure the teaching team can provide feedback within a timely manner. Given the fast pace of a summer class, any assignment submitted after the deadline will not be graded. The homework assignments will be published early to give you ample time to work on them. Note that the lowest homework will be dropped.\n\n\nWaiver for extenuating circumstances\nIf there are circumstances that prevent you from completing a lab or homework assignment by the stated due date, you may email Raphael Morsomme and our TA Rohit Roy before the deadline to obtain a 24-hour extension. In your email, you only need to request the waiver; you do not need to provide explanation. This waiver may only be used for once in the semester, so only use it for a truly extenuating circumstance.\nIf there are circumstances that are having a longer-term impact on your academic performance, please let your academic dean know, as they can be a resource. Please let a member of the instruction team know if you need help contacting your academic dean.\n\n\nRegrade request policy\nRegrade requests must be submitted on Gradescope within 48 hours of when an assignment is returned. Regrade requests will be considered if there was an error in the grade calculation or if you feel a correct answer was mistakenly marked as incorrect. Requests to dispute the number of points deducted for an incorrect response will not be considered. Note that by submitting a regrade request, the entire question will be graded which could potentially result in losing points.\nNo grades will be changed after the inference project report is due.\n\n\nAttendance policy\nResponsibility for class attendance rests with individual students. Since regular and punctual class attendance is expected, students must accept the consequences of failure to attend. More details on Trinity attendance policies are available here.\nHowever, there may be many reasons why you cannot be in class on a given day, particularly with possible extra personal and academic stress and health concerns this term. Lab time is dedicated to working on your lab assignments and collaborating with your teammates on your project. If you miss a lab session, make sure to communicate with your team about how you can make up your contribution. If you know you’re going to miss a lab session and you’re feeling well enough to do so, notify your teammates ahead of time. Overall these policies are put in place to ensure communication between team members, respect for each others’ time, and also to give you a safety net in the case of illness or other reasons that keep you away from attending class.\n\n\nAttendance policy related to COVID symptoms, exposure, or infection\nStudent health, safety, and well-being are the university’s top priorities. To help ensure your well-being and the well-being of those around you, please do not come to class if you have symptoms related to COVID-19, have had a known exposure to COVID-19, or have tested positive for COVID-19. If any of these situations apply to you, you must follow university guidance related to the ongoing COVID-19 pandemic and current health and safety protocols. If you are experiencing any COVID-19 symptoms, contact student health at 919-681-9355. To keep the university community as safe and healthy as possible, you will be expected to follow these guidelines. Please reach out to me and your academic dean as soon as possible if you need to quarantine or isolate so that we can discuss arrangements for your continued participation in class.\nPlease read and follow university guidance here. The current guidelines are for students and instructors to wear masks during class.\n\n\nInclement weather policy\nIn the event of inclement weather or other connectivity-related events that prohibit class attendance, I will notify you how we will make up missed course content and work. This might entail holding the class on Zoom synchronously or watching a recording of the class.\n\n\nPolicy on video recording course content\nIf you feel that you need record the lectures, you must get permission from the instructor ahead of time and these recordings should be used for personal study only, no for distribution. The full policy on recording of lectures falls under the Duke University Policy on Intellectual Property Rights, available at provost.duke.edu/sites/default/files/FHB_App_P.pdf. Unauthorized distribution is a cause for disciplinary action by the Judicial Board."
   },
   {
     "objectID": "course-syllabus.html#learning-during-a-pandemic",
@@ -214,7 +214,7 @@
     "href": "course-syllabus.html#important-dates",
     "title": "Syllabus - STA101L Summer I 2022",
     "section": "Important dates",
-    "text": "Important dates\n\nMay 11: Classes begin (Monday meeting schedule)\nMay 13: Drop/add ends\nMay 16: Regular class meeting schedule begins\nMay 30: Memorial Day holiday, no classes are held\nJune 8: Last day to withdraw with W\nJune 17: Classes end\nJune 20: Juneteenth holiday\nJune 21: Reading period\nJune 23: Last assignment\n\nClick here for the full Duke academic calendar."
+    "text": "Important dates\n\nMay 11: Classes begin (Monday meeting schedule)\nMay 13: Drop/add ends\nMay 16: Regular class meeting schedule begins\nMay 30: Memorial Day holiday, no class is held\nMay 31: Prediction project\nJune 8: Last day to withdraw with W\nJune 16: Inference project presentation\nJune 17: Classes end\nJune 20: Juneteenth holiday\nJune 21: Reading period\nJune 23: Last assignment: inference project report\n\nClick here for the full Duke academic calendar."
   },
   {
     "objectID": "course-syllabus.html#attribution",
@@ -1134,6 +1134,223 @@
     "text": "Model diagnostics\nUse the augment() function to output statistics that can be used to diagnose the model, along with the predicted values and residuals:\n\n\noutcome and predictor variables in the model\n.fitted: predicted values\n.se.fit: standard errors of predicted values\n.resid: residuals\n.hat: leverage\n.sigma: estimate of residual standard deviation when the corresponding observation is dropped from model\n.cooksd: Cook’s distance\n.std.resid: standardized residuals\n\n\n\n\n\nsta210-s22.github.io/website"
   },
   {
+    "objectID": "slides/lec-1.html#meet-the-instructor",
+    "href": "slides/lec-1.html#meet-the-instructor",
+    "title": "Welcome to STA 101L!",
+    "section": "Meet the instructor",
+    "text": "Meet the instructor\n\n\n\n\n\nDr. Raphael Morsomme (he/him/his)\n\n\n\n\nPh.D. candidate at the Department of Statistical Science\nResearch focus: epidemic models and cancer overdiagnosis\nFan of Formula 1, model building and cooking"
+  },
+  {
+    "objectID": "slides/lec-1.html#meet-the-ta",
+    "href": "slides/lec-1.html#meet-the-ta",
+    "title": "Welcome to STA 101L!",
+    "section": "Meet the TA",
+    "text": "Meet the TA\n\n\n\n\n\nRoy Rohit (he/him/his)\n\n\n\n\nPh.D. student in biochemistry\nWorks at the Al-Hashimi Lab\nLikes traveling and cooking"
+  },
+  {
+    "objectID": "slides/lec-1.html#meet-each-other",
+    "href": "slides/lec-1.html#meet-each-other",
+    "title": "Welcome to STA 101L!",
+    "section": "Meet each other",
+    "text": "Meet each other\n\n\n\nGroup activity - meeting each other\n\n\nIn groups of 2, ask your partner the following questions\n\npreferred name and pronouns\nfield of study, major\n(least) favorite thing about Durham\nfavorite food, song or artist\n\nYou will introduce your partner to the class.\n\n\n\n\n\n\n05:00"
+  },
+  {
+    "objectID": "slides/lec-1.html#what-is-data-analysis",
+    "href": "slides/lec-1.html#what-is-data-analysis",
+    "title": "Welcome to STA 101L!",
+    "section": "What is data analysis?",
+    "text": "What is data analysis?\n\n\n“Data analysis is a process of inspecting, cleaning, transforming, and modelling data with the goal of discovering useful information, informing conclusions, and supporting decision-making. (…) In today’s business world, data analysis plays a role in making decisions more scientific and helping businesses operate more effectively.”\n\n\nSource: Wikipedia"
+  },
+  {
+    "objectID": "slides/lec-1.html#statistics",
+    "href": "slides/lec-1.html#statistics",
+    "title": "Welcome to STA 101L!",
+    "section": "Statistics",
+    "text": "Statistics\n\n“Every field worth studying connects to one’s everyday life. Statistics is not an isolated field, it connects to everything.” — Andrew Gelman\n\n\nStatistical inference: set of procedures for making rigorous claims about a population from a (small) sample in the presence of uncertainty."
+  },
+  {
+    "objectID": "slides/lec-1.html#course-faq",
+    "href": "slides/lec-1.html#course-faq",
+    "title": "Welcome to STA 101L!",
+    "section": "Course FAQ",
+    "text": "Course FAQ\n\n\nWhat background is assumed for the course? There is no prerequisite.\nWill we be doing coding? Yes. We will use R.\nWhat if I have never coded? We do not expect students to have any experience with R or any other programming language.\nWill we learn the mathematical theory of statistics? Yes and no. The course is primarily focused on application; however, we will discuss some of the mathematics of hypothesis testing and simple linear regression."
+  },
+  {
+    "objectID": "slides/lec-1.html#course-learning-objectives",
+    "href": "slides/lec-1.html#course-learning-objectives",
+    "title": "Welcome to STA 101L!",
+    "section": "Course learning objectives",
+    "text": "Course learning objectives\n\nBecome a critical consumer of statistical analyses.\nSummarize and visualize categorical and continuous data.\nBuild and investigate linear regression models for forecasting.\nConduct hypothesis tests and construct confidence intervals for proportions, means, and regression coefficients\nPlan and complete a statistical analysis of a real-world phenomenon."
+  },
+  {
+    "objectID": "slides/lec-1.html#examples-of-data-analyses-in-practice",
+    "href": "slides/lec-1.html#examples-of-data-analyses-in-practice",
+    "title": "Welcome to STA 101L!",
+    "section": "Examples of data analyses in practice",
+    "text": "Examples of data analyses in practice\n\n\nNew Yorkers Will Pay $56 A Month To Trim A Minute Off Their Commute\nHow FiveThirtyEight’s 2020 Presidential Forecast Works — And What’s Different Because Of COVID-19\nEffect of Forensic Evidence on Criminal Justice Case Processing\nWhy it’s so freaking hard to make a good COVID-19 model"
+  },
+  {
+    "objectID": "slides/lec-1.html#homepage",
+    "href": "slides/lec-1.html#homepage",
+    "title": "Welcome to STA 101L!",
+    "section": "Homepage",
+    "text": "Homepage\nhttps://rmorsomme.github.io/website/\n\nAll course materials\nLinks to Sakai, Gradescope, the textbook, etc.\nLet’s take a tour!"
+  },
+  {
+    "objectID": "slides/lec-1.html#course-toolkit",
+    "href": "slides/lec-1.html#course-toolkit",
+    "title": "Welcome to STA 101L!",
+    "section": "Course toolkit",
+    "text": "Course toolkit\nAll linked from the course website:\n\nAssignment submission and feedback: Gradescope\nComputing software: R and RStudio\nIntroduction to Modern Statistics (IMS): Openintro\n\n\n\n\n\n\n\nImportant\n\n\nInstall and download R and RStudio before Friday’s lab!"
+  },
+  {
+    "objectID": "slides/lec-1.html#activities-prepare-participate-practice-perform",
+    "href": "slides/lec-1.html#activities-prepare-participate-practice-perform",
+    "title": "Welcome to STA 101L!",
+    "section": "Activities: Prepare, Participate, Practice, Perform",
+    "text": "Activities: Prepare, Participate, Practice, Perform\n\nPrepare: Prepare for lectures by completing the readings.\nParticipate: Attend and actively participate in lectures and labs, office hours, team meetings\nPractice: Solve plenty of exercises; this is the best way to learn statistics.\nPerform: Put together what you’ve learned to analyze real-world data\n\nFrequent homework assignments\nPrediction group project\nInference group project\n\n\n\n\n\n\n\n\nTip for practicing\n\n\nIn the IMS book, the solutions of the odd-numbered exercises are provided in the appendix."
+  },
+  {
+    "objectID": "slides/lec-1.html#cadence---homework",
+    "href": "slides/lec-1.html#cadence---homework",
+    "title": "Welcome to STA 101L!",
+    "section": "Cadence - homework",
+    "text": "Cadence - homework\n\ntwo sets of homework per week\ncombination of problems from IMS and lab exercises\ndue dates TBD\ntyped up using RMarkdown and submitted as a PDF on Gradescope\nlowest grade dropped\nyou may discuss homework with other students; however, your answers should be completed and submitted individually"
+  },
+  {
+    "objectID": "slides/lec-1.html#cadence---two-group-projects",
+    "href": "slides/lec-1.html#cadence---two-group-projects",
+    "title": "Welcome to STA 101L!",
+    "section": "Cadence - two group projects",
+    "text": "Cadence - two group projects\n\nPrediction project:\n\ngroups of 2\ngoal: build a model that makes the most accurate predictions possible.\nsome lab and lecture time dedicated to working on it\n2-page write up and informal presentation (2 slides)\n\n\n\n\nInference project:\n\ngroups of 2\ngoal: analyze a phenomenon of your choice using real-world data\napply all the techniques learned in class (visualization, hypothesis test, confidence interval and linear regression)\nsome lab and lecture time dedicated to working on it\n5-page report and formal presentation (+-10 slides)"
+  },
+  {
+    "objectID": "slides/lec-1.html#teams",
+    "href": "slides/lec-1.html#teams",
+    "title": "Welcome to STA 101L!",
+    "section": "Teams",
+    "text": "Teams\n\nTeam assignments\n\nassigned by me\nin-class exercises, and the two project\n\nExpectations and roles\n\neveryone is expected to contribute equal effort\neveryone is expected to understand all code turned in"
+  },
+  {
+    "objectID": "slides/lec-1.html#grading",
+    "href": "slides/lec-1.html#grading",
+    "title": "Welcome to STA 101L!",
+    "section": "Grading",
+    "text": "Grading\n\n\n\nCategory\nPercentage\n\n\n\n\nHomework and Labs\n50%\n\n\nPrediction Project\n20%\n\n\nInference Project\n30%\n\n\n\nSee course syllabus for how the final letter grade will be determined."
+  },
+  {
+    "objectID": "slides/lec-1.html#support",
+    "href": "slides/lec-1.html#support",
+    "title": "Welcome to STA 101L!",
+    "section": "Support",
+    "text": "Support\n\nAsk questions in class and labs quickly.\nAttend office hours.\nUse the course forum Conversations on Sakai.\nEmails should be reserved for questions not appropriate for the public forum..\nRead the course support page for more information."
+  },
+  {
+    "objectID": "slides/lec-1.html#announcements",
+    "href": "slides/lec-1.html#announcements",
+    "title": "Welcome to STA 101L!",
+    "section": "Announcements",
+    "text": "Announcements\n\nSent via email, be sure to check your mail box regularly\nI’ll assume that you’ve read an announcement by the next “business” day"
+  },
+  {
+    "objectID": "slides/lec-1.html#diversity-inclusion",
+    "href": "slides/lec-1.html#diversity-inclusion",
+    "title": "Welcome to STA 101L!",
+    "section": "Diversity + inclusion",
+    "text": "Diversity + inclusion\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.\n\n\nIf you have a name that differs from those that appear in your official Duke records, please let us know!\nPlease let us know your preferred pronouns; correct us if necessary.\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. I want to be a resource for you. If you prefer to speak with someone outside of the course, your advisers and deans are excellent resources.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it."
+  },
+  {
+    "objectID": "slides/lec-1.html#accessibility",
+    "href": "slides/lec-1.html#accessibility",
+    "title": "Welcome to STA 101L!",
+    "section": "Accessibility",
+    "text": "Accessibility\n\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments.\nI am committed to making all course materials accessible and I’m always learning how to do this better. If any course component is not accessible to you in any way, please don’t hesitate to let me know."
+  },
+  {
+    "objectID": "slides/lec-1.html#covid-policies",
+    "href": "slides/lec-1.html#covid-policies",
+    "title": "Welcome to STA 101L!",
+    "section": "COVID policies",
+    "text": "COVID policies\n\nWear a mask at all times!\nRead and follow university guidance here."
+  },
+  {
+    "objectID": "slides/lec-1.html#late-work-waivers-regrades-policy",
+    "href": "slides/lec-1.html#late-work-waivers-regrades-policy",
+    "title": "Welcome to STA 101L!",
+    "section": "Late work, waivers, regrades policy",
+    "text": "Late work, waivers, regrades policy\n\nWe have policies!\nto ensure timely feedback, assignments submitted after the deadline will not be graded\none waiver available for a 24-hour extension\nregrade requests within 48 hours\nRead the course syllabus for more details"
+  },
+  {
+    "objectID": "slides/lec-1.html#collaboration-policy",
+    "href": "slides/lec-1.html#collaboration-policy",
+    "title": "Welcome to STA 101L!",
+    "section": "Collaboration policy",
+    "text": "Collaboration policy\n\nOnly work that is clearly assigned as team work should be completed collaboratively.\nHomeworks must be completed individually. You may not directly share answers / code with others, however you are welcome to discuss the problems in general and ask for advice."
+  },
+  {
+    "objectID": "slides/lec-1.html#sharing-reusing-code-policy",
+    "href": "slides/lec-1.html#sharing-reusing-code-policy",
+    "title": "Welcome to STA 101L!",
+    "section": "Sharing / reusing code policy",
+    "text": "Sharing / reusing code policy\n\nWe are aware that a huge volume of code is available on the web, and many tasks may have solutions posted\nUnless explicitly stated otherwise, this course’s policy is that you may use any online resources (e.g. RStudio Community, StackOverflow, etc.) but you must explicitly cite where you obtained any code you directly use or use as inspiration in your solution(s).\nAny recycled code that is discovered and is not explicitly cited will be treated as plagiarism, regardless of source"
+  },
+  {
+    "objectID": "slides/lec-1.html#academic-integrity",
+    "href": "slides/lec-1.html#academic-integrity",
+    "title": "Welcome to STA 101L!",
+    "section": "Academic integrity",
+    "text": "Academic integrity\n\nTo uphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised."
+  },
+  {
+    "objectID": "slides/lec-1.html#most-importantly",
+    "href": "slides/lec-1.html#most-importantly",
+    "title": "Welcome to STA 101L!",
+    "section": "Most importantly!",
+    "text": "Most importantly!\nAsk if you’re not sure if something violates a policy!"
+  },
+  {
+    "objectID": "slides/lec-1.html#five-tips-for-success",
+    "href": "slides/lec-1.html#five-tips-for-success",
+    "title": "Welcome to STA 101L!",
+    "section": "Five tips for success",
+    "text": "Five tips for success\n\ncomplete the reading before the lectures;\nask questions quickly; don’t let a day pass by with lingering questions;\ndo the homework assignments thoroughly;\npractice, practice, practice;\ndon’t procrastinate; start on the homework assignments and the projects early."
+  },
+  {
+    "objectID": "slides/lec-1.html#section",
+    "href": "slides/lec-1.html#section",
+    "title": "Welcome to STA 101L!",
+    "section": "",
+    "text": "Tip for practicing\n\n\nRemember the odd-number exercises in IMS! The teaching team will always be happy to provide feedback on your work."
+  },
+  {
+    "objectID": "slides/lec-1.html#learning-during-a-pandemic-learning-during-the-summer",
+    "href": "slides/lec-1.html#learning-during-a-pandemic-learning-during-the-summer",
+    "title": "Welcome to STA 101L!",
+    "section": "Learning during a pandemic, learning during the summer",
+    "text": "Learning during a pandemic, learning during the summer\nI want to make sure that you learn everything you were hoping to learn from this class. If this requires flexibility, please don’t hesitate to ask.\n\n\nYou never owe me personal information about your health (mental or physical) but you’re always welcome to talk to me. If I can’t help, I likely know someone who can.\nI want you to learn lots of things from this class, but I primarily want you to stay healthy, balanced, and grounded during this summer session"
+  },
+  {
+    "objectID": "slides/lec-1.html#this-weeks-tasks",
+    "href": "slides/lec-1.html#this-weeks-tasks",
+    "title": "Welcome to STA 101L!",
+    "section": "This week’s tasks",
+    "text": "This week’s tasks\n\nDownload and install R and RStudio before Friday’s lab.\nRead the syllabus.\nComplete the assigned reading before tomorrow.\nWatch out for announcement emails."
+  },
+  {
+    "objectID": "slides/lec-1.html#important-dates",
+    "href": "slides/lec-1.html#important-dates",
+    "title": "Welcome to STA 101L!",
+    "section": "Important dates",
+    "text": "Important dates\n\nMay 11: Classes begin (Monday meeting schedule)\nMay 13: Drop/add ends\nMay 16: Regular class meeting schedule begins\nMay 30: Memorial Day holiday, no class is held\nMay 31: Prediction project\nJune 8: Last day to withdraw with W\nJune 16: Inference project presentation\nJune 17: Classes end\nJune 20: Juneteenth holiday\nJune 21: Reading period\nJune 23: Last assignment: inference project report\n\nClick here for the full Duke academic calendar."
+  },
+  {
+    "objectID": "slides/lec-1.html#kai-says",
+    "href": "slides/lec-1.html#kai-says",
+    "title": "Welcome to STA 101L!",
+    "section": "Kai says…",
+    "text": "Kai says…\n\n\n\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+  },
+  {
     "objectID": "slides/lec-10x.html#announcements",
     "href": "slides/lec-10x.html#announcements",
     "title": "Types of predictors",
@@ -2030,193 +2247,186 @@
     "text": "Evaluating performance on training data\n\nThe training set does not have the capacity to be a good arbiter of performance.\nIt is not an independent piece of information; predicting the training set can only reflect what the model already knows.\nSuppose you give a class a test, then give them the answers, then provide the same test. The student scores on the second test do not accurately reflect what they know about the subject; these scores would probably be higher than their results on the first test.\n\n\n\n\nsta210-s22.github.io/website"
   },
   {
-    "objectID": "slides/lec-1x.html#meet-the-instructor",
-    "href": "slides/lec-1x.html#meet-the-instructor",
-    "title": "Welcome to STA 101!",
-    "section": "Meet the instructor",
-    "text": "Meet the instructor\n\n\n\n\n\nDr. Raphael Morsomme (he/him)\n\n\n\n\nPh.D. candidate at the Department of Statistical Science\nResearch focus: epidemic models and cancer overdiagnosis\nFan of Formula 1 and model building"
+    "objectID": "slides/lec-2.html#outline",
+    "href": "slides/lec-2.html#outline",
+    "title": "Introduction to Data",
+    "section": "Outline",
+    "text": "Outline\n\nMotivating example - stent and stroke\nPrinciples of statistical inference\nTypes of variable\nExperiments and observational studies"
   },
   {
-    "objectID": "slides/lec-1x.html#meet-the-ta",
-    "href": "slides/lec-1x.html#meet-the-ta",
-    "title": "Welcome to STA 101!",
-    "section": "Meet the TA",
-    "text": "Meet the TA\n\nTBD (she/her, UG-MS-Ph.D.)"
+    "objectID": "slides/lec-2.html#example---stents-and-strokes",
+    "href": "slides/lec-2.html#example---stents-and-strokes",
+    "title": "Introduction to Data",
+    "section": "Example - Stents and strokes",
+    "text": "Example - Stents and strokes\nStents are known to reduce the risk of an additional heart attack or death after a cardiac event. - Could stents have similar benefits for patients at risk of stroke?\n\n\nIf so, we should use this well-known procedure to reduce the risk of stroke!\nIf not, the procedure (surgery) should be avoided."
   },
   {
-    "objectID": "slides/lec-1x.html#what-is-data-analysis",
-    "href": "slides/lec-1x.html#what-is-data-analysis",
-    "title": "Welcome to STA 101!",
-    "section": "What is data analysis?",
-    "text": "What is data analysis?\n\n\n“Data analysis is a process of inspecting, cleansing, transforming, and modelling data with the goal of discovering useful information, informing conclusions, and supporting decision-making. (…) In today’s business world, data analysis plays a role in making decisions more scientific and helping businesses operate more effectively.”\n\n\nSource: Wikipedia"
+    "objectID": "slides/lec-2.html#does-the-use-of-stents-reduce-the-risk-of-stroke",
+    "href": "slides/lec-2.html#does-the-use-of-stents-reduce-the-risk-of-stroke",
+    "title": "Introduction to Data",
+    "section": "Does the use of stents reduce the risk of stroke?",
+    "text": "Does the use of stents reduce the risk of stroke?\nWe have an experiment with 451 at-risk patients: - each volunteer patient was randomly assigned to either the treatment (stent) or the control (no stent) group - check with patients 30 days and 365 days later"
   },
   {
-    "objectID": "slides/lec-1x.html#statistics",
-    "href": "slides/lec-1x.html#statistics",
-    "title": "Welcome to STA 101!",
-    "section": "Statistics",
-    "text": "Statistics\n\n“Every field worth studying connects to one’s everyday life. Statistics is not an isolated field, it connects to everything.” — Andrew Gelman\n\n\nStatistical inference: set of procedures for making rigorous claims about a population from a (small) sample thereof in the presence of uncertainty."
+    "objectID": "slides/lec-2.html#dealing-with-randomness",
+    "href": "slides/lec-2.html#dealing-with-randomness",
+    "title": "Introduction to Data",
+    "section": "Dealing with Randomness",
+    "text": "Dealing with Randomness\nSuppose I flip a coin \\(100\\) times and count the number of times I obtain heads.\n\nI expect to observe about \\(50\\) heads.\n\n\n\nImagine that I observe \\(85\\) heads instead. That would be alarming; the coin is probably not fair.\n\n\n\n\nIf I had observed \\(55\\) heads then I would not be alarmed; this is a plausible result with a fair coin."
   },
   {
-    "objectID": "slides/lec-1x.html#course-faq",
-    "href": "slides/lec-1x.html#course-faq",
-    "title": "Welcome to STA 101!",
-    "section": "Course FAQ",
-    "text": "Course FAQ\n\n\nWhat background is assumed for the course? There is no prerequisite.\nWill we be doing coding? Yes. We will use R.\nWhat if I have never coded? We do not expect students to have any experience with R or any other programming language.\nWill we learn the mathematical theory of statistics? Yes and no. The course is primarily focused on application; however, we will discuss some of the mathematics of hypothesis testing and simple linear regression."
+    "objectID": "slides/lec-2.html#intuition-about-randomness",
+    "href": "slides/lec-2.html#intuition-about-randomness",
+    "title": "Introduction to Data",
+    "section": "Intuition about randomness",
+    "text": "Intuition about randomness\n\n\n\nGroup exercise - gut feeling about randomness\n\n\n\nIn the coin example, what number of heads would start to make you doubt that the coin is fair?\nIn the stent study, is the difference large enough to make you doubt that the stents have no effect? In other words, do you think that the difference we observe between the two groups is plausible if stents have no effect?\n\n\n\n\n\n\n\n05:00"
   },
   {
-    "objectID": "slides/lec-1x.html#course-learning-objectives",
-    "href": "slides/lec-1x.html#course-learning-objectives",
-    "title": "Welcome to STA 101!",
-    "section": "Course learning objectives",
-    "text": "Course learning objectives\n\nBecome a critical consumer of statistical analyses.\nSummarize and visualize categorical and continuous data.\nBuild and investigate linear regression models for forecasting.\nConduct hypothesis tests and construct confidence intervals for proportions, means, and regression coefficients\nPlan and complete a statistical analysis of a real-world phenomenon."
+    "objectID": "slides/lec-2.html#observations-and-variables",
+    "href": "slides/lec-2.html#observations-and-variables",
+    "title": "Introduction to Data",
+    "section": "Observations and variables",
+    "text": "Observations and variables\n\n\n\nResults for three patients from the stent study.\n \n  \n    patient \n    group \n    30 days \n    365 days \n  \n \n\n  \n    1 \n    treatment \n    no event \n    no event \n  \n  \n    2 \n    treatment \n    stroke \n    stroke \n  \n  \n    3 \n    control \n    no event \n    no event \n  \n\n\n\n\n\n\n\nEach row represents an observation\nEach column represents a variable"
   },
   {
-    "objectID": "slides/lec-1x.html#examples-of-data-analyses-in-practice",
-    "href": "slides/lec-1x.html#examples-of-data-analyses-in-practice",
-    "title": "Welcome to STA 101!",
-    "section": "Examples of data analyses in practice",
-    "text": "Examples of data analyses in practice\n\n\nNew Yorkers Will Pay $56 A Month To Trim A Minute Off Their Commute\nHow FiveThirtyEight’s 2020 Presidential Forecast Works — And What’s Different Because Of COVID-19\nEffect of Forensic Evidence on Criminal Justice Case Processing\nWhy it’s so freaking hard to make a good COVID-19 model"
+    "objectID": "slides/lec-2.html#some-examples",
+    "href": "slides/lec-2.html#some-examples",
+    "title": "Introduction to Data",
+    "section": "Some examples",
+    "text": "Some examples\n\nObservational units: individuals, families, student cohort, cities, counties, countries, cells (biology), animals, books, courses, apples\nVariables: height, weight, age, size, year, latitude, longitude, type, sex, diet, number of pages, genre, level, color"
   },
   {
-    "objectID": "slides/lec-1x.html#homepage",
-    "href": "slides/lec-1x.html#homepage",
-    "title": "Welcome to STA 101!",
-    "section": "Homepage",
-    "text": "Homepage\nsta101-suI22.github.io/website\n\nAll course materials\nLinks to Sakai, Gradescope, the textbook, etc.\nLet’s take a tour!"
+    "objectID": "slides/lec-2.html#population",
+    "href": "slides/lec-2.html#population",
+    "title": "Introduction to Data",
+    "section": "Population",
+    "text": "Population\nWe are typically interested in the relation between variables in some population.\nThe population of interest is often large, but with well-defined limits\n\ne.g. patients at risk of stroke, Duke students, trees in Duke Forest, US counties\nbut not the following: people, students, patients."
   },
   {
-    "objectID": "slides/lec-1x.html#course-toolkit",
-    "href": "slides/lec-1x.html#course-toolkit",
-    "title": "Welcome to STA 101!",
-    "section": "Course toolkit",
-    "text": "Course toolkit\nAll linked from the course website:\n\nAssignment submission and feedback: Gradescope\nComputing software: R and RStudio\nIntroduction to Modern Statistics: Openintro\n\n\n\n\n\n\n\nImportant\n\n\nInstall and download R and RStudio before lab tomorrow!"
+    "objectID": "slides/lec-2.html#census-and-sample",
+    "href": "slides/lec-2.html#census-and-sample",
+    "title": "Introduction to Data",
+    "section": "Census and sample",
+    "text": "Census and sample\nThere are two ways to learn about the relation between variables in a given population.\n\n\nCensus: collect data on the whole population\n\nideal\n…but typically impractical, expensive\n\n\n\n\n\nSample: small fraction of the population"
   },
   {
-    "objectID": "slides/lec-1x.html#activities-prepare-participate-practice-perform",
-    "href": "slides/lec-1x.html#activities-prepare-participate-practice-perform",
-    "title": "Welcome to STA 101!",
-    "section": "Activities: Prepare, Participate, Practice, Perform",
-    "text": "Activities: Prepare, Participate, Practice, Perform\n\nPrepare: Prepare for lectures by completing the readings.\nParticipate: Attend and actively participate in lectures and labs, office hours, team meetings\nPractice: Solve plenty of exercises; this is the best way to learn statistics. The solutions of the odd-numbered exercises of the book are provided in the appendix.\nPerform: Put together what you’ve learned to analyze real-world data\n\nFrequent homework and lab assignments\nPrediction group project\nInference group project"
+    "objectID": "slides/lec-2.html#statistical-inference",
+    "href": "slides/lec-2.html#statistical-inference",
+    "title": "Introduction to Data",
+    "section": "Statistical inference",
+    "text": "Statistical inference\n\nPopulation parameter, e.g. mean number of hours that Duke students sleep per night\n\nGreek letter: \\(\\mu\\), \\(\\beta\\), but also \\(p\\).\n\n\n\n\nSample statistic, e.g. observed average number of hours Duke students sleep per night in some sample\n\nRoman letter: \\(\\bar{x}\\), \\(b\\), \\(\\hat{p}\\)\n\n\n\n\n\nHow to learn about the population from a sample?\n\n…from sample statistics to population parameters\nStatistical inference provides a rigorous framework to accomplish this."
   },
   {
-    "objectID": "slides/lec-1x.html#cadence",
-    "href": "slides/lec-1x.html#cadence",
-    "title": "Welcome to STA 101!",
-    "section": "Cadence",
-    "text": "Cadence\n\n\nHWs/labs: Posted TBD morning, due following TBD 9pm\nTwo projects: Deadlines throughout the semester, with some lab and lecture time dedicated to working on them, and most work done in teams outside of class"
+    "objectID": "slides/lec-2.html#statistics-as-an-art-sampling",
+    "href": "slides/lec-2.html#statistics-as-an-art-sampling",
+    "title": "Introduction to Data",
+    "section": "Statistics as an art – sampling",
+    "text": "Statistics as an art – sampling\nWhen you make soup, there is no need to drink the whole pot (population) to know if the it is seasoned enough - Tasting a spoonful (sample) is sufficient - if the soup is well mixed, a spoonful is a representative sample of the population"
   },
   {
-    "objectID": "slides/lec-1x.html#teams",
-    "href": "slides/lec-1x.html#teams",
-    "title": "Welcome to STA 101!",
-    "section": "Teams",
-    "text": "Teams\n\nTeam assignments\n\nAssigned by me\nin-class exercises, and the two project\n\nExpectations and roles\n\nEveryone is expected to contribute equal effort\nEveryone is expected to understand all code turned in"
+    "objectID": "slides/lec-2.html#section",
+    "href": "slides/lec-2.html#section",
+    "title": "Introduction to Data",
+    "section": "",
+    "text": "Group exercise - sampling\n\n\nBack to the study on the effect of diet on sleep among Duke students. How would you obtain a sample of student for your study if you had (i) 1 hour, (ii) 1 week to collect your data?\n\n\n\n\n\n\n03:00"
   },
   {
-    "objectID": "slides/lec-1x.html#grading",
-    "href": "slides/lec-1x.html#grading",
-    "title": "Welcome to STA 101!",
-    "section": "Grading",
-    "text": "Grading\n\n\n\nCategory\nPercentage\n\n\n\n\nHomework and Labs\n50%\n\n\nPrediction Project\n20%\n\n\nInference Project\n30%\n\n\n\nSee course syllabus for how the final letter grade will be determined."
+    "objectID": "slides/lec-2.html#section-1",
+    "href": "slides/lec-2.html#section-1",
+    "title": "Introduction to Data",
+    "section": "",
+    "text": "Are all samples created equal? No!\n\nWhat can go wrong?\n\nsmall samples,\nconvenience sampling, e.g. students on campus,\nblind spots, e.g. voters with no phone,\n…\n\n\n\nSampling is an art."
   },
   {
-    "objectID": "slides/lec-1x.html#support",
-    "href": "slides/lec-1x.html#support",
-    "title": "Welcome to STA 101!",
-    "section": "Support",
-    "text": "Support\n\nAttend office hours.\nAsk questions in class quickly.\nRead the course support page."
+    "objectID": "slides/lec-2.html#random-sample",
+    "href": "slides/lec-2.html#random-sample",
+    "title": "Introduction to Data",
+    "section": "Random sample",
+    "text": "Random sample\nThe gold standard is a random sample\n\nbut even then, we can have non-response bias\n\n\n🛑 Obtaining a representative sample is difficult.\n\n\n✅ But surprisingly small representative samples can do the job!\n\ne.g. 1,500 voters (later in class)"
   },
   {
-    "objectID": "slides/lec-1x.html#announcements",
-    "href": "slides/lec-1x.html#announcements",
-    "title": "Welcome to STA 101!",
-    "section": "Announcements",
-    "text": "Announcements\n\nPosted on Sakai (Announcements tool) and sent via email, be sure to check both regularly\nI’ll assume that you’ve read an announcement by the next “business” day"
+    "objectID": "slides/lec-2.html#numerical-variables",
+    "href": "slides/lec-2.html#numerical-variables",
+    "title": "Introduction to Data",
+    "section": "Numerical variables",
+    "text": "Numerical variables\n\nTakes a numerical value\nExamples: age, height, number of children\n\n\n\n\n\n\n\n\nWarning\n\n\nNot all numbers are numerical variables, e.g. zip code, phone number.\nHeuristic: is the average meaningful? Yes!\n\n\n\n\n\nNumerical variables are either\n\ndiscrete, e.g. number of siblings\nor continuous, e.g. a person’s height\n\n\n\n\nnot always clear cut, e.g. GPA"
   },
   {
-    "objectID": "slides/lec-1x.html#diversity-inclusion",
-    "href": "slides/lec-1x.html#diversity-inclusion",
-    "title": "Welcome to STA 101!",
-    "section": "Diversity + inclusion",
-    "text": "Diversity + inclusion\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.\n\n\nIf you have a name that differs from those that appear in your official Duke records, please let us know!\nPlease let us know your preferred pronouns. You’ll also be able to note this in the Getting to know you survey.\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. I want to be a resource for you. If you prefer to speak with someone outside of the course, your advisers and deans are excellent resources.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it."
+    "objectID": "slides/lec-2.html#categorical-variables",
+    "href": "slides/lec-2.html#categorical-variables",
+    "title": "Introduction to Data",
+    "section": "Categorical variables",
+    "text": "Categorical variables\n\nTakes a level (a category)\nExamples: eye color, place of birth, education level\n\n\n\n\n\n\n\nWarning\n\n\nSome numbers are categorical variables, e.g. zip code, phone number.\nHeuristic: is the average meaningful? No!\n\n\n\n\nNumerical variables are either\n\nnominal, e.g. eye color\nor ordinal, e.g. education level"
   },
   {
-    "objectID": "slides/lec-1x.html#accessibility",
-    "href": "slides/lec-1x.html#accessibility",
-    "title": "Welcome to STA 101!",
-    "section": "Accessibility",
-    "text": "Accessibility\n\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments.\nI am committed to making all course materials accessible and I’m always learning how to do this better. If any course component is not accessible to you in any way, please don’t hesitate to let me know."
+    "objectID": "slides/lec-2.html#section-2",
+    "href": "slides/lec-2.html#section-2",
+    "title": "Introduction to Data",
+    "section": "",
+    "text": "Group exercise - types of variables\n\n\n\nExercise 1.13 b\nConsider the study you used in the previous group exercise. Can you identify a numerical and a categorical variable? What are they?\nDoes the study consider a variable of all four types? Can you come up with a variable of each type?\n\n\n\n\n\n\n\n05:00"
   },
   {
-    "objectID": "slides/lec-1x.html#covid-policies",
-    "href": "slides/lec-1x.html#covid-policies",
-    "title": "Welcome to STA 101!",
-    "section": "COVID policies",
-    "text": "COVID policies\n\nWear a mask at all times!\nRead and follow university guidance"
+    "objectID": "slides/lec-2.html#relationship-between-variables",
+    "href": "slides/lec-2.html#relationship-between-variables",
+    "title": "Introduction to Data",
+    "section": "Relationship between variables",
+    "text": "Relationship between variables\nTwo variables can either be independent or associated.\nIf two variables are associated, the association can be\n\nlinear (positive, or negative)\nbut it could take any form, e.g. U-shape, inverted-J-shape (like a square root)"
   },
   {
-    "objectID": "slides/lec-1x.html#late-work-waivers-regrades-policy",
-    "href": "slides/lec-1x.html#late-work-waivers-regrades-policy",
-    "title": "Welcome to STA 101!",
-    "section": "Late work, waivers, regrades policy",
-    "text": "Late work, waivers, regrades policy\n\nWe have policies!\nRead about them on the course syllabus and refer back to them when you need it"
+    "objectID": "slides/lec-2.html#section-3",
+    "href": "slides/lec-2.html#section-3",
+    "title": "Introduction to Data",
+    "section": "",
+    "text": "Group exercise - types of associations\n\n\nProvide two numerical variables which you expect to be\n\nlinearly associated; is the association positive or negative?\nassociated in a non linear way.\n\n\n\n\n\n\n\n03:00"
   },
   {
-    "objectID": "slides/lec-1x.html#collaboration-policy",
-    "href": "slides/lec-1x.html#collaboration-policy",
-    "title": "Welcome to STA 101!",
-    "section": "Collaboration policy",
-    "text": "Collaboration policy\n\nOnly work that is clearly assigned as team work should be completed collaboratively.\nHomeworks must be completed individually. You may not directly share answers / code with others, however you are welcome to discuss the problems in general and ask for advice."
+    "objectID": "slides/lec-2.html#explanatory-and-response-variable",
+    "href": "slides/lec-2.html#explanatory-and-response-variable",
+    "title": "Introduction to Data",
+    "section": "Explanatory and response variable",
+    "text": "Explanatory and response variable\n\nWhen two variables are associated, we sometimes hypothesize that changes in one cause in changes in the other.\n\n\n\nExplanatory variable \\(\\Rightarrow\\) response variable\n\n\n\n\n…but association \\(\\neq\\) causation; examples:\n\nfire damage and firemen; ice-cream and shark attacks\ncounties and kidney cancer death rate; the best classrooms are small classrooms."
   },
   {
-    "objectID": "slides/lec-1x.html#sharing-reusing-code-policy",
-    "href": "slides/lec-1x.html#sharing-reusing-code-policy",
-    "title": "Welcome to STA 101!",
-    "section": "Sharing / reusing code policy",
-    "text": "Sharing / reusing code policy\n\nWe are aware that a huge volume of code is available on the web, and many tasks may have solutions posted\nUnless explicitly stated otherwise, this course’s policy is that you may make use of any online resources (e.g. RStudio Community, StackOverflow, etc.) but you must explicitly cite where you obtained any code you directly use or use as inspiration in your solution(s).\nAny recycled code that is discovered and is not explicitly cited will be treated as plagiarism, regardless of source"
+    "objectID": "slides/lec-2.html#section-4",
+    "href": "slides/lec-2.html#section-4",
+    "title": "Introduction to Data",
+    "section": "",
+    "text": "Group exercise - counties and kidney cancer death rate\n\n\n\nInstructionsGroup 1Group 2\n\n\nWhy are most of the shaded counties in the middle of the country?\n\n\n\n04:00\n\n\n\n\n\n\n\n\nThe counties of the United Sates with the highest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980–1989.\n\n\nSource: Bayesian Data Analysis\n\n\n\n\n\nThe counties of the United Sates with the lowest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980–1989.\n\n\nSource: Bayesian Data Analysis"
   },
   {
-    "objectID": "slides/lec-1x.html#academic-integrity",
-    "href": "slides/lec-1x.html#academic-integrity",
-    "title": "Welcome to STA 101!",
-    "section": "Academic integrity",
-    "text": "Academic integrity\n\nTo uphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised."
+    "objectID": "slides/lec-2.html#experiments",
+    "href": "slides/lec-2.html#experiments",
+    "title": "Introduction to Data",
+    "section": "Experiments",
+    "text": "Experiments\n\nThe value of the explanatory variable is assigned by the researcher\nRandomized experiment: the value of the explanatory variable is randomly assigned\n\nremoves any counfounding (lurking) variable, e.g. air temperature\n\nBlind, or even double-blind, to avoid biases\n\nplacebo\ncan go wrong, e.g. vitamins in prison"
   },
   {
-    "objectID": "slides/lec-1x.html#most-importantly",
-    "href": "slides/lec-1x.html#most-importantly",
-    "title": "Welcome to STA 101!",
-    "section": "Most importantly!",
-    "text": "Most importantly!\nAsk if you’re not sure if something violates a policy!"
+    "objectID": "slides/lec-2.html#observational-studies",
+    "href": "slides/lec-2.html#observational-studies",
+    "title": "Introduction to Data",
+    "section": "Observational Studies",
+    "text": "Observational Studies\n\nThe value of the explanatory variable is not assigned by the researcher\n\nthere is no interference\n\nExample: survey"
   },
   {
-    "objectID": "slides/lec-1x.html#five-tips-for-success",
-    "href": "slides/lec-1x.html#five-tips-for-success",
-    "title": "Welcome to STA 101!",
-    "section": "Five tips for success",
-    "text": "Five tips for success\n\nComplete the reading before the lectures.\nAsk questions quickly. Don’t let a day pass by with lingering questions.\nDo the homework and lab.\nPractice, practice, practice.\nDon’t procrastinate. Start on the HW/lab assignments and the projects early."
+    "objectID": "slides/lec-2.html#section-5",
+    "href": "slides/lec-2.html#section-5",
+    "title": "Introduction to Data",
+    "section": "",
+    "text": "🛑 Does not easily lead to causal claims due to the potential presence of counfounding variables\n\nSource: IMS\n\n…but they can lead to causal claims in certain cases!\n\nE.g. smoking causes cancer."
   },
   {
-    "objectID": "slides/lec-1x.html#learning-during-a-pandemic-learning-during-the-summer",
-    "href": "slides/lec-1x.html#learning-during-a-pandemic-learning-during-the-summer",
-    "title": "Welcome to STA 101!",
-    "section": "Learning during a pandemic, learning during the summer",
-    "text": "Learning during a pandemic, learning during the summer\nI want to make sure that you learn everything you were hoping to learn from this class. If this requires flexibility, please don’t hesitate to ask.\n\n\nYou never owe me personal information about your health (mental or physical) but you’re always welcome to talk to me. If I can’t help, I likely know someone who can.\nI want you to learn lots of things from this class, but I primarily want you to stay healthy, balanced, and grounded during this summer session"
+    "objectID": "slides/lec-2.html#section-6",
+    "href": "slides/lec-2.html#section-6",
+    "title": "Introduction to Data",
+    "section": "",
+    "text": "Group exercise - experiment and observational study\n\n\nYou want to investigate the effect of caffeine on class participation among Duke students\n\nDesign an observational study.\nDesign an experiment.\nIs your experiment double-blind? Can you make it double-blind?\nAre there any ethical or practical concern with the experiment?\n\nProvide an example of an observational study that you would not turn into an experiment due to:\n\npractical considerations\nethical considerations\n\nExercise 2.12\n\n\n\n\n\n\n08:00"
   },
   {
-    "objectID": "slides/lec-1x.html#this-weeks-tasks",
-    "href": "slides/lec-1x.html#this-weeks-tasks",
-    "title": "Welcome to STA 101!",
-    "section": "This week’s tasks",
-    "text": "This week’s tasks\n\nDownload and install R and RStudio.\nComplete the Getting to know you survey if you haven’t yet done so!\nRead the syllabus\nWatch out for next announcement emails"
-  },
-  {
-    "objectID": "slides/lec-1x.html#kai-says",
-    "href": "slides/lec-1x.html#kai-says",
-    "title": "Welcome to STA 101!",
-    "section": "Kai says…",
-    "text": "Kai says…\n\n\n\n\n\n\n\n\nsta101-suI22.github.io/website"
+    "objectID": "slides/lec-2.html#recap-1",
+    "href": "slides/lec-2.html#recap-1",
+    "title": "Introduction to Data",
+    "section": "Recap",
+    "text": "Recap\n\n\nobservations (row) and variables (column)\npopulation parameters and sample statistics\nstatistical inference\nsampling\nfour types of variables\n\nnumerical: continuous, discrete\ncategorical: nominal, ordinal\n\nexperiments, observational studies and causal claims\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
     "objectID": "slides/lec-27.html#exam-instructions",
@@ -2280,188 +2490,6 @@
     "title": "Wrap up",
     "section": "Application exercise",
     "text": "Application exercise\n\n📋 github.com/sta210-s22/ae-13-tale-of-two-creeks\n\n\n\n\nsta210-s22.github.io/website"
-  },
-  {
-    "objectID": "slides/lec-2x.html#announcements",
-    "href": "slides/lec-2x.html#announcements",
-    "title": "Introduction to Data",
-    "section": "Announcements",
-    "text": "Announcements\n\nIf you’re just joining the class, welcome! Go to the course website and review content you’ve missed, read the syllabus, and complete the Getting to know you survey."
-  },
-  {
-    "objectID": "slides/lec-2x.html#outline",
-    "href": "slides/lec-2x.html#outline",
-    "title": "Introduction to Data",
-    "section": "Outline",
-    "text": "Outline\n\nMotivating example - stent and stroke\nPrinciples of Statistical Inference\nTypes of variable\nExperiments and observational studies"
-  },
-  {
-    "objectID": "slides/lec-2x.html#example---stents-and-strokes",
-    "href": "slides/lec-2x.html#example---stents-and-strokes",
-    "title": "Introduction to Data",
-    "section": "Example - Stents and strokes",
-    "text": "Example - Stents and strokes\n\nStents are known to reduce the risk of an additional heart attack or death after a cardiac event.\nSimilar benefits for patients at risk of stroke? . . .\nIf so, we can use this well-known procedure to reduce the risk of stroke\nIf not, the procedure (surgery) should be avoided."
-  },
-  {
-    "objectID": "slides/lec-2x.html#does-the-use-of-stents-reduce-the-risk-of-stroke",
-    "href": "slides/lec-2x.html#does-the-use-of-stents-reduce-the-risk-of-stroke",
-    "title": "Introduction to Data",
-    "section": "Does the use of stents reduce the risk of stroke?",
-    "text": "Does the use of stents reduce the risk of stroke?\n\nExperiment with 451 at-risk patients\nEach volunteer patient was randomly assigned to either the treatment (stent) or the control (no stent) group\nCheck with patients 30 days and 365 days later"
-  },
-  {
-    "objectID": "slides/lec-2x.html#dealing-with-randomness",
-    "href": "slides/lec-2x.html#dealing-with-randomness",
-    "title": "Introduction to Data",
-    "section": "Dealing with Randomness",
-    "text": "Dealing with Randomness\nSuppose I flip a coin \\(100\\) times and count the number of times I obtain heads.\n\nI expect to observe around \\(50\\) heads\nImagine that I observe \\(85\\) heads. That would be alarming; the coin is probably not fair\nIf I had observed \\(55\\) heads then I would not be alarmed; this is a plausible result with a fair coin\n\n\nIn the stent study, is the observed difference plausible if stents had no effect?"
-  },
-  {
-    "objectID": "slides/lec-2x.html#intuition-about-randomness",
-    "href": "slides/lec-2x.html#intuition-about-randomness",
-    "title": "Introduction to Data",
-    "section": "Intuition about randomness",
-    "text": "Intuition about randomness\n\n\n\nGroup exercise - gut feeling about randomness\n\n\n\nIn the coin example, what number of heads would start to make you doubt that the coin is fair?\nIn the stent study, is the difference large enough to make you doubt that the stents have no effect?\n\n\n\n\n\n\n\n04:00"
-  },
-  {
-    "objectID": "slides/lec-2x.html#observations-and-variables",
-    "href": "slides/lec-2x.html#observations-and-variables",
-    "title": "Introduction to Data",
-    "section": "Observations and variables",
-    "text": "Observations and variables\n\n\n\nResults for three patients from the stent study.\n \n  \n    patient \n    group \n    30 days \n    365 days \n  \n \n\n  \n    1 \n    treatment \n    no event \n    no event \n  \n  \n    2 \n    treatment \n    no event \n    no event \n  \n  \n    3 \n    control \n    no event \n    no event \n  \n\n\n\n\n\n\n\nEach row represents an observation\nEach column represents a variable"
-  },
-  {
-    "objectID": "slides/lec-2x.html#some-examples",
-    "href": "slides/lec-2x.html#some-examples",
-    "title": "Introduction to Data",
-    "section": "Some examples",
-    "text": "Some examples\nObservational units: individuals, families, student cohort, cities, counties, countries, cells (biology), animals, books, courses, apples, etc\nVariables: height, weight, age, size, year, latitude, longitude, type, sex, diet, number of pages, genre, level, color, etc"
-  },
-  {
-    "objectID": "slides/lec-2x.html#population-census-and-sample",
-    "href": "slides/lec-2x.html#population-census-and-sample",
-    "title": "Introduction to Data",
-    "section": "Population, census and sample",
-    "text": "Population, census and sample\n\nPopulation of interest\n\nLarge, but with well-defined limits\nExample: patients at risk of stroke, Duke students, trees in Duke Forest, US counties\nWant to investigate the relation between variables\n\n\n\n\nCensus: collect data on the whole population\n\ntypically impractical, expensive\n\n\n\n\n\nSample: small fraction of the population"
-  },
-  {
-    "objectID": "slides/lec-2x.html#statistical-inference",
-    "href": "slides/lec-2x.html#statistical-inference",
-    "title": "Introduction to Data",
-    "section": "Statistical inference",
-    "text": "Statistical inference\n\nPopulation parameter, e.g. average number of hours Duke students sleep per night\n\nGreek letter: \\(\\mu\\), \\(\\beta\\), but also \\(p\\).\n\nSample statistic, e.g. observed average number of hours Duke students sleep per night\n\nRoman letter: \\(\\bar{x}\\), \\(b\\), \\(\\hat{p}\\)\n\n\n\n\nHow to learn about the population from a sample?\n\nfrom sample statistics to population parameters\nStatistical inference provides a rigorous framework"
-  },
-  {
-    "objectID": "slides/lec-2x.html#statistics-as-an-art-sampling",
-    "href": "slides/lec-2x.html#statistics-as-an-art-sampling",
-    "title": "Introduction to Data",
-    "section": "Statistics as an art – sampling",
-    "text": "Statistics as an art – sampling\n\nThere is no need to drink the whole pot (population) to know if the soup is seasoned enough\n\nTasting a spoonful (sample) is typically sufficient\nSuch sample is representative of the population"
-  },
-  {
-    "objectID": "slides/lec-2x.html#section",
-    "href": "slides/lec-2x.html#section",
-    "title": "Introduction to Data",
-    "section": "",
-    "text": "Group exercise - sampling\n\n\nBack to the study on the effect of diet on sleep among Duke students. How would you obtain a sample of student for your study if you had (i) 1 hour, (ii) 1 week?\n\n\n\n\n\n\n02:00"
-  },
-  {
-    "objectID": "slides/lec-2x.html#section-1",
-    "href": "slides/lec-2x.html#section-1",
-    "title": "Introduction to Data",
-    "section": "",
-    "text": "What can go wrong?\n\nsmall sample\nconvenience sampling, e.g. students on campus\nblind spots, e.g. voters with no phone\n…"
-  },
-  {
-    "objectID": "slides/lec-2x.html#section-2",
-    "href": "slides/lec-2x.html#section-2",
-    "title": "Introduction to Data",
-    "section": "",
-    "text": "The gold standard is a random sample\n\nbut even then, we can have non-response bias\n\n\n🛑 Obtaining a representative sample is difficult.\n✅ But surprisingly small samples can do the job!\n\ne.g. 1,500 for a whole country (later in class)"
-  },
-  {
-    "objectID": "slides/lec-2x.html#sampling-is-natural",
-    "href": "slides/lec-2x.html#sampling-is-natural",
-    "title": "Introduction to Data",
-    "section": "Sampling is natural",
-    "text": "Sampling is natural\n\nWhen you taste a spoonful of soup and decide the spoonful you tasted isn’t salty enough, that’s exploratory analysis\nIf you generalize and conclude that your entire soup needs salt, that’s an inference\nFor your inference to be valid, the spoonful you tasted (the sample) needs to be representative of the entire pot (the population)"
-  },
-  {
-    "objectID": "slides/lec-2x.html#numerical-variables",
-    "href": "slides/lec-2x.html#numerical-variables",
-    "title": "Introduction to Data",
-    "section": "Numerical variables",
-    "text": "Numerical variables\n\nTakes a numerical value\nExamples: age, height, number of children\n\n\n\nNot all numbers are numerical variables, e.g. zip code, phone number\nHeuristic: is the average meaningful? Yes\n\n\n\n\nDiscrete, or continuous; not always clear cut"
-  },
-  {
-    "objectID": "slides/lec-2x.html#categorical-variables",
-    "href": "slides/lec-2x.html#categorical-variables",
-    "title": "Introduction to Data",
-    "section": "Categorical variables",
-    "text": "Categorical variables\n\nTakes a level (a category)\nExamples: eye color, place of birth, education level\n\n\n\nMay be numbers, e.g. zip code, phone number\nHeuristic: is the average meaningful? No\n\n\n\n\nOrdinal, or nominal"
-  },
-  {
-    "objectID": "slides/lec-2x.html#section-3",
-    "href": "slides/lec-2x.html#section-3",
-    "title": "Introduction to Data",
-    "section": "",
-    "text": "Group exercise - types of variables\n\n\n\nExercise 1.13 b\nConsider the dataset you proposed in point 3 of the previous group exercise. Can you identify a numerical and a categorical variable? What are they?\nDoes you dataset contain a variable of each of the four types? Can you come up with a variable of each type?\n\n\n\n\n\n\n\n04:00"
-  },
-  {
-    "objectID": "slides/lec-2x.html#relationship-between-variables",
-    "href": "slides/lec-2x.html#relationship-between-variables",
-    "title": "Introduction to Data",
-    "section": "Relationship between variables",
-    "text": "Relationship between variables\n\nTwo variables can either be independent or associated.\nAssociation can be linear (positive, or negative) but it can take any form."
-  },
-  {
-    "objectID": "slides/lec-2x.html#section-4",
-    "href": "slides/lec-2x.html#section-4",
-    "title": "Introduction to Data",
-    "section": "",
-    "text": "Group exercise - types of associations\n\n\n\nProvide two numerical variables that are likely to be linearly associated. Is the association positive or negative?\nProvide two numerical variable that are likely to be associated in a non linear way e.g. U-shape, inverted-J-shape (like a square root).\n\n\n\n\n\n\n\n03:00"
-  },
-  {
-    "objectID": "slides/lec-2x.html#explanatory-and-response-variable",
-    "href": "slides/lec-2x.html#explanatory-and-response-variable",
-    "title": "Introduction to Data",
-    "section": "Explanatory and response variable",
-    "text": "Explanatory and response variable\n\nWhen two variables are associated, we sometimes hypothesize that changes in one result in changes in the other.\n\n\n\nExplanatory variable \\(\\Rightarrow\\) response variable\n\n\n\n\n…but association \\(\\neq\\) causation; examples:\n\nfire, damage and firemen; ice-cream and shark attack\ncounties and kidney cancer death rate; the best classrooms are small classrooms."
-  },
-  {
-    "objectID": "slides/lec-2x.html#section-5",
-    "href": "slides/lec-2x.html#section-5",
-    "title": "Introduction to Data",
-    "section": "",
-    "text": "Group exercise - counties and kidney cancer death rate\n\n\n\nInstructionsGroup 1Group 2\n\n\nWhy are most of the shaded counties in the middle of the country?\n\n\n\n03:00\n\n\n\n\n\n\n\n\nThe counties of the United Sates with the highest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980–1989.\n\n\n\n\n\n\n\nThe counties of the United Sates with the lowest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980–1989.\n\n\nSource: Bayesian Data Analysis"
-  },
-  {
-    "objectID": "slides/lec-2x.html#experiments",
-    "href": "slides/lec-2x.html#experiments",
-    "title": "Introduction to Data",
-    "section": "Experiments",
-    "text": "Experiments\n\nThe value of the explanatory variable is assigned by the researcher\nRandomized experiment: the value of the explanatory variable is randomly assigned\n\nremoves any counfounding (luking) variable\n\nBlind, or even double-blind, to avoid biases\n\nplacebo\ncan go wrong, e.g. vitamins in prison"
-  },
-  {
-    "objectID": "slides/lec-2x.html#observational-studies",
-    "href": "slides/lec-2x.html#observational-studies",
-    "title": "Introduction to Data",
-    "section": "Observational Studies",
-    "text": "Observational Studies\n\nThe value of the explanatory variable is not assigned by the researcher\n\nthere is no interference\n\nExample: survey\n\n\n🛑 Does not easily lead to causal claims due to the potential presence of counfounding variables\n\n\n\n\n\n\n\n\n\nSource: IMS\n\n\n…but they can do so, e.g. smoking causes cancer."
-  },
-  {
-    "objectID": "slides/lec-2x.html#section-6",
-    "href": "slides/lec-2x.html#section-6",
-    "title": "Introduction to Data",
-    "section": "",
-    "text": "Group exercise - experiment and observational study\n\n\nYou want to investigate the effect of caffeine on class participation among students at Duke\n\nDesign an observational study.\nDesign an experiment.\nIs your experiment double-blind? Can you make it double-blind?\nAny ethical or practical concern with the experiment?\n\nProvide an example of an observational study that you would not turn into an experiment due to:\n\npractical considerations\nethical considerations\n\nExercise 2.12\n\n\n\n\n\n\n08:00"
-  },
-  {
-    "objectID": "slides/lec-2x.html#recap-1",
-    "href": "slides/lec-2x.html#recap-1",
-    "title": "Introduction to Data",
-    "section": "Recap",
-    "text": "Recap\n\n\nobservations (row) and variables (column)\npopulation parameters and sample statistics\nstatistical inference\nsampling\nfour types of variables\n\nnumerical: continuous, discrete\ncategorical: nominal, ordinal\n\nexperiments, observational studies and causal claims\n\n\n\n\n\nsta101-suI22.github.io/website"
   },
   {
     "objectID": "slides/lec-3x.html#announcements",

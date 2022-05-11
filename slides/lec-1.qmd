@@ -1,0 +1,330 @@
+---
+title: "Welcome to STA 101L!"
+subtitle: "STA 101L - Summer I 2022"
+author: "Raphael Morsomme"
+footer:  "[https://rmorsomme.github.io/website/](https://rmorsomme.github.io/website/)"
+logo: "images/logo.jpg"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+editor: visual
+execute:
+  freeze: auto
+---
+
+```{r}
+#| include: false
+library(countdown)
+```
+
+# Welcome
+
+## Meet the instructor
+
+::: columns
+::: {.column width="50%"}
+![Dr. Raphael Morsomme (he/him/his)](images/lec-1/raphael.jpg){fig-alt="Headshot of Raphael Morsomme" fig-align="center" width="200"}
+:::
+
+::: {.column width="50%"}
+-   Ph.D. candidate at the Department of Statistical Science
+-   Research focus: epidemic models and cancer overdiagnosis
+-   Fan of Formula 1, model building and cooking
+:::
+:::
+
+## Meet the TA
+
+::: columns
+::: {.column width="50%"}
+![Roy Rohit (he/him/his)](images/lec-1/rohit.jpg){fig-alt="Headshot of Rohit Roy" fig-align="center" width="200"}
+:::
+
+::: {.column width="50%"}
+-   Ph.D. student in biochemistry
+-   Works at the Al-Hashimi Lab
+-   Likes traveling and cooking
+:::
+:::
+
+## Meet each other
+
+::: {.callout-tip icon="false"}
+## Group activity - meeting each other
+
+In groups of 2, ask your partner the following questions
+
+-   preferred name and pronouns
+-   field of study, major
+-   (least) favorite thing about Durham
+-   favorite food, song or artist
+
+You will introduce your partner to the class.
+:::
+
+```{r}
+countdown(minutes = 5)
+```
+
+# Data analysis and statistics
+
+## What is data analysis?
+
+::: {style="font-size: 0.8em;"}
+> "**Data analysis** is a process of inspecting, cleaning, transforming, and modelling data with the goal of **discovering useful information, informing conclusions, and supporting decision-making**. (...) In today's business world, data analysis plays a role in making decisions more scientific and helping businesses operate more effectively."
+:::
+
+Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_analysis)
+
+## Statistics
+
+> "Every field worth studying connects to one's everyday life. Statistics is not an isolated field, it connects to everything." --- Andrew Gelman
+
+. . .
+
+**Statistical inference**: set of procedures for making **rigorous** claims about a population from a (small) sample in the presence of uncertainty.
+
+## Course FAQ
+
+::: incremental
+-   **What background is assumed for the course?** There is no prerequisite.
+-   **Will we be doing coding?** Yes. We will use `R`.
+-   **What if I have never coded?** We do not expect students to have any experience with R or any other programming language.
+-   **Will we learn the mathematical theory of statistics?** Yes and no. The course is primarily focused on application; however, we will discuss some of the mathematics of hypothesis testing and simple linear regression.
+:::
+
+## Course learning objectives
+
+-   Become a critical consumer of statistical analyses.
+-   Summarize and visualize categorical and continuous data.
+-   Build and investigate linear regression models for forecasting.
+-   Conduct hypothesis tests and construct confidence intervals for proportions, means, and regression coefficients
+-   Plan and complete a statistical analysis of a real-world phenomenon.
+
+## Examples of data analyses in practice
+
+::: incremental
+-   [New Yorkers Will Pay \$56 A Month To Trim A Minute Off Their Commute](https://fivethirtyeight.com/features/new-yorkers-will-pay-56-a-month-to-trim-a-minute-off-their-commute/)
+-   [How FiveThirtyEight's 2020 Presidential Forecast Works --- And What's Different Because Of COVID-19](https://fivethirtyeight.com/features/how-fivethirtyeights-2020-presidential-forecast-works-and-whats-different-because-of-covid-19/)
+-   [Effect of Forensic Evidence on Criminal Justice Case Processing](https://onlinelibrary.wiley.com/doi/10.1111/1556-4029.12020)
+-   [Why it's so freaking hard to make a good COVID-19 model](https://fivethirtyeight.com/features/why-its-so-freaking-hard-to-make-a-good-covid-19-model/)
+:::
+
+# Course overview
+
+## Homepage
+
+<https://rmorsomme.github.io/website/>
+
+-   All course materials
+-   Links to Sakai, Gradescope, the textbook, etc.
+-   Let's take a tour!
+
+## Course toolkit
+
+All linked from the course website:
+
+-   Assignment submission and feedback: [Gradescope](https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/page/aec742dc-2972-4f02-a35b-1dd3315af889)
+-   Computing software: [R](https://www.r-project.org/) and [RStudio](https://www.rstudio.com/)
+-   Introduction to Modern Statistics (IMS): [Openintro](https://www.openintro.org/book/ims/)
+
+::: callout-important
+Install and download R and RStudio before Friday's lab!
+:::
+
+## Activities: Prepare, Participate, Practice, Perform {.smaller}
+
+-   **Prepare:** Prepare for lectures by completing the readings.
+-   **Participate:** Attend and actively participate in lectures and labs, office hours, team meetings
+-   **Practice:** Solve plenty of exercises; this is the *best* way to learn statistics.
+-   **Perform:** Put together what you've learned to analyze real-world data
+    -   Frequent homework assignments
+    -   Prediction group project
+    -   Inference group project
+
+::: callout-tip
+## Tip for practicing
+
+In the IMS book, the solutions of the odd-numbered exercises are provided in the appendix.
+:::
+
+## Cadence - homework
+
+-   two sets of homework per week
+
+-   combination of problems from IMS and lab exercises
+
+-   due dates TBD
+
+-   typed up using RMarkdown and submitted as a PDF on Gradescope
+
+-   lowest grade dropped
+
+-   you may discuss homework with other students; however, your answers should be completed and submitted individually
+
+## Cadence - two group projects {.smaller}
+
+-   **Prediction project**:
+    -   groups of 2
+    -   goal: build a model that makes the most accurate predictions possible.
+    -   some lab and lecture time dedicated to working on it
+    -   2-page write up and informal presentation (2 slides)
+
+. . .
+
+-   **Inference project:**
+    -   groups of 2
+    -   goal: analyze a phenomenon of your choice using real-world data
+    -   apply all the techniques learned in class (visualization, hypothesis test, confidence interval and linear regression)
+    -   some lab and lecture time dedicated to working on it
+    -   5-page report and formal presentation (+-10 slides)
+
+## Teams
+
+-   Team assignments
+    -   assigned by me
+    -   in-class exercises, and the two project
+-   Expectations and roles
+    -   everyone is expected to contribute equal *effort*
+    -   everyone is expected to understand *all* code turned in
+
+## Grading {.smaller}
+
+| Category           | Percentage |
+|--------------------|------------|
+| Homework and Labs  | 50%        |
+| Prediction Project | 20%        |
+| Inference Project  | 30%        |
+
+See [course syllabus](https://rmorsomme.github.io/website/course-syllabus.html) for how the final letter grade will be determined.
+
+## Support
+
+-   Ask questions in class and labs *quickly*.
+-   Attend office hours.
+-   Use the course forum [Conversations](https://sakai.duke.edu/portal/site/37c2d38d-400d-4210-8e42-83e19f9099b3/tool/bab0d8c9-88e8-4138-9490-2c2ad1a33858) on Sakai.
+-   Emails should be reserved for questions not appropriate for the public forum..
+-   Read the [course support](https://rmorsomme.github.io/website/course-support.html) page for more information.
+
+## Announcements
+
+-   Sent via email, be sure to check your mail box regularly
+-   I'll assume that you've read an announcement by the next "business" day
+
+## Diversity + inclusion {.smaller}
+
+It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students' learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.
+
+::: incremental
+-   If you have a name that differs from those that appear in your official Duke records, please let us know!
+-   Please let us know your preferred pronouns; correct us if necessary.
+-   If you feel like your performance in the class is being impacted by your experiences outside of class, please don't hesitate to come and talk with me. I want to be a resource for you. If you prefer to speak with someone outside of the course, your advisers and deans are excellent resources.
+-   I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it.
+:::
+
+## Accessibility
+
+-   The [Student Disability Access Office (SDAO)](https://access.duke.edu/students) is available to ensure that students are able to engage with their courses and related assignments.
+
+-   I am committed to making all course materials accessible and I'm always learning how to do this better. If any course component is not accessible to you in any way, please don't hesitate to let me know.
+
+# Course policies
+
+## COVID policies
+
+-   Wear a mask at all times!
+
+-   Read and follow university guidance [here](https://coronavirus.duke.edu/).
+
+## Late work, waivers, regrades policy
+
+-   We have policies!
+-   to ensure timely feedback, assignments submitted after the deadline will not be graded
+-   **one** waiver available for a 24-hour extension
+-   regrade requests within 48 hours
+-   Read the [course syllabus](https://rmorsomme.github.io/website/course-syllabus.html) for more details
+
+## Collaboration policy
+
+-   Only work that is clearly assigned as team work should be completed collaboratively.
+
+-   Homeworks must be completed individually. You may **not** directly share answers / code with others, however you are welcome to discuss the problems in general and ask for advice.
+
+## Sharing / reusing code policy
+
+-   We are aware that a huge volume of code is available on the web, and many tasks may have solutions posted
+
+-   Unless explicitly stated otherwise, this course's policy is that you may use any online resources (e.g. RStudio Community, StackOverflow, etc.) but you must explicitly cite where you obtained any code you directly use or use as inspiration in your solution(s).
+
+-   Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism, regardless of source
+
+## Academic integrity
+
+> To uphold the Duke Community Standard:
+>
+> -   I will not lie, cheat, or steal in my academic endeavors;
+>
+> -   I will conduct myself honorably in all my endeavors; and
+>
+> -   I will act if the Standard is compromised.
+
+## Most importantly!
+
+Ask if you're not sure if something violates a policy!
+
+# Making STA 101 a success
+
+## Five tips for success
+
+1.  complete the reading before the lectures;
+2.  ask questions *quickly*; don't let a day pass by with lingering questions;
+3.  do the homework assignments thoroughly;
+4.  practice, practice, practice;
+5.  don't procrastinate; start on the homework assignments and the projects early.
+
+## 
+
+::: callout-tip
+## Tip for practicing
+
+Remember the odd-number exercises in IMS! The teaching team will always be happy to provide feedback on your work.
+:::
+
+## Learning during a pandemic, learning during the summer
+
+I want to make sure that you learn everything you were hoping to learn from this class. If this requires flexibility, please don't hesitate to ask.
+
+::: incremental
+-   You never owe me personal information about your health (mental or physical) but you're always welcome to talk to me. If I can't help, I likely know someone who can.
+-   I want you to learn lots of things from this class, but I primarily want you to stay healthy, balanced, and grounded during this summer session
+:::
+
+## This week's tasks
+
+-   Download and install R and RStudio before Friday's lab.
+-   Read the syllabus.
+-   Complete the assigned reading before tomorrow.
+-   Watch out for announcement emails.
+
+## Important dates {.smaller}
+
+-   **May 11:** Classes begin (Monday meeting schedule)
+-   **May 13:** Drop/add ends
+-   **May 16:** Regular class meeting schedule begins
+-   **May 30:** Memorial Day holiday, no class is held
+-   **May 31:** Prediction project
+-   **June 8:** Last day to withdraw with W
+-   **June 16**: Inference project presentation
+-   **June 17**: Classes end
+-   **June 20:** Juneteenth holiday
+-   **June 21**: Reading period
+-   **June 23**: Last assignment: inference project report
+
+Click [here](https://registrar.duke.edu/sumemr-2022-academic-calendar) for the full Duke academic calendar.
+
+## Kai says...
+
+![](images/lec-1/kai.jpeg){fig-alt="Picture of my dog, Kai, with a speech bubble that says \"Read the syllabus and make Raphael happy!\"" fig-align="center" width="600"}

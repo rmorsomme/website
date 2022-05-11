@@ -16,4 +16,5 @@ tibble(
     plot.title = element_text(hjust = 0.5, size = 20)
     ) +
   labs(title = "STA101L")
-ggsave("logo.jpg", path = "images", height = 1.25, width = 1.25)
+#ggsave("logo.jpg", path = "images", height = 1.25, width = 1.25)
+#ggsave("logo.jpg", path = "slides/images", height = 1.25, width = 1.25)
