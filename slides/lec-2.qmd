@@ -46,6 +46,7 @@ knitr::opts_chunk$set(
 ## Example - Stents and strokes
 
 Stents are known to reduce the risk of an additional heart attack or death after a cardiac event.
+
 -   Could stents have similar benefits for patients at risk of stroke?
 
 . . .
@@ -56,6 +57,7 @@ Stents are known to reduce the risk of an additional heart attack or death after
 ## Does the use of stents reduce the risk of stroke?
 
 We have an experiment with 451 at-risk patients:
+
 -   each volunteer patient was randomly assigned to either the treatment (stent) or the control (no stent) group
 -   check with patients 30 days and 365 days later
 
@@ -197,7 +199,7 @@ There are two ways to learn about the relation between variables in a given popu
 
 2.  **Sample**: small fraction of the population
 
-## Statistical inference
+## Statistical inference{.smaller}
 
 -   Population **parameter**, e.g. mean number of hours that Duke students sleep per night
     -   Greek letter: $\mu$, $\beta$, but also $p$.
@@ -230,7 +232,10 @@ countdown(minutes = 7)
 
 ## Statistics as an art -- sampling
 
-When you make soup, there is no need to drink the whole pot (population) to know if the it is seasoned enough - Tasting a spoonful (sample) is sufficient - if the soup is well mixed, a spoonful is a **representative** sample of the population
+When you make soup, there is no need to drink the whole pot (population) to know if the it is seasoned enough.
+
+-   Tasting a spoonful (sample) is sufficient.
+-   If the soup is well mixed, a spoonful is a **representative** sample of the population
 
 ![](images/lec-2/soup.png){fig-alt="Illustration of a bowl of soup" fig-align="center" width="300"}
 
@@ -281,7 +286,7 @@ The gold standard is a **random sample**
 
 # Types of variable
 
-## Numerical variables
+## Numerical variables {.smaller}
 
 -   Takes a numerical value
 -   Examples: age, height, number of children
@@ -305,7 +310,7 @@ Numerical variables are either
 
 -   not always clear cut, e.g. GPA
 
-## Categorical variables
+## Categorical variables {.smaller}
 
 -   Takes a level (a category)
 -   Examples: eye color, place of birth, education level
@@ -359,7 +364,7 @@ Source: [IMS](https://www.openintro.org/book/ims/)
 ::: {.callout-tip icon="false"}
 ## Group exercise - types of variables
 
-1.  Exercise 1.13 b
+1.  Exercise [1.13 b](https://openintro-ims.netlify.app/data-hello.html#chp1-exercises)
 2.  Consider the study you used in the previous group exercise. Can you identify a numerical and a categorical variable? What are they?
 3.  Does the study consider a variable of all four types? Can you come up with a variable of each type?
 :::
@@ -372,12 +377,14 @@ countdown(minutes = 5)
 
 ## Relationship between variables
 
-Two variables can either be independent or associated.
+Two variables can either be **independent** or **associated**.
+
+. . .
 
 If two variables are associated, the association can be
 
 -   linear (positive, or negative)
--   but it could take any form, e.g. U-shape, inverted-J-shape (like a square root)
+-   or it can take any form, e.g. U-shape, inverted-J-shape (like a square root)
 
 ## 
 
@@ -391,12 +398,12 @@ Provide two numerical variables which you expect to be
 :::
 
 ```{r}
-countdown(minutes = 3)
+countdown(minutes = 2)
 ```
 
 ## Explanatory and response variable
 
--   When two variables are associated, we sometimes hypothesize that changes in one *cause* in changes in the other.
+-   When two variables are associated, we sometimes hypothesize that changes in one *cause* changes in the other.
 
 . . .
 
@@ -405,7 +412,7 @@ countdown(minutes = 3)
 . . .
 
 -   ...but association $\neq$ causation; examples:
-    -   fire damage and firemen; ice-cream and shark attacks
+    -   ice-cream and shark attacks; fire damage and firemen
     -   counties and kidney cancer death rate; the best classrooms are small classrooms.
 
 ## 
@@ -424,13 +431,13 @@ countdown(minutes = 4)
 
 ## Group 1
 
-![The counties of the United Sates with the highest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980--1989.](images/lec-2/kidney_highest.jpg){width="600"}
+![The counties of the United Sates with the highest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980--1989.](images/lec-2/kidney_highest.png){width="600"}
 
 Source: [Bayesian Data Analysis](http://www.stat.columbia.edu/~gelman/book/)
 
 ## Group 2
 
-![The counties of the United Sates with the lowest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980--1989.](images/lec-2/kidney_lowest.jpg){width="600"}
+![The counties of the United Sates with the lowest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980--1989.](images/lec-2/kidney_lowest.png){width="600"}
 
 Source: [Bayesian Data Analysis](http://www.stat.columbia.edu/~gelman/book/)
 :::
@@ -451,7 +458,7 @@ Source: [Bayesian Data Analysis](http://www.stat.columbia.edu/~gelman/book/)
 
 -   not all variables can be assigned, e.g. age
 -   ethical considerations, e.g. smoking cigarette, sham surgery (placebo)
--   practical consideration, e.g. long-term red meat consumption
+-   practical consideration, e.g. long-term consumption of red meat
 
 . . .
 
@@ -509,18 +516,18 @@ You want to investigate the effect of caffeine on class participation among Duke
 1.  Design an observational study.
 2.  Design an experiment.
 3.  Is your experiment double-blind? Can you make it double-blind?
-4.  Are there any ethical or practical concern with the experiment?
+4.  Do you have any ethical or practical concern with the experiment?
 
-Provide an example of an observational study that you would not turn into an experiment due to:
+Provide an example of an observational study that you would **not** turn into an experiment due to:
 
 1.  practical considerations
 2.  ethical considerations
 
-Exercise 2.12
+Exercise [2.12](https://openintro-ims.netlify.app/data-design.html#chp2-exercises)
 :::
 
 ```{r}
-countdown(minutes = 8)
+countdown(minutes = 6)
 ```
 
 # Recap

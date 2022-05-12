@@ -1,0 +1,97 @@
+---
+title: "HW 1 - Introduction to data"
+subtitle: "Due Sunday, June 15, 9:00pm on Gradescope"
+author: "Author Name"
+date: "`r Sys.Date()`"
+---
+
+# Problem set (25 points)
+
+## Exercise 1.2 (2 points)
+
+## Exercise 1.8 (5 points)
+
+## Exercise 1.12 (5 points)
+
+## Exercise 1.20 (2 points)
+
+## Exercise 2.8 (2 points)
+
+## Exercise 2.12 (3 points)
+
+## Exercise 2.14 (1 point)
+
+## Exercise 2.22 (2 points)
+
+## Exercise 2.22 - follow-up (3 points)
+
+-   Is your study blind?
+-   Is it double-bind?
+-   If it is not blind, can you make it blind?
+
+\newpage
+
+# Lab exercises - Dr. Arbuthnot’s baptism records (25 points)
+
+You can find the lab [here](http://openintrostat.github.io/oilabs-tidy/01_intro_to_r/intro_to_r.html)
+
+```{r load-packages, message=FALSE}
+library(tidyverse)
+library(openintro)
+```
+
+### Exercise 1 (2 points)
+
+Insert any text here.
+
+```{r view-girls-counts}
+# Insert code for Exercise 1 here
+```
+
+### Exercise 2 (3 points)
+
+Insert any text here.
+
+```{r trend-girls}
+# Insert code for Exercise 2 here
+```
+
+### Exercise 3 (4 points)
+
+Insert any text here.
+
+```{r plot-prop-boys-arbuthnot}
+# Insert code for Exercise 3 here
+```
+
+### Exercise 4 (4 points)
+
+Insert any text here.
+
+```{r dim-present}
+# Insert code for Exercise 4 here
+```
+
+### Exercise 5 (2 points)
+
+Insert any text here.
+
+```{r count-compare}
+# Insert code for Exercise 5 here
+```
+
+### Exercise 6 (5 points)
+
+Insert any text here.
+
+```{r plot-prop-boys-present}
+# Insert code for Exercise 6 here
+```
+
+### Exercise 7 (5 points)
+
+Insert any text here.
+
+```{r find-max-total}
+# Insert code for Exercise 7 here
+```

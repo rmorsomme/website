@@ -228,14 +228,21 @@
     "href": "course-team.html",
     "title": "Teaching team",
     "section": "",
-    "text": "Raphael Morsomme (he/him/his) is a Ph.D. candidate at the Department of Statistical Science at Duke University. Raphael’s work focuses on the development of flexible and scalable stochastic epidemic models along with efficient Markov Chain Monte Carlo algorithms to fit these models. In addition, he uses data augmentation to study the overdiagnosis rate of breast cancer.\n\n\n\nOffice hours\nLocation\n\n\n\n\nTBD-days TBD time\nOld Chem 213 or Zoom [TBD]\n\n\nTBD-days TBD time\nOld Chem 213 or Zoom [TBD]\n\n\n\nIf these times don’t work for you or you’d like to schedule a one-on-one meeting, simply send an email to rnm16@duke.edu."
+    "text": "Raphael Morsomme (he/him/his) is a Ph.D. candidate at the Department of Statistical Science at Duke University. Raphael’s work focuses on the development of flexible and scalable stochastic epidemic models along with efficient Markov Chain Monte Carlo algorithms to fit these models. In addition, he uses data augmentation to study the overdiagnosis rate of breast cancer.\n\n\n\nOffice hours\nLocation\n\n\n\n\nMonday, 10:00-11:00am\nZoom\n\n\nWednesday, 10:00-11:00am\nZoom\n\n\n\nIf these times don’t work for you or you’d like to schedule a one-on-one meeting, simply send an email to rnm16@duke.edu."
   },
   {
     "objectID": "course-team.html#teaching-assistant",
     "href": "course-team.html#teaching-assistant",
     "title": "Teaching team",
     "section": "Teaching assistant",
-    "text": "Teaching assistant\n\n\n\n\nName\nOffice hours\nLocation\n\n\n\n\n\nRohit Roy - rohit.roy@duke.edu\nTBD\nZoom/in person [TBD]"
+    "text": "Teaching assistant\n\n\n\n\nName\nOffice hours\nLocation\n\n\n\n\n\nRohit Roy - rohit.roy@duke.edu\nWednesday, 4:45-5:45pm\nFriday, 4:45-5:45pm\nHybrid\nHybrid"
+  },
+  {
+    "objectID": "documents/Homework 1 - Introduction to data/hw-1.html",
+    "href": "documents/Homework 1 - Introduction to data/hw-1.html",
+    "title": "HW 1 - Introduction to data",
+    "section": "",
+    "text": "Lab exercises - Dr. Arbuthnot’s baptism records (25 points)\nYou can find the lab here\n\nlibrary(tidyverse)\nlibrary(openintro)\n\n\nExercise 1 (2 points)\nInsert any text here.\n\n# Insert code for Exercise 1 here\n\n\n\nExercise 2 (3 points)\nInsert any text here.\n\n# Insert code for Exercise 2 here\n\n\n\nExercise 3 (4 points)\nInsert any text here.\n\n# Insert code for Exercise 3 here\n\n\n\nExercise 4 (4 points)\nInsert any text here.\n\n# Insert code for Exercise 4 here\n\n\n\nExercise 5 (2 points)\nInsert any text here.\n\n# Insert code for Exercise 5 here\n\n\n\nExercise 6 (5 points)\nInsert any text here.\n\n# Insert code for Exercise 6 here\n\n\n\nExercise 7 (5 points)\nInsert any text here.\n\n# Insert code for Exercise 7 here"
   },
   {
     "objectID": "exams/exam-1.html",
@@ -261,51 +268,23 @@
   {
     "objectID": "hw/hw-1.html",
     "href": "hw/hw-1.html",
-    "title": "HW 1 - In-person voting trends",
+    "title": "HW 1 - Introduction to data",
     "section": "",
-    "text": "In this assignment, you’ll use simple linear regression to explore the percent of votes cast in-person in the 2020 U.S. election based on the county’s political leanings.\n\n\nIn this assignment, you will…\n\nFit and interpret simple linear regression models\nAssess the conditions for simple linear regression.\nCreate and interpret spatial data visualizations using R.\nContinue developing a workflow for reproducible data analysis."
+    "text": "This assignment needs to be completed with RMarkdown and submitted as a pdf on Gradescope. Feel free to use the template that has been provided."
   },
   {
-    "objectID": "hw/hw-1.html#getting-started",
-    "href": "hw/hw-1.html#getting-started",
-    "title": "HW 1 - In-person voting trends",
-    "section": "Getting started",
-    "text": "Getting started\n\nLog in to RStudio\n\nGo to https://vm-manage.oit.duke.edu/containers and login with your Duke NetID and Password.\nClick STA210 to log into the Docker container. You should now see the RStudio environment.\n\n\n\nClone the repo & start new RStudio project\n\nGo to the course organization at github.com/sta210-s22 organization on GitHub. Click on the repo with the prefix hw-1. It contains the starter documents you need to complete the lab.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File ➛ New Project ➛Version Control ➛ Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick hw-1-voting.qmd to open the template R Markdown file. This is where you will write up your code and narrative for the lab."
+    "objectID": "hw/hw-1.html#problem-set-25-points",
+    "href": "hw/hw-1.html#problem-set-25-points",
+    "title": "HW 1 - Introduction to data",
+    "section": "Problem set (25 points)",
+    "text": "Problem set (25 points)\n\nExercise 1.2 (2 points)\nExercise 1.8 (5 points)\nExercise 1.12 (5 points)\nExercise 1.20 (2 points)\nExercise 2.8 (2 points)\nExercise 2.12 (3 points)\nExercise 2.14 (1 point)\nExercise 2.22 (2 points)\nExercise 2.22 - follow-up (3 points)\n\nIs your study blind?\nIs it double-bind?\nIf it is not blind, can you make it blind?"
   },
   {
-    "objectID": "hw/hw-1.html#packages",
-    "href": "hw/hw-1.html#packages",
-    "title": "HW 1 - In-person voting trends",
-    "section": "Packages",
-    "text": "Packages\nThe following packages will be used in this assignment:\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)\nlibrary(scales)"
-  },
-  {
-    "objectID": "hw/hw-1.html#data-2020-election",
-    "href": "hw/hw-1.html#data-2020-election",
-    "title": "HW 1 - In-person voting trends",
-    "section": "Data: 2020 Election",
-    "text": "Data: 2020 Election\nThere are multiple data sets for this assignment. Use the code below to load the data.\n\nelection_nc <- read_csv(\"data/nc-election-2020.csv\") %>%\n  mutate(fips = as.integer(FIPS))\ncounty_map_data <-  read_csv(\"data/nc-county-map-data.csv\")\nelection_sample <- read_csv(\"data/us-election-2020-sample.csv\")\n\nThe county-level election data in election_nc and election_sample are from The Economist GitHub repo. The data were originally analyzed in the July 2021 article In-person voting really did accelerate covid-19’s spread in America. For this analysis, we will focus on the following variables:\n\ninperson_pct: The proportion of a county’s votes cast in-person in the 2020 election\npctTrump_2016: The proportion of a county’s votes cast for Donald Trump in the 2016 election\n\nThe data in county_map_data were obtained from the maps package in R. We will not analyze any of the variables in this data set but will use it to help create maps in the assignment. Click here to see the documentation for the maps package. Click here for code examples."
-  },
-  {
-    "objectID": "hw/hw-1.html#exercises",
-    "href": "hw/hw-1.html#exercises",
-    "title": "HW 1 - In-person voting trends",
-    "section": "Exercises",
-    "text": "Exercises\nDue to COVID-19 pandemic, many states made alternatives in-person voting, such as voting by mail, more widely available for the 2020 U.S. election. The general consensus was that voters who were more Democratic leaning would be more likely to vote by mail, while more Republican leaning voters would largely vote in-person. This was supported by multiple surveys, including this survey conducted by Pew Research.\nThe goal of this analysis is to use regression analysis to explore the relationship between a county’s political leanings and the proportion of votes cast in-person in 2020. The ultimate question we want to answer is “Did counties with more Republican leanings have a larger proportion of votes cast in-person in the 2020 election?”\nWe will use the proportion of votes cast for Donald Trump in 2016 (pctTrump_2016) as a measure of a county’s political leaning. Counties with a higher proportion of votes for Trump in 2016 are considered to have more Republican leanings.\n\n\n\n\n\n\nNote\n\n\n\nAll narrative should be written in complete sentences, and all visualizations should have informative titles and axis labels.\n\n\n\nPart 1: Counties in North Carolina\nFor this part of the analysis, we will focus on counties in North Carolina. We will use the data sets election_nc and county_map_data.\n\nVisualize the distribution of the response variable inperson_pct and calculate appropriate summary statistics. Use the visualization and summary statistics to describe the distribution. Include an informative title and axis labels on the plot.\nLet’s view the data in another way. Use the code below to make a map of North Carolina with the color of each county filled in based on the percentage of votes cast in-person in the 2020 election. Fill in title and axis labels.\nThen use the plot answer the following:\n\nWhat are 2 - 3 observations you have from the plot?\nWhat is a feature that is apparent in the map that wasn’t apparent from the histogram in the previous exercise? What is a feature that is apparent in the histogram that is not apparent in the map?\n\n\n\nelection_map_data <- left_join(election_nc, county_map_data)\n\nggplot() +\n  geom_polygon(data = county_map_data,\n    mapping = aes(x = long, y = lat, group = group),\n    fill = \"lightgray\", color = \"white\"\n    ) +\n  geom_polygon(data = election_map_data, \n    mapping = aes(x = long, y = lat, group = group,\n    fill = inperson_pct)\n    ) +\n  labs(\n    x = \"___\",\n    y = \"___\",\n    fill = \"___\",\n    title = \"___\"\n  ) +\n  scale_fill_viridis_c(labels = label_percent(scale = 1)) +\n  coord_quickmap()\n\n\nCreate a visualization of the relationship between inperson_pct and pctTrump_2016. Use the visualization to describe the relationship between the two variables.\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you haven’t yet done so, now is a good time to render your document and commit (with a meaningful commit message) and push all updates.\n\n\n\nWe can use a linear regression model to better quantify the relationship between the variables.\n\nFit the linear model to understand variability in the percent of in-person votes based on the percent of votes for Trump in the 2016 election. Neatly display the model output with 3 digits.\nWrite the regression equation using mathematical notation.\n\nNow let’s use the model coefficients to describe the relationship.\n\nInterpret the slope. The interpretation should be written in a way that is meaningful in the context of the data.\nDoes it make sense to interpret the intercept? If so, write the interpretation in the context of the data. Otherwise, briefly explain why not.\n\nIf the linear model is a good fit to these data, there should be no structure left in the residuals and the residuals should have constant variance. Augment the data with the model to obtain the residuals and predicted values for each observation, and call the augmented data frame nc_election_aug (You will use this name in Exercise 8). Then, make a plot of the residuals vs. the fitted values, and based on this plot, and provide a brief explanation for whether these two conditions are met. Hint: Zoom out on the plot by extending the limits of the y-axis.\n\n\n\n\n\n\n\nWarning\n\n\n\nNow is a good time to render your document again if you haven’t done so recently and commit (with a meaningful commit message) and push all updates.\n\n\n\nWe might also be interested in our observations being independent, particularly if we are to use these data for inference. To evaluate whether the independence condition is met, we will examine a map of the counties in North Carolina with the color filled based on the value of the residuals.\n\nBriefly explain why we may want to view the residuals on a map to assess independence.\nBriefly explain what pattern (if any) we would expect to observe on the map if the independence condition is satisfied.\n\nFill in the name of your model in the code below to calculate the residuals and add them to election_map_data. Then, a map with the color of each county filled in based on the value of the residual. Hint: Start with the code from Exercise 2.\nIs the independence condition satisfied? Briefly explain based on what you observe from the plot.\n\nnc_election_aug <- nc_election_aug %>% \n  bind_cols(fips = election_nc$fips)\n\nelection_map_data <- left_join(election_map_data, nc_election_aug)\n\n\n\n\n\n\n\n\nWarning\n\n\n\nBefore moving on to the next part, make sure you render your document and commit (with a meaningful commit message) and push all updates.\n\n\n\n\nPart 2: Inference for the U.S.\nTo get a better understanding of the trend across the entire United States, we analyze data from a random sample of 200 counties. This data is in the election_sample data frame. Because these counties were randomly selected out of the 3,006 counties in the United States, we can reasonably treat the counties as independent observations.\n\nFit the linear model to these sample data to understand variability in the percent of in-person votes based on the percent of votes for Trump in the 2016 election. Neatly display the model output with 3 digits.\nConduct a hypothesis test for the slope using a permutation test. In your response, state the null and alternative hypotheses in words, and state the conclusion in the context of the data.\nNext, construct a 95% confidence interval for the slope using bootstrapping. Interpret the confidence interval in the context of the data.\nComment on whether the hypothesis test and confidence interval support the general consensus that Republican voters were more likely to vote in-person in the 2020 election? A brief explanation is sufficient but it should be based on your conclusions from Exercises 10 and 11.\n\n\n\n\n\n\n\nWarning\n\n\n\nBefore submitting, make sure you render your document and commit (with a meaningful commit message) and push all updates."
-  },
-  {
-    "objectID": "hw/hw-1.html#submission",
-    "href": "hw/hw-1.html#submission",
-    "title": "HW 1 - In-person voting trends",
-    "section": "Submission",
-    "text": "Submission\n\n\n\n\n\n\nWarning\n\n\n\nBefore you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.\nRemember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.\n\n\nTo submit your assignment:\n\nGo to http://www.gradescope.com and click Log in in the top right corner.\nClick School Credentials ➡️ Duke NetID and log in using your NetID credentials.\nClick on your STA 210 course.\nClick on the assignment, and you’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be “checked”).\nSelect the first page of your PDF submission to be associated with the “Workflow & formatting” section."
-  },
-  {
-    "objectID": "hw/hw-1.html#grading",
-    "href": "hw/hw-1.html#grading",
-    "title": "HW 1 - In-person voting trends",
-    "section": "Grading",
-    "text": "Grading\nTotal points available: 50 points.\n\n\n\nComponent\nPoints\n\n\n\n\nEx 1 - 10\n45\n\n\nWorkflow & formatting\n51"
+    "objectID": "hw/hw-1.html#lab-exercises---dr.-arbuthnots-baptism-records-25-points",
+    "href": "hw/hw-1.html#lab-exercises---dr.-arbuthnots-baptism-records-25-points",
+    "title": "HW 1 - Introduction to data",
+    "section": "Lab exercises - Dr. Arbuthnot’s baptism records (25 points)",
+    "text": "Lab exercises - Dr. Arbuthnot’s baptism records (25 points)\nYou can find the lab here\n\nExercise 1 (2 points)\nExercise 2 (3 points)\nExercise 3 (4 points)\nExercise 4 (4 points)\nExercise 5 (2 points)\nExercise 6 (5 points)\nExercise 7 (5 points)"
   },
   {
     "objectID": "hw/hw-2.html",
@@ -448,11 +427,18 @@
     "text": "Submission\nSubmit the reflection as a PDF under the HW 5 - Statistics Experience assignment on Gradescope by Fri, Apr 15 at 5 pm ET. It must be submitted by the deadline on Gradescope to be considered for grading."
   },
   {
+    "objectID": "hw/template.html",
+    "href": "hw/template.html",
+    "title": "HW 1 - Introduction to data",
+    "section": "",
+    "text": "Lab exercises - Dr. Arbuthnot’s baptism records (25 points)\nYou can find the lab here\n\nlibrary(tidyverse)\nlibrary(openintro)\n\n\nExercise 1 (2 points)\nInsert any text here.\n\n# Insert code for Exercise 1 here\n\n\n\nExercise 2 (3 points)\nInsert any text here.\n\n# Insert code for Exercise 2 here\n\n\n\nExercise 3 (4 points)\nInsert any text here.\n\n# Insert code for Exercise 3 here\n\n\n\nExercise 4 (4 points)\nInsert any text here.\n\n# Insert code for Exercise 4 here\n\n\n\nExercise 5 (2 points)\nInsert any text here.\n\n# Insert code for Exercise 5 here\n\n\n\nExercise 6 (5 points)\nInsert any text here.\n\n# Insert code for Exercise 6 here\n\n\n\nExercise 7 (5 points)\nInsert any text here.\n\n# Insert code for Exercise 7 here"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "STA 101L: Data Analysis and Statistical Inference",
     "section": "",
-    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 0 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 1 - Visualization\n\n\n💻\n\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 2 - Linear regression\n\n\n💻\n\n\n\n\n2\nMon, May 23\nModel selection\n8.3-8.4; 25.2-25.3\n🖥️\n\n\n\n\n\n\nTue, May 24\nLogistic regression\n9.1-9.3\n🖥️\n\n\n\n\n\n\nWed, May 25\nLab 3 - functions, loops\n\n\n💻\n\n\n\n\n\nThu, May 26\nPrinciples of inference\nWork on project\n11.0; 11.3; 12.0; 12.3; 13.1-13.3\n🖥️\n\n\n\n\n\n\nFri, May 27\nLab 4 - work on prediction project [PP]\n\n\n💻\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP discussion\nInference for proportions I\n16.1-16.2\n🖥️\n\n\nPP model (9am)\nPP presentation\n\n\n\nWed, June 1\nLab 5 - work on PP\nDue: PP report\n\n\n💻\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.3\n🖥️\n\n\n\n\n\n\nFri, June 3\nLab 6 - Inference for proportions\n\n\n💻\n\n\n\n\n4\nMon, June 6\nInference for means I\n19.1-19.2\n🖥️\n\n\n\n\n\n\nTue, June 7\nInference for means II\n20.1-20.4; 21.1-21.3\n🖥️\n\n\n\n\n\n\nWed, June 8\nLab 7 - Inference for means\n\n\n💻\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.6; 25.1; 26.1-26.2\n🖥️\n\n\n\n\n\n\nFri, June 10\nLab 8 - inference for regression\n\n\n💻\n\n\n\n\n5\nMon, June 13\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n🖥️\n\n\n\n\n\n\nTue, June 14\nWork on inference project (IP)\n\n🖥️\n\n\n\n\n\n\nWed, June 15\nLab 9 - work on IP\n\n\n💻\n\n\n\n\n\nThu, June 16\nIP presentations\nWrap up\n\n\n\n\nIP presentation\n\n\n\nFri, June 17\nLab 10 - work on IP\n\n\n💻\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
+    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 0 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 1 - Visualization\n\n\n💻\n\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 2 - Linear regression\n\n\n💻\n\n\n\n\n2\nMon, May 23\nModel selection\n8.3-8.4; 25.2-25.3\n🖥️\n\n\n\n\n\n\nTue, May 24\nLogistic regression\n9.1-9.3\n🖥️\n\n\n\n\n\n\nWed, May 25\nLab 3 - functions, loops\n\n\n💻\n\n\n\n\n\nThu, May 26\nPrinciples of inference\nWork on project\n11.0; 11.3; 12.0; 12.3; 13.1-13.3\n🖥️\n\n\n\n\n\n\nFri, May 27\nLab 4 - work on prediction project [PP]\n\n\n💻\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP discussion\nInference for proportions I\n16.1-16.2\n🖥️\n\n\nPP model (9am)\nPP presentation\n\n\n\nWed, June 1\nLab 5 - work on PP\nDue: PP report\n\n\n💻\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.3\n🖥️\n\n\n\n\n\n\nFri, June 3\nLab 6 - Inference for proportions\n\n\n💻\n\n\n\n\n4\nMon, June 6\nInference for means I\n19.1-19.2\n🖥️\n\n\n\n\n\n\nTue, June 7\nInference for means II\n20.1-20.4; 21.1-21.3\n🖥️\n\n\n\n\n\n\nWed, June 8\nLab 7 - Inference for means\n\n\n💻\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.6; 25.1; 26.1-26.2\n🖥️\n\n\n\n\n\n\nFri, June 10\nLab 8 - inference for regression\n\n\n💻\n\n\n\n\n5\nMon, June 13\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n🖥️\n\n\n\n\n\n\nTue, June 14\nWork on inference project (IP)\n\n🖥️\n\n\n\n\n\n\nWed, June 15\nLab 9 - work on IP\n\n\n💻\n\n\n\n\n\nThu, June 16\nIP presentations\nWrap up\n\n\n\n\nIP presentation\n\n\n\nFri, June 17\nLab 10 - work on IP\n\n\n💻\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
   },
   {
     "objectID": "labs/lab-0x.html",
@@ -2258,14 +2244,14 @@
     "href": "slides/lec-2.html#example---stents-and-strokes",
     "title": "Introduction to Data",
     "section": "Example - Stents and strokes",
-    "text": "Example - Stents and strokes\nStents are known to reduce the risk of an additional heart attack or death after a cardiac event. - Could stents have similar benefits for patients at risk of stroke?\n\n\nIf so, we should use this well-known procedure to reduce the risk of stroke!\nIf not, the procedure (surgery) should be avoided."
+    "text": "Example - Stents and strokes\nStents are known to reduce the risk of an additional heart attack or death after a cardiac event.\n\nCould stents have similar benefits for patients at risk of stroke?\n\n\n\nIf so, we should use this well-known procedure to reduce the risk of stroke!\nIf not, the procedure (surgery) should be avoided."
   },
   {
     "objectID": "slides/lec-2.html#does-the-use-of-stents-reduce-the-risk-of-stroke",
     "href": "slides/lec-2.html#does-the-use-of-stents-reduce-the-risk-of-stroke",
     "title": "Introduction to Data",
     "section": "Does the use of stents reduce the risk of stroke?",
-    "text": "Does the use of stents reduce the risk of stroke?\nWe have an experiment with 451 at-risk patients: - each volunteer patient was randomly assigned to either the treatment (stent) or the control (no stent) group - check with patients 30 days and 365 days later"
+    "text": "Does the use of stents reduce the risk of stroke?\nWe have an experiment with 451 at-risk patients:\n\neach volunteer patient was randomly assigned to either the treatment (stent) or the control (no stent) group\ncheck with patients 30 days and 365 days later"
   },
   {
     "objectID": "slides/lec-2.html#dealing-with-randomness",
@@ -2286,7 +2272,7 @@
     "href": "slides/lec-2.html#observations-and-variables",
     "title": "Introduction to Data",
     "section": "Observations and variables",
-    "text": "Observations and variables\n\n\n\nResults for three patients from the stent study.\n \n  \n    patient \n    group \n    30 days \n    365 days \n  \n \n\n  \n    1 \n    treatment \n    no event \n    no event \n  \n  \n    2 \n    treatment \n    stroke \n    stroke \n  \n  \n    3 \n    control \n    no event \n    no event \n  \n\n\n\n\n\n\n\nEach row represents an observation\nEach column represents a variable"
+    "text": "Observations and variables\n\n\n\nResults for three patients from the stent study.\n \n  \n    patient \n    group \n    30 days \n    365 days \n  \n \n\n  \n    1 \n    control \n    stroke \n    stroke \n  \n  \n    2 \n    control \n    no event \n    no event \n  \n  \n    3 \n    control \n    no event \n    no event \n  \n\n\n\n\n\n\n\nEach row represents an observation\nEach column represents a variable"
   },
   {
     "objectID": "slides/lec-2.html#some-examples",
@@ -2321,7 +2307,7 @@
     "href": "slides/lec-2.html#statistics-as-an-art-sampling",
     "title": "Introduction to Data",
     "section": "Statistics as an art – sampling",
-    "text": "Statistics as an art – sampling\nWhen you make soup, there is no need to drink the whole pot (population) to know if the it is seasoned enough - Tasting a spoonful (sample) is sufficient - if the soup is well mixed, a spoonful is a representative sample of the population"
+    "text": "Statistics as an art – sampling\nWhen you make soup, there is no need to drink the whole pot (population) to know if the it is seasoned enough.\n\nTasting a spoonful (sample) is sufficient.\nIf the soup is well mixed, a spoonful is a representative sample of the population"
   },
   {
     "objectID": "slides/lec-2.html#section",
@@ -2370,21 +2356,21 @@
     "href": "slides/lec-2.html#relationship-between-variables",
     "title": "Introduction to Data",
     "section": "Relationship between variables",
-    "text": "Relationship between variables\nTwo variables can either be independent or associated.\nIf two variables are associated, the association can be\n\nlinear (positive, or negative)\nbut it could take any form, e.g. U-shape, inverted-J-shape (like a square root)"
+    "text": "Relationship between variables\nTwo variables can either be independent or associated.\n\nIf two variables are associated, the association can be\n\nlinear (positive, or negative)\nor it can take any form, e.g. U-shape, inverted-J-shape (like a square root)"
   },
   {
     "objectID": "slides/lec-2.html#section-3",
     "href": "slides/lec-2.html#section-3",
     "title": "Introduction to Data",
     "section": "",
-    "text": "Group exercise - types of associations\n\n\nProvide two numerical variables which you expect to be\n\nlinearly associated; is the association positive or negative?\nassociated in a non linear way.\n\n\n\n\n\n\n\n03:00"
+    "text": "Group exercise - types of associations\n\n\nProvide two numerical variables which you expect to be\n\nlinearly associated; is the association positive or negative?\nassociated in a non linear way.\n\n\n\n\n\n\n\n02:00"
   },
   {
     "objectID": "slides/lec-2.html#explanatory-and-response-variable",
     "href": "slides/lec-2.html#explanatory-and-response-variable",
     "title": "Introduction to Data",
     "section": "Explanatory and response variable",
-    "text": "Explanatory and response variable\n\nWhen two variables are associated, we sometimes hypothesize that changes in one cause in changes in the other.\n\n\n\nExplanatory variable \\(\\Rightarrow\\) response variable\n\n\n\n\n…but association \\(\\neq\\) causation; examples:\n\nfire damage and firemen; ice-cream and shark attacks\ncounties and kidney cancer death rate; the best classrooms are small classrooms."
+    "text": "Explanatory and response variable\n\nWhen two variables are associated, we sometimes hypothesize that changes in one cause changes in the other.\n\n\n\nExplanatory variable \\(\\Rightarrow\\) response variable\n\n\n\n\n…but association \\(\\neq\\) causation; examples:\n\nice-cream and shark attacks; fire damage and firemen\ncounties and kidney cancer death rate; the best classrooms are small classrooms."
   },
   {
     "objectID": "slides/lec-2.html#section-4",
@@ -2419,7 +2405,7 @@
     "href": "slides/lec-2.html#section-6",
     "title": "Introduction to Data",
     "section": "",
-    "text": "Group exercise - experiment and observational study\n\n\nYou want to investigate the effect of caffeine on class participation among Duke students\n\nDesign an observational study.\nDesign an experiment.\nIs your experiment double-blind? Can you make it double-blind?\nAre there any ethical or practical concern with the experiment?\n\nProvide an example of an observational study that you would not turn into an experiment due to:\n\npractical considerations\nethical considerations\n\nExercise 2.12\n\n\n\n\n\n\n08:00"
+    "text": "Group exercise - experiment and observational study\n\n\nYou want to investigate the effect of caffeine on class participation among Duke students\n\nDesign an observational study.\nDesign an experiment.\nIs your experiment double-blind? Can you make it double-blind?\nDo you have any ethical or practical concern with the experiment?\n\nProvide an example of an observational study that you would not turn into an experiment due to:\n\npractical considerations\nethical considerations\n\nExercise 2.12\n\n\n\n\n\n\n06:00"
   },
   {
     "objectID": "slides/lec-2.html#recap-1",
@@ -2492,298 +2478,340 @@
     "text": "Application exercise\n\n📋 github.com/sta210-s22/ae-13-tale-of-two-creeks\n\n\n\n\nsta210-s22.github.io/website"
   },
   {
-    "objectID": "slides/lec-3x.html#announcements",
-    "href": "slides/lec-3x.html#announcements",
+    "objectID": "slides/lec-3.html#announcements---oh",
+    "href": "slides/lec-3.html#announcements---oh",
     "title": "Data Summary and Visualization",
-    "section": "Announcements",
-    "text": "Announcements\n\nIf you’re just joining the class, welcome! Go to the course website and review content you’ve missed, read the syllabus, and complete the Getting to know you survey.\nDrop/Add for Term 1 ends tomorrow."
+    "section": "Announcements - OH",
+    "text": "Announcements - OH\n\n\nOH:\n\nRaphael: Mon, Wed 10-11am (virtual)\nRoy: Wed, Fri 4:45-5:45pm (hybrid)\n\n\nThis week (exceptional):\n\nRoy: Fri 2:30-3:30pm (hybrid)\nRaphael: Sun 9:00-10:00am (virtual)"
   },
   {
-    "objectID": "slides/lec-3x.html#franklin-and-gilman-have-read-the-syllabus",
-    "href": "slides/lec-3x.html#franklin-and-gilman-have-read-the-syllabus",
+    "objectID": "slides/lec-3.html#announcements---hw",
+    "href": "slides/lec-3.html#announcements---hw",
     "title": "Data Summary and Visualization",
-    "section": "Franklin and Gilman have read the syllabus…",
-    "text": "Franklin and Gilman have read the syllabus…"
+    "section": "Announcements - HW",
+    "text": "Announcements - HW\n\nHW due on Sunday 9:00pm and Wednesday 9:00pm\n\nHW 1 is due Sunday, May 15 at 9:00pm"
   },
   {
-    "objectID": "slides/lec-3x.html#recap-of-last-lecture",
-    "href": "slides/lec-3x.html#recap-of-last-lecture",
+    "objectID": "slides/lec-3.html#announcements---general",
+    "href": "slides/lec-3.html#announcements---general",
+    "title": "Data Summary and Visualization",
+    "section": "Announcements - general",
+    "text": "Announcements - general\n\nLectures will closely follow IMS, but\n\nsome topics will be skipped, e.g. 2.1.5, dot plots, etc.\nsome topics will be added, e.g. AIC and BIC\n\n\nDrop/Add for Term 1 ends tomorrow (Friday, May 13)."
+  },
+  {
+    "objectID": "slides/lec-3.html#franklin-albino-and-gilman-have-read-the-syllabus.-have-you",
+    "href": "slides/lec-3.html#franklin-albino-and-gilman-have-read-the-syllabus.-have-you",
+    "title": "Data Summary and Visualization",
+    "section": "Franklin (albino) and Gilman have read the syllabus. Have you?",
+    "text": "Franklin (albino) and Gilman have read the syllabus. Have you?"
+  },
+  {
+    "objectID": "slides/lec-3.html#recap-of-last-lecture",
+    "href": "slides/lec-3.html#recap-of-last-lecture",
     "title": "Data Summary and Visualization",
     "section": "Recap of last lecture",
     "text": "Recap of last lecture\n\n\nobservations (row) and variables (column)\npopulation parameters and sample statistics\nstatistical inference\nsampling\nfour types of variables\nexperiments, observational studies and causal claims"
   },
   {
-    "objectID": "slides/lec-3x.html#outline",
-    "href": "slides/lec-3x.html#outline",
+    "objectID": "slides/lec-3.html#outline",
+    "href": "slides/lec-3.html#outline",
     "title": "Data Summary and Visualization",
     "section": "Outline",
     "text": "Outline\n\nVisualization for numerical data\nSummary for numerical data\nVisualization for categorical data\nSummary for categorical data\nMore visualizations\n\n\n“The greatest value of a picture is when it forces us to notice what we never expected to see.” — John Tukey"
   },
   {
-    "objectID": "slides/lec-3x.html#billion-are-you-typical",
-    "href": "slides/lec-3x.html#billion-are-you-typical",
+    "objectID": "slides/lec-3.html#billion-are-you-typical",
+    "href": "slides/lec-3.html#billion-are-you-typical",
     "title": "Data Summary and Visualization",
     "section": "7 Billion: Are You Typical?",
-    "text": "7 Billion: Are You Typical?\nNational Geographic\n\n\n\n\nGroup exercise - data summaries?\n\n\n\nWhat variables are mentioned in the video?\nWhat are their types?\nHow were they summarized and/or visualized?\n\n\n\n\n\n\n\n03:00"
+    "text": "7 Billion: Are You Typical?\nNational Geographic\n\n\n\n\nGroup exercise - data summaries?\n\n\n\nWhat variables are mentioned in the video?\nWhat are their types?\nHow were they summarized and/or visualized?\n\n\n\n\n\n\n\n02:00"
   },
   {
-    "objectID": "slides/lec-3x.html#us-birth-data",
-    "href": "slides/lec-3x.html#us-birth-data",
+    "objectID": "slides/lec-3.html#us-birth-data",
+    "href": "slides/lec-3.html#us-birth-data",
     "title": "Data Summary and Visualization",
     "section": "US birth data",
-    "text": "US birth data\n\nd_birth <- fivethirtyeight::US_births_1994_2003\n\nThere are 3,652 observations (rows)\n\nnrow(d_birth) # number of rows\n\n[1] 3652\n\n\nand 6 variables (columns)\n\nncol(d_birth) # number of columns\n\n[1] 6"
+    "text": "US birth data\n\nlibrary(fivethirtyeight) # for the USbirth dataset\nd_birth <- fivethirtyeight::US_births_2000_2014\n\nThere are 5479 observations (rows)\n\nnrow(d_birth) # number of rows\n\n[1] 5479\n\n\nand 6 variables (columns)\n\nncol(d_birth) # number of columns\n\n[1] 6"
   },
   {
-    "objectID": "slides/lec-3x.html#section",
-    "href": "slides/lec-3x.html#section",
+    "objectID": "slides/lec-3.html#section",
+    "href": "slides/lec-3.html#section",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "head(d_birth)\n\n# A tibble: 6 x 6\n   year month date_of_month date       day_of_week births\n  <int> <int>         <int> <date>     <ord>        <int>\n1  1994     1             1 1994-01-01 Sat           8096\n2  1994     1             2 1994-01-02 Sun           7772\n3  1994     1             3 1994-01-03 Mon          10142\n4  1994     1             4 1994-01-04 Tues         11248\n5  1994     1             5 1994-01-05 Wed          11053\n6  1994     1             6 1994-01-06 Thurs        11406"
+    "text": "head(d_birth)\n\n# A tibble: 6 x 6\n   year month date_of_month date       day_of_week births\n  <int> <int>         <int> <date>     <ord>        <int>\n1  2000     1             1 2000-01-01 Sat           9083\n2  2000     1             2 2000-01-02 Sun           8006\n3  2000     1             3 2000-01-03 Mon          11363\n4  2000     1             4 2000-01-04 Tues         13032\n5  2000     1             5 2000-01-05 Wed          12558\n6  2000     1             6 2000-01-06 Thurs        12466\n\nlibrary(tidyverse)       # for data wrangling\nglimpse(d_birth)\n\nRows: 5,479\nColumns: 6\n$ year          <int> 2000, 2000, 2000, 2000, 2000, 2000, 2000, 2000, 2000, 20~\n$ month         <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,~\n$ date_of_month <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1~\n$ date          <date> 2000-01-01, 2000-01-02, 2000-01-03, 2000-01-04, 2000-01~\n$ day_of_week   <ord> Sat, Sun, Mon, Tues, Wed, Thurs, Fri, Sat, Sun, Mon, Tue~\n$ births        <int> 9083, 8006, 11363, 13032, 12558, 12466, 12516, 8934, 794~"
   },
   {
-    "objectID": "slides/lec-3x.html#histogram",
-    "href": "slides/lec-3x.html#histogram",
+    "objectID": "slides/lec-3.html#histogram",
+    "href": "slides/lec-3.html#histogram",
     "title": "Data Summary and Visualization",
     "section": "Histogram",
-    "text": "Histogram\n\nggplot(d_birth) +\n  geom_histogram(aes(births))"
+    "text": "Histogram\n\nggplot(d_birth) +\n  geom_histogram(aes(births)) +\n  labs(title = \"Daily number of natural births in the US between 2000 and 2014\")"
   },
   {
-    "objectID": "slides/lec-3x.html#section-1",
-    "href": "slides/lec-3x.html#section-1",
+    "objectID": "slides/lec-3.html#section-1",
+    "href": "slides/lec-3.html#section-1",
     "title": "Data Summary and Visualization",
     "section": "",
     "text": "Higher bars indicate where the data are relatively more common\nMore days with around 8,000 births or with around 12,500 births\nFew days with less than 7,000 or more than 14,000 births.\nAlso few days with around 10,000 births\n\nWe can change the number of bins to have a rougher or more detailed histogram."
   },
   {
-    "objectID": "slides/lec-3x.html#section-2",
-    "href": "slides/lec-3x.html#section-2",
+    "objectID": "slides/lec-3.html#section-2",
+    "href": "slides/lec-3.html#section-2",
     "title": "Data Summary and Visualization",
     "section": "",
     "text": "bins = 10\nbins = 100\n\n\n\n\nggplot(d_birth) +\n  geom_histogram(aes(births), bins = 10)\n\n\n\n\n\n\n\n\n\n\nggplot(d_birth) +\n  geom_histogram(aes(births), bins = 100)"
   },
   {
-    "objectID": "slides/lec-3x.html#statistics-as-an-art---describing-a-distribution",
-    "href": "slides/lec-3x.html#statistics-as-an-art---describing-a-distribution",
+    "objectID": "slides/lec-3.html#statistics-as-an-art---describing-a-distribution",
+    "href": "slides/lec-3.html#statistics-as-an-art---describing-a-distribution",
     "title": "Data Summary and Visualization",
     "section": "Statistics as an art - describing a distribution",
-    "text": "Statistics as an art - describing a distribution\nIt is always a good idea to make a histogram of continuous variables. To describe a distribution, we comment on\n\nmode(s): unimodal, bimodal, multimodal\nshape of each mode: flat, bell-shape, bounded\nsymmetry: symmetric, left skewed, right skewed\noutliers: presence of extreme values\n…\n\n\n\n\n\n\n\nNote\n\n\nNote that some distributions will not fit nicely in these categories."
+    "text": "Statistics as an art - describing a distribution\n\n\n\n\n\n\nTip\n\n\nTo explore a numerical variable, always start with a histogram\n\n\n\nTo describe the distribution of a numerical variable, we comment on\n\nthe mode(s): unimodal, bimodal, multimodal\nthe shape of each mode: flat, bell-shape, bounded\nthe symmetry: symmetric, left skewed, right skewed\nthe outliers: presence of extreme values\nany other surprising feature.\n\n\n\n\n\n\n\nDescribing a distribution is an art\n\n\nNote that some distributions will not fit nicely in these categories."
   },
   {
-    "objectID": "slides/lec-3x.html#describing-the-us-birth-data",
-    "href": "slides/lec-3x.html#describing-the-us-birth-data",
+    "objectID": "slides/lec-3.html#describing-the-us-birth-data",
+    "href": "slides/lec-3.html#describing-the-us-birth-data",
     "title": "Data Summary and Visualization",
     "section": "Describing the US birth data",
     "text": "Describing the US birth data\nThe distribution of the daily number of births in the US is bimodal with each mode being bell-shaped and symmetric. We observe no extreme value."
   },
   {
-    "objectID": "slides/lec-3x.html#section-3",
-    "href": "slides/lec-3x.html#section-3",
+    "objectID": "slides/lec-3.html#section-3",
+    "href": "slides/lec-3.html#section-3",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "Group exercise - describing a distribution\n\n\nExercises 5.10\n\n\n\n\n\n\n03:00"
+    "text": "Group exercise - describing a distribution\n\n\nDescribe the distributions in exercises 5.6, 5.13, 5.24 and 5.26 (only consider the histograms)\n\n\n\n\n\n\n04:00"
   },
   {
-    "objectID": "slides/lec-3x.html#scatterplots",
-    "href": "slides/lec-3x.html#scatterplots",
+    "objectID": "slides/lec-3.html#scatterplots",
+    "href": "slides/lec-3.html#scatterplots",
     "title": "Data Summary and Visualization",
     "section": "Scatterplots",
-    "text": "Scatterplots\n\nd_car <- ggplot2::mpg\nhead(d_car)\n\n# A tibble: 6 x 11\n  manufacturer model displ  year   cyl trans      drv     cty   hwy fl    class \n  <chr>        <chr> <dbl> <int> <int> <chr>      <chr> <int> <int> <chr> <chr> \n1 audi         a4      1.8  1999     4 auto(l5)   f        18    29 p     compa~\n2 audi         a4      1.8  1999     4 manual(m5) f        21    29 p     compa~\n3 audi         a4      2    2008     4 manual(m6) f        20    31 p     compa~\n4 audi         a4      2    2008     4 auto(av)   f        21    30 p     compa~\n5 audi         a4      2.8  1999     6 auto(l5)   f        16    26 p     compa~\n6 audi         a4      2.8  1999     6 manual(m5) f        18    26 p     compa~\n\n\nWe will look at the relation between engine size (disp) and fuel efficiency (hwy)."
+    "text": "Scatterplots\nHistograms: visualize the distribution of a single numerical variable.\n\nScatterplots: visualize the relation between two numerical variables."
   },
   {
-    "objectID": "slides/lec-3x.html#section-4",
-    "href": "slides/lec-3x.html#section-4",
+    "objectID": "slides/lec-3.html#the-mpg-dataset",
+    "href": "slides/lec-3.html#the-mpg-dataset",
+    "title": "Data Summary and Visualization",
+    "section": "The mpg dataset",
+    "text": "The mpg dataset\n\nd_car <- ggplot2::mpg\nhead(d_car)\n\n# A tibble: 6 x 11\n  manufacturer model displ  year   cyl trans      drv     cty   hwy fl    class \n  <chr>        <chr> <dbl> <int> <int> <chr>      <chr> <int> <int> <chr> <chr> \n1 audi         a4      1.8  1999     4 auto(l5)   f        18    29 p     compa~\n2 audi         a4      1.8  1999     4 manual(m5) f        21    29 p     compa~\n3 audi         a4      2    2008     4 manual(m6) f        20    31 p     compa~\n4 audi         a4      2    2008     4 auto(av)   f        21    30 p     compa~\n5 audi         a4      2.8  1999     6 auto(l5)   f        16    26 p     compa~\n6 audi         a4      2.8  1999     6 manual(m5) f        18    26 p     compa~\n\n\nWe will look at the relation between engine size (disp) and fuel efficiency (hwy)."
+  },
+  {
+    "objectID": "slides/lec-3.html#section-4",
+    "href": "slides/lec-3.html#section-4",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "ggplot(d_car) +\n  geom_point(aes(displ, hwy))"
+    "text": "ggplot(d_car) +\n  geom_point(aes(displ, hwy)) +\n  labs(title = \"Relation between fuel consumption on the highway and engine size\")"
   },
   {
-    "objectID": "slides/lec-3x.html#section-5",
-    "href": "slides/lec-3x.html#section-5",
+    "objectID": "slides/lec-3.html#section-5",
+    "href": "slides/lec-3.html#section-5",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "Scatterplots are used to visualize the relation between two numerical variables.\n\n\n\n\n\n\n\nNote\n\n\nTo add an additional variable to your visualization, you can use color or symbols."
+    "text": "Note\n\n\nTo add an additional variable to your visualization, you can use color or symbols."
   },
   {
-    "objectID": "slides/lec-3x.html#section-6",
-    "href": "slides/lec-3x.html#section-6",
+    "objectID": "slides/lec-3.html#section-6",
+    "href": "slides/lec-3.html#section-6",
     "title": "Data Summary and Visualization",
     "section": "",
     "text": "Colored points\nSymbols\n\n\n\n\nggplot(d_car) +\n  geom_point(aes(displ, hwy, col = drv))\n\n\n\n\n\n\n\n\n\n\nggplot(d_car) +\n  geom_point(aes(displ, hwy, shape = drv))"
   },
   {
-    "objectID": "slides/lec-3x.html#measures-of-centrality",
-    "href": "slides/lec-3x.html#measures-of-centrality",
+    "objectID": "slides/lec-3.html#measures-of-centrality",
+    "href": "slides/lec-3.html#measures-of-centrality",
     "title": "Data Summary and Visualization",
     "section": "Measures of centrality",
-    "text": "Measures of centrality\n\nThe average: \\(\\bar{x} = \\dfrac{x_1 + \\dots + x_n}{n}\\)\nThe median: the middle value\n\n\n\nmean(d_birth$births)   # average\n\n[1] 10876.82\n\nmedian(d_birth$births) # median\n\n[1] 11615"
+    "text": "Measures of centrality\n\nThe average: \\(\\bar{x} = \\dfrac{x_1 + \\dots + x_n}{n}\\)\n\nTo compute the average age in the class, we would calculate\n\n\n\n\\[\n\\overline{\\text{age}} = \\dfrac{\\text{age}_{Hayden} + \\text{age}_{Janice} + \\text{age}_{Kenndy} + \\text{age}_{Maggie} + \\text{age}_{Melissa} + \\text{age}_{Yuanzhi}}{6}\n\\]\n\nThe median: the middle value\n\n50% of the sample is large than the median, and 50% is smaller.\n\n\n\n\n\nmean(d_birth$births)   # average\n\n[1] 11350.07\n\nmedian(d_birth$births) # median\n\n[1] 12343"
   },
   {
-    "objectID": "slides/lec-3x.html#percentiles",
-    "href": "slides/lec-3x.html#percentiles",
+    "objectID": "slides/lec-3.html#percentiles",
+    "href": "slides/lec-3.html#percentiles",
     "title": "Data Summary and Visualization",
     "section": "Percentiles",
-    "text": "Percentiles\nPercentiles are a generalization of the median.\nSince the median value is larger than 50% of the data and smaller than the rest it is called the 50th percentile.\nSimilarly, the value that is larger than p% of the data and smaller than the rest is called the p-th percentile.\n\nWe will soon make use of the 25th and 75th percentiles.\nLater in the course, the 95th and 97.5th percentiles will also be useful."
+    "text": "Percentiles\nPercentiles are a generalization of the median.\n\nThe value that is larger than p% of the data and smaller than the rest is called the p-th percentile.\n\n\nThe median is the 50th percentile.\n\n\nWe will soon make use of the 25th and 75th percentiles.\nLater in the course, the 95th and 97.5th percentiles will also be useful."
   },
   {
-    "objectID": "slides/lec-3x.html#measures-of-variation",
-    "href": "slides/lec-3x.html#measures-of-variation",
+    "objectID": "slides/lec-3.html#measures-of-variation",
+    "href": "slides/lec-3.html#measures-of-variation",
     "title": "Data Summary and Visualization",
     "section": "Measures of variation",
-    "text": "Measures of variation\n\n\nVariance: average squared distance from the mean\n\n\nStandard deviation (sd): square root of the variance (roughly speaking, the average distance to the mean)\nMost (+- 95%) of the data is within 2 sd of the mean.\n\n\n\nInter-quartile range (IQR): distance between the 25th and the 75th percentiles.\n\n\n\nvar(d_birth$births) # variance\n\n[1] 3454270\n\nsd(d_birth$births) # sd\n\n[1] 1858.567\n\nIQR(d_birth$births) # iqr\n\n[1] 3429.75"
+    "text": "Measures of variation\n\n\nVariance: average squared distance from the mean\n\n\nStandard deviation (sd): square root of the variance (roughly speaking, the average distance to the mean)\nMost (+- 95%) of the data is within 2 sd of the mean.\n\n\n\nInter-quartile range (IQR): distance between the 25th and the 75th percentiles.\n\n\n\nvar(d_birth$births) # variance\n\n[1] 5409444\n\nsd(d_birth$births) # sd\n\n[1] 2325.821\n\nIQR(d_birth$births) # iqr\n\n[1] 4342"
   },
   {
-    "objectID": "slides/lec-3x.html#robustness",
-    "href": "slides/lec-3x.html#robustness",
+    "objectID": "slides/lec-3.html#robustness",
+    "href": "slides/lec-3.html#robustness",
     "title": "Data Summary and Visualization",
     "section": "Robustness",
-    "text": "Robustness\nReal-world data often contain extreme values - measurement error, - typo - …\nThe average, median, variance, sd and iqr are not equally robust to the presence of extreme values.\n\nLet us contaminate the birth data with a value of 1 billion…\n\nx_uncontaminated <- d_birth$births  \nx_contaminated   <- c(x_uncontaminated, 1e9)\n\n\n\n…and compare the mean, median, variance, sd and iqr of these two variables"
+    "text": "Robustness\nReal-world data often contain extreme values\n\nmeasurement error,\ntypo\nextreme observations\n…\n\nThe average, median, variance, sd and iqr are not equally robust to the presence of extreme values."
   },
   {
-    "objectID": "slides/lec-3x.html#section-7",
-    "href": "slides/lec-3x.html#section-7",
+    "objectID": "slides/lec-3.html#section-7",
+    "href": "slides/lec-3.html#section-7",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "summary(x_uncontaminated)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   6443    8844   11615   10877   12274   14540 \n\nsummary(x_contaminated)\n\n     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. \n6.443e+03 8.845e+03 1.162e+04 2.846e+05 1.228e+04 1.000e+09 \n\nvar(x_uncontaminated); var(x_contaminated)\n\n[1] 3454270\n\n\n[1] 2.737417e+14\n\nsd(x_uncontaminated); sd(x_contaminated)\n\n[1] 1858.567\n\n\n[1] 16545140\n\nIQR(x_uncontaminated); IQR(x_contaminated)\n\n[1] 3429.75\n\n\n[1] 3430\n\n\n\n\n\n\n\n\nRobustness of the median and the iqr\n\n\nWhile the median and iqr are robust to the presence of extreme values, the mean, the variance and the sd are not."
+    "text": "Let us contaminate the birth data with an extreme value of 1 billion…\n\nx_uncontaminated <- d_birth$births  \nx_contaminated   <- c(x_uncontaminated, 1e9) # 1e9 = 10^9 (scientific notation)\n\n\n…and compare the mean, median, variance, sd and iqr of these two variables"
   },
   {
-    "objectID": "slides/lec-3x.html#section-8",
-    "href": "slides/lec-3x.html#section-8",
+    "objectID": "slides/lec-3.html#section-8",
+    "href": "slides/lec-3.html#section-8",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "Group exercise - summary statistics\n\n\nExercises 5.8, 5.11, 5.15 (replace part \\(c\\) by height of adults)\nNote: Q1 is first the 25th percentile (larger than one quarter of the data), Q3 is the 75th percentile.\n\n\n\n\n\n\n06:00"
+    "text": "summary(x_uncontaminated)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   5728    8740   12343   11350   13082   16081 \n\nsummary(x_contaminated)\n\n     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. \n5.728e+03 8.740e+03 1.234e+04 1.938e+05 1.308e+04 1.000e+09 \n\nvar(x_uncontaminated); var(x_contaminated)\n\n[1] 5409444\n\n\n[1] 1.824776e+14\n\nsd(x_uncontaminated); sd(x_contaminated)\n\n[1] 2325.821\n\n\n[1] 13508428\n\nIQR(x_uncontaminated); IQR(x_contaminated)\n\n[1] 4342\n\n\n[1] 4342.25"
   },
   {
-    "objectID": "slides/lec-3x.html#frequency-table-1d",
-    "href": "slides/lec-3x.html#frequency-table-1d",
+    "objectID": "slides/lec-3.html#section-9",
+    "href": "slides/lec-3.html#section-9",
+    "title": "Data Summary and Visualization",
+    "section": "",
+    "text": "Robustness of the median and the iqr\n\n\nWhile the median and iqr are robust to the presence of extreme values, the mean, the variance and the sd are not."
+  },
+  {
+    "objectID": "slides/lec-3.html#section-10",
+    "href": "slides/lec-3.html#section-10",
+    "title": "Data Summary and Visualization",
+    "section": "",
+    "text": "Group exercise - summary statistics\n\n\nExercises 5.8, 5.11, 5.15 (replace part \\(c\\) by height of all adults)\nBonus: 5.19\nNote: Q1 is first the 25th percentile (larger than one quarter of the data), Q3 is the 75th percentile.\n\n\n\n\n\n\n07:00"
+  },
+  {
+    "objectID": "slides/lec-3.html#frequency-table-1d",
+    "href": "slides/lec-3.html#frequency-table-1d",
     "title": "Data Summary and Visualization",
     "section": "Frequency table (1d)",
     "text": "Frequency table (1d)\n\nhead(d_car)\n\n# A tibble: 6 x 11\n  manufacturer model displ  year   cyl trans      drv     cty   hwy fl    class \n  <chr>        <chr> <dbl> <int> <int> <chr>      <chr> <int> <int> <chr> <chr> \n1 audi         a4      1.8  1999     4 auto(l5)   f        18    29 p     compa~\n2 audi         a4      1.8  1999     4 manual(m5) f        21    29 p     compa~\n3 audi         a4      2    2008     4 manual(m6) f        20    31 p     compa~\n4 audi         a4      2    2008     4 auto(av)   f        21    30 p     compa~\n5 audi         a4      2.8  1999     6 auto(l5)   f        16    26 p     compa~\n6 audi         a4      2.8  1999     6 manual(m5) f        18    26 p     compa~\n\n\n\ntable(d_car$drv)\n\n\n  4   f   r \n103 106  25"
   },
   {
-    "objectID": "slides/lec-3x.html#contigency-table-2d",
-    "href": "slides/lec-3x.html#contigency-table-2d",
+    "objectID": "slides/lec-3.html#contigency-table-2d",
+    "href": "slides/lec-3.html#contigency-table-2d",
     "title": "Data Summary and Visualization",
     "section": "Contigency table (2d)",
     "text": "Contigency table (2d)\n\ntable(d_car$class, d_car$drv)\n\n            \n              4  f  r\n  2seater     0  0  5\n  compact    12 35  0\n  midsize     3 38  0\n  minivan     0 11  0\n  pickup     33  0  0\n  subcompact  4 22  9\n  suv        51  0 11"
   },
   {
-    "objectID": "slides/lec-3x.html#proportion-table-2d",
-    "href": "slides/lec-3x.html#proportion-table-2d",
+    "objectID": "slides/lec-3.html#proportion-table-2d",
+    "href": "slides/lec-3.html#proportion-table-2d",
     "title": "Data Summary and Visualization",
     "section": "Proportion table (2d)",
     "text": "Proportion table (2d)\n\n\ntable proportion\nrow proportion\ncolumn proportion\n\n\n\n\ntable(d_car$class, d_car$drv) %>%\n  prop.table() %>%\n  round(2)\n\n            \n                4    f    r\n  2seater    0.00 0.00 0.02\n  compact    0.05 0.15 0.00\n  midsize    0.01 0.16 0.00\n  minivan    0.00 0.05 0.00\n  pickup     0.14 0.00 0.00\n  subcompact 0.02 0.09 0.04\n  suv        0.22 0.00 0.05\n\n\n\n\n\ntable(d_car$class, d_car$drv) %>%\n  prop.table(1) %>%\n  round(2)\n\n            \n                4    f    r\n  2seater    0.00 0.00 1.00\n  compact    0.26 0.74 0.00\n  midsize    0.07 0.93 0.00\n  minivan    0.00 1.00 0.00\n  pickup     1.00 0.00 0.00\n  subcompact 0.11 0.63 0.26\n  suv        0.82 0.00 0.18\n\n\n\n\n\ntable(d_car$class, d_car$drv) %>%\n  prop.table(2) %>%\n  round(2)\n\n            \n                4    f    r\n  2seater    0.00 0.00 0.20\n  compact    0.12 0.33 0.00\n  midsize    0.03 0.36 0.00\n  minivan    0.00 0.10 0.00\n  pickup     0.32 0.00 0.00\n  subcompact 0.04 0.21 0.36\n  suv        0.50 0.00 0.44"
   },
   {
-    "objectID": "slides/lec-3x.html#section-9",
-    "href": "slides/lec-3x.html#section-9",
+    "objectID": "slides/lec-3.html#section-11",
+    "href": "slides/lec-3.html#section-11",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "Group exercise - contigency and proportion table\n\n\n\nWhat does the number \\(12\\) represent in the contigency table?\nWhat does the number \\(0.05\\) (2nd row, 1st column) represent in the first proportion table?\nWhat does the number \\(0.25\\) (2nd row, 1st column) represent in the row proportion table?\n\n\n\n\n\n\n\n04:00"
+    "text": "Group exercise - contigency and proportion table\n\n\n\nWhat does the number \\(12\\) represent in the contigency table?\nWhat does the number \\(0.05\\) (2nd row, 1st column) represent in the first proportion table?\nWhat does the number \\(0.25\\) (2nd row, 1st column) represent in the row proportion table?\n\n\n\n\n\n\n\n03:00"
   },
   {
-    "objectID": "slides/lec-3x.html#barplot",
-    "href": "slides/lec-3x.html#barplot",
+    "objectID": "slides/lec-3.html#barplot",
+    "href": "slides/lec-3.html#barplot",
     "title": "Data Summary and Visualization",
     "section": "Barplot",
     "text": "Barplot\n\nggplot(d_car) +\n  geom_bar(aes(drv))"
   },
   {
-    "objectID": "slides/lec-3x.html#advanced-barplots",
-    "href": "slides/lec-3x.html#advanced-barplots",
+    "objectID": "slides/lec-3.html#advanced-barplots",
+    "href": "slides/lec-3.html#advanced-barplots",
     "title": "Data Summary and Visualization",
     "section": "Advanced barplots",
     "text": "Advanced barplots\n\n\nstacked\ndodged\nstandardized\n\n\n\n\nggplot(d_car) +\n  geom_bar(aes(drv, fill = class))\n\n\n\n\n\n\n\n\n\n\nggplot(d_car) +\n  geom_bar(aes(drv, fill = class), position = \"dodge\")\n\n\n\n\n\n\n\n\n\n\nggplot(d_car) +\n  geom_bar(aes(drv, fill = class), position = \"fill\")"
   },
   {
-    "objectID": "slides/lec-3x.html#section-10",
-    "href": "slides/lec-3x.html#section-10",
+    "objectID": "slides/lec-3.html#section-12",
+    "href": "slides/lec-3.html#section-12",
     "title": "Data Summary and Visualization",
     "section": "",
     "text": "Group exercise - pros and cons of barplots\n\n\nExercise 4.5\n\n\n\n\n\n\n03:00"
   },
   {
-    "objectID": "slides/lec-3x.html#facetted-histograms",
-    "href": "slides/lec-3x.html#facetted-histograms",
+    "objectID": "slides/lec-3.html#facetted-histograms",
+    "href": "slides/lec-3.html#facetted-histograms",
     "title": "Data Summary and Visualization",
     "section": "Facetted histograms",
-    "text": "Facetted histograms\n\nd_birth_small <- filter(d_birth, year %in% c(1994, 1997, 2000, 2003))\nggplot(d_birth_small) +\n  geom_histogram(aes(births)) + \n  facet_grid(year~.)"
+    "text": "Facetted histograms\n\nd_birth_small <- filter(d_birth, year %in% c(2000, 2004, 2009, 2014))\nggplot(d_birth_small) +\n  geom_histogram(aes(births)) + \n  facet_grid(year~.)"
   },
   {
-    "objectID": "slides/lec-3x.html#mosaic-plot",
-    "href": "slides/lec-3x.html#mosaic-plot",
+    "objectID": "slides/lec-3.html#section-13",
+    "href": "slides/lec-3.html#section-13",
+    "title": "Data Summary and Visualization",
+    "section": "",
+    "text": "Beyond 2 variables\n\n\nFaceted figures are a great way to include \\(\\ge\\) 3 variables!"
+  },
+  {
+    "objectID": "slides/lec-3.html#mosaic-plot",
+    "href": "slides/lec-3.html#mosaic-plot",
     "title": "Data Summary and Visualization",
     "section": "Mosaic plot",
     "text": "Mosaic plot\n\nggplot(d_car) +\n  geom_mosaic(aes(x = product(drv), fill = class))\n\n\n\n✅ Combines the strengths of the various barplots\n🛑 Not in the tool box of every data scientist"
   },
   {
-    "objectID": "slides/lec-3x.html#boxplots",
-    "href": "slides/lec-3x.html#boxplots",
+    "objectID": "slides/lec-3.html#boxplots",
+    "href": "slides/lec-3.html#boxplots",
     "title": "Data Summary and Visualization",
     "section": "Boxplots",
-    "text": "Boxplots\n\nfrom R4DS, Wickham and Grolemund"
+    "text": "Boxplots\n\nFrom raw data to boxplotSource: R 4 Data Science"
   },
   {
-    "objectID": "slides/lec-3x.html#section-11",
-    "href": "slides/lec-3x.html#section-11",
+    "objectID": "slides/lec-3.html#section-14",
+    "href": "slides/lec-3.html#section-14",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "The thick line in the middle of the box indicates the median\nThe box stretches from the 25th percentile to the 75th percentile; it covers 50% of the data.\nThe length of the whiskers are at most 1.5 iqr\nAny observation more than 1.5 iqr away from the box is labelled as an outlier.\n\n\n\n\n\n\n\nOutliers\n\n\nOutliers have an extreme value. How to deal with an outlier depends on why the observation stands out."
+    "text": "The thick line in the middle of the box indicates the median\nThe box stretches from the 25th percentile to the 75th percentile; it covers 50% of the data.\nThe length of the whiskers are at most 1.5 iqr\nAny observation more than 1.5 iqr away from the box is labelled as an outlier.\n\n\n\n\n\n\n\n\nOutliers\n\n\nOutliers have an extreme value. How to deal with an outlier depends on why the observation stands out."
   },
   {
-    "objectID": "slides/lec-3x.html#section-12",
-    "href": "slides/lec-3x.html#section-12",
+    "objectID": "slides/lec-3.html#section-15",
+    "href": "slides/lec-3.html#section-15",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "Group exercise - types of associations\n\n\nExercise 5.13\n\n\n\n\n\n\n02:00"
+    "text": "Group exercise - types of associations\n\n\nExercise 5.13\n\n\n\n\n\n\n01:00"
   },
   {
-    "objectID": "slides/lec-3x.html#section-13",
-    "href": "slides/lec-3x.html#section-13",
+    "objectID": "slides/lec-3.html#section-16",
+    "href": "slides/lec-3.html#section-16",
     "title": "Data Summary and Visualization",
     "section": "",
     "text": "Boxplot\nSide-by-side boxplots\n\n\n\n\nggplot(d_birth) +\n  geom_boxplot(aes(y = births))\n\n\n\n\n\n\n\n\n\n\nggplot(d_birth) +\n  geom_boxplot(aes(y=births, x=day_of_week))"
   },
   {
-    "objectID": "slides/lec-3x.html#figure-title",
-    "href": "slides/lec-3x.html#figure-title",
+    "objectID": "slides/lec-3.html#figure-title",
+    "href": "slides/lec-3.html#figure-title",
     "title": "Data Summary and Visualization",
     "section": "Figure title",
     "text": "Figure title\n\nggplot(d_car) +\n  geom_point(aes(displ, hwy)) +\n  labs(title = \"Fuel consumption on the highway per engine size\")"
   },
   {
-    "objectID": "slides/lec-3x.html#axis-title",
-    "href": "slides/lec-3x.html#axis-title",
+    "objectID": "slides/lec-3.html#axis-title",
+    "href": "slides/lec-3.html#axis-title",
     "title": "Data Summary and Visualization",
     "section": "Axis title",
     "text": "Axis title\n\nggplot(d_car) +\n  geom_point(aes(displ, hwy)) +\n  labs(\n    title = \"Fuel consumption on the highway per engine size\",\n    x = \"Engine size (number of cylinders)\",\n    y = \"Fuel efficiency on the highway (mpg)\"\n    )"
   },
   {
-    "objectID": "slides/lec-3x.html#section-14",
-    "href": "slides/lec-3x.html#section-14",
+    "objectID": "slides/lec-3.html#section-17",
+    "href": "slides/lec-3.html#section-17",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "theme_bw\ntheme_classic\ntheme_dark\n\n\n\n\nggplot(d_car) +\n  geom_point(aes(displ, hwy)) +\n  labs(\n    title = \"Fuel consumption on the highway per engine size\",\n    x = \"Engine size (number of cylinders)\",\n    y = \"Fuel efficiency on the highway (mpg)\"\n    ) +\n  theme_bw()\n\n\n\n\n\n\n\n\n\n\nggplot(d_car) +\n  geom_point(aes(displ, hwy)) +\n  labs(\n    title = \"Fuel consumption on the highway per engine size\",\n    x = \"Engine size (number of cylinders)\",\n    y = \"Fuel efficiency on the highway (mpg)\"\n    ) +\n  theme_classic()\n\n\n\n\n\n\n\n\n\n\nggplot(d_car) +\n  geom_point(aes(displ, hwy)) +\n  labs(\n    title = \"Fuel consumption on the highway per engine size\",\n    x = \"Engine size (number of cylinders)\",\n    y = \"Fuel efficiency on the highway (mpg)\"\n    ) +\n  theme_dark()"
+    "text": "theme_bw\ntheme_classic\ntheme_dark\n\n\n\n\nShow the codeggplot(d_car) +\n  geom_point(aes(displ, hwy)) +\n  labs(\n    title = \"Fuel consumption on the highway per engine size\",\n    x = \"Engine size (number of cylinders)\",\n    y = \"Fuel efficiency on the highway (mpg)\"\n    ) +\n  theme_bw()\n\n\n\n\n\n\n\n\n\n\nShow the codeggplot(d_car) +\n  geom_point(aes(displ, hwy)) +\n  labs(\n    title = \"Fuel consumption on the highway per engine size\",\n    x = \"Engine size (number of cylinders)\",\n    y = \"Fuel efficiency on the highway (mpg)\"\n    ) +\n  theme_classic()\n\n\n\n\n\n\n\n\n\n\nShow the codeggplot(d_car) +\n  geom_point(aes(displ, hwy)) +\n  labs(\n    title = \"Fuel consumption on the highway per engine size\",\n    x = \"Engine size (number of cylinders)\",\n    y = \"Fuel efficiency on the highway (mpg)\"\n    ) +\n  theme_dark()"
   },
   {
-    "objectID": "slides/lec-3x.html#editing-tables",
-    "href": "slides/lec-3x.html#editing-tables",
+    "objectID": "slides/lec-3.html#editing-tables",
+    "href": "slides/lec-3.html#editing-tables",
     "title": "Data Summary and Visualization",
     "section": "Editing tables",
     "text": "Editing tables\n\ntable(d_car$class, d_car$drv) %>%\n  prop.table(1) %>%\n  round(2) %>%\n  kbl(caption = \"Distribution of drive type per class of car\") %>%\n  kable_classic(full_width = FALSE, c(\"striped\", \"hover\"))\n\n\nDistribution of drive type per class of car\n \n   \n    4 \n    f \n    r \n  \n\n\n 2seater \n    0.00 \n    0.00 \n    1.00 \n  \n\n compact \n    0.26 \n    0.74 \n    0.00 \n  \n\n midsize \n    0.07 \n    0.93 \n    0.00 \n  \n\n minivan \n    0.00 \n    1.00 \n    0.00 \n  \n\n pickup \n    1.00 \n    0.00 \n    0.00 \n  \n\n subcompact \n    0.11 \n    0.63 \n    0.26 \n  \n\n suv \n    0.82 \n    0.00 \n    0.18 \n  \n\n\n\n\n📋 See this vignette for more details on editing tables"
   },
   {
-    "objectID": "slides/lec-3x.html#statistics-as-an-art---figures",
-    "href": "slides/lec-3x.html#statistics-as-an-art---figures",
+    "objectID": "slides/lec-3.html#statistics-as-an-art---figures",
+    "href": "slides/lec-3.html#statistics-as-an-art---figures",
     "title": "Data Summary and Visualization",
     "section": "Statistics as an art - figures",
-    "text": "Statistics as an art - figures\n\n\nHave a purpose: is the figure necessary?\nPasimony: keep it simple and avoid distractions\nTell a story: provide context and interpret the figure\n\\(\\ge3\\) variables as much as possible: color, facets, etc.\nEdit your figure: title, axes, etc\n\n. . .\n📋 See R for Data Science - chapters 3 and 7 for more on data visualization in R."
+    "text": "Statistics as an art - figures\n\nHave a purpose: is the figure necessary?\n\n\n\n\nParsimony: keep it simple and avoid distractions\n\n\n\n\nTell a story: provide context and interpret the figure\n\n\n\n\n\nAt least 3 variables as often as possible: color, shape, facets, etc.\n\n\n\n\n\nEdit your figure: title, axes, theme, etc.\n\n\n\n📋 See R for Data Science - chapters 3 and 7 for more on data visualization in R."
   },
   {
-    "objectID": "slides/lec-3x.html#recap-1",
-    "href": "slides/lec-3x.html#recap-1",
+    "objectID": "slides/lec-3.html#recap-1",
+    "href": "slides/lec-3.html#recap-1",
     "title": "Data Summary and Visualization",
     "section": "Recap",
-    "text": "Recap\n\n\nHistogram, scatterplot, boxplot\nAverage, median, variance, sd and IQR; robustness\nFrequency, contigency and proportion tables\nBarplot, mosaic plot\nEffective communication: well-edited figures, \\(\\ge3\\) variables (symbols, colors, facets)\nR for Data Science - chapters 3 and 7\n\n\n\n\n“The simple graph has brought more information to the data analyst’s mind than any other device.” — John Tukey\n\n\n\n\nsta101-suI22.github.io/website"
+    "text": "Recap\n\n\nHistogram, scatterplot, boxplot\nAverage, median, variance, sd and IQR; robustness\nFrequency, contigency and proportion tables\nBarplot, mosaic plot\nEffective communication: well-edited figures, \\(\\ge3\\) variables (symbols, colors, facets)\nR for Data Science - chapters 3 and 7\n\n\n\n\n“The simple graph has brought more information to the data analyst’s mind than any other device.” — John Tukey\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
     "objectID": "slides/lec-4x.html#announcements",
@@ -3897,6 +3925,13 @@
     "title": "Log Transformations in Linear Regression",
     "section": "Log-transformation on the the response and predictor variable",
     "text": "Log-transformation on the the response and predictor variable\nSuppose we fit a linear regression model with \\(\\log(x)\\), the log-transformed \\(x\\), as the predictor variable and \\(\\log(y)\\), the log-transformed \\(y\\), as the response variable. Under this model, we assume a linear relationship exists between \\(\\log(x)\\) and \\(\\log(y)\\), such that \\(\\log(y) \\sim N(\\beta_0 + \\beta_1 \\log(x), \\sigma^2)\\) for some \\(\\beta_0\\), \\(\\beta_1\\) and \\(\\sigma^2\\). In other words, we can model the relationship between \\(\\log(x)\\) and \\(\\log(y)\\) using the model in Equation 5.\n\\[\n\\log(y) = \\beta_0 + \\beta_1 \\log(x)\n\\qquad(5)\\]\nBecause the response variable is log-transformed, the interpretations on the original scale will be in terms of the median of \\(y\\) (see the section on the log-transformed response variable for more detail).\nIntercept: The intercept is the mean of \\(y\\) when \\(\\log(x) = 0\\), i.e. \\(x = 1\\). Therefore, when \\(\\log(x) = 0\\),\n\\[\n\\begin{aligned}\n&\\log(y) = \\beta_0 + \\beta_1 \\times 0 = \\beta_0 \\\\[10pt]\n\\Rightarrow &y = \\exp\\{\\beta_0\\}\n\\end{aligned}\n\\]\nInterpretation: When \\(x = 1\\) \\((\\log(x) = 0)\\), the median of \\(y\\) is expected to be \\(\\exp\\{\\beta_0\\}\\).\nSlope: The slope is interpreted in terms of the change in the median \\(y\\) when \\(x\\) is multiplied by a factor of \\(C\\), since \\(\\log(Cx) = \\log(x) + \\log(C)\\). Thus, when \\(x\\) is multiplied by a factor of \\(C\\), the change in the median of \\(y\\) is\n\\[\n\\begin{aligned}\n\\exp\\{[\\beta_0 + \\beta_1 \\log(Cx)] - [\\beta_0 + \\beta_1 \\log(x)]\\} &=\n\\exp\\{\\beta_1 [\\log(Cx) - \\log(x)]\\} \\\\[10pt]\n& = \\exp\\{\\beta_1[\\log(C) + \\log(x) - \\log(x)]\\} \\\\[10pt]\n& = \\exp\\{\\beta_1 \\log(C)\\} = C^{\\beta_1}\n\\end{aligned}\n\\]\nThus, the median of \\(y\\) for \\(Cx\\) is \\(C^{\\beta_1}\\) times the median of \\(y\\) for \\(x\\).\nInterpretation: When \\(x\\) is multiplied by a factor of \\(C\\), the median of \\(y\\) is expected to multiple by a factor of \\(C^{\\beta_1}\\). For example, if \\(x\\) is doubled, then the median of \\(y\\) is expected to multiply by \\(2^{\\beta_1}\\)."
+  },
+  {
+    "objectID": "Untitled/Untitled.html",
+    "href": "Untitled/Untitled.html",
+    "title": "Homework 1 - Introduction to data",
+    "section": "",
+    "text": "Lab - Dr. Arbuthnot’s Baptism Records\n\nlibrary(tidyverse)\nlibrary(openintro)\n\n\nExercise 1\n\narbuthnot$girls\n\n [1] 4683 4457 4102 4590 4839 4820 4928 4605 4457 4952 4784 5332 5200 4910 4617\n[16] 3997 3919 3395 3536 3181 2746 2722 2840 2908 2959 3179 3349 3382 3289 3013\n[31] 2781 3247 4107 4803 4881 5681 4858 4319 5322 5560 5829 5719 6061 6120 5822\n[46] 5738 5717 5847 6203 6033 6041 6299 6533 6744 7158 7127 7246 7119 7214 7101\n[61] 7167 7302 7392 7316 7483 6647 6713 7229 7767 7626 7452 7061 7514 7656 7683\n[76] 5738 7779 7417 7687 7623 7380 7288\n\n\n\n\nExercise 2\nInsert any text here.\n\n# Insert code for Exercise 2 here\n\n\n\nExercise 3\nInsert any text here.\n\n# Insert code for Exercise 3 here\n\n\n\nExercise 4\nInsert any text here.\n\n# Insert code for Exercise 4 here\n\n\n\nExercise 5\nInsert any text here.\n\n# Insert code for Exercise 5 here\n\n\n\nExercise 6\nInsert any text here.\n\n# Insert code for Exercise 6 here\n\n\n\nExercise 7\nInsert any text here.\n\n# Insert code for Exercise 7 here"
   },
   {
     "objectID": "weeks/week-1.html",

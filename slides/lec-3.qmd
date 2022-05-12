@@ -1,0 +1,758 @@
+---
+title: "Data Summary and Visualization"
+subtitle: "STA 101L - Summer I 2022"
+author: "Raphael Morsomme"
+footer:  "[https://rmorsomme.github.io/website/](https://rmorsomme.github.io/website/)"
+logo: "images/logo.jpg"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    code-fold: false
+    code-summary: "Show the code"
+    code-link: true
+    code-copy: true
+    self-contained: true
+    scrollable: true
+editor: visual
+execute:
+  freeze: auto
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup}
+#| include: false
+#| echo: false
+#| message: false
+library(countdown)
+library(tidyverse)       # for data wrangling
+library(fivethirtyeight) # for the USbirth dataset
+library(kableExtra)
+library(ggmosaic)
+
+# set default theme and larger font size for ggplot2
+ggplot2::theme_set(
+  ggplot2::theme_minimal(base_size = 16)
+  )
+
+# set default figure parameters for knitr
+knitr::opts_chunk$set(
+  fig.width = 8,
+  fig.asp = 0.618,
+  fig.retina = 3,
+  dpi = 300,
+  fig.align = "center",
+  out.width = "80%"
+)
+```
+
+# Welcome
+
+## Announcements - OH
+-   [OH](https://rmorsomme.github.io/website/course-team.html): 
+    -   Raphael: Mon, Wed 10-11am (virtual)
+    -   Roy: Wed, Fri 4:45-5:45pm (hybrid)
+- This week (exceptional): 
+    -   Roy: Fri 2:30-3:30pm (hybrid)
+    -   Raphael: Sun 9:00-10:00am (virtual)
+
+## Announcements - HW
+-   HW due on **Sunday 9:00pm** and **Wednesday 9:00pm**
+-   HW 1 is due **Sunday, May 15 at 9:00pm**
+
+## Announcements - general
+
+-   Lectures will closely follow IMS, but
+    -   some topics will be skipped, e.g. 2.1.5, dot plots, etc.
+    -   some topics will be added, e.g. AIC and BIC
+-   Drop/Add for Term 1 ends tomorrow (Friday, May 13).
+
+## Franklin (albino) and Gilman have read the syllabus. Have you?
+
+[![](images/lec-3/frank_gil.jpeg){fig-alt="Picture of two of my guinea pigs, Franklin (albino) and Gilman" width="800"}](https://rmorsomme.github.io/website/course-syllabus.html)
+
+## Recap of last lecture
+
+::: incremental
+-   observations (row) and variables (column)
+-   population parameters and sample statistics
+-   statistical inference
+-   sampling
+-   four types of variables
+-   experiments, observational studies and causal claims
+:::
+
+------------------------------------------------------------------------
+
+```{r variables, fig.cap = "Breakdown of variables into their respective types.", fig.asp = 0.5, fig.alt = "Types of variables are broken down into numerical (which can be discrete or continuous) and categorical (which can be ordinal or nominal)."}
+#| echo: false
+par_og <- par(no.readonly = TRUE) # save original par
+par(mar = rep(0, 4))
+plot(c(-0.15, 1.3), 0:1, type = "n", axes = FALSE)
+text(0.6, 0.9, "all variables")
+rect(0.4, 0.8, 0.8, 1)
+text(0.25, 0.5, "numerical")
+rect(0.1, 0.4, 0.4, 0.6)
+arrows(0.45, 0.78, 0.34, 0.62, length = 0.08)
+text(0.9, 0.5, "categorical")
+rect(0.73, 0.4, 1.07, 0.6)
+arrows(0.76, 0.78, 0.85, 0.62, length = 0.08)
+text(0, 0.1, "discrete")
+rect(-0.17, 0, 0.17, 0.2)
+arrows(0.13, 0.38, 0.05, 0.22, length = 0.08)
+text(0.39, 0.1, "continuous")
+rect(0.25, 0, 0.53, 0.2)
+arrows(0.35, 0.38, 0.4, 0.22, length = 0.08)
+text(0.77, 0.105, "ordinal")
+rect(0.64, 0, 0.9, 0.2)
+arrows(0.82, 0.38, 0.77, 0.22, length = 0.08)
+text(1.12, 0.1, "nominal")
+rect(0.99, 0, 1.25, 0.2)
+arrows(1.02, 0.38, 1.1, 0.22, length = 0.08)
+par(par_og) # restore original par
+```
+
+Source: [IMS](https://www.openintro.org/book/ims/)
+
+## Outline
+
+-   Visualization for numerical data
+-   Summary for numerical data
+-   Visualization for categorical data
+-   Summary for categorical data
+-   More visualizations
+
+> "The greatest value of a picture is when it forces us to notice what we never expected to see." --- John Tukey
+
+## 7 Billion: Are You Typical?
+
+[National Geographic](https://youtu.be/4B2xOvKFFz4)
+
+. . .
+
+::: {.callout-tip icon="false"}
+## Group exercise - data summaries?
+
+1.  What variables are mentioned in the video?
+2.  What are their types?
+3.  How were they summarized and/or visualized?
+:::
+
+```{r, echo = F}
+countdown(minutes = 2)
+```
+
+# Visualization for numerical data
+
+## US birth data
+
+```{r, message=FALSE}
+library(fivethirtyeight) # for the USbirth dataset
+d_birth <- fivethirtyeight::US_births_2000_2014
+```
+
+There are `r nrow(d_birth)` observations (rows)
+
+```{r}
+nrow(d_birth) # number of rows
+```
+
+and `r ncol(d_birth)` variables (columns)
+
+```{r}
+ncol(d_birth) # number of columns
+```
+
+## 
+
+```{r}
+head(d_birth)
+library(tidyverse)       # for data wrangling
+glimpse(d_birth)
+```
+
+## Histogram
+
+```{r}
+#| code-line-numbers: "1|2"
+ggplot(d_birth) +
+  geom_histogram(aes(births)) +
+  labs(title = "Daily number of natural births in the US between 2000 and 2014")
+```
+
+## 
+
+-   Higher bars indicate where the data are relatively more common
+-   More days with around 8,000 births or with around 12,500 births
+-   Few days with less than 7,000 or more than 14,000 births.
+-   Also few days with around 10,000 births
+
+We can change the number of bins to have a rougher or more detailed histogram.
+
+## 
+
+::: panel-tabset
+## bins = 10
+
+```{r}
+#| code-line-numbers: "2"
+ggplot(d_birth) +
+  geom_histogram(aes(births), bins = 10)
+```
+
+## bins = 100
+
+```{r}
+#| code-line-numbers: "2"
+ggplot(d_birth) +
+  geom_histogram(aes(births), bins = 100)
+```
+:::
+
+## Statistics as an art - describing a distribution {.smaller}
+
+::: callout-tip
+To explore a numerical variable, always start with a histogram
+:::
+
+To describe the distribution of a numerical variable, we comment on
+
+-   the mode(s): unimodal, bimodal, multimodal
+-   the shape of each mode: flat, bell-shape, bounded
+-   the symmetry: symmetric, left skewed, right skewed
+-   the outliers: presence of extreme values
+-   any other surprising feature.
+
+::: callout-note
+## Describing a distribution is an art
+Note that some distributions will not fit nicely in these categories.
+:::
+
+## Describing the US birth data
+
+The distribution of the daily number of births in the US is **bimodal** with each mode being **bell-shaped** and **symmetric**. We observe **no extreme value**.
+
+
+```{r}
+#| code-line-numbers: "2"
+#| echo: false
+ggplot(d_birth) +
+  geom_histogram(aes(births), bins = 100)
+```
+
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercise - describing a distribution
+Describe the distributions in exercises 5.6, 5.13, 5.24 and 5.26 (only consider the histograms)
+:::
+
+```{r, echo = F}
+countdown(minutes = 4)
+```
+
+## Scatterplots
+
+**Histograms**: visualize the distribution of a **single** numerical variable.
+
+. . .
+
+**Scatterplots**: visualize the relation between **two** numerical variables.
+
+
+## The `mpg` dataset
+
+```{r}
+d_car <- ggplot2::mpg
+head(d_car)
+```
+
+We will look at the relation between engine size (`disp`) and fuel efficiency (`hwy`).
+
+## 
+
+```{r}
+#| code-line-numbers: "1|2"
+ggplot(d_car) +
+  geom_point(aes(displ, hwy)) +
+  labs(title = "Relation between fuel consumption on the highway and engine size")
+```
+
+##
+
+
+::: callout-note
+To add an additional variable to your visualization, you can use color or symbols.
+:::
+
+
+## 
+
+::: panel-tabset
+## Colored points
+
+```{r}
+#| code-line-numbers: "2"
+ggplot(d_car) +
+  geom_point(aes(displ, hwy, col = drv))
+```
+
+## Symbols
+
+```{r}
+#| code-line-numbers: "2"
+ggplot(d_car) +
+  geom_point(aes(displ, hwy, shape = drv))
+```
+:::
+
+# Summary for numerical data
+
+## Measures of centrality {.smaller}
+
+-   The **average**: $\bar{x} = \dfrac{x_1 + \dots + x_n}{n}$
+    - To compute the average age in the class, we would calculate
+
+$$
+\overline{\text{age}} = \dfrac{\text{age}_{Hayden} + \text{age}_{Janice} + \text{age}_{Kenndy} + \text{age}_{Maggie} + \text{age}_{Melissa} + \text{age}_{Yuanzhi}}{6}
+$$
+
+-   The **median**: the middle value
+    -   50% of the sample is large than the median, and 50% is smaller.
+
+. . .
+
+```{r}
+mean(d_birth$births)   # average
+median(d_birth$births) # median
+```
+
+## Percentiles
+
+Percentiles are a generalization of the median.
+
+. . .
+
+The value that is larger than p% of the data and smaller than the rest is called the **p-th percentile**.
+
+. . .
+
+The median is the *50th* percentile.
+
+. . .
+
+We will soon make use of the **25th** and **75th percentiles**.
+
+Later in the course, the 95th and 97.5th percentiles will also be useful.
+
+## Measures of variation
+
+-   **Variance**: average *squared* distance from the mean
+    -   **Standard deviation** (sd): square root of the variance (roughly speaking, the average distance to the mean)
+    -   Most (+- 95%) of the data is within 2 sd of the mean.
+-   **Inter-quartile range** (IQR): distance between the 25th and the 75th percentiles.
+
+. . .
+
+```{r}
+var(d_birth$births) # variance
+sd(d_birth$births) # sd
+IQR(d_birth$births) # iqr
+```
+
+## Robustness
+
+Real-world data often contain **extreme** values
+
+-   measurement error,
+-   typo
+-   extreme observations
+-   ...
+
+The average, median, variance, sd and iqr are not equally robust to the presence of extreme values.
+
+##
+
+Let us contaminate the birth data with an extreme value of 1 billion...
+
+```{r}
+#| code-line-numbers: "1|2"
+x_uncontaminated <- d_birth$births  
+x_contaminated   <- c(x_uncontaminated, 1e9) # 1e9 = 10^9 (scientific notation)
+```
+
+. . .
+
+...and compare the mean, median, variance, sd and iqr of these two variables
+
+## 
+
+```{r}
+summary(x_uncontaminated)
+summary(x_contaminated)
+
+var(x_uncontaminated); var(x_contaminated)
+sd(x_uncontaminated); sd(x_contaminated)
+IQR(x_uncontaminated); IQR(x_contaminated)
+```
+
+##
+
+::: callout-warning
+## Robustness of the median and the iqr
+
+While the **median and iqr are robust** to the presence of extreme values, the mean, the variance and the sd are not.
+:::
+
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercise - summary statistics
+
+Exercises [5.8](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises), [5.11](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises), [5.15](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises) (replace part $c$ by *height of all adults*)
+
+Bonus: [5.19](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises)
+
+Note: Q1 is first the 25th percentile (larger than one *quarter* of the data), Q3 is the 75th percentile.
+:::
+
+```{r, echo = F}
+countdown(minutes = 7)
+```
+
+# Summary for categorical data
+
+## Frequency table (1d)
+
+```{r}
+head(d_car)
+```
+
+```{r}
+table(d_car$drv)
+```
+
+## Contigency table (2d)
+
+```{r}
+table(d_car$class, d_car$drv)
+```
+
+## Proportion table (2d)
+
+::: panel-tabset
+## table proportion
+
+```{r}
+#| code-line-numbers: "2|3"
+table(d_car$class, d_car$drv) %>%
+  prop.table() %>%
+  round(2)
+```
+
+## row proportion
+
+```{r}
+#| code-line-numbers: "2"
+table(d_car$class, d_car$drv) %>%
+  prop.table(1) %>%
+  round(2)
+```
+
+## column proportion
+
+```{r}
+#| code-line-numbers: "2"
+table(d_car$class, d_car$drv) %>%
+  prop.table(2) %>%
+  round(2)
+```
+:::
+
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercise - contigency and proportion table
+
+1.  What does the number $12$ represent in the contigency table?
+2.  What does the number $0.05$ (2nd row, 1st column) represent in the first proportion table?
+3.  What does the number $0.25$ (2nd row, 1st column) represent in the row proportion table?
+:::
+
+```{r, echo = F}
+countdown(minutes = 3)
+```
+
+# Visualization for categorical data
+
+## Barplot
+
+```{r}
+#| code-line-numbers: "2"
+ggplot(d_car) +
+  geom_bar(aes(drv))
+```
+
+## Advanced barplots
+
+::: panel-tabset
+## stacked
+
+```{r}
+#| code-line-numbers: "2"
+ggplot(d_car) +
+  geom_bar(aes(drv, fill = class))
+```
+
+## dodged
+
+```{r}
+#| code-line-numbers: "2"
+ggplot(d_car) +
+  geom_bar(aes(drv, fill = class), position = "dodge")
+```
+
+## standardized
+
+```{r}
+#| code-line-numbers: "2"
+ggplot(d_car) +
+  geom_bar(aes(drv, fill = class), position = "fill")
+```
+:::
+
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercise - pros and cons of barplots
+
+Exercise [4.5](https://openintro-ims.netlify.app/explore-numerical.html#chp4-exercises)
+:::
+
+```{r, echo = F}
+countdown(minutes = 3)
+```
+
+# Advanced visualizations
+
+## Facetted histograms
+
+```{r}
+#| code-line-numbers: "1|2,3|4"
+
+d_birth_small <- filter(d_birth, year %in% c(2000, 2004, 2009, 2014))
+ggplot(d_birth_small) +
+  geom_histogram(aes(births)) + 
+  facet_grid(year~.)
+```
+
+##
+
+::: callout-tip
+## Beyond 2 variables
+Faceted figures are a great way to include $\ge$ 3 variables!
+:::
+
+## Mosaic plot
+
+```{r}
+#| code-line-numbers: "2"
+ggplot(d_car) +
+  geom_mosaic(aes(x = product(drv), fill = class))
+```
+
+. . .
+
+✅ Combines the strengths of the various barplots
+
+🛑 Not in the tool box of every data scientist
+
+## Boxplots
+
+![From raw data to boxplot](images/lec-3/EDA-boxplot.png)
+
+Source: [R 4 Data Science](https://r4ds.had.co.nz)
+
+
+## 
+
+-   The thick line in the middle of the box indicates the median
+
+-   The box stretches from the 25th percentile to the 75th percentile; it covers 50% of the data.
+
+-   The length of the whiskers are at most 1.5 iqr
+
+-   Any observation more than 1.5 iqr away from the box is labelled as an outlier.
+
+. . .
+
+::: callout-note
+## Outliers
+
+Outliers have an extreme value. How to deal with an outlier depends on why the observation stands out.
+:::
+
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercise - types of associations
+Exercise [5.13](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises)
+:::
+
+```{r, echo = F}
+countdown(minutes = 1)
+```
+
+## 
+
+::: panel-tabset
+## Boxplot
+
+```{r}
+#| code-line-numbers: "2"
+ggplot(d_birth) +
+  geom_boxplot(aes(y = births))
+```
+
+## Side-by-side boxplots
+
+```{r}
+#| code-line-numbers: "2"
+ggplot(d_birth) +
+  geom_boxplot(aes(y=births, x=day_of_week))
+```
+:::
+
+# Editing figures
+
+## Figure title
+
+```{r}
+#| code-line-numbers: "3"
+ggplot(d_car) +
+  geom_point(aes(displ, hwy)) +
+  labs(title = "Fuel consumption on the highway per engine size")
+```
+
+## Axis title
+
+```{r}
+#| code-line-numbers: "5,6"
+ggplot(d_car) +
+  geom_point(aes(displ, hwy)) +
+  labs(
+    title = "Fuel consumption on the highway per engine size",
+    x = "Engine size (number of cylinders)",
+    y = "Fuel efficiency on the highway (mpg)"
+    )
+```
+
+## 
+
+::: panel-tabset
+## theme_bw
+
+```{r}
+#| code-line-numbers: "8"
+#| code-fold: show
+ggplot(d_car) +
+  geom_point(aes(displ, hwy)) +
+  labs(
+    title = "Fuel consumption on the highway per engine size",
+    x = "Engine size (number of cylinders)",
+    y = "Fuel efficiency on the highway (mpg)"
+    ) +
+  theme_bw()
+```
+
+## theme_classic
+
+```{r}
+#| code-line-numbers: "8"
+#| code-fold: show
+ggplot(d_car) +
+  geom_point(aes(displ, hwy)) +
+  labs(
+    title = "Fuel consumption on the highway per engine size",
+    x = "Engine size (number of cylinders)",
+    y = "Fuel efficiency on the highway (mpg)"
+    ) +
+  theme_classic()
+```
+
+## theme_dark
+
+```{r}
+#| code-line-numbers: "8"
+#| code-fold: show
+ggplot(d_car) +
+  geom_point(aes(displ, hwy)) +
+  labs(
+    title = "Fuel consumption on the highway per engine size",
+    x = "Engine size (number of cylinders)",
+    y = "Fuel efficiency on the highway (mpg)"
+    ) +
+  theme_dark()
+```
+:::
+
+## Editing tables {.smaller}
+
+```{r}
+#| code-line-numbers: "3|4"
+table(d_car$class, d_car$drv) %>%
+  prop.table(1) %>%
+  round(2) %>%
+  kbl(caption = "Distribution of drive type per class of car") %>%
+  kable_classic(full_width = FALSE, c("striped", "hover"))
+```
+
+📋 See [this vignette](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html) for more details on editing tables
+
+# Effective communication
+
+## Statistics as an art - figures {.smaller}
+
+-   Have a **purpose**: is the figure necessary?
+
+. . .
+
+-   **Parsimony**: keep it simple and avoid distractions
+
+. . .
+
+-   Tell a **story**: provide context and interpret the figure
+
+. . .
+
+-   **At least 3 variables** as often as possible: color, shape, facets, etc.
+
+. . .
+
+-   **Edit** your figure: title, axes, theme, etc.
+
+. . .
+
+📋 See [R for Data Science - chapters 3 and 7](https://r4ds.had.co.nz/data-visualisation.html) for more on data visualization in R.
+
+
+# Recap
+
+## Recap
+
+::: incremental
+-   Histogram, scatterplot, boxplot
+-   Average, median, variance, sd and IQR; robustness
+-   Frequency, contigency and proportion tables
+-   Barplot, mosaic plot
+-   Effective communication: well-edited figures, $\ge3$ variables (symbols, colors, facets)
+-   [R for Data Science - chapters 3 and 7](https://r4ds.had.co.nz/data-visualisation.html)
+:::
+
+. . .
+
+> "The simple graph has brought more information to the data analyst's mind than any other device." --- John Tukey
