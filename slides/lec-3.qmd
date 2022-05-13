@@ -53,14 +53,16 @@ knitr::opts_chunk$set(
 # Welcome
 
 ## Announcements - OH
--   [OH](https://rmorsomme.github.io/website/course-team.html): 
+
+-   [OH](https://rmorsomme.github.io/website/course-team.html):
     -   Raphael: Mon, Wed 10-11am (virtual)
     -   Roy: Wed, Fri 4:45-5:45pm (hybrid)
-- This week (exceptional): 
+-   This week (exceptional):
     -   Roy: Fri 2:30-3:30pm (hybrid)
     -   Raphael: Sun 9:00-10:00am (virtual)
 
 ## Announcements - HW
+
 -   HW due on **Sunday 9:00pm** and **Wednesday 9:00pm**
 -   HW 1 is due **Sunday, May 15 at 9:00pm**
 
@@ -71,7 +73,7 @@ knitr::opts_chunk$set(
     -   some topics will be added, e.g. AIC and BIC
 -   Drop/Add for Term 1 ends tomorrow (Friday, May 13).
 
-## Franklin (albino) and Gilman have read the syllabus. Have you?
+## Franklin (albino) and Gillman have read the syllabus. Have you?
 
 [![](images/lec-3/frank_gil.jpeg){fig-alt="Picture of two of my guinea pigs, Franklin (albino) and Gilman" width="800"}](https://rmorsomme.github.io/website/course-syllabus.html)
 
@@ -229,13 +231,13 @@ To describe the distribution of a numerical variable, we comment on
 
 ::: callout-note
 ## Describing a distribution is an art
+
 Note that some distributions will not fit nicely in these categories.
 :::
 
 ## Describing the US birth data
 
 The distribution of the daily number of births in the US is **bimodal** with each mode being **bell-shaped** and **symmetric**. We observe **no extreme value**.
-
 
 ```{r}
 #| code-line-numbers: "2"
@@ -248,6 +250,7 @@ ggplot(d_birth) +
 
 ::: {.callout-tip icon="false"}
 ## Group exercise - describing a distribution
+
 Describe the distributions in exercises 5.6, 5.13, 5.24 and 5.26 (only consider the histograms)
 :::
 
@@ -262,7 +265,6 @@ countdown(minutes = 4)
 . . .
 
 **Scatterplots**: visualize the relation between **two** numerical variables.
-
 
 ## The `mpg` dataset
 
@@ -282,13 +284,11 @@ ggplot(d_car) +
   labs(title = "Relation between fuel consumption on the highway and engine size")
 ```
 
-##
-
+## 
 
 ::: callout-note
 To add an additional variable to your visualization, you can use color or symbols.
 :::
-
 
 ## 
 
@@ -315,7 +315,7 @@ ggplot(d_car) +
 ## Measures of centrality {.smaller}
 
 -   The **average**: $\bar{x} = \dfrac{x_1 + \dots + x_n}{n}$
-    - To compute the average age in the class, we would calculate
+    -   To compute the average age in the class, we would calculate
 
 $$
 \overline{\text{age}} = \dfrac{\text{age}_{Hayden} + \text{age}_{Janice} + \text{age}_{Kenndy} + \text{age}_{Maggie} + \text{age}_{Melissa} + \text{age}_{Yuanzhi}}{6}
@@ -375,7 +375,7 @@ Real-world data often contain **extreme** values
 
 The average, median, variance, sd and iqr are not equally robust to the presence of extreme values.
 
-##
+## 
 
 Let us contaminate the birth data with an extreme value of 1 billion...
 
@@ -400,7 +400,7 @@ sd(x_uncontaminated); sd(x_contaminated)
 IQR(x_uncontaminated); IQR(x_contaminated)
 ```
 
-##
+## 
 
 ::: callout-warning
 ## Robustness of the median and the iqr
@@ -550,10 +550,11 @@ ggplot(d_birth_small) +
   facet_grid(year~.)
 ```
 
-##
+## 
 
 ::: callout-tip
 ## Beyond 2 variables
+
 Faceted figures are a great way to include $\ge$ 3 variables!
 :::
 
@@ -577,7 +578,6 @@ ggplot(d_car) +
 
 Source: [R 4 Data Science](https://r4ds.had.co.nz)
 
-
 ## 
 
 -   The thick line in the middle of the box indicates the median
@@ -600,6 +600,7 @@ Outliers have an extreme value. How to deal with an outlier depends on why the o
 
 ::: {.callout-tip icon="false"}
 ## Group exercise - types of associations
+
 Exercise [5.13](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises)
 :::
 
@@ -738,7 +739,6 @@ table(d_car$class, d_car$drv) %>%
 . . .
 
 📋 See [R for Data Science - chapters 3 and 7](https://r4ds.had.co.nz/data-visualisation.html) for more on data visualization in R.
-
 
 # Recap
 

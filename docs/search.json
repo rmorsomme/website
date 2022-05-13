@@ -32,7 +32,7 @@
     "href": "course-faq.html",
     "title": "FAQ",
     "section": "",
-    "text": "Here are the webpages to install the two pieces of software R and RStudio:\n\nDownload and install R 4.1.3 or 4.2.0: https://cran.r-project.org/\nDownload and install RStudio Desktop: https://www.rstudio.com/products/rstudio/. The Open Source Edition version is sufficient.\n\nThe teaching team is always happy to provide help with any computational questions."
+    "text": "Here are the webpages to install the two pieces of software R and RStudio:\n\nDownload and install R 4.1.3 or 4.2.0: https://cran.r-project.org/\nDownload and install RStudio Desktop: https://www.rstudio.com/products/rstudio/. The Open Source Edition version is sufficient.\n\nThe teaching team is always happy to provide help with any computational question."
   },
   {
     "objectID": "course-faq.html#how-can-i-submit-my-assignment-to-gradescope",
@@ -228,21 +228,14 @@
     "href": "course-team.html",
     "title": "Teaching team",
     "section": "",
-    "text": "Raphael Morsomme (he/him/his) is a Ph.D. candidate at the Department of Statistical Science at Duke University. Raphael’s work focuses on the development of flexible and scalable stochastic epidemic models along with efficient Markov Chain Monte Carlo algorithms to fit these models. In addition, he uses data augmentation to study the overdiagnosis rate of breast cancer.\n\n\n\nOffice hours\nLocation\n\n\n\n\nMonday, 10:00-11:00am\nZoom\n\n\nWednesday, 10:00-11:00am\nZoom\n\n\n\nIf these times don’t work for you or you’d like to schedule a one-on-one meeting, simply send an email to rnm16@duke.edu."
+    "text": "Raphael Morsomme (he/him/his) is a Ph.D. candidate at the Department of Statistical Science at Duke University. Raphael’s work focuses on the development of flexible and scalable stochastic epidemic models along with efficient Markov Chain Monte Carlo algorithms to fit these models. In addition, he uses data augmentation to study the overdiagnosis rate of breast cancer.\n\n\n\nOffice hours\nLocation\n\n\n\n\nMonday, 10:00-11:00am\nZoom\n\n\nWednesday, 10:00-11:00am\nZoom\n\n\n\nIf these times don’t work for you or you’d like to schedule a one-on-one meeting, simply send an email to raphael.morsomme@duke.edu."
   },
   {
     "objectID": "course-team.html#teaching-assistant",
     "href": "course-team.html#teaching-assistant",
     "title": "Teaching team",
     "section": "Teaching assistant",
-    "text": "Teaching assistant\n\n\n\n\nName\nOffice hours\nLocation\n\n\n\n\n\nRohit Roy - rohit.roy@duke.edu\nWednesday, 4:45-5:45pm\nFriday, 4:45-5:45pm\nHybrid\nHybrid"
-  },
-  {
-    "objectID": "documents/Homework 1 - Introduction to data/hw-1.html",
-    "href": "documents/Homework 1 - Introduction to data/hw-1.html",
-    "title": "HW 1 - Introduction to data",
-    "section": "",
-    "text": "Lab exercises - Dr. Arbuthnot’s baptism records (25 points)\nYou can find the lab here\n\nlibrary(tidyverse)\nlibrary(openintro)\n\n\nExercise 1 (2 points)\nInsert any text here.\n\n# Insert code for Exercise 1 here\n\n\n\nExercise 2 (3 points)\nInsert any text here.\n\n# Insert code for Exercise 2 here\n\n\n\nExercise 3 (4 points)\nInsert any text here.\n\n# Insert code for Exercise 3 here\n\n\n\nExercise 4 (4 points)\nInsert any text here.\n\n# Insert code for Exercise 4 here\n\n\n\nExercise 5 (2 points)\nInsert any text here.\n\n# Insert code for Exercise 5 here\n\n\n\nExercise 6 (5 points)\nInsert any text here.\n\n# Insert code for Exercise 6 here\n\n\n\nExercise 7 (5 points)\nInsert any text here.\n\n# Insert code for Exercise 7 here"
+    "text": "Teaching assistant\n\n\n\n\nName\nOffice hours\nLocation\n\n\n\n\n\nRohit Roy - rohit.roy@duke.edu\nWed, 4:45-5:45pm\nFri, 4:45-5:45pm\nHybrid (Zoom and room 119 [TBC] )\nHybrid (Zoom and room 119 [TBC])"
   },
   {
     "objectID": "exams/exam-1.html",
@@ -1337,902 +1330,6 @@
     "text": "Kai says…\n\n\n\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
-    "objectID": "slides/lec-10x.html#announcements",
-    "href": "slides/lec-10x.html#announcements",
-    "title": "Types of predictors",
-    "section": "Announcements",
-    "text": "Announcements\n\n\nCongratulations on finishing Exam 1!\nGrading of AEs\nQuestions on feedback vs. regrades"
-  },
-  {
-    "objectID": "slides/lec-10x.html#topics",
-    "href": "slides/lec-10x.html#topics",
-    "title": "Types of predictors",
-    "section": "Topics",
-    "text": "Topics\n\n\nMean-centering quantitative predictors\nUsing indicator variables for categorical predictors\nUsing interaction terms"
-  },
-  {
-    "objectID": "slides/lec-10x.html#computational-setup",
-    "href": "slides/lec-10x.html#computational-setup",
-    "title": "Types of predictors",
-    "section": "Computational setup",
-    "text": "Computational setup\n\n# load packages\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nlibrary(patchwork)\nlibrary(knitr)\nlibrary(kableExtra)\n#library(colorblindr)\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_minimal(base_size = 20))"
-  },
-  {
-    "objectID": "slides/lec-10x.html#data-peer-to-peer-lender",
-    "href": "slides/lec-10x.html#data-peer-to-peer-lender",
-    "title": "Types of predictors",
-    "section": "Data: Peer-to-peer lender",
-    "text": "Data: Peer-to-peer lender\nToday’s data is a sample of 50 loans made through a peer-to-peer lending club. The data is in the loan50 data frame in the openintro R package.\n\n\n# A tibble: 50 x 4\n   annual_income debt_to_income verified_income interest_rate\n           <dbl>          <dbl> <fct>                   <dbl>\n 1         59000         0.558  Not Verified            10.9 \n 2         60000         1.31   Not Verified             9.92\n 3         75000         1.06   Verified                26.3 \n 4         75000         0.574  Not Verified             9.92\n 5        254000         0.238  Not Verified             9.43\n 6         67000         1.08   Source Verified          9.92\n 7         28800         0.0997 Source Verified         17.1 \n 8         80000         0.351  Not Verified             6.08\n 9         34000         0.698  Not Verified             7.97\n10         80000         0.167  Source Verified         12.6 \n# ... with 40 more rows"
-  },
-  {
-    "objectID": "slides/lec-10x.html#variables",
-    "href": "slides/lec-10x.html#variables",
-    "title": "Types of predictors",
-    "section": "Variables",
-    "text": "Variables\nPredictors:\n\n\nannual_income: Annual income\ndebt_to_income: Debt-to-income ratio, i.e. the percentage of a borrower’s total debt divided by their total income\nverified_income: Whether borrower’s income source and amount have been verified (Not Verified, Source Verified, Verified)\n\n\nOutcome: interest_rate: Interest rate for the loan"
-  },
-  {
-    "objectID": "slides/lec-10x.html#outcome-interest_rate",
-    "href": "slides/lec-10x.html#outcome-interest_rate",
-    "title": "Types of predictors",
-    "section": "Outcome: interest_rate",
-    "text": "Outcome: interest_rate\n\n\n\n\n \n  \n    min \n    median \n    max \n  \n \n\n  \n    5.31 \n    9.93 \n    26.3"
-  },
-  {
-    "objectID": "slides/lec-10x.html#predictors",
-    "href": "slides/lec-10x.html#predictors",
-    "title": "Types of predictors",
-    "section": "Predictors",
-    "text": "Predictors"
-  },
-  {
-    "objectID": "slides/lec-10x.html#data-manipulation-1-rescale-income",
-    "href": "slides/lec-10x.html#data-manipulation-1-rescale-income",
-    "title": "Types of predictors",
-    "section": "Data manipulation 1: Rescale income",
-    "text": "Data manipulation 1: Rescale income\n\nloan50 <- loan50 %>%\n  mutate(annual_income_th = annual_income / 1000)\n\nggplot(loan50, aes(x = annual_income_th)) +\n  geom_histogram(binwidth = 20) +\n  labs(title = \"Annual income (in $1000s)\")"
-  },
-  {
-    "objectID": "slides/lec-10x.html#outcome-vs.-predictors",
-    "href": "slides/lec-10x.html#outcome-vs.-predictors",
-    "title": "Types of predictors",
-    "section": "Outcome vs. predictors",
-    "text": "Outcome vs. predictors"
-  },
-  {
-    "objectID": "slides/lec-10x.html#fit-regression-model",
-    "href": "slides/lec-10x.html#fit-regression-model",
-    "title": "Types of predictors",
-    "section": "Fit regression model",
-    "text": "Fit regression model\n\nint_fit <- linear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(interest_rate ~ debt_to_income + verified_income  + annual_income_th,\n      data = loan50)"
-  },
-  {
-    "objectID": "slides/lec-10x.html#summarize-model-results",
-    "href": "slides/lec-10x.html#summarize-model-results",
-    "title": "Types of predictors",
-    "section": "Summarize model results",
-    "text": "Summarize model results\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n    conf.low \n    conf.high \n  \n \n\n  \n    (Intercept) \n    10.726 \n    1.507 \n    7.116 \n    0.000 \n    7.690 \n    13.762 \n  \n  \n    debt_to_income \n    0.671 \n    0.676 \n    0.993 \n    0.326 \n    -0.690 \n    2.033 \n  \n  \n    verified_incomeSource Verified \n    2.211 \n    1.399 \n    1.581 \n    0.121 \n    -0.606 \n    5.028 \n  \n  \n    verified_incomeVerified \n    6.880 \n    1.801 \n    3.820 \n    0.000 \n    3.253 \n    10.508 \n  \n  \n    annual_income_th \n    -0.021 \n    0.011 \n    -1.804 \n    0.078 \n    -0.043 \n    0.002 \n  \n\n\n\n\n\n\n\n\nDescribe the subset of borrowers who are expected to get an interest rate of 10.726% based on our model. Is this interpretation meaningful? Why or why not?"
-  },
-  {
-    "objectID": "slides/lec-10x.html#mean-centering",
-    "href": "slides/lec-10x.html#mean-centering",
-    "title": "Types of predictors",
-    "section": "Mean-centering",
-    "text": "Mean-centering\nIf we are interested in interpreting the intercept, we can mean-center the quantitative predictors in the model.\nWe can mean-center a quantitative predictor \\(X_j\\) using the following:\n\\[X_{j_{Cent}} = X_{j}- \\bar{X}_{j}\\]\n\nIf we mean-center all quantitative variables, then the intercept is interpreted as the expected value of the response variable when all quantitative variables are at their mean value."
-  },
-  {
-    "objectID": "slides/lec-10x.html#data-manipulation-2-mean-center-numeric-predictors",
-    "href": "slides/lec-10x.html#data-manipulation-2-mean-center-numeric-predictors",
-    "title": "Types of predictors",
-    "section": "Data manipulation 2: Mean-center numeric predictors",
-    "text": "Data manipulation 2: Mean-center numeric predictors\n\nloan50 <- loan50 %>%\n  mutate(\n    debt_inc_cent = debt_to_income - mean(debt_to_income), \n    annual_income_th_cent = annual_income_th - mean(annual_income_th)\n    )"
-  },
-  {
-    "objectID": "slides/lec-10x.html#visualize-mean-centered-predictors",
-    "href": "slides/lec-10x.html#visualize-mean-centered-predictors",
-    "title": "Types of predictors",
-    "section": "Visualize mean-centered predictors",
-    "text": "Visualize mean-centered predictors"
-  },
-  {
-    "objectID": "slides/lec-10x.html#using-mean-centered-variables-in-the-model",
-    "href": "slides/lec-10x.html#using-mean-centered-variables-in-the-model",
-    "title": "Types of predictors",
-    "section": "Using mean-centered variables in the model",
-    "text": "Using mean-centered variables in the model\n\nHow do you expect the model to change if we use the debt_inc_cent and annual_income_cent in the model?\n\n\n\n\n# A tibble: 5 x 7\n  term                  estimate std.error statistic  p.value conf.low conf.high\n  <chr>                    <dbl>     <dbl>     <dbl>    <dbl>    <dbl>     <dbl>\n1 (Intercept)             9.44      0.977      9.66  1.50e-12   7.48    11.4    \n2 debt_inc_cent           0.671     0.676      0.993 3.26e- 1  -0.690    2.03   \n3 verified_incomeSourc~   2.21      1.40       1.58  1.21e- 1  -0.606    5.03   \n4 verified_incomeVerif~   6.88      1.80       3.82  4.06e- 4   3.25    10.5    \n5 annual_income_th_cent  -0.0205    0.0114    -1.80  7.79e- 2  -0.0434   0.00238"
-  },
-  {
-    "objectID": "slides/lec-10x.html#original-vs.-mean-centered-model",
-    "href": "slides/lec-10x.html#original-vs.-mean-centered-model",
-    "title": "Types of predictors",
-    "section": "Original vs. mean-centered model",
-    "text": "Original vs. mean-centered model\n\n\n\n\n\n \n  \n    term \n    estimate \n  \n \n\n  \n    (Intercept) \n    10.726 \n  \n  \n    debt_to_income \n    0.671 \n  \n  \n    verified_incomeSource Verified \n    2.211 \n  \n  \n    verified_incomeVerified \n    6.880 \n  \n  \n    annual_income_th \n    -0.021 \n  \n\n\n\n\n\n\n\n\n\n \n  \n    term \n    estimate \n  \n \n\n  \n    (Intercept) \n    9.444 \n  \n  \n    debt_inc_cent \n    0.671 \n  \n  \n    verified_incomeSource Verified \n    2.211 \n  \n  \n    verified_incomeVerified \n    6.880 \n  \n  \n    annual_income_th_cent \n    -0.021"
-  },
-  {
-    "objectID": "slides/lec-10x.html#indicator-variables-1",
-    "href": "slides/lec-10x.html#indicator-variables-1",
-    "title": "Types of predictors",
-    "section": "Indicator variables",
-    "text": "Indicator variables\n\nSuppose there is a categorical variable with \\(K\\) categories (levels)\nWe can make \\(K\\) indicator variables - one indicator for each category\nAn indicator variable takes values 1 or 0\n\n1 if the observation belongs to that category\n0 if the observation does not belong to that category"
-  },
-  {
-    "objectID": "slides/lec-10x.html#data-manipulation-3-create-indicator-variables-for-verified_income",
-    "href": "slides/lec-10x.html#data-manipulation-3-create-indicator-variables-for-verified_income",
-    "title": "Types of predictors",
-    "section": "Data manipulation 3: Create indicator variables for verified_income",
-    "text": "Data manipulation 3: Create indicator variables for verified_income\n\nloan50 <- loan50 %>%\n  mutate(\n    not_verified = if_else(verified_income == \"Not Verified\", 1, 0),\n    source_verified = if_else(verified_income == \"Source Verified\", 1, 0),\n    verified = if_else(verified_income == \"Verified\", 1, 0)\n  )\n\n\n\n\n# A tibble: 3 x 4\n  verified_income not_verified source_verified verified\n  <fct>                  <dbl>           <dbl>    <dbl>\n1 Not Verified               1               0        0\n2 Verified                   0               0        1\n3 Source Verified            0               1        0"
-  },
-  {
-    "objectID": "slides/lec-10x.html#indicators-in-the-model",
-    "href": "slides/lec-10x.html#indicators-in-the-model",
-    "title": "Types of predictors",
-    "section": "Indicators in the model",
-    "text": "Indicators in the model\n\nWe will use \\(K-1\\) of the indicator variables in the model.\nThe baseline is the category that doesn’t have a term in the model.\nThe coefficients of the indicator variables in the model are interpreted as the expected change in the response compared to the baseline, holding all other variables constant.\nThis approach is also called dummy coding.\n\n\n\n\n# A tibble: 3 x 3\n  verified_income source_verified verified\n  <fct>                     <dbl>    <dbl>\n1 Not Verified                  0        0\n2 Verified                      0        1\n3 Source Verified               1        0"
-  },
-  {
-    "objectID": "slides/lec-10x.html#interpreting-verified_income",
-    "href": "slides/lec-10x.html#interpreting-verified_income",
-    "title": "Types of predictors",
-    "section": "Interpreting verified_income",
-    "text": "Interpreting verified_income\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n    conf.low \n    conf.high \n  \n \n\n  \n    (Intercept) \n    9.444 \n    0.977 \n    9.663 \n    0.000 \n    7.476 \n    11.413 \n  \n  \n    debt_inc_cent \n    0.671 \n    0.676 \n    0.993 \n    0.326 \n    -0.690 \n    2.033 \n  \n  \n    verified_incomeSource Verified \n    2.211 \n    1.399 \n    1.581 \n    0.121 \n    -0.606 \n    5.028 \n  \n  \n    verified_incomeVerified \n    6.880 \n    1.801 \n    3.820 \n    0.000 \n    3.253 \n    10.508 \n  \n  \n    annual_income_th_cent \n    -0.021 \n    0.011 \n    -1.804 \n    0.078 \n    -0.043 \n    0.002 \n  \n\n\n\n\n\n\n\nThe baseline category is Not verified.\nPeople with source verified income are expected to take a loan with an interest rate that is 2.211% higher, on average, than the rate on loans to those whose income is not verified, holding all else constant.\nPeople with verified income are expected to take a loan with an interest rate that is 6.880% higher, on average, than the rate on loans to those whose income is not verified, holding all else constant."
-  },
-  {
-    "objectID": "slides/lec-10x.html#interaction-terms-1",
-    "href": "slides/lec-10x.html#interaction-terms-1",
-    "title": "Types of predictors",
-    "section": "Interaction terms",
-    "text": "Interaction terms\n\nSometimes the relationship between a predictor variable and the response depends on the value of another predictor variable.\nThis is an interaction effect.\nTo account for this, we can include interaction terms in the model."
-  },
-  {
-    "objectID": "slides/lec-10x.html#interest-rate-vs.-annual-income",
-    "href": "slides/lec-10x.html#interest-rate-vs.-annual-income",
-    "title": "Types of predictors",
-    "section": "Interest rate vs. annual income",
-    "text": "Interest rate vs. annual income\nThe lines are not parallel indicating there is an interaction effect. The slope of annual income differs based on the income verification."
-  },
-  {
-    "objectID": "slides/lec-10x.html#interaction-term-in-model",
-    "href": "slides/lec-10x.html#interaction-term-in-model",
-    "title": "Types of predictors",
-    "section": "Interaction term in model",
-    "text": "Interaction term in model\n\nint_cent_int_fit <- linear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(interest_rate ~ debt_inc_cent  +  debt_inc_cent + \n        annual_income_th_cent + verified_income * annual_income_th_cent,\n      data = loan50)\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    9.484 \n    0.989 \n    9.586 \n    0.000 \n  \n  \n    debt_inc_cent \n    0.691 \n    0.685 \n    1.009 \n    0.319 \n  \n  \n    annual_income_th_cent \n    -0.007 \n    0.020 \n    -0.341 \n    0.735 \n  \n  \n    verified_incomeSource Verified \n    2.157 \n    1.418 \n    1.522 \n    0.135 \n  \n  \n    verified_incomeVerified \n    7.181 \n    1.870 \n    3.840 \n    0.000 \n  \n  \n    annual_income_th_cent:verified_incomeSource Verified \n    -0.016 \n    0.026 \n    -0.643 \n    0.523 \n  \n  \n    annual_income_th_cent:verified_incomeVerified \n    -0.032 \n    0.033 \n    -0.979 \n    0.333"
-  },
-  {
-    "objectID": "slides/lec-10x.html#interpreting-interaction-terms",
-    "href": "slides/lec-10x.html#interpreting-interaction-terms",
-    "title": "Types of predictors",
-    "section": "Interpreting interaction terms",
-    "text": "Interpreting interaction terms\n\nWhat the interaction means: The effect of annual income on the interest rate differs by -0.016 when the income is source verified compared to when it is not verified, holding all else constant.\nInterpreting annual_income for source verified: If the income is source verified, we expect the interest rate to decrease by 0.023% (-0.007 + -0.016) for each additional thousand dollars in annual income, holding all else constant."
-  },
-  {
-    "objectID": "slides/lec-10x.html#data-manipulation-4-create-interaction-variables",
-    "href": "slides/lec-10x.html#data-manipulation-4-create-interaction-variables",
-    "title": "Types of predictors",
-    "section": "Data manipulation 4: Create interaction variables",
-    "text": "Data manipulation 4: Create interaction variables\nDefining the interaction variable in the model formula as verified_income * annual_income_th_cent is an implicit data manipulation step as well\n\n\nRows: 50\nColumns: 9\n$ `(Intercept)`                                          <dbl> 1, 1, 1, 1, 1, ~\n$ debt_inc_cent                                          <dbl> -0.16511719, 0.~\n$ annual_income_th_cent                                  <dbl> -27.17, -26.17,~\n$ `verified_incomeNot Verified`                          <dbl> 1, 1, 0, 1, 1, ~\n$ `verified_incomeSource Verified`                       <dbl> 0, 0, 0, 0, 0, ~\n$ verified_incomeVerified                                <dbl> 0, 0, 1, 0, 0, ~\n$ `annual_income_th_cent:verified_incomeNot Verified`    <dbl> -27.17, -26.17,~\n$ `annual_income_th_cent:verified_incomeSource Verified` <dbl> 0.00, 0.00, 0.0~\n$ `annual_income_th_cent:verified_incomeVerified`        <dbl> 0.00, 0.00, -11~"
-  },
-  {
-    "objectID": "slides/lec-10x.html#recap",
-    "href": "slides/lec-10x.html#recap",
-    "title": "Types of predictors",
-    "section": "Recap",
-    "text": "Recap\n\nMean-centering quantitative predictors\nUsing indicator variables for categorical predictors\nUsing interaction terms"
-  },
-  {
-    "objectID": "slides/lec-10x.html#looking-backward",
-    "href": "slides/lec-10x.html#looking-backward",
-    "title": "Types of predictors",
-    "section": "Looking backward",
-    "text": "Looking backward\nData manipulation, with dplyr (from tidyverse):\n\nloan50 %>%\n  select(interest_rate, annual_income, debt_to_income, verified_income) %>%\n  mutate(\n    # 1. rescale income\n    annual_income_th = annual_income / 1000,\n    # 2. mean-center quantitative predictors\n    debt_inc_cent = debt_to_income - mean(debt_to_income),\n    annual_income_th_cent = annual_income_th - mean(annual_income_th),\n    # 3. create dummy variables for verified_income\n    source_verified = if_else(verified_income == \"Source Verified\", 1, 0),\n    verified = if_else(verified_income == \"Verified\", 1, 0),\n    # 4. create interaction variables\n    `annual_income_th_cent:verified_incomeSource Verified` = annual_income_th_cent * source_verified,\n    `annual_income_th_cent:verified_incomeVerified` = annual_income_th_cent * verified\n  )"
-  },
-  {
-    "objectID": "slides/lec-10x.html#looking-forward",
-    "href": "slides/lec-10x.html#looking-forward",
-    "title": "Types of predictors",
-    "section": "Looking forward",
-    "text": "Looking forward\nFeature engineering, with recipes (from tidymodels):\n\nloan_rec <- recipe( ~ ., data = loan50) %>%\n  # 1. rescale income\n  step_mutate(annual_income_th = annual_income / 1000) %>%\n  # 2. mean-center quantitative predictors\n  step_center(all_numeric_predictors()) %>%\n  # 3. create dummy variables for verified_income\n  step_dummy(verified_income) %>%\n  # 4. create interaction variables\n  step_interact(terms = ~ annual_income_th:verified_income)"
-  },
-  {
-    "objectID": "slides/lec-10x.html#recipe",
-    "href": "slides/lec-10x.html#recipe",
-    "title": "Types of predictors",
-    "section": "Recipe",
-    "text": "Recipe\n\nloan_rec\n\nRecipe\n\nInputs:\n\n      role #variables\n predictor         24\n\nOperations:\n\nVariable mutation for annual_income / 1000\nCentering for all_numeric_predictors()\nDummy variables from verified_income\nInteractions with annual_income_th:verified_income\n\n\n\n\n\nsta210-s22.github.io/website"
-  },
-  {
-    "objectID": "slides/lec-11x.html#announcements",
-    "href": "slides/lec-11x.html#announcements",
-    "title": "Model comparison",
-    "section": "Announcements",
-    "text": "Announcements\n\n\nHW 2 posted tomorrow, due in a week\nLab on Monday: Work data selection! (Read project assignment over the weekend)\nMid-semester course evaluation (to be posted)"
-  },
-  {
-    "objectID": "slides/lec-11x.html#topics",
-    "href": "slides/lec-11x.html#topics",
-    "title": "Model comparison",
-    "section": "Topics",
-    "text": "Topics\n\n\nANOVA for Multiple Linear Regression and sum of squares\nComparing models with \\(R^2\\) vs. \\(R^2_{adj}\\)\nComparing models with AIC and BIC\nOccam’s razor and parsimony\nOverfitting and spending our data"
-  },
-  {
-    "objectID": "slides/lec-11x.html#computational-setup",
-    "href": "slides/lec-11x.html#computational-setup",
-    "title": "Model comparison",
-    "section": "Computational setup",
-    "text": "Computational setup\n\n# load packages\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(patchwork)\nlibrary(knitr)\nlibrary(kableExtra)\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_minimal(base_size = 20))"
-  },
-  {
-    "objectID": "slides/lec-11x.html#data-restaurant-tips",
-    "href": "slides/lec-11x.html#data-restaurant-tips",
-    "title": "Model comparison",
-    "section": "Data: Restaurant tips",
-    "text": "Data: Restaurant tips\nWhich variables help us predict the amount customers tip at a restaurant?\n\n\n\n\n\n# A tibble: 169 x 4\n     Tip Party Meal   Age   \n   <dbl> <dbl> <chr>  <chr> \n 1  2.99     1 Dinner Yadult\n 2  2        1 Dinner Yadult\n 3  5        1 Dinner SenCit\n 4  4        3 Dinner Middle\n 5 10.3      2 Dinner SenCit\n 6  4.85     2 Dinner Middle\n 7  5        4 Dinner Yadult\n 8  4        3 Dinner Middle\n 9  5        2 Dinner Middle\n10  1.58     1 Dinner SenCit\n# ... with 159 more rows"
-  },
-  {
-    "objectID": "slides/lec-11x.html#variables",
-    "href": "slides/lec-11x.html#variables",
-    "title": "Model comparison",
-    "section": "Variables",
-    "text": "Variables\nPredictors:\n\n\nParty: Number of people in the party\nMeal: Time of day (Lunch, Dinner, Late Night)\nAge: Age category of person paying the bill (Yadult, Middle, SenCit)\n\n\nOutcome: Tip: Amount of tip"
-  },
-  {
-    "objectID": "slides/lec-11x.html#outcome-tip",
-    "href": "slides/lec-11x.html#outcome-tip",
-    "title": "Model comparison",
-    "section": "Outcome: Tip",
-    "text": "Outcome: Tip"
-  },
-  {
-    "objectID": "slides/lec-11x.html#predictors",
-    "href": "slides/lec-11x.html#predictors",
-    "title": "Model comparison",
-    "section": "Predictors",
-    "text": "Predictors"
-  },
-  {
-    "objectID": "slides/lec-11x.html#relevel-categorical-predictors",
-    "href": "slides/lec-11x.html#relevel-categorical-predictors",
-    "title": "Model comparison",
-    "section": "Relevel categorical predictors",
-    "text": "Relevel categorical predictors\n\ntips <- tips %>%\n  mutate(\n    Meal = fct_relevel(Meal, \"Lunch\", \"Dinner\", \"Late Night\"),\n    Age  = fct_relevel(Age, \"Yadult\", \"Middle\", \"SenCit\")\n  )"
-  },
-  {
-    "objectID": "slides/lec-11x.html#predictors-again",
-    "href": "slides/lec-11x.html#predictors-again",
-    "title": "Model comparison",
-    "section": "Predictors, again",
-    "text": "Predictors, again"
-  },
-  {
-    "objectID": "slides/lec-11x.html#outcome-vs.-predictors",
-    "href": "slides/lec-11x.html#outcome-vs.-predictors",
-    "title": "Model comparison",
-    "section": "Outcome vs. predictors",
-    "text": "Outcome vs. predictors"
-  },
-  {
-    "objectID": "slides/lec-11x.html#fit-and-summarize-model",
-    "href": "slides/lec-11x.html#fit-and-summarize-model",
-    "title": "Model comparison",
-    "section": "Fit and summarize model",
-    "text": "Fit and summarize model\n\ntip_fit <- linear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(Tip ~ Party + Age, data = tips)\n\ntidy(tip_fit, conf.int = TRUE) %>%\n  kable(digits = 3)\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n    conf.low \n    conf.high \n  \n \n\n  \n    (Intercept) \n    -0.170 \n    0.366 \n    -0.465 \n    0.643 \n    -0.893 \n    0.553 \n  \n  \n    Party \n    1.837 \n    0.124 \n    14.758 \n    0.000 \n    1.591 \n    2.083 \n  \n  \n    AgeMiddle \n    1.009 \n    0.408 \n    2.475 \n    0.014 \n    0.204 \n    1.813 \n  \n  \n    AgeSenCit \n    1.388 \n    0.485 \n    2.862 \n    0.005 \n    0.430 \n    2.345 \n  \n\n\n\n\n\n\n\n\nIs this the best model to explain variation in tips?"
-  },
-  {
-    "objectID": "slides/lec-11x.html#another-model-summary",
-    "href": "slides/lec-11x.html#another-model-summary",
-    "title": "Model comparison",
-    "section": "Another model summary",
-    "text": "Another model summary\n\n\n\n \n  \n    term \n    df \n    sumsq \n    meansq \n    statistic \n    p.value \n  \n \n\n  \n    Party \n    1 \n    1188.64 \n    1188.64 \n    285.71 \n    0.00 \n  \n  \n    Age \n    2 \n    38.03 \n    19.01 \n    4.57 \n    0.01 \n  \n  \n    Residuals \n    165 \n    686.44 \n    4.16 \n    NA \n    NA"
-  },
-  {
-    "objectID": "slides/lec-11x.html#analysis-of-variance-anova-1",
-    "href": "slides/lec-11x.html#analysis-of-variance-anova-1",
-    "title": "Model comparison",
-    "section": "Analysis of variance (ANOVA)",
-    "text": "Analysis of variance (ANOVA)\n\nMain Idea: Decompose the total variation on the outcome into:\n\nthe variation that can be explained by the each of the variables in the model\nthe variation that can’t be explained by the model (left in the residuals)\n\nIf the variation that can be explained by the variables in the model is greater than the variation in the residuals, this signals that the model might be “valuable” (at least one of the \\(\\beta\\)s not equal to 0)"
-  },
-  {
-    "objectID": "slides/lec-11x.html#anova-output",
-    "href": "slides/lec-11x.html#anova-output",
-    "title": "Model comparison",
-    "section": "ANOVA output",
-    "text": "ANOVA output\n\nanova(tip_fit$fit) %>%\n  tidy() %>%\n  kable(digits = 2)\n\n\n \n  \n    term \n    df \n    sumsq \n    meansq \n    statistic \n    p.value \n  \n \n\n  \n    Party \n    1 \n    1188.64 \n    1188.64 \n    285.71 \n    0.00 \n  \n  \n    Age \n    2 \n    38.03 \n    19.01 \n    4.57 \n    0.01 \n  \n  \n    Residuals \n    165 \n    686.44 \n    4.16 \n    NA \n    NA"
-  },
-  {
-    "objectID": "slides/lec-11x.html#anova-output-with-totals",
-    "href": "slides/lec-11x.html#anova-output-with-totals",
-    "title": "Model comparison",
-    "section": "ANOVA output, with totals",
-    "text": "ANOVA output, with totals\n\n\n\n \n  \n    term \n    df \n    sumsq \n    meansq \n    statistic \n    p.value \n  \n \n\n  \n    Party \n    1 \n    1188.64 \n    1188.64 \n    285.71 \n    0 \n  \n  \n    Age \n    2 \n    38.03 \n    19.01 \n    4.57 \n    0.01 \n  \n  \n    Residuals \n    165 \n    686.44 \n    4.16 \n     \n     \n  \n  \n    Total \n    168 \n    1913.11"
-  },
-  {
-    "objectID": "slides/lec-11x.html#sum-of-squares",
-    "href": "slides/lec-11x.html#sum-of-squares",
-    "title": "Model comparison",
-    "section": "Sum of squares",
-    "text": "Sum of squares\n\n\n\n\n\n \n  \n    term \n    df \n    sumsq \n  \n \n\n  \n    Party \n    1 \n    1188.64 \n  \n  \n    Age \n    2 \n    38.03 \n  \n  \n    Residuals \n    165 \n    686.44 \n  \n  \n    Total \n    168 \n    1913.11 \n  \n\n\n\n\n\n\n\n\\(SS_{Total}\\): Total sum of squares, variability of outcome, \\(\\sum_{i = 1}^n (y_i - \\bar{y})^2\\)\n\\(SS_{Error}\\): Residual sum of squares, variability of residuals, \\(\\sum_{i = 1}^n (y_i - \\hat{y})^2\\)\n\\(SS_{Model} = SS_{Total} - SS_{Error}\\): Variability explained by the model"
-  },
-  {
-    "objectID": "slides/lec-11x.html#r-squared-r2",
-    "href": "slides/lec-11x.html#r-squared-r2",
-    "title": "Model comparison",
-    "section": "R-squared, \\(R^2\\)",
-    "text": "R-squared, \\(R^2\\)\nRecall: \\(R^2\\) is the proportion of the variation in the response variable explained by the regression model.\n\n\\[\nR^2 = \\frac{SS_{Model}}{SS_{Total}} = 1 - \\frac{SS_{Error}}{SS_{Total}} = 1 - \\frac{686.44}{1913.11} = 0.641\n\\]\n\n\n\nglance(tip_fit)\n\n# A tibble: 1 x 12\n  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC\n      <dbl>         <dbl> <dbl>     <dbl>    <dbl> <dbl>  <dbl> <dbl> <dbl>\n1     0.641         0.635  2.04      98.3 1.56e-36     3  -358.  726.  742.\n# ... with 3 more variables: deviance <dbl>, df.residual <int>, nobs <int>"
-  },
-  {
-    "objectID": "slides/lec-11x.html#r-squared-r2-1",
-    "href": "slides/lec-11x.html#r-squared-r2-1",
-    "title": "Model comparison",
-    "section": "R-squared, \\(R^2\\)",
-    "text": "R-squared, \\(R^2\\)\n\n\\(R^2\\) will always increase as we add more variables to the model + If we add enough variables, we can always achieve \\(R^2=100\\%\\)\nIf we only use \\(R^2\\) to choose a best fit model, we will be prone to choose the model with the most predictor variables"
-  },
-  {
-    "objectID": "slides/lec-11x.html#adjusted-r2",
-    "href": "slides/lec-11x.html#adjusted-r2",
-    "title": "Model comparison",
-    "section": "Adjusted \\(R^2\\)",
-    "text": "Adjusted \\(R^2\\)\n\nAdjusted \\(R^2\\): measure that includes a penalty for unnecessary predictor variables\nSimilar to \\(R^2\\), it is a measure of the amount of variation in the response that is explained by the regression model\nDiffers from \\(R^2\\) by using the mean squares rather than sums of squares and therefore adjusting for the number of predictor variables"
-  },
-  {
-    "objectID": "slides/lec-11x.html#r2-and-adjusted-r2",
-    "href": "slides/lec-11x.html#r2-and-adjusted-r2",
-    "title": "Model comparison",
-    "section": "\\(R^2\\) and Adjusted \\(R^2\\)",
-    "text": "\\(R^2\\) and Adjusted \\(R^2\\)\n\\[R^2 = \\frac{SS_{Model}}{SS_{Total}} = 1 - \\frac{SS_{Error}}{SS_{Total}}\\]\n\n\\[R^2_{adj} = 1 - \\frac{SS_{Error}/(n-p-1)}{SS_{Total}/(n-1)}\\]"
-  },
-  {
-    "objectID": "slides/lec-11x.html#using-r2-and-adjusted-r2",
-    "href": "slides/lec-11x.html#using-r2-and-adjusted-r2",
-    "title": "Model comparison",
-    "section": "Using \\(R^2\\) and Adjusted \\(R^2\\)",
-    "text": "Using \\(R^2\\) and Adjusted \\(R^2\\)\n\nAdjusted \\(R^2\\) can be used as a quick assessment to compare the fit of multiple models; however, it should not be the only assessment!\nUse \\(R^2\\) when describing the relationship between the response and predictor variables"
-  },
-  {
-    "objectID": "slides/lec-11x.html#comparing-models-with-r2_adj",
-    "href": "slides/lec-11x.html#comparing-models-with-r2_adj",
-    "title": "Model comparison",
-    "section": "Comparing models with \\(R^2_{adj}\\)",
-    "text": "Comparing models with \\(R^2_{adj}\\)\n\n\n\ntip_fit_1 <- linear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(Tip ~ Party + \n            Age + \n            Meal,\n      \n      data = tips)\n\nglance(tip_fit_1) %>% \n  select(r.squared, adj.r.squared)\n\n# A tibble: 1 x 2\n  r.squared adj.r.squared\n      <dbl>         <dbl>\n1     0.674         0.664\n\n\n\n\ntip_fit_2 <- linear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(Tip ~ Party + \n            Age + \n            Meal + \n            Day, \n      data = tips)\n\nglance(tip_fit_2) %>% \n  select(r.squared, adj.r.squared)\n\n# A tibble: 1 x 2\n  r.squared adj.r.squared\n      <dbl>         <dbl>\n1     0.683         0.662"
-  },
-  {
-    "objectID": "slides/lec-11x.html#aic-bic",
-    "href": "slides/lec-11x.html#aic-bic",
-    "title": "Model comparison",
-    "section": "AIC & BIC",
-    "text": "AIC & BIC\nEstimators of prediction error and relative quality of models:\n\nAkaike’s Information Criterion (AIC): \\[AIC = n\\log(SS_\\text{Error}) - n \\log(n) + 2(p+1)\\] \n\n\nSchwarz’s Bayesian Information Criterion (BIC): \\[BIC = n\\log(SS_\\text{Error}) - n\\log(n) + log(n)\\times(p+1)\\]"
-  },
-  {
-    "objectID": "slides/lec-11x.html#aic-bic-1",
-    "href": "slides/lec-11x.html#aic-bic-1",
-    "title": "Model comparison",
-    "section": "AIC & BIC",
-    "text": "AIC & BIC\n\\[\n\\begin{aligned}\n& AIC = \\color{blue}{n\\log(SS_\\text{Error})} - n \\log(n) + 2(p+1) \\\\\n& BIC = \\color{blue}{n\\log(SS_\\text{Error})} - n\\log(n) + \\log(n)\\times(p+1)\n\\end{aligned}\n\\]\n\n\nFirst Term: Decreases as p increases"
-  },
-  {
-    "objectID": "slides/lec-11x.html#aic-bic-2",
-    "href": "slides/lec-11x.html#aic-bic-2",
-    "title": "Model comparison",
-    "section": "AIC & BIC",
-    "text": "AIC & BIC\n\\[\n\\begin{aligned}\n& AIC = n\\log(SS_\\text{Error}) - \\color{blue}{n \\log(n)} + 2(p+1) \\\\\n& BIC = n\\log(SS_\\text{Error}) - \\color{blue}{n\\log(n)} + \\log(n)\\times(p+1)\n\\end{aligned}\n\\]\n\nSecond Term: Fixed for a given sample size n"
-  },
-  {
-    "objectID": "slides/lec-11x.html#aic-bic-3",
-    "href": "slides/lec-11x.html#aic-bic-3",
-    "title": "Model comparison",
-    "section": "AIC & BIC",
-    "text": "AIC & BIC\n\\[\n\\begin{aligned} & AIC = n\\log(SS_\\text{Error}) - n\\log(n) + \\color{blue}{2(p+1)} \\\\\n& BIC = n\\log(SS_\\text{Error}) - n\\log(n) + \\color{blue}{\\log(n)\\times(p+1)}\n\\end{aligned}\n\\]\n\nThird Term: Increases as p increases"
-  },
-  {
-    "objectID": "slides/lec-11x.html#using-aic-bic",
-    "href": "slides/lec-11x.html#using-aic-bic",
-    "title": "Model comparison",
-    "section": "Using AIC & BIC",
-    "text": "Using AIC & BIC\n\\[\n\\begin{aligned} & AIC = n\\log(SS_{Error}) - n \\log(n) + \\color{red}{2(p+1)} \\\\\n& BIC = n\\log(SS_{Error}) - n\\log(n) + \\color{red}{\\log(n)\\times(p+1)}\n\\end{aligned}\n\\]\n\nChoose model with the smaller value of AIC or BIC\nIf \\(n \\geq 8\\), the penalty for BIC is larger than that of AIC, so BIC tends to favor more parsimonious models (i.e. models with fewer terms)"
-  },
-  {
-    "objectID": "slides/lec-11x.html#comparing-models-with-aic-and-bic",
-    "href": "slides/lec-11x.html#comparing-models-with-aic-and-bic",
-    "title": "Model comparison",
-    "section": "Comparing models with AIC and BIC",
-    "text": "Comparing models with AIC and BIC\n\n\n\ntip_fit_1 <- linear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(Tip ~ Party + \n            Age + \n            Meal,\n      \n      data = tips)\n\nglance(tip_fit_1) %>% \n  select(AIC, BIC)\n\n# A tibble: 1 x 2\n    AIC   BIC\n  <dbl> <dbl>\n1  714.  736.\n\n\n\n\ntip_fit_2 <- linear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(Tip ~ Party + \n            Age + \n            Meal + \n            Day, \n      data = tips)\n\nglance(tip_fit_2) %>% \n  select(AIC, BIC)\n\n# A tibble: 1 x 2\n    AIC   BIC\n  <dbl> <dbl>\n1  720.  757."
-  },
-  {
-    "objectID": "slides/lec-11x.html#commonalities-between-criteria",
-    "href": "slides/lec-11x.html#commonalities-between-criteria",
-    "title": "Model comparison",
-    "section": "Commonalities between criteria",
-    "text": "Commonalities between criteria\n\n\\(R^2_{adj}\\), AIC, and BIC all apply a penalty for more predictors\nThe penalty for added model complexity attempts to strike a balance between underfitting (too few predictors in the model) and overfitting (too many predictors in the model)\nGoal: Parsimony"
-  },
-  {
-    "objectID": "slides/lec-11x.html#parsimony-and-occams-razor",
-    "href": "slides/lec-11x.html#parsimony-and-occams-razor",
-    "title": "Model comparison",
-    "section": "Parsimony and Occam’s razor",
-    "text": "Parsimony and Occam’s razor\n\nThe principle of parsimony is attributed to William of Occam (early 14th-century English nominalist philosopher), who insisted that, given a set of equally good explanations for a given phenomenon, the correct explanation is the simplest explanation1\nCalled Occam’s razor because he “shaved” his explanations down to the bare minimum\nParsimony in modeling:\n\n\nmodels should have as few parameters as possible\nlinear models should be preferred to non-linear models\nexperiments relying on few assumptions should be preferred to those relying on many\nmodels should be pared down until they are minimal adequate\nsimple explanations should be preferred to complex explanations\n\n\n\nSource: The R Book by Michael J. Crawley."
-  },
-  {
-    "objectID": "slides/lec-11x.html#in-pursuit-of-occams-razor",
-    "href": "slides/lec-11x.html#in-pursuit-of-occams-razor",
-    "title": "Model comparison",
-    "section": "In pursuit of Occam’s razor",
-    "text": "In pursuit of Occam’s razor\n\nOccam’s razor states that among competing hypotheses that predict equally well, the one with the fewest assumptions should be selected\nModel selection follows this principle\nWe only want to add another variable to the model if the addition of that variable brings something valuable in terms of predictive power to the model\nIn other words, we prefer the simplest best model, i.e. parsimonious model"
-  },
-  {
-    "objectID": "slides/lec-11x.html#alternate-views",
-    "href": "slides/lec-11x.html#alternate-views",
-    "title": "Model comparison",
-    "section": "Alternate views",
-    "text": "Alternate views\n\nSometimes a simple model will outperform a more complex model . . . Nevertheless, I believe that deliberately limiting the complexity of the model is not fruitful when the problem is evidently complex. Instead, if a simple model is found that outperforms some particular complex model, the appropriate response is to define a different complex model that captures whatever aspect of the problem led to the simple model performing well.\n\nRadford Neal - Bayesian Learning for Neural Networks1\n\nSuggested blog post: Occam by Andrew Gelman"
-  },
-  {
-    "objectID": "slides/lec-11x.html#other-concerns-with-our-approach",
-    "href": "slides/lec-11x.html#other-concerns-with-our-approach",
-    "title": "Model comparison",
-    "section": "Other concerns with our approach",
-    "text": "Other concerns with our approach\n\nAll criteria we considered for model comparison require making predictions for our data and then uses the prediction error (\\(SS_{Error}\\)) somewhere in the formula\nBut we’re making prediction for the data we used to build the model (estimate the coefficients), which can lead to overfitting\nInstead we should\n\nsplit our data into testing and training sets\n“train” the model on the training data and pick a few models we’re genuinely considering as potentially good models\ntest those models on the testing set"
-  },
-  {
-    "objectID": "slides/lec-11x.html#recap",
-    "href": "slides/lec-11x.html#recap",
-    "title": "Model comparison",
-    "section": "Recap",
-    "text": "Recap\n\nANOVA for Multiple Linear Regression and sum of squares\nComparing models with \\(R^2\\) vs. \\(R^2_{adj}\\)\nComparing models with AIC and BIC\nOccam’s razor and parsimony\nOverfitting and spending our data\n\n\n\n\nsta210-s22.github.io/website"
-  },
-  {
-    "objectID": "slides/lec-12x.html#announcements",
-    "href": "slides/lec-12x.html#announcements",
-    "title": "Feature engineering",
-    "section": "Announcements",
-    "text": "Announcements\n\n\nCheck Sakai Gradebook to make sure all scores so far are accurate\nAny questions on topic selection for projects?\nAny feedback on time of my office hours?"
-  },
-  {
-    "objectID": "slides/lec-12x.html#midterm-evaluation-summary",
-    "href": "slides/lec-12x.html#midterm-evaluation-summary",
-    "title": "Feature engineering",
-    "section": "Midterm evaluation summary",
-    "text": "Midterm evaluation summary\nLive analysis…"
-  },
-  {
-    "objectID": "slides/lec-12x.html#topics",
-    "href": "slides/lec-12x.html#topics",
-    "title": "Feature engineering",
-    "section": "Topics",
-    "text": "Topics\n\n\nReview: Training and testing splits\nFeature engineering with recipes"
-  },
-  {
-    "objectID": "slides/lec-12x.html#computational-setup",
-    "href": "slides/lec-12x.html#computational-setup",
-    "title": "Feature engineering",
-    "section": "Computational setup",
-    "text": "Computational setup\n\n# load packages\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(gghighlight)\nlibrary(knitr)\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_minimal(base_size = 20))"
-  },
-  {
-    "objectID": "slides/lec-12x.html#the-office",
-    "href": "slides/lec-12x.html#the-office",
-    "title": "Feature engineering",
-    "section": "The Office",
-    "text": "The Office"
-  },
-  {
-    "objectID": "slides/lec-12x.html#data",
-    "href": "slides/lec-12x.html#data",
-    "title": "Feature engineering",
-    "section": "Data",
-    "text": "Data\nThe data come from data.world, by way of TidyTuesday\n\noffice_ratings <- read_csv(here::here(\"slides\", \"data/office_ratings.csv\"))\noffice_ratings\n\n# A tibble: 188 x 6\n   season episode title             imdb_rating total_votes air_date  \n    <dbl>   <dbl> <chr>                   <dbl>       <dbl> <date>    \n 1      1       1 Pilot                     7.6        3706 2005-03-24\n 2      1       2 Diversity Day             8.3        3566 2005-03-29\n 3      1       3 Health Care               7.9        2983 2005-04-05\n 4      1       4 The Alliance              8.1        2886 2005-04-12\n 5      1       5 Basketball                8.4        3179 2005-04-19\n 6      1       6 Hot Girl                  7.8        2852 2005-04-26\n 7      2       1 The Dundies               8.7        3213 2005-09-20\n 8      2       2 Sexual Harassment         8.2        2736 2005-09-27\n 9      2       3 Office Olympics           8.4        2742 2005-10-04\n10      2       4 The Fire                  8.4        2713 2005-10-11\n# ... with 178 more rows"
-  },
-  {
-    "objectID": "slides/lec-12x.html#imdb-ratings",
-    "href": "slides/lec-12x.html#imdb-ratings",
-    "title": "Feature engineering",
-    "section": "IMDB ratings",
-    "text": "IMDB ratings"
-  },
-  {
-    "objectID": "slides/lec-12x.html#imdb-ratings-vs.-number-of-votes",
-    "href": "slides/lec-12x.html#imdb-ratings-vs.-number-of-votes",
-    "title": "Feature engineering",
-    "section": "IMDB ratings vs. number of votes",
-    "text": "IMDB ratings vs. number of votes"
-  },
-  {
-    "objectID": "slides/lec-12x.html#outliers",
-    "href": "slides/lec-12x.html#outliers",
-    "title": "Feature engineering",
-    "section": "Outliers",
-    "text": "Outliers"
-  },
-  {
-    "objectID": "slides/lec-12x.html#aside",
-    "href": "slides/lec-12x.html#aside",
-    "title": "Feature engineering",
-    "section": "Aside…",
-    "text": "Aside…\nIf you like the Dinner Party episode, I highly recommend this “oral history” of the episode published on Rolling Stone magazine."
-  },
-  {
-    "objectID": "slides/lec-12x.html#rating-vs.-air-date",
-    "href": "slides/lec-12x.html#rating-vs.-air-date",
-    "title": "Feature engineering",
-    "section": "Rating vs. air date",
-    "text": "Rating vs. air date"
-  },
-  {
-    "objectID": "slides/lec-12x.html#imdb-ratings-vs.-seasons",
-    "href": "slides/lec-12x.html#imdb-ratings-vs.-seasons",
-    "title": "Feature engineering",
-    "section": "IMDB ratings vs. seasons",
-    "text": "IMDB ratings vs. seasons"
-  },
-  {
-    "objectID": "slides/lec-12x.html#train-test",
-    "href": "slides/lec-12x.html#train-test",
-    "title": "Feature engineering",
-    "section": "Train / test",
-    "text": "Train / test\nStep 1: Create an initial split:\n\nset.seed(123)\noffice_split <- initial_split(office_ratings) # prop = 3/4 by default\n\n\n\nStep 2: Save training data\n\noffice_train <- training(office_split)\ndim(office_train)\n\n[1] 141   6\n\n\n\n\n\nStep 3: Save testing data\n\noffice_test  <- testing(office_split)\ndim(office_test)\n\n[1] 47  6"
-  },
-  {
-    "objectID": "slides/lec-12x.html#training-data",
-    "href": "slides/lec-12x.html#training-data",
-    "title": "Feature engineering",
-    "section": "Training data",
-    "text": "Training data\n\noffice_train\n\n# A tibble: 141 x 6\n   season episode title               imdb_rating total_votes air_date  \n    <dbl>   <dbl> <chr>                     <dbl>       <dbl> <date>    \n 1      8      18 Last Day in Florida         7.8        1429 2012-03-08\n 2      9      14 Vandalism                   7.6        1402 2013-01-31\n 3      2       8 Performance Review          8.2        2416 2005-11-15\n 4      9       5 Here Comes Treble           7.1        1515 2012-10-25\n 5      3      22 Beach Games                 9.1        2783 2007-05-10\n 6      7       1 Nepotism                    8.4        1897 2010-09-23\n 7      3      15 Phyllis' Wedding            8.3        2283 2007-02-08\n 8      9      21 Livin' the Dream            8.9        2041 2013-05-02\n 9      9      18 Promos                      8          1445 2013-04-04\n10      8      12 Pool Party                  8          1612 2012-01-19\n# ... with 131 more rows"
-  },
-  {
-    "objectID": "slides/lec-12x.html#feature-engineering",
-    "href": "slides/lec-12x.html#feature-engineering",
-    "title": "Feature engineering",
-    "section": "Feature engineering",
-    "text": "Feature engineering\n\nWe prefer simple models when possible, but parsimony does not mean sacrificing accuracy (or predictive performance) in the interest of simplicity\nVariables that go into the model and how they are represented are just as critical to success of the model\nFeature engineering allows us to get creative with our predictors in an effort to make them more useful for our model (to increase its predictive performance)"
-  },
-  {
-    "objectID": "slides/lec-12x.html#feature-engineering-with-dplyr",
-    "href": "slides/lec-12x.html#feature-engineering-with-dplyr",
-    "title": "Feature engineering",
-    "section": "Feature engineering with dplyr",
-    "text": "Feature engineering with dplyr\n\n\n\n\noffice_train %>%\n  mutate(\n    season = as_factor(season),\n    month = lubridate::month(air_date),\n    wday = lubridate::wday(air_date)\n  )\n\n# A tibble: 141 x 8\n  season episode title            imdb_rating total_votes air_date   month  wday\n  <fct>    <dbl> <chr>                  <dbl>       <dbl> <date>     <dbl> <dbl>\n1 8           18 Last Day in Flo~         7.8        1429 2012-03-08     3     5\n2 9           14 Vandalism                7.6        1402 2013-01-31     1     5\n3 2            8 Performance Rev~         8.2        2416 2005-11-15    11     3\n4 9            5 Here Comes Treb~         7.1        1515 2012-10-25    10     5\n5 3           22 Beach Games              9.1        2783 2007-05-10     5     5\n6 7            1 Nepotism                 8.4        1897 2010-09-23     9     5\n# ... with 135 more rows\n\n\n\n\nCan you identify any potential problems with this approach?"
-  },
-  {
-    "objectID": "slides/lec-12x.html#modeling-workflow-revisited",
-    "href": "slides/lec-12x.html#modeling-workflow-revisited",
-    "title": "Feature engineering",
-    "section": "Modeling workflow, revisited",
-    "text": "Modeling workflow, revisited\n\nCreate a recipe for feature engineering steps to be applied to the training data\nFit the model to the training data after these steps have been applied\nUsing the model estimates from the training data, predict outcomes for the test data\nEvaluate the performance of the model on the test data"
-  },
-  {
-    "objectID": "slides/lec-12x.html#initiate-a-recipe",
-    "href": "slides/lec-12x.html#initiate-a-recipe",
-    "title": "Feature engineering",
-    "section": "Initiate a recipe",
-    "text": "Initiate a recipe\n\noffice_rec <- recipe(\n  imdb_rating ~ .,    # formula\n  data = office_train # data for cataloguing names and types of variables\n  )\n\noffice_rec\n\nRecipe\n\nInputs:\n\n      role #variables\n   outcome          1\n predictor          5"
-  },
-  {
-    "objectID": "slides/lec-12x.html#step-1-alter-roles",
-    "href": "slides/lec-12x.html#step-1-alter-roles",
-    "title": "Feature engineering",
-    "section": "Step 1: Alter roles",
-    "text": "Step 1: Alter roles\ntitle isn’t a predictor, but we might want to keep it around as an ID\n\noffice_rec <- office_rec %>%\n  update_role(title, new_role = \"ID\")\n\noffice_rec\n\nRecipe\n\nInputs:\n\n      role #variables\n        ID          1\n   outcome          1\n predictor          4"
-  },
-  {
-    "objectID": "slides/lec-12x.html#step-2-add-features",
-    "href": "slides/lec-12x.html#step-2-add-features",
-    "title": "Feature engineering",
-    "section": "Step 2: Add features",
-    "text": "Step 2: Add features\nNew features for day of week and month\n\noffice_rec <- office_rec %>%\n  step_date(air_date, features = c(\"dow\", \"month\"))\n\noffice_rec\n\nRecipe\n\nInputs:\n\n      role #variables\n        ID          1\n   outcome          1\n predictor          4\n\nOperations:\n\nDate features from air_date"
-  },
-  {
-    "objectID": "slides/lec-12x.html#step-3-add-more-features",
-    "href": "slides/lec-12x.html#step-3-add-more-features",
-    "title": "Feature engineering",
-    "section": "Step 3: Add more features",
-    "text": "Step 3: Add more features\nIdentify holidays in air_date, then remove air_date\n\noffice_rec <- office_rec %>%\n  step_holiday(\n    air_date, \n    holidays = c(\"USThanksgivingDay\", \"USChristmasDay\", \"USNewYearsDay\", \"USIndependenceDay\"), \n    keep_original_cols = FALSE\n  )\n\noffice_rec\n\nRecipe\n\nInputs:\n\n      role #variables\n        ID          1\n   outcome          1\n predictor          4\n\nOperations:\n\nDate features from air_date\nHoliday features from air_date"
-  },
-  {
-    "objectID": "slides/lec-12x.html#step-4-convert-numbers-to-factors",
-    "href": "slides/lec-12x.html#step-4-convert-numbers-to-factors",
-    "title": "Feature engineering",
-    "section": "Step 4: Convert numbers to factors",
-    "text": "Step 4: Convert numbers to factors\nConvert season to factor\n\noffice_rec <- office_rec %>%\n  step_num2factor(season, levels = as.character(1:9))\n\noffice_rec\n\nRecipe\n\nInputs:\n\n      role #variables\n        ID          1\n   outcome          1\n predictor          4\n\nOperations:\n\nDate features from air_date\nHoliday features from air_date\nFactor variables from season"
-  },
-  {
-    "objectID": "slides/lec-12x.html#step-5-make-dummy-variables",
-    "href": "slides/lec-12x.html#step-5-make-dummy-variables",
-    "title": "Feature engineering",
-    "section": "Step 5: Make dummy variables",
-    "text": "Step 5: Make dummy variables\nConvert all nominal (categorical) predictors to factors\n\noffice_rec <- office_rec %>%\n  step_dummy(all_nominal_predictors())\n\noffice_rec\n\nRecipe\n\nInputs:\n\n      role #variables\n        ID          1\n   outcome          1\n predictor          4\n\nOperations:\n\nDate features from air_date\nHoliday features from air_date\nFactor variables from season\nDummy variables from all_nominal_predictors()"
-  },
-  {
-    "objectID": "slides/lec-12x.html#step-6-remove-zero-variance-pred.s",
-    "href": "slides/lec-12x.html#step-6-remove-zero-variance-pred.s",
-    "title": "Feature engineering",
-    "section": "Step 6: Remove zero variance pred.s",
-    "text": "Step 6: Remove zero variance pred.s\nRemove all predictors that contain only a single value\n\noffice_rec <- office_rec %>%\n  step_zv(all_predictors())\n\noffice_rec\n\nRecipe\n\nInputs:\n\n      role #variables\n        ID          1\n   outcome          1\n predictor          4\n\nOperations:\n\nDate features from air_date\nHoliday features from air_date\nFactor variables from season\nDummy variables from all_nominal_predictors()\nZero variance filter on all_predictors()"
-  },
-  {
-    "objectID": "slides/lec-12x.html#putting-it-altogether",
-    "href": "slides/lec-12x.html#putting-it-altogether",
-    "title": "Feature engineering",
-    "section": "Putting it altogether",
-    "text": "Putting it altogether\n\noffice_rec <- recipe(imdb_rating ~ ., data = office_train) %>%\n  # make title's role ID\n  update_role(title, new_role = \"ID\") %>%\n  # extract day of week and month of air_date\n  step_date(air_date, features = c(\"dow\", \"month\")) %>%\n  # identify holidays and add indicators\n  step_holiday(\n    air_date, \n    holidays = c(\"USThanksgivingDay\", \"USChristmasDay\", \"USNewYearsDay\", \"USIndependenceDay\"), \n    keep_original_cols = FALSE\n  ) %>%\n  # turn season into factor\n  step_num2factor(season, levels = as.character(1:9)) %>%\n  # make dummy variables\n  step_dummy(all_nominal_predictors()) %>%\n  # remove zero variance predictors\n  step_zv(all_predictors())"
-  },
-  {
-    "objectID": "slides/lec-12x.html#putting-it-altogether-1",
-    "href": "slides/lec-12x.html#putting-it-altogether-1",
-    "title": "Feature engineering",
-    "section": "Putting it altogether",
-    "text": "Putting it altogether\n\noffice_rec\n\nRecipe\n\nInputs:\n\n      role #variables\n        ID          1\n   outcome          1\n predictor          4\n\nOperations:\n\nDate features from air_date\nHoliday features from air_date\nFactor variables from season\nDummy variables from all_nominal_predictors()\nZero variance filter on all_predictors()"
-  },
-  {
-    "objectID": "slides/lec-12x.html#recap",
-    "href": "slides/lec-12x.html#recap",
-    "title": "Feature engineering",
-    "section": "Recap",
-    "text": "Recap\n\n\nReview: Training and testing splits\nFeature engineering with recipes\n\n\n\n\n\nsta210-s22.github.io/website"
-  },
-  {
-    "objectID": "slides/lec-13x.html#announcements",
-    "href": "slides/lec-13x.html#announcements",
-    "title": "Feature engineering",
-    "section": "Announcements",
-    "text": "Announcements\n\n\nMy Monday office hours moved to 8-9pm"
-  },
-  {
-    "objectID": "slides/lec-13x.html#topics",
-    "href": "slides/lec-13x.html#topics",
-    "title": "Feature engineering",
-    "section": "Topics",
-    "text": "Topics\n\n\nFeature engineering with recipes\nWorkflows to bring together models and recipes\nRMSE and \\(R^2\\) for model evaluation\nCross validation"
-  },
-  {
-    "objectID": "slides/lec-13x.html#computational-setup",
-    "href": "slides/lec-13x.html#computational-setup",
-    "title": "Feature engineering",
-    "section": "Computational setup",
-    "text": "Computational setup\n\n# load packages\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(gghighlight)\nlibrary(knitr)\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_minimal(base_size = 20))"
-  },
-  {
-    "objectID": "slides/lec-13x.html#the-office",
-    "href": "slides/lec-13x.html#the-office",
-    "title": "Feature engineering",
-    "section": "The Office",
-    "text": "The Office"
-  },
-  {
-    "objectID": "slides/lec-13x.html#data-goal",
-    "href": "slides/lec-13x.html#data-goal",
-    "title": "Feature engineering",
-    "section": "Data & goal",
-    "text": "Data & goal\n\nData: The data come from data.world, by way of TidyTuesday\nGoal: Predict imdb_rating from other variables in the dataset\n\n\noffice_ratings <- read_csv(here::here(\"slides\", \"data/office_ratings.csv\"))\noffice_ratings\n\n# A tibble: 188 x 6\n   season episode title             imdb_rating total_votes air_date  \n    <dbl>   <dbl> <chr>                   <dbl>       <dbl> <date>    \n 1      1       1 Pilot                     7.6        3706 2005-03-24\n 2      1       2 Diversity Day             8.3        3566 2005-03-29\n 3      1       3 Health Care               7.9        2983 2005-04-05\n 4      1       4 The Alliance              8.1        2886 2005-04-12\n 5      1       5 Basketball                8.4        3179 2005-04-19\n 6      1       6 Hot Girl                  7.8        2852 2005-04-26\n 7      2       1 The Dundies               8.7        3213 2005-09-20\n 8      2       2 Sexual Harassment         8.2        2736 2005-09-27\n 9      2       3 Office Olympics           8.4        2742 2005-10-04\n10      2       4 The Fire                  8.4        2713 2005-10-11\n# ... with 178 more rows"
-  },
-  {
-    "objectID": "slides/lec-13x.html#train-test",
-    "href": "slides/lec-13x.html#train-test",
-    "title": "Feature engineering",
-    "section": "Train / test",
-    "text": "Train / test\nStep 1: Create an initial split:\n\nset.seed(123)\noffice_split <- initial_split(office_ratings) # prop = 3/4 by default\n\nStep 2: Save training data\n\noffice_train <- training(office_split)\ndim(office_train)\n\n[1] 141   6\n\n\nStep 3: Save testing data\n\noffice_test  <- testing(office_split)\ndim(office_test)\n\n[1] 47  6"
-  },
-  {
-    "objectID": "slides/lec-13x.html#training-data",
-    "href": "slides/lec-13x.html#training-data",
-    "title": "Feature engineering",
-    "section": "Training data",
-    "text": "Training data\n\noffice_train\n\n# A tibble: 141 x 6\n   season episode title               imdb_rating total_votes air_date  \n    <dbl>   <dbl> <chr>                     <dbl>       <dbl> <date>    \n 1      8      18 Last Day in Florida         7.8        1429 2012-03-08\n 2      9      14 Vandalism                   7.6        1402 2013-01-31\n 3      2       8 Performance Review          8.2        2416 2005-11-15\n 4      9       5 Here Comes Treble           7.1        1515 2012-10-25\n 5      3      22 Beach Games                 9.1        2783 2007-05-10\n 6      7       1 Nepotism                    8.4        1897 2010-09-23\n 7      3      15 Phyllis' Wedding            8.3        2283 2007-02-08\n 8      9      21 Livin' the Dream            8.9        2041 2013-05-02\n 9      9      18 Promos                      8          1445 2013-04-04\n10      8      12 Pool Party                  8          1612 2012-01-19\n# ... with 131 more rows"
-  },
-  {
-    "objectID": "slides/lec-13x.html#recap-feature-engineering",
-    "href": "slides/lec-13x.html#recap-feature-engineering",
-    "title": "Feature engineering",
-    "section": "Recap: Feature engineering",
-    "text": "Recap: Feature engineering\n\nWe prefer simple models when possible, but parsimony does not mean sacrificing accuracy (or predictive performance) in the interest of simplicity\nVariables that go into the model and how they are represented are just as critical to success of the model\nFeature engineering allows us to get creative with our predictors in an effort to make them more useful for our model (to increase its predictive performance)"
-  },
-  {
-    "objectID": "slides/lec-13x.html#recap-modeling-workflow-revisited",
-    "href": "slides/lec-13x.html#recap-modeling-workflow-revisited",
-    "title": "Feature engineering",
-    "section": "Recap: Modeling workflow, revisited",
-    "text": "Recap: Modeling workflow, revisited\n\nCreate a recipe for feature engineering steps to be applied to the training data\nFit the model to the training data after these steps have been applied\nUsing the model estimates from the training data, predict outcomes for the test data\nEvaluate the performance of the model on the test data"
-  },
-  {
-    "objectID": "slides/lec-13x.html#initiate-a-recipe",
-    "href": "slides/lec-13x.html#initiate-a-recipe",
-    "title": "Feature engineering",
-    "section": "Initiate a recipe",
-    "text": "Initiate a recipe\n\noffice_rec <- recipe(\n  imdb_rating ~ .,    # formula\n  data = office_train # data for cataloguing names and types of variables\n  )\n\noffice_rec\n\nRecipe\n\nInputs:\n\n      role #variables\n   outcome          1\n predictor          5"
-  },
-  {
-    "objectID": "slides/lec-13x.html#step-1-alter-roles",
-    "href": "slides/lec-13x.html#step-1-alter-roles",
-    "title": "Feature engineering",
-    "section": "Step 1: Alter roles",
-    "text": "Step 1: Alter roles\ntitle isn’t a predictor, but we might want to keep it around as an ID\n\noffice_rec <- office_rec %>%\n  update_role(title, new_role = \"ID\")\n\noffice_rec\n\nRecipe\n\nInputs:\n\n      role #variables\n        ID          1\n   outcome          1\n predictor          4"
-  },
-  {
-    "objectID": "slides/lec-13x.html#step-2-add-features",
-    "href": "slides/lec-13x.html#step-2-add-features",
-    "title": "Feature engineering",
-    "section": "Step 2: Add features",
-    "text": "Step 2: Add features\nNew features for day of week and month\n\noffice_rec <- office_rec %>%\n  step_date(air_date, features = c(\"dow\", \"month\"))\n\noffice_rec\n\nRecipe\n\nInputs:\n\n      role #variables\n        ID          1\n   outcome          1\n predictor          4\n\nOperations:\n\nDate features from air_date"
-  },
-  {
-    "objectID": "slides/lec-13x.html#working-with-recipes",
-    "href": "slides/lec-13x.html#working-with-recipes",
-    "title": "Feature engineering",
-    "section": "Working with recipes",
-    "text": "Working with recipes\n\nWhen building recipes you in a pipeline, you don’t get to see the effect of the recipe on your data, which can be unsettling\nYou can take a peek at what will happen when you ultimately apply the recipe to your data at the time of fitting the model\nThis requires two functions: prep() to train the recipe and bake() to apply it to your data\n\n\n\n\n\n\n\n\nNote\n\n\nThis is optional, we’ll show the results for demonstrative purposes. It doesn’t need to be part of your modeling pipeline, but I find it assuring to see the effects of the recipe steps as I build the recipe."
-  },
-  {
-    "objectID": "slides/lec-13x.html#step-2-prep-and-bake",
-    "href": "slides/lec-13x.html#step-2-prep-and-bake",
-    "title": "Feature engineering",
-    "section": "Step 2: Prep and bake",
-    "text": "Step 2: Prep and bake\n\noffice_rec_trained <- prep(office_rec)\nbake(office_rec_trained, office_train) %>%\n  glimpse()\n\nRows: 141\nColumns: 8\n$ season         <dbl> 8, 9, 2, 9, 3, 7, 3, 9, 9, 8, 5, 5, 9, 6, 7, 6, 5, 2, 2~\n$ episode        <dbl> 18, 14, 8, 5, 22, 1, 15, 21, 18, 12, 25, 26, 12, 1, 20,~\n$ title          <fct> \"Last Day in Florida\", \"Vandalism\", \"Performance Review~\n$ total_votes    <dbl> 1429, 1402, 2416, 1515, 2783, 1897, 2283, 2041, 1445, 1~\n$ air_date       <date> 2012-03-08, 2013-01-31, 2005-11-15, 2012-10-25, 2007-0~\n$ imdb_rating    <dbl> 7.8, 7.6, 8.2, 7.1, 9.1, 8.4, 8.3, 8.9, 8.0, 8.0, 8.7, ~\n$ air_date_dow   <fct> Thu, Thu, Tue, Thu, Thu, Thu, Thu, Thu, Thu, Thu, Thu, ~\n$ air_date_month <fct> Mar, Jan, Nov, Oct, May, Sep, Feb, May, Apr, Jan, May, ~"
-  },
-  {
-    "objectID": "slides/lec-13x.html#step-3-add-more-features",
-    "href": "slides/lec-13x.html#step-3-add-more-features",
-    "title": "Feature engineering",
-    "section": "Step 3: Add more features",
-    "text": "Step 3: Add more features\nIdentify holidays in air_date, then remove air_date\n\noffice_rec <- office_rec %>%\n  step_holiday(\n    air_date, \n    holidays = c(\"USThanksgivingDay\", \"USChristmasDay\", \"USNewYearsDay\", \"USIndependenceDay\"), \n    keep_original_cols = FALSE\n  )\n\noffice_rec\n\nRecipe\n\nInputs:\n\n      role #variables\n        ID          1\n   outcome          1\n predictor          4\n\nOperations:\n\nDate features from air_date\nHoliday features from air_date"
-  },
-  {
-    "objectID": "slides/lec-13x.html#step-3-prep-and-bake",
-    "href": "slides/lec-13x.html#step-3-prep-and-bake",
-    "title": "Feature engineering",
-    "section": "Step 3: Prep and bake",
-    "text": "Step 3: Prep and bake\n\noffice_rec_trained <- prep(office_rec)\nbake(office_rec_trained, office_train) %>%\n  glimpse()\n\nRows: 141\nColumns: 11\n$ season                     <dbl> 8, 9, 2, 9, 3, 7, 3, 9, 9, 8, 5, 5, 9, 6, 7~\n$ episode                    <dbl> 18, 14, 8, 5, 22, 1, 15, 21, 18, 12, 25, 26~\n$ title                      <fct> \"Last Day in Florida\", \"Vandalism\", \"Perfor~\n$ total_votes                <dbl> 1429, 1402, 2416, 1515, 2783, 1897, 2283, 2~\n$ imdb_rating                <dbl> 7.8, 7.6, 8.2, 7.1, 9.1, 8.4, 8.3, 8.9, 8.0~\n$ air_date_dow               <fct> Thu, Thu, Tue, Thu, Thu, Thu, Thu, Thu, Thu~\n$ air_date_month             <fct> Mar, Jan, Nov, Oct, May, Sep, Feb, May, Apr~\n$ air_date_USThanksgivingDay <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_USChristmasDay    <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_USNewYearsDay     <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_USIndependenceDay <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~"
-  },
-  {
-    "objectID": "slides/lec-13x.html#step-4-convert-numbers-to-factors",
-    "href": "slides/lec-13x.html#step-4-convert-numbers-to-factors",
-    "title": "Feature engineering",
-    "section": "Step 4: Convert numbers to factors",
-    "text": "Step 4: Convert numbers to factors\nConvert season to factor\n\noffice_rec <- office_rec %>%\n  step_num2factor(season, levels = as.character(1:9))\n\noffice_rec\n\nRecipe\n\nInputs:\n\n      role #variables\n        ID          1\n   outcome          1\n predictor          4\n\nOperations:\n\nDate features from air_date\nHoliday features from air_date\nFactor variables from season"
-  },
-  {
-    "objectID": "slides/lec-13x.html#step-4-prep-and-bake",
-    "href": "slides/lec-13x.html#step-4-prep-and-bake",
-    "title": "Feature engineering",
-    "section": "Step 4: Prep and bake",
-    "text": "Step 4: Prep and bake\n\noffice_rec_trained <- prep(office_rec)\nbake(office_rec_trained, office_train) %>%\n  glimpse()\n\nRows: 141\nColumns: 11\n$ season                     <fct> 8, 9, 2, 9, 3, 7, 3, 9, 9, 8, 5, 5, 9, 6, 7~\n$ episode                    <dbl> 18, 14, 8, 5, 22, 1, 15, 21, 18, 12, 25, 26~\n$ title                      <fct> \"Last Day in Florida\", \"Vandalism\", \"Perfor~\n$ total_votes                <dbl> 1429, 1402, 2416, 1515, 2783, 1897, 2283, 2~\n$ imdb_rating                <dbl> 7.8, 7.6, 8.2, 7.1, 9.1, 8.4, 8.3, 8.9, 8.0~\n$ air_date_dow               <fct> Thu, Thu, Tue, Thu, Thu, Thu, Thu, Thu, Thu~\n$ air_date_month             <fct> Mar, Jan, Nov, Oct, May, Sep, Feb, May, Apr~\n$ air_date_USThanksgivingDay <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_USChristmasDay    <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_USNewYearsDay     <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_USIndependenceDay <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~"
-  },
-  {
-    "objectID": "slides/lec-13x.html#step-5-make-dummy-variables",
-    "href": "slides/lec-13x.html#step-5-make-dummy-variables",
-    "title": "Feature engineering",
-    "section": "Step 5: Make dummy variables",
-    "text": "Step 5: Make dummy variables\nConvert all nominal (categorical) predictors to factors\n\noffice_rec <- office_rec %>%\n  step_dummy(all_nominal_predictors())\n\noffice_rec\n\nRecipe\n\nInputs:\n\n      role #variables\n        ID          1\n   outcome          1\n predictor          4\n\nOperations:\n\nDate features from air_date\nHoliday features from air_date\nFactor variables from season\nDummy variables from all_nominal_predictors()"
-  },
-  {
-    "objectID": "slides/lec-13x.html#step-5-prep-and-bake",
-    "href": "slides/lec-13x.html#step-5-prep-and-bake",
-    "title": "Feature engineering",
-    "section": "Step 5: Prep and bake",
-    "text": "Step 5: Prep and bake\n\noffice_rec_trained <- prep(office_rec)\nbake(office_rec_trained, office_train) %>%\n  glimpse()\n\nRows: 141\nColumns: 33\n$ episode                    <dbl> 18, 14, 8, 5, 22, 1, 15, 21, 18, 12, 25, 26~\n$ title                      <fct> \"Last Day in Florida\", \"Vandalism\", \"Perfor~\n$ total_votes                <dbl> 1429, 1402, 2416, 1515, 2783, 1897, 2283, 2~\n$ imdb_rating                <dbl> 7.8, 7.6, 8.2, 7.1, 9.1, 8.4, 8.3, 8.9, 8.0~\n$ air_date_USThanksgivingDay <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_USChristmasDay    <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_USNewYearsDay     <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_USIndependenceDay <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ season_X2                  <dbl> 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ season_X3                  <dbl> 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0~\n$ season_X4                  <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ season_X5                  <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0~\n$ season_X6                  <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0~\n$ season_X7                  <dbl> 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1~\n$ season_X8                  <dbl> 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0~\n$ season_X9                  <dbl> 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0~\n$ air_date_dow_Mon           <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_dow_Tue           <dbl> 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_dow_Wed           <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_dow_Thu           <dbl> 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1~\n$ air_date_dow_Fri           <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_dow_Sat           <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_month_Feb         <dbl> 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_month_Mar         <dbl> 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_month_Apr         <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1~\n$ air_date_month_May         <dbl> 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0~\n$ air_date_month_Jun         <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_month_Jul         <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_month_Aug         <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_month_Sep         <dbl> 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0~\n$ air_date_month_Oct         <dbl> 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_month_Nov         <dbl> 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~\n$ air_date_month_Dec         <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~"
-  },
-  {
-    "objectID": "slides/lec-13x.html#step-6-remove-zero-variance-predictors",
-    "href": "slides/lec-13x.html#step-6-remove-zero-variance-predictors",
-    "title": "Feature engineering",
-    "section": "Step 6: Remove zero variance predictors",
-    "text": "Step 6: Remove zero variance predictors\nRemove all predictors that contain only a single value\n\noffice_rec <- office_rec %>%\n  step_zv(all_predictors())\n\noffice_rec\n\nRecipe\n\nInputs:\n\n      role #variables\n        ID          1\n   outcome          1\n predictor          4\n\nOperations:\n\nDate features from air_date\nHoliday features from air_date\nFactor variables from season\nDummy variables from all_nominal_predictors()\nZero variance filter on all_predictors()"
-  },
-  {
-    "objectID": "slides/lec-13x.html#step-6-prep-and-bake",
-    "href": "slides/lec-13x.html#step-6-prep-and-bake",
-    "title": "Feature engineering",
-    "section": "Step 6: Prep and bake",
-    "text": "Step 6: Prep and bake\n\noffice_rec_trained <- prep(office_rec)\nbake(office_rec_trained, office_train) %>%\n  glimpse()\n\nRows: 141\nColumns: 22\n$ episode            <dbl> 18, 14, 8, 5, 22, 1, 15, 21, 18, 12, 25, 26, 12, 1,~\n$ title              <fct> \"Last Day in Florida\", \"Vandalism\", \"Performance Re~\n$ total_votes        <dbl> 1429, 1402, 2416, 1515, 2783, 1897, 2283, 2041, 144~\n$ imdb_rating        <dbl> 7.8, 7.6, 8.2, 7.1, 9.1, 8.4, 8.3, 8.9, 8.0, 8.0, 8~\n$ season_X2          <dbl> 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~\n$ season_X3          <dbl> 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~\n$ season_X4          <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~\n$ season_X5          <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, ~\n$ season_X6          <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, ~\n$ season_X7          <dbl> 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, ~\n$ season_X8          <dbl> 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, ~\n$ season_X9          <dbl> 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, ~\n$ air_date_dow_Tue   <dbl> 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~\n$ air_date_dow_Thu   <dbl> 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ~\n$ air_date_month_Feb <dbl> 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~\n$ air_date_month_Mar <dbl> 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~\n$ air_date_month_Apr <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, ~\n$ air_date_month_May <dbl> 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, ~\n$ air_date_month_Sep <dbl> 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, ~\n$ air_date_month_Oct <dbl> 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, ~\n$ air_date_month_Nov <dbl> 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, ~\n$ air_date_month_Dec <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~"
-  },
-  {
-    "objectID": "slides/lec-13x.html#putting-it-altogether",
-    "href": "slides/lec-13x.html#putting-it-altogether",
-    "title": "Feature engineering",
-    "section": "Putting it altogether",
-    "text": "Putting it altogether\n\noffice_rec <- recipe(imdb_rating ~ ., data = office_train) %>%\n  # make title's role ID\n  update_role(title, new_role = \"ID\") %>%\n  # extract day of week and month of air_date\n  step_date(air_date, features = c(\"dow\", \"month\")) %>%\n  # identify holidays and add indicators\n  step_holiday(\n    air_date, \n    holidays = c(\"USThanksgivingDay\", \"USChristmasDay\", \"USNewYearsDay\", \"USIndependenceDay\"), \n    keep_original_cols = FALSE\n  ) %>%\n  # turn season into factor\n  step_num2factor(season, levels = as.character(1:9)) %>%\n  # make dummy variables\n  step_dummy(all_nominal_predictors()) %>%\n  # remove zero variance predictors\n  step_zv(all_predictors())"
-  },
-  {
-    "objectID": "slides/lec-13x.html#putting-it-altogether-1",
-    "href": "slides/lec-13x.html#putting-it-altogether-1",
-    "title": "Feature engineering",
-    "section": "Putting it altogether",
-    "text": "Putting it altogether\n\noffice_rec\n\nRecipe\n\nInputs:\n\n      role #variables\n        ID          1\n   outcome          1\n predictor          4\n\nOperations:\n\nDate features from air_date\nHoliday features from air_date\nFactor variables from season\nDummy variables from all_nominal_predictors()\nZero variance filter on all_predictors()"
-  },
-  {
-    "objectID": "slides/lec-13x.html#specify-model",
-    "href": "slides/lec-13x.html#specify-model",
-    "title": "Feature engineering",
-    "section": "Specify model",
-    "text": "Specify model\n\noffice_spec <- linear_reg() %>%\n  set_engine(\"lm\")\n\noffice_spec\n\nLinear Regression Model Specification (regression)\n\nComputational engine: lm"
-  },
-  {
-    "objectID": "slides/lec-13x.html#build-workflow",
-    "href": "slides/lec-13x.html#build-workflow",
-    "title": "Feature engineering",
-    "section": "Build workflow",
-    "text": "Build workflow\nWorkflows bring together models and recipes so that they can be easily applied to both the training and test data.\n\noffice_wflow <- workflow() %>%\n  add_model(office_spec) %>%\n  add_recipe(office_rec)\n\n\nSee next slide for workflow…"
-  },
-  {
-    "objectID": "slides/lec-13x.html#view-workflow",
-    "href": "slides/lec-13x.html#view-workflow",
-    "title": "Feature engineering",
-    "section": "View workflow",
-    "text": "View workflow\n\noffice_wflow\n\n== Workflow ====================================================================\nPreprocessor: Recipe\nModel: linear_reg()\n\n-- Preprocessor ----------------------------------------------------------------\n5 Recipe Steps\n\n* step_date()\n* step_holiday()\n* step_num2factor()\n* step_dummy()\n* step_zv()\n\n-- Model -----------------------------------------------------------------------\nLinear Regression Model Specification (regression)\n\nComputational engine: lm"
-  },
-  {
-    "objectID": "slides/lec-13x.html#fit-model-to-training-data",
-    "href": "slides/lec-13x.html#fit-model-to-training-data",
-    "title": "Feature engineering",
-    "section": "Fit model to training data",
-    "text": "Fit model to training data\n\noffice_fit <- office_wflow %>%\n  fit(data = office_train)\n\ntidy(office_fit)\n\n# A tibble: 21 x 5\n   term         estimate std.error statistic  p.value\n   <chr>           <dbl>     <dbl>     <dbl>    <dbl>\n 1 (Intercept)  6.40     0.510        12.5   1.51e-23\n 2 episode     -0.00393  0.0171       -0.230 8.18e- 1\n 3 total_votes  0.000375 0.0000414     9.07  2.75e-15\n 4 season_X2    0.811    0.327         2.48  1.44e- 2\n 5 season_X3    1.04     0.343         3.04  2.91e- 3\n 6 season_X4    1.09     0.295         3.70  3.32e- 4\n 7 season_X5    1.08     0.348         3.11  2.34e- 3\n 8 season_X6    1.00     0.367         2.74  7.18e- 3\n 9 season_X7    1.02     0.352         2.89  4.52e- 3\n10 season_X8    0.497    0.348         1.43  1.55e- 1\n# ... with 11 more rows\n\n\n\n\nSo many predictors!"
-  },
-  {
-    "objectID": "slides/lec-13x.html#model-fit-summary",
-    "href": "slides/lec-13x.html#model-fit-summary",
-    "title": "Feature engineering",
-    "section": "Model fit summary",
-    "text": "Model fit summary\n\ntidy(office_fit) %>% print(n = 21)\n\n# A tibble: 21 x 5\n   term                estimate std.error statistic  p.value\n   <chr>                  <dbl>     <dbl>     <dbl>    <dbl>\n 1 (Intercept)         6.40     0.510        12.5   1.51e-23\n 2 episode            -0.00393  0.0171       -0.230 8.18e- 1\n 3 total_votes         0.000375 0.0000414     9.07  2.75e-15\n 4 season_X2           0.811    0.327         2.48  1.44e- 2\n 5 season_X3           1.04     0.343         3.04  2.91e- 3\n 6 season_X4           1.09     0.295         3.70  3.32e- 4\n 7 season_X5           1.08     0.348         3.11  2.34e- 3\n 8 season_X6           1.00     0.367         2.74  7.18e- 3\n 9 season_X7           1.02     0.352         2.89  4.52e- 3\n10 season_X8           0.497    0.348         1.43  1.55e- 1\n11 season_X9           0.621    0.345         1.80  7.41e- 2\n12 air_date_dow_Tue    0.382    0.422         0.904 3.68e- 1\n13 air_date_dow_Thu    0.284    0.389         0.731 4.66e- 1\n14 air_date_month_Feb -0.0597   0.132        -0.452 6.52e- 1\n15 air_date_month_Mar -0.0752   0.156        -0.481 6.31e- 1\n16 air_date_month_Apr  0.0954   0.177         0.539 5.91e- 1\n17 air_date_month_May  0.156    0.213         0.734 4.64e- 1\n18 air_date_month_Sep -0.0776   0.223        -0.348 7.28e- 1\n19 air_date_month_Oct -0.176    0.174        -1.01  3.13e- 1\n20 air_date_month_Nov -0.156    0.149        -1.05  2.98e- 1\n21 air_date_month_Dec  0.170    0.149         1.14  2.55e- 1"
-  },
-  {
-    "objectID": "slides/lec-13x.html#make-predictions-for-training-data",
-    "href": "slides/lec-13x.html#make-predictions-for-training-data",
-    "title": "Feature engineering",
-    "section": "Make predictions for training data",
-    "text": "Make predictions for training data\n\noffice_train_pred <- predict(office_fit, office_train) %>%\n  bind_cols(office_train %>% select(imdb_rating, title))\n\noffice_train_pred\n\n# A tibble: 141 x 3\n   .pred imdb_rating title              \n   <dbl>       <dbl> <chr>              \n 1  7.57         7.8 Last Day in Florida\n 2  7.77         7.6 Vandalism          \n 3  8.31         8.2 Performance Review \n 4  7.67         7.1 Here Comes Treble  \n 5  8.84         9.1 Beach Games        \n 6  8.33         8.4 Nepotism           \n 7  8.46         8.3 Phyllis' Wedding   \n 8  8.14         8.9 Livin' the Dream   \n 9  7.87         8   Promos             \n10  7.74         8   Pool Party         \n# ... with 131 more rows"
-  },
-  {
-    "objectID": "slides/lec-13x.html#r-squared",
-    "href": "slides/lec-13x.html#r-squared",
-    "title": "Feature engineering",
-    "section": "R-squared",
-    "text": "R-squared\nPercentage of variability in the IMDB ratings explained by the model.\n\n\nrsq(office_train_pred, truth = imdb_rating, estimate = .pred)\n\n# A tibble: 1 x 3\n  .metric .estimator .estimate\n  <chr>   <chr>          <dbl>\n1 rsq     standard       0.670\n\n\n\n\n\nAre models with high or low \\(R^2\\) more preferable?"
-  },
-  {
-    "objectID": "slides/lec-13x.html#rmse",
-    "href": "slides/lec-13x.html#rmse",
-    "title": "Feature engineering",
-    "section": "RMSE",
-    "text": "RMSE\nAn alternative model performance statistic: root mean square error.\n\\[ RMSE = \\sqrt{\\frac{\\sum_{i = 1}^n (y_i - \\hat{y}_i)^2}{n}} \\]\n\n\nrmse(office_train_pred, truth = imdb_rating, estimate = .pred)\n\n# A tibble: 1 x 3\n  .metric .estimator .estimate\n  <chr>   <chr>          <dbl>\n1 rmse    standard       0.302\n\n\n\n\n\nAre models with high or low RMSE are more preferable?"
-  },
-  {
-    "objectID": "slides/lec-13x.html#interpreting-rmse",
-    "href": "slides/lec-13x.html#interpreting-rmse",
-    "title": "Feature engineering",
-    "section": "Interpreting RMSE",
-    "text": "Interpreting RMSE\n\nIs this RMSE considered low or high?\n\n\nrmse(office_train_pred, truth = imdb_rating, estimate = .pred)\n\n# A tibble: 1 x 3\n  .metric .estimator .estimate\n  <chr>   <chr>          <dbl>\n1 rmse    standard       0.302\n\n\n\n\nDepends…\n\noffice_train %>%\n  summarise(min = min(imdb_rating), max = max(imdb_rating))\n\n# A tibble: 1 x 2\n    min   max\n  <dbl> <dbl>\n1   6.7   9.7"
-  },
-  {
-    "objectID": "slides/lec-13x.html#but-really",
-    "href": "slides/lec-13x.html#but-really",
-    "title": "Feature engineering",
-    "section": "But, really…",
-    "text": "But, really…\nwho cares about predictions on training data?"
-  },
-  {
-    "objectID": "slides/lec-13x.html#make-predictions-for-testing-data",
-    "href": "slides/lec-13x.html#make-predictions-for-testing-data",
-    "title": "Feature engineering",
-    "section": "Make predictions for testing data",
-    "text": "Make predictions for testing data\n\noffice_test_pred <- predict(office_fit, office_test) %>%\n  bind_cols(office_test %>% select(imdb_rating, title))\n\noffice_test_pred\n\n# A tibble: 47 x 3\n   .pred imdb_rating title              \n   <dbl>       <dbl> <chr>              \n 1  8.03         8.3 Diversity Day      \n 2  7.98         7.9 Health Care        \n 3  8.41         8.4 The Fire           \n 4  8.35         8.2 Halloween          \n 5  8.35         8.4 E-Mail Surveillance\n 6  8.68         9   The Injury         \n 7  8.32         7.9 The Carpet         \n 8  8.93         9.3 Casino Night       \n 9  8.80         8.9 Gay Witch Hunt     \n10  8.37         8.2 Initiation         \n# ... with 37 more rows"
-  },
-  {
-    "objectID": "slides/lec-13x.html#evaluate-performance-for-testing-data",
-    "href": "slides/lec-13x.html#evaluate-performance-for-testing-data",
-    "title": "Feature engineering",
-    "section": "Evaluate performance for testing data",
-    "text": "Evaluate performance for testing data\nRMSE of model fit to testing data\n\nrmse(office_test_pred, truth = imdb_rating, estimate = .pred)\n\n# A tibble: 1 x 3\n  .metric .estimator .estimate\n  <chr>   <chr>          <dbl>\n1 rmse    standard       0.411\n\n\nR-sq of model fit to testing data\n\nrsq(office_test_pred, truth = imdb_rating, estimate = .pred)\n\n# A tibble: 1 x 3\n  .metric .estimator .estimate\n  <chr>   <chr>          <dbl>\n1 rsq     standard       0.468"
-  },
-  {
-    "objectID": "slides/lec-13x.html#training-vs.-testing",
-    "href": "slides/lec-13x.html#training-vs.-testing",
-    "title": "Feature engineering",
-    "section": "Training vs. testing",
-    "text": "Training vs. testing\n\n\n\n\n\n\n\n\n\n\n\n\nmetric\ntrain\ntest\ncomparison\n\n\n\n\nRMSE\n0.302\n0.411\nRMSE lower for training\n\n\nR-squared\n0.67\n0.468\nR-squared higher for training"
-  },
-  {
-    "objectID": "slides/lec-13x.html#evaluating-performance-on-training-data",
-    "href": "slides/lec-13x.html#evaluating-performance-on-training-data",
-    "title": "Feature engineering",
-    "section": "Evaluating performance on training data",
-    "text": "Evaluating performance on training data\n\nThe training set does not have the capacity to be a good arbiter of performance.\nIt is not an independent piece of information; predicting the training set can only reflect what the model already knows.\nSuppose you give a class a test, then give them the answers, then provide the same test. The student scores on the second test do not accurately reflect what they know about the subject; these scores would probably be higher than their results on the first test.\n\n\n\n\nsta210-s22.github.io/website"
-  },
-  {
     "objectID": "slides/lec-2.html#outline",
     "href": "slides/lec-2.html#outline",
     "title": "Introduction to Data",
@@ -2499,11 +1596,11 @@
     "text": "Announcements - general\n\nLectures will closely follow IMS, but\n\nsome topics will be skipped, e.g. 2.1.5, dot plots, etc.\nsome topics will be added, e.g. AIC and BIC\n\n\nDrop/Add for Term 1 ends tomorrow (Friday, May 13)."
   },
   {
-    "objectID": "slides/lec-3.html#franklin-albino-and-gilman-have-read-the-syllabus.-have-you",
-    "href": "slides/lec-3.html#franklin-albino-and-gilman-have-read-the-syllabus.-have-you",
+    "objectID": "slides/lec-3.html#franklin-albino-and-gillman-have-read-the-syllabus.-have-you",
+    "href": "slides/lec-3.html#franklin-albino-and-gillman-have-read-the-syllabus.-have-you",
     "title": "Data Summary and Visualization",
-    "section": "Franklin (albino) and Gilman have read the syllabus. Have you?",
-    "text": "Franklin (albino) and Gilman have read the syllabus. Have you?"
+    "section": "Franklin (albino) and Gillman have read the syllabus. Have you?",
+    "text": "Franklin (albino) and Gillman have read the syllabus. Have you?"
   },
   {
     "objectID": "slides/lec-3.html#recap-of-last-lecture",
@@ -2814,291 +1911,319 @@
     "text": "Recap\n\n\nHistogram, scatterplot, boxplot\nAverage, median, variance, sd and IQR; robustness\nFrequency, contigency and proportion tables\nBarplot, mosaic plot\nEffective communication: well-edited figures, \\(\\ge3\\) variables (symbols, colors, facets)\nR for Data Science - chapters 3 and 7\n\n\n\n\n“The simple graph has brought more information to the data analyst’s mind than any other device.” — John Tukey\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
-    "objectID": "slides/lec-4x.html#announcements",
-    "href": "slides/lec-4x.html#announcements",
+    "objectID": "slides/lec-4.html#announcements",
+    "href": "slides/lec-4.html#announcements",
     "title": "Simple Linear Regression Models",
     "section": "Announcements",
-    "text": "Announcements\n\nAssignments"
+    "text": "Announcements\n\nHomework 1 has been returned\nHomework 2 has been published\n\nFeel free to re-use the template from HW 1"
   },
   {
-    "objectID": "slides/lec-4x.html#recap-of-last-lecture",
-    "href": "slides/lec-4x.html#recap-of-last-lecture",
+    "objectID": "slides/lec-4.html#recap-of-last-lecture",
+    "href": "slides/lec-4.html#recap-of-last-lecture",
     "title": "Simple Linear Regression Models",
     "section": "Recap of last lecture",
     "text": "Recap of last lecture\n\n\nHistogram, scatterplot, boxplot\nAverage, median, variance, sd and IQR; robustness\nFrequency, contigency and proportion tables\nBarplot, mosaic plot\nEffective communication: well-edited figures, \\(\\ge3\\) variables (symbols, colors, facets)\nR for Data Science - chapters 3 and 7"
   },
   {
-    "objectID": "slides/lec-4x.html#outline",
-    "href": "slides/lec-4x.html#outline",
+    "objectID": "slides/lec-4.html#outline",
+    "href": "slides/lec-4.html#outline",
     "title": "Simple Linear Regression Models",
     "section": "Outline",
     "text": "Outline\n\nsimple linear regression model\nleast-square estimates\nmodel comparison\noutliers"
   },
   {
-    "objectID": "slides/lec-4x.html#regression-model",
-    "href": "slides/lec-4x.html#regression-model",
+    "objectID": "slides/lec-4.html#regression-model",
+    "href": "slides/lec-4.html#regression-model",
     "title": "Simple Linear Regression Models",
     "section": "Regression model",
-    "text": "Regression model\n\nd <- ggplot2::mpg\nhead(d, n = 4)\n\n# A tibble: 4 x 11\n  manufacturer model displ  year   cyl trans      drv     cty   hwy fl    class \n  <chr>        <chr> <dbl> <int> <int> <chr>      <chr> <int> <int> <chr> <chr> \n1 audi         a4      1.8  1999     4 auto(l5)   f        18    29 p     compa~\n2 audi         a4      1.8  1999     4 manual(m5) f        21    29 p     compa~\n3 audi         a4      2    2008     4 manual(m6) f        20    31 p     compa~\n4 audi         a4      2    2008     4 auto(av)   f        21    30 p     compa~\n\n\n\nSuppose that the variable hwy (fuel efficiency on the highway) is very expensive to measure.\nWe decide to estimate it using the other variables. To do so, we will fit a regression model. \\[\n\\text{hwy} \\approx \\text{model}(\\text{other variables})\n\\]"
+    "text": "Regression model\n\nd <- ggplot2::mpg\nhead(d, n = 4)\n\n# A tibble: 4 x 11\n  manufacturer model displ  year   cyl trans      drv     cty   hwy fl    class \n  <chr>        <chr> <dbl> <int> <int> <chr>      <chr> <int> <int> <chr> <chr> \n1 audi         a4      1.8  1999     4 auto(l5)   f        18    29 p     compa~\n2 audi         a4      1.8  1999     4 manual(m5) f        21    29 p     compa~\n3 audi         a4      2    2008     4 manual(m6) f        20    31 p     compa~\n4 audi         a4      2    2008     4 auto(av)   f        21    30 p     compa~\n\n\n\nSuppose the variable hwy (fuel efficiency on highway) is very expensive to measure.\nWe decide to estimate it using the other variables. To do so, we will fit a regression model. \\[\n\\text{hwy} \\approx \\text{model}(\\text{other variables})\n\\]"
   },
   {
-    "objectID": "slides/lec-4x.html#simple-regression",
-    "href": "slides/lec-4x.html#simple-regression",
+    "objectID": "slides/lec-4.html#simple-regression",
+    "href": "slides/lec-4.html#simple-regression",
     "title": "Simple Linear Regression Models",
     "section": "Simple regression",
     "text": "Simple regression\nWe expect the variable cty to be a good proxy for hwy.\nAfter all, if a car is efficient in the city, we expect it to also be efficient on the highway! We will therefore consider a simple regression model\n\\[\n\\text{hwy} \\approx \\text{model}(\\text{cty})\n\\]"
   },
   {
-    "objectID": "slides/lec-4x.html#simple-linear-regression-1",
-    "href": "slides/lec-4x.html#simple-linear-regression-1",
+    "objectID": "slides/lec-4.html#simple-linear-regression-1",
+    "href": "slides/lec-4.html#simple-linear-regression-1",
     "title": "Simple Linear Regression Models",
     "section": "Simple linear regression",
-    "text": "Simple linear regression\n\nggplot(d) +\n  geom_point(aes(x = cty, y = hwy))\n\n\nIt turns out that the variables cty and hwy are linearly associated.\nWe therefore decide to use a **simple linear regression* model\n\\[\n\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty}\n\\]"
+    "text": "Simple linear regression\n\nggplot(d) +\n  geom_point(aes(x = cty, y = hwy))\n\n\nThe variables cty and hwy are linearly associated.\nWe therefore opt for a simple linear regression model\n\\[\n\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty}\n\\]"
   },
   {
-    "objectID": "slides/lec-4x.html#parameters",
-    "href": "slides/lec-4x.html#parameters",
+    "objectID": "slides/lec-4.html#parameters",
+    "href": "slides/lec-4.html#parameters",
     "title": "Simple Linear Regression Models",
     "section": "Parameters",
-    "text": "Parameters\nThe numbers \\(\\beta_0\\) and \\(\\beta_1\\) are the two parameters of the model.\n\nWe now want to find good values for these parameters.\n\n\nLet us look at two sets of values:\n\n\n\\(\\beta_0 = 1\\), \\(\\beta_1 = 1.3\\) \\[\n  \\text{hwy} \\approx 1 + 1.3 \\text{cty}\n  \\]\n\n\n\\(\\beta_0 = 15\\), \\(\\beta_1 = 0.5\\) \\[\n  \\text{hwy} \\approx 15 + 0.5\\text{cty}\n  \\]"
+    "text": "Parameters\nThe numbers \\(\\beta_0\\) and \\(\\beta_1\\) are the two parameters of the model.\n\nWe now want to find good values for these unknown parameters.\n\n\nLet us look at two sets of values:\n\n\\(\\beta_0 = 1, \\beta_1 = 1.3 \\qquad \\Rightarrow \\qquad \\text{hwy} \\approx 1 + 1.3 \\text{cty}\\)\n\\(\\beta_0 = 15, \\beta_1 = 0.5 \\qquad \\Rightarrow \\qquad \\text{hwy} \\approx 15 + 0.5 \\text{cty}\\)"
   },
   {
-    "objectID": "slides/lec-4x.html#section",
-    "href": "slides/lec-4x.html#section",
+    "objectID": "slides/lec-4.html#section",
+    "href": "slides/lec-4.html#section",
     "title": "Simple Linear Regression Models",
     "section": "",
     "text": "Good model\nBad model\n\n\n\n\nggplot(d) +\n  geom_point(aes(x = cty, y = hwy)) +\n  geom_abline(intercept = 1, slope = 1.3)\n\n\n\n\n\n\n\n\n\n\nggplot(d) +\n  geom_point(aes(x = cty, y = hwy)) +\n  geom_abline(intercept = 15, slope = 0.5)"
   },
   {
-    "objectID": "slides/lec-4x.html#prediction",
-    "href": "slides/lec-4x.html#prediction",
+    "objectID": "slides/lec-4.html#prediction",
+    "href": "slides/lec-4.html#prediction",
     "title": "Simple Linear Regression Models",
     "section": "Prediction",
-    "text": "Prediction\nWe can use our models to estimate hwy for new vehicles.\nImagine there is a new vehicle with \\(\\text{cty} = 30\\). Instead of measuring its hwy, we decide to use our model to estimate it. Using the “good” model gives the following estimate \\begin{align*} & _0 + _1 \\ & = 1 + 1.3 * 30\\ & = 40\\ \\end{align}"
+    "text": "Prediction\nWe can use our models to estimate hwy for new vehicles.\n\nImagine there is a new vehicle with \\(\\text{cty} = 30\\). Instead of measuring its hwy (expensive), we use our model to estimate it. Using the “good” model gives the following estimate\n\\[\n\\begin{align*}\n\\text{hwy}\n& \\approx \\beta_0 + \\beta_1 \\text{cty} \\\\\n& = 1 + 1.3 * 30\\\\\n& = 40\n\\end{align*}\n\\]"
   },
   {
-    "objectID": "slides/lec-4x.html#section-1",
-    "href": "slides/lec-4x.html#section-1",
+    "objectID": "slides/lec-4.html#section-1",
+    "href": "slides/lec-4.html#section-1",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "Is this the true hwy os the new vehicle? No! - this is only an estimate based on the value of the variable cty and our “good” model.\n\nCan we do better? Yes! - Take additional variable into account in the model (e.g. engine size, vehicle age, etc) - Use better values for \\(\\beta_0\\) and \\(\\beta_1\\)."
+    "text": "Is this the true hwy of the new vehicle? No! - this is only an estimate based on the value of the variable cty and our “good” model.\n\nCan we do better? Yes!\n\nTake additional variable into account in the model (e.g. engine size, vehicle age, etc)\nUse better values for \\(\\beta_0\\) and \\(\\beta_1\\)."
   },
   {
-    "objectID": "slides/lec-4x.html#section-2",
-    "href": "slides/lec-4x.html#section-2",
+    "objectID": "slides/lec-4.html#section-2",
+    "href": "slides/lec-4.html#section-2",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "Group exercise - parameters\n\n\n\nWhat is the prediction for the new vehicle if we use the bad model?\ncopy andpaste the following piece of code and try different values for the parameters to find a good set of values.\n\n\nlibrary(tidyverse)\nd <- ggplot2::mpg\nbeta_0 <- 15\nbeta_1 <- 0.5\nggplot(d) +\n  geom_point(aes(x = cty, y = hwy)) +\n  geom_abline(intercept = beta_0, slope = beta_1)\n\n\n\n\n\n\n\n\n05:00"
+    "text": "Group exercise - parameters\n\n\n\nWhat is the prediction for the new vehicle if we use the bad model?\ncopy and paste the following piece of code and try different values for the parameters to find a good set of values.\n\n\nlibrary(tidyverse)\nd <- ggplot2::mpg\nbeta_0 <- 15\nbeta_1 <- 0.5\nggplot(d) +\n  geom_point(aes(x = cty, y = hwy)) +\n  geom_abline(intercept = beta_0, slope = beta_1)\n\n\n\n\n\n\n\n\n05:00"
   },
   {
-    "objectID": "slides/lec-4x.html#linear-association",
-    "href": "slides/lec-4x.html#linear-association",
+    "objectID": "slides/lec-4.html#linear-association",
+    "href": "slides/lec-4.html#linear-association",
     "title": "Simple Linear Regression Models",
     "section": "Linear association",
     "text": "Linear association\nA simple linear regression model is only applicable if the relation between the predictor and the response is linear.\n\nIf the relation is not linear, the simple linear regression is not suitable.\nIn this case, we need to model the non-linearity (next lecture)."
   },
   {
-    "objectID": "slides/lec-4x.html#section-3",
-    "href": "slides/lec-4x.html#section-3",
+    "objectID": "slides/lec-4.html#section-3",
+    "href": "slides/lec-4.html#section-3",
     "title": "Simple Linear Regression Models",
     "section": "",
     "text": "Group exercise - linear association\n\n\nExercise 7.3\n\n\n\n\n\n\n03:00"
   },
   {
-    "objectID": "slides/lec-4x.html#residuals",
-    "href": "slides/lec-4x.html#residuals",
+    "objectID": "slides/lec-4.html#residuals",
+    "href": "slides/lec-4.html#residuals",
     "title": "Simple Linear Regression Models",
     "section": "Residuals",
-    "text": "Residuals\nOur predictions are only approximate.\n\nLet us represent our prediction with \\(\\widehat{\\text{hwy}}\\) and the true value with \\(\\text{hw}\\)\n\nthe error we make is \\(\\text{hw} - \\widehat{\\text{hwy}}\\)\n\nthis is the residual\n\n\n\\[e = \\text{hwy} - \\widehat{\\text{hwy}}\\]"
+    "text": "Residuals\nOur predictions are only approximate.\n\nLet us represent our prediction with \\(\\widehat{\\text{hwy}}\\) and the true value with \\(\\text{hwy}\\)\n\nthe error we make is \\(\\text{hw} - \\widehat{\\text{hwy}}\\)\n\nthis is called the residual\n\n\n\\[e = \\text{hwy} - \\widehat{\\text{hwy}}\\]"
   },
   {
-    "objectID": "slides/lec-4x.html#visualizing-residuals",
-    "href": "slides/lec-4x.html#visualizing-residuals",
+    "objectID": "slides/lec-4.html#visualizing-residuals",
+    "href": "slides/lec-4.html#visualizing-residuals",
     "title": "Simple Linear Regression Models",
     "section": "Visualizing residuals",
-    "text": "Visualizing residuals\n\n\n\n\nBlack circles: Observed values (y = hwy)\nPink solid line: Least-squares regression line\nMaroon triangles: Predicted values (y = .fitted)\n\nGray lines: Residuals"
+    "text": "Visualizing residuals\n\n\n\n\nBlack circles: Observed values (\\(\\text{hwy}\\))\nPink solid line: Least-squares regression line\nMaroon triangles: Predicted values (\\(\\widehat{\\text{hwy}}\\))\n\nGray lines: Residuals"
   },
   {
-    "objectID": "slides/lec-4x.html#residual-plot",
-    "href": "slides/lec-4x.html#residual-plot",
+    "objectID": "slides/lec-4.html#residual-plot",
+    "href": "slides/lec-4.html#residual-plot",
     "title": "Simple Linear Regression Models",
     "section": "Residual plot",
     "text": "Residual plot\n\nd %>%\n  mutate(\n    hwy_hat = 1 + 1.3 * cty,\n    resid   = hwy - hwy_hat\n    ) %>%\n  ggplot() +\n  geom_point(aes(cty, resid)) +\n  geom_abline(intercept = 0, slope = 0, col = \"red\")"
   },
   {
-    "objectID": "slides/lec-4x.html#section-4",
-    "href": "slides/lec-4x.html#section-4",
+    "objectID": "slides/lec-4.html#section-4",
+    "href": "slides/lec-4.html#section-4",
     "title": "Simple Linear Regression Models",
     "section": "",
     "text": "Group exercise - residuals\n\n\nExercises 7.1, 7.17, 7.19\n\n\n\n\n\n\n05:00"
   },
   {
-    "objectID": "slides/lec-4x.html#good-estimates",
-    "href": "slides/lec-4x.html#good-estimates",
+    "objectID": "slides/lec-4.html#good-estimates",
+    "href": "slides/lec-4.html#good-estimates",
     "title": "Simple Linear Regression Models",
     "section": "Good estimates",
-    "text": "Good estimates\n\nWe want to choose estimates that give accurate prediction\nWe want to minimize the residuals\n\n\nPerhaps the most natural thing to do is to find the values for \\(\\beta_0\\) and \\(\\beta_1\\) that minimize the sum of absolute residuals \\[|e_1|+|e_2|+\\dots+|e_n|\\] For practical reasons, the sum of squared residuals is more common criterion \\[e_1^2+e_2^2+\\dots+e_n^2\\] ## Why squaring the residuals?\n\ncan work by hand (pre-computer)\nreflects the assumptions that being off by \\(4\\) is more than twice as bad as being off by \\(2\\)\n\nnice mathematical properties\nmainstream"
+    "text": "Good estimates\nWe want to choose estimates that give a model that fits the data well.\n\na model with a regression line that is close to the data\n\n\nWe want to minimize the residuals."
   },
   {
-    "objectID": "slides/lec-4x.html#least-square-estimates",
-    "href": "slides/lec-4x.html#least-square-estimates",
+    "objectID": "slides/lec-4.html#minimizing-residuals",
+    "href": "slides/lec-4.html#minimizing-residuals",
+    "title": "Simple Linear Regression Models",
+    "section": "Minimizing residuals",
+    "text": "Minimizing residuals\nPerhaps the most natural thing to do is to find the values for \\(\\beta_0\\) and \\(\\beta_1\\) that minimize the sum of absolute residuals \\[\n|e_1|+|e_2|+\\dots+|e_n|\n\\]\n\nFor practical reasons, the sum of squared residuals (SSR) is a more common criterion \\[\ne_1^2+e_2^2+\\dots+e_n^2\n\\]"
+  },
+  {
+    "objectID": "slides/lec-4.html#why-squaring-the-residuals",
+    "href": "slides/lec-4.html#why-squaring-the-residuals",
+    "title": "Simple Linear Regression Models",
+    "section": "Why squaring the residuals?",
+    "text": "Why squaring the residuals?\n\ncan work by hand (pre-computer era)\nreflects the assumptions that being off by \\(4\\) is more than twice as bad as being off by \\(2\\)\n\nnice mathematical properties\nmainstream"
+  },
+  {
+    "objectID": "slides/lec-4.html#least-square-estimates",
+    "href": "slides/lec-4.html#least-square-estimates",
     "title": "Simple Linear Regression Models",
     "section": "Least-square estimates",
-    "text": "Least-square estimates\nWe find the values for \\(\\beta_0\\) and \\(\\beta_1\\) that minimize the SSR with the R function lm\n\nlm(hwy ~ cty, data = d)\n\n\nCall:\nlm(formula = hwy ~ cty, data = d)\n\nCoefficients:\n(Intercept)          cty  \n      0.892        1.337  \n\n\nWe denote the least-square estimates with the symbols \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\).\nIn our model, we therefore have \\[\\hat{\\beta}_0 = 0.892, \\qquad \\hat{\\beta}_1 = 1.337\\] ##\n\nggplot(d) +\n  geom_point(aes(x = cty, y = hwy)) +\n  geom_abline(intercept = 0.892, slope = 1.337)"
+    "text": "Least-square estimates\nWe find the values for \\(\\beta_0\\) and \\(\\beta_1\\) that minimize the SSR with the R command lm\n\nlm(hwy ~ cty, data = d)\n\n\nCall:\nlm(formula = hwy ~ cty, data = d)\n\nCoefficients:\n(Intercept)          cty  \n      0.892        1.337  \n\n\nWe denote the least-square estimates with the symbols \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\).\nIn our model, we therefore have \\[\\hat{\\beta}_0 = 0.892, \\qquad \\hat{\\beta}_1 = 1.337\\]"
   },
   {
-    "objectID": "slides/lec-4x.html#reading-r-output",
-    "href": "slides/lec-4x.html#reading-r-output",
+    "objectID": "slides/lec-4.html#visualizing-the-least-square-regression-line",
+    "href": "slides/lec-4.html#visualizing-the-least-square-regression-line",
+    "title": "Simple Linear Regression Models",
+    "section": "Visualizing the least square regression line",
+    "text": "Visualizing the least square regression line\n\nggplot(d) +\n  geom_point(aes(x = cty, y = hwy)) +\n  geom_abline(intercept = 0.892, slope = 1.337)"
+  },
+  {
+    "objectID": "slides/lec-4.html#reading-r-output",
+    "href": "slides/lec-4.html#reading-r-output",
     "title": "Simple Linear Regression Models",
     "section": "Reading R output",
-    "text": "Reading R output\nWhen you fit a model, R can provide the results in different formats.\n\nm <- lm(hwy ~ cty, data = d)\n\n\n\nEstimates only\nRaw R output\nTidy R output\n\n\n\n\nm\n\n\nCall:\nlm(formula = hwy ~ cty, data = d)\n\nCoefficients:\n(Intercept)          cty  \n      0.892        1.337  \n\n\nPrinting the model itself provides the least-square estimates. This is sufficient for now.\n\n\n\nsummary(m)\n\n\nCall:\nlm(formula = hwy ~ cty, data = d)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-5.3408 -1.2790  0.0214  1.0338  4.0461 \n\nCoefficients:\n            Estimate Std. Error t value Pr(>|t|)    \n(Intercept)  0.89204    0.46895   1.902   0.0584 .  \ncty          1.33746    0.02697  49.585   <2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.752 on 232 degrees of freedom\nMultiple R-squared:  0.9138,    Adjusted R-squared:  0.9134 \nF-statistic:  2459 on 1 and 232 DF,  p-value: < 2.2e-16\n\n\nThis format contains information that will be useful when we do inference. It is, however, difficult to read.\n\n\n\nsummary(m) %>%\n  tidy() %>%\n  kable()\n\n\n\n term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n\n\n (Intercept) \n    0.8920411 \n    0.4689457 \n    1.902227 \n    0.05838 \n  \n\n cty \n    1.3374556 \n    0.0269732 \n    49.584698 \n    0.00000 \n  \n\n\n\n\nThis format contains the information necessary for doing inference and is easy to read. This is the format used the textbook."
+    "text": "Reading R output\nR can provide the results of a model in different formats.\n\nm <- lm(hwy ~ cty, data = d)\n\n\n\nEstimates only\nRaw R output\nTidy R output\n\n\n\n\nm\n\n\nCall:\nlm(formula = hwy ~ cty, data = d)\n\nCoefficients:\n(Intercept)          cty  \n      0.892        1.337  \n\n\nPrinting the model itself provides the least-square estimates. This is sufficient for now.\n\n\n\nsummary(m)\n\n\nCall:\nlm(formula = hwy ~ cty, data = d)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-5.3408 -1.2790  0.0214  1.0338  4.0461 \n\nCoefficients:\n            Estimate Std. Error t value Pr(>|t|)    \n(Intercept)  0.89204    0.46895   1.902   0.0584 .  \ncty          1.33746    0.02697  49.585   <2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.752 on 232 degrees of freedom\nMultiple R-squared:  0.9138,    Adjusted R-squared:  0.9134 \nF-statistic:  2459 on 1 and 232 DF,  p-value: < 2.2e-16\n\n\nThis format contains information that will be useful when we do inference. It is, however, difficult to read.\n\n\n\nsummary(m) %>%\n  tidy() %>%\n  kable(digits = 2)\n\n\n\n term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n\n\n (Intercept) \n    0.89 \n    0.47 \n    1.90 \n    0.06 \n  \n\n cty \n    1.34 \n    0.03 \n    49.58 \n    0.00 \n  \n\n\n\n\nThis format contains the information necessary for doing inference and is easy to read. This is the format used the textbook."
   },
   {
-    "objectID": "slides/lec-4x.html#exploring-the-model",
-    "href": "slides/lec-4x.html#exploring-the-model",
+    "objectID": "slides/lec-4.html#exploring-the-model",
+    "href": "slides/lec-4.html#exploring-the-model",
     "title": "Simple Linear Regression Models",
     "section": "Exploring the model",
-    "text": "Exploring the model\nWe can access the residuals and prediction (fitted values) with the command augment.\n\nm <- lm(hwy ~ cty, data = d)\naugment(m)[,1:4]\n\n# A tibble: 234 x 4\n     hwy   cty .fitted .resid\n   <int> <int>   <dbl>  <dbl>\n 1    29    18    25.0 4.03  \n 2    29    21    29.0 0.0214\n 3    31    20    27.6 3.36  \n 4    30    21    29.0 1.02  \n 5    26    16    22.3 3.71  \n 6    26    18    25.0 1.03  \n 7    27    18    25.0 2.03  \n 8    26    18    25.0 1.03  \n 9    25    16    22.3 2.71  \n10    28    20    27.6 0.359 \n# ... with 224 more rows"
+    "text": "Exploring the model\nWe can access the residuals and predictions (fitted values) with the command augment.\n\nm <- lm(hwy ~ cty, data = d)\naugment(m)[,1:4]\n\n# A tibble: 234 x 4\n     hwy   cty .fitted .resid\n   <int> <int>   <dbl>  <dbl>\n 1    29    18    25.0 4.03  \n 2    29    21    29.0 0.0214\n 3    31    20    27.6 3.36  \n 4    30    21    29.0 1.02  \n 5    26    16    22.3 3.71  \n 6    26    18    25.0 1.03  \n 7    27    18    25.0 2.03  \n 8    26    18    25.0 1.03  \n 9    25    16    22.3 2.71  \n10    28    20    27.6 0.359 \n# ... with 224 more rows"
   },
   {
-    "objectID": "slides/lec-4x.html#section-5",
-    "href": "slides/lec-4x.html#section-5",
+    "objectID": "slides/lec-4.html#section-5",
+    "href": "slides/lec-4.html#section-5",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "Group exercise - exploring a model\n\n\nFor the third observation,\n\nWhat is the value of cty?\nWhat is the predicted value for hwy based on the model?\nWhat is the actual value for hwy?\nWhat is its residual?\nDid the model over- or under-predict?\n\n\n\n\n\n\n\n04:00"
+    "text": "Group exercise - exploring a model\n\n\nFor the third observation of the sample,\n\nwhat is the value of cty?\nwhat is the predicted value for hwy based on the model?\nwhat is the actual value for hwy?\nwhat is the residual?\ndid the model over- or under-predict?\n\n\n\n\n\n\n\n04:00"
   },
   {
-    "objectID": "slides/lec-4x.html#intepreting-the-parameters",
-    "href": "slides/lec-4x.html#intepreting-the-parameters",
+    "objectID": "slides/lec-4.html#intepreting-the-parameters",
+    "href": "slides/lec-4.html#intepreting-the-parameters",
     "title": "Simple Linear Regression Models",
     "section": "Intepreting the parameters",
-    "text": "Intepreting the parameters\n\nthe intercept \\(\\hat{\\beta}_0\\) is the estimate for a car with \\(\\text{cty} = 0\\)\n\nmeaningless in our case\n\n\n\n\n\nthe slope \\(\\hat{\\beta}_1\\) is the increase in a our estimate for hwy for each additional unit of\n\nFor each additional unit of cty, we expect hwy to increase by 1.337.\n\n\n\n\n\n\nextrapolation\n\nstick to the range of the data\nthe intercept will not always be meaningful"
+    "text": "Intepreting the parameters\n\nthe intercept estimate \\(\\hat{\\beta}_0\\) is the prediction for a car with \\(\\text{cty} = 0\\)\n\nmeaningless in our case\n\n\n\n\n\nthe slope estimate \\(\\hat{\\beta}_1\\) is the increase in a our prediction for hwy for each additional unit of cty\n\n“for each additional unit of cty, we expect hwy to increase by 1.337”\n\n\n\n\n\n\n\n\n\n\n\nExtrapolation\n\n\n\nstick to the range of the data\nthe intercept will not always be meaningful"
   },
   {
-    "objectID": "slides/lec-4x.html#special-case-categorical-predictor",
-    "href": "slides/lec-4x.html#special-case-categorical-predictor",
+    "objectID": "slides/lec-4.html#special-case-categorical-predictor",
+    "href": "slides/lec-4.html#special-case-categorical-predictor",
     "title": "Simple Linear Regression Models",
     "section": "Special case: categorical predictor",
-    "text": "Special case: categorical predictor\nLet us create a binary predictor indicating if the car is from \\(1999\\).\n\nd_binary <- mutate(d, year_binary = year == 1999)\nhead(select(d_binary, hwy, year, year_binary))\n\n# A tibble: 6 x 3\n    hwy  year year_binary\n  <int> <int> <lgl>      \n1    29  1999 TRUE       \n2    29  1999 TRUE       \n3    31  2008 FALSE      \n4    30  2008 FALSE      \n5    26  1999 TRUE       \n6    26  1999 TRUE       \n\n\nThe variable year_binary takes the value \\(1\\) (TRUE) if the car is from \\(1999\\) and \\(0\\) (FALSE) otherwise."
+    "text": "Special case: categorical predictor\nLet us create a binary predictor indicating if the car is from \\(1999\\).\n\nd_binary <- mutate(d, year_binary = if_else(year == 1999, 1, 0))\nhead(select(d_binary, hwy, year, year_binary))\n\n# A tibble: 6 x 3\n    hwy  year year_binary\n  <int> <int>       <dbl>\n1    29  1999           1\n2    29  1999           1\n3    31  2008           0\n4    30  2008           0\n5    26  1999           1\n6    26  1999           1\n\n\nThe variable year_binary takes the value \\(1\\) if the car is from \\(1999\\) and \\(0\\) otherwise."
   },
   {
-    "objectID": "slides/lec-4x.html#section-6",
-    "href": "slides/lec-4x.html#section-6",
+    "objectID": "slides/lec-4.html#section-6",
+    "href": "slides/lec-4.html#section-6",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "lm(hwy ~ year_binary, data = d_binary)\n\n\nCall:\nlm(formula = hwy ~ year_binary, data = d_binary)\n\nCoefficients:\n    (Intercept)  year_binaryTRUE  \n       23.45299         -0.02564  \n\n\nThe model equation is\n\\[\n\\text{hwy} \\approx 23.46 - 0.026 \\text{year_binary}\n\\]\nFor a new car from \\(1999\\), the variable year_binary takes the value \\(1\\) and our prediction is\n\\[\n\\widehat{\\text{hwy}} = 23.46 - 0.026*1 = 23.434\n\\]\nWhile for a car that not from \\(1999\\), the variable year_binary takes the value \\(1\\) and our prediction is\n\\[\n\\widehat{\\text{hwy}} = 23.46 - 0.026*0 = 23.46\n\\]"
+    "text": "lm(hwy ~ year_binary, data = d_binary)\n\n\nCall:\nlm(formula = hwy ~ year_binary, data = d_binary)\n\nCoefficients:\n(Intercept)  year_binary  \n   23.45299     -0.02564  \n\n\nThe model equation is\n\\[\n\\text{hwy} \\approx 23.46 - 0.026 \\text{year_binary}\n\\]\nFor a new car from \\(1999\\), the variable year_binary takes the value \\(1\\) and our prediction is\n\\[\n\\widehat{\\text{hwy}} = 23.46 - 0.026*1 = 23.46 - 0.026 = 23.434\n\\]\nWhile for a car that not from \\(1999\\), the variable year_binary takes the value \\(1\\) and our prediction is\n\\[\n\\widehat{\\text{hwy}} = 23.46 - 0.026*0 = 23.46 - 0 = 23.46\n\\]"
   },
   {
-    "objectID": "slides/lec-4x.html#alternative-model",
-    "href": "slides/lec-4x.html#alternative-model",
+    "objectID": "slides/lec-4.html#alternative-model",
+    "href": "slides/lec-4.html#alternative-model",
     "title": "Simple Linear Regression Models",
     "section": "Alternative model",
     "text": "Alternative model\nLet us fit an alternative model using engine size (disp) as a predictor \\[\n\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{displ}\n\\]\n\nggplot(d) +\n  geom_point(aes(displ, hwy))"
   },
   {
-    "objectID": "slides/lec-4x.html#section-7",
-    "href": "slides/lec-4x.html#section-7",
+    "objectID": "slides/lec-4.html#section-7",
+    "href": "slides/lec-4.html#section-7",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "The least-square estimates for the coefficients are\n\nlm(hwy ~ displ, data = d)\n\n\nCall:\nlm(formula = hwy ~ displ, data = d)\n\nCoefficients:\n(Intercept)        displ  \n     35.698       -3.531  \n\n\nNote that the slope coefficient is negative; which makes sense since cars with larger engines would tend to be less efficient.\n\nWe now have two models. Which is the best?\n\n\n\nWe could start by looking at the residuals"
+    "text": "The least-square estimates for the coefficients are\n\nlm(hwy ~ displ, data = d)\n\n\nCall:\nlm(formula = hwy ~ displ, data = d)\n\nCoefficients:\n(Intercept)        displ  \n     35.698       -3.531  \n\n\nNote that the slope coefficient is negative; which makes sense since cars with larger engines would tend to be less efficient."
   },
   {
-    "objectID": "slides/lec-4x.html#comparing-residuals",
-    "href": "slides/lec-4x.html#comparing-residuals",
+    "objectID": "slides/lec-4.html#section-8",
+    "href": "slides/lec-4.html#section-8",
+    "title": "Simple Linear Regression Models",
+    "section": "",
+    "text": "We now have two models. Which is the best?\n\n\nWe could start by looking at the residuals"
+  },
+  {
+    "objectID": "slides/lec-4.html#comparing-residuals",
+    "href": "slides/lec-4.html#comparing-residuals",
     "title": "Simple Linear Regression Models",
     "section": "Comparing residuals",
     "text": "Comparing residuals\n\n\n\nm <- lm(hwy ~ cty, data = d)\nm_augment <- augment(m)\nggplot(m_augment) +\n  geom_histogram(aes(.resid))\n\n\n\n\n\n\n\n\n\nlm(hwy ~ displ, data = d) %>%\n  augment %>%\n  ggplot() +\n  geom_histogram(aes(.resid))"
   },
   {
-    "objectID": "slides/lec-4x.html#section-8",
-    "href": "slides/lec-4x.html#section-8",
+    "objectID": "slides/lec-4.html#section-9",
+    "href": "slides/lec-4.html#section-9",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "The first model seems to have residuals of smaller magnitude.\n\nBut we need a more systematic approach for comparing models:\n\nlooking at a plot can be misleading (illusions)\ndifficult to compare models with similar residuals"
+    "text": "The first model seems to have smaller residuals.\n\\(\\Rightarrow\\) choose the first model (cty)!\n\nBut looking at a plot can be misleading\n\nillusions\ndifficult to compare models with similar residuals\n\n\n\nWe need a more systematic approach for comparing models."
   },
   {
-    "objectID": "slides/lec-4x.html#ssr",
-    "href": "slides/lec-4x.html#ssr",
+    "objectID": "slides/lec-4.html#ssr",
+    "href": "slides/lec-4.html#ssr",
     "title": "Simple Linear Regression Models",
     "section": "SSR",
-    "text": "SSR\nInstead of comparing histograms to identify the model with the smaller residuals, we can compute the SSR (sum of squared residuals!)\n\nsmall residuals will give a small SSR\nlarge residuals will give a large SSR\n\n\\[\nSSR = r_1^2+r_2^2+\\dots+r^2_n\n\\]\n\nSimply choose the model with the smaller SSR!\n\n\n📋 The textbook uses the term SSE (sum of squared errors)."
+    "text": "SSR\nInstead of comparing histograms of residuals, we can compute the SSR (sum of squared residuals!)\n\\[\nSSR = r_1^2+r_2^2+\\dots+r^2_n\n\\]\n\nsmall residuals will give a small SSR\nlarge residuals will give a large SSR\n\n\n\\(\\Rightarrow\\) choose the model with the smaller SSR!\n\n\n📋 The textbook uses the term SSE (sum of squared errors)."
   },
   {
-    "objectID": "slides/lec-4x.html#r2",
-    "href": "slides/lec-4x.html#r2",
+    "objectID": "slides/lec-4.html#r2",
+    "href": "slides/lec-4.html#r2",
     "title": "Simple Linear Regression Models",
     "section": "\\(R^2\\)",
-    "text": "\\(R^2\\)\nThe SSR is also useful in describing the strength of the model.\n\nThe SST (total sum of squares) is the sum of squared distance to the mean. \\[\nSST = (x_1 - \\bar{x})^2 + (x_2 - \\bar{x})^2 + \\dots + (x_n - \\bar{x})^2\n\\] It measured the total amount of variability in the data.\n\n\nRemember the formula for SSR \\[\nSSR = (x_1 - \\hat{x})^2 + (x_2 - \\hat{x})^2 + \\dots + (x_n - \\hat{x})^2\n\\] is the amount of variability in the data left unexplained by the model.\n\n\nBy analogy, \\(SST - SSR\\) is the amount of variation explained by the model: \\[\n\\text{data} = SST = SSR + (SST-SSR) = \\text{residuals} + \\text{model}\n\\]"
+    "text": "\\(R^2\\)\nWhile the SSR can be used to select a model, it is also useful in describing the goodness of fit of the model.\n\nThe SST (total sum of squares) is the sum of squared distance to the mean. \\[\nSST = (x_1 - \\bar{x})^2 + (x_2 - \\bar{x})^2 + \\dots + (x_n - \\bar{x})^2\n\\] It measures the total amount of variability in the data.\n\n\nRemember the formula for SSR \\[\nSSR = (x_1 - \\hat{x})^2 + (x_2 - \\hat{x}_1)^2 + \\dots + (x_n - \\hat{x}_n)^2\n\\] It measures the amount of variability in the data left unexplained by the model.\n\n\n\\(SST - SSR\\) is therefore the amount of variation explained by the model: \\[\n\\text{data} = SST = (SST-SSR) + SSR = \\text{model} + \\text{residuals}\n\\]"
   },
   {
-    "objectID": "slides/lec-4x.html#section-9",
-    "href": "slides/lec-4x.html#section-9",
+    "objectID": "slides/lec-4.html#section-10",
+    "href": "slides/lec-4.html#section-10",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "The coefficient of determination \\(R^2\\) measures the proportion of variation in the data that is explained by the model\n\\[\nR^2 = 1-\\dfrac{SSR}{SST} = \\dfrac{SST-SSR}{SST}\n\\]"
+    "text": "The statistic \\(R^2\\) measures the proportion of variation in the data that is explained by the model.\n\\[\nR^2 = 1-\\dfrac{SSR}{SST} = \\dfrac{SST-SSR}{SST} = \\dfrac{\\text{var. explained by model}}{\\text{total var.}}\n\\]"
   },
   {
-    "objectID": "slides/lec-4x.html#section-10",
-    "href": "slides/lec-4x.html#section-10",
+    "objectID": "slides/lec-4.html#section-11",
+    "href": "slides/lec-4.html#section-11",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "Note that \\(0\\le R^2 \\le 1\\).\n\nA good model will have small residuals, a small SSR and therefore a large $R^2\nA great model will have a \\(R^2\\) close to \\(1\\).\nA poor model has an \\(R^2\\) close to 0 (SSR close to SST)"
+    "text": "Note that \\(0\\le R^2 \\le 1\\).\n\ngood model \\(\\Rightarrow\\) small residuals \\(\\Rightarrow\\) small SSR \\(\\Rightarrow\\) large \\(R^2\\).\ngreat model \\(\\Rightarrow\\) tiny residuals \\(\\Rightarrow\\) tiny SSR \\(\\Rightarrow\\) \\(R^2\\) close to 1.\npoor model \\(\\Rightarrow\\) large residuals \\(\\Rightarrow\\) SSR almost as large as SST \\(\\Rightarrow\\) \\(R^2\\) close to 0."
   },
   {
-    "objectID": "slides/lec-4x.html#computing-r2-in-r",
-    "href": "slides/lec-4x.html#computing-r2-in-r",
+    "objectID": "slides/lec-4.html#computing-r2-in-r",
+    "href": "slides/lec-4.html#computing-r2-in-r",
     "title": "Simple Linear Regression Models",
     "section": "Computing \\(R^2\\) in R\n",
-    "text": "Computing \\(R^2\\) in R\n\nTo compute \\(R^2\\) in R, simply use the command glance.\n\nm_glance <- glance(m)\nm_glance\n\n# A tibble: 1 x 12\n  r.squared adj.r.squared sigma statistic   p.value    df logLik   AIC   BIC\n      <dbl>         <dbl> <dbl>     <dbl>     <dbl> <dbl>  <dbl> <dbl> <dbl>\n1     0.914         0.913  1.75     2459. 1.87e-125     1  -462.  931.  941.\n# ... with 3 more variables: deviance <dbl>, df.residual <int>, nobs <int>\n\nm_glance$r.squared\n\n[1] 0.9137752\n\nlm(hwy ~ displ, data = d) %>% glance %>% .[[\"r.squared\"]]\n\n[1] 0.5867867\n\n\nThe model with cty as a predictor has a \\(R^2\\) value of \\(0.914\\), and the model that uses displ has a \\(R^2\\) of \\(0.59\\) (worse).\n\nWe would therefore prefer the first model."
+    "text": "Computing \\(R^2\\) in R\n\nTo compute \\(R^2\\) in R, simply use the command glance.\n\nm_glance <- glance(m)\nm_glance$r.squared\n\n[1] 0.9137752\n\nlm(hwy ~ displ, data = d) %>% glance %>% .[[\"r.squared\"]]\n\n[1] 0.5867867\n\n\nThe model with cty as a predictor has a \\(R^2\\) value of \\(0.914\\), and the model that uses displ has a \\(R^2\\) of \\(0.59\\) (worse).\n\nThe first model is better!"
   },
   {
-    "objectID": "slides/lec-4x.html#section-11",
-    "href": "slides/lec-4x.html#section-11",
+    "objectID": "slides/lec-4.html#section-12",
+    "href": "slides/lec-4.html#section-12",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "Group exercise - Interpretation\n\n\n\nExercise 7.23 (a-d)\nCompute \\(R^2\\) “by hand” for the model with parameters \\((\\beta_0, \\beta_1) = (1, 1.3)\\). You can use the following R code.\n\n\nlibrary(tidyverse)\nd <- ggplot2::mpg\ncty <- d$cty\nhwy <- d$hwy\n\n\n\n\n\n\n\n03:00"
+    "text": "Group exercise - Interpretation\n\n\n\nExercise 7.23 (a-d)\n\nCompute \\(R^2\\) “by hand” in R (do not use glance) for the model with parameters \\((\\beta_0, \\beta_1) = (1, 1.3)\\). You can use the following code.\n\n\nlibrary(tidyverse)\nd <- ggplot2::mpg\ncty <- d$cty\nhwy <- d$hwy\nbeta_0 <- 1\nbeta_1 <- 1.3\nhwy_hat <- . . .\n\n\n\n\n\n\n\n03:00"
   },
   {
-    "objectID": "slides/lec-4x.html#section-12",
-    "href": "slides/lec-4x.html#section-12",
+    "objectID": "slides/lec-4.html#section-13",
+    "href": "slides/lec-4.html#section-13",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "Group exercise - outlier\n\n\nLook at the scatterplot for our data. Are there outliers?\n\nggplot(d) +\n  geom_point(aes(cty, hwy))\n\n\nExercise 7.25\n\n\n\n\n\n\n03:00"
+    "text": "Group exercise - outlier\n\n\nLook at the scatterplot for the mpg data set. Are there outliers?\n\nggplot(d) +\n  geom_point(aes(cty, hwy))\n\n\nExercise 7.25\n\n\n\n\n\n\n03:00"
   },
   {
-    "objectID": "slides/lec-4x.html#outliers-leverage-and-influential-points",
-    "href": "slides/lec-4x.html#outliers-leverage-and-influential-points",
+    "objectID": "slides/lec-4.html#outliers-leverage-and-influential-points",
+    "href": "slides/lec-4.html#outliers-leverage-and-influential-points",
     "title": "Simple Linear Regression Models",
     "section": "Outliers, leverage and influential points",
-    "text": "Outliers, leverage and influential points\n\noutlier: observation that falls far from the cloud of points\nHigh leverage point: observation that falls horizontally away from the cloud of points\ninfluential point: observation that influences the slope of the regression line\n\n\n\nAll influential points are high leverage points.\nAll leverage points are outliers.\n(Venn Diagram)"
+    "text": "Outliers, leverage and influential points\n\noutliers: observations that fall far from the cloud of points\nHigh leverage points: observations that fall horizontally away from the cloud of points\ninfluential points: observations that influence the slope of the regression line\n\n\n\nAll influential points are high leverage points.\nAll leverage points are outliers.\n(Venn Diagram)"
   },
   {
-    "objectID": "slides/lec-4x.html#dealing-with-outliers",
-    "href": "slides/lec-4x.html#dealing-with-outliers",
+    "objectID": "slides/lec-4.html#dealing-with-outliers",
+    "href": "slides/lec-4.html#dealing-with-outliers",
     "title": "Simple Linear Regression Models",
     "section": "Dealing with outliers",
-    "text": "Dealing with outliers\nIn regression, outliers have the potential to highly influence the least-square estimates - the least-square estimates are not robust to the presence of outliers"
+    "text": "Dealing with outliers\nIn regression, outliers have the potential to highly influence the least-square estimates \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\).\n\n\n\n\n\n\nWarning\n\n\nLeast-square estimates are not robust to the presence of outliers.\n\n\n\n\nEstimates that are robust include\n\nleast absolute deviation estimates (minimize sum of absolute residuals instead of SSR)\nBayesian estimates"
   },
   {
-    "objectID": "slides/lec-4x.html#impact-of-outliers",
-    "href": "slides/lec-4x.html#impact-of-outliers",
+    "objectID": "slides/lec-4.html#impact-of-outliers",
+    "href": "slides/lec-4.html#impact-of-outliers",
     "title": "Simple Linear Regression Models",
     "section": "Impact of outliers",
-    "text": "Impact of outliers\nLet us contaminate the data with an outlier (cty \\(=10\\) and hwy \\(=1000\\)) and fit the same regression model.\n\nd_contaminated <- select(d, cty, hwy) %>%\n  add_row(cty = 40, hwy = 400) # add outlier\nlm(hwy ~ cty, data = d_contaminated)\n\n\nCall:\nlm(formula = hwy ~ cty, data = d_contaminated)\n\nCoefficients:\n(Intercept)          cty  \n    -26.046        3.013  \n\n\n\nThe value of the slope has tripled!"
+    "text": "Impact of outliers\nLet us contaminate the data with an outlier (cty \\(=10\\) and hwy \\(=1000\\))\n\nd_contaminated <- select(d, cty, hwy) %>%\n  add_row(cty = 40, hwy = 500) # add outlier\narrange(d_contaminated, desc(hwy)) %>% slice(1:5)\n\n# A tibble: 5 x 2\n    cty   hwy\n  <dbl> <dbl>\n1    40   500\n2    33    44\n3    35    44\n4    29    41\n5    28    37\n\n\n\n…and compare the two regression models. ::: {.cell layout-align=“center”}\nlm(hwy ~ cty, data = d)\n\n\nCall:\nlm(formula = hwy ~ cty, data = d)\n\nCoefficients:\n(Intercept)          cty  \n      0.892        1.337  \n\nlm(hwy ~ cty, data = d_contaminated)\n\n\nCall:\nlm(formula = hwy ~ cty, data = d_contaminated)\n\nCoefficients:\n(Intercept)          cty  \n    -33.841        3.498  \n\n:::\n\n\nThe value of the slope has almost tripled!"
   },
   {
-    "objectID": "slides/lec-4x.html#section-13",
-    "href": "slides/lec-4x.html#section-13",
+    "objectID": "slides/lec-4.html#section-14",
+    "href": "slides/lec-4.html#section-14",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "ggplot(d_contaminated) +\n  geom_point(aes(cty, hwy)) +\n  geom_abline(intercept = -26.046, slope = 3.013)\n\n\nThe regression line not longer fits the data well."
+    "text": "ggplot(d_contaminated) +\n  geom_point(aes(cty, hwy)) +\n  geom_abline(intercept = -26.046, slope = 3.013, col = \"purple\")\n\n\nThe regression line not longer fits the data well."
   },
   {
-    "objectID": "slides/lec-4x.html#recap-1",
-    "href": "slides/lec-4x.html#recap-1",
+    "objectID": "slides/lec-4.html#recap-1",
+    "href": "slides/lec-4.html#recap-1",
     "title": "Simple Linear Regression Models",
     "section": "Recap",
-    "text": "Recap\n\n\nsimple linear regression model \\[\n\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty}\n\\]\n\nresiduals\nleast-square estimates\nparameter interpretation\nmodel comparison with $R^2%\noutliers\n\n\n\n\n\nsta101-suI22.github.io/website"
+    "text": "Recap\n\n\nsimple linear regression model \\[\n\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty}\n\\]\n\nresiduals\nleast-square estimates\nparameter interpretation\nmodel comparison with \\(R^2\\)\n\noutliers\n\n\n\n\n\nsta101-suI22.github.io/website"
   },
   {
     "objectID": "slides/lec-5x.html#announcements",
@@ -3491,412 +2616,6 @@
     "title": "Model Selection",
     "section": "Multicollinearity",
     "text": "Multicollinearity\n\n\n\nsta101-suI22.github.io/website"
-  },
-  {
-    "objectID": "slides/lec-7x.html#computational-setup",
-    "href": "slides/lec-7x.html#computational-setup",
-    "title": "SLR: Model diagnostics",
-    "section": "Computational setup",
-    "text": "Computational setup\n\n# load packages\nlibrary(tidyverse)   # for data wrangling and visualization\nlibrary(tidymodels)  # for modeling\nlibrary(openintro)   # for the duke_forest dataset\nlibrary(scales)      # for pretty axis labels\nlibrary(knitr)       # for pretty tables\nlibrary(kableExtra)  # also for pretty tables\nlibrary(patchwork)   # arrange plots\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_minimal(base_size = 20))"
-  },
-  {
-    "objectID": "slides/lec-7x.html#the-regression-model-revisited",
-    "href": "slides/lec-7x.html#the-regression-model-revisited",
-    "title": "SLR: Model diagnostics",
-    "section": "The regression model, revisited",
-    "text": "The regression model, revisited\n\ndf_fit <- linear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(price ~ area, data = duke_forest)\n\ntidy(df_fit) %>%\n  kable(digits = 2)\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    116652.33 \n    53302.46 \n    2.19 \n    0.03 \n  \n  \n    area \n    159.48 \n    18.17 \n    8.78 \n    0.00"
-  },
-  {
-    "objectID": "slides/lec-7x.html#ht-for-the-slope",
-    "href": "slides/lec-7x.html#ht-for-the-slope",
-    "title": "SLR: Model diagnostics",
-    "section": "HT for the slope",
-    "text": "HT for the slope\nHypotheses: \\(H_0: \\beta_1 = 0\\) vs. \\(H_A: \\beta_1 \\ne 0\\)\n\nTest statistic: Number of standard errors the estimate is away from the null\n\\[\nT = \\frac{\\text{Estimate - Null}}{\\text{Standard error}} \\\\\n\\]\n\n\np-value: Probability of observing a test statistic at least as extreme (in the direction of the alternative hypothesis) from the null value as the one observed\n\\[\np-value = P(|t| > |\\text{test statistic}),\n\\]\ncalculated from a \\(t\\) distribution with \\(n - 2\\) degrees of freedom"
-  },
-  {
-    "objectID": "slides/lec-7x.html#ht-test-statistic",
-    "href": "slides/lec-7x.html#ht-test-statistic",
-    "title": "SLR: Model diagnostics",
-    "section": "HT: Test statistic",
-    "text": "HT: Test statistic\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    116652.33 \n    53302.46 \n    2.19 \n    0.03 \n  \n  \n    area \n    159.48 \n    18.17 \n    8.78 \n    0.00 \n  \n\n\n\n\n\n\\[\nt = \\frac{\\hat{\\beta}_1 - 0}{SE_{\\hat{\\beta}_1}} = \\frac{159.48 - 0}{18.17} = 8.78\n\\]"
-  },
-  {
-    "objectID": "slides/lec-7x.html#ht-p-value",
-    "href": "slides/lec-7x.html#ht-p-value",
-    "title": "SLR: Model diagnostics",
-    "section": "HT: p-value",
-    "text": "HT: p-value\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    116652.33 \n    53302.46 \n    2.19 \n    0.03 \n  \n  \n    area \n    159.48 \n    18.17 \n    8.78 \n    0.00"
-  },
-  {
-    "objectID": "slides/lec-7x.html#understanding-the-p-value",
-    "href": "slides/lec-7x.html#understanding-the-p-value",
-    "title": "SLR: Model diagnostics",
-    "section": "Understanding the p-value",
-    "text": "Understanding the p-value\n\n\n\nMagnitude of p-value\nInterpretation\n\n\n\n\np-value < 0.01\nstrong evidence against \\(H_0\\)\n\n\n0.01 < p-value < 0.05\nmoderate evidence against \\(H_0\\)\n\n\n0.05 < p-value < 0.1\nweak evidence against \\(H_0\\)\n\n\np-value > 0.1\neffectively no evidence against \\(H_0\\)\n\n\n\n\n\n\n\n\n\nImportant\n\n\nThese are general guidelines. The strength of evidence depends on the context of the problem."
-  },
-  {
-    "objectID": "slides/lec-7x.html#ht-conclusion-in-context",
-    "href": "slides/lec-7x.html#ht-conclusion-in-context",
-    "title": "SLR: Model diagnostics",
-    "section": "HT: Conclusion, in context",
-    "text": "HT: Conclusion, in context\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    116652.33 \n    53302.46 \n    2.19 \n    0.03 \n  \n  \n    area \n    159.48 \n    18.17 \n    8.78 \n    0.00 \n  \n\n\n\n\n\n\nThe data provide convincing evidence that the population slope \\(\\beta_1\\) is different from 0.\nThe data provide convincing evidence of a linear relationship between area and price of houses in Duke Forest."
-  },
-  {
-    "objectID": "slides/lec-7x.html#ci-for-the-slope",
-    "href": "slides/lec-7x.html#ci-for-the-slope",
-    "title": "SLR: Model diagnostics",
-    "section": "CI for the slope",
-    "text": "CI for the slope\n\\[\n\\text{Estimate} \\pm \\text{ (critical value) } \\times \\text{SE}\n\\]\n\n\\[\n\\hat{\\beta}_1 \\pm t^* \\times SE_{\\hat{\\beta}_1}\n\\]\nwhere \\(t^*\\) is calculated from a \\(t\\) distribution with \\(n-2\\) degrees of freedom"
-  },
-  {
-    "objectID": "slides/lec-7x.html#ci-critical-value",
-    "href": "slides/lec-7x.html#ci-critical-value",
-    "title": "SLR: Model diagnostics",
-    "section": "CI: Critical value",
-    "text": "CI: Critical value\n\n\n\n# confidence level: 95%\nqt(0.975, df = nrow(duke_forest) - 2)\n\n[1] 1.984984\n\n# confidence level: 90%\nqt(0.95, df = nrow(duke_forest) - 2)\n\n[1] 1.660881\n\n# confidence level: 99%\nqt(0.995, df = nrow(duke_forest) - 2)\n\n[1] 2.628016"
-  },
-  {
-    "objectID": "slides/lec-7x.html#ci-for-the-slope-calculation",
-    "href": "slides/lec-7x.html#ci-for-the-slope-calculation",
-    "title": "SLR: Model diagnostics",
-    "section": "95% CI for the slope: Calculation",
-    "text": "95% CI for the slope: Calculation\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    116652.33 \n    53302.46 \n    2.19 \n    0.03 \n  \n  \n    area \n    159.48 \n    18.17 \n    8.78 \n    0.00 \n  \n\n\n\n\n\n\\[\\hat{\\beta}_1 = 159.48 \\hspace{15mm} t^* = 1.98 \\hspace{15mm} SE_{\\hat{\\beta}_1} = 18.17\\]\n\n\\[\n159.48 \\pm 1.98 \\times 18.17 = (123.50, 195.46)\n\\]"
-  },
-  {
-    "objectID": "slides/lec-7x.html#ci-for-the-slope-computation",
-    "href": "slides/lec-7x.html#ci-for-the-slope-computation",
-    "title": "SLR: Model diagnostics",
-    "section": "95% CI for the slope: Computation",
-    "text": "95% CI for the slope: Computation\n\ntidy(df_fit, conf.int = TRUE, conf.level = 0.95) %>% \n  kable(digits = 2)\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n    conf.low \n    conf.high \n  \n \n\n  \n    (Intercept) \n    116652.33 \n    53302.46 \n    2.19 \n    0.03 \n    10847.77 \n    222456.88 \n  \n  \n    area \n    159.48 \n    18.17 \n    8.78 \n    0.00 \n    123.41 \n    195.55"
-  },
-  {
-    "objectID": "slides/lec-7x.html#confidence-interval-for-predictions",
-    "href": "slides/lec-7x.html#confidence-interval-for-predictions",
-    "title": "SLR: Model diagnostics",
-    "section": "Confidence interval for predictions",
-    "text": "Confidence interval for predictions\n\nSuppose we want to answer the question “What is the predicted sale price of a Duke Forest house that is 2,800 square feet?”\nWe said reporting a single estimate for the slope is not wise, and we should report a plausible range instead\nSimilarly, reporting a single prediction for a new value is not wise, and we should report a plausible range instead"
-  },
-  {
-    "objectID": "slides/lec-7x.html#two-types-of-predictions",
-    "href": "slides/lec-7x.html#two-types-of-predictions",
-    "title": "SLR: Model diagnostics",
-    "section": "Two types of predictions",
-    "text": "Two types of predictions\n\nPrediction for the mean: ““What is the average predicted sale price of Duke Forest houses that are 2,800 square feet?”\nPrediction for an individual observation: “What is the predicted sale price of a Duke Forest house that is 2,800 square feet?”\n\n\n\nWhich would you expect to be more variable? The average prediction or the prediction for an individual observation? Based on your answer, how would you expect the widths of plausible ranges for these two predictions to compare?"
-  },
-  {
-    "objectID": "slides/lec-7x.html#uncertainty-in-predictions",
-    "href": "slides/lec-7x.html#uncertainty-in-predictions",
-    "title": "SLR: Model diagnostics",
-    "section": "Uncertainty in predictions",
-    "text": "Uncertainty in predictions\nConfidence interval for the mean outcome: \\[\\hat{y} \\pm t_{n-2}^* \\times \\color{purple}{\\mathbf{SE}_{\\hat{\\boldsymbol{\\mu}}}}\\]\n\nPrediction interval for an individual observation: \\[\\hat{y} \\pm t_{n-2}^* \\times \\color{purple}{\\mathbf{SE_{\\hat{y}}}}\\]"
-  },
-  {
-    "objectID": "slides/lec-7x.html#standard-errors",
-    "href": "slides/lec-7x.html#standard-errors",
-    "title": "SLR: Model diagnostics",
-    "section": "Standard errors",
-    "text": "Standard errors\nStandard error of the mean outcome: \\[SE_{\\hat{\\mu}} = \\hat{\\sigma}_\\epsilon\\sqrt{\\frac{1}{n} + \\frac{(x-\\bar{x})^2}{\\sum\\limits_{i=1}^n(x_i - \\bar{x})^2}}\\]\n\nStandard error of an individual outcome: \\[SE_{\\hat{y}} = \\hat{\\sigma}_\\epsilon\\sqrt{1 + \\frac{1}{n} + \\frac{(x-\\bar{x})^2}{\\sum\\limits_{i=1}^n(x_i - \\bar{x})^2}}\\]"
-  },
-  {
-    "objectID": "slides/lec-7x.html#standard-errors-1",
-    "href": "slides/lec-7x.html#standard-errors-1",
-    "title": "SLR: Model diagnostics",
-    "section": "Standard errors",
-    "text": "Standard errors\nStandard error of the mean outcome: \\[SE_{\\hat{\\mu}} = \\hat{\\sigma}_\\epsilon\\sqrt{\\frac{1}{n} + \\frac{(x-\\bar{x})^2}{\\sum\\limits_{i=1}^n(x_i - \\bar{x})^2}}\\]\nStandard error of an individual outcome: \\[SE_{\\hat{y}} = \\hat{\\sigma}_\\epsilon\\sqrt{\\mathbf{\\color{purple}{\\Large{1}}} + \\frac{1}{n} + \\frac{(x-\\bar{x})^2}{\\sum\\limits_{i=1}^n(x_i - \\bar{x})^2}}\\]"
-  },
-  {
-    "objectID": "slides/lec-7x.html#confidence-interval",
-    "href": "slides/lec-7x.html#confidence-interval",
-    "title": "SLR: Model diagnostics",
-    "section": "Confidence interval",
-    "text": "Confidence interval\nThe 95% confidence interval for the mean outcpme:\n\nnew_house <- tibble(area = 2800)\n\npredict(df_fit, new_data = new_house, type = \"conf_int\", level = 0.95)\n\n# A tibble: 1 x 2\n  .pred_lower .pred_upper\n        <dbl>       <dbl>\n1     529351.     597060.\n\n\n\n\n\n\nWe are 95% confident that mean sale price of Duke Forest houses that are 2,800 square feet is between $529,351 and $597,060."
-  },
-  {
-    "objectID": "slides/lec-7x.html#prediction-interval",
-    "href": "slides/lec-7x.html#prediction-interval",
-    "title": "SLR: Model diagnostics",
-    "section": "Prediction interval",
-    "text": "Prediction interval\nThe 95% prediction intervalfor the individual outcome:\n\npredict(df_fit, new_data = new_house, type = \"pred_int\", level = 0.95)\n\n# A tibble: 1 x 2\n  .pred_lower .pred_upper\n        <dbl>       <dbl>\n1     226438.     899973.\n\n\n\n\n\n\nWe are 95% confident that predicted sale price of a Duke Forest house that is 2,800 square feet is between $226,438 and $899,973."
-  },
-  {
-    "objectID": "slides/lec-7x.html#comparing-intervals",
-    "href": "slides/lec-7x.html#comparing-intervals",
-    "title": "SLR: Model diagnostics",
-    "section": "Comparing intervals",
-    "text": "Comparing intervals"
-  },
-  {
-    "objectID": "slides/lec-7x.html#extrapolation",
-    "href": "slides/lec-7x.html#extrapolation",
-    "title": "SLR: Model diagnostics",
-    "section": "Extrapolation",
-    "text": "Extrapolation\n\n\n\nCalculate the prediction interval for the sale price of a “tiny house” in Duke Forest that is 225 square feet.\n\n\n\n\n\n\n\n\n\n\nNo, thanks!"
-  },
-  {
-    "objectID": "slides/lec-7x.html#model-conditions-1",
-    "href": "slides/lec-7x.html#model-conditions-1",
-    "title": "SLR: Model diagnostics",
-    "section": "Model conditions",
-    "text": "Model conditions\n\nLinearity: There is a linear relationship between the outcome and predictor variables\nConstant variance: The variability of the errors is equal for all values of the predictor variable, i.e. the errors are homeoscedastic\nNormality: The errors follow a normal distribution\nIndependence: The errors are independent from each other"
-  },
-  {
-    "objectID": "slides/lec-7x.html#linearity",
-    "href": "slides/lec-7x.html#linearity",
-    "title": "SLR: Model diagnostics",
-    "section": "Linearity",
-    "text": "Linearity\n✅ The residuals vs. fitted values plot should not show a random scatter of residuals (no distinguishable pattern or structure)"
-  },
-  {
-    "objectID": "slides/lec-7x.html#residuals-vs.-fitted-values",
-    "href": "slides/lec-7x.html#residuals-vs.-fitted-values",
-    "title": "SLR: Model diagnostics",
-    "section": "Residuals vs. fitted values",
-    "text": "Residuals vs. fitted values\n\ndf_aug <- augment(df_fit$fit)\n\nggplot(df_aug, aes(x = .fitted, y = .resid)) +\n  geom_point() +\n  geom_hline(yintercept = 0, linetype = \"dashed\") +\n  ylim(-1000000, 1000000) +\n  labs(\n    x = \"Fitted value\", y = \"Residual\",\n    title = \"Residuals vs. fitted values\"\n  )"
-  },
-  {
-    "objectID": "slides/lec-7x.html#application-exercise",
-    "href": "slides/lec-7x.html#application-exercise",
-    "title": "SLR: Model diagnostics",
-    "section": "Application exercise",
-    "text": "Application exercise\n\n📋 github.com/sta210-s22/ae-3-duke-forest\n\n\n\n\n05:00"
-  },
-  {
-    "objectID": "slides/lec-7x.html#non-linear-relationships",
-    "href": "slides/lec-7x.html#non-linear-relationships",
-    "title": "SLR: Model diagnostics",
-    "section": "Non-linear relationships",
-    "text": "Non-linear relationships"
-  },
-  {
-    "objectID": "slides/lec-7x.html#constant-variance",
-    "href": "slides/lec-7x.html#constant-variance",
-    "title": "SLR: Model diagnostics",
-    "section": "Constant variance",
-    "text": "Constant variance\n✅ The vertical spread of the residuals should be relatively constant across the plot"
-  },
-  {
-    "objectID": "slides/lec-7x.html#non-constant-variance",
-    "href": "slides/lec-7x.html#non-constant-variance",
-    "title": "SLR: Model diagnostics",
-    "section": "Non-constant variance",
-    "text": "Non-constant variance"
-  },
-  {
-    "objectID": "slides/lec-7x.html#normality",
-    "href": "slides/lec-7x.html#normality",
-    "title": "SLR: Model diagnostics",
-    "section": "Normality",
-    "text": "Normality"
-  },
-  {
-    "objectID": "slides/lec-7x.html#independence",
-    "href": "slides/lec-7x.html#independence",
-    "title": "SLR: Model diagnostics",
-    "section": "Independence",
-    "text": "Independence\n\nWe can often check the independence assumption based on the context of the data and how the observations were collected\nIf the data were collected in a particular order, examine a scatterplot of the residuals versus order in which the data were collected\n\n\n✅ If this is a random sample of Duke Houses, the error for one house does not tell us anything about the error for another use"
-  },
-  {
-    "objectID": "slides/lec-7x.html#recap",
-    "href": "slides/lec-7x.html#recap",
-    "title": "SLR: Model diagnostics",
-    "section": "Recap",
-    "text": "Recap\nUsed residual plots to check conditions for SLR:\n\n\n\n\nLinearity\nConstant variance\n\n\n\n\n\nNormality\nIndependence\n\n\n\n\n\n\nWhich of these conditions are required for fitting a SLR? Which for simulation-based inference for the slope for an SLR? Which for inference with mathematical models?\n\n\n\n\n03:00\n\n\n\n\n\n\nsta210-s22.github.io/website"
-  },
-  {
-    "objectID": "slides/lec-8x.html#announcements",
-    "href": "slides/lec-8x.html#announcements",
-    "title": "Multiple linear regression (MLR)",
-    "section": "Announcements",
-    "text": "Announcements\n\nLab 3:\n\n\nAny questions about lab / teamwork?\nDue Friday, Feb 4 at 5pm\n\n\nExam 1:\n\n\nReleased Friday, Feb 4\nMultiple choice questions (mostly conceptual) + open-ended exercises (like lab + homework)\nOpen book, open internet, open questions to me + Rick (head TA) only\nNo communication with others or posting questions on the internet allowed\nWhat can you do to start preparing?\n\nReview readings, assignments, feedback returned\nOrganize your notes\nCome to office hours with questions"
-  },
-  {
-    "objectID": "slides/lec-8x.html#computational-setup",
-    "href": "slides/lec-8x.html#computational-setup",
-    "title": "Multiple linear regression (MLR)",
-    "section": "Computational setup",
-    "text": "Computational setup\n\n# load packages\nlibrary(tidyverse)   # for data wrangling and visualization\nlibrary(tidymodels)  # for modeling\nlibrary(openintro)   # for the duke_forest dataset\nlibrary(scales)      # for pretty axis labels\nlibrary(knitr)       # for pretty tables\nlibrary(patchwork)   # for laying out plots\nlibrary(GGally)      # for pairwise plots\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_minimal(base_size = 20))"
-  },
-  {
-    "objectID": "slides/lec-8x.html#house-prices-in-levittown",
-    "href": "slides/lec-8x.html#house-prices-in-levittown",
-    "title": "Multiple linear regression (MLR)",
-    "section": "House prices in Levittown",
-    "text": "House prices in Levittown\n\nThe data set contains the sales price and characteristics of 85 homes in Levittown, NY that sold between June 2010 and May 2011.\nLevittown was built right after WWII and was the first planned suburban community built using mass production techniques.\nThe article “Levittown, the prototypical American suburb – a history of cities in 50 buildings, day 25” gives an overview of Levittown’s controversial history."
-  },
-  {
-    "objectID": "slides/lec-8x.html#analysis-goals",
-    "href": "slides/lec-8x.html#analysis-goals",
-    "title": "Multiple linear regression (MLR)",
-    "section": "Analysis goals",
-    "text": "Analysis goals\n\nWe would like to use the characteristics of a house to understand variability in the sales price.\nTo do so, we will fit a multiple linear regression model.\nUsing our model, we can answers questions such as\n\n\nWhat is the relationship between the characteristics of a house in Levittown and its sale price?\nGiven its characteristics, what is the expected sale price of a house in Levittown?"
-  },
-  {
-    "objectID": "slides/lec-8x.html#the-data",
-    "href": "slides/lec-8x.html#the-data",
-    "title": "Multiple linear regression (MLR)",
-    "section": "The data",
-    "text": "The data\n\nlevittown <- read_csv(here::here(\"slides/data/homeprices.csv\"))\nlevittown\n\n# A tibble: 85 x 7\n   bedrooms bathrooms living_area lot_size year_built property_tax sale_price\n      <dbl>     <dbl>       <dbl>    <dbl>      <dbl>        <dbl>      <dbl>\n 1        4       1          1380     6000       1948         8360     350000\n 2        4       2          1761     7400       1951         5754     360000\n 3        4       2          1564     6000       1948         8982     350000\n 4        5       2          2904     9898       1949        11664     375000\n 5        5       2.5        1942     7788       1948         8120     370000\n 6        4       2          1830     6000       1948         8197     335000\n 7        4       1          1585     6000       1948         6223     295000\n 8        4       1           941     6800       1951         2448     250000\n 9        4       1.5        1481     6000       1948         9087     299990\n10        3       2          1630     5998       1948         9430     375000\n# ... with 75 more rows"
-  },
-  {
-    "objectID": "slides/lec-8x.html#variables",
-    "href": "slides/lec-8x.html#variables",
-    "title": "Multiple linear regression (MLR)",
-    "section": "Variables",
-    "text": "Variables\nPredictors:\n\n\nbedrooms: Number of bedrooms\nbathrooms: Number of bathrooms\nliving_area: Total living area of the house (in square feet)\nlot_size: Total area of the lot (in square feet)\nyear_built: Year the house was built\nproperty_tax: Annual property taxes (in USD)\n\n\nResponse: sale_price: Sales price (in USD)"
-  },
-  {
-    "objectID": "slides/lec-8x.html#eda-response-variable",
-    "href": "slides/lec-8x.html#eda-response-variable",
-    "title": "Multiple linear regression (MLR)",
-    "section": "EDA: Response variable",
-    "text": "EDA: Response variable"
-  },
-  {
-    "objectID": "slides/lec-8x.html#eda-predictor-variables",
-    "href": "slides/lec-8x.html#eda-predictor-variables",
-    "title": "Multiple linear regression (MLR)",
-    "section": "EDA: Predictor variables",
-    "text": "EDA: Predictor variables"
-  },
-  {
-    "objectID": "slides/lec-8x.html#eda-response-vs.-predictors",
-    "href": "slides/lec-8x.html#eda-response-vs.-predictors",
-    "title": "Multiple linear regression (MLR)",
-    "section": "EDA: Response vs. Predictors",
-    "text": "EDA: Response vs. Predictors"
-  },
-  {
-    "objectID": "slides/lec-8x.html#eda-all-variables",
-    "href": "slides/lec-8x.html#eda-all-variables",
-    "title": "Multiple linear regression (MLR)",
-    "section": "EDA: All variables",
-    "text": "EDA: All variables\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggpairs(levittown) +\n  theme(\n    axis.text.y = element_text(size = 10),\n    axis.text.x = element_text(angle = 45, size = 10),\n    strip.text.y = element_text(angle = 0, hjust = 0)\n    )"
-  },
-  {
-    "objectID": "slides/lec-8x.html#single-vs.-multiple-predictors",
-    "href": "slides/lec-8x.html#single-vs.-multiple-predictors",
-    "title": "Multiple linear regression (MLR)",
-    "section": "Single vs. multiple predictors",
-    "text": "Single vs. multiple predictors\nSo far we’ve used a single predictor variable to understand variation in a quantitative response variable\n\nNow we want to use multiple predictor variables to understand variation in a quantitative response variable"
-  },
-  {
-    "objectID": "slides/lec-8x.html#multiple-linear-regression-mlr",
-    "href": "slides/lec-8x.html#multiple-linear-regression-mlr",
-    "title": "Multiple linear regression (MLR)",
-    "section": "Multiple linear regression (MLR)",
-    "text": "Multiple linear regression (MLR)\nBased on the analysis goals, we will use a multiple linear regression model of the following form\n\\[\n\\begin{aligned}\\hat{\\text{sale_price}} ~ = & ~\n\\hat{\\beta}_0 + \\hat{\\beta}_1 \\text{bedrooms} + \\hat{\\beta}_2 \\text{bathrooms} + \\hat{\\beta}_3 \\text{living_area} \\\\\n&+ \\hat{\\beta}_4 \\text{lot_size} + \\hat{\\beta}_5 \\text{year_built} + \\hat{\\beta}_6 \\text{property_tax}\\end{aligned}\n\\]\nSimilar to simple linear regression, this model assumes that at each combination of the predictor variables, the values sale_price follow a Normal distribution."
-  },
-  {
-    "objectID": "slides/lec-8x.html#regression-model",
-    "href": "slides/lec-8x.html#regression-model",
-    "title": "Multiple linear regression (MLR)",
-    "section": "Regression Model",
-    "text": "Regression Model\nRecall: The simple linear regression model assumes\n\\[\nY|X\\sim N(\\beta_0 + \\beta_1 X, \\sigma_{\\epsilon}^2)\n\\]\n\nSimilarly: The multiple linear regression model assumes\n\\[\nY|X_1, X_2, \\ldots, X_p \\sim N(\\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\dots + \\beta_p X_p, \\sigma_{\\epsilon}^2)\n\\]"
-  },
-  {
-    "objectID": "slides/lec-8x.html#the-mlr-model",
-    "href": "slides/lec-8x.html#the-mlr-model",
-    "title": "Multiple linear regression (MLR)",
-    "section": "The MLR model",
-    "text": "The MLR model\nFor a given observation \\((x_{i1}, x_{i2} \\ldots, x_{ip}, y_i)\\)\n\\[\ny_i = \\beta_0 + \\beta_1 x_{i1} + \\beta_2 x_{i2} + \\dots + \\beta_p x_{ip} + \\epsilon_{i} \\hspace{8mm} \\epsilon_i \\sim N(0,\\sigma_\\epsilon^2)\n\\]"
-  },
-  {
-    "objectID": "slides/lec-8x.html#prediction",
-    "href": "slides/lec-8x.html#prediction",
-    "title": "Multiple linear regression (MLR)",
-    "section": "Prediction",
-    "text": "Prediction\nAt any combination of the predictors, the mean value of the response \\(Y\\), is\n\\[\n\\mu_{Y|X_1, \\ldots, X_p} = \\beta_0 + \\beta_1 X_{1} + \\beta_2 X_2 + \\dots + \\beta_p X_p\n\\]\n\nUsing multiple linear regression, we can estimate the mean response for any combination of predictors\n\\[\n\\hat{Y} = \\hat{\\beta}_0 + \\hat{\\beta}_1 X_{1} + \\hat{\\beta}_2 X_2 + \\dots + \\hat{\\beta}_p X_{p}\n\\]"
-  },
-  {
-    "objectID": "slides/lec-8x.html#model-fit",
-    "href": "slides/lec-8x.html#model-fit",
-    "title": "Multiple linear regression (MLR)",
-    "section": "Model fit",
-    "text": "Model fit\n\nprice_fit <- linear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(sale_price ~ bedrooms + bathrooms + living_area + lot_size +\n        year_built + property_tax, data = levittown)\n\ntidy(price_fit) %>%\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-7148818.957\n3820093.694\n-1.871\n0.065\n\n\nbedrooms\n-12291.011\n9346.727\n-1.315\n0.192\n\n\nbathrooms\n51699.236\n13094.170\n3.948\n0.000\n\n\nliving_area\n65.903\n15.979\n4.124\n0.000\n\n\nlot_size\n-0.897\n4.194\n-0.214\n0.831\n\n\nyear_built\n3760.898\n1962.504\n1.916\n0.059\n\n\nproperty_tax\n1.476\n2.832\n0.521\n0.604"
-  },
-  {
-    "objectID": "slides/lec-8x.html#model-equation",
-    "href": "slides/lec-8x.html#model-equation",
-    "title": "Multiple linear regression (MLR)",
-    "section": "Model equation",
-    "text": "Model equation\n\\[\n\\begin{align}\\hat{\\text{price}} = & -7148818.957 - 12291.011 \\times \\text{bedrooms}\\\\[5pt]  \n&+ 51699.236 \\times \\text{bathrooms}  + 65.903 \\times \\text{living area}\\\\[5pt]\n&- 0.897 \\times \\text{lot size} +  3760.898 \\times \\text{year built}\\\\[5pt]\n&+ 1.476 \\times \\text{property tax}\n\\end{align}\n\\]"
-  },
-  {
-    "objectID": "slides/lec-8x.html#interpreting-hatbeta_j",
-    "href": "slides/lec-8x.html#interpreting-hatbeta_j",
-    "title": "Multiple linear regression (MLR)",
-    "section": "Interpreting \\(\\hat{\\beta}_j\\)",
-    "text": "Interpreting \\(\\hat{\\beta}_j\\)\n\nThe estimated coefficient \\(\\hat{\\beta}_j\\) is the expected change in the mean of \\(y\\) when \\(x_j\\) increases by one unit, holding the values of all other predictor variables constant.\n\n\n\nExample: The estimated coefficient for living_area is 65.90. This means for each additional square foot of living area, we expect the sale price of a house in Levittown, NY to increase by $65.90, on average, holding all other predictor variables constant."
-  },
-  {
-    "objectID": "slides/lec-8x.html#prediction-1",
-    "href": "slides/lec-8x.html#prediction-1",
-    "title": "Multiple linear regression (MLR)",
-    "section": "Prediction",
-    "text": "Prediction\n\nWhat is the predicted sale price for a house in Levittown, NY with 3 bedrooms, 1 bathroom, 1,050 square feet of living area, 6,000 square foot lot size, built in 1948 with $6,306 in property taxes?\n\n\n\n-7148818.957 - 12291.011 * 3 + 51699.236 * 1 + \n  65.903 * 1050 - 0.897 * 6000 + 3760.898 * 1948 + \n  1.476 * 6306\n\n[1] 265360.4\n\n\n\nThe predicted sale price for a house in Levittown, NY with 3 bedrooms, 1 bathroom, 1050 square feet of living area, 6000 square foot lot size, built in 1948 with $6306 in property taxes is $265,360."
-  },
-  {
-    "objectID": "slides/lec-8x.html#prediction-revisit",
-    "href": "slides/lec-8x.html#prediction-revisit",
-    "title": "Multiple linear regression (MLR)",
-    "section": "Prediction, revisit",
-    "text": "Prediction, revisit\nJust like with simple linear regression, we can use the predict() function in R to calculate the appropriate intervals for our predicted values:\n\nnew_house <- tibble(\n  bedrooms = 3, bathrooms = 1, \n  living_area = 1050, lot_size = 6000, \n  year_built = 1948, property_tax = 6306\n  )\n\npredict(price_fit, new_house)\n\n# A tibble: 1 x 1\n    .pred\n    <dbl>\n1 265360."
-  },
-  {
-    "objectID": "slides/lec-8x.html#confidence-interval-for-hatmu_y",
-    "href": "slides/lec-8x.html#confidence-interval-for-hatmu_y",
-    "title": "Multiple linear regression (MLR)",
-    "section": "Confidence interval for \\(\\hat{\\mu}_y\\)",
-    "text": "Confidence interval for \\(\\hat{\\mu}_y\\)\n\nCalculate a 95% confidence interval for the estimated mean price of houses in Levittown, NY with 3 bedrooms, 1 bathroom, 1050 square feet of living area, 6000 square foot lot size, built in 1948 with $6306 in property taxes.\n\n\n\npredict(price_fit, new_house, type = \"conf_int\", level = 0.95)\n\n# A tibble: 1 x 2\n  .pred_lower .pred_upper\n        <dbl>       <dbl>\n1     238482.     292239."
-  },
-  {
-    "objectID": "slides/lec-8x.html#prediction-interval-for-haty",
-    "href": "slides/lec-8x.html#prediction-interval-for-haty",
-    "title": "Multiple linear regression (MLR)",
-    "section": "Prediction interval for \\(\\hat{y}\\)",
-    "text": "Prediction interval for \\(\\hat{y}\\)\n\nCalculate a 95% prediction interval for an individual house in Levittown, NY with 3 bedrooms, 1 bathroom, 1050 square feet of living area, 6000 square foot lot size, built in 1948 with $6306 in property taxes.\n\n\n\npredict(price_fit, new_house, type = \"pred_int\", level = 0.95)\n\n# A tibble: 1 x 2\n  .pred_lower .pred_upper\n        <dbl>       <dbl>\n1     167277.     363444."
-  },
-  {
-    "objectID": "slides/lec-8x.html#cautions",
-    "href": "slides/lec-8x.html#cautions",
-    "title": "Multiple linear regression (MLR)",
-    "section": "Cautions",
-    "text": "Cautions\n\nDo not extrapolate! Because there are multiple predictor variables, there is the potential to extrapolate in many directions\nThe multiple regression model only shows association, not causality\n\nTo show causality, you must have a carefully designed experiment or carefully account for confounding variables in an observational study"
-  },
-  {
-    "objectID": "slides/lec-8x.html#recap",
-    "href": "slides/lec-8x.html#recap",
-    "title": "Multiple linear regression (MLR)",
-    "section": "Recap",
-    "text": "Recap\n\n\nIntroduced multiple linear regression\nInterpreted a coefficient \\(\\hat{\\beta}_j\\)\nUsed the model to calculate predicted values and the corresponding intervals\n\n\n\n\n\nsta210-s22.github.io/website"
-  },
-  {
-    "objectID": "slides/lec-9x.html#announcements",
-    "href": "slides/lec-9x.html#announcements",
-    "title": "Exam 1 Review",
-    "section": "Announcements",
-    "text": "Announcements\n\nLab 3 due tomorrow (Friday) at 5pm on Gradescope, one submission per team\nExam 1 open tomorrow (Friday) at 9am and ends on Monday, Feb 7 at 11:59pm\nNo lab on Monday, take the time to work on your exam"
-  },
-  {
-    "objectID": "slides/lec-9x.html#feedback-from-submissions-so-far",
-    "href": "slides/lec-9x.html#feedback-from-submissions-so-far",
-    "title": "Exam 1 Review",
-    "section": "Feedback from submissions so far",
-    "text": "Feedback from submissions so far\n\nYou must submit a PDF (not HTML) to Gradescope\nYou must tag your pages when you upload to Gradescope – if you don’t know how to do this, please ask well before the deadline!\nYou must not refer to keys distributed in previous semesters of the course – much of what we’re doing is different and some of it is the same. If you need help, please ask!"
-  },
-  {
-    "objectID": "slides/lec-9x.html#exam-1",
-    "href": "slides/lec-9x.html#exam-1",
-    "title": "Exam 1 Review",
-    "section": "Exam 1",
-    "text": "Exam 1\n\nInstructions can be found at\nCovers everything we’ve done so far\nOffice hours:\n\nTomorrow’s TA office hours are only for Lab 3 questions\nMonday: I have office hours 10:30-11:30am\n\nAny clarification questions for the exam?\n\nDirect message me or Rick on Slack\nPost on Sakai Conversations, post to “Instructors in this site”"
-  },
-  {
-    "objectID": "slides/lec-9x.html#application-exercise",
-    "href": "slides/lec-9x.html#application-exercise",
-    "title": "Exam 1 Review",
-    "section": "Application Exercise",
-    "text": "Application Exercise\n\n📋 github.com/sta210-s22/ae-4-exam-1-review\n\n\n\n\nsta210-s22.github.io/website"
   },
   {
     "objectID": "supplemental/log-transformations.html",

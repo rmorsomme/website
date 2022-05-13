@@ -9,7 +9,7 @@ Here are the webpages to install the two pieces of software R and RStudio:
 -   Download and install R 4.1.3 or 4.2.0: <https://cran.r-project.org/>
 -   Download and install RStudio Desktop: <https://www.rstudio.com/products/rstudio/>. The Open Source Edition version is sufficient.
 
-The teaching team is always happy to provide help with any computational questions.
+The teaching team is always happy to provide help with any computational question.
 
 ## How can I submit my assignment to Gradescope?
 
