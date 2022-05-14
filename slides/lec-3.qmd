@@ -368,12 +368,12 @@ IQR(d_birth$births) # iqr
 
 Real-world data often contain **extreme** values
 
--   measurement error,
--   typo
--   extreme observations
+-   measurement errors,
+-   typos,
+-   extreme observations,
 -   ...
 
-The average, median, variance, sd and iqr are not equally robust to the presence of extreme values.
+The average, median, variance, sd and iqr are not equally **robust** to the presence of extreme values.
 
 ## 
 
@@ -387,7 +387,7 @@ x_contaminated   <- c(x_uncontaminated, 1e9) # 1e9 = 10^9 (scientific notation)
 
 . . .
 
-...and compare the mean, median, variance, sd and iqr of these two variables
+...and compare the mean, median, variance, sd and iqr of these two variables.
 
 ## 
 
@@ -405,7 +405,7 @@ IQR(x_uncontaminated); IQR(x_contaminated)
 ::: callout-warning
 ## Robustness of the median and the iqr
 
-While the **median and iqr are robust** to the presence of extreme values, the mean, the variance and the sd are not.
+While the **median and iqr are robust** to the presence of extreme values, the mean, variance and sd are not.
 :::
 
 ## 
@@ -415,7 +415,7 @@ While the **median and iqr are robust** to the presence of extreme values, the m
 
 Exercises [5.8](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises), [5.11](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises), [5.15](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises) (replace part $c$ by *height of all adults*)
 
-Bonus: [5.19](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises)
+Bonus practice (at home): [5.17](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises), [5.19](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises)
 
 Note: Q1 is first the 25th percentile (larger than one *quarter* of the data), Q3 is the 75th percentile.
 :::
@@ -478,7 +478,7 @@ table(d_car$class, d_car$drv) %>%
 ::: {.callout-tip icon="false"}
 ## Group exercise - contigency and proportion table
 
-1.  What does the number $12$ represent in the contigency table?
+1.  What does the number $12$ (2nd row, 1st column) represent in the contigency table?
 2.  What does the number $0.05$ (2nd row, 1st column) represent in the first proportion table?
 3.  What does the number $0.25$ (2nd row, 1st column) represent in the row proportion table?
 :::
@@ -486,6 +486,7 @@ table(d_car$class, d_car$drv) %>%
 ```{r, echo = F}
 countdown(minutes = 3)
 ```
+
 
 # Visualization for categorical data
 
@@ -496,6 +497,10 @@ countdown(minutes = 3)
 ggplot(d_car) +
   geom_bar(aes(drv))
 ```
+
+. . .
+
+We can add a second categorical variable using colors.
 
 ## Advanced barplots
 
@@ -539,7 +544,7 @@ countdown(minutes = 3)
 
 # Advanced visualizations
 
-## Facetted histograms
+## Faceted histograms
 
 ```{r}
 #| code-line-numbers: "1|2,3|4"
@@ -568,7 +573,7 @@ ggplot(d_car) +
 
 . . .
 
-✅ Combines the strengths of the various barplots
+✅ Combines the strengths of the various barplots.
 
 🛑 Not in the tool box of every data scientist
 
@@ -578,21 +583,24 @@ ggplot(d_car) +
 
 Source: [R 4 Data Science](https://r4ds.had.co.nz)
 
-## 
+## {.smaller}
 
--   The thick line in the middle of the box indicates the median
+-   The thick line in the middle of the box indicates the median;
 
--   The box stretches from the 25th percentile to the 75th percentile; it covers 50% of the data.
+-   the box stretches from the 25th percentile (Q1) to the 75th percentile (Q3); it covers 50% of the data;
 
--   The length of the whiskers are at most 1.5 iqr
+-   the length of the whiskers are at most 1.5 iqr;
 
--   Any observation more than 1.5 iqr away from the box is labelled as an outlier.
+-   any observation more than 1.5 iqr away from the box is labelled as an outlier;
+
+. . .
+
+-   more compact than histograms
 
 . . .
 
 ::: callout-note
 ## Outliers
-
 Outliers have an extreme value. How to deal with an outlier depends on why the observation stands out.
 :::
 
@@ -600,10 +608,8 @@ Outliers have an extreme value. How to deal with an outlier depends on why the o
 
 ::: {.callout-tip icon="false"}
 ## Group exercise - types of associations
-
 Exercise [5.13](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises)
 :::
-
 ```{r, echo = F}
 countdown(minutes = 1)
 ```
@@ -639,7 +645,7 @@ ggplot(d_car) +
   labs(title = "Fuel consumption on the highway per engine size")
 ```
 
-## Axis title
+## Axis labels
 
 ```{r}
 #| code-line-numbers: "5,6"
@@ -647,7 +653,7 @@ ggplot(d_car) +
   geom_point(aes(displ, hwy)) +
   labs(
     title = "Fuel consumption on the highway per engine size",
-    x = "Engine size (number of cylinders)",
+    x = "Engine size (engine displaced in litres)",
     y = "Fuel efficiency on the highway (mpg)"
     )
 ```
@@ -664,7 +670,7 @@ ggplot(d_car) +
   geom_point(aes(displ, hwy)) +
   labs(
     title = "Fuel consumption on the highway per engine size",
-    x = "Engine size (number of cylinders)",
+    x = "Engine size (engine displaced in litres)",
     y = "Fuel efficiency on the highway (mpg)"
     ) +
   theme_bw()
@@ -679,7 +685,7 @@ ggplot(d_car) +
   geom_point(aes(displ, hwy)) +
   labs(
     title = "Fuel consumption on the highway per engine size",
-    x = "Engine size (number of cylinders)",
+    x = "Engine size (engine displaced in litres)",
     y = "Fuel efficiency on the highway (mpg)"
     ) +
   theme_classic()
@@ -694,7 +700,7 @@ ggplot(d_car) +
   geom_point(aes(displ, hwy)) +
   labs(
     title = "Fuel consumption on the highway per engine size",
-    x = "Engine size (number of cylinders)",
+    x = "Engine size (engine displaced in litres)",
     y = "Fuel efficiency on the highway (mpg)"
     ) +
   theme_dark()
@@ -704,7 +710,7 @@ ggplot(d_car) +
 ## Editing tables {.smaller}
 
 ```{r}
-#| code-line-numbers: "3|4"
+#| code-line-numbers: "4|5"
 table(d_car$class, d_car$drv) %>%
   prop.table(1) %>%
   round(2) %>%
@@ -749,7 +755,7 @@ table(d_car$class, d_car$drv) %>%
 -   Average, median, variance, sd and IQR; robustness
 -   Frequency, contigency and proportion tables
 -   Barplot, mosaic plot
--   Effective communication: well-edited figures, $\ge3$ variables (symbols, colors, facets)
+-   Effective communication: well-edited figures, $\ge3$ variables (symbols, colors, facets), tell a  story
 -   [R for Data Science - chapters 3 and 7](https://r4ds.had.co.nz/data-visualisation.html)
 :::
 

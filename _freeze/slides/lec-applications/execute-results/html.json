@@ -1,0 +1,18 @@
+{
+  "hash": "3fc7185b9d04c78c230f37262bb4d9a5",
+  "result": {
+    "markdown": "---\ntitle: \"Applications of Data Science\"\nsubtitle: \"STA 101 - Summer I 2022\"\nauthor: \"Raphael Morsomme\"\nfooter:  \"[sta101-suI22.github.io/website](https://sta101-suI22.github.io/website/)\"\nlogo: \"images/logo.jpg\"\nformat: \n  revealjs: \n    theme: slides.scss\n    multiplex: true\n    transition: fade\n    slide-number: true\n    code-fold: false\n    code-summary: \"Show the code\"\n    code-link: true\n    code-copy: true\n    self-contained: true\n    scrollable: true\neditor: visual\nexecute:\n  freeze: auto\n  echo: true\neditor_options: \n  chunk_output_type: console\n---\n\n\n\n## Outline\n\n-   7 billion -- are you typical?\n-   200 years of history through health and wealth\n-   model comparison\n-   outliers\n\n## 7 billion -- are you typical?\n\n[National Geographic](https://youtu.be/4B2xOvKFFz4)\n\nThis video illustrates the various ways in which variables can be summarized.\n\n## 200 years of history through health and wealth\n\n[short video](https://youtu.be/jbkSRLYSojo); [Ted talk](https://youtu.be/jbkSRLYSojo)\n\nThese videos show the work of the public health scientist **Hans Rosling** who uses data visualization with great skills to tell a story.\n\nCan you identify all 5 variables that were necessary to make the animation in the short video?",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\r\n<script>\r\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\r\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\r\n  // slide changes (different for each slide format).\r\n  (function () {\r\n    function fireSlideChanged(previousSlide, currentSlide) {\r\n\r\n      // dispatch for htmlwidgets\r\n      const event = window.document.createEvent(\"Event\");\r\n      event.initEvent(\"slideenter\", true, true);\r\n      window.document.dispatchEvent(event);\r\n\r\n      // dispatch for shiny\r\n      if (window.jQuery) {\r\n        if (previousSlide) {\r\n          window.jQuery(previousSlide).trigger(\"hidden\");\r\n        }\r\n        if (currentSlide) {\r\n          window.jQuery(currentSlide).trigger(\"shown\");\r\n        }\r\n      }\r\n    }\r\n\r\n    // hookup for reveal\r\n    if (window.Reveal) {\r\n      window.Reveal.addEventListener(\"slidechanged\", function(event) {\r\n        fireSlideChanged(event.previousSlide, event.currentSlide);\r\n      });\r\n    }\r\n\r\n    // hookup for slidy\r\n    if (window.w3c_slidy) {\r\n      window.w3c_slidy.add_observer(function (slide_num) {\r\n        // slide_num starts at position 1\r\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\r\n      });\r\n    }\r\n\r\n  })();\r\n</script>\r\n\r\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

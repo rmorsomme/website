@@ -1,0 +1,121 @@
+---
+title: "Prediction Project - Data Prep"
+subtitle: "STA 101L - Summer 1 2022"
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+The data can be found [here](https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2020us.zip) and the help file [here](https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2020.pdf)
+
+## Raw Data import
+
+```{r, eval=FALSE}
+library(tidyverse)
+d <- read_csv(
+  "Nat2020us/Nat2020PublicUS.c20210506.r20210812.txt",
+  col_names = FALSE, trim_ws = FALSE
+  )
+```
+
+## Variable extraction
+
+```{r, eval=FALSE}
+d %>%
+  slice(1:5) %>%
+  rename(string = X1) %>%
+  mutate(
+    year                             = str_sub(string, 9  , 12 ),
+    month                            = str_sub(string, 13 , 14 ),
+    mother_age                       = str_sub(string, 75 , 76 ),
+    prenatal_car_starting_month      = str_sub(string, 224, 225),
+    daily_cigarette_prepregnancy     = str_sub(string, 253, 254),
+    daily_cigarette_trimester_1      = str_sub(string, 255, 256),
+    daily_cigarette_trimester_2      = str_sub(string, 257, 258),
+    daily_cigarette_trimester_3      = str_sub(string, 259, 260),
+    mother_height                    = str_sub(string, 280, 281),
+    mother_bmi                       = str_sub(string, 283, 286),
+    mother_weight_prepregnancy       = str_sub(string, 292, 294),
+    mother_weight_delivery           = str_sub(string, 299, 301),
+    mother_diabetes_prepregnancy     = str_sub(string, 313, 313),
+    mother_diabetes_gestational      = str_sub(string, 314, 314),
+    mother_hypertension_prepregnancy = str_sub(string, 315, 315),
+    mother_hypertension_gestational  = str_sub(string, 316, 316),
+    risk_factors                     = str_sub(string, 337, 337),
+    gonorrhea                        = str_sub(string, 343, 343),
+    syphilis                         = str_sub(string, 344, 344),
+    chlamydia                        = str_sub(string, 345, 345),
+    hepatitis_B                      = str_sub(string, 346, 346),
+    hepatitis_C                      = str_sub(string, 347, 347),
+    number_newborns                  = str_sub(string, 454, 454),
+    newborn_sex                      = str_sub(string, 475, 475),
+    gestation_week                   = str_sub(string, 490, 491),
+    newborn_birth_weight             = str_sub(string, 504, 507)
+    ) %>%
+  select(!matches("string"), string)
+```
+
+# Instructions
+
+## Overview
+
+Exam 1 will be released on Friday, Feb 4 at 9 am ET and must be completed by Mon, Feb 7 at 11:59 pm.
+
+The exam will consist of two parts:
+
+1.  **Part 1 - Conceptual:** Multiple choice questions on Sakai test and quizzes. This portion may only be submitted one time. Go [here](https://sakai.duke.edu/samigo-app/servlet/Login?id=6fa7ebf3-01af-42a6-91ba-3e813d3901221643963875703) to complete Part 1 of the exam.
+2.  **Part 2 - Applied:** Data analysis in RStudio and submitted in Gradescope (like a usual lab and homework). Go to the [GitHub organization](https://github.com/sta210-s22/) for the course and find the **exam-1-** repo to complete Part 3 of your exam. Add your answers to the `exam-1.qmd` file in your repo.
+
+**Both portions must be completed and submitted by Mon, Feb 7 at 11:59 pm**. Late work will only be accepted in the case of of extenuating circumstances and notification from your academic dean.
+
+🍀 Good luck! 🍀
+
+## Academic Integrity
+
+By taking this exam, you pledge to uphold the Duke Community Standard:
+
+-   I will not lie, cheat, or steal in my academic endeavors;
+
+-   I will conduct myself honorably in all my endeavors; and
+
+-   I will act if the Standard is compromised.
+
+## Rules & Notes
+
+-   This is an individual assignment. Everything in your repository and on Sakai is for your eyes only.
+
+-   You may not collaborate or communicate anything about this exam to **anyone** except the instructor and the head TA (Rick Presman). For example, you may not communicate with other students, other TAs, or post/solicit help on the internet, email or via any other method of communication.
+
+-   The exam is open-book, open-note, so you may use any materials from class as you take the exam.
+
+-   Only head TA and professor office hours will be held during the exam period.
+
+-   You may **not** email the TAs questions about the exam.
+
+-   If you have questions, direct message the professor or the head TA (Rick Presman) on Slack or post on Sakai Conversations for "Instructors in this site" only or attend my office hours (Monday, 10:30 am - 11:30 am).
+
+## Submission
+
+-   **Part 1 - Conceptual:** The answers to the multiple choice/short answer questions should be submitted under *Test & Quizzes* in Sakai.
+
+-   **Part 2 - Applied:** The PDF document for the data analysis portion must be uploaded to Gradescope.
+
+    -   You must submit a PDF to Gradescope that corresponds to the `.qmd` file on your GitHub repository in order to receive credit for this portion of the exam.
+
+    -   You must upload a PDF, not HTML. Any non-PDF submissions will **not** be graded.
+
+    -   Mark the pages associated with each question. If any answer for a question spans multiple pages, mark all associated pages.
+
+    -   Make sure to associate the "Workflow & formatting" section with the first page.
+
+    -   Failure to mark the pages in Gradescope will result in point deductions. Any pages that are not marked will **not** be graded.
+
+    -   Make sure that your uploaded PDF document matches your `.qmd` and the PDF in your GitHub repository exactly. Points will be deducted for documents that are not reproducible.
+
+# Grading (50 pts)
+
+| **Part**                             | **Points** |
+|:-------------------------------------|:----------:|
+| **Part 1 - Conceptual** (on Sakai)   |     10     |
+| **Part 2 - Applied** (on Gradescope) |     40     |
+| **Total**                            |     50     |

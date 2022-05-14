@@ -282,142 +282,23 @@
   {
     "objectID": "hw/hw-2.html",
     "href": "hw/hw-2.html",
-    "title": "HW 2 - Multiple linear regression",
+    "title": "HW 1 - Introduction to data",
     "section": "",
-    "text": "In this assignment, you’ll get to put into practice the multiple linear regression skills you’ve developed.\n\n\nIn this assignment, you will…\n\nFit and interpret multiple linear regression models with main and interaction effects.\nCompare multiple linear regression models.\nReason around multiple linear regression concepts.\nContinue developing a workflow for reproducible data analysis.\n\n\n\n\nYour repo for this assignment is at github.com/sta210-s22 and starts with the prefix hw-2. For more detailed instructions on getting started, see HW 1.\n\n\n\nThe following packages will be used in this assignment. You can add other packages as needed.\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)\nlibrary(palmerpenguins)"
+    "text": "This assignment needs to be completed with RMarkdown and submitted as a pdf on Gradescope. Feel free to use the template that has been provided."
   },
   {
-    "objectID": "hw/hw-2.html#part-1---conceptual",
-    "href": "hw/hw-2.html#part-1---conceptual",
-    "title": "HW 2 - Multiple linear regression",
-    "section": "Part 1 - Conceptual",
-    "text": "Part 1 - Conceptual\n\nDealing with categorical predictors. Two friends, Elliott and Adrian, want to build a model predicting typing speed (average number of words typed per minute) from whether the person wears glasses or not. Before building the model they want to conduct some exploratory analysis to evaluate the strength of the association between these two variables, but they’re in disagreement about how to evaluate how strongly a categorical predictor is associated with a numerical outcome. Elliott claims that it is not possible to calculate a correlation coefficient to summarize the relationship between a categorical predictor and a numerical outcome, however they’re not sure what a better alternative is. Adrian claims that you can recode a binary predictor as a 0/1 variable (assign one level to be 0 and the other to be 1), thus converting it to a numerical variable. According to Adrian, you can then calculate the correlation coefficient between the predictor and the outcome. Who is right: Elliott or Adrian? If you pick Elliott, can you suggest a better alternative for evaluating the association between the categorical predictor and the numerical outcome?\nHigh correlation, good or bad? Two friends, Frances and Annika, are in disagreement about whether high correlation values are always good in the context of regression. Frances claims that it’s desirable for all variables in the dataset to be highly correlated to each other when building linear models. Annika claims that while it’s desirable for each of the predictors to be highly correlated with the outcome, it is not desirable for the predictors to be highly correlated with each other. Who is right: Frances, Annika, both, or neither? Explain your reasoning using appropriate terminology.\nTraining for the 5K. Nico signs up for a 5K (a 5,000 metre running race) 30 days prior to the race. They decide to run a 5K every day to train for it, and each day they record the following information: days_since_start (number of days since starting training), days_till_race (number of days left until the race), mood (poor, good, awesome), tiredness (1-not tired to 10-very tired), and time (time it takes to run 5K, recorded as mm:ss). Top few rows of the data they collect is shown below.\n\n\n\ndays_since_start\ndays_till_race\nmood\ntiredness\ntime\n\n\n\n\n1\n29\ngood\n3\n25:45\n\n\n2\n28\npoor\n5\n27:13\n\n\n3\n27\nawesome\n4\n24:13\n\n\n…\n…\n…\n…\n…\n\n\n\nUsing these data Nico wants to build a model predicting time from the other variables. Should they include all variables shown above in their model? Why or why not?\nMultiple regression fact checking. Determine which of the following statements are true and false. For each statement that is false, explain why it is false.\n\nIf predictors are colinear, then removing one variable will have no influence on the point estimate of another variable’s coefficient.\nSuppose a numerical predictor \\(x\\) has a coefficient of \\(\\hat{\\beta}_1 = 2.5\\) in a multiple regression model. Suppose also that the first observation has \\(x_{1,1} = 7.2\\), the second observation has a value of \\(x_{2,1} = 8.2\\), and these two observations have the same values for all other predictors. Then the predicted value of the second observation will be 2.5 higher than the prediction of the first observation based on the multiple regression model.\nIf a regression model’s first predictor has a coefficient of \\(\\hat{\\beta}_1 = 5.7\\) and if we are able to influence the data so that an observation will have its \\(x_1\\) be 1 larger than it would otherwise, the value \\(\\hat{y}_1\\) for this observation would increase by 5.7."
+    "objectID": "hw/hw-2.html#problem-set-25-points",
+    "href": "hw/hw-2.html#problem-set-25-points",
+    "title": "HW 1 - Introduction to data",
+    "section": "Problem set (25 points)",
+    "text": "Problem set (25 points)\n\nExercise 5.2 (2 points)\nExercise 5.4 (2 points)\nExercise 5.6 (3 points)\nExercise 5.10 (3 points)\nExercise 5.16 (5 points)\nExercise 5.20 (1 points)\nExercise 5.20 follow up (1 points)\n\nWould side-by-side boxplots have been suitable to visualize these data? Briefly explain.\n\nExercise 5.22 (2 points)\nExercise 5.26 (2 points)\nExercise 4.6 (4 points)"
   },
   {
-    "objectID": "hw/hw-2.html#part-2---palmer-penguins",
-    "href": "hw/hw-2.html#part-2---palmer-penguins",
-    "title": "HW 2 - Multiple linear regression",
-    "section": "Part 2 - Palmer penguins",
-    "text": "Part 2 - Palmer penguins\nData were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network. (Gorman, Williams, and Fraser 2014)\n\n\n\nArtwork by @allison_horst\n\n\nThese data can be found in the palmerpenguins package. We’re going to be working with the penguins dataset from this package. The dataset contains data for 344 penguins. There are 3 different species of penguins in this dataset, collected from 3 islands in the Palmer Archipelago, Antarctica.\n\nBody mass. Our first goal is to fit a model predicting body mass (which is more difficult to measure) from bill length, bill depth, flipper length, species, and sex.\n\nFit a model predicting body mass (which is more difficult to measure) from the other variables listed above.\nWrite the equation of the regression model.\nInterpret each one of the slopes in this context.\nCalculate the residual for a male Adelie penguin that weighs 3750 grams with the following body measurements: bill_length_mm = 39.1, bill_depth_mm = 18.7, flipper_length_mm = 181. Does the model overpredict or underpredict this penguin’s weight?\nFind the \\(R^2\\) of this model and interpret this value in context of the data and the model.\n\n\n\n\nBill depth. Next we’ll be focusing on bill depth and bill length and also considering species.\n\nFit a model predicting bill depth from bill length. Find the adjusted R-squared, AIC, and BIC for this model.\nThen, add a new predictor: species. Fit another model predicting bill depth from bill length and species. Find the adjusted R-squared, AIC, and BIC for this model.\nFinally, add one more predictor: the interaction between bill length and species. Find the adjusted R-squared, AIC, and BIC for this model.\nUsing the three criteria you recorded for these three models, and with the goal of parsimony, which model is the “best” for predicting bill depth from bill length and/or species. Explain your reasoning.\nCreate a visualization representing your model from part a. Hint: Make a scatterplot of bill depth vs. bill length and add the linear model.\nCreate a visualization representing your model from part b. Hint: Same as part (e), but think about how many lines to plot and whether their slopes should be the same or different.\nCreate a visualization representing your model from part c. Hint: Same as part (f), but think about how many lines to plot and whether their slopes should be the same or different.\nBased on your visualizations from parts e - g, and with the goal of parsimony, is your answer for which model is the “best” for predicting bill depth from bill length and/or species the same as your answer in part d? Explain your reasoning."
-  },
-  {
-    "objectID": "hw/hw-2.html#part-3---perceived-threat-of-covid-19",
-    "href": "hw/hw-2.html#part-3---perceived-threat-of-covid-19",
-    "title": "HW 2 - Multiple linear regression",
-    "section": "Part 3 - Perceived threat of Covid-19",
-    "text": "Part 3 - Perceived threat of Covid-19\nGarbe, Rau, and Toppe (2020), published in June 2020, aims to examine the relationship between personality traits, perceived threat of Covid-19 and stockpiling toilet paper. For this study titled Influence of perceived threat of Covid-19 and HEXACO personality traits on toilet paper stockpiling, researchers conducted an online survey March 23 - 29, 2020 and used the results to fit multiple linear regression models to draw conclusions about their research questions. From their survey, they collected data on adults across 35 countries. Given the small number of responses from people outside of the United States, Canada, and Europe, only responses from people in these three locations were included in the regression analysis.\nLet’s consider their results for the model looking at the effect on perceived threat of Covid-19. The model can be found on page 6 of the paper. The perceived threat of Covid was quantified using the responses to the following survey question:\n\nHow threatened do you feel by Coronavirus? [Users select on a 10-point visual analogue scale (Not at all threatened to Extremely Threatened)]\n\n\nInterpret the coefficient of Age (0.072) in the context of the analysis.\nInterpret the coefficient of Place of residence in the context of the analysis.\nThe model includes an interaction between Place of residence and Emotionality (capturing differential tendencies in to worry and be anxious).\n\nWhat does the coefficient for the interaction (0.101) mean in the context of the data?\nInterpret the estimated effect of Emotionality for a person who lives in the US/Canada.\nInterpret the estimated effect of Emotionality for a person who lives in Europe."
-  },
-  {
-    "objectID": "hw/hw-2.html#submission",
-    "href": "hw/hw-2.html#submission",
-    "title": "HW 2 - Multiple linear regression",
-    "section": "Submission",
-    "text": "Submission\n\n\n\n\n\n\nWarning\n\n\n\nBefore you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.\nRemember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.\n\n\nTo submit your assignment:\n\nGo to http://www.gradescope.com and click Log in in the top right corner.\nClick School Credentials ➡️ Duke NetID and log in using your NetID credentials.\nClick on your STA 210 course.\nClick on the assignment, and you’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be “checked”).\nSelect the first page of your PDF submission to be associated with the “Workflow & formatting” section."
-  },
-  {
-    "objectID": "hw/hw-2.html#grading",
-    "href": "hw/hw-2.html#grading",
-    "title": "HW 2 - Multiple linear regression",
-    "section": "Grading",
-    "text": "Grading\nTotal points available: 50 points.\n\n\n\nComponent\nPoints\n\n\n\n\nEx 1 - 9\n45\n\n\nWorkflow & formatting\n51"
-  },
-  {
-    "objectID": "hw/hw-3.html",
-    "href": "hw/hw-3.html",
-    "title": "HW 3 - Logistic regression and log transformation",
-    "section": "",
-    "text": "In this assignment, you’ll get to put into practice the logistic regression skills you’ve developed.\n\n\nIn this assignment, you will…\n\nFit and interpret logistic regression models.\nFit and interpret multiple linear regression models with log transformed outcomes.\nReason around log transformations of various types.\nContinue developing a workflow for reproducible data analysis.\n\n\n\n\nYour repo for this assignment is at github.com/sta210-s22 and starts with the prefix hw-3. For more detailed instructions on getting started, see HW 1.\n\n\n\nThe following packages will be used in this assignment. You can add other packages as needed.\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)\nlibrary(palmerpenguins)"
-  },
-  {
-    "objectID": "hw/hw-3.html#part-1---palmer-penguins",
-    "href": "hw/hw-3.html#part-1---palmer-penguins",
-    "title": "HW 3 - Logistic regression and log transformation",
-    "section": "Part 1 - Palmer penguins",
-    "text": "Part 1 - Palmer penguins\nIn this part we’ll go back to the Palmer penguins dataset from HW 2.\nWe will use the following variables:\n\n\n\n\n\n\n\n\nvariable\nclass\ndescription\n\n\n\n\nspecies\ninteger\nPenguin species (Adelie, Gentoo, Chinstrap)\n\n\nisland\ninteger\nIsland where recorded (Biscoe, Dream, Torgersen)\n\n\nflipper_length_mm\ninteger\nFlipper length in mm\n\n\n\nThe goal of this analysis is to use logistic regression to understand the relationship between flipper length, island, and whether a penguin is from the Adelie species. First, we need to create a new response variable to identify whether a penguin is from the Adelie species.\n\npenguins <- penguins %>%\n  mutate(adelie = factor(if_else(species == \"Adelie\", 1, 0)))\n\nAnd let’s check to make sure the new variable looks right before we continue with the analysis.\n\npenguins %>%\n  count(adelie, species)\n\n# A tibble: 3 x 3\n  adelie species       n\n  <fct>  <fct>     <int>\n1 0      Chinstrap    68\n2 0      Gentoo      124\n3 1      Adelie      152\n\n\nLet’s start by looking at the relationship between island and whether a penguin is from the Adelie species.\n\nWhat does the values_fill argument do in the following chunk? The documentation for the function will be helpful in answering this question.\n\npenguins %>%\n  count(island, adelie) %>%\n  pivot_wider(names_from = adelie, values_from = n, values_fill = 0)\n\n# A tibble: 3 x 3\n  island      `0`   `1`\n  <fct>     <int> <int>\n1 Biscoe      124    44\n2 Dream        68    56\n3 Torgersen     0    52\n\n\nCalculate the odds ratio of a penguin being from the Adelie species for those recorded on Dream compared to those recorded on Biscoe.\nYou want to fit a model using island to predict the odds of being from the Adelie species. Let \\(\\pi\\) be the probability a penguin is from the Adelie species. The model has the following form. What do you expect the value of \\(\\hat{\\beta}_1\\), the estimated coefficient for Dream, to be? Explain your reasoning.\n\n\\[\n\\log\\Big(\\frac{\\pi}{1-\\pi}\\Big) = \\beta_0 + \\beta_1 ~ Dream + \\beta_2 ~ Torgersen\n\\]\n\nFit a model predicting adelie from island and display the model output. For the following exercise, use this model.\nBased on this model, what are the odds of a penguin being from the Adelie species if it was recorded on Biscoe island? on Dream island?\nNext, add flipper length to the model so that there are two predictors. Display the model output. For the following exercises, use this model.\nWrite the regression equation for the model.\nInterpret the coefficient of flipper_length_mm in terms of the log-odds of being from the Adelie species.\nInterpret the coefficient of flipper_length_mm in terms of the odds of being from the Adelie species.\nInterpret the coefficient of Dream in terms of the odds of being from the Adelie species.\nHow do you expect the log-odds of being from the Adelie species to change when going from a penguin with flipper length 185 mm to a penguin with flipper length 200 mm? Assume both penguins were recorded on the Dream island.\nHow do you expect the odds of being from the Adelie species to change when going from a penguin with flipper length 185 mm to a penguin with flipper length 200 mm? Assume both penguins were recorded on the Dream island."
-  },
-  {
-    "objectID": "hw/hw-3.html#part-2---gdp-and-urban-population",
-    "href": "hw/hw-3.html#part-2---gdp-and-urban-population",
-    "title": "HW 3 - Logistic regression and log transformation",
-    "section": "Part 2 - GDP and Urban population",
-    "text": "Part 2 - GDP and Urban population\nData on countries’ Gross Domestic Product (GDP) and percentage of urban population was collected and made available by The World Bank in 2020. A description of the variables as defined by The World Bank are provided below.\n\nGDP: “GDP per capita is gross domestic product divided by midyear population. GDP is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources. Data are in current U.S. dollars.”\nUrban Population (% of total): “Urban population refers to people living in urban areas as defined by national statistical offices. It is calculated using World Bank population estimates and urban ratios from the United Nations World Urbanization Prospects.”\n\nThe data can be found in the data folder of your repository. Read the data and name it gdp_2020.\n\nFit a model predicting GDP from urban population. Then make a plot of residuals vs. fitted for this model. Does the linear model seem appropriate for modeling this relationship? Explain your reasoning.\nAdd a new column to the gdp_2020 dataset called gdp_log which is the (natural) log of gdp.\nFit a new model, predicting the log of GDP from urban population. Then make a plot of residuals vs. fitted for this model. Does the model predicting logged GDP or original GDP appear to be a better fit? Explain your reasoning.\n\nThe model output for predicting logged GDP.\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n6.107\n0.202\n30.291\n0\n\n\nurban\n0.042\n0.003\n13.769\n0\n\n\n\n\n\nThe linear model for predicting log of GDP can be expressed as follows:\n\\[\n\\widehat{\\log(GDP)} = 6.11 + 0.042 \\times urban\n\\]\nTherefore, the coefficient of urban (0.042) can be interpreted as the change in logged GDP associated with 1 percentage point increase in urban population. The problem is, logged GDP is not a very informative value to talk about. So we need to undo the transformation we’ve done.\nTo do so, let’s do a quick review of some properties of logs.\n\nSubtraction and logs: \\(log(a) − log(b) = log(\\frac{a}{b})\\)\nNatural logarithm: \\(e^{log(x)} = x\\)\n\nBased on the interpretation of the slope above, the difference between the predicted values of logged GDP for a given value of urban and a value that is 1 percentage point higher is 0.0425. Let’s write this out mathematically, and then use the properties we’ve listed above to work through the equation.\n\\[\n\\begin{aligned}\nlog(\\text{GDP for urban } x + 1) - log(\\text{GDP for urban } x) &= 0.042 \\\\\nlog\\Big( \\frac{\\text{GDP for urban } x + 1}{\\text{GDP for urban } x} \\Big) &= 0.042 \\\\\ne^{log\\Big( \\frac{\\text{GDP for urban } x + 1}{\\text{GDP for urban } x} \\Big)} &= e^{0.042}\\\\\n\\frac{\\text{GDP for urban } x + 1}{\\text{GDP for urban } x} &= e^{0.042}\n\\end{aligned}\n\\]\n\nBased on the derivation above, fill in the blanks in the following sentence for an alternative (and more useful interpretation) of the slope of urban.\n\nFor each additional percentage point the urban population is higher, the GDP of a country is expected to be ___, on average, by a factor of ___."
-  },
-  {
-    "objectID": "hw/hw-3.html#submission",
-    "href": "hw/hw-3.html#submission",
-    "title": "HW 3 - Logistic regression and log transformation",
-    "section": "Submission",
-    "text": "Submission\n\n\n\n\n\n\nWarning\n\n\n\nBefore you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.\nRemember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.\n\n\nTo submit your assignment:\n\nGo to http://www.gradescope.com and click Log in in the top right corner.\nClick School Credentials ➡️ Duke NetID and log in using your NetID credentials.\nClick on your STA 210 course.\nClick on the assignment, and you’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be “checked”).\nSelect the first page of your PDF submission to be associated with the “Workflow & formatting” section."
-  },
-  {
-    "objectID": "hw/hw-3.html#grading",
-    "href": "hw/hw-3.html#grading",
-    "title": "HW 3 - Logistic regression and log transformation",
-    "section": "Grading",
-    "text": "Grading\nTotal points available: 50 points.\n\n\n\nComponent\nPoints\n\n\n\n\nEx 1 - 9\n45\n\n\nWorkflow & formatting\n51"
-  },
-  {
-    "objectID": "hw/hw-4.html",
-    "href": "hw/hw-4.html",
-    "title": "HW 4 - Multinomial logistic regression",
-    "section": "",
-    "text": "In this assignment, you’ll get to put into practice the logistic regression skills you’ve developed.\n\n\nIn this assignment, you will…\n\nFit and interpret multinomial logistic regression models.\nEvaluate model conditions\nContinue developing a workflow for reproducible data analysis.\n\n\n\n\nYour repo for this assignment is at github.com/sta210-s22 and starts with the prefix hw-4. For more detailed instructions on getting started, see HW 1.\n\n\n\nThe following packages will be used in this assignment. You can add other packages as needed.\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)\nlibrary(patchwork)"
-  },
-  {
-    "objectID": "hw/hw-4.html#data",
-    "href": "hw/hw-4.html#data",
-    "title": "HW 4 - Multinomial logistic regression",
-    "section": "Data",
-    "text": "Data\nFor this assignment, we will analyze data from the eye witness identification experiment in Carlson and Carlson (2014). In this experiment, participants were asked to watch a video of a mock crime (from the first person perspective), spend a few minutes completing a random task, and then identify the perpetrator of the mock crime from a line up shown on the screen. Every lineup in this analysis included the true perpetrator from the video. After viewing the line-up , each participant could make one of the following decisions (id):\n\ncorrect: correctly identified the true perpetrator\nfoil: incorrectly identified the “foil”, i.e. a person who looks very similar to the perpetrator\nreject: incorrectly concluded the true perpetrator is not in the lineup\n\nThe main objective of the analysis is to understand how different conditions of the mock crime and suspect lineup affect the decision made by the participant. We will consider the following conditions to describe the decisions:\n\nlineup: How potential suspects are shown to the participants\n\nSimultaneous Lineup: Participants were shown photos of all 6 potential suspects at the same time and were required to make a single decision (identify someone from the lineup or reject the lineup).\nSequential 5 Lineup: Photos of the 6 suspects were shown one at a time. The participant was required to make a decision (choose or don’t choose) as each photo was shown. Once a decision was made, participants were not allowed to reexamine a photo. If the participant made an identification, the remaining photos were not shown. In each of these lineups the true perpetrator was always the 5th photo in the lineup.\n\nweapon: Whether or not a weapon was present in the video of the mock crime.\nfeature: Whether or not the perpetrator had a distinctive marking on his face. In this experiment, the distinctive feature was a large “N” sticker on one cheek. (The letter “N” was chosen to represent the first author’s alma mater - University of Nebraska.)\n\nThe data may be found in eyewitness.csv in the data folder.\n\new <- read_csv(here::here(\"hw\", \"data/eyewitness.csv\"))\new <- ew %>%\n  mutate(id = as_factor(id))"
-  },
-  {
-    "objectID": "hw/hw-4.html#exercises",
-    "href": "hw/hw-4.html#exercises",
-    "title": "HW 4 - Multinomial logistic regression",
-    "section": "Exercises",
-    "text": "Exercises\n\nLet’s begin by doing some exploratory data analysis. The univariate (single variable) plots for each of the predictor variables and the response variable are shown below.\n\n\n\n\n\n\nComplete the exploratory data analysis by creating the plots and/or summary statistics to examine the relationship between the response variable (id) and each of the explanatory variables (lineup, weapon, and feature).\n\nUsing the plots/tables from Exercise 1:\n\n\nWhat is one thing you learn about the data from the univariate plots?\nBased on the bivariate plots, do any of the predictors appear to have a significant effect on the id? Briefly explain.\n\n\nBriefly explain why you should use a multinomial logistic regression model to predict id using lineup, weapon and feature.\nFit the multinomial logistic model that only includes main effects. Display the model output.\n\n\nWhat is the baseline category for the response variable?\nInterpret the intercepts for each part of the model in terms of the odds.\nInterpret the coefficients of lineup for each part of the model in terms of the odds.\n\n\nYou want to consider all possible first-order interaction effects (interaction effects between two variables) for the model.\n\n\nUse the appropriate test to determine if there is at least one significant interaction effect.\nBased on your test, is there evidence of any significant interaction effects?\n\nRegardless of your answer to Question 5, use the model that includes the interaction terms for the remainder of the assignment.\n\nAccording to the model,\n\n\nIf there was no weapon but the perpetrator had a distinctive feature in the mock crime, how do the log-odds of reject vs. a correct ID change when there is a simultaneous lineup vs. a sequential lineup?\nIf there was no weapon but the perpetrator had a distinctive feature in the mock crime, how do the odds of reject vs. a correct ID change when there is a simultaneous lineup vs. a sequential lineup?\nWhich group of participants (i.e., which set of experimental conditions) is described by the intercept?\n\n\nAre the conditions inference met? List of the conditions, and, if relevant, create visualizations to check the conditions and evaluate whether each condition is met. Include an assessment about each condition and a brief explanation about your conclusion.\nUse the model to predict the decision made by each participant. Make a table of the predicted vs. the actual decisions.\n\n\nBriefly describe how the predicted decision is determined for each participant.\nWhat is the misclassification rate?"
-  },
-  {
-    "objectID": "hw/hw-4.html#submission",
-    "href": "hw/hw-4.html#submission",
-    "title": "HW 4 - Multinomial logistic regression",
-    "section": "Submission",
-    "text": "Submission\n\n\n\n\n\n\nWarning\n\n\n\nBefore you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.\nRemember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.\n\n\nTo submit your assignment:\n\nGo to http://www.gradescope.com and click Log in in the top right corner.\nClick School Credentials ➡️ Duke NetID and log in using your NetID credentials.\nClick on your STA 210 course.\nClick on the assignment, and you’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be “checked”).\nSelect the first page of your PDF submission to be associated with the “Workflow & formatting” section."
-  },
-  {
-    "objectID": "hw/hw-4.html#grading",
-    "href": "hw/hw-4.html#grading",
-    "title": "HW 4 - Multinomial logistic regression",
-    "section": "Grading",
-    "text": "Grading\nTotal points available: 50 points.\n\n\n\nComponent\nPoints\n\n\n\n\nExercises\n45\n\n\nWorkflow & formatting\n51"
-  },
-  {
-    "objectID": "hw/hw-5.html",
-    "href": "hw/hw-5.html",
-    "title": "HW 5 - Statistics Experience",
-    "section": "",
-    "text": "The world of statistics and data science is vast and continually growing! The goal of the statistics experience assignments is to help you engage with the statistics and data science communities outside of the classroom.\nYou may submit the statistics experience assignment anytime between now and the deadline.\nEach experience has two parts:\n1️⃣ Have a statistics experience\n2️⃣ Make a slide summarizing on your experience\nYou must complete both parts to receive credit."
-  },
-  {
-    "objectID": "hw/hw-5.html#part-1-experience-statistics-outside-of-the-classroom",
-    "href": "hw/hw-5.html#part-1-experience-statistics-outside-of-the-classroom",
-    "title": "HW 5 - Statistics Experience",
-    "section": "Part 1: Experience statistics outside of the classroom",
-    "text": "Part 1: Experience statistics outside of the classroom\nComplete an activity in one of the categories below. Under each category are suggested activities. You do not have to do one these suggested activities. You are welcome to find other activities as long as they are related to statistics/data science and they fit in one of the six categories. If there is an activity you’d like to do but you’re not sure if it qualifies for the statistics experience, just ask!\n\nCategory 1: Attend a talk or conference\nAttend an talk, panel, or conference related to statistics or data science. If you are attending a single talk or panel, it must be at least 30 minutes to count towards the statistics experience. The event can be in-person or online.\n\n\nCategory 2: Talk with a statistician/ data scientist\nTalk with someone who uses statistics in their daily work. This could include a professor, professional in industry, graduate student, etc.\n\n\nCategory 3: Listen to a podcast / watch video\nListen to a podcast or watch a video about statistics and data science. The podcast or video must be at least 30 minutes to count towards the statistics experience. A few suggestions are below:\n\nStats + Stories Podcast\nCausal Inference Podcast\nFiveThirtyEight Model Talk\nrstudio::global 2021 talks\nrstudio::conf 2020 talks\n\nThis list is not exhaustive. You may listen to other podcasts or watch other statistics/data science videos not included on this list. Ask your professor if you are unsure whether a particular podcast or video will count towards the statistics experience.\n\n\nCategory 4: Participate in a data science competition or challenge\nParticipate in a statistics or data science competition. You can participate individually or with a team. One option is DataFest, which will take place over the April 1-3, 2022 weekend. More information to follow here.\n\n\nCategory 5: Read a book on statistics/data science\nThere are a lot of books about statistics, data science, and related topics. A few suggestions are below. If you decide to read a book that isn’t on this list, ask your professor to make sure it counts toward the experience. Many of these books are available through Duke library.\n\nWeapons of Math Destruction by Cathy O’Neil\nHow Charts Lie: Getting Smarter about Visual Information by Alberto Cairo\nThe Theory that Would Not Die by Sharon Bertsch McGrayne\nThe Art of Statistics: How to learn from data by David Spiegelhalter\nThe Signal and the Noise: Why so many predictions fail - but some don’t by Nate Silver\nHow Charts Lie by Alberto Cairo\nList of books about data science ethics\n\n\n\nCategory 6: TidyTuesday\nYou may also participate in a TidyTuesday challenge. New data sets are announced on Monday afternoons.You can find more information about TidyTuesday and see the data in the TidyTuesday GitHub repo.\nA few guidelines:\n✅ Create a GitHub repo for your TidyTuesday submission. Your repo should include\n\nThe R Markdown file with all the code needed to reproduce your visualization.\nA README that includes an image of your final visualization and a short summary (~ 1 paragraph) about your visualization.\n\n✅ The visualization should include features or customization that are beyond what we’ve done in class .\n✅ Include the link to your GitHub repo in the slide summarizing your experience.\n\n\nCategory 7: Coding out loud\nWatch an episode of Coding out loud (either live or pre-recorded) and work through the project.\nA few guidelines:\n✅ Create a GitHub repo for your Coding out loud submission. Your repo should include\n\nThe Quarto file with all the code needed to reproduce your visualization.\nA README that includes an image of your final visualization and a short summary (~ 1 paragraph) about your visualization.\n\n✅ The final product (visualuzation, table, etc.) should include features or customization that are beyond what was achieved in the Coding out loud episode.\n✅ Include the link to your GitHub repo in the slide summarizing your experience."
-  },
-  {
-    "objectID": "hw/hw-5.html#part-2-summarize-your-experience",
-    "href": "hw/hw-5.html#part-2-summarize-your-experience",
-    "title": "HW 5 - Statistics Experience",
-    "section": "Part 2: Summarize your experience",
-    "text": "Part 2: Summarize your experience\nMake one slide summarizing your experience. Submit the slide as a PDF on Gradescope.\nInclude the following on your slide:\n\nName and brief description of the event/podcast/competition/etc.\nSomething you found new, interesting, or unexpected\nHow the event/podcast/competition/etc. connects to something we’ve done in class.\nCitation or link to web page for event/competition/etc.\n\nClick here to see a template to help you get started on your slide. Your slide does not have to follow this exact format; it just needs to include the information mentioned above and be easily readable (i.e. use a reasonable font size!). Creativity is encouraged!"
-  },
-  {
-    "objectID": "hw/hw-5.html#submission",
-    "href": "hw/hw-5.html#submission",
-    "title": "HW 5 - Statistics Experience",
-    "section": "Submission",
-    "text": "Submission\nSubmit the reflection as a PDF under the HW 5 - Statistics Experience assignment on Gradescope by Fri, Apr 15 at 5 pm ET. It must be submitted by the deadline on Gradescope to be considered for grading."
+    "objectID": "hw/hw-2.html#lab-exercises---new-york-flights-25-points",
+    "href": "hw/hw-2.html#lab-exercises---new-york-flights-25-points",
+    "title": "HW 1 - Introduction to data",
+    "section": "Lab exercises - New York flights (25 points)",
+    "text": "Lab exercises - New York flights (25 points)\nYou can find the lab here\n\nExercise 1 (2 points)\nExercise 2 (3 points)\nExercise 3 (3 points)\nExercise 4 (3 points)\nExercise 5 (2 points)\nExercise 6 (2 points)\nExercise 7 (2 points)\nExercise 8 (3 points)\nExercise 9 (5 points)"
   },
   {
     "objectID": "hw/template.html",
@@ -431,7 +312,7 @@
     "href": "index.html",
     "title": "STA 101L: Data Analysis and Statistical Inference",
     "section": "",
-    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 0 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 1 - Visualization\n\n\n💻\n\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 2 - Linear regression\n\n\n💻\n\n\n\n\n2\nMon, May 23\nModel selection\n8.3-8.4; 25.2-25.3\n🖥️\n\n\n\n\n\n\nTue, May 24\nLogistic regression\n9.1-9.3\n🖥️\n\n\n\n\n\n\nWed, May 25\nLab 3 - functions, loops\n\n\n💻\n\n\n\n\n\nThu, May 26\nPrinciples of inference\nWork on project\n11.0; 11.3; 12.0; 12.3; 13.1-13.3\n🖥️\n\n\n\n\n\n\nFri, May 27\nLab 4 - work on prediction project [PP]\n\n\n💻\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP discussion\nInference for proportions I\n16.1-16.2\n🖥️\n\n\nPP model (9am)\nPP presentation\n\n\n\nWed, June 1\nLab 5 - work on PP\nDue: PP report\n\n\n💻\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.3\n🖥️\n\n\n\n\n\n\nFri, June 3\nLab 6 - Inference for proportions\n\n\n💻\n\n\n\n\n4\nMon, June 6\nInference for means I\n19.1-19.2\n🖥️\n\n\n\n\n\n\nTue, June 7\nInference for means II\n20.1-20.4; 21.1-21.3\n🖥️\n\n\n\n\n\n\nWed, June 8\nLab 7 - Inference for means\n\n\n💻\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.6; 25.1; 26.1-26.2\n🖥️\n\n\n\n\n\n\nFri, June 10\nLab 8 - inference for regression\n\n\n💻\n\n\n\n\n5\nMon, June 13\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n🖥️\n\n\n\n\n\n\nTue, June 14\nWork on inference project (IP)\n\n🖥️\n\n\n\n\n\n\nWed, June 15\nLab 9 - work on IP\n\n\n💻\n\n\n\n\n\nThu, June 16\nIP presentations\nWrap up\n\n\n\n\nIP presentation\n\n\n\nFri, June 17\nLab 10 - work on IP\n\n\n💻\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
+    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\n\n\n💻\n\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n💻\n\n\n\n\n2\nMon, May 23\nModel selection\n8.3-8.4; 25.2-25.3\n🖥️\n\n\n\n\n\n\nTue, May 24\nLogistic regression\n9.1-9.3\n🖥️\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n💻\n\n\n\n\n\nThu, May 26\nPrinciples of inference\nWork on project\n11.0; 11.3; 12.0; 12.3; 13.1-13.3\n🖥️\n\n\n\n\n\n\nFri, May 27\nLab 5 - work on prediction project [PP]\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP discussion\nInference for proportions I\n16.1-16.2\n🖥️\n\n\nPP model (9am)\nPP presentation\n\n\n\nWed, June 1\nLab 5 - work on PP\nDue: PP report\n\n\n💻\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.3\n🖥️\n\n\n\n\n\n\nFri, June 3\nLab 6 - Inference for proportions\n\n\n💻\n\n\n\n\n4\nMon, June 6\nInference for means I\n19.1-19.2\n🖥️\n\n\n\n\n\n\nTue, June 7\nInference for means II\n20.1-20.4; 21.1-21.3\n🖥️\n\n\n\n\n\n\nWed, June 8\nLab 7 - Inference for means\n\n\n💻\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.6; 25.1; 26.1-26.2\n🖥️\n\n\n\n\n\n\nFri, June 10\nLab 8 - inference for regression\n\n\n💻\n\n\n\n\n5\nMon, June 13\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n🖥️\n\n\n\n\n\n\nTue, June 14\nWork on inference project (IP)\n\n🖥️\n\n\n\n\n\n\nWed, June 15\nLab 9 - work on IP\n\n\n💻\n\n\n\n\n\nThu, June 16\nIP presentations\nWrap up\n\n\n\n\nIP presentation\n\n\n\nFri, June 17\nLab 10 - work on IP\n\n\n💻\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
   },
   {
     "objectID": "labs/lab-0x.html",
@@ -894,6 +775,69 @@
     "title": "Project tips + resources",
     "section": "Additional resources",
     "text": "Additional resources\n\nR for Data Science\nQuarto Documentation\nData visualization\n\nggplot2 Reference\nggplot2: Elegant Graphics for Data Analysis\nData Visualization: A Practice Introduction\nPatchwork R Package"
+  },
+  {
+    "objectID": "projects/exam-2.html",
+    "href": "projects/exam-2.html",
+    "title": "Exam 2",
+    "section": "",
+    "text": "Grading (50 pts)\n\n\n\nPart\nPoints\n\n\n\n\nPart 1 - Conceptual (on Sakai)\n10\n\n\nPart 2 - Applied (on Gradescope)\n40\n\n\nTotal\n50"
+  },
+  {
+    "objectID": "projects/exam-3.html",
+    "href": "projects/exam-3.html",
+    "title": "Exam 2",
+    "section": "",
+    "text": "Grading (50 pts)\n\n\n\nPart\nPoints\n\n\n\n\nPart 1 - Conceptual (on Sakai)\n10\n\n\nPart 2 - Applied (on Gradescope)\n40\n\n\nTotal\n50"
+  },
+  {
+    "objectID": "projects/prediction-data.html",
+    "href": "projects/prediction-data.html",
+    "title": "Prediction Project - Data Prep",
+    "section": "",
+    "text": "The data can be found here and the help file here"
+  },
+  {
+    "objectID": "projects/prediction-data.html#raw-data-import",
+    "href": "projects/prediction-data.html#raw-data-import",
+    "title": "Prediction Project - Data Prep",
+    "section": "Raw Data import",
+    "text": "Raw Data import\n\nlibrary(tidyverse)\nd <- read_csv(\n  \"Nat2020us/Nat2020PublicUS.c20210506.r20210812.txt\",\n  col_names = FALSE, trim_ws = FALSE\n  )"
+  },
+  {
+    "objectID": "projects/prediction-data.html#variable-extraction",
+    "href": "projects/prediction-data.html#variable-extraction",
+    "title": "Prediction Project - Data Prep",
+    "section": "Variable extraction",
+    "text": "Variable extraction\n\nd %>%\n  slice(1:5) %>%\n  rename(string = X1) %>%\n  mutate(\n    year                             = str_sub(string, 9  , 12 ),\n    month                            = str_sub(string, 13 , 14 ),\n    mother_age                       = str_sub(string, 75 , 76 ),\n    prenatal_car_starting_month      = str_sub(string, 224, 225),\n    daily_cigarette_prepregnancy     = str_sub(string, 253, 254),\n    daily_cigarette_trimester_1      = str_sub(string, 255, 256),\n    daily_cigarette_trimester_2      = str_sub(string, 257, 258),\n    daily_cigarette_trimester_3      = str_sub(string, 259, 260),\n    mother_height                    = str_sub(string, 280, 281),\n    mother_bmi                       = str_sub(string, 283, 286),\n    mother_weight_prepregnancy       = str_sub(string, 292, 294),\n    mother_weight_delivery           = str_sub(string, 299, 301),\n    mother_diabetes_prepregnancy     = str_sub(string, 313, 313),\n    mother_diabetes_gestational      = str_sub(string, 314, 314),\n    mother_hypertension_prepregnancy = str_sub(string, 315, 315),\n    mother_hypertension_gestational  = str_sub(string, 316, 316),\n    risk_factors                     = str_sub(string, 337, 337),\n    gonorrhea                        = str_sub(string, 343, 343),\n    syphilis                         = str_sub(string, 344, 344),\n    chlamydia                        = str_sub(string, 345, 345),\n    hepatitis_B                      = str_sub(string, 346, 346),\n    hepatitis_C                      = str_sub(string, 347, 347),\n    number_newborns                  = str_sub(string, 454, 454),\n    newborn_sex                      = str_sub(string, 475, 475),\n    gestation_week                   = str_sub(string, 490, 491),\n    newborn_birth_weight             = str_sub(string, 504, 507)\n    ) %>%\n  select(!matches(\"string\"), string)"
+  },
+  {
+    "objectID": "projects/prediction-data.html#overview",
+    "href": "projects/prediction-data.html#overview",
+    "title": "Prediction Project - Data Prep",
+    "section": "Overview",
+    "text": "Overview\nExam 1 will be released on Friday, Feb 4 at 9 am ET and must be completed by Mon, Feb 7 at 11:59 pm.\nThe exam will consist of two parts:\n\nPart 1 - Conceptual: Multiple choice questions on Sakai test and quizzes. This portion may only be submitted one time. Go here to complete Part 1 of the exam.\nPart 2 - Applied: Data analysis in RStudio and submitted in Gradescope (like a usual lab and homework). Go to the GitHub organization for the course and find the exam-1- repo to complete Part 3 of your exam. Add your answers to the exam-1.qmd file in your repo.\n\nBoth portions must be completed and submitted by Mon, Feb 7 at 11:59 pm. Late work will only be accepted in the case of of extenuating circumstances and notification from your academic dean.\n🍀 Good luck! 🍀"
+  },
+  {
+    "objectID": "projects/prediction-data.html#academic-integrity",
+    "href": "projects/prediction-data.html#academic-integrity",
+    "title": "Prediction Project - Data Prep",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nBy taking this exam, you pledge to uphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised."
+  },
+  {
+    "objectID": "projects/prediction-data.html#rules-notes",
+    "href": "projects/prediction-data.html#rules-notes",
+    "title": "Prediction Project - Data Prep",
+    "section": "Rules & Notes",
+    "text": "Rules & Notes\n\nThis is an individual assignment. Everything in your repository and on Sakai is for your eyes only.\nYou may not collaborate or communicate anything about this exam to anyone except the instructor and the head TA (Rick Presman). For example, you may not communicate with other students, other TAs, or post/solicit help on the internet, email or via any other method of communication.\nThe exam is open-book, open-note, so you may use any materials from class as you take the exam.\nOnly head TA and professor office hours will be held during the exam period.\nYou may not email the TAs questions about the exam.\nIf you have questions, direct message the professor or the head TA (Rick Presman) on Slack or post on Sakai Conversations for “Instructors in this site” only or attend my office hours (Monday, 10:30 am - 11:30 am)."
+  },
+  {
+    "objectID": "projects/prediction-data.html#submission",
+    "href": "projects/prediction-data.html#submission",
+    "title": "Prediction Project - Data Prep",
+    "section": "Submission",
+    "text": "Submission\n\nPart 1 - Conceptual: The answers to the multiple choice/short answer questions should be submitted under Test & Quizzes in Sakai.\nPart 2 - Applied: The PDF document for the data analysis portion must be uploaded to Gradescope.\n\nYou must submit a PDF to Gradescope that corresponds to the .qmd file on your GitHub repository in order to receive credit for this portion of the exam.\nYou must upload a PDF, not HTML. Any non-PDF submissions will not be graded.\nMark the pages associated with each question. If any answer for a question spans multiple pages, mark all associated pages.\nMake sure to associate the “Workflow & formatting” section with the first page.\nFailure to mark the pages in Gradescope will result in point deductions. Any pages that are not marked will not be graded.\nMake sure that your uploaded PDF document matches your .qmd and the PDF in your GitHub repository exactly. Points will be deducted for documents that are not reproducible."
   },
   {
     "objectID": "slides/lab-0x.html#meet-your-ta",
@@ -1740,14 +1684,14 @@
     "href": "slides/lec-3.html#robustness",
     "title": "Data Summary and Visualization",
     "section": "Robustness",
-    "text": "Robustness\nReal-world data often contain extreme values\n\nmeasurement error,\ntypo\nextreme observations\n…\n\nThe average, median, variance, sd and iqr are not equally robust to the presence of extreme values."
+    "text": "Robustness\nReal-world data often contain extreme values\n\nmeasurement errors,\ntypos,\nextreme observations,\n…\n\nThe average, median, variance, sd and iqr are not equally robust to the presence of extreme values."
   },
   {
     "objectID": "slides/lec-3.html#section-7",
     "href": "slides/lec-3.html#section-7",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "Let us contaminate the birth data with an extreme value of 1 billion…\n\nx_uncontaminated <- d_birth$births  \nx_contaminated   <- c(x_uncontaminated, 1e9) # 1e9 = 10^9 (scientific notation)\n\n\n…and compare the mean, median, variance, sd and iqr of these two variables"
+    "text": "Let us contaminate the birth data with an extreme value of 1 billion…\n\nx_uncontaminated <- d_birth$births  \nx_contaminated   <- c(x_uncontaminated, 1e9) # 1e9 = 10^9 (scientific notation)\n\n\n…and compare the mean, median, variance, sd and iqr of these two variables."
   },
   {
     "objectID": "slides/lec-3.html#section-8",
@@ -1761,14 +1705,14 @@
     "href": "slides/lec-3.html#section-9",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "Robustness of the median and the iqr\n\n\nWhile the median and iqr are robust to the presence of extreme values, the mean, the variance and the sd are not."
+    "text": "Robustness of the median and the iqr\n\n\nWhile the median and iqr are robust to the presence of extreme values, the mean, variance and sd are not."
   },
   {
     "objectID": "slides/lec-3.html#section-10",
     "href": "slides/lec-3.html#section-10",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "Group exercise - summary statistics\n\n\nExercises 5.8, 5.11, 5.15 (replace part \\(c\\) by height of all adults)\nBonus: 5.19\nNote: Q1 is first the 25th percentile (larger than one quarter of the data), Q3 is the 75th percentile.\n\n\n\n\n\n\n07:00"
+    "text": "Group exercise - summary statistics\n\n\nExercises 5.8, 5.11, 5.15 (replace part \\(c\\) by height of all adults)\nBonus practice (at home): 5.17, 5.19\nNote: Q1 is first the 25th percentile (larger than one quarter of the data), Q3 is the 75th percentile.\n\n\n\n\n\n\n07:00"
   },
   {
     "objectID": "slides/lec-3.html#frequency-table-1d",
@@ -1796,14 +1740,14 @@
     "href": "slides/lec-3.html#section-11",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "Group exercise - contigency and proportion table\n\n\n\nWhat does the number \\(12\\) represent in the contigency table?\nWhat does the number \\(0.05\\) (2nd row, 1st column) represent in the first proportion table?\nWhat does the number \\(0.25\\) (2nd row, 1st column) represent in the row proportion table?\n\n\n\n\n\n\n\n03:00"
+    "text": "Group exercise - contigency and proportion table\n\n\n\nWhat does the number \\(12\\) (2nd row, 1st column) represent in the contigency table?\nWhat does the number \\(0.05\\) (2nd row, 1st column) represent in the first proportion table?\nWhat does the number \\(0.25\\) (2nd row, 1st column) represent in the row proportion table?\n\n\n\n\n\n\n\n03:00"
   },
   {
     "objectID": "slides/lec-3.html#barplot",
     "href": "slides/lec-3.html#barplot",
     "title": "Data Summary and Visualization",
     "section": "Barplot",
-    "text": "Barplot\n\nggplot(d_car) +\n  geom_bar(aes(drv))"
+    "text": "Barplot\n\nggplot(d_car) +\n  geom_bar(aes(drv))\n\n\n\nWe can add a second categorical variable using colors."
   },
   {
     "objectID": "slides/lec-3.html#advanced-barplots",
@@ -1820,11 +1764,11 @@
     "text": "Group exercise - pros and cons of barplots\n\n\nExercise 4.5\n\n\n\n\n\n\n03:00"
   },
   {
-    "objectID": "slides/lec-3.html#facetted-histograms",
-    "href": "slides/lec-3.html#facetted-histograms",
+    "objectID": "slides/lec-3.html#faceted-histograms",
+    "href": "slides/lec-3.html#faceted-histograms",
     "title": "Data Summary and Visualization",
-    "section": "Facetted histograms",
-    "text": "Facetted histograms\n\nd_birth_small <- filter(d_birth, year %in% c(2000, 2004, 2009, 2014))\nggplot(d_birth_small) +\n  geom_histogram(aes(births)) + \n  facet_grid(year~.)"
+    "section": "Faceted histograms",
+    "text": "Faceted histograms\n\nd_birth_small <- filter(d_birth, year %in% c(2000, 2004, 2009, 2014))\nggplot(d_birth_small) +\n  geom_histogram(aes(births)) + \n  facet_grid(year~.)"
   },
   {
     "objectID": "slides/lec-3.html#section-13",
@@ -1838,7 +1782,7 @@
     "href": "slides/lec-3.html#mosaic-plot",
     "title": "Data Summary and Visualization",
     "section": "Mosaic plot",
-    "text": "Mosaic plot\n\nggplot(d_car) +\n  geom_mosaic(aes(x = product(drv), fill = class))\n\n\n\n✅ Combines the strengths of the various barplots\n🛑 Not in the tool box of every data scientist"
+    "text": "Mosaic plot\n\nggplot(d_car) +\n  geom_mosaic(aes(x = product(drv), fill = class))\n\n\n\n✅ Combines the strengths of the various barplots.\n🛑 Not in the tool box of every data scientist"
   },
   {
     "objectID": "slides/lec-3.html#boxplots",
@@ -1852,7 +1796,7 @@
     "href": "slides/lec-3.html#section-14",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "The thick line in the middle of the box indicates the median\nThe box stretches from the 25th percentile to the 75th percentile; it covers 50% of the data.\nThe length of the whiskers are at most 1.5 iqr\nAny observation more than 1.5 iqr away from the box is labelled as an outlier.\n\n\n\n\n\n\n\n\nOutliers\n\n\nOutliers have an extreme value. How to deal with an outlier depends on why the observation stands out."
+    "text": "The thick line in the middle of the box indicates the median;\nthe box stretches from the 25th percentile (Q1) to the 75th percentile (Q3); it covers 50% of the data;\nthe length of the whiskers are at most 1.5 iqr;\nany observation more than 1.5 iqr away from the box is labelled as an outlier;\n\n\n\nmore compact than histograms\n\n\n\n\n\n\n\n\n\nOutliers\n\n\nOutliers have an extreme value. How to deal with an outlier depends on why the observation stands out."
   },
   {
     "objectID": "slides/lec-3.html#section-15",
@@ -1876,18 +1820,18 @@
     "text": "Figure title\n\nggplot(d_car) +\n  geom_point(aes(displ, hwy)) +\n  labs(title = \"Fuel consumption on the highway per engine size\")"
   },
   {
-    "objectID": "slides/lec-3.html#axis-title",
-    "href": "slides/lec-3.html#axis-title",
+    "objectID": "slides/lec-3.html#axis-labels",
+    "href": "slides/lec-3.html#axis-labels",
     "title": "Data Summary and Visualization",
-    "section": "Axis title",
-    "text": "Axis title\n\nggplot(d_car) +\n  geom_point(aes(displ, hwy)) +\n  labs(\n    title = \"Fuel consumption on the highway per engine size\",\n    x = \"Engine size (number of cylinders)\",\n    y = \"Fuel efficiency on the highway (mpg)\"\n    )"
+    "section": "Axis labels",
+    "text": "Axis labels\n\nggplot(d_car) +\n  geom_point(aes(displ, hwy)) +\n  labs(\n    title = \"Fuel consumption on the highway per engine size\",\n    x = \"Engine size (engine displaced in litres)\",\n    y = \"Fuel efficiency on the highway (mpg)\"\n    )"
   },
   {
     "objectID": "slides/lec-3.html#section-17",
     "href": "slides/lec-3.html#section-17",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "theme_bw\ntheme_classic\ntheme_dark\n\n\n\n\nShow the codeggplot(d_car) +\n  geom_point(aes(displ, hwy)) +\n  labs(\n    title = \"Fuel consumption on the highway per engine size\",\n    x = \"Engine size (number of cylinders)\",\n    y = \"Fuel efficiency on the highway (mpg)\"\n    ) +\n  theme_bw()\n\n\n\n\n\n\n\n\n\n\nShow the codeggplot(d_car) +\n  geom_point(aes(displ, hwy)) +\n  labs(\n    title = \"Fuel consumption on the highway per engine size\",\n    x = \"Engine size (number of cylinders)\",\n    y = \"Fuel efficiency on the highway (mpg)\"\n    ) +\n  theme_classic()\n\n\n\n\n\n\n\n\n\n\nShow the codeggplot(d_car) +\n  geom_point(aes(displ, hwy)) +\n  labs(\n    title = \"Fuel consumption on the highway per engine size\",\n    x = \"Engine size (number of cylinders)\",\n    y = \"Fuel efficiency on the highway (mpg)\"\n    ) +\n  theme_dark()"
+    "text": "theme_bw\ntheme_classic\ntheme_dark\n\n\n\n\nShow the codeggplot(d_car) +\n  geom_point(aes(displ, hwy)) +\n  labs(\n    title = \"Fuel consumption on the highway per engine size\",\n    x = \"Engine size (engine displaced in litres)\",\n    y = \"Fuel efficiency on the highway (mpg)\"\n    ) +\n  theme_bw()\n\n\n\n\n\n\n\n\n\n\nShow the codeggplot(d_car) +\n  geom_point(aes(displ, hwy)) +\n  labs(\n    title = \"Fuel consumption on the highway per engine size\",\n    x = \"Engine size (engine displaced in litres)\",\n    y = \"Fuel efficiency on the highway (mpg)\"\n    ) +\n  theme_classic()\n\n\n\n\n\n\n\n\n\n\nShow the codeggplot(d_car) +\n  geom_point(aes(displ, hwy)) +\n  labs(\n    title = \"Fuel consumption on the highway per engine size\",\n    x = \"Engine size (engine displaced in litres)\",\n    y = \"Fuel efficiency on the highway (mpg)\"\n    ) +\n  theme_dark()"
   },
   {
     "objectID": "slides/lec-3.html#editing-tables",
@@ -1908,7 +1852,7 @@
     "href": "slides/lec-3.html#recap-1",
     "title": "Data Summary and Visualization",
     "section": "Recap",
-    "text": "Recap\n\n\nHistogram, scatterplot, boxplot\nAverage, median, variance, sd and IQR; robustness\nFrequency, contigency and proportion tables\nBarplot, mosaic plot\nEffective communication: well-edited figures, \\(\\ge3\\) variables (symbols, colors, facets)\nR for Data Science - chapters 3 and 7\n\n\n\n\n“The simple graph has brought more information to the data analyst’s mind than any other device.” — John Tukey\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+    "text": "Recap\n\n\nHistogram, scatterplot, boxplot\nAverage, median, variance, sd and IQR; robustness\nFrequency, contigency and proportion tables\nBarplot, mosaic plot\nEffective communication: well-edited figures, \\(\\ge3\\) variables (symbols, colors, facets), tell a story\nR for Data Science - chapters 3 and 7\n\n\n\n\n“The simple graph has brought more information to the data analyst’s mind than any other device.” — John Tukey\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
     "objectID": "slides/lec-4.html#announcements",
@@ -1936,7 +1880,7 @@
     "href": "slides/lec-4.html#regression-model",
     "title": "Simple Linear Regression Models",
     "section": "Regression model",
-    "text": "Regression model\n\nd <- ggplot2::mpg\nhead(d, n = 4)\n\n# A tibble: 4 x 11\n  manufacturer model displ  year   cyl trans      drv     cty   hwy fl    class \n  <chr>        <chr> <dbl> <int> <int> <chr>      <chr> <int> <int> <chr> <chr> \n1 audi         a4      1.8  1999     4 auto(l5)   f        18    29 p     compa~\n2 audi         a4      1.8  1999     4 manual(m5) f        21    29 p     compa~\n3 audi         a4      2    2008     4 manual(m6) f        20    31 p     compa~\n4 audi         a4      2    2008     4 auto(av)   f        21    30 p     compa~\n\n\n\nSuppose the variable hwy (fuel efficiency on highway) is very expensive to measure.\nWe decide to estimate it using the other variables. To do so, we will fit a regression model. \\[\n\\text{hwy} \\approx \\text{model}(\\text{other variables})\n\\]"
+    "text": "Regression model\n\nd <- ggplot2::mpg\nhead(d, n = 4)\n\n# A tibble: 4 x 11\n  manufacturer model displ  year   cyl trans      drv     cty   hwy fl    class \n  <chr>        <chr> <dbl> <int> <int> <chr>      <chr> <int> <int> <chr> <chr> \n1 audi         a4      1.8  1999     4 auto(l5)   f        18    29 p     compa~\n2 audi         a4      1.8  1999     4 manual(m5) f        21    29 p     compa~\n3 audi         a4      2    2008     4 manual(m6) f        20    31 p     compa~\n4 audi         a4      2    2008     4 auto(av)   f        21    30 p     compa~\n\n\n\nSuppose the variable hwy (fuel efficiency on highway) is very expensive to measure.\nWe decide to estimate it using the other variables. To do so, we will fit a regression model.\n\\[\n\\text{hwy} \\approx \\text{model}(\\text{other variables})\n\\]"
   },
   {
     "objectID": "slides/lec-4.html#simple-regression",
@@ -1978,7 +1922,7 @@
     "href": "slides/lec-4.html#section-1",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "Is this the true hwy of the new vehicle? No! - this is only an estimate based on the value of the variable cty and our “good” model.\n\nCan we do better? Yes!\n\nTake additional variable into account in the model (e.g. engine size, vehicle age, etc)\nUse better values for \\(\\beta_0\\) and \\(\\beta_1\\)."
+    "text": "Is this the true hwy of the new vehicle? No!\n\nthis is only an estimate based on the value of the variable cty and our “good” model.\n\n\nCan we do better? Yes!\n\nTake additional variable into account in the model (e.g. engine size, vehicle age, etc)\nUse better values for \\(\\beta_0\\) and \\(\\beta_1\\)."
   },
   {
     "objectID": "slides/lec-4.html#section-2",
@@ -2188,7 +2132,7 @@
     "href": "slides/lec-4.html#section-13",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "Group exercise - outlier\n\n\nLook at the scatterplot for the mpg data set. Are there outliers?\n\nggplot(d) +\n  geom_point(aes(cty, hwy))\n\n\nExercise 7.25\n\n\n\n\n\n\n03:00"
+    "text": "Group exercise - outlier\n\n\nLook at the scatterplot for the mpg data set. Are there outliers?\n\nggplot(d) +\n  geom_point(aes(cty, hwy))\n\n\nExercises 7.25\n\n\n\n\n\n\n03:00"
   },
   {
     "objectID": "slides/lec-4.html#outliers-leverage-and-influential-points",
@@ -2196,6 +2140,13 @@
     "title": "Simple Linear Regression Models",
     "section": "Outliers, leverage and influential points",
     "text": "Outliers, leverage and influential points\n\noutliers: observations that fall far from the cloud of points\nHigh leverage points: observations that fall horizontally away from the cloud of points\ninfluential points: observations that influence the slope of the regression line\n\n\n\nAll influential points are high leverage points.\nAll leverage points are outliers.\n(Venn Diagram)"
+  },
+  {
+    "objectID": "slides/lec-4.html#section-14",
+    "href": "slides/lec-4.html#section-14",
+    "title": "Simple Linear Regression Models",
+    "section": "",
+    "text": "Group exercise - outlier\n\n\nLook at the scatterplot for the mpg data set. Are there outliers?\n\nggplot(d) +\n  geom_point(aes(cty, hwy))\n\n\nExercises 7.27\n\n\n\n\n\n\n03:00"
   },
   {
     "objectID": "slides/lec-4.html#dealing-with-outliers",
@@ -2209,11 +2160,11 @@
     "href": "slides/lec-4.html#impact-of-outliers",
     "title": "Simple Linear Regression Models",
     "section": "Impact of outliers",
-    "text": "Impact of outliers\nLet us contaminate the data with an outlier (cty \\(=10\\) and hwy \\(=1000\\))\n\nd_contaminated <- select(d, cty, hwy) %>%\n  add_row(cty = 40, hwy = 500) # add outlier\narrange(d_contaminated, desc(hwy)) %>% slice(1:5)\n\n# A tibble: 5 x 2\n    cty   hwy\n  <dbl> <dbl>\n1    40   500\n2    33    44\n3    35    44\n4    29    41\n5    28    37\n\n\n\n…and compare the two regression models. ::: {.cell layout-align=“center”}\nlm(hwy ~ cty, data = d)\n\n\nCall:\nlm(formula = hwy ~ cty, data = d)\n\nCoefficients:\n(Intercept)          cty  \n      0.892        1.337  \n\nlm(hwy ~ cty, data = d_contaminated)\n\n\nCall:\nlm(formula = hwy ~ cty, data = d_contaminated)\n\nCoefficients:\n(Intercept)          cty  \n    -33.841        3.498  \n\n:::\n\n\nThe value of the slope has almost tripled!"
+    "text": "Impact of outliers\nLet us contaminate the data with an outlier (cty \\(=10\\) and hwy \\(=1000\\))\n\nd_contaminated <- select(d, cty, hwy) %>%\n  add_row(cty = 40, hwy = 500) # add outlier\narrange(d_contaminated, desc(hwy)) %>% slice(1:5)\n\n# A tibble: 5 x 2\n    cty   hwy\n  <dbl> <dbl>\n1    40   500\n2    33    44\n3    35    44\n4    29    41\n5    28    37\n\n\n\n…and compare the two regression models.\n\nlm(hwy ~ cty, data = d)\n\n\nCall:\nlm(formula = hwy ~ cty, data = d)\n\nCoefficients:\n(Intercept)          cty  \n      0.892        1.337  \n\nlm(hwy ~ cty, data = d_contaminated)\n\n\nCall:\nlm(formula = hwy ~ cty, data = d_contaminated)\n\nCoefficients:\n(Intercept)          cty  \n    -33.841        3.498  \n\n\n\n\nThe value of the slope has almost tripled!"
   },
   {
-    "objectID": "slides/lec-4.html#section-14",
-    "href": "slides/lec-4.html#section-14",
+    "objectID": "slides/lec-4.html#section-15",
+    "href": "slides/lec-4.html#section-15",
     "title": "Simple Linear Regression Models",
     "section": "",
     "text": "ggplot(d_contaminated) +\n  geom_point(aes(cty, hwy)) +\n  geom_abline(intercept = -26.046, slope = 3.013, col = \"purple\")\n\n\nThe regression line not longer fits the data well."
@@ -2618,6 +2569,55 @@
     "text": "Multicollinearity\n\n\n\nsta101-suI22.github.io/website"
   },
   {
+    "objectID": "slides/lec-applications.html#outline",
+    "href": "slides/lec-applications.html#outline",
+    "title": "Data science in action – examples in various fields",
+    "section": "Outline",
+    "text": "Outline\n\n7 billion – are you typical?\n200 years of history through health and wealth\nBuilding a better NBA team through data science\nWhen data seem to contradict widely held believes\nStatistics in psychiatry and agriculture"
+  },
+  {
+    "objectID": "slides/lec-applications.html#billion-are-you-typical",
+    "href": "slides/lec-applications.html#billion-are-you-typical",
+    "title": "Data science in action – examples in various fields",
+    "section": "7 billion – are you typical?",
+    "text": "7 billion – are you typical?\nThis short video by National Geographic illustrates the various ways in which demographic variables can be summarized."
+  },
+  {
+    "objectID": "slides/lec-applications.html#years-of-history-through-health-and-wealth",
+    "href": "slides/lec-applications.html#years-of-history-through-health-and-wealth",
+    "title": "Data science in action – examples in various fields",
+    "section": "200 years of history through health and wealth",
+    "text": "200 years of history through health and wealth\n\n\nThis short video and this Ted talk show the work of the public health scientist Hans Rosling who uses data visualization with great skills to tell a story.\nCan you identify all 5 variables that were necessary to make the animation in the short video? Visit the Gapminder website to explore other variables."
+  },
+  {
+    "objectID": "slides/lec-applications.html#building-a-better-nba-team-through-data-science",
+    "href": "slides/lec-applications.html#building-a-better-nba-team-through-data-science",
+    "title": "Data science in action – examples in various fields",
+    "section": "Building a better NBA team through data science",
+    "text": "Building a better NBA team through data science\n\n\nLearn about Dr. Ivana Seric’s work for the Philadelphia 76ers in this short video. She has used her mathematical background and passion for basketball to dive in the data and help the NBA team devise better strategies."
+  },
+  {
+    "objectID": "slides/lec-applications.html#when-data-seem-to-contradict-widely-held-believes",
+    "href": "slides/lec-applications.html#when-data-seem-to-contradict-widely-held-believes",
+    "title": "Data science in action – examples in various fields",
+    "section": "When data seem to contradict widely held believes",
+    "text": "When data seem to contradict widely held believes\nIn this Ted talk, Prof. Steven Levitt argues that the data do not seem to corroborate the idea that car seats are no more effective than seat belts in protecting kids from dying in cars."
+  },
+  {
+    "objectID": "slides/lec-applications.html#statistics-in-psychiatry-and-agriculture",
+    "href": "slides/lec-applications.html#statistics-in-psychiatry-and-agriculture",
+    "title": "Data science in action – examples in various fields",
+    "section": "Statistics in psychiatry and agriculture",
+    "text": "Statistics in psychiatry and agriculture\nHear about the work of the statistician Susan Murphy and agricultural ecologist David Lobell, both recipients of the prestigious MacArthur Fellowship.\nBelieve it or not, agriculture is where statistical methods (experiments, hypothesis tests, etc) were first used during the 1920s."
+  },
+  {
+    "objectID": "slides/lec-applications.html#estimating-the-effect-of-commute-time-on-rent-in-new-york",
+    "href": "slides/lec-applications.html#estimating-the-effect-of-commute-time-on-rent-in-new-york",
+    "title": "Data science in action – examples in various fields",
+    "section": "Estimating the effect of commute time on rent in New York",
+    "text": "Estimating the effect of commute time on rent in New York\n\n\nIn this article, Carl Bialik looked at more than 100,000 homes present on StreetEasy. He observed that, unsurprisingly, the distance to the nearest metro does impact rent prices, and he even managed to put a number on that effect: $56/minute.\n\n\n\n Source: FiverThirtyEight\n\n\n\n\n\nsta101-suI22.github.io/website"
+  },
+  {
     "objectID": "supplemental/log-transformations.html",
     "href": "supplemental/log-transformations.html",
     "title": "Log Transformations in Linear Regression",
@@ -2644,13 +2644,6 @@
     "title": "Log Transformations in Linear Regression",
     "section": "Log-transformation on the the response and predictor variable",
     "text": "Log-transformation on the the response and predictor variable\nSuppose we fit a linear regression model with \\(\\log(x)\\), the log-transformed \\(x\\), as the predictor variable and \\(\\log(y)\\), the log-transformed \\(y\\), as the response variable. Under this model, we assume a linear relationship exists between \\(\\log(x)\\) and \\(\\log(y)\\), such that \\(\\log(y) \\sim N(\\beta_0 + \\beta_1 \\log(x), \\sigma^2)\\) for some \\(\\beta_0\\), \\(\\beta_1\\) and \\(\\sigma^2\\). In other words, we can model the relationship between \\(\\log(x)\\) and \\(\\log(y)\\) using the model in Equation 5.\n\\[\n\\log(y) = \\beta_0 + \\beta_1 \\log(x)\n\\qquad(5)\\]\nBecause the response variable is log-transformed, the interpretations on the original scale will be in terms of the median of \\(y\\) (see the section on the log-transformed response variable for more detail).\nIntercept: The intercept is the mean of \\(y\\) when \\(\\log(x) = 0\\), i.e. \\(x = 1\\). Therefore, when \\(\\log(x) = 0\\),\n\\[\n\\begin{aligned}\n&\\log(y) = \\beta_0 + \\beta_1 \\times 0 = \\beta_0 \\\\[10pt]\n\\Rightarrow &y = \\exp\\{\\beta_0\\}\n\\end{aligned}\n\\]\nInterpretation: When \\(x = 1\\) \\((\\log(x) = 0)\\), the median of \\(y\\) is expected to be \\(\\exp\\{\\beta_0\\}\\).\nSlope: The slope is interpreted in terms of the change in the median \\(y\\) when \\(x\\) is multiplied by a factor of \\(C\\), since \\(\\log(Cx) = \\log(x) + \\log(C)\\). Thus, when \\(x\\) is multiplied by a factor of \\(C\\), the change in the median of \\(y\\) is\n\\[\n\\begin{aligned}\n\\exp\\{[\\beta_0 + \\beta_1 \\log(Cx)] - [\\beta_0 + \\beta_1 \\log(x)]\\} &=\n\\exp\\{\\beta_1 [\\log(Cx) - \\log(x)]\\} \\\\[10pt]\n& = \\exp\\{\\beta_1[\\log(C) + \\log(x) - \\log(x)]\\} \\\\[10pt]\n& = \\exp\\{\\beta_1 \\log(C)\\} = C^{\\beta_1}\n\\end{aligned}\n\\]\nThus, the median of \\(y\\) for \\(Cx\\) is \\(C^{\\beta_1}\\) times the median of \\(y\\) for \\(x\\).\nInterpretation: When \\(x\\) is multiplied by a factor of \\(C\\), the median of \\(y\\) is expected to multiple by a factor of \\(C^{\\beta_1}\\). For example, if \\(x\\) is doubled, then the median of \\(y\\) is expected to multiply by \\(2^{\\beta_1}\\)."
-  },
-  {
-    "objectID": "Untitled/Untitled.html",
-    "href": "Untitled/Untitled.html",
-    "title": "Homework 1 - Introduction to data",
-    "section": "",
-    "text": "Lab - Dr. Arbuthnot’s Baptism Records\n\nlibrary(tidyverse)\nlibrary(openintro)\n\n\nExercise 1\n\narbuthnot$girls\n\n [1] 4683 4457 4102 4590 4839 4820 4928 4605 4457 4952 4784 5332 5200 4910 4617\n[16] 3997 3919 3395 3536 3181 2746 2722 2840 2908 2959 3179 3349 3382 3289 3013\n[31] 2781 3247 4107 4803 4881 5681 4858 4319 5322 5560 5829 5719 6061 6120 5822\n[46] 5738 5717 5847 6203 6033 6041 6299 6533 6744 7158 7127 7246 7119 7214 7101\n[61] 7167 7302 7392 7316 7483 6647 6713 7229 7767 7626 7452 7061 7514 7656 7683\n[76] 5738 7779 7417 7687 7623 7380 7288\n\n\n\n\nExercise 2\nInsert any text here.\n\n# Insert code for Exercise 2 here\n\n\n\nExercise 3\nInsert any text here.\n\n# Insert code for Exercise 3 here\n\n\n\nExercise 4\nInsert any text here.\n\n# Insert code for Exercise 4 here\n\n\n\nExercise 5\nInsert any text here.\n\n# Insert code for Exercise 5 here\n\n\n\nExercise 6\nInsert any text here.\n\n# Insert code for Exercise 6 here\n\n\n\nExercise 7\nInsert any text here.\n\n# Insert code for Exercise 7 here"
   },
   {
     "objectID": "weeks/week-1.html",

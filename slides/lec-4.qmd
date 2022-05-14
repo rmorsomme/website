@@ -94,7 +94,9 @@ head(d, n = 4)
 
 Suppose the variable `hwy` (fuel efficiency on highway) is very expensive to measure.
 
-We decide to estimate it using the other variables. To do so, we will fit a **regression model**. $$
+We decide to estimate it using the other variables. To do so, we will fit a **regression model**.
+
+$$
 \text{hwy} \approx \text{model}(\text{other variables})
 $$
 
@@ -165,7 +167,7 @@ ggplot(d) +
 
 We can use our models to estimate `hwy` for new vehicles.
 
-. . . 
+. . .
 
 Imagine there is a new vehicle with $\text{cty} = 30$. Instead of measuring its `hwy` (expensive), we use our model to estimate it. Using the "good" model gives the following estimate
 
@@ -180,7 +182,9 @@ $$
 
 ## 
 
-Is this the true `hwy` of the new vehicle? No! - this is only an estimate based on the value of the variable `cty` and our "good" model.
+Is this the true `hwy` of the new vehicle? No!
+
+-   this is only an estimate based on the value of the variable `cty` and our "good" model.
 
 . . .
 
@@ -307,24 +311,22 @@ countdown(minutes = 5)
 We want to choose estimates that give a model that *fits the data well*.
 
 -   a model with a regression line that is close to the data
-    
-. . .    
+
+. . .
 
 We want to minimize the residuals.
 
 ## Minimizing residuals
 
-Perhaps the most natural thing to do is to find the values for $\beta_0$ and $\beta_1$ that minimize the **sum of absolute residuals**
-$$
+Perhaps the most natural thing to do is to find the values for $\beta_0$ and $\beta_1$ that minimize the **sum of absolute residuals** $$
 |e_1|+|e_2|+\dots+|e_n|
 $$
 
 . . .
 
-For practical reasons, the **sum of squared residuals** (SSR) is a more common criterion
-$$
+For practical reasons, the **sum of squared residuals** (SSR) is a more common criterion $$
 e_1^2+e_2^2+\dots+e_n^2
-$$ 
+$$
 
 ## Why squaring the residuals?
 
@@ -343,7 +345,7 @@ lm(hwy ~ cty, data = d)
 
 We denote the least-square estimates with the symbols $\hat{\beta}_0$ and $\hat{\beta}_1$.
 
-In our model, we therefore have $$\hat{\beta}_0 = 0.892, \qquad \hat{\beta}_1 = 1.337$$ 
+In our model, we therefore have $$\hat{\beta}_0 = 0.892, \qquad \hat{\beta}_1 = 1.337$$
 
 ## Visualizing the least square regression line
 
@@ -431,6 +433,7 @@ countdown(minutes = 4)
 
 ::: callout-tip
 ## Extrapolation
+
 -   stick to the range of the data
 -   the intercept will not always be meaningful
 :::
@@ -474,8 +477,7 @@ $$
 
 ## Alternative model
 
-Let us fit an alternative model using engine size (`disp`) as a predictor 
-$$
+Let us fit an alternative model using engine size (`disp`) as a predictor $$
 \text{hwy} \approx \beta_0 + \beta_1 \text{displ}
 $$
 
@@ -564,28 +566,23 @@ $\Rightarrow$ choose the model with the smaller SSR!
 
 ## $R^2$ {.smaller}
 
-While the SSR can be used to select a model, it is  also useful in describing the goodness of fit of the model.
+While the SSR can be used to select a model, it is also useful in describing the goodness of fit of the model.
 
 . . .
 
-The **SST** (total sum of squares) is the sum of squared distance to the mean.
-$$
+The **SST** (total sum of squares) is the sum of squared distance to the mean. $$
 SST = (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + \dots + (x_n - \bar{x})^2
-$$
-It measures the total amount of variability in the data.
+$$ It measures the total amount of variability in the data.
 
 . . .
 
-Remember the formula for **SSR**
-$$
+Remember the formula for **SSR** $$
 SSR = (x_1 - \hat{x})^2 + (x_2 - \hat{x}_1)^2 + \dots + (x_n - \hat{x}_n)^2
-$$
-It measures the amount of variability in the data left unexplained by the model.
+$$ It measures the amount of variability in the data left unexplained by the model.
 
 . . .
 
-$SST - SSR$ is therefore the amount of variation explained by the model:
-$$
+$SST - SSR$ is therefore the amount of variation explained by the model: $$
 \text{data} = SST = (SST-SSR) + SSR = \text{model} + \text{residuals}
 $$
 
@@ -670,7 +667,7 @@ ggplot(d) +
   geom_point(aes(cty, hwy))
 ```
 
-Exercise [7.25](https://openintro-ims.netlify.app/model-slr.html#chp7-exercises)
+Exercises [7.25](https://openintro-ims.netlify.app/model-slr.html#chp7-exercises)
 :::
 
 ```{r, echo = F}
@@ -692,6 +689,25 @@ countdown(minutes = 3)
 -   All leverage points are outliers.
 
 -   (Venn Diagram)
+
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercise - outlier
+
+Look at the scatterplot for the `mpg` data set. Are there outliers?
+
+```{r}
+ggplot(d) +
+  geom_point(aes(cty, hwy))
+```
+
+Exercises [7.27](https://openintro-ims.netlify.app/model-slr.html#chp7-exercises)
+:::
+
+```{r, echo = F}
+countdown(minutes = 3)
+```
 
 ## Dealing with outliers
 
@@ -721,11 +737,11 @@ arrange(d_contaminated, desc(hwy)) %>% slice(1:5)
 . . .
 
 ...and compare the two regression models.
+
 ```{r}
 lm(hwy ~ cty, data = d)
 lm(hwy ~ cty, data = d_contaminated)
 ```
-
 
 . . .
 
@@ -746,10 +762,9 @@ The regression line not longer fits the data well.
 ## Recap
 
 ::: incremental
--   simple linear regression model 
-$$
+-   simple linear regression model $$
     \text{hwy} \approx \beta_0 + \beta_1 \text{cty}
-$$
+    $$
 -   residuals
 -   least-square estimates
 -   parameter interpretation
