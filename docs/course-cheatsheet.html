@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.151">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>STA 101L - Summer I 2022 - Week 1</title>
+  <title>STA 101L - Summer I 2022 - Cheat sheets for RStudio</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -13,23 +13,25 @@
     ul.task-list{list-style: none;}
   </style>
 
-  <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-  <script src="../site_libs/clipboard/clipboard.min.js"></script>
-  <meta name="quarto:offset" content="../">
-  <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-  <script src="../site_libs/quarto-search/fuse.min.js"></script>
-  <script src="../site_libs/quarto-search/quarto-search.js"></script>
-  <script src="../site_libs/quarto-html/quarto.js"></script>
-  <script src="../site_libs/quarto-html/popper.min.js"></script>
-  <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-  <script src="../site_libs/quarto-html/anchor.min.js"></script>
-  <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-  <link class="quarto-color-scheme" id="quarto-text-highlighting-styles" href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
-  <link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" id="quarto-text-highlighting-styles" href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css">
-  <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-  <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-  <link class="quarto-color-scheme" href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
-  <link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" href="../site_libs/bootstrap/bootstrap-dark.min.css">
+  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="site_libs/clipboard/clipboard.min.js"></script>
+  <meta name="quarto:offset" content="./">
+  <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+  <script src="site_libs/quarto-search/fuse.min.js"></script>
+  <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <link href="./project-prediction.html" rel="next">
+  <link href="./course-faq.html" rel="prev">
+  <script src="site_libs/quarto-html/quarto.js"></script>
+  <script src="site_libs/quarto-html/popper.min.js"></script>
+  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="site_libs/quarto-html/anchor.min.js"></script>
+  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link class="quarto-color-scheme" id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+  <link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css">
+  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link class="quarto-color-scheme" href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" href="site_libs/bootstrap/bootstrap-dark.min.css">
   <script id="quarto-search-options" type="application/json">{
     "location": "sidebar",
     "copy-button": false,
@@ -53,12 +55,12 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 </head>
-<body class="docked">
+<body class="docked fullcontent">
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Week 1</h1>
+      <h1 class="quarto-secondary-nav-title">Cheat sheets for RStudio</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -70,8 +72,8 @@
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="../">
-      <img src="../images/logo.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="./">
+      <img src="./images/logo.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/rmorsomme/website" title="GitHub organization" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
@@ -90,45 +92,50 @@
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
     <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">Course information</a>
-      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Course information</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
         <i class="bi bi-chevron-right ms-2"></i>
       </a>
     </div>
-    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course-overview.html" class="sidebar-item-text sidebar-link">Overview</a>
+  <a href="./course-overview.html" class="sidebar-item-text sidebar-link">Overview</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">Syllabus</a>
+  <a href="./course-syllabus.html" class="sidebar-item-text sidebar-link">Syllabus</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course-support.html" class="sidebar-item-text sidebar-link">Support</a>
+  <a href="./course-support.html" class="sidebar-item-text sidebar-link">Support</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course-team.html" class="sidebar-item-text sidebar-link">Teaching team</a>
+  <a href="./course-team.html" class="sidebar-item-text sidebar-link">Teaching team</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">Schedule</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Schedule</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course-links.html" class="sidebar-item-text sidebar-link">Useful links</a>
+  <a href="./course-links.html" class="sidebar-item-text sidebar-link">Useful links</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course-faq.html" class="sidebar-item-text sidebar-link">FAQ</a>
+  <a href="./course-faq.html" class="sidebar-item-text sidebar-link">FAQ</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-cheatsheet.html" class="sidebar-item-text sidebar-link active">RStudio cheat sheets</a>
   </div>
 </li>
     </ul>
@@ -143,12 +150,12 @@
     <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project-prediction.html" class="sidebar-item-text sidebar-link">Prediction project</a>
+  <a href="./project-prediction.html" class="sidebar-item-text sidebar-link">Prediction project</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project-inference.html" class="sidebar-item-text sidebar-link">Inference project</a>
+  <a href="./project-inference.html" class="sidebar-item-text sidebar-link">Inference project</a>
   </div>
 </li>
     </ul>
@@ -157,62 +164,22 @@
     </div>
 </nav>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
-<h2 id="toc-title">On this page</h2>
-<ul>
-<li><a href="#prepare" class="nav-link active" data-scroll-target="#prepare">Prepare</a></li>
-<li><a href="#participate" class="nav-link" data-scroll-target="#participate">Participate</a></li>
-<li><a href="#practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
-<li><a href="#perform" class="nav-link" data-scroll-target="#perform">Perform</a></li>
-</ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rmorsomme/website/edit/main/weeks\week-1.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/rmorsomme/website/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 <header id="title-block-header" class="quarto-title-block default">
 
-
-<div class="quarto-title"><h1 class="title d-none d-lg-block display-7">Week 1</h1><p class="subtitle lead">Welcome to STA 210</p></div></header>
-
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Classes are virtual this week. Find Zoom links <a href="https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/page/d5eef508-07a4-4c6d-b7bd-4614a9631562" title="Sakai - Zoom meetings">here</a>.</p>
-</div>
-</div>
-<section id="prepare" class="level2">
-<h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
-<p>📖 Read the <a href="../course-syllabus.html">syllabus</a></p>
-<p>📖 Read the <a href="../course-support.html">support</a> resources</p>
-</section>
-<section id="participate" class="level2">
-<h2 class="anchored" data-anchor-id="participate">Participate</h2>
-<p>🖥️ <a href="../_slides/lab-0.html">Lab 0 -</a><a href="../slides/lab-0.html">Meet</a><a href="../_slides/lab-0.html">+ greet</a></p>
-<p>🖥️ <a href="../slides/lec-1.html">Lecture 1 - Welcome to STA 210</a></p>
-</section>
-<section id="practice" class="level2">
-<h2 class="anchored" data-anchor-id="practice">Practice</h2>
-<p>📋 <a href="../ae/ae-0-movies.html">AE 0 - Movies</a></p>
-</section>
-<section id="perform" class="level2">
-<h2 class="anchored" data-anchor-id="perform">Perform</h2>
-<p>⌨️ <a href="../labs/lab-0.html">Lab 0 - Meet + greet</a></p>
-<p><br><br></p>
-<div style="font-size: 0.875em;">
-<p>Back to <a href="../" title="Course schedule">course schedule</a> ⏎</p>
-</div>
+<div class="quarto-title"><h1 class="title d-none d-lg-block display-7">Cheat sheets for RStudio</h1></div></header>
+<p>You can find a series of very useful cheat sheets for RStudio <a href="https://www.rstudio.com/resources/cheatsheets/">here</a>. These cheat sheets provide an overview of the main functions of important R packages. Here are those you will probably find the most useful:</p>
+<ul>
+<li><p><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf">RStudio</a></p></li>
+<li><p><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf">RMarkdown</a></p></li>
+<li><p><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">ggplot2</a></p></li>
+<li><p><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf">dplyr</a></p></li>
+</ul>
 
 
 
-</section>
 </main> <!-- /main -->
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -387,6 +354,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./course-faq.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">FAQ</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./project-prediction.html" class="pagination-link">
+        <span class="nav-page-text">Prediction project</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

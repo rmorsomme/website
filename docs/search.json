@@ -28,6 +28,13 @@
     "text": "If the status shows something other than Operational, this means there is a known incident with the containers. Check back later to see if it’s been resolved. If there’s a deadline coming up soon, post on the course forum to let us know that there’s an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don’t anticipate this to happen regularly, the systems are Operational a huge majority of the time!\nIf the status shows Operational, this means the system is expected to be working. Check your internet connection, if need be, restart your computer to ensure a fresh new connection. If your issue persists, post on the course forum with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).\nEither way you can also fill out the form here, which will notify our the R TA for the department as well as our undergraduate coordinator. They’ll be able to help diagnose the issue."
   },
   {
+    "objectID": "course-cheatsheet.html",
+    "href": "course-cheatsheet.html",
+    "title": "Cheat sheets for RStudio",
+    "section": "",
+    "text": "RStudio\nRMarkdown\nggplot2\ndplyr"
+  },
+  {
     "objectID": "course-faq.html",
     "href": "course-faq.html",
     "title": "FAQ",
@@ -312,7 +319,7 @@
     "href": "index.html",
     "title": "STA 101L: Data Analysis and Statistical Inference",
     "section": "",
-    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\n\n\n💻\n\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n💻\n\n\n\n\n2\nMon, May 23\nModel selection\n8.3-8.4; 25.2-25.3\n🖥️\n\n\n\n\n\n\nTue, May 24\nLogistic regression\n9.1-9.3\n🖥️\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n💻\n\n\n\n\n\nThu, May 26\nPrinciples of inference\nWork on project\n11.0; 11.3; 12.0; 12.3; 13.1-13.3\n🖥️\n\n\n\n\n\n\nFri, May 27\nLab 5 - work on prediction project [PP]\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP discussion\nInference for proportions I\n16.1-16.2\n🖥️\n\n\nPP model (9am)\nPP presentation\n\n\n\nWed, June 1\nLab 5 - work on PP\nDue: PP report\n\n\n💻\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.3\n🖥️\n\n\n\n\n\n\nFri, June 3\nLab 6 - Inference for proportions\n\n\n💻\n\n\n\n\n4\nMon, June 6\nInference for means I\n19.1-19.2\n🖥️\n\n\n\n\n\n\nTue, June 7\nInference for means II\n20.1-20.4; 21.1-21.3\n🖥️\n\n\n\n\n\n\nWed, June 8\nLab 7 - Inference for means\n\n\n💻\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.6; 25.1; 26.1-26.2\n🖥️\n\n\n\n\n\n\nFri, June 10\nLab 8 - inference for regression\n\n\n💻\n\n\n\n\n5\nMon, June 13\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n🖥️\n\n\n\n\n\n\nTue, June 14\nWork on inference project (IP)\n\n🖥️\n\n\n\n\n\n\nWed, June 15\nLab 9 - work on IP\n\n\n💻\n\n\n\n\n\nThu, June 16\nIP presentations\nWrap up\n\n\n\n\nIP presentation\n\n\n\nFri, June 17\nLab 10 - work on IP\n\n\n💻\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
+    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\n\n\n💻\n\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n\n\n\n\n\n2\nMon, May 23\nModel selection\n8.3-8.4; 25.2-25.3\n\n\n\n\n\n\n\nTue, May 24\nLogistic regression\n9.1-9.3\n\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n\n\n\n\n\n\nThu, May 26\nPrinciples of inference\nWork on project\n11.0; 11.3; 12.0; 12.3; 13.1-13.3\n\n\n\n\n\n\n\nFri, May 27\nLab 5 - work on prediction project [PP]\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP discussion\nInference for proportions I\n16.1-16.2\n\n\n\nPP model (9am)\nPP presentation\n\n\n\nWed, June 1\nLab 5 - work on PP\nDue: PP report\n\n\n\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.3\n\n\n\n\n\n\n\nFri, June 3\nLab 6 - Inference for proportions\n\n\n\n\n\n\n\n4\nMon, June 6\nInference for means I\n19.1-19.2\n\n\n\n\n\n\n\nTue, June 7\nInference for means II\n20.1-20.4; 21.1-21.3\n\n\n\n\n\n\n\nWed, June 8\nLab 7 - Inference for means\n\n\n\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.6; 25.1; 26.1-26.2\n\n\n\n\n\n\n\nFri, June 10\nLab 8 - inference for regression\n\n\n\n\n\n\n\n5\nMon, June 13\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n\n\n\n\n\n\n\nTue, June 14\nWork on inference project (IP)\n\n\n\n\n\n\n\n\nWed, June 15\nLab 9 - work on IP\n\n\n\n\n\n\n\n\nThu, June 16\nIP presentations\nWrap up\n\n\n\n\nIP presentation\n\n\n\nFri, June 17\nLab 10 - work on IP\n\n\n\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
   },
   {
     "objectID": "labs/lab-0x.html",
@@ -802,21 +809,21 @@
     "href": "projects/prediction-data.html#raw-data-import",
     "title": "Prediction Project - Data Prep",
     "section": "Raw Data import",
-    "text": "Raw Data import\n\nlibrary(tidyverse)\nd <- read_csv(\n  \"Nat2020us/Nat2020PublicUS.c20210506.r20210812.txt\",\n  col_names = FALSE, trim_ws = FALSE\n  )"
+    "text": "Raw Data import\n\nlibrary(tidyverse)\nd <- read_csv(\n  \"../Nat2020us/Nat2020PublicUS.c20210506.r20210812.txt\",\n  col_names = FALSE, trim_ws = FALSE\n  ) %>%\n  slice(1:10)"
   },
   {
     "objectID": "projects/prediction-data.html#variable-extraction",
     "href": "projects/prediction-data.html#variable-extraction",
     "title": "Prediction Project - Data Prep",
     "section": "Variable extraction",
-    "text": "Variable extraction\n\nd %>%\n  slice(1:5) %>%\n  rename(string = X1) %>%\n  mutate(\n    year                             = str_sub(string, 9  , 12 ),\n    month                            = str_sub(string, 13 , 14 ),\n    mother_age                       = str_sub(string, 75 , 76 ),\n    prenatal_car_starting_month      = str_sub(string, 224, 225),\n    daily_cigarette_prepregnancy     = str_sub(string, 253, 254),\n    daily_cigarette_trimester_1      = str_sub(string, 255, 256),\n    daily_cigarette_trimester_2      = str_sub(string, 257, 258),\n    daily_cigarette_trimester_3      = str_sub(string, 259, 260),\n    mother_height                    = str_sub(string, 280, 281),\n    mother_bmi                       = str_sub(string, 283, 286),\n    mother_weight_prepregnancy       = str_sub(string, 292, 294),\n    mother_weight_delivery           = str_sub(string, 299, 301),\n    mother_diabetes_prepregnancy     = str_sub(string, 313, 313),\n    mother_diabetes_gestational      = str_sub(string, 314, 314),\n    mother_hypertension_prepregnancy = str_sub(string, 315, 315),\n    mother_hypertension_gestational  = str_sub(string, 316, 316),\n    risk_factors                     = str_sub(string, 337, 337),\n    gonorrhea                        = str_sub(string, 343, 343),\n    syphilis                         = str_sub(string, 344, 344),\n    chlamydia                        = str_sub(string, 345, 345),\n    hepatitis_B                      = str_sub(string, 346, 346),\n    hepatitis_C                      = str_sub(string, 347, 347),\n    number_newborns                  = str_sub(string, 454, 454),\n    newborn_sex                      = str_sub(string, 475, 475),\n    gestation_week                   = str_sub(string, 490, 491),\n    newborn_birth_weight             = str_sub(string, 504, 507)\n    ) %>%\n  select(!matches(\"string\"), string)"
+    "text": "Variable extraction\n\nd_clean <- d %>%\n  rename(string = X1) %>%\n  mutate(\n    year                             = str_sub(string, 9  , 12 ),\n    month                            = str_sub(string, 13 , 14 ),\n    mother_age                       = str_sub(string, 75 , 76 ),\n    prenatal_car_starting_month      = str_sub(string, 224, 225),\n    daily_cigarette_prepregnancy     = str_sub(string, 253, 254),\n    daily_cigarette_trimester_1      = str_sub(string, 255, 256),\n    daily_cigarette_trimester_2      = str_sub(string, 257, 258),\n    daily_cigarette_trimester_3      = str_sub(string, 259, 260),\n    mother_height                    = str_sub(string, 280, 281),\n    mother_bmi                       = str_sub(string, 283, 286),\n    mother_weight_prepregnancy       = str_sub(string, 292, 294),\n    mother_weight_delivery           = str_sub(string, 299, 301),\n    mother_diabetes_prepregnancy     = str_sub(string, 313, 313),\n    mother_diabetes_gestational      = str_sub(string, 314, 314),\n    mother_hypertension_prepregnancy = str_sub(string, 315, 315),\n    mother_hypertension_gestational  = str_sub(string, 316, 316),\n    risk_factors                     = str_sub(string, 337, 337),\n    gonorrhea                        = str_sub(string, 343, 343),\n    syphilis                         = str_sub(string, 344, 344),\n    chlamydia                        = str_sub(string, 345, 345),\n    hepatitis_B                      = str_sub(string, 346, 346),\n    hepatitis_C                      = str_sub(string, 347, 347),\n    number_newborns                  = str_sub(string, 454, 454),\n    newborn_sex                      = str_sub(string, 475, 475),\n    gestation_week                   = str_sub(string, 490, 491),\n    newborn_birth_weight             = str_sub(string, 504, 507)\n    ) %>%\n  select(newborn_birth_weight, !matches(\"string\"), string)"
   },
   {
     "objectID": "projects/prediction-data.html#overview",
     "href": "projects/prediction-data.html#overview",
     "title": "Prediction Project - Data Prep",
     "section": "Overview",
-    "text": "Overview\nExam 1 will be released on Friday, Feb 4 at 9 am ET and must be completed by Mon, Feb 7 at 11:59 pm.\nThe exam will consist of two parts:\n\nPart 1 - Conceptual: Multiple choice questions on Sakai test and quizzes. This portion may only be submitted one time. Go here to complete Part 1 of the exam.\nPart 2 - Applied: Data analysis in RStudio and submitted in Gradescope (like a usual lab and homework). Go to the GitHub organization for the course and find the exam-1- repo to complete Part 3 of your exam. Add your answers to the exam-1.qmd file in your repo.\n\nBoth portions must be completed and submitted by Mon, Feb 7 at 11:59 pm. Late work will only be accepted in the case of of extenuating circumstances and notification from your academic dean.\n🍀 Good luck! 🍀"
+    "text": "Overview\nThe prediction project is released Wednesday, May 18. The prediction model is due on Tuesday, May 31, at 9:00 am. The final report is due Wednesday, June 1 at 9:00pm.\n🍀 Good luck! 🍀"
   },
   {
     "objectID": "projects/prediction-data.html#academic-integrity",
@@ -826,18 +833,11 @@
     "text": "Academic Integrity\nBy taking this exam, you pledge to uphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised."
   },
   {
-    "objectID": "projects/prediction-data.html#rules-notes",
-    "href": "projects/prediction-data.html#rules-notes",
-    "title": "Prediction Project - Data Prep",
-    "section": "Rules & Notes",
-    "text": "Rules & Notes\n\nThis is an individual assignment. Everything in your repository and on Sakai is for your eyes only.\nYou may not collaborate or communicate anything about this exam to anyone except the instructor and the head TA (Rick Presman). For example, you may not communicate with other students, other TAs, or post/solicit help on the internet, email or via any other method of communication.\nThe exam is open-book, open-note, so you may use any materials from class as you take the exam.\nOnly head TA and professor office hours will be held during the exam period.\nYou may not email the TAs questions about the exam.\nIf you have questions, direct message the professor or the head TA (Rick Presman) on Slack or post on Sakai Conversations for “Instructors in this site” only or attend my office hours (Monday, 10:30 am - 11:30 am)."
-  },
-  {
     "objectID": "projects/prediction-data.html#submission",
     "href": "projects/prediction-data.html#submission",
     "title": "Prediction Project - Data Prep",
     "section": "Submission",
-    "text": "Submission\n\nPart 1 - Conceptual: The answers to the multiple choice/short answer questions should be submitted under Test & Quizzes in Sakai.\nPart 2 - Applied: The PDF document for the data analysis portion must be uploaded to Gradescope.\n\nYou must submit a PDF to Gradescope that corresponds to the .qmd file on your GitHub repository in order to receive credit for this portion of the exam.\nYou must upload a PDF, not HTML. Any non-PDF submissions will not be graded.\nMark the pages associated with each question. If any answer for a question spans multiple pages, mark all associated pages.\nMake sure to associate the “Workflow & formatting” section with the first page.\nFailure to mark the pages in Gradescope will result in point deductions. Any pages that are not marked will not be graded.\nMake sure that your uploaded PDF document matches your .qmd and the PDF in your GitHub repository exactly. Points will be deducted for documents that are not reproducible."
+    "text": "Submission\n\nPrediction model: you need to submit a .RDATA file that contains your prediction model. The function takes a test set (same predictors as the training set, but no response variable) as an input and returns a prediction for each observation. The file should not contain anything else.\nFinal report: The final report details the work you have conducted. It needs to be between 2 and 4 pages long (including code chunks, but excluding figures). The figures go in the appendix, along with any work your deem relevant, but that is notreport\nThe report needs to be realized using RMardown and submitted on Gradescope as a PDF."
   },
   {
     "objectID": "slides/lab-0x.html#meet-your-ta",
@@ -2616,68 +2616,5 @@
     "title": "Data science in action – examples in various fields",
     "section": "Estimating the effect of commute time on rent in New York",
     "text": "Estimating the effect of commute time on rent in New York\n\n\nIn this article, Carl Bialik looked at more than 100,000 homes present on StreetEasy. He observed that, unsurprisingly, the distance to the nearest metro does impact rent prices, and he even managed to put a number on that effect: $56/minute.\n\n\n\n Source: FiverThirtyEight\n\n\n\n\n\nsta101-suI22.github.io/website"
-  },
-  {
-    "objectID": "supplemental/log-transformations.html",
-    "href": "supplemental/log-transformations.html",
-    "title": "Log Transformations in Linear Regression",
-    "section": "",
-    "text": "Note\n\n\n\nThe following supplemental notes were created by Dr. Maria Tackett for STA 210. They are provided for students who want to dive deeper into the mathematics behind regression and reflect some of the material covered in STA 211: Mathematics of Regression. Additional supplemental notes will be added throughout the semester.\nThis document provides details about the model interpretation when the predictor and/or response variables are log-transformed. For simplicity, we will discuss transformations for the simple linear regression model as shown in Equation 1.\n\\[\n\\label{orig}\ny = \\beta_0 + \\beta_1 x\n\\qquad(1)\\]\nAll results and interpretations can be easily extended to transformations in multiple regression models.\nNote: log refers to the natural logarithm."
-  },
-  {
-    "objectID": "supplemental/log-transformations.html#log-transformation-on-the-response-variable",
-    "href": "supplemental/log-transformations.html#log-transformation-on-the-response-variable",
-    "title": "Log Transformations in Linear Regression",
-    "section": "Log-transformation on the response variable",
-    "text": "Log-transformation on the response variable\nSuppose we fit a linear regression model with \\(\\log(y)\\), the log-transformed \\(y\\), as the response variable. Under this model, we assume a linear relationship exists between \\(x\\) and \\(\\log(y)\\), such that \\(\\log(y) \\sim N(\\beta_0 + \\beta_1 x, \\sigma^2)\\) for some \\(\\beta_0\\), \\(\\beta_1\\) and \\(\\sigma^2\\). In other words, we can model the relationship between \\(x\\) and \\(\\log(y)\\) using the model in Equation 2.\n\\[\n\\log(y) = \\beta_0 + \\beta_1 x\n\\qquad(2)\\]\nIf we interpret the model in terms of \\(\\log(y)\\), then we can use the usual interpretations for slope and intercept. When reporting results, however, it is best to give all interpretations in terms of the original response variable \\(y\\), since interpretations using log-transformed variables are often more difficult to truly understand.\nIn order to get back on the original scale, we need to use the exponential function (also known as the anti-log), \\(\\exp\\{x\\} = e^x\\). Therefore, we use the model in Equation 2 for interpretations and predictions, we will use Equation 3 to state our conclusions in terms of \\(y\\).\n\\[\n\\begin{aligned}\n&\\exp\\{\\log(y)\\} = \\exp\\{\\beta_0 + \\beta_1 x\\} \\\\[10pt]\n\\Rightarrow &y = \\exp\\{\\beta_0 + \\beta_1 x\\} \\\\[10pt]\n\\Rightarrow &y = \\exp\\{\\beta_0\\}\\exp\\{\\beta_1 x\\}\n\\end{aligned}\n\\qquad(3)\\]\nIn order to interpret the slope and intercept, we need to first understand the relationship between the mean, median and log transformations.\n\nMean, Median, and Log Transformations\nSuppose we have a dataset y that contains the following observations:\n\n\n[1] 3 5 6 7 8\n\n\nIf we log-transform the values of y then calculate the mean and median, we have\n\n\n\n\n\nmean_log_y\nmedian_log_y\n\n\n\n\n1.70503\n1.79176\n\n\n\n\n\nIf we calculate the mean and median of y, then log-transform the mean and median, we have\n\n\n\n\n\nlog_mean\nlog_median\n\n\n\n\n1.75786\n1.79176\n\n\n\n\n\nThis is a simple illustration to show\n\n\\(\\text{Mean}[{\\log(y)}] \\neq \\log[\\text{Mean}(y)]\\) - the mean and log are not commutable\n\\(\\text{Median}[\\log(y)] = \\log[\\text{Median}(y)]\\) - the median and log are commutable\n\n\n\nInterpretaton of model coefficients\nUsing Equation 2, the mean \\(\\log(y)\\) for any given value of \\(x\\) is \\(\\beta_0 + \\beta_1 x\\); however, this does not indicate that the mean of \\(y = \\exp\\{\\beta_0 + \\beta_1 x\\}\\) (see previous section). From the assumptions of linear regression, we assume that for any given value of \\(x\\), the distribution of \\(\\log(y)\\) is Normal, and therefore symmetric. Thus the median of \\(\\log(y)\\) is equal to the mean of \\(\\log(y)\\), i.e \\(\\text{Median}(\\log(y)) = \\beta_0 + \\beta_1 x\\).\nSince the log and the median are commutable, \\(\\text{Median}(\\log(y)) = \\beta_0 + \\beta_1 x \\Rightarrow \\text{Median}(y) = \\exp\\{\\beta_0 + \\beta_1 x\\}\\). Thus, when we log-transform the response variable, the interpretation of the intercept and slope are in terms of the effect on the median of \\(y\\).\nIntercept: The intercept is expected median of \\(y\\) when the predictor variable equals 0. Therefore, when \\(x=0\\),\n\\[\n\\begin{aligned}\n&\\log(y) = \\beta_0 + \\beta_1 \\times 0 = \\beta_0 \\\\[10pt]\n\\Rightarrow &y = \\exp\\{\\beta_0\\}\n\\end{aligned}\n\\]\nInterpretation: When \\(x=0\\), the median of \\(y\\) is expected to be \\(\\exp\\{\\beta_0\\}\\).\nSlope: The slope is the expected change in the median of \\(y\\) when \\(x\\) increases by 1 unit. The change in the median of \\(y\\) is\n\\[\n\\exp\\{[\\beta_0 + \\beta_1 (x+1)] - [\\beta_0 + \\beta_1 x]\\} = \\frac{\\exp\\{\\beta_0 + \\beta_1 (x+1)\\}}{\\exp\\{\\beta_0 + \\beta_1 x\\}} = \\frac{\\exp\\{\\beta_0\\}\\exp\\{\\beta_1 x\\}\\exp\\{\\beta_1\\}}{\\exp\\{\\beta_0\\}\\exp\\{\\beta_1 x\\}} = \\exp\\{\\beta_1\\}\n\\]\nThus, the median of \\(y\\) for \\(x+1\\) is \\(\\exp\\{\\beta_1\\}\\) times the median of \\(y\\) for \\(x\\).\nInterpretation: When \\(x\\) increases by one unit, the median of \\(y\\) is expected to multiply by a factor of \\(\\exp\\{\\beta_1\\}\\)."
-  },
-  {
-    "objectID": "supplemental/log-transformations.html#log-transformation-on-the-predictor-variable",
-    "href": "supplemental/log-transformations.html#log-transformation-on-the-predictor-variable",
-    "title": "Log Transformations in Linear Regression",
-    "section": "Log-transformation on the predictor variable",
-    "text": "Log-transformation on the predictor variable\nSuppose we fit a linear regression model with \\(\\log(x)\\), the log-transformed \\(x\\), as the predictor variable. Under this model, we assume a linear relationship exists between \\(\\log(x)\\) and \\(y\\), such that \\(y \\sim N(\\beta_0 + \\beta_1 \\log(x), \\sigma^2)\\) for some \\(\\beta_0\\), \\(\\beta_1\\) and \\(\\sigma^2\\). In other words, we can model the relationship between \\(\\log(x)\\) and \\(y\\) using the model in #eq-log-x.\n\\[\ny = \\beta_0 + \\beta_1 \\log(x)\n\\qquad(4)\\]\nIntercept: The intercept is the mean of \\(y\\) when \\(\\log(x) = 0\\), i.e. \\(x = 1\\).\nInterpretation: When \\(x = 1\\) \\((\\log(x) = 0)\\), the mean of \\(y\\) is expected to be \\(\\beta_0\\).\nSlope: The slope is interpreted in terms of the change in the mean of \\(y\\) when \\(x\\) is multiplied by a factor of \\(C\\), since \\(\\log(Cx) = \\log(x) + \\log(C)\\). Thus, when \\(x\\) is multiplied by a factor of \\(C\\), the change in the mean of \\(y\\) is\n\\[\n\\begin{aligned}\n[\\beta_0 + \\beta_1 \\log(Cx)] - [\\beta_0 + \\beta_1 \\log(x)] &= \\beta_1 [\\log(Cx) - \\log(x)] \\\\[10pt]\n& = \\beta_1[\\log(C) + \\log(x) - \\log(x)] \\\\[10pt]\n& = \\beta_1 \\log(C)\n\\end{aligned}\n\\]\nThus the mean of \\(y\\) changes by \\(\\beta_1 \\log(C)\\) units.\nInterpretation: When \\(x\\) is multiplied by a factor of \\(C\\), the mean of \\(y\\) is expected to change by \\(\\beta_1 \\log(C)\\) units. For example, if \\(x\\) is doubled, then the mean of \\(y\\) is expected to change by \\(\\beta_1 \\log(2)\\) units."
-  },
-  {
-    "objectID": "supplemental/log-transformations.html#log-transformation-on-the-the-response-and-predictor-variable",
-    "href": "supplemental/log-transformations.html#log-transformation-on-the-the-response-and-predictor-variable",
-    "title": "Log Transformations in Linear Regression",
-    "section": "Log-transformation on the the response and predictor variable",
-    "text": "Log-transformation on the the response and predictor variable\nSuppose we fit a linear regression model with \\(\\log(x)\\), the log-transformed \\(x\\), as the predictor variable and \\(\\log(y)\\), the log-transformed \\(y\\), as the response variable. Under this model, we assume a linear relationship exists between \\(\\log(x)\\) and \\(\\log(y)\\), such that \\(\\log(y) \\sim N(\\beta_0 + \\beta_1 \\log(x), \\sigma^2)\\) for some \\(\\beta_0\\), \\(\\beta_1\\) and \\(\\sigma^2\\). In other words, we can model the relationship between \\(\\log(x)\\) and \\(\\log(y)\\) using the model in Equation 5.\n\\[\n\\log(y) = \\beta_0 + \\beta_1 \\log(x)\n\\qquad(5)\\]\nBecause the response variable is log-transformed, the interpretations on the original scale will be in terms of the median of \\(y\\) (see the section on the log-transformed response variable for more detail).\nIntercept: The intercept is the mean of \\(y\\) when \\(\\log(x) = 0\\), i.e. \\(x = 1\\). Therefore, when \\(\\log(x) = 0\\),\n\\[\n\\begin{aligned}\n&\\log(y) = \\beta_0 + \\beta_1 \\times 0 = \\beta_0 \\\\[10pt]\n\\Rightarrow &y = \\exp\\{\\beta_0\\}\n\\end{aligned}\n\\]\nInterpretation: When \\(x = 1\\) \\((\\log(x) = 0)\\), the median of \\(y\\) is expected to be \\(\\exp\\{\\beta_0\\}\\).\nSlope: The slope is interpreted in terms of the change in the median \\(y\\) when \\(x\\) is multiplied by a factor of \\(C\\), since \\(\\log(Cx) = \\log(x) + \\log(C)\\). Thus, when \\(x\\) is multiplied by a factor of \\(C\\), the change in the median of \\(y\\) is\n\\[\n\\begin{aligned}\n\\exp\\{[\\beta_0 + \\beta_1 \\log(Cx)] - [\\beta_0 + \\beta_1 \\log(x)]\\} &=\n\\exp\\{\\beta_1 [\\log(Cx) - \\log(x)]\\} \\\\[10pt]\n& = \\exp\\{\\beta_1[\\log(C) + \\log(x) - \\log(x)]\\} \\\\[10pt]\n& = \\exp\\{\\beta_1 \\log(C)\\} = C^{\\beta_1}\n\\end{aligned}\n\\]\nThus, the median of \\(y\\) for \\(Cx\\) is \\(C^{\\beta_1}\\) times the median of \\(y\\) for \\(x\\).\nInterpretation: When \\(x\\) is multiplied by a factor of \\(C\\), the median of \\(y\\) is expected to multiple by a factor of \\(C^{\\beta_1}\\). For example, if \\(x\\) is doubled, then the median of \\(y\\) is expected to multiply by \\(2^{\\beta_1}\\)."
-  },
-  {
-    "objectID": "weeks/week-1.html",
-    "href": "weeks/week-1.html",
-    "title": "Week 1",
-    "section": "",
-    "text": "Important\n\n\n\nClasses are virtual this week. Find Zoom links here."
-  },
-  {
-    "objectID": "weeks/week-1.html#prepare",
-    "href": "weeks/week-1.html#prepare",
-    "title": "Week 1",
-    "section": "Prepare",
-    "text": "Prepare\n📖 Read the syllabus\n📖 Read the support resources"
-  },
-  {
-    "objectID": "weeks/week-1.html#participate",
-    "href": "weeks/week-1.html#participate",
-    "title": "Week 1",
-    "section": "Participate",
-    "text": "Participate\n🖥️ Lab 0 -Meet+ greet\n🖥️ Lecture 1 - Welcome to STA 210"
-  },
-  {
-    "objectID": "weeks/week-1.html#practice",
-    "href": "weeks/week-1.html#practice",
-    "title": "Week 1",
-    "section": "Practice",
-    "text": "Practice\n📋 AE 0 - Movies"
-  },
-  {
-    "objectID": "weeks/week-1.html#perform",
-    "href": "weeks/week-1.html#perform",
-    "title": "Week 1",
-    "section": "Perform",
-    "text": "Perform\n⌨️ Lab 0 - Meet + greet\n\n\nBack to course schedule ⏎"
   }
 ]

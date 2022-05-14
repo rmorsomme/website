@@ -194,6 +194,11 @@
   <a href="../course-faq.html" class="sidebar-item-text sidebar-link">FAQ</a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-cheatsheet.html" class="sidebar-item-text sidebar-link">RStudio cheat sheets</a>
+  </div>
+</li>
     </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -230,7 +235,6 @@
 <ul class="collapse">
 <li><a href="#overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
 <li><a href="#academic-integrity" class="nav-link" data-scroll-target="#academic-integrity">Academic Integrity</a></li>
-<li><a href="#rules-notes" class="nav-link" data-scroll-target="#rules-notes">Rules &amp; Notes</a></li>
 <li><a href="#submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
 </ul></li>
 <li><a href="#grading-50-pts" class="nav-link" data-scroll-target="#grading-50-pts">Grading (50 pts)</a></li>
@@ -247,62 +251,56 @@
 <p>The data can be found <a href="https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2020us.zip">here</a> and the help file <a href="https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2020.pdf">here</a></p>
 <section id="raw-data-import" class="level2">
 <h2 class="anchored" data-anchor-id="raw-data-import">Raw Data import</h2>
-<div class="cell">
+<div class="cell" data-hash="prediction-data_cache/html/unnamed-chunk-1_512899b408882968573d7dd173b3df91">
 <div class="sourceCode" id="cb1"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Nat2020us/Nat2020PublicUS.c20210506.r20210812.txt"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"../Nat2020us/Nat2020PublicUS.c20210506.r20210812.txt"</span>,</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_names =</span> <span class="cn">FALSE</span>, <span class="at">trim_ws =</span> <span class="cn">FALSE</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="variable-extraction" class="level2">
 <h2 class="anchored" data-anchor-id="variable-extraction">Variable extraction</h2>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>d <span class="sc">%&gt;%</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">string =</span> X1) <span class="sc">%&gt;%</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">year                             =</span> <span class="fu">str_sub</span>(string, <span class="dv">9</span>  , <span class="dv">12</span> ),</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">month                            =</span> <span class="fu">str_sub</span>(string, <span class="dv">13</span> , <span class="dv">14</span> ),</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">mother_age                       =</span> <span class="fu">str_sub</span>(string, <span class="dv">75</span> , <span class="dv">76</span> ),</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">prenatal_car_starting_month      =</span> <span class="fu">str_sub</span>(string, <span class="dv">224</span>, <span class="dv">225</span>),</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">daily_cigarette_prepregnancy     =</span> <span class="fu">str_sub</span>(string, <span class="dv">253</span>, <span class="dv">254</span>),</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">daily_cigarette_trimester_1      =</span> <span class="fu">str_sub</span>(string, <span class="dv">255</span>, <span class="dv">256</span>),</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">daily_cigarette_trimester_2      =</span> <span class="fu">str_sub</span>(string, <span class="dv">257</span>, <span class="dv">258</span>),</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">daily_cigarette_trimester_3      =</span> <span class="fu">str_sub</span>(string, <span class="dv">259</span>, <span class="dv">260</span>),</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">mother_height                    =</span> <span class="fu">str_sub</span>(string, <span class="dv">280</span>, <span class="dv">281</span>),</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">mother_bmi                       =</span> <span class="fu">str_sub</span>(string, <span class="dv">283</span>, <span class="dv">286</span>),</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">mother_weight_prepregnancy       =</span> <span class="fu">str_sub</span>(string, <span class="dv">292</span>, <span class="dv">294</span>),</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">mother_weight_delivery           =</span> <span class="fu">str_sub</span>(string, <span class="dv">299</span>, <span class="dv">301</span>),</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">mother_diabetes_prepregnancy     =</span> <span class="fu">str_sub</span>(string, <span class="dv">313</span>, <span class="dv">313</span>),</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">mother_diabetes_gestational      =</span> <span class="fu">str_sub</span>(string, <span class="dv">314</span>, <span class="dv">314</span>),</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">mother_hypertension_prepregnancy =</span> <span class="fu">str_sub</span>(string, <span class="dv">315</span>, <span class="dv">315</span>),</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">mother_hypertension_gestational  =</span> <span class="fu">str_sub</span>(string, <span class="dv">316</span>, <span class="dv">316</span>),</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">risk_factors                     =</span> <span class="fu">str_sub</span>(string, <span class="dv">337</span>, <span class="dv">337</span>),</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">gonorrhea                        =</span> <span class="fu">str_sub</span>(string, <span class="dv">343</span>, <span class="dv">343</span>),</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">syphilis                         =</span> <span class="fu">str_sub</span>(string, <span class="dv">344</span>, <span class="dv">344</span>),</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">chlamydia                        =</span> <span class="fu">str_sub</span>(string, <span class="dv">345</span>, <span class="dv">345</span>),</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">hepatitis_B                      =</span> <span class="fu">str_sub</span>(string, <span class="dv">346</span>, <span class="dv">346</span>),</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">hepatitis_C                      =</span> <span class="fu">str_sub</span>(string, <span class="dv">347</span>, <span class="dv">347</span>),</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">number_newborns                  =</span> <span class="fu">str_sub</span>(string, <span class="dv">454</span>, <span class="dv">454</span>),</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">newborn_sex                      =</span> <span class="fu">str_sub</span>(string, <span class="dv">475</span>, <span class="dv">475</span>),</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">gestation_week                   =</span> <span class="fu">str_sub</span>(string, <span class="dv">490</span>, <span class="dv">491</span>),</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">newborn_birth_weight             =</span> <span class="fu">str_sub</span>(string, <span class="dv">504</span>, <span class="dv">507</span>)</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">!</span><span class="fu">matches</span>(<span class="st">"string"</span>), string)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>d_clean <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">string =</span> X1) <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">year                             =</span> <span class="fu">str_sub</span>(string, <span class="dv">9</span>  , <span class="dv">12</span> ),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">month                            =</span> <span class="fu">str_sub</span>(string, <span class="dv">13</span> , <span class="dv">14</span> ),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mother_age                       =</span> <span class="fu">str_sub</span>(string, <span class="dv">75</span> , <span class="dv">76</span> ),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">prenatal_car_starting_month      =</span> <span class="fu">str_sub</span>(string, <span class="dv">224</span>, <span class="dv">225</span>),</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">daily_cigarette_prepregnancy     =</span> <span class="fu">str_sub</span>(string, <span class="dv">253</span>, <span class="dv">254</span>),</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">daily_cigarette_trimester_1      =</span> <span class="fu">str_sub</span>(string, <span class="dv">255</span>, <span class="dv">256</span>),</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">daily_cigarette_trimester_2      =</span> <span class="fu">str_sub</span>(string, <span class="dv">257</span>, <span class="dv">258</span>),</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">daily_cigarette_trimester_3      =</span> <span class="fu">str_sub</span>(string, <span class="dv">259</span>, <span class="dv">260</span>),</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">mother_height                    =</span> <span class="fu">str_sub</span>(string, <span class="dv">280</span>, <span class="dv">281</span>),</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">mother_bmi                       =</span> <span class="fu">str_sub</span>(string, <span class="dv">283</span>, <span class="dv">286</span>),</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">mother_weight_prepregnancy       =</span> <span class="fu">str_sub</span>(string, <span class="dv">292</span>, <span class="dv">294</span>),</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">mother_weight_delivery           =</span> <span class="fu">str_sub</span>(string, <span class="dv">299</span>, <span class="dv">301</span>),</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">mother_diabetes_prepregnancy     =</span> <span class="fu">str_sub</span>(string, <span class="dv">313</span>, <span class="dv">313</span>),</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">mother_diabetes_gestational      =</span> <span class="fu">str_sub</span>(string, <span class="dv">314</span>, <span class="dv">314</span>),</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">mother_hypertension_prepregnancy =</span> <span class="fu">str_sub</span>(string, <span class="dv">315</span>, <span class="dv">315</span>),</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">mother_hypertension_gestational  =</span> <span class="fu">str_sub</span>(string, <span class="dv">316</span>, <span class="dv">316</span>),</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">risk_factors                     =</span> <span class="fu">str_sub</span>(string, <span class="dv">337</span>, <span class="dv">337</span>),</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">gonorrhea                        =</span> <span class="fu">str_sub</span>(string, <span class="dv">343</span>, <span class="dv">343</span>),</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">syphilis                         =</span> <span class="fu">str_sub</span>(string, <span class="dv">344</span>, <span class="dv">344</span>),</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">chlamydia                        =</span> <span class="fu">str_sub</span>(string, <span class="dv">345</span>, <span class="dv">345</span>),</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">hepatitis_B                      =</span> <span class="fu">str_sub</span>(string, <span class="dv">346</span>, <span class="dv">346</span>),</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">hepatitis_C                      =</span> <span class="fu">str_sub</span>(string, <span class="dv">347</span>, <span class="dv">347</span>),</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">number_newborns                  =</span> <span class="fu">str_sub</span>(string, <span class="dv">454</span>, <span class="dv">454</span>),</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">newborn_sex                      =</span> <span class="fu">str_sub</span>(string, <span class="dv">475</span>, <span class="dv">475</span>),</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">gestation_week                   =</span> <span class="fu">str_sub</span>(string, <span class="dv">490</span>, <span class="dv">491</span>),</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">newborn_birth_weight             =</span> <span class="fu">str_sub</span>(string, <span class="dv">504</span>, <span class="dv">507</span>)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(newborn_birth_weight, <span class="sc">!</span><span class="fu">matches</span>(<span class="st">"string"</span>), string)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="instructions" class="level1">
 <h1>Instructions</h1>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Exam 1 will be released on Friday, Feb 4 at 9 am ET and must be completed by Mon, Feb 7 at 11:59 pm.</p>
-<p>The exam will consist of two parts:</p>
-<ol type="1">
-<li><strong>Part 1 - Conceptual:</strong> Multiple choice questions on Sakai test and quizzes. This portion may only be submitted one time. Go <a href="https://sakai.duke.edu/samigo-app/servlet/Login?id=6fa7ebf3-01af-42a6-91ba-3e813d3901221643963875703">here</a> to complete Part 1 of the exam.</li>
-<li><strong>Part 2 - Applied:</strong> Data analysis in RStudio and submitted in Gradescope (like a usual lab and homework). Go to the <a href="https://github.com/sta210-s22/">GitHub organization</a> for the course and find the <strong>exam-1-</strong> repo to complete Part 3 of your exam. Add your answers to the <code>exam-1.qmd</code> file in your repo.</li>
-</ol>
-<p><strong>Both portions must be completed and submitted by Mon, Feb 7 at 11:59 pm</strong>. Late work will only be accepted in the case of of extenuating circumstances and notification from your academic dean.</p>
+<p>The prediction project is released Wednesday, May 18. The prediction model is due on Tuesday, May 31, at 9:00 am. The final report is due Wednesday, June 1 at 9:00pm.</p>
 <p>🍀 Good luck! 🍀</p>
 </section>
 <section id="academic-integrity" class="level2">
@@ -314,36 +312,22 @@
 <li><p>I will act if the Standard is compromised.</p></li>
 </ul>
 </section>
-<section id="rules-notes" class="level2">
-<h2 class="anchored" data-anchor-id="rules-notes">Rules &amp; Notes</h2>
-<ul>
-<li><p>This is an individual assignment. Everything in your repository and on Sakai is for your eyes only.</p></li>
-<li><p>You may not collaborate or communicate anything about this exam to <strong>anyone</strong> except the instructor and the head TA (Rick Presman). For example, you may not communicate with other students, other TAs, or post/solicit help on the internet, email or via any other method of communication.</p></li>
-<li><p>The exam is open-book, open-note, so you may use any materials from class as you take the exam.</p></li>
-<li><p>Only head TA and professor office hours will be held during the exam period.</p></li>
-<li><p>You may <strong>not</strong> email the TAs questions about the exam.</p></li>
-<li><p>If you have questions, direct message the professor or the head TA (Rick Presman) on Slack or post on Sakai Conversations for “Instructors in this site” only or attend my office hours (Monday, 10:30 am - 11:30 am).</p></li>
-</ul>
-</section>
 <section id="submission" class="level2">
 <h2 class="anchored" data-anchor-id="submission">Submission</h2>
 <ul>
-<li><p><strong>Part 1 - Conceptual:</strong> The answers to the multiple choice/short answer questions should be submitted under <em>Test &amp; Quizzes</em> in Sakai.</p></li>
-<li><p><strong>Part 2 - Applied:</strong> The PDF document for the data analysis portion must be uploaded to Gradescope.</p>
-<ul>
-<li><p>You must submit a PDF to Gradescope that corresponds to the <code>.qmd</code> file on your GitHub repository in order to receive credit for this portion of the exam.</p></li>
-<li><p>You must upload a PDF, not HTML. Any non-PDF submissions will <strong>not</strong> be graded.</p></li>
-<li><p>Mark the pages associated with each question. If any answer for a question spans multiple pages, mark all associated pages.</p></li>
-<li><p>Make sure to associate the “Workflow &amp; formatting” section with the first page.</p></li>
-<li><p>Failure to mark the pages in Gradescope will result in point deductions. Any pages that are not marked will <strong>not</strong> be graded.</p></li>
-<li><p>Make sure that your uploaded PDF document matches your <code>.qmd</code> and the PDF in your GitHub repository exactly. Points will be deducted for documents that are not reproducible.</p></li>
-</ul></li>
+<li><p><strong>Prediction model:</strong> you need to submit a .RDATA file that contains your prediction model. The function takes a test set (same predictors as the training set, but no response variable) as an input and returns a prediction for each observation. The file should not contain anything else.</p></li>
+<li><p><strong>Final report:</strong> The final report details the work you have conducted. It needs to be between 2 and 4 pages long (including code chunks, but excluding figures). The figures go in the appendix, along with any work your deem relevant, but that is notreport</p></li>
+<li><p>The report needs to be realized using RMardown and submitted on Gradescope as a PDF.</p></li>
 </ul>
 </section>
 </section>
 <section id="grading-50-pts" class="level1">
 <h1>Grading (50 pts)</h1>
 <table class="table">
+<colgroup>
+<col style="width: 80%">
+<col style="width: 20%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;"><strong>Part</strong></th>
@@ -352,16 +336,59 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><strong>Part 1 - Conceptual</strong> (on Sakai)</td>
-<td style="text-align: center;">10</td>
+<td style="text-align: left;"><p><strong>Prediction model</strong></p>
+<ul>
+<li><p>.RDATA file only contains the model</p></li>
+<li><p>model takes a test set as input</p></li>
+<li><p>model returns one prediction for each observation</p></li>
+<li><p>most accurate model</p></li>
+</ul></td>
+<td style="text-align: center;"><p><strong>3</strong></p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>bragging rights</p></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>Part 2 - Applied</strong> (on Gradescope)</td>
-<td style="text-align: center;">40</td>
+<td style="text-align: left;"><p><strong>Report</strong></p>
+<ul>
+<li><p>reproducible</p></li>
+<li><p>simple model is fitted</p></li>
+<li><p>full model is fitted</p></li>
+<li><p>at least a predictor is transformed</p></li>
+<li><p>predictors are combined to create at least a new one</p></li>
+<li><p>at least one interaction is considerd</p></li>
+<li><p>at least a categorical predictor</p></li>
+<li><p>subject knowledge is used to guide variable selection and feature engineering</p></li>
+<li><p>models are compared using</p>
+<ul>
+<li><p>a suitable criterion</p></li>
+<li><p>cross-validation (holdout method)</p></li>
+</ul></li>
+</ul></td>
+<td style="text-align: center;"><p><strong>11</strong></p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>2 (1)</p></td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;"><p><strong>Participation</strong></p>
+<ul>
+<li>ask a question in QA</li>
+</ul></td>
+<td style="text-align: center;"><p><strong>1</strong></p>
+<p>1</p></td>
+</tr>
+<tr class="even">
 <td style="text-align: left;"><strong>Total</strong></td>
-<td style="text-align: center;">50</td>
+<td style="text-align: center;">20</td>
 </tr>
 </tbody>
 </table>

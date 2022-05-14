@@ -1,0 +1,13 @@
+---
+title: "Cheat sheets for RStudio"
+---
+
+You can find a series of very useful cheat sheets for RStudio [here](https://www.rstudio.com/resources/cheatsheets/). These cheat sheets provide an overview of the main functions of important R packages. Here are those you will probably find the most useful:
+
+-   [RStudio](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf)
+
+-   [RMarkdown](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf)
+
+-   [ggplot2](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
+
+-   [dplyr](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf)

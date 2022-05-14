@@ -60,6 +60,8 @@ website:
             text: Useful links
           - href: course-faq.qmd
             text: FAQ
+          - href: course-cheatsheet.qmd
+            text: RStudio cheat sheets
       #- section: "Computing"
       #  contents:
       #    - href: computing-access.qmd

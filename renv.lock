@@ -25,27 +25,6 @@
       "Hash": "b7b812ae4484d4bbf0a0baac72e8fc01",
       "Requirements": []
     },
-    "GGally": {
-      "Package": "GGally",
-      "Version": "2.1.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "022f78c8698724b326f1838b1a98cafa",
-      "Requirements": [
-        "RColorBrewer",
-        "dplyr",
-        "forcats",
-        "ggplot2",
-        "gtable",
-        "lifecycle",
-        "plyr",
-        "progress",
-        "reshape",
-        "rlang",
-        "scales",
-        "tidyr"
-      ]
-    },
     "GPfit": {
       "Package": "GPfit",
       "Version": "1.0-8",
@@ -638,22 +617,6 @@
         "stringr",
         "tibble",
         "tidyr"
-      ]
-    },
-    "gghighlight": {
-      "Package": "gghighlight",
-      "Version": "0.3.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "61128bb6f044710e5e0b164833e46533",
-      "Requirements": [
-        "dplyr",
-        "ggplot2",
-        "ggrepel",
-        "lifecycle",
-        "purrr",
-        "rlang",
-        "tibble"
       ]
     },
     "ggmosaic": {
@@ -1499,6 +1462,21 @@
         "rlang"
       ]
     },
+    "quarto": {
+      "Package": "quarto",
+      "Version": "1.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "8eea03d347a0002455feba966306307b",
+      "Requirements": [
+        "jsonlite",
+        "later",
+        "processx",
+        "rmarkdown",
+        "rstudioapi",
+        "yaml"
+      ]
+    },
     "rappdirs": {
       "Package": "rappdirs",
       "Version": "0.3.3",
@@ -1611,16 +1589,6 @@
         "rmarkdown",
         "rstudioapi",
         "withr"
-      ]
-    },
-    "reshape": {
-      "Package": "reshape",
-      "Version": "0.8.9",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "603d56041d7d4fa3ceb1864b3f6ee6b1",
-      "Requirements": [
-        "plyr"
       ]
     },
     "rlang": {
