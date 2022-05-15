@@ -1,14 +1,16 @@
 ---
-title: "HW 1 - Introduction to data"
-subtitle: "Due Sunday, June 15, 9:00pm on Gradescope"
+title: "HW 2 - Introduction to data"
+subtitle: "Due Wednesday, May 18, 9:00pm on Gradescope"
 ---
 
-This assignment needs to be completed with RMarkdown and submitted as a pdf on [Gradescope](https://www.gradescope.com/courses/394638). Feel free to use the template that has been provided.
+This assignment needs to be completed with RMarkdown and submitted as a PDF on [Gradescope](https://www.gradescope.com/courses/394638). Feel free to re-use the template provided for HW1.
+
+When submitting your work on Gradescope, please assign a page for each question.
 
 ## Problem set (25 points)
 
 -   Exercise 5.2 (2 points)
--   Exercise 5.4 (2 points)
+-   Exercise 5.4 (2 points) -- instead of drawing, you may describe the relationship in words.
 -   Exercise 5.6 (3 points)
 -   Exercise 5.10 (3 points)
 -   Exercise 5.16 (5 points)

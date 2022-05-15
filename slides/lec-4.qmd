@@ -1,8 +1,8 @@
 ---
 title: "Simple Linear Regression Models"
-subtitle: "STA 101 - Summer I 2022"
+subtitle: "STA 101L - Summer I 2022"
 author: "Raphael Morsomme"
-footer:  "[sta101-suI22.github.io/website](https://sta101-suI22.github.io/website/)"
+footer:  "[https://rmorsomme.github.io/website/](https://rmorsomme.github.io/website/)"
 logo: "images/logo.jpg"
 format: 
   revealjs: 
@@ -30,14 +30,14 @@ editor_options:
 #| message: false
 library(countdown)
 library(tidyverse)       # for data wrangling
-library(fivethirtyeight) # for the USbirth dataset
+library(openintro)
 library(kableExtra)
-library(ggmosaic)
 library(usdata)
 library(scales)
 library(tidymodels)
 library(glue)
 library(broom) # augment
+library(patchwork)
 
 # set default theme and larger font size for ggplot2
 ggplot2::theme_set(
@@ -62,6 +62,7 @@ knitr::opts_chunk$set(
 -   Homework 1 has been returned
 -   Homework 2 has been published
     -   Feel free to re-use the template from HW 1
+    -   There should be no need for external code -- search in the lab!
 
 ## Recap of last lecture
 
@@ -294,7 +295,56 @@ d %>%
   geom_abline(intercept = 0, slope = 0, col = "red")
 ```
 
-## 
+## Residual plots and linearity
+
+```{r, echo = F}
+neg_lin <- simulated_scatter %>% filter(group == 6)
+neg_cur <- simulated_scatter %>% filter(group == 7)
+random  <- simulated_scatter %>% filter(group == 8)
+neg_lin_mod <- augment(lm(y ~ x, data = neg_lin))
+neg_cur_mod <- augment(lm(y ~ x, data = neg_cur))
+random_mod  <- augment(lm(y ~ x, data = random))
+p_neg_lin <- ggplot(neg_lin, aes(x = x, y = y)) +
+  geom_point(size = 2, alpha = 0.8) +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_void() +
+  theme(panel.border = element_rect(colour = "gray", fill = NA, size = 1))
+p_neg_cur <- ggplot(neg_cur, aes(x = x, y = y)) +
+  geom_point(size = 2, alpha = 0.8) +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_void() +
+  theme(panel.border = element_rect(colour = "gray", fill = NA, size = 1))
+p_random <- ggplot(random, aes(x = x, y = y)) +
+  geom_point(size = 2, alpha = 0.8) +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_void() +
+  theme(panel.border = element_rect(colour = "gray", fill = NA, size = 1))
+p_neg_lin_res <- ggplot(neg_lin_mod, aes(x = .fitted, y = .resid)) +
+  geom_point(size = 2, alpha = 0.8) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  theme_void() +
+  theme(panel.border = element_rect(colour = "gray", fill = NA, size = 1))
+p_neg_cur_res <- ggplot(neg_cur_mod, aes(x = .fitted, y = .resid)) +
+  geom_point(size = 2, alpha = 0.8) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  theme_void() +
+  theme(panel.border = element_rect(colour = "gray", fill = NA, size = 1))
+p_random_res <- ggplot(random_mod, aes(x = .fitted, y = .resid)) +
+  geom_point(size = 2, alpha = 0.8) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  theme_void() +
+  theme(panel.border = element_rect(colour = "gray", fill = NA, size = 1))
+p_neg_lin     + theme(plot.margin = unit(c(0, 10, 5, 0), "pt")) + 
+p_neg_cur     + theme(plot.margin = unit(c(0, 10, 5, 0), "pt")) + p_random + 
+p_neg_lin_res + theme(plot.margin = unit(c(0, 10, 5, 0), "pt")) + 
+p_neg_cur_res + theme(plot.margin = unit(c(0, 10, 5, 0), "pt")) + p_random_res +
+  plot_layout(ncol = 3, heights = c(2, 1))
+```
+
+Source: [IMS](https://openintro-ims.netlify.app/model-slr.html#resids)
+
+
+##
 
 ::: {.callout-tip icon="false"}
 ## Group exercise - residuals

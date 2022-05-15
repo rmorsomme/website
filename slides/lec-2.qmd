@@ -199,7 +199,7 @@ There are two ways to learn about the relation between variables in a given popu
 
 2.  **Sample**: small fraction of the population
 
-## Statistical inference{.smaller}
+## Statistical inference {.smaller}
 
 -   Population **parameter**, e.g. mean number of hours that Duke students sleep per night
     -   Greek letter: $\mu$, $\beta$, but also $p$.
@@ -431,19 +431,23 @@ countdown(minutes = 4)
 
 ## Group 1
 
-![The counties of the United Sates with the highest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980--1989.](images/lec-2/kidney_highest.png){width="600"}
-
-Source: [Bayesian Data Analysis](http://www.stat.columbia.edu/~gelman/book/)
+![The counties of the United Sates with the highest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980--1989.](images/lec-2/kidney_highest.PNG)Source: [Bayesian Data Analysis](http://www.stat.columbia.edu/~gelman/book/)
 
 ## Group 2
 
-![The counties of the United Sates with the lowest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980--1989.](images/lec-2/kidney_lowest.png){width="600"}
+![The counties of the United Sates with the lowest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980--1989.](images/lec-2/kidney_lowest.PNG)
+
+Source: [Bayesian Data Analysis](http://www.stat.columbia.edu/~gelman/book/)
+
+## Small sample effect
+
+![There is more variation in small counties.](images/lec-2/kidney_pattern.PNG)
 
 Source: [Bayesian Data Analysis](http://www.stat.columbia.edu/~gelman/book/)
 :::
-:::
 
 ## Experiments
+:::
 
 -   The value of the explanatory variable is **assigned** by the researcher
 -   **Randomized** experiment: the value of the explanatory variable is randomly assigned

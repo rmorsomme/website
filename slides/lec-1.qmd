@@ -40,11 +40,11 @@ library(countdown)
 
 ::: columns
 ::: {.column width="50%"}
-![Roy Rohit (he/him/his)](images/lec-1/rohit.jpg){fig-alt="Headshot of Rohit Roy" fig-align="center" width="200"}
+![Rohit Roy (he/him/his)](images/lec-1/Rohit.jpg)
 :::
 
 ::: {.column width="50%"}
--   Ph.D. student in biochemistry
+-    Ph.D. student in biochemistry
 -   Works at the Al-Hashimi Lab
 -   Likes traveling and cooking
 :::

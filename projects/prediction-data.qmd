@@ -83,46 +83,46 @@ By taking this exam, you pledge to uphold the Duke Community Standard:
 
 # Grading (50 pts)
 
-+-----------------------------------------------------------------------------------+--------------------+
-| **Part**                                                                          | **Points**         |
-+:==================================================================================+:==================:+
-| **Prediction model**                                                              | **3**              |
-|                                                                                   |                    |
-| -   .RDATA file only contains the model                                           | 1                  |
-|                                                                                   |                    |
-| -   model takes a test set as input                                               | 1                  |
-|                                                                                   |                    |
-| -   model returns one prediction for each observation                             | 1                  |
-|                                                                                   |                    |
-| -   most accurate model                                                           | bragging rights    |
-+-----------------------------------------------------------------------------------+--------------------+
-| **Report**                                                                        | **11**             |
-|                                                                                   |                    |
-| -   reproducible                                                                  | 1                  |
-|                                                                                   |                    |
-| -   simple model is fitted                                                        | 1                  |
-|                                                                                   |                    |
-| -   full model is fitted                                                          | 1                  |
-|                                                                                   |                    |
-| -   at least a predictor is transformed                                           | 1                  |
-|                                                                                   |                    |
-| -   predictors are combined to create at least a new one                          | 1                  |
-|                                                                                   |                    |
-| -   at least one interaction is considerd                                         | 1                  |
-|                                                                                   |                    |
-| -   at least a categorical predictor                                              | 1                  |
-|                                                                                   |                    |
-| -   subject knowledge is used to guide variable selection and feature engineering | 1                  |
-|                                                                                   |                    |
-| -   models are compared using                                                     | 1                  |
-|                                                                                   |                    |
-|     -   a suitable criterion                                                      | 2 (1)              |
-|                                                                                   |                    |
-|     -   cross-validation (holdout method)                                         |                    |
-+-----------------------------------------------------------------------------------+--------------------+
-| **Participation**                                                                 | **1**              |
-|                                                                                   |                    |
-| -   ask a question in QA                                                          | 1                  |
-+-----------------------------------------------------------------------------------+--------------------+
-| **Total**                                                                         | 20                 |
-+-----------------------------------------------------------------------------------+--------------------+
++-----------------------------------------------------------------------------------+-----------------+
+| **Part**                                                                          | **Points**      |
++:==================================================================================+:===============:+
+| **Prediction model**                                                              | **3**           |
+|                                                                                   |                 |
+| -   .RDATA file only contains the model                                           | 1               |
+|                                                                                   |                 |
+| -   model takes a test set as input                                               | 1               |
+|                                                                                   |                 |
+| -   model returns one prediction for each observation                             | 1               |
+|                                                                                   |                 |
+| -   most accurate model                                                           | bragging rights |
++-----------------------------------------------------------------------------------+-----------------+
+| **Report**                                                                        | **11**          |
+|                                                                                   |                 |
+| -   reproducible                                                                  | 1               |
+|                                                                                   |                 |
+| -   simple model is fitted                                                        | 1               |
+|                                                                                   |                 |
+| -   full model is fitted                                                          | 1               |
+|                                                                                   |                 |
+| -   at least a predictor is transformed                                           | 1               |
+|                                                                                   |                 |
+| -   predictors are combined to create at least a new one                          | 1               |
+|                                                                                   |                 |
+| -   at least one interaction is considerd                                         | 1               |
+|                                                                                   |                 |
+| -   at least a categorical predictor                                              | 1               |
+|                                                                                   |                 |
+| -   subject knowledge is used to guide variable selection and feature engineering | 1               |
+|                                                                                   |                 |
+| -   models are compared using                                                     | 1               |
+|                                                                                   |                 |
+|     -   a suitable criterion                                                      | 2 (1)           |
+|                                                                                   |                 |
+|     -   cross-validation (holdout method)                                         |                 |
++-----------------------------------------------------------------------------------+-----------------+
+| **Participation**                                                                 | **1**           |
+|                                                                                   |                 |
+| -   ask a question in QA                                                          | 1               |
++-----------------------------------------------------------------------------------+-----------------+
+| **Total**                                                                         | 20              |
++-----------------------------------------------------------------------------------+-----------------+

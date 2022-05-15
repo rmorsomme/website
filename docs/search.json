@@ -289,21 +289,21 @@
   {
     "objectID": "hw/hw-2.html",
     "href": "hw/hw-2.html",
-    "title": "HW 1 - Introduction to data",
+    "title": "HW 2 - Introduction to data",
     "section": "",
-    "text": "This assignment needs to be completed with RMarkdown and submitted as a pdf on Gradescope. Feel free to use the template that has been provided."
+    "text": "This assignment needs to be completed with RMarkdown and submitted as a PDF on Gradescope. Feel free to re-use the template provided for HW1.\nWhen submitting your work on Gradescope, please assign a page for each question."
   },
   {
     "objectID": "hw/hw-2.html#problem-set-25-points",
     "href": "hw/hw-2.html#problem-set-25-points",
-    "title": "HW 1 - Introduction to data",
+    "title": "HW 2 - Introduction to data",
     "section": "Problem set (25 points)",
-    "text": "Problem set (25 points)\n\nExercise 5.2 (2 points)\nExercise 5.4 (2 points)\nExercise 5.6 (3 points)\nExercise 5.10 (3 points)\nExercise 5.16 (5 points)\nExercise 5.20 (1 points)\nExercise 5.20 follow up (1 points)\n\nWould side-by-side boxplots have been suitable to visualize these data? Briefly explain.\n\nExercise 5.22 (2 points)\nExercise 5.26 (2 points)\nExercise 4.6 (4 points)"
+    "text": "Problem set (25 points)\n\nExercise 5.2 (2 points)\nExercise 5.4 (2 points) – instead of drawing, you may describe the relationship in words.\nExercise 5.6 (3 points)\nExercise 5.10 (3 points)\nExercise 5.16 (5 points)\nExercise 5.20 (1 points)\nExercise 5.20 follow up (1 points)\n\nWould side-by-side boxplots have been suitable to visualize these data? Briefly explain.\n\nExercise 5.22 (2 points)\nExercise 5.26 (2 points)\nExercise 4.6 (4 points)"
   },
   {
     "objectID": "hw/hw-2.html#lab-exercises---new-york-flights-25-points",
     "href": "hw/hw-2.html#lab-exercises---new-york-flights-25-points",
-    "title": "HW 1 - Introduction to data",
+    "title": "HW 2 - Introduction to data",
     "section": "Lab exercises - New York flights (25 points)",
     "text": "Lab exercises - New York flights (25 points)\nYou can find the lab here\n\nExercise 1 (2 points)\nExercise 2 (3 points)\nExercise 3 (3 points)\nExercise 4 (3 points)\nExercise 5 (2 points)\nExercise 6 (2 points)\nExercise 7 (2 points)\nExercise 8 (3 points)\nExercise 9 (5 points)"
   },
@@ -319,7 +319,7 @@
     "href": "index.html",
     "title": "STA 101L: Data Analysis and Statistical Inference",
     "section": "",
-    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\n\n\n💻\n\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n\n\n\n\n\n2\nMon, May 23\nModel selection\n8.3-8.4; 25.2-25.3\n\n\n\n\n\n\n\nTue, May 24\nLogistic regression\n9.1-9.3\n\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n\n\n\n\n\n\nThu, May 26\nPrinciples of inference\nWork on project\n11.0; 11.3; 12.0; 12.3; 13.1-13.3\n\n\n\n\n\n\n\nFri, May 27\nLab 5 - work on prediction project [PP]\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP discussion\nInference for proportions I\n16.1-16.2\n\n\n\nPP model (9am)\nPP presentation\n\n\n\nWed, June 1\nLab 5 - work on PP\nDue: PP report\n\n\n\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.3\n\n\n\n\n\n\n\nFri, June 3\nLab 6 - Inference for proportions\n\n\n\n\n\n\n\n4\nMon, June 6\nInference for means I\n19.1-19.2\n\n\n\n\n\n\n\nTue, June 7\nInference for means II\n20.1-20.4; 21.1-21.3\n\n\n\n\n\n\n\nWed, June 8\nLab 7 - Inference for means\n\n\n\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.6; 25.1; 26.1-26.2\n\n\n\n\n\n\n\nFri, June 10\nLab 8 - inference for regression\n\n\n\n\n\n\n\n5\nMon, June 13\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n\n\n\n\n\n\n\nTue, June 14\nWork on inference project (IP)\n\n\n\n\n\n\n\n\nWed, June 15\nLab 9 - work on IP\n\n\n\n\n\n\n\n\nThu, June 16\nIP presentations\nWrap up\n\n\n\n\nIP presentation\n\n\n\nFri, June 17\nLab 10 - work on IP\n\n\n\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
+    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\nDue: Homework 2\n\n\n💻\n✍️\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n\n\n\n\n\n2\nMon, May 23\nModel selection\n8.3-8.4; 25.2-25.3\n\n\n\n\n\n\n\nTue, May 24\nLogistic regression\n9.1-9.3\n\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n\n\n\n\n\n\nThu, May 26\nPrinciples of inference\nWork on project\n11.0; 11.3; 12.0; 12.3; 13.1-13.3\n\n\n\n\n\n\n\nFri, May 27\nLab 5 - work on prediction project [PP]\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP discussion\nInference for proportions I\n16.1-16.2\n\n\n\nPP model (9am)\nPP presentation\n\n\n\nWed, June 1\nLab 5 - work on PP\nDue: PP report\n\n\n\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.3\n\n\n\n\n\n\n\nFri, June 3\nLab 6 - Inference for proportions\n\n\n\n\n\n\n\n4\nMon, June 6\nInference for means I\n19.1-19.2\n\n\n\n\n\n\n\nTue, June 7\nInference for means II\n20.1-20.4; 21.1-21.3\n\n\n\n\n\n\n\nWed, June 8\nLab 7 - Inference for means\n\n\n\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.6; 25.1; 26.1-26.2\n\n\n\n\n\n\n\nFri, June 10\nLab 8 - inference for regression\n\n\n\n\n\n\n\n5\nMon, June 13\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n\n\n\n\n\n\n\nTue, June 14\nWork on inference project (IP)\n\n\n\n\n\n\n\n\nWed, June 15\nLab 9 - work on IP\n\n\n\n\n\n\n\n\nThu, June 16\nIP presentations\nWrap up\n\n\n\n\nIP presentation\n\n\n\nFri, June 17\nLab 10 - work on IP\n\n\n\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
   },
   {
     "objectID": "labs/lab-0x.html",
@@ -1068,7 +1068,7 @@
     "href": "slides/lec-1.html#meet-the-ta",
     "title": "Welcome to STA 101L!",
     "section": "Meet the TA",
-    "text": "Meet the TA\n\n\n\n\n\nRoy Rohit (he/him/his)\n\n\n\n\nPh.D. student in biochemistry\nWorks at the Al-Hashimi Lab\nLikes traveling and cooking"
+    "text": "Meet the TA\n\n\n\n\n\nRohit Roy (he/him/his)\n\n\n\n\nPh.D. student in biochemistry\nWorks at the Al-Hashimi Lab\nLikes traveling and cooking"
   },
   {
     "objectID": "slides/lec-1.html#meet-each-other",
@@ -1313,7 +1313,7 @@
     "href": "slides/lec-2.html#observations-and-variables",
     "title": "Introduction to Data",
     "section": "Observations and variables",
-    "text": "Observations and variables\n\n\n\nResults for three patients from the stent study.\n \n  \n    patient \n    group \n    30 days \n    365 days \n  \n \n\n  \n    1 \n    control \n    stroke \n    stroke \n  \n  \n    2 \n    control \n    no event \n    no event \n  \n  \n    3 \n    control \n    no event \n    no event \n  \n\n\n\n\n\n\n\nEach row represents an observation\nEach column represents a variable"
+    "text": "Observations and variables\n\n\n\nResults for three patients from the stent study.\n \n  \n    patient \n    group \n    30 days \n    365 days \n  \n \n\n  \n    1 \n    treatment \n    no event \n    no event \n  \n  \n    2 \n    control \n    no event \n    no event \n  \n  \n    3 \n    control \n    no event \n    no event \n  \n\n\n\n\n\n\n\nEach row represents an observation\nEach column represents a variable"
   },
   {
     "objectID": "slides/lec-2.html#some-examples",
@@ -1418,14 +1418,14 @@
     "href": "slides/lec-2.html#section-4",
     "title": "Introduction to Data",
     "section": "",
-    "text": "Group exercise - counties and kidney cancer death rate\n\n\n\nInstructionsGroup 1Group 2\n\n\nWhy are most of the shaded counties in the middle of the country?\n\n\n\n04:00\n\n\n\n\n\n\n\n\nThe counties of the United Sates with the highest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980–1989.\n\n\nSource: Bayesian Data Analysis\n\n\n\n\n\nThe counties of the United Sates with the lowest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980–1989.\n\n\nSource: Bayesian Data Analysis"
+    "text": "Group exercise - counties and kidney cancer death rate\n\n\n\nInstructionsGroup 1Group 2Small sample effect\n\n\nWhy are most of the shaded counties in the middle of the country?\n\n\n\n04:00\n\n\n\n\n\nSource: Bayesian Data Analysis\n\n\n\n\n\nThe counties of the United Sates with the lowest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980–1989.\n\n\nSource: Bayesian Data Analysis\n\n\n\n\n\nThere is more variation in small counties.\n\n\nSource: Bayesian Data Analysis\n\n\n\n\nExperiments\n\n\n\n\n\nThe value of the explanatory variable is assigned by the researcher\nRandomized experiment: the value of the explanatory variable is randomly assigned\n\nremoves any counfounding (lurking) variable, e.g. air temperature\n\nBlind, or even double-blind, to avoid biases\n\nplacebo\ncan go wrong, e.g. vitamins in prison"
   },
   {
     "objectID": "slides/lec-2.html#experiments",
     "href": "slides/lec-2.html#experiments",
     "title": "Introduction to Data",
     "section": "Experiments",
-    "text": "Experiments\n\nThe value of the explanatory variable is assigned by the researcher\nRandomized experiment: the value of the explanatory variable is randomly assigned\n\nremoves any counfounding (lurking) variable, e.g. air temperature\n\nBlind, or even double-blind, to avoid biases\n\nplacebo\ncan go wrong, e.g. vitamins in prison"
+    "text": "Experiments"
   },
   {
     "objectID": "slides/lec-2.html#observational-studies",
@@ -1859,7 +1859,7 @@
     "href": "slides/lec-4.html#announcements",
     "title": "Simple Linear Regression Models",
     "section": "Announcements",
-    "text": "Announcements\n\nHomework 1 has been returned\nHomework 2 has been published\n\nFeel free to re-use the template from HW 1"
+    "text": "Announcements\n\nHomework 1 has been returned\nHomework 2 has been published\n\nFeel free to re-use the template from HW 1\nThere should be no need for external code – search in the lab!"
   },
   {
     "objectID": "slides/lec-4.html#recap-of-last-lecture",
@@ -2174,7 +2174,7 @@
     "href": "slides/lec-4.html#recap-1",
     "title": "Simple Linear Regression Models",
     "section": "Recap",
-    "text": "Recap\n\n\nsimple linear regression model \\[\n\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty}\n\\]\n\nresiduals\nleast-square estimates\nparameter interpretation\nmodel comparison with \\(R^2\\)\n\noutliers\n\n\n\n\n\nsta101-suI22.github.io/website"
+    "text": "Recap\n\n\nsimple linear regression model \\[\n\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty}\n\\]\n\nresiduals\nleast-square estimates\nparameter interpretation\nmodel comparison with \\(R^2\\)\n\noutliers\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
     "objectID": "slides/lec-5x.html#announcements",
@@ -2616,5 +2616,12 @@
     "title": "Data science in action – examples in various fields",
     "section": "Estimating the effect of commute time on rent in New York",
     "text": "Estimating the effect of commute time on rent in New York\n\n\nIn this article, Carl Bialik looked at more than 100,000 homes present on StreetEasy. He observed that, unsurprisingly, the distance to the nearest metro does impact rent prices, and he even managed to put a number on that effect: $56/minute.\n\n\n\n Source: FiverThirtyEight\n\n\n\n\n\nsta101-suI22.github.io/website"
+  },
+  {
+    "objectID": "slides/lec-4.html#residual-plots-and-linearity",
+    "href": "slides/lec-4.html#residual-plots-and-linearity",
+    "title": "Simple Linear Regression Models",
+    "section": "Residual plots and linearity",
+    "text": "Residual plots and linearity\n\nSource: IMS"
   }
 ]
