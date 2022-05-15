@@ -1313,7 +1313,7 @@
     "href": "slides/lec-2.html#observations-and-variables",
     "title": "Introduction to Data",
     "section": "Observations and variables",
-    "text": "Observations and variables\n\n\n\nResults for three patients from the stent study.\n \n  \n    patient \n    group \n    30 days \n    365 days \n  \n \n\n  \n    1 \n    treatment \n    no event \n    no event \n  \n  \n    2 \n    control \n    no event \n    no event \n  \n  \n    3 \n    control \n    no event \n    no event \n  \n\n\n\n\n\n\n\nEach row represents an observation\nEach column represents a variable"
+    "text": "Observations and variables\n\n\n\nResults for three patients from the stent study.\n \n  \n    patient \n    group \n    30 days \n    365 days \n  \n \n\n  \n    1 \n    treatment \n    no event \n    no event \n  \n  \n    2 \n    treatment \n    no event \n    stroke \n  \n  \n    3 \n    control \n    no event \n    no event \n  \n\n\n\n\n\n\n\nEach row represents an observation\nEach column represents a variable"
   },
   {
     "objectID": "slides/lec-2.html#some-examples",
@@ -1411,21 +1411,21 @@
     "href": "slides/lec-2.html#explanatory-and-response-variable",
     "title": "Introduction to Data",
     "section": "Explanatory and response variable",
-    "text": "Explanatory and response variable\n\nWhen two variables are associated, we sometimes hypothesize that changes in one cause changes in the other.\n\n\n\nExplanatory variable \\(\\Rightarrow\\) response variable\n\n\n\n\n…but association \\(\\neq\\) causation; examples:\n\nice-cream and shark attacks; fire damage and firemen\ncounties and kidney cancer death rate; the best classrooms are small classrooms."
+    "text": "Explanatory and response variable\n\nWhen two variables are associated, we sometimes hypothesize that changes in one cause changes in the other.\n\n\n\nExplanatory variable \\(\\Rightarrow\\) response variable\n\n\n\n\n…but association \\(\\neq\\) causation; examples:\n\nice-cream and shark attacks; fire damage and firemen\ncounties and kidney cancer death rate; the best classrooms are small classrooms, but so are the worst classrooms."
   },
   {
     "objectID": "slides/lec-2.html#section-4",
     "href": "slides/lec-2.html#section-4",
     "title": "Introduction to Data",
     "section": "",
-    "text": "Group exercise - counties and kidney cancer death rate\n\n\n\nInstructionsGroup 1Group 2Small sample effect\n\n\nWhy are most of the shaded counties in the middle of the country?\n\n\n\n04:00\n\n\n\n\n\nSource: Bayesian Data Analysis\n\n\n\n\n\nThe counties of the United Sates with the lowest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980–1989.\n\n\nSource: Bayesian Data Analysis\n\n\n\n\n\nThere is more variation in small counties.\n\n\nSource: Bayesian Data Analysis\n\n\n\n\nExperiments\n\n\n\n\n\nThe value of the explanatory variable is assigned by the researcher\nRandomized experiment: the value of the explanatory variable is randomly assigned\n\nremoves any counfounding (lurking) variable, e.g. air temperature\n\nBlind, or even double-blind, to avoid biases\n\nplacebo\ncan go wrong, e.g. vitamins in prison"
+    "text": "::: {.callout-tip icon=“false”} ## Group exercise - counties and kidney cancer death rate\n\nInstructionsGroup 1Group 2Small sample effect\n\n\nWhy are most of the shaded counties in the middle of the country?\n\n\n\n04:00\n\n\n\n\n\nSource: Bayesian Data Analysis\n\n\n\n\n\nThe counties of the United Sates with the lowest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980–1989.\n\n\nSource: Bayesian Data Analysis\n\n\n\n\n\nThere is more variation in small counties.\n\n\nSource: Bayesian Data Analysis"
   },
   {
     "objectID": "slides/lec-2.html#experiments",
     "href": "slides/lec-2.html#experiments",
     "title": "Introduction to Data",
     "section": "Experiments",
-    "text": "Experiments"
+    "text": "Experiments\n\nThe value of the explanatory variable is assigned by the researcher\nRandomized experiment: the value of the explanatory variable is randomly assigned\n\nremoves any counfounding (lurking) variable, e.g. air temperature\n\nBlind, or even double-blind, to avoid biases\n\nplacebo\ncan go wrong, e.g. vitamins in prison"
   },
   {
     "objectID": "slides/lec-2.html#observational-studies",
@@ -2665,5 +2665,12 @@
     "title": "HW 3 - Introduction to data",
     "section": "Lab exercises - the Human Freedom Index (25 points)",
     "text": "Lab exercises - the Human Freedom Index (25 points)\nYou can find the lab here\n\nExercise 1 (2 points)\nExercise 2 (2 points)\nExercise 3 (3 points)\nExercise 4 (2 points)\nExercise 5 (2 points)\nExercise 6 (3 points)\nExercise 7 (2 points)\nExercise 8 (2 points)\n\nSkip exercises 9-10.\n\nPractice 1 (2 points)\nPractice 2 (2 points)\nPractice 3 (1 points) – only evaluate linearity\nPractice 4 (2 points)"
+  },
+  {
+    "objectID": "slides/lec-2.html#group-exercise---counties-and-kidney-cancer-death-rate",
+    "href": "slides/lec-2.html#group-exercise---counties-and-kidney-cancer-death-rate",
+    "title": "Introduction to Data",
+    "section": "Group exercise - counties and kidney cancer death rate",
+    "text": "Group exercise - counties and kidney cancer death rate\n\nInstructionsGroup 1Group 2Small sample effect\n\n\nWhy are most of the shaded counties in the middle of the country?\n\n\n\n04:00\n\n\n\n\n\nSource: Bayesian Data Analysis\n\n\n\n\n\nThe counties of the United Sates with the lowest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980–1989.\n\n\nSource: Bayesian Data Analysis\n\n\n\n\n\nThere is more variation in small counties.\n\n\nSource: Bayesian Data Analysis"
   }
 ]

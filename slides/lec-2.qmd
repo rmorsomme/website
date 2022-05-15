@@ -413,11 +413,8 @@ countdown(minutes = 2)
 
 -   ...but association $\neq$ causation; examples:
     -   ice-cream and shark attacks; fire damage and firemen
-    -   counties and kidney cancer death rate; the best classrooms are small classrooms.
+    -   counties and kidney cancer death rate; the best classrooms are small classrooms, but so are the worst classrooms.
 
-## 
-
-::: {.callout-tip icon="false"}
 ## Group exercise - counties and kidney cancer death rate
 
 ::: panel-tabset
@@ -447,7 +444,6 @@ Source: [Bayesian Data Analysis](http://www.stat.columbia.edu/~gelman/book/)
 :::
 
 ## Experiments
-:::
 
 -   The value of the explanatory variable is **assigned** by the researcher
 -   **Randomized** experiment: the value of the explanatory variable is randomly assigned
