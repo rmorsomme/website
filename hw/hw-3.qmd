@@ -1,0 +1,54 @@
+---
+title: "HW 3 - Introduction to data"
+subtitle: "Due Sunday, May 22, 9:00pm on Gradescope"
+---
+
+This assignment needs to be completed with RMarkdown and submitted as a PDF on [Gradescope](https://www.gradescope.com/courses/394638). Feel free to re-use the template provided for HW1.
+
+When submitting your work on Gradescope, please assign a page for each question.
+
+## Problem set (25 points)
+
+-   7.6, a-c (3 points)
+-   7.18 (2 points)
+-   7.20 (4 points)
+-   7.22 (7 points)
+    -   fit the model in `R`; the variables `sho_gi` and `hgt` respectively correspond to shoulder girth and height.
+
+        ```{r}
+        d <- openintro::bdims
+        ```
+
+    -   do parts a-f
+-   7.24 (5 points)
+    -   fit the model in `R`
+
+        ```{r}
+        d <- MASS::cats
+        ```
+
+    -   do parts a-d
+-   7.26 (3 points)
+-   7.28 (1 point)
+
+\newpage
+
+## Lab exercises - the Human Freedom Index (25 points)
+
+You can find the lab [here](http://openintrostat.github.io/oilabs-tidy/08_simple_regression/simple_regression.html)
+
+-   Exercise 1 (2 points)
+-   Exercise 2 (2 points)
+-   Exercise 3 (3 points)
+-   Exercise 4 (2 points)
+-   Exercise 5 (2 points)
+-   Exercise 6 (3 points)
+-   Exercise 7 (2 points)
+-   Exercise 8 (2 points)
+
+Skip exercises 9-10.
+
+-   Practice 1 (2 points)
+-   Practice 2 (2 points)
+-   Practice 3 (1 points) -- only evaluate linearity
+-   Practice 4 (2 points)
