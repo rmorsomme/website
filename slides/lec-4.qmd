@@ -59,8 +59,10 @@ knitr::opts_chunk$set(
 
 ## Announcements
 
--   Homework 1 has been returned
+-   Find someone you have not worked with yet.
+-   Homework 1 will be graded today
 -   Homework 2 has been published
+    -   Due on Wednesday
     -   Feel free to re-use the template from HW 1
     -   There should be no need for external code -- look in the lab!
 
@@ -824,7 +826,7 @@ countdown(minutes = 3)
 
 -   (Venn Diagram)
 
-##
+## 
 
 ```{r, eval=FALSE}
 d1 <- simulated_scatter %>% 
@@ -1000,14 +1002,9 @@ The regression line not longer fits the data well.
 ## Recap
 
 ::: incremental
--   simple linear regression model 
+-   simple linear regression model
 
 $$
     \text{hwy} \approx \beta_0 + \beta_1 \text{cty}
-$$
--   residuals
--   least-square estimates
--   parameter interpretation
--   model comparison with $R^2$
--   outliers
+$$ - residuals - least-square estimates - parameter interpretation - model comparison with $R^2$ - outliers
 :::

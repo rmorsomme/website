@@ -536,7 +536,7 @@ Is this reasonable? No!
 
 $\Rightarrow$ the effect of weather should vary with distance. For shorter races, bad weather may add only 2 or 3 minutes, while for longer races, bad weather may increase the average duration by 10 or 15 minutes.
 
-## Model equation with interaction
+## Model equation with interaction {.smaller}
 
 We capture such pattern using an **interaction term**.
 
@@ -556,7 +556,7 @@ $$
 \text{duration} \approx \beta_0 + \beta_1 \text{distance} + \beta_2 1 + \beta_3 1*\text{distance} = (\beta_0 + \beta_2) + (\beta_1+\beta_3) \text{distance}
 $$
 
-## Interpreting interactions
+## Interpreting interactions {.smaller}
 
 -   When the weather is **good**, the slope estimate is $\hat{\beta}_1$, meaning that the effect of an additional miles on the average duration is $\hat{\beta}_1$.
 

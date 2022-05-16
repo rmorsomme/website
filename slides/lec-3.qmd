@@ -394,13 +394,15 @@ x_contaminated   <- c(x_uncontaminated, 1e9) # 1e9 = 10^9 (scientific notation)
 ```{r}
 summary(x_uncontaminated)
 summary(x_contaminated)
+```
 
+. . .
+
+```{r}
 var(x_uncontaminated); var(x_contaminated)
 sd(x_uncontaminated); sd(x_contaminated)
 IQR(x_uncontaminated); IQR(x_contaminated)
 ```
-
-## 
 
 ::: callout-warning
 ## Robustness of the median and the iqr
@@ -415,13 +417,13 @@ While the **median and iqr are robust** to the presence of extreme values, the m
 
 Exercises [5.8](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises), [5.11](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises), [5.15](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises) (replace part $c$ by *height of all adults*)
 
-Bonus practice (at home): [5.17](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises), [5.19](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises)
+Bonus: [5.17](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises), [5.19](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises)
 
 Note: Q1 is first the 25th percentile (larger than one *quarter* of the data), Q3 is the 75th percentile.
 :::
 
 ```{r, echo = F}
-countdown(minutes = 7)
+countdown(minutes = 5
 ```
 
 # Summary for categorical data
@@ -486,7 +488,6 @@ table(d_car$class, d_car$drv) %>%
 ```{r, echo = F}
 countdown(minutes = 3)
 ```
-
 
 # Visualization for categorical data
 
@@ -559,8 +560,7 @@ ggplot(d_birth_small) +
 
 ::: callout-tip
 ## Beyond 2 variables
-
-Faceted figures are a great way to include $\ge$ 3 variables!
+Faceted figures are a great way to include $\ge$ 3 variables! See exercise [1.13](https://openintro-ims.netlify.app/data-hello.html)
 :::
 
 ## Mosaic plot
@@ -583,7 +583,7 @@ ggplot(d_car) +
 
 Source: [R 4 Data Science](https://r4ds.had.co.nz)
 
-## {.smaller}
+##  {.smaller}
 
 -   The thick line in the middle of the box indicates the median;
 
@@ -601,15 +601,22 @@ Source: [R 4 Data Science](https://r4ds.had.co.nz)
 
 ::: callout-note
 ## Outliers
-Outliers have an extreme value. How to deal with an outlier depends on why the observation stands out.
+
+Outliers have an extreme value. How to deal with an outlier depends on why the observation stands out. outliers can be
+
+-   removed
+-   corrected
+-   ignored
 :::
 
 ## 
 
 ::: {.callout-tip icon="false"}
-## Group exercise - types of associations
+## Group exercise - limitation of boxplots
+
 Exercise [5.13](https://openintro-ims.netlify.app/explore-numerical.html#chp5-exercises)
 :::
+
 ```{r, echo = F}
 countdown(minutes = 1)
 ```
@@ -755,7 +762,7 @@ table(d_car$class, d_car$drv) %>%
 -   Average, median, variance, sd and IQR; robustness
 -   Frequency, contigency and proportion tables
 -   Barplot, mosaic plot
--   Effective communication: well-edited figures, $\ge3$ variables (symbols, colors, facets), tell a  story
+-   Effective communication: well-edited figures, $\ge3$ variables (symbols, colors, facets), tell a story
 -   [R for Data Science - chapters 3 and 7](https://r4ds.had.co.nz/data-visualisation.html)
 :::
 

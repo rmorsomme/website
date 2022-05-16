@@ -10,9 +10,7 @@ When submitting your work on Gradescope, please assign a page for each question.
 ## Problem set (25 points)
 
 -   8.6 (2 points)
-
 -   8.10 (8 points)
-
     -   fit the model in `R`
 
         ```{r}
@@ -24,6 +22,7 @@ When submitting your work on Gradescope, please assign a page for each question.
     -   identify the baseline level of the categorical predictors
 
     -   do parts a-d
+-   
 
 \newpage
 
