@@ -826,20 +826,6 @@
     "text": "Additional resources\n\nR for Data Science\nQuarto Documentation\nData visualization\n\nggplot2 Reference\nggplot2: Elegant Graphics for Data Analysis\nData Visualization: A Practice Introduction\nPatchwork R Package"
   },
   {
-    "objectID": "projects/exam-2.html",
-    "href": "projects/exam-2.html",
-    "title": "Exam 2",
-    "section": "",
-    "text": "Grading (50 pts)\n\n\n\nPart\nPoints\n\n\n\n\nPart 1 - Conceptual (on Sakai)\n10\n\n\nPart 2 - Applied (on Gradescope)\n40\n\n\nTotal\n50"
-  },
-  {
-    "objectID": "projects/exam-3.html",
-    "href": "projects/exam-3.html",
-    "title": "Exam 2",
-    "section": "",
-    "text": "Grading (50 pts)\n\n\n\nPart\nPoints\n\n\n\n\nPart 1 - Conceptual (on Sakai)\n10\n\n\nPart 2 - Applied (on Gradescope)\n40\n\n\nTotal\n50"
-  },
-  {
     "objectID": "projects/prediction-data.html",
     "href": "projects/prediction-data.html",
     "title": "Prediction Project - Data Prep",
@@ -851,14 +837,21 @@
     "href": "projects/prediction-data.html#raw-data-import",
     "title": "Prediction Project - Data Prep",
     "section": "Raw Data import",
-    "text": "Raw Data import\n\nlibrary(tidyverse)\nd <- read_csv(\n  \"../Nat2020us/Nat2020PublicUS.c20210506.r20210812.txt\",\n  col_names = FALSE, trim_ws = FALSE\n  ) %>%\n  slice(1:10)"
+    "text": "Raw Data import\n\nset.seed(0)\n\nlibrary(tidyverse)\nd_sub <- read_csv(\n  \"../Nat2020us/Nat2020PublicUS.c20210506.r20210812.txt\",\n  col_names = FALSE, trim_ws = FALSE\n  ) %>%\n  slice_sample(n = 1e5)\nwrite_csv(d_sub , \"projects/d_sub.csv\")"
   },
   {
     "objectID": "projects/prediction-data.html#variable-extraction",
     "href": "projects/prediction-data.html#variable-extraction",
     "title": "Prediction Project - Data Prep",
     "section": "Variable extraction",
-    "text": "Variable extraction\n\nd_clean <- d %>%\n  rename(string = X1) %>%\n  mutate(\n    year                             = str_sub(string, 9  , 12 ),\n    month                            = str_sub(string, 13 , 14 ),\n    mother_age                       = str_sub(string, 75 , 76 ),\n    prenatal_car_starting_month      = str_sub(string, 224, 225),\n    daily_cigarette_prepregnancy     = str_sub(string, 253, 254),\n    daily_cigarette_trimester_1      = str_sub(string, 255, 256),\n    daily_cigarette_trimester_2      = str_sub(string, 257, 258),\n    daily_cigarette_trimester_3      = str_sub(string, 259, 260),\n    mother_height                    = str_sub(string, 280, 281),\n    mother_bmi                       = str_sub(string, 283, 286),\n    mother_weight_prepregnancy       = str_sub(string, 292, 294),\n    mother_weight_delivery           = str_sub(string, 299, 301),\n    mother_diabetes_prepregnancy     = str_sub(string, 313, 313),\n    mother_diabetes_gestational      = str_sub(string, 314, 314),\n    mother_hypertension_prepregnancy = str_sub(string, 315, 315),\n    mother_hypertension_gestational  = str_sub(string, 316, 316),\n    risk_factors                     = str_sub(string, 337, 337),\n    gonorrhea                        = str_sub(string, 343, 343),\n    syphilis                         = str_sub(string, 344, 344),\n    chlamydia                        = str_sub(string, 345, 345),\n    hepatitis_B                      = str_sub(string, 346, 346),\n    hepatitis_C                      = str_sub(string, 347, 347),\n    number_newborns                  = str_sub(string, 454, 454),\n    newborn_sex                      = str_sub(string, 475, 475),\n    gestation_week                   = str_sub(string, 490, 491),\n    newborn_birth_weight             = str_sub(string, 504, 507)\n    ) %>%\n  select(newborn_birth_weight, !matches(\"string\"), string)"
+    "text": "Variable extraction\n\nlibrary(tidyverse)\n\nclean_data <- function(data){\n  \n  data_clean <- data %>%\n    rename(string = X1) %>%\n    mutate(\n      month                            = str_sub(string, 13 , 14 ) %>% as.numeric,\n      mother_age                       = str_sub(string, 75 , 76 ) %>% as.numeric,\n      prenatal_care_starting_month     = str_sub(string, 224, 225) %>% as.numeric,\n      daily_cigarette_prepregnancy     = str_sub(string, 253, 254) %>% as.numeric,\n      daily_cigarette_trimester_1      = str_sub(string, 255, 256) %>% as.numeric,\n      daily_cigarette_trimester_2      = str_sub(string, 257, 258) %>% as.numeric,\n      daily_cigarette_trimester_3      = str_sub(string, 259, 260) %>% as.numeric,\n      mother_height                    = str_sub(string, 280, 281) %>% as.numeric,\n      mother_bmi                       = str_sub(string, 283, 286) %>% as.numeric,\n      mother_weight_prepregnancy       = str_sub(string, 292, 294) %>% as.numeric,\n      mother_weight_delivery           = str_sub(string, 299, 301) %>% as.numeric,\n      mother_diabetes_prepregnancy     = str_sub(string, 313, 313),\n      mother_diabetes_gestational      = str_sub(string, 314, 314),\n      mother_hypertension_prepregnancy = str_sub(string, 315, 315),\n      mother_hypertension_gestational  = str_sub(string, 316, 316),\n      mother_risk_factors              = str_sub(string, 337, 337) %>% as.numeric,\n      mother_gonorrhea                 = str_sub(string, 343, 343),\n      mother_syphilis                  = str_sub(string, 344, 344),\n      mother_chlamydia                 = str_sub(string, 345, 345),\n      mother_hepatitis_B               = str_sub(string, 346, 346),\n      mother_hepatitis_C               = str_sub(string, 347, 347),\n      number_newborns                  = str_sub(string, 454, 454) %>% as.numeric,\n      newborn_sex                      = str_sub(string, 475, 475),\n      gestation_week                   = str_sub(string, 490, 491) %>% as.numeric,\n      newborn_birth_weight             = str_sub(string, 504, 507) %>% as.numeric\n      ) %>%\n    filter(\n      number_newborns              == 1   ,\n      mother_risk_factors          <= 1   ,\n      mother_weight_delivery       <  999 ,\n      mother_weight_prepregnancy   <  999 ,\n      mother_bmi                   <  999 ,\n      mother_height                <  99  ,\n      daily_cigarette_trimester_3  <  98  ,\n      daily_cigarette_trimester_2  <  98  ,\n      daily_cigarette_trimester_1  <  98  ,\n      daily_cigarette_prepregnancy <  98  ,\n      prenatal_care_starting_month <  99  ,\n      prenatal_care_starting_month <  99  ,\n      newborn_birth_weight         <  9999,\n      mother_diabetes_prepregnancy == \"N\",\n      mother_hypertension_gestational == \"N\",\n      mother_gonorrhea == \"N\",\n      mother_syphilis == \"N\",\n      mother_chlamydia == \"N\",\n      mother_hepatitis_B == \"N\",\n      mother_hepatitis_C == \"N\"\n      ) %>%\n    select(\n      - string, - number_newborns,\n      - mother_diabetes_prepregnancy, - mother_hypertension_gestational, - mother_hypertension_prepregnancy, - mother_gonorrhea, - mother_syphilis, - mother_chlamydia, - mother_hepatitis_B, - mother_hepatitis_C\n      ) %>%\n    select(\n      newborn_birth_weight, everything()\n    )\n      \n  return(data_clean)\n  \n}\n\n\nd_sub_clean <- clean_data(d_sub)\n\nd_train <- slice(d_sub_clean, 1     : 1e3)\nd_test  <- slice(d_sub_clean, 1e4+1 : 2e4)\n\nwrite_csv(d_train, \"projects/training_set.csv\")\nwrite_csv(d_test , \"projects/test_set.csv\"    )"
+  },
+  {
+    "objectID": "projects/prediction-data.html#checking-training-set",
+    "href": "projects/prediction-data.html#checking-training-set",
+    "title": "Prediction Project - Data Prep",
+    "section": "Checking training set",
+    "text": "Checking training set\n\nd_num <- d_train %>% select_if(is.numeric)\nfor(i in 1 : ncol(d_num)){\n  hist(d_num[[i]], breaks = 30, xlab = names(d_num)[i], main = i)\n}\n\nd_cha <- d_train %>% select_if(is.character)\nfor(i in 1 : ncol(d_cha)){\n  print(names(d_cha)[i])\n  print(table(d_cha[[i]]))\n}\n\n\nm_simple <- lm(newborn_birth_weight ~ gestation_week, data = d_train)\nsummary(m_simple)\nm_full <- lm(newborn_birth_weight ~ ., data = d_train)\nsummary(m_full)\ny_hat <- predict.lm(m_full, d_test)\ny     <- d_test$newborn_birth_weight\nn     <- nrow(d_test)\nRMST <- sqrt(mean((y - mean(y))^2))\nRMSE <- sqrt(mean((y - y_hat  )^2))"
   },
   {
     "objectID": "projects/prediction-data.html#overview",
@@ -879,224 +872,7 @@
     "href": "projects/prediction-data.html#submission",
     "title": "Prediction Project - Data Prep",
     "section": "Submission",
-    "text": "Submission\n\nPrediction model: you need to submit a .RDATA file that contains your prediction model. The function takes a test set (same predictors as the training set, but no response variable) as an input and returns a prediction for each observation. The file should not contain anything else.\nFinal report: The final report details the work you have conducted. It needs to be between 2 and 4 pages long (including code chunks, but excluding figures). The figures go in the appendix, along with any work your deem relevant, but that is notreport\nThe report needs to be realized using RMardown and submitted on Gradescope as a PDF."
-  },
-  {
-    "objectID": "slides/lab-0x.html#meet-your-ta",
-    "href": "slides/lab-0x.html#meet-your-ta",
-    "title": "Lab 0 - Meet + greet",
-    "section": "Meet your TA!",
-    "text": "Meet your TA!"
-  },
-  {
-    "objectID": "slides/lab-0x.html#meet-each-other",
-    "href": "slides/lab-0x.html#meet-each-other",
-    "title": "Lab 0 - Meet + greet",
-    "section": "Meet each other!",
-    "text": "Meet each other!\nIn breakout rooms:\n\nName, year, major, hometown\nWhat did you do over the winter break?\nWhat do you hope to get out of this course?\nAnything else you want to share/ask?\n\n\n\n\n08:00"
-  },
-  {
-    "objectID": "slides/lab-0x.html#take-the-survey",
-    "href": "slides/lab-0x.html#take-the-survey",
-    "title": "Lab 0 - Meet + greet",
-    "section": "Take the survey",
-    "text": "Take the survey\n\nGo to the course website:\nhttps://sta210-s22.github.io/website\nClick on the instructions for Lab 0 on the course schedule\nTake the Getting to know you survey"
-  },
-  {
-    "objectID": "slides/lab-0x.html#what-to-expect-in-lab",
-    "href": "slides/lab-0x.html#what-to-expect-in-lab",
-    "title": "Lab 0 - Meet + greet",
-    "section": "What to expect in lab",
-    "text": "What to expect in lab\n\nIntroduction to the lab assignment (~ 5 - 10 minutes)\nWork on the lab assignment (individual at first, but in teams for the rest of the semester)\nLab instructions posted on the course website.\nStart each lab by finding your assignment repo in the course GitHub organization\nMore on all of these tools in lecture tomorrow and in lab next week"
-  },
-  {
-    "objectID": "slides/lab-0x.html#wrap-up",
-    "href": "slides/lab-0x.html#wrap-up",
-    "title": "Lab 0 - Meet + greet",
-    "section": "Wrap up",
-    "text": "Wrap up\nAny questions about the course?\n\n\n\nsta210-s22.github.io/website"
-  },
-  {
-    "objectID": "slides/lab-1x.html#what-to-expect-in-lab",
-    "href": "slides/lab-1x.html#what-to-expect-in-lab",
-    "title": "Lab 1 - Meet the toolkit",
-    "section": "What to expect in lab",
-    "text": "What to expect in lab\n\nIntroduction to the lab assignment (~ 5 - 10 minutes)\nWork on the lab assignment (individual at first, but in teams for the rest of the semester)\nLab instructions posted on the course website.\nStart each lab by finding your assignment repo in the course GitHub organization\n\nThis is where you will find the Quarto document and data to get started"
-  },
-  {
-    "objectID": "slides/lab-1x.html#tips",
-    "href": "slides/lab-1x.html#tips",
-    "title": "Lab 1 - Meet the toolkit",
-    "section": "Tips",
-    "text": "Tips\n\nYou do not have to finish the lab in class, they will always be due the following Friday at 5:00 pm. One work strategy is to get through portions that you think will be most challenging (which initially might be the coding component) during lab when a TA can help you on the spot and leave the narrative writing until later.\nWhen working in teams (later in the semester) do not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report."
-  },
-  {
-    "objectID": "slides/lab-1x.html#check-do-you-have-the-lab-1-repo",
-    "href": "slides/lab-1x.html#check-do-you-have-the-lab-1-repo",
-    "title": "Lab 1 - Meet the toolkit",
-    "section": "Check: Do you have the lab-1 repo?",
-    "text": "Check: Do you have the lab-1 repo?\n\nGo to the GitHub course organization: https://github.com/sta210-s22\nYou should see a repo with the prefix lab-1- followed by your GitHub username\nIf you do not have this repo, please let your TAs know!"
-  },
-  {
-    "objectID": "slides/lab-1x.html#demo",
-    "href": "slides/lab-1x.html#demo",
-    "title": "Lab 1 - Meet the toolkit",
-    "section": "Demo",
-    "text": "Demo\nFollow along as your TA demonstrates the following:\n\nConfigure Git using SSH\nClone RStudio repo and start new project\nRender document and produce PDF\nUpdate name in YAML\n\nRender, commit, push changes to GitHub\nSee updates in your GitHub repo"
-  },
-  {
-    "objectID": "slides/lab-1x.html#when-youre-done-with-lab",
-    "href": "slides/lab-1x.html#when-youre-done-with-lab",
-    "title": "Lab 1 - Meet the toolkit",
-    "section": "When you’re done with lab",
-    "text": "When you’re done with lab\n\nMake sure all your final changes have been pushed to your GitHub repo\nSubmit the PDF of your responses to Gradescope\n\nYou can access Gradescope through Sakai or the course website\nLogin using your Duke NetID credentials"
-  },
-  {
-    "objectID": "slides/lab-1x.html#youre-now-ready-to-complete-the-rest-of-lab",
-    "href": "slides/lab-1x.html#youre-now-ready-to-complete-the-rest-of-lab",
-    "title": "Lab 1 - Meet the toolkit",
-    "section": "You’re now ready to complete the rest of lab!",
-    "text": "You’re now ready to complete the rest of lab!\nPlease “raise your hand” if you need help as you work on the lab\n\n\n\nsta210-s22.github.io/website"
-  },
-  {
-    "objectID": "slides/lab-2x.html#what-to-expect-in-lab",
-    "href": "slides/lab-2x.html#what-to-expect-in-lab",
-    "title": "Lab 1 - Meet the toolkit",
-    "section": "What to expect in lab",
-    "text": "What to expect in lab\n\nIntroduction to the lab assignment (~ 5 - 10 minutes)\nWork on the lab assignment (individual at first, but in teams for the rest of the semester)\nLab instructions posted on the course website.\nStart each lab by finding your assignment repo in the course GitHub organization\n\nThis is where you will find the Quarto document and data to get started"
-  },
-  {
-    "objectID": "slides/lab-2x.html#tips",
-    "href": "slides/lab-2x.html#tips",
-    "title": "Lab 1 - Meet the toolkit",
-    "section": "Tips",
-    "text": "Tips\n\nYou do not have to finish the lab in class, they will always be due the following Friday at 5:00 pm. One work strategy is to get through portions that you think will be most challenging (which initially might be the coding component) during lab when a TA can help you on the spot and leave the narrative writing until later.\nWhen working in teams (later in the semester) do not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report."
-  },
-  {
-    "objectID": "slides/lab-2x.html#check-do-you-have-the-lab-1-repo",
-    "href": "slides/lab-2x.html#check-do-you-have-the-lab-1-repo",
-    "title": "Lab 1 - Meet the toolkit",
-    "section": "Check: Do you have the lab-1 repo?",
-    "text": "Check: Do you have the lab-1 repo?\n\nGo to the GitHub course organization: https://github.com/sta210-s22\nYou should see a repo with the prefix lab-1- followed by your GitHub username\nIf you do not have this repo, please let your TAs know!"
-  },
-  {
-    "objectID": "slides/lab-2x.html#demo",
-    "href": "slides/lab-2x.html#demo",
-    "title": "Lab 1 - Meet the toolkit",
-    "section": "Demo",
-    "text": "Demo\nFollow along as your TA demonstrates the following:\n\nConfigure Git using SSH\nClone RStudio repo and start new project\nRender document and produce PDF\nUpdate name in YAML\n\nRender, commit, push changes to GitHub\nSee updates in your GitHub repo"
-  },
-  {
-    "objectID": "slides/lab-2x.html#when-youre-done-with-lab",
-    "href": "slides/lab-2x.html#when-youre-done-with-lab",
-    "title": "Lab 1 - Meet the toolkit",
-    "section": "When you’re done with lab",
-    "text": "When you’re done with lab\n\nMake sure all your final changes have been pushed to your GitHub repo\nSubmit the PDF of your responses to Gradescope\n\nYou can access Gradescope through Sakai or the course website\nLogin using your Duke NetID credentials"
-  },
-  {
-    "objectID": "slides/lab-2x.html#youre-now-ready-to-complete-the-rest-of-lab",
-    "href": "slides/lab-2x.html#youre-now-ready-to-complete-the-rest-of-lab",
-    "title": "Lab 1 - Meet the toolkit",
-    "section": "You’re now ready to complete the rest of lab!",
-    "text": "You’re now ready to complete the rest of lab!\nPlease “raise your hand” if you need help as you work on the lab\n\n\n\nsta210-s22.github.io/website"
-  },
-  {
-    "objectID": "slides/lab-3x.html#goals",
-    "href": "slides/lab-3x.html#goals",
-    "title": "Lab 3 - Coffee ratings",
-    "section": "Goals",
-    "text": "Goals\n\nMeet your team!\nIce breaker / get to know your team\nTeam agreement\nLab 3 - Coffee ratings"
-  },
-  {
-    "objectID": "slides/lab-3x.html#meet-your-team",
-    "href": "slides/lab-3x.html#meet-your-team",
-    "title": "Lab 3 - Coffee ratings",
-    "section": "Meet your team!",
-    "text": "Meet your team!\n\nClick here to find your team.\nSit with your team."
-  },
-  {
-    "objectID": "slides/lab-3x.html#icebreaker",
-    "href": "slides/lab-3x.html#icebreaker",
-    "title": "Lab 3 - Coffee ratings",
-    "section": "Icebreaker",
-    "text": "Icebreaker\n\nQuick introductions: Name and hometown\nChoose a reporter: The person whose birthday is closest to January 31\nIdentify 8 things everyone in the group has in common:\n\nNot clothes, e.g., we’re all wearing shoes!\nNot body parts, e.g., we all have a nose!\n\n\n\n\n\n05:00"
-  },
-  {
-    "objectID": "slides/lab-3x.html#team-name-agreement",
-    "href": "slides/lab-3x.html#team-name-agreement",
-    "title": "Lab 3 - Coffee ratings",
-    "section": "Team name + agreement",
-    "text": "Team name + agreement\n\nCome up with a team name. You can’t have the same name as another group in the class, so be creative!\n\nYour TA will get your team name by the end of lab.\n\nFill out the team agreement. The goals of the agreement are to…\n\nGain a common understanding of the team’s goals and expectations for collaboration\nMake a plan for team communication\nMake a plan for working outside of lab"
-  },
-  {
-    "objectID": "slides/lab-3x.html#team-workflow",
-    "href": "slides/lab-3x.html#team-workflow",
-    "title": "Lab 3 - Coffee ratings",
-    "section": "Team workflow",
-    "text": "Team workflow\n\nOnly one team member should type at a time. There are markers in today’s lab to help you determine whose turn it is to type.\n\nEvery team member should still be engaged in discussion for all questions, even if it’s not your turn type.\n\nDon’t forget to pull to get your teammates’ updates before making changes to the .qmd file.\nOnly one submission for the team on Gradescope."
-  },
-  {
-    "objectID": "slides/lab-3x.html#team-workflow-in-action",
-    "href": "slides/lab-3x.html#team-workflow-in-action",
-    "title": "Lab 3 - Coffee ratings",
-    "section": "Team workflow, in action",
-    "text": "Team workflow, in action\n\nComplete the “Workflow: Using Git and GitHub as a team” section of the lab in your teams.\nWhen done, pause and wait for your TA to walk you through the rest of the slides before continuing to the following section.\n\n\n\n\n10:00"
-  },
-  {
-    "objectID": "slides/lab-3x.html#tips-for-working-in-a-team",
-    "href": "slides/lab-3x.html#tips-for-working-in-a-team",
-    "title": "Lab 3 - Coffee ratings",
-    "section": "Tips for working in a team",
-    "text": "Tips for working in a team\n\nDo not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.\nThe labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.\nEveryone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other."
-  },
-  {
-    "objectID": "slides/lab-3x.html#the-data",
-    "href": "slides/lab-3x.html#the-data",
-    "title": "Lab 3 - Coffee ratings",
-    "section": "The data",
-    "text": "The data"
-  },
-  {
-    "objectID": "slides/lab-3x.html#the-data-an-outlier",
-    "href": "slides/lab-3x.html#the-data-an-outlier",
-    "title": "Lab 3 - Coffee ratings",
-    "section": "The data + an outlier",
-    "text": "The data + an outlier"
-  },
-  {
-    "objectID": "slides/lab-3x.html#the-data-influential-point",
-    "href": "slides/lab-3x.html#the-data-influential-point",
-    "title": "Lab 3 - Coffee ratings",
-    "section": "The data + influential point",
-    "text": "The data + influential point"
-  },
-  {
-    "objectID": "slides/lab-3x.html#influential-point",
-    "href": "slides/lab-3x.html#influential-point",
-    "title": "Lab 3 - Coffee ratings",
-    "section": "Influential point",
-    "text": "Influential point\nAn observation is influential if removing it substantially changes the coefficients of the regression model."
-  },
-  {
-    "objectID": "slides/lab-3x.html#influential-points",
-    "href": "slides/lab-3x.html#influential-points",
-    "title": "Lab 3 - Coffee ratings",
-    "section": "Influential points",
-    "text": "Influential points\n\nInfluential points have a large impact on the coefficients and standard errors used for inference\nThese points can sometimes be identified in a scatterplot if there is only one predictor variable, this is often not the case when there are multiple predictors\nWe will use measures to quantify an individual observation’s influence on the regression model: leverage, standardized residuals, and Cook’s distance"
-  },
-  {
-    "objectID": "slides/lab-3x.html#remember-augment",
-    "href": "slides/lab-3x.html#remember-augment",
-    "title": "Lab 3 - Coffee ratings",
-    "section": "Remember augment()?",
-    "text": "Remember augment()?\n\nmtcars_fit <- linear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(mpg ~ disp, data = mtcars)\n\naugment(mtcars_fit$fit)\n\n# A tibble: 32 x 9\n   .rownames           mpg  disp .fitted .resid   .hat .sigma .cooksd .std.resid\n   <chr>             <dbl> <dbl>   <dbl>  <dbl>  <dbl>  <dbl>   <dbl>      <dbl>\n 1 Mazda RX4          21    160     23.0 -2.01  0.0418   3.29 8.65e-3     -0.630\n 2 Mazda RX4 Wag      21    160     23.0 -2.01  0.0418   3.29 8.65e-3     -0.630\n 3 Datsun 710         22.8  108     25.1 -2.35  0.0629   3.28 1.87e-2     -0.746\n 4 Hornet 4 Drive     21.4  258     19.0  2.43  0.0328   3.27 9.83e-3      0.761\n 5 Hornet Sportabout  18.7  360     14.8  3.94  0.0663   3.22 5.58e-2      1.25 \n 6 Valiant            18.1  225     20.3 -2.23  0.0313   3.28 7.82e-3     -0.696\n 7 Duster 360         14.3  360     14.8 -0.462 0.0663   3.31 7.70e-4     -0.147\n 8 Merc 240D          24.4  147.    23.6  0.846 0.0461   3.30 1.72e-3      0.267\n 9 Merc 230           22.8  141.    23.8 -0.997 0.0482   3.30 2.50e-3     -0.314\n10 Merc 280           19.2  168.    22.7 -3.49  0.0396   3.24 2.48e-2     -1.10 \n# ... with 22 more rows"
-  },
-  {
-    "objectID": "slides/lab-3x.html#model-diagnostics-1",
-    "href": "slides/lab-3x.html#model-diagnostics-1",
-    "title": "Lab 3 - Coffee ratings",
-    "section": "Model diagnostics",
-    "text": "Model diagnostics\nUse the augment() function to output statistics that can be used to diagnose the model, along with the predicted values and residuals:\n\n\noutcome and predictor variables in the model\n.fitted: predicted values\n.se.fit: standard errors of predicted values\n.resid: residuals\n.hat: leverage\n.sigma: estimate of residual standard deviation when the corresponding observation is dropped from model\n.cooksd: Cook’s distance\n.std.resid: standardized residuals\n\n\n\n\n\nsta210-s22.github.io/website"
+    "text": "Submission\n\nPrediction model: you need to submit a .RDATA file that contains your prediction model. The function takes a test set (same predictors as the training set, but no response variable) as an input and returns a prediction for each observation. The file should not contain anything else.\nFinal report: The final report details the work you have conducted. It needs to be between 2 and 4 pages long (including code chunks, but excluding figures). The figures go in the appendix, along with any work your deem relevant, but that is notreport\nThe report needs to be realized using RMarkdown and submitted on Gradescope as a PDF."
   },
   {
     "objectID": "slides/lec-1.html#meet-the-instructor",
@@ -1740,7 +1516,7 @@
     "href": "slides/lec-3.html#section-8",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "summary(x_uncontaminated)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   5728    8740   12343   11350   13082   16081 \n\nsummary(x_contaminated)\n\n     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. \n5.728e+03 8.740e+03 1.234e+04 1.938e+05 1.308e+04 1.000e+09 \n\nvar(x_uncontaminated); var(x_contaminated)\n\n[1] 5409444\n\n\n[1] 1.824776e+14\n\nsd(x_uncontaminated); sd(x_contaminated)\n\n[1] 2325.821\n\n\n[1] 13508428\n\nIQR(x_uncontaminated); IQR(x_contaminated)\n\n[1] 4342\n\n\n[1] 4342.25"
+    "text": "summary(x_uncontaminated)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   5728    8740   12343   11350   13082   16081 \n\nsummary(x_contaminated)\n\n     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. \n5.728e+03 8.740e+03 1.234e+04 1.938e+05 1.308e+04 1.000e+09 \n\n\n\n\nvar(x_uncontaminated); var(x_contaminated)\n\n[1] 5409444\n\n\n[1] 1.824776e+14\n\nsd(x_uncontaminated); sd(x_contaminated)\n\n[1] 2325.821\n\n\n[1] 13508428\n\nIQR(x_uncontaminated); IQR(x_contaminated)\n\n[1] 4342\n\n\n[1] 4342.25"
   },
   {
     "objectID": "slides/lec-3.html#section-9",
@@ -1754,7 +1530,7 @@
     "href": "slides/lec-3.html#section-10",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "Group exercise - summary statistics\n\n\nExercises 5.8, 5.11, 5.15 (replace part \\(c\\) by height of all adults)\nBonus practice (at home): 5.17, 5.19\nNote: Q1 is first the 25th percentile (larger than one quarter of the data), Q3 is the 75th percentile.\n\n\n\n\n\n\n07:00"
+    "text": "Group exercise - summary statistics\n\n\nExercises 5.8, 5.11, 5.15 (replace part \\(c\\) by height of all adults)\nBonus: 5.17, 5.19\nNote: Q1 is first the 25th percentile (larger than one quarter of the data), Q3 is the 75th percentile.\n\n\n\n\n\n\n05:00"
   },
   {
     "objectID": "slides/lec-3.html#frequency-table-1d",
@@ -1817,7 +1593,7 @@
     "href": "slides/lec-3.html#section-13",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "Beyond 2 variables\n\n\nFaceted figures are a great way to include \\(\\ge\\) 3 variables!"
+    "text": "Beyond 2 variables\n\n\nFaceted figures are a great way to include \\(\\ge\\) 3 variables! See exercise 1.13"
   },
   {
     "objectID": "slides/lec-3.html#mosaic-plot",
@@ -1838,14 +1614,14 @@
     "href": "slides/lec-3.html#section-14",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "The thick line in the middle of the box indicates the median;\nthe box stretches from the 25th percentile (Q1) to the 75th percentile (Q3); it covers 50% of the data;\nthe length of the whiskers are at most 1.5 iqr;\nany observation more than 1.5 iqr away from the box is labelled as an outlier;\n\n\n\nmore compact than histograms\n\n\n\n\n\n\n\n\n\nOutliers\n\n\nOutliers have an extreme value. How to deal with an outlier depends on why the observation stands out."
+    "text": "The thick line in the middle of the box indicates the median;\nthe box stretches from the 25th percentile (Q1) to the 75th percentile (Q3); it covers 50% of the data;\nthe length of the whiskers are at most 1.5 iqr;\nany observation more than 1.5 iqr away from the box is labelled as an outlier;\n\n\n\nmore compact than histograms\n\n\n\n\n\n\n\n\n\nOutliers\n\n\nOutliers have an extreme value. How to deal with an outlier depends on why the observation stands out. outliers can be\n\nremoved\ncorrected\nignored"
   },
   {
     "objectID": "slides/lec-3.html#section-15",
     "href": "slides/lec-3.html#section-15",
     "title": "Data Summary and Visualization",
     "section": "",
-    "text": "Group exercise - types of associations\n\n\nExercise 5.13\n\n\n\n\n\n\n01:00"
+    "text": "Group exercise - limitation of boxplots\n\n\nExercise 5.13\n\n\n\n\n\n\n01:00"
   },
   {
     "objectID": "slides/lec-3.html#section-16",
@@ -1901,7 +1677,7 @@
     "href": "slides/lec-4.html#announcements",
     "title": "Simple Linear Regression Models",
     "section": "Announcements",
-    "text": "Announcements\n\nHomework 1 has been returned\nHomework 2 has been published\n\nFeel free to re-use the template from HW 1\nThere should be no need for external code – look in the lab!"
+    "text": "Announcements\n\nFind someone you have not worked with yet.\nHomework 1 will be graded today\nHomework 2 has been published\n\nDue on Wednesday\nFeel free to re-use the template from HW 1\nThere should be no need for external code – look in the lab!"
   },
   {
     "objectID": "slides/lec-4.html#recap-of-last-lecture",
@@ -2464,221 +2240,214 @@
     "text": "Recap\n\n\nsimple linear regression model \\[\nY \\approx \\beta_0 + \\beta_1 X\n\\]\nmultiple linear regression model \\[\nY \\approx \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\dots +  + \\beta_p X_p\n\\]\n\ncategorical predictor\n\n\n\\((k-1)\\) indicator variables\n\n\n\nfeature engineering\n\ntransforming variables\ncombining variables\n\n\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
-    "objectID": "slides/lec-6x.html#announcements",
-    "href": "slides/lec-6x.html#announcements",
+    "objectID": "slides/lec-6.html#announcements",
+    "href": "slides/lec-6.html#announcements",
     "title": "Model Selection",
     "section": "Announcements",
     "text": "Announcements\n\nassignments"
   },
   {
-    "objectID": "slides/lec-6x.html#recap",
-    "href": "slides/lec-6x.html#recap",
+    "objectID": "slides/lec-6.html#recap",
+    "href": "slides/lec-6.html#recap",
     "title": "Model Selection",
     "section": "Recap",
     "text": "Recap"
   },
   {
-    "objectID": "slides/lec-6x.html#a-nonlinear-association",
-    "href": "slides/lec-6x.html#a-nonlinear-association",
+    "objectID": "slides/lec-6.html#a-nonlinear-association",
+    "href": "slides/lec-6.html#a-nonlinear-association",
     "title": "Model Selection",
     "section": "a nonlinear association?",
     "text": "a nonlinear association?\nSuppose we want to predict volume using only the variable girth.\n\nd_tree <- datasets::trees\nggplot(d_tree) +\n  geom_point(aes(Girth, Volume))\n\n\nOne could argue that there is a slight nonlinear association"
   },
   {
-    "objectID": "slides/lec-6x.html#r-function-to-compute-r2",
-    "href": "slides/lec-6x.html#r-function-to-compute-r2",
+    "objectID": "slides/lec-6.html#r-function-to-compute-r2",
+    "href": "slides/lec-6.html#r-function-to-compute-r2",
     "title": "Model Selection",
     "section": "\nR function to compute \\(R^2\\)\n",
     "text": "R function to compute \\(R^2\\)\n\n\ncompute_R2 <- function(model){\n  \n  model_glanced <- glance(model)\n  R2 <- model_glanced$r.squared\n  R2_rounded <- round(R2, 3) \n  \n  return(R2_rounded)\n  \n}"
   },
   {
-    "objectID": "slides/lec-6x.html#starting-simple",
-    "href": "slides/lec-6x.html#starting-simple",
+    "objectID": "slides/lec-6.html#starting-simple",
+    "href": "slides/lec-6.html#starting-simple",
     "title": "Model Selection",
     "section": "Starting simple…",
     "text": "Starting simple…\nWe start with the simple model\n\\[\n\\text{Volume} \\approx \\beta_0 + \\beta_1 \\text{girth}\n\\]\n\nm1 <- lm(Volume ~ Girth, data = d_tree)\ncompute_R2(m1)\n\n[1] 0.935"
   },
   {
-    "objectID": "slides/lec-6x.html#taking-it-up-a-notch",
-    "href": "slides/lec-6x.html#taking-it-up-a-notch",
+    "objectID": "slides/lec-6.html#taking-it-up-a-notch",
+    "href": "slides/lec-6.html#taking-it-up-a-notch",
     "title": "Model Selection",
     "section": "…taking it up a notch…",
     "text": "…taking it up a notch…\nTo capture the nonlinear association between Girth and Volume, we consider the predictor \\(\\text{Girth}^2\\).\n\\[\n\\text{Volume} \\approx \\beta_0 + \\beta_1 \\text{girth} + \\beta_2 \\text{girth}^2\n\\]\nThe R to fit this model is\n\nd_tree2 <- mutate(d_tree, Girth2 = Girth^2)\nm2 <- lm(Volume ~ Girth + Girth2, data = d_tree2)\ncompute_R2(m2)\n\n[1] 0.962\n\n\n\n\\(R^2\\) has increased! It went from 0.935 to 0.962."
   },
   {
-    "objectID": "slides/lec-6x.html#before-taking-things-to-the-extreme",
-    "href": "slides/lec-6x.html#before-taking-things-to-the-extreme",
+    "objectID": "slides/lec-6.html#before-taking-things-to-the-extreme",
+    "href": "slides/lec-6.html#before-taking-things-to-the-extreme",
     "title": "Model Selection",
     "section": "…before taking things to the extreme",
     "text": "…before taking things to the extreme\nWhat if we also include the predictors \\(\\text{Girth}^3, \\text{Girth}^4, \\dots, \\text{Girth}^{k}\\) for some larger number \\(k\\)?\nThe following R code fits such a model with \\(k=29\\), that is, \\[\n\\text{Volume} \\approx \\beta_0 + \\beta_1 \\text{girth} + \\beta_2 \\text{girth}^2 + \\dots + \\beta_{29} \\text{girth}^{29}\n\\]\n\nm_extreme <- lm(Volume ~ poly(Girth, degree = 30, raw = TRUE), data = d_tree)\ncompute_R2(m_extreme)\n\n[1] 0.975\n\n\n\\(R^2\\) has again increased! It went from 0.962 to 0.975."
   },
   {
-    "objectID": "slides/lec-6x.html#overfitting",
-    "href": "slides/lec-6x.html#overfitting",
+    "objectID": "slides/lec-6.html#overfitting",
+    "href": "slides/lec-6.html#overfitting",
     "title": "Model Selection",
     "section": "Overfitting",
     "text": "Overfitting\nIn fact, if we keep adding predictors, \\(R^2\\) will always increase. - additional predictors allow the regression line to be more flexible, hence to be closer to the points and reduce the residuals.\n\nIs the m_extreme model a good model? - does it accurately represent the population? - remember that we want to learn about the relation between Volume and Girth present in the population (not the sample)."
   },
   {
-    "objectID": "slides/lec-6x.html#section",
-    "href": "slides/lec-6x.html#section",
+    "objectID": "slides/lec-6.html#section",
+    "href": "slides/lec-6.html#section",
     "title": "Model Selection",
     "section": "",
     "text": "R code\nRegression line\nRegression line (zoomed)\n\n\n\n\nGirth_new <- seq(min(d_tree$Girth), max(d_tree$Girth), by = 0.01)\nnew_data <- tibble(Girth = Girth_new)\nVolume_pred <- predict(m_extreme, new_data)\nnew_data <- mutate(new_data, Volume_pred = Volume_pred)\nhead(new_data)\n\n# A tibble: 6 x 2\n  Girth Volume_pred\n  <dbl>       <dbl>\n1  8.3         10.2\n2  8.31        10.3\n3  8.32        10.4\n4  8.33        10.5\n5  8.34        10.6\n6  8.35        10.7\n\n\n\n\n\nggplot() +\n  geom_point(data = d_tree  , aes(Girth, Volume     )) +\n  geom_line (data = new_data, aes(Girth, Volume_pred))\n\n\n\n\n\n\n\n\n\n\nggplot() +\n  geom_point(data = d_tree  , aes(Girth, Volume     )) +\n  geom_line (data = new_data, aes(Girth, Volume_pred)) +\n  ylim(10, 77)"
   },
   {
-    "objectID": "slides/lec-6x.html#section-1",
-    "href": "slides/lec-6x.html#section-1",
+    "objectID": "slides/lec-6.html#section-1",
+    "href": "slides/lec-6.html#section-1",
     "title": "Model Selection",
     "section": "",
     "text": "The model m_extreme overfits the data.\nA model overfits data when it corresponds very closely to the data set and does a poor job for new data.\n\nRemember that we want to learn about the population, not the sample!"
   },
   {
-    "objectID": "slides/lec-6x.html#adjusted-r2",
-    "href": "slides/lec-6x.html#adjusted-r2",
+    "objectID": "slides/lec-6.html#adjusted-r2",
+    "href": "slides/lec-6.html#adjusted-r2",
     "title": "Model Selection",
     "section": "Adjusted-\\(R^2\\)\n",
     "text": "Adjusted-\\(R^2\\)\n\nWe saw that \\(R^2\\) keeps increasing as we add predictors.\n\\[\nR^2_{\\text{adj}} = 1 - \\dfrac{SSR}{SST}\n\\]\n\\(R^2\\) can therefore not be used to identify models that overfit the data.\n\nInstead, we use the adjusted-\\(R^2\\).\n\\[\nR^2_{\\text{adj}} = 1 - \\dfrac{SSR}{SST}\\dfrac{n-1}{n-p-1}\n\\]\nwhere \\(p\\) corresponds to the number of predictors."
   },
   {
-    "objectID": "slides/lec-6x.html#section-2",
-    "href": "slides/lec-6x.html#section-2",
+    "objectID": "slides/lec-6.html#section-2",
+    "href": "slides/lec-6.html#section-2",
     "title": "Model Selection",
     "section": "",
     "text": "The ratio \\(\\dfrac{SSR}{SST}\\) favors model that closely fit the data.\nThe ratio \\(\\dfrac{n-1}{n-k-1}\\) penalizes model with many predictors.\n\nThe model with the highest adjusted-\\(R^2\\) typically hits the sweet spot."
   },
   {
-    "objectID": "slides/lec-6x.html#aic-and-bic",
-    "href": "slides/lec-6x.html#aic-and-bic",
+    "objectID": "slides/lec-6.html#aic-and-bic",
+    "href": "slides/lec-6.html#aic-and-bic",
     "title": "Model Selection",
     "section": "AIC and BIC",
     "text": "AIC and BIC\nTwo popular criteria that balance goodness of fit (small SSR) and parsimony (small \\(p\\)) are\n\nthe Akaike Information Criterion (AIC)\nthe Bayesian Inofrmation Criterion (BIC)\n\n\nThe formula for AIC and BIC are respectively \\[\nAIC = 2p - \\text{GoF}, \\qquad BIC = \\ln(n)p- \\text{GoF}\n\\] where \\(\\text{GoF}\\) is a measure of the Goodness of fit of the model1.\n\n\nUnlike the adjusted-\\(R^2\\), smaller is better for the AIC and BIC.\n\n\nNote that the BIC penalizes the number of parameters \\(p\\) more strongly.\n\nThe exact formula for \\(\\text{GoF}\\) is beyond the scope of this class."
   },
   {
-    "objectID": "slides/lec-6x.html#computing-aic-and-bic",
-    "href": "slides/lec-6x.html#computing-aic-and-bic",
+    "objectID": "slides/lec-6.html#computing-aic-and-bic",
+    "href": "slides/lec-6.html#computing-aic-and-bic",
     "title": "Model Selection",
     "section": "Computing AIC and BIC",
     "text": "Computing AIC and BIC\nEasily accessible in R with the command glance. For instance,\n\nglance(m1)\n\n# A tibble: 1 x 12\n  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC\n      <dbl>         <dbl> <dbl>     <dbl>    <dbl> <dbl>  <dbl> <dbl> <dbl>\n1     0.935         0.933  4.25      419. 8.64e-19     1  -87.8  182.  186.\n# ... with 3 more variables: deviance <dbl>, df.residual <int>, nobs <int>\n\nglance(m2)\n\n# A tibble: 1 x 12\n  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC\n      <dbl>         <dbl> <dbl>     <dbl>    <dbl> <dbl>  <dbl> <dbl> <dbl>\n1     0.962         0.959  3.33      350. 1.52e-20     2  -79.7  167.  173.\n# ... with 3 more variables: deviance <dbl>, df.residual <int>, nobs <int>\n\nglance(m_extreme)\n\n# A tibble: 1 x 12\n  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC\n      <dbl>         <dbl> <dbl>     <dbl>    <dbl> <dbl>  <dbl> <dbl> <dbl>\n1     0.975         0.956  3.44      51.4 5.11e-11    13  -73.0  176.  197.\n# ... with 3 more variables: deviance <dbl>, df.residual <int>, nobs <int>\n\n\n\nIn this case, all three criteria (ajudtsed-\\(R^2\\), AIC and BIC) indicate that m2 id the best model.\n\nFor AIC and BIC, smaller is better."
   },
   {
-    "objectID": "slides/lec-6x.html#limitations-of-the-previous-methods",
-    "href": "slides/lec-6x.html#limitations-of-the-previous-methods",
+    "objectID": "slides/lec-6.html#limitations-of-the-previous-methods",
+    "href": "slides/lec-6.html#limitations-of-the-previous-methods",
     "title": "Model Selection",
     "section": "Limitations of the previous methods",
     "text": "Limitations of the previous methods\nThe adjutsed-\\(R^2\\), AIC and BIC all try to balance\n\ngoodness of fit\nparsimony\n\n\nThey achieve this balance by favoring models with small SSR while penalizing models with larger \\(p\\).\n\n\nThe form of the penalty for \\(p\\) may seem somewhat arbitrary. - E.g. AIC versus BIC."
   },
   {
-    "objectID": "slides/lec-6x.html#predictive-performance",
-    "href": "slides/lec-6x.html#predictive-performance",
+    "objectID": "slides/lec-6.html#predictive-performance",
+    "href": "slides/lec-6.html#predictive-performance",
     "title": "Model Selection",
     "section": "Predictive performance",
     "text": "Predictive performance\nInstead, we could look for the model with the best predictions performance; that is, the model that makes predictions for new observations that are the closest to the true values."
   },
   {
-    "objectID": "slides/lec-6x.html#the-holdout-method",
-    "href": "slides/lec-6x.html#the-holdout-method",
+    "objectID": "slides/lec-6.html#the-holdout-method",
+    "href": "slides/lec-6.html#the-holdout-method",
     "title": "Model Selection",
     "section": "The holdout method",
     "text": "The holdout method\nThe holdout method is a simple method to evaluate the predictive performance of a model.\n\n\nRandomly partition your sample into two sets: a training set (typically 2/3 of the sample) and a test set.\n\n\n\n\nFit your model to the training set.\n\n\n\n\nEvaluate the prediction accuracy on the test set.\n\n\n\nNote that the test set consists of new observations for the model.\n\n\nA good model will model will have good prediction accuracy in step 3"
   },
   {
-    "objectID": "slides/lec-6x.html#step-1-training-and-test-sets",
-    "href": "slides/lec-6x.html#step-1-training-and-test-sets",
+    "objectID": "slides/lec-6.html#step-1-training-and-test-sets",
+    "href": "slides/lec-6.html#step-1-training-and-test-sets",
     "title": "Model Selection",
     "section": "Step 1: training and test sets",
     "text": "Step 1: training and test sets\nThe following R function splits a sample into a training and a test set\n\nconstruct_training_test <- function(sample, prop = 2/3){\n  \n  n          <- nrow(sample)\n  n_training <- round(n*prop)\n  \n  sample_random   <- slice_sample(sample, n = n)\n  sample_training <- slice(sample_random,   1:n_training )\n  sample_test     <- slice(sample_random, -(1:n_training))\n  \n  return(list(\n    training = sample_training, test = sample_test\n    ))\n  \n}"
   },
   {
-    "objectID": "slides/lec-6x.html#section-3",
-    "href": "slides/lec-6x.html#section-3",
+    "objectID": "slides/lec-6.html#section-3",
+    "href": "slides/lec-6.html#section-3",
     "title": "Model Selection",
     "section": "",
-    "text": "d_car <- ggplot2::mpg\ntraining_test_sets <- construct_training_test(d_car) \ntraining_set <- training_test_sets[[\"training\"]]\ntraining_set\n\n# A tibble: 156 x 11\n   manufacturer model      displ  year   cyl trans drv     cty   hwy fl    class\n   <chr>        <chr>      <dbl> <int> <int> <chr> <chr> <int> <int> <chr> <chr>\n 1 volkswagen   new beetle   2.5  2008     5 auto~ f        20    29 r     subc~\n 2 honda        civic        2    2008     4 manu~ f        21    29 p     subc~\n 3 audi         a4 quattro   1.8  1999     4 auto~ 4        16    25 p     comp~\n 4 volkswagen   gti          2    1999     4 auto~ f        19    26 r     comp~\n 5 toyota       corolla      1.8  2008     4 auto~ f        26    35 r     comp~\n 6 volkswagen   gti          2    2008     4 manu~ f        21    29 p     comp~\n 7 dodge        dakota pi~   3.9  1999     6 auto~ 4        13    17 r     pick~\n 8 audi         a4 quattro   3.1  2008     6 manu~ 4        15    25 p     comp~\n 9 ford         mustang      4.6  2008     8 auto~ r        15    22 r     subc~\n10 honda        civic        1.8  2008     4 auto~ f        25    36 r     subc~\n# ... with 146 more rows\n\ntest_set     <- training_test_sets[[\"test\"]]\ntest_set\n\n# A tibble: 78 x 11\n   manufacturer model      displ  year   cyl trans drv     cty   hwy fl    class\n   <chr>        <chr>      <dbl> <int> <int> <chr> <chr> <int> <int> <chr> <chr>\n 1 ford         explorer ~   4.6  2008     8 auto~ 4        13    19 r     suv  \n 2 chevrolet    malibu       2.4  2008     4 auto~ f        22    30 r     mids~\n 3 hyundai      tiburon      2.7  2008     6 manu~ f        17    24 r     subc~\n 4 volkswagen   gti          2    2008     4 auto~ f        22    29 p     comp~\n 5 dodge        dakota pi~   4.7  2008     8 auto~ 4         9    12 e     pick~\n 6 volkswagen   jetta        2.8  1999     6 auto~ f        16    23 r     comp~\n 7 volkswagen   passat       1.8  1999     4 auto~ f        18    29 p     mids~\n 8 chevrolet    c1500 sub~   5.3  2008     8 auto~ r        14    20 r     suv  \n 9 chevrolet    corvette     6.2  2008     8 manu~ r        16    26 p     2sea~\n10 honda        civic        1.6  1999     4 auto~ f        24    32 r     subc~\n# ... with 68 more rows"
+    "text": "d_car <- ggplot2::mpg\ntraining_test_sets <- construct_training_test(d_car) \ntraining_set <- training_test_sets[[\"training\"]]\ntraining_set\n\n# A tibble: 156 x 11\n   manufacturer model      displ  year   cyl trans drv     cty   hwy fl    class\n   <chr>        <chr>      <dbl> <int> <int> <chr> <chr> <int> <int> <chr> <chr>\n 1 nissan       pathfinde~   3.3  1999     6 auto~ 4        14    17 r     suv  \n 2 dodge        durango 4~   4.7  2008     8 auto~ 4        13    17 r     suv  \n 3 pontiac      grand prix   3.8  2008     6 auto~ f        18    28 r     mids~\n 4 jeep         grand che~   4.7  2008     8 auto~ 4         9    12 e     suv  \n 5 audi         a4 quattro   2    2008     4 auto~ 4        19    27 p     comp~\n 6 dodge        caravan 2~   3.8  1999     6 auto~ f        15    22 r     mini~\n 7 toyota       camry sol~   3    1999     6 auto~ f        18    26 r     comp~\n 8 honda        civic        1.6  1999     4 manu~ f        28    33 r     subc~\n 9 honda        civic        2    2008     4 manu~ f        21    29 p     subc~\n10 dodge        durango 4~   5.7  2008     8 auto~ 4        13    18 r     suv  \n# ... with 146 more rows\n\ntest_set     <- training_test_sets[[\"test\"]]\ntest_set\n\n# A tibble: 78 x 11\n   manufacturer model      displ  year   cyl trans drv     cty   hwy fl    class\n   <chr>        <chr>      <dbl> <int> <int> <chr> <chr> <int> <int> <chr> <chr>\n 1 ford         explorer ~   4    2008     6 auto~ 4        13    19 r     suv  \n 2 chevrolet    malibu       3.6  2008     6 auto~ f        17    26 r     mids~\n 3 mercury      mountaine~   4    1999     6 auto~ 4        14    17 r     suv  \n 4 chevrolet    k1500 tah~   5.3  2008     8 auto~ 4        11    14 e     suv  \n 5 subaru       impreza a~   2.2  1999     4 manu~ 4        19    26 r     subc~\n 6 audi         a4 quattro   3.1  2008     6 manu~ 4        15    25 p     comp~\n 7 volkswagen   jetta        2.5  2008     5 auto~ f        21    29 r     comp~\n 8 toyota       land crui~   5.7  2008     8 auto~ 4        13    18 r     suv  \n 9 nissan       pathfinde~   4    2008     6 auto~ 4        14    20 p     suv  \n10 volkswagen   new beetle   1.9  1999     4 auto~ f        29    41 d     subc~\n# ... with 68 more rows"
   },
   {
-    "objectID": "slides/lec-6x.html#step-2-fit-the-model-to-the-training-set",
-    "href": "slides/lec-6x.html#step-2-fit-the-model-to-the-training-set",
+    "objectID": "slides/lec-6.html#step-2-fit-the-model-to-the-training-set",
+    "href": "slides/lec-6.html#step-2-fit-the-model-to-the-training-set",
     "title": "Model Selection",
     "section": "Step 2: fit the model to the training set",
     "text": "Step 2: fit the model to the training set\nWe now fit our regression model to the training set, as we have done many times.\n\nm <- lm(hwy ~ cty, data = training_set)"
   },
   {
-    "objectID": "slides/lec-6x.html#step-3-evaluate-the-prediction-accuracy-on-the-test-set",
-    "href": "slides/lec-6x.html#step-3-evaluate-the-prediction-accuracy-on-the-test-set",
+    "objectID": "slides/lec-6.html#step-3-evaluate-the-prediction-accuracy-on-the-test-set",
+    "href": "slides/lec-6.html#step-3-evaluate-the-prediction-accuracy-on-the-test-set",
     "title": "Model Selection",
     "section": "Step 3: Evaluate the prediction accuracy on the test set",
     "text": "Step 3: Evaluate the prediction accuracy on the test set\nTo evaluate the prediction accuracy, we start by computing the predictions for the test set.\n\nhwy_hat <- predict(m, test_set)\n\n\nA good model will make predictions that are closed to the true values of the response variable.\n\n\nA common measure of prediction accuracy is the root mean of squared errors (RMSE):\n\\[\nRMSE = \\sqrt{\\dfrac{SSE}{m}} = \\sqrt{\\dfrac{(y_1 - \\hat{y}_1)^2 + (y_2 - \\hat{y}_2)^2 + \\dots + (y_m - \\hat{y}_m)^2}{m}}\n\\]\nwhere \\(m\\) corresponds to the size of the test set."
   },
   {
-    "objectID": "slides/lec-6x.html#selecting-a-model",
-    "href": "slides/lec-6x.html#selecting-a-model",
+    "objectID": "slides/lec-6.html#selecting-a-model",
+    "href": "slides/lec-6.html#selecting-a-model",
     "title": "Model Selection",
     "section": "Selecting a model",
     "text": "Selecting a model\nApply steps 2 and 3 on different models.\n\nuse the same training and test sets for the different models\n\nSimply choose the model with the lowest SSE.\nThis model has the best out-of-sample accuracy."
   },
   {
-    "objectID": "slides/lec-6x.html#cross-validation",
-    "href": "slides/lec-6x.html#cross-validation",
+    "objectID": "slides/lec-6.html#cross-validation",
+    "href": "slides/lec-6.html#cross-validation",
     "title": "Model Selection",
     "section": "Cross-validation",
     "text": "Cross-validation\nCross-validation (CV) is the same as the holdout method, but repeated many times.\n\ndrawback of the holdout method is that the test set matters a lot.\nRepeating steps 2 and 3 with a different partition from step 1 may give different results.\n\n\nIdea of CV: let each observation be in the test set once"
   },
   {
-    "objectID": "slides/lec-6x.html#k-fold-cv",
-    "href": "slides/lec-6x.html#k-fold-cv",
+    "objectID": "slides/lec-6.html#k-fold-cv",
+    "href": "slides/lec-6.html#k-fold-cv",
     "title": "Model Selection",
     "section": "\n\\(k\\)-fold CV",
     "text": "\\(k\\)-fold CV\nChoose a number of folds \\(k\\) (typically \\(5\\) or \\(10\\)).\n\n\nPartition the data into \\(k\\) folds of equal size.\n\n\n\n\nLet the test set be composed of fold \\(1\\) and the training set of the other folds.\n\n\n\n\nApply steps 2 and 3 of the holdout method.\n\n\n\n\nGo back to step 2, this time letting the next fold be the test set."
   },
   {
-    "objectID": "slides/lec-6x.html#section-4",
-    "href": "slides/lec-6x.html#section-4",
+    "objectID": "slides/lec-6.html#section-4",
+    "href": "slides/lec-6.html#section-4",
     "title": "Model Selection",
     "section": "",
     "text": "set.seed(345)\n\nn_folds <- 10\n\ncounty_2019_nc_folds <- county_2019_nc %>%\n  slice_sample(n = nrow(county_2019_nc)) %>%\n  mutate(fold = rep(1:n_folds, n_folds)) %>%\n  arrange(fold)\n\npredict_folds <- function(i) {\n  fit <- lm(uninsured ~ hs_grad, data = county_2019_nc_folds %>% filter(fold != i))\n  predict(fit, newdata = county_2019_nc_folds %>% filter(fold == i)) %>%\n    bind_cols(county_2019_nc_folds %>% filter(fold == i), .fitted = .)\n}\n\nnc_fits <- map_df(1:n_folds, predict_folds)\n\np_nc_fits <- ggplot(nc_fits, aes(x = hs_grad, y = .fitted, group = fold)) +\n  geom_line(stat = \"smooth\", method = \"lm\", se = FALSE, size = 0.3, alpha = 0.5) +\n  scale_x_continuous(labels = label_percent(scale = 1, accuracy = 1)) +\n  scale_y_continuous(labels = label_percent(scale = 1, accuracy = 1)) +\n  labs(\n    x = \"High school graduate\", y = \"Uninsured\",\n    title = \"Predicted uninsurance rate in NC\",\n    subtitle = glue(\"For {n_folds} different testing datasets\")\n    )\n\np_nc_fits\n\n\nset.seed(123)\n\nn_folds <- 10\n\ncounty_2019_ny_folds <- county_2019_ny %>%\n  slice_sample(n = nrow(county_2019_ny)) %>%\n  mutate(fold = c(rep(1:n_folds, 6), 1, 2)) %>%\n  arrange(fold)\n\npredict_folds <- function(i) {\n  fit <- lm(uninsured ~ hs_grad, data = county_2019_ny_folds %>% filter(fold != i))\n  predict(fit, newdata = county_2019_ny_folds %>% filter(fold == i)) %>%\n    bind_cols(county_2019_ny_folds %>% filter(fold == i), .fitted = .)\n}\n\nny_fits <- map_df(1:n_folds, predict_folds)\n\np_ny_fits <- ggplot(ny_fits, aes(x = hs_grad, y = .fitted, group = fold)) +\n  geom_line(stat = \"smooth\", method = \"lm\", se = FALSE, size = 0.3, alpha = 0.5) +\n  scale_x_continuous(labels = label_percent(scale = 1, accuracy = 1)) +\n  scale_y_continuous(labels = label_percent(scale = 1, accuracy = 1)) +\n  labs(\n    x = \"High school graduate\", y = \"Uninsured\",\n    title = \"Predicted uninsurance rate in NY\",\n    subtitle = glue(\"For {n_folds} different testing datasets\")\n    )\n\np_ny_fits"
   },
   {
-    "objectID": "slides/lec-6x.html#taking-things-to-the-extreme-loocv",
-    "href": "slides/lec-6x.html#taking-things-to-the-extreme-loocv",
+    "objectID": "slides/lec-6.html#taking-things-to-the-extreme-loocv",
+    "href": "slides/lec-6.html#taking-things-to-the-extreme-loocv",
     "title": "Model Selection",
     "section": "Taking things to the extreme: LOOCV",
     "text": "Taking things to the extreme: LOOCV\nSet \\(k=n\\); that is, we use \\(n\\) folds, each of size \\(1\\). The test sets will therefore consist of a single observation and the training sets of \\(n-1\\) observations."
   },
   {
-    "objectID": "slides/lec-6x.html#forward-selection-procedure",
-    "href": "slides/lec-6x.html#forward-selection-procedure",
+    "objectID": "slides/lec-6.html#forward-selection-procedure",
+    "href": "slides/lec-6.html#forward-selection-procedure",
     "title": "Model Selection",
     "section": "Forward selection procedure",
     "text": "Forward selection procedure\n\nChoose a criterion that balances model fit (smaller SSR) and parsimony (small \\(k\\)).\n\n\ne.g. adjusted-\\(R^2\\), AIC or BIC\n\n\n\nStart with the empty model \\(Y \\approx \\beta_0\\), i.e. the model with no predictor. This is our current model\nFit all possible models with one additional predictor.\n\n. .\n\nCompute the AIC of each of these models\n\n\nIdentify the model with the smallest AIC. This is our candidate model.\n\n\n\n\nIf the AIC of the candidate model is smaller (better) than the AIC of the current model, the candidate model becomes the current model, and we go back to step 3.\nIf the AIC of the candidate model is larger than the AIC of the current model (no new model improves on the current one), the procedure stops, and we select the current model."
   },
   {
-    "objectID": "slides/lec-6x.html#backward-selection-procedure",
-    "href": "slides/lec-6x.html#backward-selection-procedure",
+    "objectID": "slides/lec-6.html#backward-selection-procedure",
+    "href": "slides/lec-6.html#backward-selection-procedure",
     "title": "Model Selection",
     "section": "Backward selection procedure",
     "text": "Backward selection procedure\nSimilar to forward selection, except that\n\nwe start with the full model,\nremove one predictor at a time\nuntil removing any predictors makes the model worse.\n\n\nNote that forward and backward selection need not agree; they may select different models.\n\n\n\nWhat to do in that case? Nobody knows."
   },
   {
-    "objectID": "slides/lec-6x.html#section-5",
-    "href": "slides/lec-6x.html#section-5",
+    "objectID": "slides/lec-6.html#section-5",
+    "href": "slides/lec-6.html#section-5",
     "title": "Model Selection",
     "section": "",
     "text": "Group exercise - stepwise selection\n\n\n\nExercises 8.11, 8.13\nIn addition\n\n\nfit the first models in R\n\nidentify the baseline level of the categorical variable in each model.\n\n\nlibrary(openintro)\nd <- openintro::births14\n\n\n\n\n\n\n\n05:00"
   },
   {
-    "objectID": "slides/lec-6x.html#parsimony",
-    "href": "slides/lec-6x.html#parsimony",
+    "objectID": "slides/lec-6.html#recap-2",
+    "href": "slides/lec-6.html#recap-2",
     "title": "Model Selection",
-    "section": "Parsimony",
-    "text": "Parsimony\nUse domain knowledge\none-in-ten rule (could be one-in-five)"
-  },
-  {
-    "objectID": "slides/lec-6x.html#multicollinearity",
-    "href": "slides/lec-6x.html#multicollinearity",
-    "title": "Model Selection",
-    "section": "Multicollinearity",
-    "text": "Multicollinearity\n\n\n\nsta101-suI22.github.io/website"
+    "section": "Recap",
+    "text": "Recap\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
     "objectID": "slides/lec-applications.html#outline",

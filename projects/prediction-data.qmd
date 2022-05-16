@@ -26,6 +26,8 @@ write_csv(d_sub , "projects/d_sub.csv")
 ## Variable extraction
 
 ```{r, eval=FALSE}
+library(tidyverse)
+
 clean_data <- function(data){
   
   data_clean <- data %>%
@@ -103,7 +105,7 @@ write_csv(d_test , "projects/test_set.csv"    )
 
 ## Checking training set
 
-```{r}
+```{r, eval = FALSE}
 d_num <- d_train %>% select_if(is.numeric)
 for(i in 1 : ncol(d_num)){
   hist(d_num[[i]], breaks = 30, xlab = names(d_num)[i], main = i)
@@ -116,7 +118,7 @@ for(i in 1 : ncol(d_cha)){
 }
 ```
 
-```{r}
+```{r, eval = FALSE}
 m_simple <- lm(newborn_birth_weight ~ gestation_week, data = d_train)
 summary(m_simple)
 m_full <- lm(newborn_birth_weight ~ ., data = d_train)

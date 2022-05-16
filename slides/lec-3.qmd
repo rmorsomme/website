@@ -404,6 +404,8 @@ sd(x_uncontaminated); sd(x_contaminated)
 IQR(x_uncontaminated); IQR(x_contaminated)
 ```
 
+##
+
 ::: callout-warning
 ## Robustness of the median and the iqr
 
@@ -423,7 +425,7 @@ Note: Q1 is first the 25th percentile (larger than one *quarter* of the data), Q
 :::
 
 ```{r, echo = F}
-countdown(minutes = 5
+countdown(minutes = 5)
 ```
 
 # Summary for categorical data
@@ -560,6 +562,7 @@ ggplot(d_birth_small) +
 
 ::: callout-tip
 ## Beyond 2 variables
+
 Faceted figures are a great way to include $\ge$ 3 variables! See exercise [1.13](https://openintro-ims.netlify.app/data-hello.html)
 :::
 
