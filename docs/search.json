@@ -289,23 +289,65 @@
   {
     "objectID": "hw/hw-2.html",
     "href": "hw/hw-2.html",
-    "title": "HW 2 - Introduction to data",
+    "title": "HW 2 - Data visualization and summary",
     "section": "",
     "text": "This assignment needs to be completed with RMarkdown and submitted as a PDF on Gradescope. Feel free to re-use the template provided for HW1.\nWhen submitting your work on Gradescope, please assign a page for each question."
   },
   {
     "objectID": "hw/hw-2.html#problem-set-25-points",
     "href": "hw/hw-2.html#problem-set-25-points",
-    "title": "HW 2 - Introduction to data",
+    "title": "HW 2 - Data visualization and summary",
     "section": "Problem set (25 points)",
     "text": "Problem set (25 points)\n\nExercise 5.2 (2 points)\nExercise 5.4 (2 points) – instead of drawing, you may describe the relationship in words.\nExercise 5.6 (3 points)\nExercise 5.10 (3 points)\nExercise 5.16 (5 points)\nExercise 5.20 (1 points)\nExercise 5.20 follow up (1 points)\n\nWould side-by-side boxplots have been suitable to visualize these data? Briefly explain.\n\nExercise 5.22 (2 points)\nExercise 5.26 (2 points)\nExercise 4.6 (4 points)"
   },
   {
     "objectID": "hw/hw-2.html#lab-exercises---new-york-flights-25-points",
     "href": "hw/hw-2.html#lab-exercises---new-york-flights-25-points",
-    "title": "HW 2 - Introduction to data",
+    "title": "HW 2 - Data visualization and summary",
     "section": "Lab exercises - New York flights (25 points)",
     "text": "Lab exercises - New York flights (25 points)\nYou can find the lab here\n\nExercise 1 (2 points)\nExercise 2 (3 points)\nExercise 3 (3 points)\nExercise 4 (3 points)\nExercise 5 (2 points)\nExercise 6 (2 points)\nExercise 7 (2 points)\nExercise 8 (3 points)\nExercise 9 (5 points)"
+  },
+  {
+    "objectID": "hw/hw-3.html",
+    "href": "hw/hw-3.html",
+    "title": "HW 3 - Simple linear regression",
+    "section": "",
+    "text": "This assignment needs to be completed with RMarkdown and submitted as a PDF on Gradescope. Feel free to re-use the template provided for HW1.\nWhen submitting your work on Gradescope, please assign a page for each question."
+  },
+  {
+    "objectID": "hw/hw-3.html#problem-set-25-points",
+    "href": "hw/hw-3.html#problem-set-25-points",
+    "title": "HW 3 - Simple linear regression",
+    "section": "Problem set (25 points)",
+    "text": "Problem set (25 points)\n\n7.6, a-c (3 points)\n7.18 (2 points)\n7.20 (4 points)\n7.22 (7 points)\n\nfit the model in R; the variables sho_gi and hgt respectively correspond to shoulder girth and height.\n\nd <- openintro::bdims\n\ndo parts a-f\n\n7.24 (5 points)\n\nfit the model in R\n\nd <- MASS::cats\n\ndo parts a-d\n\n7.26 (3 points)\n7.28 (1 point)"
+  },
+  {
+    "objectID": "hw/hw-3.html#lab-exercises---the-human-freedom-index-25-points",
+    "href": "hw/hw-3.html#lab-exercises---the-human-freedom-index-25-points",
+    "title": "HW 3 - Simple linear regression",
+    "section": "Lab exercises - the Human Freedom Index (25 points)",
+    "text": "Lab exercises - the Human Freedom Index (25 points)\nYou can find the lab here\n\nExercise 1 (2 points)\nExercise 2 (2 points)\nExercise 3 (3 points)\nExercise 4 (2 points)\nExercise 5 (2 points)\nExercise 6 (3 points)\nExercise 7 (2 points)\nExercise 8 (2 points)\n\nSkip exercises 9-10.\n\nPractice 1 (2 points)\nPractice 2 (2 points)\nPractice 3 (1 points) – only evaluate linearity\nPractice 4 (2 points)"
+  },
+  {
+    "objectID": "hw/hw-4.html",
+    "href": "hw/hw-4.html",
+    "title": "HW 4 - Multiple linear regression",
+    "section": "",
+    "text": "This assignment needs to be completed with RMarkdown and submitted as a PDF on Gradescope. Feel free to re-use the template provided for HW1.\nWhen submitting your work on Gradescope, please assign a page for each question."
+  },
+  {
+    "objectID": "hw/hw-4.html#problem-set-25-points",
+    "href": "hw/hw-4.html#problem-set-25-points",
+    "title": "HW 4 - Multiple linear regression",
+    "section": "Problem set (25 points)",
+    "text": "Problem set (25 points)\n\n8.6 (2 points)\n8.10 (8 points)\n\nfit the model in R\n\nd <- palmerpenguins::penguins\n\nidentify the type of each variable\nidentify the baseline level of the categorical predictors\ndo parts a-d"
+  },
+  {
+    "objectID": "hw/hw-4.html#lab-exercises---the-human-freedom-index-25-points",
+    "href": "hw/hw-4.html#lab-exercises---the-human-freedom-index-25-points",
+    "title": "HW 4 - Multiple linear regression",
+    "section": "Lab exercises - the Human Freedom Index (25 points)",
+    "text": "Lab exercises - the Human Freedom Index (25 points)\nYou can find the lab here\n\nExercise 1 (2 points)\nExercise 2 (2 points)\nExercise 3 (3 points)\nExercise 4 (2 points)\nExercise 5 (2 points)\nExercise 6 (3 points)\nExercise 7 (2 points)\nExercise 8 (2 points)\n\nSkip exercises 9-10.\n\nPractice 1 (2 points)\nPractice 2 (2 points)\nPractice 3 (1 points) – only evaluate linearity\nPractice 4 (2 points)"
   },
   {
     "objectID": "hw/template.html",
@@ -319,7 +361,7 @@
     "href": "index.html",
     "title": "STA 101L: Data Analysis and Statistical Inference",
     "section": "",
-    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\nDue: Homework 2\n\n\n💻\n✍️\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n💻\n\n\n\n\n2\nMon, May 23\nModel selection\n8.3-8.4; 25.2-25.3\n\n\n\n\n\n\n\nTue, May 24\nLogistic regression\n9.1-9.3\n\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n\n\n\n\n\n\nThu, May 26\nPrinciples of inference\nWork on project\n11.0; 11.3; 12.0; 12.3; 13.1-13.3\n\n\n\n\n\n\n\nFri, May 27\nLab 5 - work on prediction project [PP]\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP discussion\nInference for proportions I\n16.1-16.2\n\n\n\nPP model (9am)\nPP presentation\n\n\n\nWed, June 1\nLab 5 - work on PP\nDue: PP report\n\n\n\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.3\n\n\n\n\n\n\n\nFri, June 3\nLab 6 - Inference for proportions\n\n\n\n\n\n\n\n4\nMon, June 6\nInference for means I\n19.1-19.2\n\n\n\n\n\n\n\nTue, June 7\nInference for means II\n20.1-20.4; 21.1-21.3\n\n\n\n\n\n\n\nWed, June 8\nLab 7 - Inference for means\n\n\n\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.6; 25.1; 26.1-26.2\n\n\n\n\n\n\n\nFri, June 10\nLab 8 - inference for regression\n\n\n\n\n\n\n\n5\nMon, June 13\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n\n\n\n\n\n\n\nTue, June 14\nWork on inference project (IP)\n\n\n\n\n\n\n\n\nWed, June 15\nLab 9 - work on IP\n\n\n\n\n\n\n\n\nThu, June 16\nIP presentations\nWrap up\n\n\n\n\nIP presentation\n\n\n\nFri, June 17\nLab 10 - work on IP\n\n\n\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
+    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\nDue: Homework 2\n\n\n💻\n✍️\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n💻\n\n\n\n\n2\nMon, May 23\nModel selection\n8.3-8.4; 25.2-25.3\n\n\n\n\n\n\n\nTue, May 24\nLogistic regression\n9.1-9.3\n\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n\n\n\n\n\n\nThu, May 26\nPrinciples of inference\nWork on project\n11.0; 11.3; 12.0; 12.3; 13.1-13.3\n\n\n\n\n\n\n\nFri, May 27\nLab 5 - work on prediction project [PP]\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP discussion\nInference for proportions I\n16.1-16.2\n\n\n\nPP model (9am)\nPP presentation\n\n\n\nWed, June 1\nLab 5 - work on PP\nDue: PP report\n\n\n\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.3\n\n\n\n\n\n\n\nFri, June 3\nLab 6 - Inference for proportions\n\n\n\n\n\n\n\n4\nMon, June 6\nInference for means I\n19.1-19.2\n\n\n\n\n\n\n\nTue, June 7\nInference for means II\n20.1-20.4; 21.1-21.3\n\n\n\n\n\n\n\nWed, June 8\nLab 7 - Inference for means\n\n\n\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.6; 25.1; 26.1-26.2\n\n\n\n\n\n\n\nFri, June 10\nLab 8 - inference for regression\n\n\n\n\n\n\n\n5\nMon, June 13\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n\n\n\n\n\n\n\nTue, June 14\nWork on inference project (IP)\n\n\n\n\n\n\n\n\nWed, June 15\nLab 9 - work on IP\n\n\n\n\n\n\n\n\nThu, June 16\nIP presentations\nWrap up\n\n\n\n\nIP presentation\n\n\n\nFri, June 17\nLab 10 - work on IP\n\n\n\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
   },
   {
     "objectID": "labs/lab-0x.html",
@@ -1313,7 +1355,7 @@
     "href": "slides/lec-2.html#observations-and-variables",
     "title": "Introduction to Data",
     "section": "Observations and variables",
-    "text": "Observations and variables\n\n\n\nResults for three patients from the stent study.\n \n  \n    patient \n    group \n    30 days \n    365 days \n  \n \n\n  \n    1 \n    treatment \n    no event \n    no event \n  \n  \n    2 \n    treatment \n    no event \n    stroke \n  \n  \n    3 \n    control \n    no event \n    no event \n  \n\n\n\n\n\n\n\nEach row represents an observation\nEach column represents a variable"
+    "text": "Observations and variables\n\n\n\nResults for three patients from the stent study.\n \n  \n    patient \n    group \n    30 days \n    365 days \n  \n \n\n  \n    1 \n    control \n    no event \n    no event \n  \n  \n    2 \n    control \n    no event \n    no event \n  \n  \n    3 \n    control \n    no event \n    no event \n  \n\n\n\n\n\n\n\nEach row represents an observation\nEach column represents a variable"
   },
   {
     "objectID": "slides/lec-2.html#some-examples",
@@ -1414,11 +1456,11 @@
     "text": "Explanatory and response variable\n\nWhen two variables are associated, we sometimes hypothesize that changes in one cause changes in the other.\n\n\n\nExplanatory variable \\(\\Rightarrow\\) response variable\n\n\n\n\n…but association \\(\\neq\\) causation; examples:\n\nice-cream and shark attacks; fire damage and firemen\ncounties and kidney cancer death rate; the best classrooms are small classrooms, but so are the worst classrooms."
   },
   {
-    "objectID": "slides/lec-2.html#section-4",
-    "href": "slides/lec-2.html#section-4",
+    "objectID": "slides/lec-2.html#group-exercise---counties-and-kidney-cancer-death-rate",
+    "href": "slides/lec-2.html#group-exercise---counties-and-kidney-cancer-death-rate",
     "title": "Introduction to Data",
-    "section": "",
-    "text": "::: {.callout-tip icon=“false”} ## Group exercise - counties and kidney cancer death rate\n\nInstructionsGroup 1Group 2Small sample effect\n\n\nWhy are most of the shaded counties in the middle of the country?\n\n\n\n04:00\n\n\n\n\n\nSource: Bayesian Data Analysis\n\n\n\n\n\nThe counties of the United Sates with the lowest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980–1989.\n\n\nSource: Bayesian Data Analysis\n\n\n\n\n\nThere is more variation in small counties.\n\n\nSource: Bayesian Data Analysis"
+    "section": "Group exercise - counties and kidney cancer death rate",
+    "text": "Group exercise - counties and kidney cancer death rate\n\nInstructionsGroup 1Group 2Small sample effect\n\n\nWhy are most of the shaded counties in the middle of the country?\n\n\n\n04:00\n\n\n\n\n\nSource: Bayesian Data Analysis\n\n\n\n\n\nThe counties of the United Sates with the lowest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980–1989.\n\n\nSource: Bayesian Data Analysis\n\n\n\n\n\nThere is more variation in small counties.\n\n\nSource: Bayesian Data Analysis"
   },
   {
     "objectID": "slides/lec-2.html#experiments",
@@ -1435,15 +1477,15 @@
     "text": "Observational Studies\n\nThe value of the explanatory variable is not assigned by the researcher\n\nthere is no interference\n\nExample: survey"
   },
   {
-    "objectID": "slides/lec-2.html#section-5",
-    "href": "slides/lec-2.html#section-5",
+    "objectID": "slides/lec-2.html#section-4",
+    "href": "slides/lec-2.html#section-4",
     "title": "Introduction to Data",
     "section": "",
     "text": "🛑 Does not easily lead to causal claims due to the potential presence of counfounding variables\n\nSource: IMS\n\n…but they can lead to causal claims in certain cases!\n\nE.g. smoking causes cancer."
   },
   {
-    "objectID": "slides/lec-2.html#section-6",
-    "href": "slides/lec-2.html#section-6",
+    "objectID": "slides/lec-2.html#section-5",
+    "href": "slides/lec-2.html#section-5",
     "title": "Introduction to Data",
     "section": "",
     "text": "Group exercise - experiment and observational study\n\n\nYou want to investigate the effect of caffeine on class participation among Duke students\n\nDesign an observational study.\nDesign an experiment.\nIs your experiment double-blind? Can you make it double-blind?\nDo you have any ethical or practical concern with the experiment?\n\nProvide an example of an observational study that you would not turn into an experiment due to:\n\npractical considerations\nethical considerations\n\nExercise 2.12\n\n\n\n\n\n\n06:00"
@@ -1967,6 +2009,13 @@
     "text": "Residual plot\n\nd %>%\n  mutate(\n    hwy_hat = 1 + 1.3 * cty, # prediction\n    resid   = hwy - hwy_hat  # residual\n    ) %>%\n  ggplot() +\n  geom_point(aes(cty, resid)) +\n  geom_abline(intercept = 0, slope = 0, col = \"red\")"
   },
   {
+    "objectID": "slides/lec-4.html#residual-plots-and-linearity",
+    "href": "slides/lec-4.html#residual-plots-and-linearity",
+    "title": "Simple Linear Regression Models",
+    "section": "Residual plots and linearity",
+    "text": "Residual plots and linearity\nResiduals can be used to assess linearity.\n\nSource: IMS"
+  },
+  {
     "objectID": "slides/lec-4.html#section-4",
     "href": "slides/lec-4.html#section-4",
     "title": "Simple Linear Regression Models",
@@ -2037,13 +2086,6 @@
     "text": "Intepreting the parameters\n\nthe intercept estimate \\(\\hat{\\beta}_0\\) is the prediction for a car with \\(\\text{cty} = 0\\)\n\nmeaningless in our case\n\n\n\n\n\nthe slope estimate \\(\\hat{\\beta}_1\\) is the increase in a our prediction for hwy for each additional unit of cty\n\n“for each additional unit of cty, we expect hwy to increase by 1.337”\n\n\n\n\n\n\n\n\n\n\n\nExtrapolation\n\n\n\nstick to the range of the data\n\nextrapolate with care, not like this\n\n\n\nthe intercept will not always be meaningful"
   },
   {
-    "objectID": "slides/lec-4.html#special-case-categorical-predictor",
-    "href": "slides/lec-4.html#special-case-categorical-predictor",
-    "title": "Simple Linear Regression Models",
-    "section": "Special case: categorical predictor",
-    "text": "Special case: categorical predictor\nLet us create a binary predictor indicating if the car is from \\(1999\\).\n\nd_binary <- mutate(d, year_binary = if_else(year == 1999, 1, 0))\nhead(select(d_binary, hwy, year, year_binary))\n\n# A tibble: 6 x 3\n    hwy  year year_binary\n  <int> <int>       <dbl>\n1    29  1999           1\n2    29  1999           1\n3    31  2008           0\n4    30  2008           0\n5    26  1999           1\n6    26  1999           1\n\n\nThe variable year_binary takes the value \\(1\\) if the car is from \\(1999\\) and \\(0\\) otherwise."
-  },
-  {
     "objectID": "slides/lec-4.html#section-6",
     "href": "slides/lec-4.html#section-6",
     "title": "Simple Linear Regression Models",
@@ -2051,11 +2093,11 @@
     "text": "Group exercise - least-square estimates\n\n\nExercise 7.21 - start by fitting the model in R with the following command. - skip part c\n\nd <- openintro::coast_starlight\nm <- lm(travel_time ~ dist, data = d)\n\n\n\n\n\n\n\n05:00"
   },
   {
-    "objectID": "slides/lec-4.html#alternative-model",
-    "href": "slides/lec-4.html#alternative-model",
+    "objectID": "slides/lec-4.html#special-case-categorical-predictor",
+    "href": "slides/lec-4.html#special-case-categorical-predictor",
     "title": "Simple Linear Regression Models",
-    "section": "Alternative model",
-    "text": "Alternative model\nLet us fit an alternative model using engine size (disp) as a predictor\n\\[\n\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{displ}\n\\]\n\nggplot(d) +\n  geom_point(aes(displ, hwy))"
+    "section": "Special case: categorical predictor",
+    "text": "Special case: categorical predictor\nLet us create a binary predictor indicating if the car is from \\(1999\\).\n\nd_binary <- mutate(d, year_binary = if_else(year == 1999, 1, 0))\nhead(select(d_binary, hwy, year, year_binary))\n\n# A tibble: 6 x 3\n    hwy  year year_binary\n  <int> <int>       <dbl>\n1    29  1999           1\n2    29  1999           1\n3    31  2008           0\n4    30  2008           0\n5    26  1999           1\n6    26  1999           1\n\n\nThe variable year_binary takes the value \\(1\\) if the car is from \\(1999\\) and \\(0\\) otherwise."
   },
   {
     "objectID": "slides/lec-4.html#section-7",
@@ -2065,18 +2107,18 @@
     "text": "m_binary <- lm(hwy ~ year_binary, data = d_binary)\nm_binary\n\n\nCall:\nlm(formula = hwy ~ year_binary, data = d_binary)\n\nCoefficients:\n(Intercept)  year_binary  \n   23.45299     -0.02564  \n\n\nThe model equation is\n\\[\n\\text{hwy} \\approx 23.46 - 0.026 \\text{year_binary}\n\\]\n\nFor a new car from \\(1999\\), the variable year_binary takes the value \\(1\\) and our prediction is\n\\[\n\\widehat{\\text{hwy}} = 23.46 - 0.026*1 = 23.46 - 0.026 = 23.434\n\\]\n\n\nWhile for a car that not from \\(1999\\), the variable year_binary takes the value \\(1\\) and our prediction is\n\\[\n\\widehat{\\text{hwy}} = 23.46 - 0.026*0 = 23.46 - 0 = 23.46\n\\]"
   },
   {
+    "objectID": "slides/lec-4.html#alternative-model",
+    "href": "slides/lec-4.html#alternative-model",
+    "title": "Simple Linear Regression Models",
+    "section": "Alternative model",
+    "text": "Alternative model\nLet us fit an alternative model using engine size (disp) as a predictor\n\\[\n\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{displ}\n\\]\n\nggplot(d) +\n  geom_point(aes(displ, hwy))"
+  },
+  {
     "objectID": "slides/lec-4.html#section-8",
     "href": "slides/lec-4.html#section-8",
     "title": "Simple Linear Regression Models",
     "section": "",
     "text": "The least-square estimates for the coefficients are\n\nlm(hwy ~ displ, data = d)\n\n\nCall:\nlm(formula = hwy ~ displ, data = d)\n\nCoefficients:\n(Intercept)        displ  \n     35.698       -3.531  \n\n\nNote that the slope coefficient is negative; which makes sense since we would expect cars with larger engines to be less efficient."
-  },
-  {
-    "objectID": "slides/lec-4.html#comparing-residuals",
-    "href": "slides/lec-4.html#comparing-residuals",
-    "title": "Simple Linear Regression Models",
-    "section": "Comparing residuals",
-    "text": "Comparing residuals\n\n\n\nm1 <- lm(hwy ~ cty, data = d)\nm_augment <- augment(m1)\nggplot(m_augment) +\n  geom_histogram(aes(.resid)) +\n  xlim(-15, 15)\n\n\n\n\n\n\n\n\n\nlm(hwy ~ displ, data = d) %>%\n  augment %>%\n  ggplot() +\n  geom_histogram(aes(.resid)) +\n  xlim(-15, 15)\n\n\n\n\n\n\n\n\n\n\nThe first model seems to have smaller residuals.\n\\(\\Rightarrow\\) choose the first model!"
   },
   {
     "objectID": "slides/lec-4.html#section-9",
@@ -2086,18 +2128,25 @@
     "text": "We now have two models. Which is the best?\n\n\nWe could start by looking at the residuals"
   },
   {
+    "objectID": "slides/lec-4.html#comparing-residuals",
+    "href": "slides/lec-4.html#comparing-residuals",
+    "title": "Simple Linear Regression Models",
+    "section": "Comparing residuals",
+    "text": "Comparing residuals\n\n\n\nm1 <- lm(hwy ~ cty, data = d)\nm_augment <- augment(m1)\nggplot(m_augment) +\n  geom_histogram(aes(.resid)) +\n  xlim(-15, 15)\n\n\n\n\n\n\n\n\n\nlm(hwy ~ displ, data = d) %>%\n  augment %>%\n  ggplot() +\n  geom_histogram(aes(.resid)) +\n  xlim(-15, 15)\n\n\n\n\n\n\n\n\n\n\nThe first model seems to have smaller residuals.\n\\(\\Rightarrow\\) choose the first model!"
+  },
+  {
+    "objectID": "slides/lec-4.html#comparing-models-in-a-systematic-way",
+    "href": "slides/lec-4.html#comparing-models-in-a-systematic-way",
+    "title": "Simple Linear Regression Models",
+    "section": "Comparing models in a systematic way",
+    "text": "Comparing models in a systematic way\nBut looking at a plot can be misleading\n\nillusions\ndifficult to compare models with similar residuals\n\n\nWe need a more systematic approach for comparing models."
+  },
+  {
     "objectID": "slides/lec-4.html#ssr",
     "href": "slides/lec-4.html#ssr",
     "title": "Simple Linear Regression Models",
     "section": "SSR",
     "text": "SSR\nInstead of comparing histograms of residuals, we can compute the SSR (sum of squared residuals!)\n\\[\nSSR = r_1^2+r_2^2+\\dots+r^2_n\n\\]\n\nsmall residuals will give a small SSR\nlarge residuals will give a large SSR\n\n\n\\(\\Rightarrow\\) choose the model with the smaller SSR!\n\n\n📋 The textbook uses the term SSE (sum of squared errors)."
-  },
-  {
-    "objectID": "slides/lec-4.html#r2",
-    "href": "slides/lec-4.html#r2",
-    "title": "Simple Linear Regression Models",
-    "section": "\\(R^2\\)",
-    "text": "\\(R^2\\)\nWhile the SSR can be used to select a model, it is also useful in describing the goodness of fit of the model.\n\nThe SST (total sum of squares) is the sum of squared distance to the mean.\n\\[\nSST = (x_1 - \\bar{x})^2 + (x_2 - \\bar{x})^2 + \\dots + (x_n - \\bar{x})^2\n\\]\nIt measures the total amount of variability in the data.\n\n\nRemember the formula for SSR\n\\[\nSSR = (x_1 - \\hat{x})^2 + (x_2 - \\hat{x}_1)^2 + \\dots + (x_n - \\hat{x}_n)^2\n\\]\nIt measures the amount of variability in the data left unexplained by the model.\n\n\n\\(SST - SSR\\) (total - residual) is therefore the amount of variation explained by the model:\n\\[\n\\text{data} = SST = (SST-SSR) + SSR = \\text{model} + \\text{residuals}\n\\]"
   },
   {
     "objectID": "slides/lec-4.html#section-10",
@@ -2107,18 +2156,18 @@
     "text": "SSR of the first model:\n\nm1 <- lm(hwy ~ cty, data = d)\nm_augment <- augment(m1)\nresid <- m_augment$.resid\nsum(resid^2)\n\n[1] 712.3599\n\n\nSSR of the second model:\n\nlm(hwy ~ displ, data = d) %>% augment %>% .[[\".resid\"]] %>% .^2 %>% sum\n\n[1] 3413.829\n\n\n\nWe opt for the first model (smaller SSR)."
   },
   {
+    "objectID": "slides/lec-4.html#r2",
+    "href": "slides/lec-4.html#r2",
+    "title": "Simple Linear Regression Models",
+    "section": "\\(R^2\\)",
+    "text": "\\(R^2\\)\nWhile the SSR can be used to select a model, it is also useful in describing the goodness of fit of the model.\n\nThe SST (total sum of squares) is the sum of squared distance to the mean.\n\\[\nSST = (x_1 - \\bar{x})^2 + (x_2 - \\bar{x})^2 + \\dots + (x_n - \\bar{x})^2\n\\]\nIt measures the total amount of variability in the data.\n\n\nRemember the formula for SSR\n\\[\nSSR = (x_1 - \\hat{x})^2 + (x_2 - \\hat{x}_1)^2 + \\dots + (x_n - \\hat{x}_n)^2\n\\]\nIt measures the amount of variability in the data left unexplained by the model.\n\n\n\\(SST - SSR\\) (total - residual) is therefore the amount of variation explained by the model:\n\\[\n\\text{data} = SST = (SST-SSR) + SSR = \\text{model} + \\text{residuals}\n\\]"
+  },
+  {
     "objectID": "slides/lec-4.html#section-11",
     "href": "slides/lec-4.html#section-11",
     "title": "Simple Linear Regression Models",
     "section": "",
     "text": "The statistic \\(R^2\\) measures the proportion of variation in the data that is explained by the model.\n\\[\n\\begin{align*}\nR^2\n& = 1-\\dfrac{SSR}{SST}\\\\\n& = \\dfrac{SST-SSR}{SST} \\\\\n& = \\dfrac{\\text{var. explained by model}}{\\text{total var.}}\n\\end{align*}\n\\]"
-  },
-  {
-    "objectID": "slides/lec-4.html#computing-r2-in-r",
-    "href": "slides/lec-4.html#computing-r2-in-r",
-    "title": "Simple Linear Regression Models",
-    "section": "Computing \\(R^2\\) in R\n",
-    "text": "Computing \\(R^2\\) in R\n\nTo compute \\(R^2\\) in R, simply use the command glance.\n\nm1 <- lm(hwy ~ cty, data = d)\nm_glance <- glance(m1)\nm_glance$r.squared\n\n[1] 0.9137752\n\nlm(hwy ~ displ, data = d) %>% glance %>% .[[\"r.squared\"]]\n\n[1] 0.5867867\n\n\nThe model with cty as a predictor has a \\(R^2\\) value of \\(0.914\\), and the model that uses displ has a \\(R^2\\) of \\(0.59\\) (worse).\n\nThe first model is better!"
   },
   {
     "objectID": "slides/lec-4.html#section-12",
@@ -2128,18 +2177,18 @@
     "text": "Note that \\(0\\le R^2 \\le 1\\).\n\ngood model \\(\\Rightarrow\\) small residuals \\(\\Rightarrow\\) small SSR \\(\\Rightarrow\\) large \\(R^2\\).\ngreat model \\(\\Rightarrow\\) tiny residuals \\(\\Rightarrow\\) tiny SSR \\(\\Rightarrow\\) \\(R^2\\) close to 1.\npoor model \\(\\Rightarrow\\) large residuals \\(\\Rightarrow\\) SSR almost as large as SST \\(\\Rightarrow\\) \\(R^2\\) close to 0."
   },
   {
+    "objectID": "slides/lec-4.html#computing-r2-in-r",
+    "href": "slides/lec-4.html#computing-r2-in-r",
+    "title": "Simple Linear Regression Models",
+    "section": "Computing \\(R^2\\) in R\n",
+    "text": "Computing \\(R^2\\) in R\n\nTo compute \\(R^2\\) in R, simply use the command glance.\n\nm1 <- lm(hwy ~ cty, data = d)\nm_glance <- glance(m1)\nm_glance$r.squared\n\n[1] 0.9137752\n\nlm(hwy ~ displ, data = d) %>% glance %>% .[[\"r.squared\"]]\n\n[1] 0.5867867\n\n\nThe model with cty as a predictor has a \\(R^2\\) value of \\(0.914\\), and the model that uses displ has a \\(R^2\\) of \\(0.59\\) (worse).\n\nThe first model is better!"
+  },
+  {
     "objectID": "slides/lec-4.html#section-13",
     "href": "slides/lec-4.html#section-13",
     "title": "Simple Linear Regression Models",
     "section": "",
     "text": "Group exercise - Interpretation\n\n\n\nExercise 7.23\n\nfit the model in R; do you obtain the same estimates?\n\n\n\n\nd <- usdata::county_2019\n\n-   do parts a-d\n-   compute the SST, SSR and $R^2$ \"by hand\" in `R` (do not use `glance`). You can use the command `augment` to compute the residuals.\n\nm <- lm(. . .)\nm_augment <- augment(m)\nSST <- ...\n\n\n\n\n\n\n\n05:00"
-  },
-  {
-    "objectID": "slides/lec-4.html#outliers-leverage-and-influential-points",
-    "href": "slides/lec-4.html#outliers-leverage-and-influential-points",
-    "title": "Simple Linear Regression Models",
-    "section": "Outliers, leverage and influential points",
-    "text": "Outliers, leverage and influential points\n\noutliers: observations that fall far from the cloud of points;\nhigh leverage points: observations that fall horizontally away from the cloud of points;\ninfluential points: observations that influence the slope of the regression line;\n\n\n\nAll influential points are high leverage points.\nAll leverage points are outliers.\n(Venn Diagram)"
   },
   {
     "objectID": "slides/lec-4.html#section-14",
@@ -2149,11 +2198,32 @@
     "text": "Group exercise - outlier\n\n\n\nLook at the scatterplot for the mpg data set. Are there outliers?\n\n\nggplot(d) +\n  geom_point(aes(cty, hwy))\n\n\n\nExercise 7.25\n\n\n\n\n\n\n\n\n03:00"
   },
   {
-    "objectID": "slides/lec-4.html#dealing-with-outliers",
-    "href": "slides/lec-4.html#dealing-with-outliers",
+    "objectID": "slides/lec-4.html#outliers-leverage-and-influential-points",
+    "href": "slides/lec-4.html#outliers-leverage-and-influential-points",
     "title": "Simple Linear Regression Models",
-    "section": "Dealing with outliers",
-    "text": "Dealing with outliers\nIn regression, outliers have the potential to highly influence the least-square estimates \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\).\n\n\n\n\n\n\nWarning\n\n\nLeast-square estimates are not robust to the presence of outliers.\n\n\n\n\nEstimates that are robust include (not covered in this class)\n\nleast absolute deviation estimates, which minimize the SAR (sum of absolute residuals) instead of the SSR\nBayesian estimates"
+    "section": "Outliers, leverage and influential points",
+    "text": "Outliers, leverage and influential points\n\noutliers: observations that fall far from the cloud of points;\nhigh leverage points: observations that fall horizontally away from the cloud of points;\ninfluential points: observations that influence the slope of the regression line;\n\n\n\nAll influential points are high leverage points.\nAll leverage points are outliers.\n(Venn Diagram)"
+  },
+  {
+    "objectID": "slides/lec-4.html#section-15",
+    "href": "slides/lec-4.html#section-15",
+    "title": "Simple Linear Regression Models",
+    "section": "",
+    "text": "d1 <- simulated_scatter %>% \n  filter(group == 24) %>%\n  mutate(outlier = if_else(y == min(y), TRUE, FALSE))\nd2 <- simulated_scatter %>% \n  filter(group == 25) %>%\n  mutate(outlier = if_else(y == min(y), TRUE, FALSE))\nd3 <- simulated_scatter %>% \n  filter(group == 26) %>%\n  mutate(outlier = if_else(y == max(y), TRUE, FALSE))\nm1_aug <- augment(lm(y ~ x, data = d1)) %>%\n  mutate(outlier = if_else(y == min(y), TRUE, FALSE))\nm2_aug <- augment(lm(y ~ x, data = d2)) %>%\n  mutate(outlier = if_else(y == min(y), TRUE, FALSE))\nm3_aug <- augment(lm(y ~ x, data = d3)) %>%\n  mutate(outlier = if_else(y == max(y), TRUE, FALSE))\np_1 <- ggplot(d1, aes(x = x, y = y)) +\n  geom_point(size = 2, alpha = 0.8) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  geom_point(data = d1 %>% filter(outlier), \n             size = 5, shape = \"circle open\", \n             color = IMSCOL[\"red\", \"full\"], stroke = 2) +\n  labs(title = \"A\") +\n  theme(\n    panel.grid = element_blank(),\n    axis.text = element_blank(),\n    panel.border = element_rect(colour = \"gray\", fill = NA, size = 1)\n    ) +\n  scale_x_continuous(expand = expansion(mult = 0.12)) +\n  scale_y_continuous(expand = expansion(mult = 0.12))\np_1_res <- ggplot(m1_aug, aes(x = .fitted, y = .resid)) +\n  geom_point(alpha = 0.7, size = 2) +\n  geom_hline(yintercept = 0, linetype = \"dashed\") +\n  geom_point(data = m1_aug %>% filter(outlier), \n             size = 5, shape = \"circle open\", \n             color = IMSCOL[\"red\", \"full\"], stroke = 2) +\n  labs(x = \"Predicted y\", y = \"Residual\") +\n  theme(\n    panel.grid = element_blank(),\n    axis.text = element_blank(),\n    panel.border = element_rect(colour = \"gray\", fill = NA, size = 1)\n    ) +\n  scale_x_continuous(expand = expansion(mult = 0.12)) +\n  scale_y_continuous(limits = c(-8, 8), expand = expansion(mult = 0.12))\np_2 <- ggplot(d2, aes(x = x, y = y)) +\n  geom_point(size = 2, alpha = 0.8) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  geom_point(data = d2 %>% filter(outlier), \n             size = 5, shape = \"circle open\", \n             color = IMSCOL[\"green\", \"full\"], stroke = 2) + \n  labs(title = \"B\") +\n  theme(\n    panel.grid = element_blank(),\n    axis.text = element_blank(),\n    panel.border = element_rect(colour = \"gray\", fill = NA, size = 1)\n    ) +\n  scale_x_continuous(expand = expansion(mult = 0.12)) +\n  scale_y_continuous(expand = expansion(mult = 0.12))\np_2_res <- ggplot(m2_aug, aes(x = .fitted, y = .resid)) +\n  geom_point(size = 2, alpha = 0.8) +\n  geom_hline(yintercept = 0, linetype = \"dashed\") +\n  geom_point(data = m2_aug %>% filter(outlier), \n             size = 5, shape = \"circle open\", \n             color = IMSCOL[\"green\", \"full\"], stroke = 2) +\n  labs(x = \"Predicted y\", y = \"Residual\") +\n  theme(\n    panel.grid = element_blank(),\n    axis.text = element_blank(),\n    panel.border = element_rect(colour = \"gray\", fill = NA, size = 1)\n    ) +\n  scale_x_continuous(expand = expansion(mult = 0.12)) +\n  scale_y_continuous(limits = c(-8, 8), expand = expansion(mult = 0.12))\np_3 <- ggplot(d3, aes(x = x, y = y)) +\n  geom_point(size = 2, alpha = 0.8) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  geom_point(data = d3 %>% filter(outlier), \n             size = 5, shape = \"circle open\", \n             color = IMSCOL[\"pink\", \"full\"], stroke = 2) +\n  labs(title = \"C\") +\n  theme(\n    panel.grid = element_blank(),\n    axis.text = element_blank(),\n    panel.border = element_rect(colour = \"gray\", fill = NA, size = 1)\n    ) +\n  scale_x_continuous(expand = expansion(mult = 0.12)) +\n  scale_y_continuous(expand = expansion(mult = 0.12))\np_3_res <- ggplot(m3_aug, aes(x = .fitted, y = .resid)) +\n  geom_point(size = 2, alpha = 0.8) +\n  geom_hline(yintercept = 0, linetype = \"dashed\") +\n  geom_point(data = m3_aug %>% filter(outlier), \n             size = 5, shape = \"circle open\", \n             color = IMSCOL[\"pink\", \"full\"], stroke = 2) +\n  labs(x = \"Predicted y\", y = \"Residual\") +\n  theme(\n    panel.grid = element_blank(),\n    axis.text = element_blank(),\n    panel.border = element_rect(colour = \"gray\", fill = NA, size = 1)\n    ) +\n  scale_x_continuous(expand = expansion(mult = 0.12)) +\n  scale_y_continuous(limits = c(-8, 8), expand = expansion(mult = 0.12))\np_1     + theme(plot.margin = unit(c(0, 10, 5, 0), \"pt\")) + \np_2     + theme(plot.margin = unit(c(0, 10, 5, 0), \"pt\")) + p_3 + \np_1_res + theme(plot.margin = unit(c(0, 10, 5, 0), \"pt\")) + \np_2_res + theme(plot.margin = unit(c(0, 10, 5, 0), \"pt\")) + p_3_res +\n  plot_layout(ncol = 3, heights = c(2, 1))\n\nSource: IMS"
+  },
+  {
+    "objectID": "slides/lec-4.html#section-16",
+    "href": "slides/lec-4.html#section-16",
+    "title": "Simple Linear Regression Models",
+    "section": "",
+    "text": "Group exercise - outlier\n\n\nExercise 7.27\n\n\n\n\n\n\n03:00"
+  },
+  {
+    "objectID": "slides/lec-4.html#least-square-estimates-are-not-robust",
+    "href": "slides/lec-4.html#least-square-estimates-are-not-robust",
+    "title": "Simple Linear Regression Models",
+    "section": "Least-square estimates are not robust",
+    "text": "Least-square estimates are not robust\nIn regression, outliers have the potential to highly influence the least-square estimates \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\).\n\n\n\n\n\n\nWarning\n\n\nLeast-square estimates are not robust to the presence of outliers.\n\n\n\n\nEstimates that are robust include (not covered in this class)\n\nleast absolute deviation estimates, which minimize the SAR (sum of absolute residuals) instead of the SSR\nBayesian estimates"
   },
   {
     "objectID": "slides/lec-4.html#impact-of-outliers",
@@ -2163,193 +2233,235 @@
     "text": "Impact of outliers\nLet us contaminate the data with an outlier (cty \\(=10\\) and hwy \\(=1000\\))\n\nd_contaminated <- select(d, cty, hwy) %>%\n  add_row(cty = 40, hwy = 500) # add outlier\narrange(d_contaminated, desc(hwy)) %>% slice(1:5)\n\n# A tibble: 5 x 2\n    cty   hwy\n  <dbl> <dbl>\n1    40   500\n2    33    44\n3    35    44\n4    29    41\n5    28    37\n\n\n\n…and compare the two regression models.\n\nlm(hwy ~ cty, data = d)\n\n\nCall:\nlm(formula = hwy ~ cty, data = d)\n\nCoefficients:\n(Intercept)          cty  \n      0.892        1.337  \n\nlm(hwy ~ cty, data = d_contaminated)\n\n\nCall:\nlm(formula = hwy ~ cty, data = d_contaminated)\n\nCoefficients:\n(Intercept)          cty  \n    -33.841        3.498  \n\n\n\n\nThe value of the slope has almost tripled!"
   },
   {
-    "objectID": "slides/lec-4.html#section-15",
-    "href": "slides/lec-4.html#section-15",
+    "objectID": "slides/lec-4.html#section-17",
+    "href": "slides/lec-4.html#section-17",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "Group exercise - outlier\n\n\nExercises 7.27, 7.28\n\n\n\n\n\n\n03:00"
+    "text": "ggplot(d_contaminated) +\n  geom_point(aes(cty, hwy)) +\n  geom_abline(intercept = -26.046, slope = 3.013, col = \"purple\")\n\n\nThe regression line not longer fits the data well."
   },
   {
     "objectID": "slides/lec-4.html#recap-1",
     "href": "slides/lec-4.html#recap-1",
     "title": "Simple Linear Regression Models",
     "section": "Recap",
-    "text": "Recap\n\n\nsimple linear regression model \\[\n\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty}\n\\]\n\nresiduals\nleast-square estimates\nparameter interpretation\nmodel comparison with \\(R^2\\)\n\noutliers\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+    "text": "Recap\n\n\nsimple linear regression model\n\n\\[\n    \\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty}\n\\] - residuals - least-square estimates - parameter interpretation - model comparison with \\(R^2\\) - outliers\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
-    "objectID": "slides/lec-5x.html#announcements",
-    "href": "slides/lec-5x.html#announcements",
+    "objectID": "slides/lec-5.html#announcements",
+    "href": "slides/lec-5.html#announcements",
     "title": "Multiple Linear Regression Models",
     "section": "Announcements",
     "text": "Announcements\n\nassignments"
   },
   {
-    "objectID": "slides/lec-5x.html#recap",
-    "href": "slides/lec-5x.html#recap",
+    "objectID": "slides/lec-5.html#recap",
+    "href": "slides/lec-5.html#recap",
     "title": "Multiple Linear Regression Models",
     "section": "Recap",
-    "text": "Recap\n\n\nsimple linear regression model \\[\n\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty}\n\\]\n\nresiduals\nleast-square estimates\nparameter interpretation\nmodel comparison with $R^2%\noutliers"
+    "text": "Recap\n\n\nsimple linear regression model \\[\n\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty}\n\\]\n\nresiduals\nleast-square estimates\nparameter interpretation\nmodel comparison with \\(R^2\\)\n\noutliers"
   },
   {
-    "objectID": "slides/lec-5x.html#outline",
-    "href": "slides/lec-5x.html#outline",
+    "objectID": "slides/lec-5.html#outline",
+    "href": "slides/lec-5.html#outline",
     "title": "Multiple Linear Regression Models",
     "section": "Outline",
     "text": "Outline\n\nmultiple linear regression\nfeature engineering\nmodel comparison\npredictive performance"
   },
   {
-    "objectID": "slides/lec-5x.html#the-mpg-data-set",
-    "href": "slides/lec-5x.html#the-mpg-data-set",
+    "objectID": "slides/lec-5.html#the-mpg-data-set",
+    "href": "slides/lec-5.html#the-mpg-data-set",
     "title": "Multiple Linear Regression Models",
     "section": "The mpg data set",
-    "text": "The mpg data set\n\nd <- ggplot2::mpg\nhead(d, n = 4)\n\n# A tibble: 4 x 11\n  manufacturer model displ  year   cyl trans      drv     cty   hwy fl    class \n  <chr>        <chr> <dbl> <int> <int> <chr>      <chr> <int> <int> <chr> <chr> \n1 audi         a4      1.8  1999     4 auto(l5)   f        18    29 p     compa~\n2 audi         a4      1.8  1999     4 manual(m5) f        21    29 p     compa~\n3 audi         a4      2    2008     4 manual(m6) f        20    31 p     compa~\n4 audi         a4      2    2008     4 auto(av)   f        21    30 p     compa~\n\n\nInstead of fitting a model with only cty or only displ, we could fit a model with both predictors!"
+    "text": "The mpg data set\n\nd <- ggplot2::mpg\nhead(d, n = 4)\n\n# A tibble: 4 x 11\n  manufacturer model displ  year   cyl trans      drv     cty   hwy fl    class \n  <chr>        <chr> <dbl> <int> <int> <chr>      <chr> <int> <int> <chr> <chr> \n1 audi         a4      1.8  1999     4 auto(l5)   f        18    29 p     compa~\n2 audi         a4      1.8  1999     4 manual(m5) f        21    29 p     compa~\n3 audi         a4      2    2008     4 manual(m6) f        20    31 p     compa~\n4 audi         a4      2    2008     4 auto(av)   f        21    30 p     compa~\n\n\nInstead of fitting a model with only cty or only displ, we could fit a linear regression model with both predictors!"
   },
   {
-    "objectID": "slides/lec-5x.html#linear-regression-with-2-predictors",
-    "href": "slides/lec-5x.html#linear-regression-with-2-predictors",
+    "objectID": "slides/lec-5.html#linear-regression-with-2-predictors",
+    "href": "slides/lec-5.html#linear-regression-with-2-predictors",
     "title": "Multiple Linear Regression Models",
     "section": "Linear regression with 2 predictors",
-    "text": "Linear regression with 2 predictors\nThe model equation is \\[\n\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty} + \\beta_2 \\text{displ}\n\\]\nWe can find the least-square estimate (minimizing the SSR [SSE]) with the command lm on R.\n\nlm(hwy ~ cty + displ, data = d)\n\n\nCall:\nlm(formula = hwy ~ cty + displ, data = d)\n\nCoefficients:\n(Intercept)          cty        displ  \n    1.15145      1.32914     -0.03432  \n\n\nwhich give the following regression equation\n\\[\n\\text{hwy} \\approx 1.15145 + 1.32914 \\text{cty} - 0.03432  \\text{displ}\n\\]"
+    "text": "Linear regression with 2 predictors\nThe model equation is\n\\[\n\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty} + \\beta_2 \\text{displ}\n\\]\nWe can find the least-square estimates (minimizing the SSR) with the command lm\n\nlm(hwy ~ cty + displ, data = d)\n\n\nCall:\nlm(formula = hwy ~ cty + displ, data = d)\n\nCoefficients:\n(Intercept)          cty        displ  \n    1.15145      1.32914     -0.03432  \n\n\nwhich give the following regression equation\n\\[\n\\text{hwy} \\approx 1.15 + 1.33 \\text{cty} - 0.034  \\text{displ}\n\\]"
   },
   {
-    "objectID": "slides/lec-5x.html#special-case-categorical-predictor",
-    "href": "slides/lec-5x.html#special-case-categorical-predictor",
+    "objectID": "slides/lec-5.html#interpretation",
+    "href": "slides/lec-5.html#interpretation",
+    "title": "Multiple Linear Regression Models",
+    "section": "Interpretation",
+    "text": "Interpretation\n\nInterpreting \\(\\hat{\\beta}_1 = 1.33\\):\n\n“Keeping displ constant, for each additional unit in cty, we would expect hwy to be higher, on average, by 1.33 units.”\n\n\n\n\n\nInterpreting \\(\\hat{\\beta}_2 = -0.034\\):\n\n“Keeping cty constant, for each additional unit in displ, we would expect hwy to be lower, on average, by 0.034 unit.”\n\n\n\n\n\n\nInterpreting \\(\\hat{\\beta}_0 = 1.15\\):\n\n“For a car with cty and displ equal to 0, we would expect hwy to be 1.15.”\nmeaningless in this context."
+  },
+  {
+    "objectID": "slides/lec-5.html#special-case-categorical-predictor",
+    "href": "slides/lec-5.html#special-case-categorical-predictor",
     "title": "Multiple Linear Regression Models",
     "section": "Special case: categorical predictor",
-    "text": "Special case: categorical predictor\nIn a regression model, categorical predictors are represented using indicator variables.\nTo represent a categorical predictor with \\(k\\) levels, we use \\((k-1)\\) indicator variables."
+    "text": "Special case: categorical predictor\nIn a regression model, categorical predictors are represented using indicator variables.\nTo represent a categorical predictor with \\(k\\) levels (categories), we use \\((k-1)\\) indicator variables.\n(advanced topic: identifiability)"
   },
   {
-    "objectID": "slides/lec-5x.html#including-drv",
-    "href": "slides/lec-5x.html#including-drv",
+    "objectID": "slides/lec-5.html#including-drv",
+    "href": "slides/lec-5.html#including-drv",
     "title": "Multiple Linear Regression Models",
     "section": "Including drv\n",
-    "text": "Including drv\n\nFor instance, the categorical variable drv has \\(k=3\\) levels (4, f and r), so we can represent it with 2 indicator variables with the following model equation\n\\[\n\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{drv_f} + \\beta_2 \\text{drv_r}\n\\]\n\nNote that for a binary variable \\(k=2\\), so we only need \\(k-1=1\\) indicator variable (see previous set of slides)."
+    "text": "Including drv\n\nFor instance, the categorical variable drv has \\(k=3\\) levels (4, f and r), so we can represent it with \\(3-1=2\\) indicator variables with the following model equation\n\\[\n\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{drv_f} + \\beta_2 \\text{drv_r}\n\\]\n\n\n\n\n\n\n\nTip\n\n\nFor a binary variable \\(k=2\\), so we only need \\(k-1=1\\) indicator variable.\nFor instance, to include the binary variable year_binary, we only added a single indicator variable to the model."
   },
   {
-    "objectID": "slides/lec-5x.html#using-categorical-predictors-in-r",
-    "href": "slides/lec-5x.html#using-categorical-predictors-in-r",
+    "objectID": "slides/lec-5.html#using-categorical-predictors-in-r",
+    "href": "slides/lec-5.html#using-categorical-predictors-in-r",
     "title": "Multiple Linear Regression Models",
     "section": "Using categorical predictors in R\n",
-    "text": "Using categorical predictors in R\n\n\nlm(hwy ~ drv, data = d)\n\n\nCall:\nlm(formula = hwy ~ drv, data = d)\n\nCoefficients:\n(Intercept)         drvf         drvr  \n     19.175        8.986        1.825  \n\n\nThe equation with the least-square estimates is \\[\n\\text{hwy} \\approx 19.175 + 8.986 \\text{drv_f} + 1.825 \\text{drv_r}\n\\]"
+    "text": "Using categorical predictors in R\n\n\nlm(hwy ~ drv, data = d)\n\n\nCall:\nlm(formula = hwy ~ drv, data = d)\n\nCoefficients:\n(Intercept)         drvf         drvr  \n     19.175        8.986        1.825  \n\n\nThe model equation with the least-square estimates is \\[\n\\text{hwy} \\approx 19.175 + 8.986 \\text{drv_f} + 1.825 \\text{drv_r}\n\\]"
   },
   {
-    "objectID": "slides/lec-5x.html#intepreting-the-output",
-    "href": "slides/lec-5x.html#intepreting-the-output",
+    "objectID": "slides/lec-5.html#interpreting-the-output",
+    "href": "slides/lec-5.html#interpreting-the-output",
     "title": "Multiple Linear Regression Models",
-    "section": "Intepreting the output",
-    "text": "Intepreting the output\n\\[\n\\text{hwy} \\approx 19.175 + 8.986 \\text{drv_f} + 1.825 \\text{drv_r}\n\\]\nIf a new vehicle has a drv that is:\n\n\n4, then the indicator variables drv_f and drv_r take the value 0, and the prediction is \\(\\widehat{hwy} = 19.175\\)\n\n\nf, then the indicator variables drv_f takes the value 1 and drv_r the value 0, and the prediction is \\(\\widehat{hwy} = 19.175 + 8.986 = 28.161\\)\n\n\nr, then the indicator variables drv_f takes the value 0 and drv_r the value 1, and the prediction is \\(\\widehat{hwy} = 19.175 + 1.825 = 21\\)\n\n\n\nThe level 4 is called the reference level."
+    "section": "Interpreting the output",
+    "text": "Interpreting the output\n\\[\n\\text{hwy} \\approx 19.175 + 8.986 \\text{drv_f} + 1.825 \\text{drv_r}\n\\]\nIf a new vehicle has a drv that is:\n\n\n4, then the two indicator variables drv_f and drv_r take the value 0, and the prediction is \\(\\widehat{hwy} = 19.175\\)\n\n\n\n\n\nf, then the indicator variables drv_f takes the value 1 and drv_r the value 0, and the prediction is \\(\\widehat{hwy} = 19.175 + 8.986 = 28.161\\)\n\n\n\n\n\n\nr, then the indicator variables drv_f takes the value 0 and drv_r the value 1, and the prediction is \\(\\widehat{hwy} = 19.175 + 1.825 = 21\\)\n\n\n\n\nThe level 4 is called the reference level."
   },
   {
-    "objectID": "slides/lec-5x.html#section",
-    "href": "slides/lec-5x.html#section",
+    "objectID": "slides/lec-5.html#section",
+    "href": "slides/lec-5.html#section",
     "title": "Multiple Linear Regression Models",
     "section": "",
-    "text": "Group exercise - categorical predictor\n\n\n\nExercises 8.5, 8.7\nIn addition\n\n\nfit the first models in R\n\nidentify the baseline level of the categorical variable in each model.\n\n\nlibrary(openintro)\nd <- openintro::births14\n\n\n\n\n\n\n\n05:00"
+    "text": "Group exercise - categorical predictor\n\n\n\nExercises 8.5, 8.7\n\nIn addition\n\nidentify the baseline level of the categorical variable in each model.\n\n\nlibrary(openintro)\nd <- openintro::births14\n\n\nfit the first models in R\n\n\n\n\n\n\n\n\n\n\n05:00"
   },
   {
-    "objectID": "slides/lec-5x.html#fitting-a-large-model",
-    "href": "slides/lec-5x.html#fitting-a-large-model",
-    "title": "Multiple Linear Regression Models",
-    "section": "Fitting a large model",
-    "text": "Fitting a large model\nLet us fit a model with cty, drv and disp\n\nm_large <- lm(hwy ~ cty + drv + displ, data = d)\nm_large\n\n\nCall:\nlm(formula = hwy ~ cty + drv + displ, data = d)\n\nCoefficients:\n(Intercept)          cty         drvf         drvr        displ  \n      3.424        1.157        2.158        2.360       -0.208  \n\n\nIts \\(R^2\\) is 0.9384357.\n\nglance(m_large)$r.squared\n\n[1] 0.9384357\n\n\n\nUnsurprisingly, including additional predictors makes the regression line closer to the points \\(\\Rightarrow\\) residuals are smaller \\(\\Rightarrow\\) SSR is smaller \\(\\Rightarrow\\) \\(R^2\\) is larger."
-  },
-  {
-    "objectID": "slides/lec-5x.html#fitting-a-larger-model",
-    "href": "slides/lec-5x.html#fitting-a-larger-model",
+    "objectID": "slides/lec-5.html#fitting-a-larger-model",
+    "href": "slides/lec-5.html#fitting-a-larger-model",
     "title": "Multiple Linear Regression Models",
     "section": "Fitting a larger model",
-    "text": "Fitting a larger model\nActually, I include all predictors (except for model).\n\nm_larger <- lm(hwy ~ manufacturer + displ + year + cyl + trans + drv + cty + fl + class, data = d)\n\nThanks to the additional predictors, the residuals are very small, making \\(R^2\\) close to \\(1\\).\n\nglance(m_larger)$r.squared\n\n[1] 0.9773386\n\n\n\nWe will see in the next lecture that this is not always a good sign."
+    "text": "Fitting a larger model\nLet us fit a model with cty, drv and disp\n\nm_larger <- lm(hwy ~ cty + drv + displ, data = d)\nm_larger\n\n\nCall:\nlm(formula = hwy ~ cty + drv + displ, data = d)\n\nCoefficients:\n(Intercept)          cty         drvf         drvr        displ  \n      3.424        1.157        2.158        2.360       -0.208  \n\n\nIts \\(R^2\\) is 0.938.\n\nglance(m_larger)$r.squared\n\n[1] 0.9384357\n\n\n\nUnsurprisingly, including additional predictors makes the regression line closer to the points \\(\\Rightarrow\\) residuals are smaller \\(\\Rightarrow\\) SSR is smaller \\(\\Rightarrow\\) \\(R^2\\) is larger."
   },
   {
-    "objectID": "slides/lec-5x.html#section-1",
-    "href": "slides/lec-5x.html#section-1",
+    "objectID": "slides/lec-5.html#section-1",
+    "href": "slides/lec-5.html#section-1",
     "title": "Multiple Linear Regression Models",
     "section": "",
-    "text": "Group exercise - multiple linear regression\n\n\n\nExercises 8.9\nIn addition,\n\n\nfit the model in R\n\nidentify the type of each variable\nidentify the baseline level of the categorical predictors\n\n\nlibrary(openintro)\nd_birth <- openintro::births14\n\n\n\n\n\n\n\n05:00"
+    "text": "Group exercise - computing \\(R^2\\) by hand\n\n\n\nWhat is the formula for \\(R^2\\)?\nCompute \\(R^2\\) by hand in R (do not use glance). You can use the following code.\n\n\nd <- ggplot2::mpg\nm_larger <- lm(hwy ~ cty + drv + displ, data = d)\nm_augment <- augment(m_larger)\n\n\n\n\n\n\n\n04:00"
   },
   {
-    "objectID": "slides/lec-5x.html#transforming-a-variable",
-    "href": "slides/lec-5x.html#transforming-a-variable",
+    "objectID": "slides/lec-5.html#fitting-the-full-model",
+    "href": "slides/lec-5.html#fitting-the-full-model",
+    "title": "Multiple Linear Regression Models",
+    "section": "Fitting the full1 model",
+    "text": "Fitting the full1 model\n\nm_full <- lm(hwy ~ manufacturer + displ + year + cyl + trans + drv + cty + fl + class, data = d)\n\nThanks to the additional predictors, the residuals are very small, making \\(R^2\\) close to \\(1\\).\n\nglance(m_full)$r.squared\n\n[1] 0.9773386\n\n\n\nWe will see in the next lecture that this is not always a good sign.\n\nThis not exactly the full model since I do not include the variable model for the following technical reason. By including the variable model along with the other ones, we obtain perfect collinearity, making the model unidentifiable"
+  },
+  {
+    "objectID": "slides/lec-5.html#section-2",
+    "href": "slides/lec-5.html#section-2",
+    "title": "Multiple Linear Regression Models",
+    "section": "",
+    "text": "Group exercise - multiple linear regression\n\n\nExercise 8.9\n\nfit the model in R\n\nidentify the type of each variable\nidentify the baseline level of the categorical predictors\ndo parts a-d\n\n\nlibrary(openintro)\nd_birth <- openintro::births14\n\n\n\n\n\n\n\n05:00"
+  },
+  {
+    "objectID": "slides/lec-5.html#feature-engineering",
+    "href": "slides/lec-5.html#feature-engineering",
+    "title": "Multiple Linear Regression Models",
+    "section": "Feature engineering",
+    "text": "Feature engineering\nWe saw that adding predictors to the model seems to help.\nHowever, the variables included in the data set, e.g. displ, year, etc, may not be the most useful predictors for hwy.\n\nFeature engineering refers to the creation of new predictors from existing ones.\n\n\n\n\n\n\n\n\nTip\n\n\nThis is where your understanding of the data, scientific knowledge, etc, makes a big difference."
+  },
+  {
+    "objectID": "slides/lec-5.html#transforming-a-variable",
+    "href": "slides/lec-5.html#transforming-a-variable",
     "title": "Multiple Linear Regression Models",
     "section": "Transforming a variable",
     "text": "Transforming a variable\nConsider the predictor displ\n\nggplot(d) +\n  geom_point(aes(displ, hwy))\n\n\n\nThe relation bwteen displ and hwy is not exactly linear."
   },
   {
-    "objectID": "slides/lec-5x.html#section-2",
-    "href": "slides/lec-5x.html#section-2",
+    "objectID": "slides/lec-5.html#section-3",
+    "href": "slides/lec-5.html#section-3",
     "title": "Multiple Linear Regression Models",
     "section": "",
-    "text": "Let us include the predictor \\(\\dfrac{1}{\\text{displ}}\\) to capture this nonlinear relation.\nThe model equation is \\[\n\\text{hwy} \\approx \\beta_0+ \\beta_1 \\text{displ} + \\beta_2 \\dfrac{1}{\\text{displ}}\n\\] The least-square coefficient estimates are\n\nd_transf <- mutate(d, displ_inv = 1/displ)\nm <- lm(hwy ~ displ + displ_inv, data = d_transf)\nm\n\n\nCall:\nlm(formula = hwy ~ displ + displ_inv, data = d_transf)\n\nCoefficients:\n(Intercept)        displ    displ_inv  \n    12.2601      -0.2332      36.1456"
+    "text": "Let us include the predictor \\(\\dfrac{1}{\\text{displ}}\\) to capture this nonlinear relation.\nHere is the model equation\n\\[\n\\text{hwy} \\approx \\beta_0+ \\beta_1 \\text{displ} + \\beta_2 \\dfrac{1}{\\text{displ}}\n\\]\nThe least-square coefficient estimates are\n\nd_transf <- mutate(d, displ_inv = 1/displ)\nm <- lm(hwy ~ displ + displ_inv, data = d_transf)\nm\n\n\nCall:\nlm(formula = hwy ~ displ + displ_inv, data = d_transf)\n\nCoefficients:\n(Intercept)        displ    displ_inv  \n    12.2601      -0.2332      36.1456"
   },
   {
-    "objectID": "slides/lec-5x.html#section-3",
-    "href": "slides/lec-5x.html#section-3",
+    "objectID": "slides/lec-5.html#section-4",
+    "href": "slides/lec-5.html#section-4",
     "title": "Multiple Linear Regression Models",
     "section": "",
     "text": "And the regression lines captures the nonlinear relation.\n\naugment(m) %>%\n  ggplot(aes(displ, hwy)) +\n  geom_point() +\n  geom_line(aes(y = .fitted))"
   },
   {
-    "objectID": "slides/lec-5x.html#the-trees-data-set",
-    "href": "slides/lec-5x.html#the-trees-data-set",
+    "objectID": "slides/lec-5.html#the-trees-data-set",
+    "href": "slides/lec-5.html#the-trees-data-set",
     "title": "Multiple Linear Regression Models",
     "section": "The trees data set",
     "text": "The trees data set\n\n\n\nMeasurements of the diameter, height and volume of timber in 31 felled black cherry trees.\nNote that the diameter (in inches) is erroneously labelled Girth in the data\nThe diameter (Girth) is measured at 4 ft 6 in above the ground.\nSource: Atkinson, A. C. (1985) Plots, Transformations and Regression. Oxford University Press."
   },
   {
-    "objectID": "slides/lec-5x.html#combining-variables",
-    "href": "slides/lec-5x.html#combining-variables",
+    "objectID": "slides/lec-5.html#combining-variables",
+    "href": "slides/lec-5.html#combining-variables",
     "title": "Multiple Linear Regression Models",
     "section": "Combining variables",
-    "text": "Combining variables\nGoing one step further, we can combine existing variables to create a new predictor.\nConsider the tree dataset\n\nd_tree <- datasets::trees\nhead(d_tree)\n\n  Girth Height Volume\n1   8.3     70   10.3\n2   8.6     65   10.3\n3   8.8     63   10.2\n4  10.5     72   16.4\n5  10.7     81   18.8\n6  10.8     83   19.7\n\n\nwhere Girth indicates the tree diameter (twice the radius) in inches."
+    "text": "Combining variables\nTransforming a variable may be helpful …but we can go a step further!\n\nWe can construct new predictors by combining existing variables.\n\n\nConsider the trees dataset\n\nd_tree <- datasets::trees\nhead(d_tree, n = 4)\n\n  Girth Height Volume\n1   8.3     70   10.3\n2   8.6     65   10.3\n3   8.8     63   10.2\n4  10.5     72   16.4\n\n\nwhere Girth indicates the tree diameter (twice the radius) in inches."
   },
   {
-    "objectID": "slides/lec-5x.html#section-4",
-    "href": "slides/lec-5x.html#section-4",
+    "objectID": "slides/lec-5.html#section-5",
+    "href": "slides/lec-5.html#section-5",
     "title": "Multiple Linear Regression Models",
     "section": "",
-    "text": "Now, estimate volume from height and girth\nwe could approximate the shape of a tree with a cylinder\nvolume of a cylinder is\n\\[\nV = \\pi r^2 h\n\\]\nThis suggests approximating the volume of a tree with the model\n\\[\n\\text{Volume} = \\beta_1 (\\dfrac{\\text{Girth}}{2}})^2 * \\text{Height}\n\\]"
+    "text": "Suppose we want to estimate Volume (expensive to measure) from Girth and Height (cheap to measure).\n\nYou might decide to approximate the shape of a tree with a shape that is between a cylinder and a cone.\nFrom geometry, we know that the volume of a cylinder is\n\\[\nV = \\pi r^2 h\n\\]\nand that of a cone is\n\\[\nV = \\frac{1}{3} \\pi r^2 h\n\\]"
   },
   {
-    "objectID": "slides/lec-5x.html#section-5",
-    "href": "slides/lec-5x.html#section-5",
+    "objectID": "slides/lec-5.html#section-6",
+    "href": "slides/lec-5.html#section-6",
     "title": "Multiple Linear Regression Models",
     "section": "",
-    "text": "We simply need to create a new variable corresponding to \\((\\dfrac{\\text{Girth}}{2}})^2 * \\text{Height}\\). Note that I first need to transform the variable Girth into feet to ensure that all variable have the same unit.\n\nd_tree_comb <- d_tree %>%\n  mutate(\n    Girth_ft    = Girth / 12,\n    radius      = Girth_ft / 2,\n    r_squared   = radius^2,\n    r2h = r_squared * Height\n  )\nhead(d_tree_comb)\n\n  Girth Height Volume  Girth_ft    radius r_squared       r2h\n1   8.3     70   10.3 0.6916667 0.3458333 0.1196007  8.372049\n2   8.6     65   10.3 0.7166667 0.3583333 0.1284028  8.346181\n3   8.8     63   10.2 0.7333333 0.3666667 0.1344444  8.470000\n4  10.5     72   16.4 0.8750000 0.4375000 0.1914062 13.781250\n5  10.7     81   18.8 0.8916667 0.4458333 0.1987674 16.100156\n6  10.8     83   19.7 0.9000000 0.4500000 0.2025000 16.807500"
+    "text": "This suggests approximating the volume of a tree with the following model\n\\[\n\\text{Volume} = \\beta_1 \\left[ \\left(\\dfrac{\\text{Girth}}{2}\\right)^2 * \\text{Height}\\right] = \\beta_1X\n\\]\nwhere\n\n\n\\(\\beta_1\\) is an unknown parameter that we expect to be between \\(\\pi\\) (pure cylinder) and \\(\\frac{1}{3}\\pi\\) (pure cone)\n\n\\(X = \\left(\\dfrac{\\text{Girth}}{2}\\right)^2 * \\text{Height}\\) is our predictor, which we construct from existing variables."
   },
   {
-    "objectID": "slides/lec-5x.html#section-6",
-    "href": "slides/lec-5x.html#section-6",
+    "objectID": "slides/lec-5.html#section-7",
+    "href": "slides/lec-5.html#section-7",
     "title": "Multiple Linear Regression Models",
     "section": "",
-    "text": "m <- lm(Volume ~ r2h - 1, data = d_tree_comb)\nsummary(m)\n\n\nCall:\nlm(formula = Volume ~ r2h - 1, data = d_tree_comb)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.6696 -1.0832 -0.3341  1.6045  4.2944 \n\nCoefficients:\n    Estimate Std. Error t value            Pr(>|t|)    \nr2h  1.21427    0.01568   77.44 <0.0000000000000002 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.455 on 30 degrees of freedom\nMultiple R-squared:  0.995, Adjusted R-squared:  0.9949 \nF-statistic:  5996 on 1 and 30 DF,  p-value: < 0.00000000000000022\n\n\n\nWhen we do not include the intercept in a model, \\(R^2\\) measures something different and should therefore not be interpreted in the usual way."
+    "text": "To accomplish this, we simply need to create a new variable corresponding to \\(\\left(\\dfrac{\\text{Girth}}{2}\\right)^2 * \\text{Height}\\).\nBut before doing that, we have to transform Girth into feet to ensure that all variables have the same units.\n\nd_tree_comb <- d_tree %>%\n  mutate(\n    Girth_ft    = Girth / 12,\n    radius      = Girth_ft / 2,\n    r_squared   = radius^2,\n    r2h = r_squared * Height\n  )\nhead(d_tree_comb, n = 3)\n\n  Girth Height Volume  Girth_ft    radius r_squared      r2h\n1   8.3     70   10.3 0.6916667 0.3458333 0.1196007 8.372049\n2   8.6     65   10.3 0.7166667 0.3583333 0.1284028 8.346181\n3   8.8     63   10.2 0.7333333 0.3666667 0.1344444 8.470000"
   },
   {
-    "objectID": "slides/lec-5x.html#a-special-case-of-data-combination-interaction",
-    "href": "slides/lec-5x.html#a-special-case-of-data-combination-interaction",
-    "title": "Multiple Linear Regression Models",
-    "section": "A special case of data combination: interaction",
-    "text": "A special case of data combination: interaction\nSuppose you are interested in predicting the average run time (duration) of amateur jogging races.\nTwo variables that impact the duration are (i) the distance of the race, and (ii) the weather.\nFor simplicity, we measure the weather as either good (nice weather) or bad (rain, heat wave, etc)."
-  },
-  {
-    "objectID": "slides/lec-5x.html#section-8",
-    "href": "slides/lec-5x.html#section-8",
+    "objectID": "slides/lec-5.html#section-8",
+    "href": "slides/lec-5.html#section-8",
     "title": "Multiple Linear Regression Models",
     "section": "",
-    "text": "Our model equation is therefore\n\\[\n\\text{duration} \\approx \\beta_0 + \\beta_1 \\text{distance} + \\beta_2 \\text{weather_bad}\n\\]\nwhere \\(\\beta_1\\) indicate the effect of an additional miles on the duration and \\(\\beta_2\\) the effect of bad weather (probably positive).\nNote that the effect of weather is fixed in this model, say “\\(+5\\) minutes.\n\nIs this reasonable? No!\n\n\nThe effect of weather should vary with distance. For shorter races, bad weather may add only 2 or 3 minutes, while for longer races, bad weather may increase the average duration by 10 or 15 minutes.\n\n\nWe capture this expected pattern using an interaction term.\n\\[\n\\text{duration} \\approx \\beta_0 + \\beta_1 \\text{distance} + \\beta_2 \\text{weather_bad} + \\beta_3 \\text{weather_bad}*\\text{distance}\n\\]"
+    "text": "My model does not include an intercept. To exclude the intercept from the model, I use -1 in the lm command.\n\nm <- lm(Volume ~ r2h - 1, data = d_tree_comb)\nm\n\n\nCall:\nlm(formula = Volume ~ r2h - 1, data = d_tree_comb)\n\nCoefficients:\n  r2h  \n1.214  \n\n\n\nThis is between the two anticipated bounds \\(\\pi=3.14\\) and \\(\\frac{\\pi}{3}=1.047\\).\n\n\n\n\n\n\n\n\nWarning\n\n\nWhen we do not include the intercept in a model, \\(R^2\\) measures something different and should therefore not be interpreted in the usual way.\n\n\n\n\nglance(m)$r.squared\n\n[1] 0.9950219"
   },
   {
-    "objectID": "slides/lec-5x.html#interpreting-interactions",
-    "href": "slides/lec-5x.html#interpreting-interactions",
+    "objectID": "slides/lec-5.html#comparison-with-the-full-model",
+    "href": "slides/lec-5.html#comparison-with-the-full-model",
+    "title": "Multiple Linear Regression Models",
+    "section": "Comparison with the full model",
+    "text": "Comparison with the full model\nAlthough \\(R^2\\) has a different meaning when there is no intercept, it can be still used for comparison1.\n\n\nm_full <- lm(Volume ~ Girth + Height -1, data = d_tree)\nglance(m_full)$r.squared\n\n[1] 0.9696913\n\n\nOur new variable \\(\\left(\\dfrac{\\text{Girth}}{2}\\right)^2 * \\text{Height}\\) improves the model!\n\n\nNote that the full model has two predictors, while our geometry-based model only has a single predictor!\n\n\n\n\n\n\nTip\n\n\nA carefully constructed predictor can do a better job than multiple raw predictors!\n\n\n\n\nas long as both models exclude the intercept"
+  },
+  {
+    "objectID": "slides/lec-5.html#special-case-of-data-combination-interaction",
+    "href": "slides/lec-5.html#special-case-of-data-combination-interaction",
+    "title": "Multiple Linear Regression Models",
+    "section": "Special case of data combination: interaction",
+    "text": "Special case of data combination: interaction\n\n\nSuppose you are interested in predicting the average run time (duration) of amateur jogging races.\nTwo variables that impact the duration are (i) the distance of the race, and (ii) the weather.\nFor simplicity, we measure the weather as either good (nice weather) or bad (rain, heat wave, etc)."
+  },
+  {
+    "objectID": "slides/lec-5.html#section-9",
+    "href": "slides/lec-5.html#section-9",
+    "title": "Multiple Linear Regression Models",
+    "section": "",
+    "text": "Our model is therefore\n\\[\n\\text{duration} \\approx \\beta_0 + \\beta_1 \\text{distance} + \\beta_2 \\text{weather_bad}\n\\]\nwhere \\(\\beta_1\\) indicate the effect of an additional miles on the expected duration and \\(\\beta_2\\) the effect of bad weather.\nNote that the effect of weather is fixed in this model, say “\\(+5\\) minutes” if \\(\\hat{\\beta}_2 = 5\\).\n\nIs this reasonable? No!\n\n\n\\(\\Rightarrow\\) the effect of weather should vary with distance. For shorter races, bad weather may add only 2 or 3 minutes, while for longer races, bad weather may increase the average duration by 10 or 15 minutes."
+  },
+  {
+    "objectID": "slides/lec-5.html#model-equation-with-interaction",
+    "href": "slides/lec-5.html#model-equation-with-interaction",
+    "title": "Multiple Linear Regression Models",
+    "section": "Model equation with interaction",
+    "text": "Model equation with interaction\nWe capture such pattern using an interaction term.\n\\[\n\\text{duration} \\approx \\beta_0 + \\beta_1 \\text{distance} + \\beta_2 \\text{weather_bad} + \\beta_3 \\text{weather_bad}*\\text{distance}\n\\]\n\nWhen the weather is good, the equation simplifies to\n\n\\[\n\\text{duration} \\approx \\beta_0 + \\beta_1 \\text{distance} + \\beta_2 0 + \\beta_3 0*\\text{distance} = \\beta_0 + \\beta_1 \\text{distance}\n\\]\n\nWhen the weather is bad, the equation simplifies to\n\n\\[\n\\text{duration} \\approx \\beta_0 + \\beta_1 \\text{distance} + \\beta_2 1 + \\beta_3 1*\\text{distance} = (\\beta_0 + \\beta_2) + (\\beta_1+\\beta_3) \\text{distance}\n\\]"
+  },
+  {
+    "objectID": "slides/lec-5.html#interpreting-interactions",
+    "href": "slides/lec-5.html#interpreting-interactions",
     "title": "Multiple Linear Regression Models",
     "section": "Interpreting interactions",
-    "text": "Interpreting interactions\n\nWhen the weather is good, the equation simplifies to \\[\n\\text{duration} \\approx \\beta_0 + \\beta_1 \\text{distance} + \\beta_2 0 + \\beta_3 0*\\text{distance} = \\beta_0 + \\beta_1 \\text{distance}\n\\]\nWhen the weather is bad, the equation simplifies to \\[\n\\text{duration} \\approx \\beta_0 + \\beta_1 \\text{distance} + \\beta_2 1 + \\beta_3 1*\\text{distance} = (\\beta_0 + \\beta_2) + (\\beta_1+\\beta_3) \\text{distance}\n\\]\n\nThe new slope term is \\(\\beta_1+\\beta_3\\), meaning that the effect of an additional miles on the average duration is \\(\\beta_1+\\beta_3\\) (not \\(\\beta_3\\)).\nThe effect of distance varies depending on the weather; the two variable interact."
+    "text": "Interpreting interactions\n\nWhen the weather is good, the slope estimate is \\(\\hat{\\beta}_1\\), meaning that the effect of an additional miles on the average duration is \\(\\hat{\\beta}_1\\).\nWhen the weather is bad, the slope estimate is \\(\\hat{\\beta}_1+\\hat{\\beta}_3\\), meaning that the effect of an additional miles on the average duration is \\(\\hat{\\beta}_1+\\hat{\\beta}_3\\) (not \\(\\hat{\\beta}_1\\)).\n\n\n\n\n\n\n\nInteractions\n\n\nThe effect of the distance depends on the weather. Similarly, the effect of the weather depends on the distance.\n\\(\\Rightarrow\\) the two variables interact."
   },
   {
-    "objectID": "slides/lec-5x.html#recap-2",
-    "href": "slides/lec-5x.html#recap-2",
+    "objectID": "slides/lec-5.html#recap-2",
+    "href": "slides/lec-5.html#recap-2",
     "title": "Multiple Linear Regression Models",
     "section": "Recap",
-    "text": "Recap\n\n\nsimple linear regression model \\[\nY \\approx \\beta_0 + \\beta_1 X\n\\]\nmultiple linear regression model \\[\nY \\approx \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\dots +  + \\beta_p X_p\n\\]\n\ncategorical predictor\n\n\n\\((k-1)\\) indicator variables\n\n\n\nfeature engineering\n\ntransforming variables\ncombining variables\n\n\n\n\n\n\n\nsta101-suI22.github.io/website"
+    "text": "Recap\n\n\nsimple linear regression model \\[\nY \\approx \\beta_0 + \\beta_1 X\n\\]\nmultiple linear regression model \\[\nY \\approx \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\dots +  + \\beta_p X_p\n\\]\n\ncategorical predictor\n\n\n\\((k-1)\\) indicator variables\n\n\n\nfeature engineering\n\ntransforming variables\ncombining variables\n\n\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
     "objectID": "slides/lec-6x.html#announcements",
@@ -2616,61 +2728,5 @@
     "title": "Data science in action – examples in various fields",
     "section": "Estimating the effect of commute time on rent in New York",
     "text": "Estimating the effect of commute time on rent in New York\n\n\nIn this article, Carl Bialik looked at more than 100,000 homes present on StreetEasy. He observed that, unsurprisingly, the distance to the nearest metro does impact rent prices, and he even managed to put a number on that effect: $56/minute.\n\n\n\n Source: FiverThirtyEight\n\n\n\n\n\nsta101-suI22.github.io/website"
-  },
-  {
-    "objectID": "slides/lec-4.html#residual-plots-and-linearity",
-    "href": "slides/lec-4.html#residual-plots-and-linearity",
-    "title": "Simple Linear Regression Models",
-    "section": "Residual plots and linearity",
-    "text": "Residual plots and linearity\nResiduals can be used to assess linearity.\n\nSource: IMS"
-  },
-  {
-    "objectID": "slides/lec-4.html#comparing-models-in-a-systematic-way",
-    "href": "slides/lec-4.html#comparing-models-in-a-systematic-way",
-    "title": "Simple Linear Regression Models",
-    "section": "Comparing models in a systematic way",
-    "text": "Comparing models in a systematic way\nBut looking at a plot can be misleading\n\nillusions\ndifficult to compare models with similar residuals\n\n\nWe need a more systematic approach for comparing models."
-  },
-  {
-    "objectID": "slides/lec-4.html#least-square-estimates-are-not-robust",
-    "href": "slides/lec-4.html#least-square-estimates-are-not-robust",
-    "title": "Simple Linear Regression Models",
-    "section": "Least-square estimates are not robust",
-    "text": "Least-square estimates are not robust\nIn regression, outliers have the potential to highly influence the least-square estimates \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\).\n\n\n\n\n\n\nWarning\n\n\nLeast-square estimates are not robust to the presence of outliers.\n\n\n\n\nEstimates that are robust include (not covered in this class)\n\nleast absolute deviation estimates, which minimize the SAR (sum of absolute residuals) instead of the SSR\nBayesian estimates"
-  },
-  {
-    "objectID": "slides/lec-4.html#section-16",
-    "href": "slides/lec-4.html#section-16",
-    "title": "Simple Linear Regression Models",
-    "section": "",
-    "text": "ggplot(d_contaminated) +\n  geom_point(aes(cty, hwy)) +\n  geom_abline(intercept = -26.046, slope = 3.013, col = \"purple\")\n\n\nThe regression line not longer fits the data well."
-  },
-  {
-    "objectID": "hw/hw-3.html",
-    "href": "hw/hw-3.html",
-    "title": "HW 3 - Introduction to data",
-    "section": "",
-    "text": "This assignment needs to be completed with RMarkdown and submitted as a PDF on Gradescope. Feel free to re-use the template provided for HW1.\nWhen submitting your work on Gradescope, please assign a page for each question."
-  },
-  {
-    "objectID": "hw/hw-3.html#problem-set-25-points",
-    "href": "hw/hw-3.html#problem-set-25-points",
-    "title": "HW 3 - Introduction to data",
-    "section": "Problem set (25 points)",
-    "text": "Problem set (25 points)\n\n7.6, a-c (3 points)\n7.18 (2 points)\n7.20 (4 points)\n7.22 (7 points)\n\nfit the model in R; the variables sho_gi and hgt respectively correspond to shoulder girth and height.\n\nd <- openintro::bdims\n\ndo parts a-f\n\n7.24 (5 points)\n\nfit the model in R\n\nd <- MASS::cats\n\ndo parts a-d\n\n7.26 (3 points)\n7.28 (1 point)"
-  },
-  {
-    "objectID": "hw/hw-3.html#lab-exercises---the-human-freedom-index-25-points",
-    "href": "hw/hw-3.html#lab-exercises---the-human-freedom-index-25-points",
-    "title": "HW 3 - Introduction to data",
-    "section": "Lab exercises - the Human Freedom Index (25 points)",
-    "text": "Lab exercises - the Human Freedom Index (25 points)\nYou can find the lab here\n\nExercise 1 (2 points)\nExercise 2 (2 points)\nExercise 3 (3 points)\nExercise 4 (2 points)\nExercise 5 (2 points)\nExercise 6 (3 points)\nExercise 7 (2 points)\nExercise 8 (2 points)\n\nSkip exercises 9-10.\n\nPractice 1 (2 points)\nPractice 2 (2 points)\nPractice 3 (1 points) – only evaluate linearity\nPractice 4 (2 points)"
-  },
-  {
-    "objectID": "slides/lec-2.html#group-exercise---counties-and-kidney-cancer-death-rate",
-    "href": "slides/lec-2.html#group-exercise---counties-and-kidney-cancer-death-rate",
-    "title": "Introduction to Data",
-    "section": "Group exercise - counties and kidney cancer death rate",
-    "text": "Group exercise - counties and kidney cancer death rate\n\nInstructionsGroup 1Group 2Small sample effect\n\n\nWhy are most of the shaded counties in the middle of the country?\n\n\n\n04:00\n\n\n\n\n\nSource: Bayesian Data Analysis\n\n\n\n\n\nThe counties of the United Sates with the lowest 10% age-standardized death rates for cancer of kidney/ureter for U.S. white males, 1980–1989.\n\n\nSource: Bayesian Data Analysis\n\n\n\n\n\nThere is more variation in small counties.\n\n\nSource: Bayesian Data Analysis"
   }
 ]

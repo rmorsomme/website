@@ -1,0 +1,48 @@
+---
+title: "HW 4 - Multiple linear regression"
+subtitle: "Due Sunday, May 22, 9:00pm on Gradescope"
+---
+
+This assignment needs to be completed with RMarkdown and submitted as a PDF on [Gradescope](https://www.gradescope.com/courses/394638). Feel free to re-use the template provided for HW1.
+
+When submitting your work on Gradescope, please assign a page for each question.
+
+## Problem set (25 points)
+
+-   8.6 (2 points)
+
+-   8.10 (8 points)
+
+    -   fit the model in `R`
+
+        ```{r}
+        d <- palmerpenguins::penguins
+        ```
+
+    -   identify the type of each variable
+
+    -   identify the baseline level of the categorical predictors
+
+    -   do parts a-d
+
+\newpage
+
+## Lab exercises - the Human Freedom Index (25 points)
+
+You can find the lab [here](http://openintrostat.github.io/oilabs-tidy/08_simple_regression/simple_regression.html)
+
+-   Exercise 1 (2 points)
+-   Exercise 2 (2 points)
+-   Exercise 3 (3 points)
+-   Exercise 4 (2 points)
+-   Exercise 5 (2 points)
+-   Exercise 6 (3 points)
+-   Exercise 7 (2 points)
+-   Exercise 8 (2 points)
+
+Skip exercises 9-10.
+
+-   Practice 1 (2 points)
+-   Practice 2 (2 points)
+-   Practice 3 (1 points) -- only evaluate linearity
+-   Practice 4 (2 points)

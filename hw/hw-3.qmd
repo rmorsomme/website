@@ -1,5 +1,5 @@
 ---
-title: "HW 3 - Introduction to data"
+title: "HW 3 - Simple linear regression"
 subtitle: "Due Sunday, May 22, 9:00pm on Gradescope"
 ---
 

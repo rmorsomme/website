@@ -1,5 +1,5 @@
 ---
-title: "HW 2 - Introduction to data"
+title: "HW 2 - Data visualization and summary"
 subtitle: "Due Wednesday, May 18, 9:00pm on Gradescope"
 ---
 
