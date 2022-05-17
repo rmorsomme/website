@@ -1,0 +1,127 @@
+---
+title: "Homework 1 - lab answers"
+subtitle: "STA 101L - Summer I 2022"
+author: "Raphael Morsomme"
+footer:  "[https://rmorsomme.github.io/website/](https://rmorsomme.github.io/website/)"
+logo: "images/logo.jpg"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    code-fold: false
+    code-summary: "Show the code"
+    code-link: true
+    self-contained: true
+    scrollable: true
+editor: visual
+execute:
+  freeze: auto
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup}
+#| include: false
+
+# load packages
+library(tidyverse)   # for data wrangling and visualization
+library(tidymodels)  # for modeling
+library(usdata)      # for the county_2019 dataset
+library(openintro)   # for the duke_forest dataset
+library(scales)      # for pretty axis labels
+library(glue)        # for constructing character strings
+library(knitr)       # for pretty tables
+
+library(countdown)
+
+# set default theme and larger font size for ggplot2
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))
+
+knitr::opts_chunk$set(
+  fig.width = 8,
+  fig.asp = 0.618,
+  fig.retina = 3,
+  dpi = 300,
+  out.width = "80%",
+  fig.align = "center"
+)
+
+options(scipen = 20)
+```
+
+## Setup
+
+You can find the lab [here](http://openintrostat.github.io/oilabs-tidy/01_intro_to_r/intro_to_r.html).
+
+```{r load-packages, message=FALSE}
+library(tidyverse)
+library(openintro)
+```
+
+## Exercise 1 (2 points)
+
+```{r view-girls-counts}
+arbuthnot$girls
+```
+
+## Exercise 2 (3 points)
+
+```{r trend-girls}
+arbuthnot %>%
+  ggplot(aes(x = year, y = girls)) +
+  geom_point() +
+  geom_line()
+
+arbuthnot %>%
+  ggplot() +
+  geom_line(aes(x = year, y = girls))
+```
+
+## Exercise 3 (4 points)
+
+```{r plot-prop-boys-arbuthnot}
+arbuthnot %>%
+  mutate(prop_boys = boys / (boys + girls)) %>%
+  ggplot() +
+  geom_line(aes(year, prop_boys))
+```
+
+## Exercise 4 (4 points)
+
+```{r dim-present}
+present
+present$year
+min(present$year)
+max(present$year)
+
+nrow(present)
+ncol(present)
+dim(present)
+present
+```
+
+## Exercise 5 (2 points)
+
+```{r count-compare}
+# Insert code for Exercise 5 here
+```
+
+## Exercise 6 (5 points)
+
+```{r plot-prop-boys-present}
+present %>%
+  mutate(prop_boys = boys / (boys + girls)) %>%
+  ggplot() +
+  geom_line(aes(year, prop_boys))
+```
+
+## Exercise 7 (5 points)
+
+```{r find-max-total}
+present %>%
+  mutate(total = boys + girls) %>%
+  arrange(desc(total))
+```

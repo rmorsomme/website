@@ -60,7 +60,10 @@ knitr::opts_chunk$set(
 ## Announcements
 
 -   Find someone you have not worked with yet.
--   Homework 1 will be graded today
+-   Homework 1 has been released
+    -   Ask us if anything is unclear
+
+    -   regrade window of 48 hours.
 -   Homework 2 has been published
     -   Due on Wednesday
     -   Feel free to re-use the template from HW 1
