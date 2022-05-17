@@ -368,7 +368,7 @@
     "href": "index.html",
     "title": "STA 101L: Data Analysis and Statistical Inference",
     "section": "",
-    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n📋\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\nDue: Homework 2\n\n\n💻\n✍️\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n💻\n\n\n\n\n2\nMon, May 23\nModel selection\n8.3-8.4; 25.2-25.3\n\n\n\n\n\n\n\nTue, May 24\nLogistic regression\n9.1-9.3\n\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n\n\n\n\n\n\nThu, May 26\nPrinciples of inference\nWork on project\n11.0; 11.3; 12.0; 12.3; 13.1-13.3\n\n\n\n\n\n\n\nFri, May 27\nLab 5 - work on prediction project [PP]\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP discussion\nInference for proportions I\n16.1-16.2\n\n\n\nPP model (9am)\nPP presentation\n\n\n\nWed, June 1\nLab 5 - work on PP\nDue: PP report\n\n\n\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.3\n\n\n\n\n\n\n\nFri, June 3\nLab 6 - Inference for proportions\n\n\n\n\n\n\n\n4\nMon, June 6\nInference for means I\n19.1-19.2\n\n\n\n\n\n\n\nTue, June 7\nInference for means II\n20.1-20.4; 21.1-21.3\n\n\n\n\n\n\n\nWed, June 8\nLab 7 - Inference for means\n\n\n\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.6; 25.1; 26.1-26.2\n\n\n\n\n\n\n\nFri, June 10\nLab 8 - inference for regression\n\n\n\n\n\n\n\n5\nMon, June 13\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n\n\n\n\n\n\n\nTue, June 14\nWork on inference project (IP)\n\n\n\n\n\n\n\n\nWed, June 15\nLab 9 - work on IP\n\n\n\n\n\n\n\n\nThu, June 16\nIP presentations\nWrap up\n\n\n\n\nIP presentation\n\n\n\nFri, June 17\nLab 10 - work on IP\n\n\n\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
+    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\nDue: Homework 2\n\n\n💻\n✍️\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n💻\n\n\n\n\n2\nMon, May 23\nModel selection\n8.3-8.4; 25.2-25.3\n\n\n\n\n\n\n\nTue, May 24\nLogistic regression\n9.1-9.3\n\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n\n\n\n\n\n\nThu, May 26\nPrinciples of inference\nWork on project\n11.0; 11.3; 12.0; 12.3; 13.1-13.3\n\n\n\n\n\n\n\nFri, May 27\nLab 5 - work on prediction project [PP]\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP discussion\nInference for proportions I\n16.1-16.2\n\n\n\nPP model (9am)\nPP presentation\n\n\n\nWed, June 1\nLab 6 - work on PP\nDue: PP report\n\n\n\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.3\n\n\n\n\n\n\n\nFri, June 3\nLab 7 - Inference for proportions\n\n\n\n\n\n\n\n4\nMon, June 6\nInference for means I\n19.1-19.2\n\n\n\n\n\n\n\nTue, June 7\nInference for means II\n20.1-20.4; 21.1-21.3\n\n\n\n\n\n\n\nWed, June 8\nLab 8 - Inference for means\n\n\n\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.6; 25.1; 26.1-26.2\n\n\n\n\n\n\n\nFri, June 10\nLab 9 - inference for regression\n\n\n\n\n\n\n\n5\nMon, June 13\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n\n\n\n\n\n\n\nTue, June 14\nWork on inference project (IP)\n\n\n\n\n\n\n\n\nWed, June 15\nLab 10 - work on IP\n\n\n\n\n\n\n\n\nThu, June 16\nIP presentations\nWrap up\n\n\n\n\nIP presentation\n\n\n\nFri, June 17\nLab 11 - work on IP\n\n\n\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
   },
   {
     "objectID": "labs/lab-0x.html",
@@ -1740,7 +1740,7 @@
     "href": "slides/lec-4.html#announcements",
     "title": "Simple Linear Regression Models",
     "section": "Announcements",
-    "text": "Announcements\n\nFind someone you have not worked with yet.\nHomework 1 has been released\n\nAsk us if anything is unclear\nregrade window of 48 hours.\n\n\nHomework 2 has been published\n\nDue on Wednesday\nFeel free to re-use the template from HW 1\nThere should be no need for external code – look in the lab!"
+    "text": "Announcements\n\nFind someone you have not worked with yet.\nHomework 1 has been released\n\nAsk us if anything is unclear\nregrade window of 48 hours.\n\n\nHomework 2 has been published\n\nDue on Wednesday (tomorrow)\nFeel free to re-use the template from HW 1\nThere should be no need for external code – look in the lab!"
   },
   {
     "objectID": "slides/lec-4.html#recap-of-last-lecture",
@@ -1782,7 +1782,7 @@
     "href": "slides/lec-4.html#parameters",
     "title": "Simple Linear Regression Models",
     "section": "Parameters",
-    "text": "Parameters\nThe numbers \\(\\beta_0\\) and \\(\\beta_1\\) are the two parameters of the model.\n\nWe now want to find good values for these unknown parameters.\n\n\nLet us look at two sets of values:\n$$ \\[\\begin{align*}\n\\beta_0 = 1, \\beta_1 = 1.3 \\qquad & \\Rightarrow \\qquad \\text{hwy} \\approx 1 + 1.3 \\text{cty} \\\\\n\n\\beta_0 = 15, \\beta_1 = 0.5 \\qquad & \\Rightarrow \\qquad \\text{hwy} \\approx 15 + 0.5 \\text{cty}\n\\end{align*}\\] $$"
+    "text": "Parameters\nThe numbers \\(\\beta_0\\) and \\(\\beta_1\\) are the two parameters of the model.\n\nWe now want to find good values for these unknown parameters.\n\n\nLet us look at two sets of values:\n\\[\\begin{align*}\n\\beta_0 = 1, \\beta_1 = 1.3 \\qquad & \\Rightarrow \\qquad \\text{hwy} \\approx 1 + 1.3 \\text{cty} \\\\\n\n\\beta_0 = 15, \\beta_1 = 0.5 \\qquad & \\Rightarrow \\qquad \\text{hwy} \\approx 15 + 0.5 \\text{cty}\n\\end{align*}\\]"
   },
   {
     "objectID": "slides/lec-4.html#section",
@@ -1848,11 +1848,11 @@
     "text": "Residual plot\n\nd %>%\n  mutate(\n    hwy_hat = 1 + 1.3 * cty, # prediction\n    resid   = hwy - hwy_hat  # residual\n    ) %>%\n  ggplot() +\n  geom_point(aes(cty, resid)) +\n  geom_abline(intercept = 0, slope = 0, col = \"red\")"
   },
   {
-    "objectID": "slides/lec-4.html#residual-plots-and-linearity",
-    "href": "slides/lec-4.html#residual-plots-and-linearity",
+    "objectID": "slides/lec-4.html#assessing-linearity-with-residual-plots",
+    "href": "slides/lec-4.html#assessing-linearity-with-residual-plots",
     "title": "Simple Linear Regression Models",
-    "section": "Residual plots and linearity",
-    "text": "Residual plots and linearity\nResiduals can be used to assess linearity.\n\nSource: IMS"
+    "section": "Assessing linearity with residual plots",
+    "text": "Assessing linearity with residual plots\n\nSource: IMS"
   },
   {
     "objectID": "slides/lec-4.html#section-4",
@@ -1873,21 +1873,21 @@
     "href": "slides/lec-4.html#minimizing-residuals",
     "title": "Simple Linear Regression Models",
     "section": "Minimizing residuals",
-    "text": "Minimizing residuals\nPerhaps the most natural thing to do is to find the values for \\(\\beta_0\\) and \\(\\beta_1\\) that minimize the sum of absolute residuals\n\\[\n|e_1|+|e_2|+\\dots+|e_n|\n\\]\n\nFor practical reasons, the sum of squared residuals (SSR) is a more common criterion\n\\[\ne_1^2+e_2^2+\\dots+e_n^2\n\\]"
+    "text": "Minimizing residuals\nPerhaps the most natural thing to do is to find the values of \\(\\beta_0\\) and \\(\\beta_1\\) that minimize the sum of absolute residuals\n\\[\n|e_1|+|e_2|+\\dots+|e_n|\n\\]\n\nFor practical reasons, the sum of squared residuals (SSR) is a more common criterion\n\\[\ne_1^2+e_2^2+\\dots+e_n^2\n\\]"
   },
   {
     "objectID": "slides/lec-4.html#why-squaring-the-residuals",
     "href": "slides/lec-4.html#why-squaring-the-residuals",
     "title": "Simple Linear Regression Models",
     "section": "Why squaring the residuals?",
-    "text": "Why squaring the residuals?\n\nnice mathematical properties\n\ncan work by hand (pre-computer era)\n\n\nreflects the assumptions that being off by \\(4\\) is more than twice as bad as being off by \\(2\\)\n\nmainstream, e.g. lm in R."
+    "text": "Why squaring the residuals?\n\nnice mathematical properties\n\ncan work by hand (pre-computer era; first derived by Gauss in the late 1700s (Stigler, 1981))\n\n\nreflects the assumptions that being off by \\(4\\) is more than twice as bad as being off by \\(2\\)\n\nmainstream, e.g. the command lm in R."
   },
   {
     "objectID": "slides/lec-4.html#least-square-estimates",
     "href": "slides/lec-4.html#least-square-estimates",
     "title": "Simple Linear Regression Models",
     "section": "Least-square estimates",
-    "text": "Least-square estimates\nWe find the values for \\(\\beta_0\\) and \\(\\beta_1\\) that minimize the SSR with the R command lm\n\nm <- lm(hwy ~ cty, data = d) # find least-square estimates\nm\n\n\nCall:\nlm(formula = hwy ~ cty, data = d)\n\nCoefficients:\n(Intercept)          cty  \n      0.892        1.337  \n\n\nWe denote least-square estimates with the symbols \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\).\nIn our model, we therefore have \\[\\hat{\\beta}_0 = 0.892, \\qquad \\hat{\\beta}_1 = 1.337\\]"
+    "text": "Least-square estimates\nWe simply find the values for \\(\\beta_0\\) and \\(\\beta_1\\) that minimize the SSR with the R command lm\n\nm <- lm(hwy ~ cty, data = d) # find least-square estimates\nm\n\n\nCall:\nlm(formula = hwy ~ cty, data = d)\n\nCoefficients:\n(Intercept)          cty  \n      0.892        1.337  \n\n\nThe symbols \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\) denote least-square estimates.\nIn our model, we therefore have \\[\\hat{\\beta}_0 = 0.892, \\qquad \\hat{\\beta}_1 = 1.337\\]"
   },
   {
     "objectID": "slides/lec-4.html#visualizing-the-least-square-regression-line",
@@ -1915,21 +1915,21 @@
     "href": "slides/lec-4.html#section-5",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "Group exercise - exploring a model\n\n\nConsider the third observation in the sample. What is its\n\nvalue of cty?\npredicted value for hwy based on the model?\nactual value for hwy?\nresidual?\nDid the model over- or under-predict?\n\n\n\n\n\n\n\n03:00"
+    "text": "Group exercise - exploring a model\n\n\nConsider the third observation in the sample. What is its\n\nvalue of cty?\npredicted value for hwy based on the model?\nactual value for hwy?\nresidual?\nDoes the model over- or under-predict?\n\n\n\n\n\n\n\n03:00"
   },
   {
     "objectID": "slides/lec-4.html#intepreting-the-parameters",
     "href": "slides/lec-4.html#intepreting-the-parameters",
     "title": "Simple Linear Regression Models",
     "section": "Intepreting the parameters",
-    "text": "Intepreting the parameters\n\nthe intercept estimate \\(\\hat{\\beta}_0\\) is the prediction for a car with \\(\\text{cty} = 0\\)\n\nmeaningless in our case\n\n\n\n\n\nthe slope estimate \\(\\hat{\\beta}_1\\) is the increase in a our prediction for hwy for each additional unit of cty\n\n“for each additional unit of cty, we expect hwy to increase by 1.337”\n\n\n\n\n\n\n\n\n\n\n\nExtrapolation\n\n\n\nstick to the range of the data\n\nextrapolate with care, not like this\n\n\n\nthe intercept will not always be meaningful"
+    "text": "Intepreting the parameters\n\nthe intercept estimate \\(\\hat{\\beta}_0\\) is the prediction for a car with \\(\\text{cty} = 0\\)\n\nmeaningless in our case\n\n\n\n\n\nthe slope estimate \\(\\hat{\\beta}_1\\) is the increase in a our prediction for hwy for each additional unit of cty\n\n“for each additional unit of cty, we expect hwy to increase by 1.337”\n\n\n\n\n\n\n\n\n\n\n\nExtrapolation\n\n\n\nStick to the range of the data\n\nif you extrapolate, do so with care, not like this.\n\n\nThe intercept will not always be meaningful"
   },
   {
     "objectID": "slides/lec-4.html#section-6",
     "href": "slides/lec-4.html#section-6",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "Group exercise - least-square estimates\n\n\nExercise 7.21 - start by fitting the model in R with the following command. - skip part c\n\nd <- openintro::coast_starlight\nm <- lm(travel_time ~ dist, data = d)\n\n\n\n\n\n\n\n05:00"
+    "text": "Group exercise - least-square estimates\n\n\nExercise 7.21\n\nskip part c\nstart by fitting the model in R with the following command,\n\n\nd <- openintro::coast_starlight\nm <- lm(travel_time ~ dist, data = d)\n\n\n\n\n\n\n\n05:00"
   },
   {
     "objectID": "slides/lec-4.html#special-case-categorical-predictor",
@@ -1985,21 +1985,21 @@
     "href": "slides/lec-4.html#ssr",
     "title": "Simple Linear Regression Models",
     "section": "SSR",
-    "text": "SSR\nInstead of comparing histograms of residuals, we can compute the SSR (sum of squared residuals!)\n\\[\nSSR = r_1^2+r_2^2+\\dots+r^2_n\n\\]\n\nsmall residuals will give a small SSR\nlarge residuals will give a large SSR\n\n\n\\(\\Rightarrow\\) choose the model with the smaller SSR!\n\n\n📋 The textbook uses the term SSE (sum of squared errors)."
+    "text": "SSR\nInstead of comparing histograms of residuals, we can compute the SSR (sum of squared residuals!)\n\\[\\begin{align*}\nSSR\n& = r_1^2+r_2^2+\\dots+r^2_n \\\\\n& = (y_1 - \\hat{y}_1)^2 + (y_2 - \\hat{y}_2)^2 + \\dots + (y_n - \\hat{y}_n)^2\n\\end{align*}\\]\n\nsmall residuals will give a small SSR\nlarge residuals will give a large SSR\n\n\n\\(\\Rightarrow\\) choose the model with the smaller SSR!\n\n\n📋 The textbook uses the term SSE (sum of squared errors)."
   },
   {
     "objectID": "slides/lec-4.html#section-10",
     "href": "slides/lec-4.html#section-10",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "SSR of the first model:\n\nm1 <- lm(hwy ~ cty, data = d)\nm_augment <- augment(m1)\nresid <- m_augment$.resid\nsum(resid^2)\n\n[1] 712.3599\n\n\nSSR of the second model:\n\nlm(hwy ~ displ, data = d) %>% augment %>% .[[\".resid\"]] %>% .^2 %>% sum\n\n[1] 3413.829\n\n\n\nWe opt for the first model (smaller SSR)."
+    "text": "SSR of the first model:\n\nm1 <- lm(hwy ~ cty, data = d)\nm_augment <- augment(m1)\nresid <- m_augment$.resid\nsum(resid^2)\n\n[1] 712.3599\n\n\nSSR of the second model:\n\nlm(hwy ~ displ, data = d) %>%\n  augment %>% \n  .[[\".resid\"]] %>% \n  .^2 %>% \n  sum\n\n[1] 3413.829\n\n\n\nWe opt for the first model (smaller SSR)."
   },
   {
     "objectID": "slides/lec-4.html#r2",
     "href": "slides/lec-4.html#r2",
     "title": "Simple Linear Regression Models",
     "section": "\\(R^2\\)",
-    "text": "\\(R^2\\)\nWhile the SSR can be used to select a model, it is also useful in describing the goodness of fit of the model.\n\nThe SST (total sum of squares) is the sum of squared distance to the mean.\n\\[\nSST = (x_1 - \\bar{x})^2 + (x_2 - \\bar{x})^2 + \\dots + (x_n - \\bar{x})^2\n\\]\nIt measures the total amount of variability in the data.\n\n\nRemember the formula for SSR\n\\[\nSSR = (x_1 - \\hat{x})^2 + (x_2 - \\hat{x}_1)^2 + \\dots + (x_n - \\hat{x}_n)^2\n\\]\nIt measures the amount of variability in the data left unexplained by the model.\n\n\n\\(SST - SSR\\) (total - residual) is therefore the amount of variation explained by the model:\n\\[\n\\text{data} = SST = (SST-SSR) + SSR = \\text{model} + \\text{residuals}\n\\]"
+    "text": "\\(R^2\\)\nWhile the SSR is useful for comparing models, it can also be used to describe the goodness of fit of the model.\n\nThe SST (total sum of squares) is the sum of squared distance to the mean.\n\\[\nSST = (y_1 - \\bar{y})^2 + (y_2 - \\bar{y})^2 + \\dots + (y_n - \\bar{y})^2\n\\]\nIt measures the total amount of variability in the data.\n\n\nRemember the formula for SSR\n\\[\nSSR = (y_1 - \\hat{y}_1)^2 + (y_2 - \\hat{y}_2)^2 + \\dots + (y_n - \\hat{y}_n)^2\n\\]\nIt measures the amount of variability in the data left unexplained by the model.\n\n\n\\(SST - SSR\\) (total - residual) is therefore the amount of variation explained by the model:\n\\[\n\\text{data} = SST = (SST-SSR) + SSR = \\text{model} + \\text{residuals}\n\\]"
   },
   {
     "objectID": "slides/lec-4.html#section-11",
@@ -2020,14 +2020,14 @@
     "href": "slides/lec-4.html#computing-r2-in-r",
     "title": "Simple Linear Regression Models",
     "section": "Computing \\(R^2\\) in R\n",
-    "text": "Computing \\(R^2\\) in R\n\nTo compute \\(R^2\\) in R, simply use the command glance.\n\nm1 <- lm(hwy ~ cty, data = d)\nm_glance <- glance(m1)\nm_glance$r.squared\n\n[1] 0.9137752\n\nlm(hwy ~ displ, data = d) %>% glance %>% .[[\"r.squared\"]]\n\n[1] 0.5867867\n\n\nThe model with cty as a predictor has a \\(R^2\\) value of \\(0.914\\), and the model that uses displ has a \\(R^2\\) of \\(0.59\\) (worse).\n\nThe first model is better!"
+    "text": "Computing \\(R^2\\) in R\n\nTo compute \\(R^2\\) in R, simply use the command glance.\n\nm1 <- lm(hwy ~ cty, data = d)\nm_glance <- glance(m1)\nm_glance$r.squared\n\n[1] 0.9137752\n\nlm(hwy ~ displ, data = d) %>% \n  glance %>% \n  .[[\"r.squared\"]]\n\n[1] 0.5867867\n\n\nThe model with cty as a predictor has a \\(R^2\\) value of \\(0.914\\), and the model that uses displ has a \\(R^2\\) of \\(0.59\\) (worse).\n\nThe first model is better!"
   },
   {
     "objectID": "slides/lec-4.html#section-13",
     "href": "slides/lec-4.html#section-13",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "Group exercise - Interpretation\n\n\n\nExercise 7.23\n\nfit the model in R; do you obtain the same estimates?\n\n\n\n\nd <- usdata::county_2019\n\n-   do parts a-d\n-   compute the SST, SSR and $R^2$ \"by hand\" in `R` (do not use `glance`). You can use the command `augment` to compute the residuals.\n\nm <- lm(. . .)\nm_augment <- augment(m)\nSST <- ...\n\n\n\n\n\n\n\n05:00"
+    "text": "Group exercise - Interpretation\n\n\n\nExercise 7.23\n\nfit the model in R; do you obtain the same estimates?\ndo parts a-d\ncompute the SST, SSR and \\(R^2\\) “by hand” in R (do not use glance). You can use the command augment to compute the residuals.\n\n\n\n\nd <- usdata::county_2019\nm <- lm(. . .)\nm_augment <- augment(m)\nSST <- ...\n\n\n\n\n\n\n\n05:00"
   },
   {
     "objectID": "slides/lec-4.html#section-14",
@@ -2048,7 +2048,7 @@
     "href": "slides/lec-4.html#section-15",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "d1 <- simulated_scatter %>% \n  filter(group == 24) %>%\n  mutate(outlier = if_else(y == min(y), TRUE, FALSE))\nd2 <- simulated_scatter %>% \n  filter(group == 25) %>%\n  mutate(outlier = if_else(y == min(y), TRUE, FALSE))\nd3 <- simulated_scatter %>% \n  filter(group == 26) %>%\n  mutate(outlier = if_else(y == max(y), TRUE, FALSE))\nm1_aug <- augment(lm(y ~ x, data = d1)) %>%\n  mutate(outlier = if_else(y == min(y), TRUE, FALSE))\nm2_aug <- augment(lm(y ~ x, data = d2)) %>%\n  mutate(outlier = if_else(y == min(y), TRUE, FALSE))\nm3_aug <- augment(lm(y ~ x, data = d3)) %>%\n  mutate(outlier = if_else(y == max(y), TRUE, FALSE))\np_1 <- ggplot(d1, aes(x = x, y = y)) +\n  geom_point(size = 2, alpha = 0.8) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  geom_point(data = d1 %>% filter(outlier), \n             size = 5, shape = \"circle open\", \n             color = IMSCOL[\"red\", \"full\"], stroke = 2) +\n  labs(title = \"A\") +\n  theme(\n    panel.grid = element_blank(),\n    axis.text = element_blank(),\n    panel.border = element_rect(colour = \"gray\", fill = NA, size = 1)\n    ) +\n  scale_x_continuous(expand = expansion(mult = 0.12)) +\n  scale_y_continuous(expand = expansion(mult = 0.12))\np_1_res <- ggplot(m1_aug, aes(x = .fitted, y = .resid)) +\n  geom_point(alpha = 0.7, size = 2) +\n  geom_hline(yintercept = 0, linetype = \"dashed\") +\n  geom_point(data = m1_aug %>% filter(outlier), \n             size = 5, shape = \"circle open\", \n             color = IMSCOL[\"red\", \"full\"], stroke = 2) +\n  labs(x = \"Predicted y\", y = \"Residual\") +\n  theme(\n    panel.grid = element_blank(),\n    axis.text = element_blank(),\n    panel.border = element_rect(colour = \"gray\", fill = NA, size = 1)\n    ) +\n  scale_x_continuous(expand = expansion(mult = 0.12)) +\n  scale_y_continuous(limits = c(-8, 8), expand = expansion(mult = 0.12))\np_2 <- ggplot(d2, aes(x = x, y = y)) +\n  geom_point(size = 2, alpha = 0.8) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  geom_point(data = d2 %>% filter(outlier), \n             size = 5, shape = \"circle open\", \n             color = IMSCOL[\"green\", \"full\"], stroke = 2) + \n  labs(title = \"B\") +\n  theme(\n    panel.grid = element_blank(),\n    axis.text = element_blank(),\n    panel.border = element_rect(colour = \"gray\", fill = NA, size = 1)\n    ) +\n  scale_x_continuous(expand = expansion(mult = 0.12)) +\n  scale_y_continuous(expand = expansion(mult = 0.12))\np_2_res <- ggplot(m2_aug, aes(x = .fitted, y = .resid)) +\n  geom_point(size = 2, alpha = 0.8) +\n  geom_hline(yintercept = 0, linetype = \"dashed\") +\n  geom_point(data = m2_aug %>% filter(outlier), \n             size = 5, shape = \"circle open\", \n             color = IMSCOL[\"green\", \"full\"], stroke = 2) +\n  labs(x = \"Predicted y\", y = \"Residual\") +\n  theme(\n    panel.grid = element_blank(),\n    axis.text = element_blank(),\n    panel.border = element_rect(colour = \"gray\", fill = NA, size = 1)\n    ) +\n  scale_x_continuous(expand = expansion(mult = 0.12)) +\n  scale_y_continuous(limits = c(-8, 8), expand = expansion(mult = 0.12))\np_3 <- ggplot(d3, aes(x = x, y = y)) +\n  geom_point(size = 2, alpha = 0.8) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  geom_point(data = d3 %>% filter(outlier), \n             size = 5, shape = \"circle open\", \n             color = IMSCOL[\"pink\", \"full\"], stroke = 2) +\n  labs(title = \"C\") +\n  theme(\n    panel.grid = element_blank(),\n    axis.text = element_blank(),\n    panel.border = element_rect(colour = \"gray\", fill = NA, size = 1)\n    ) +\n  scale_x_continuous(expand = expansion(mult = 0.12)) +\n  scale_y_continuous(expand = expansion(mult = 0.12))\np_3_res <- ggplot(m3_aug, aes(x = .fitted, y = .resid)) +\n  geom_point(size = 2, alpha = 0.8) +\n  geom_hline(yintercept = 0, linetype = \"dashed\") +\n  geom_point(data = m3_aug %>% filter(outlier), \n             size = 5, shape = \"circle open\", \n             color = IMSCOL[\"pink\", \"full\"], stroke = 2) +\n  labs(x = \"Predicted y\", y = \"Residual\") +\n  theme(\n    panel.grid = element_blank(),\n    axis.text = element_blank(),\n    panel.border = element_rect(colour = \"gray\", fill = NA, size = 1)\n    ) +\n  scale_x_continuous(expand = expansion(mult = 0.12)) +\n  scale_y_continuous(limits = c(-8, 8), expand = expansion(mult = 0.12))\np_1     + theme(plot.margin = unit(c(0, 10, 5, 0), \"pt\")) + \np_2     + theme(plot.margin = unit(c(0, 10, 5, 0), \"pt\")) + p_3 + \np_1_res + theme(plot.margin = unit(c(0, 10, 5, 0), \"pt\")) + \np_2_res + theme(plot.margin = unit(c(0, 10, 5, 0), \"pt\")) + p_3_res +\n  plot_layout(ncol = 3, heights = c(2, 1))\n\nSource: IMS"
+    "text": "Source: IMS"
   },
   {
     "objectID": "slides/lec-4.html#section-16",
@@ -2062,28 +2062,28 @@
     "href": "slides/lec-4.html#least-square-estimates-are-not-robust",
     "title": "Simple Linear Regression Models",
     "section": "Least-square estimates are not robust",
-    "text": "Least-square estimates are not robust\nIn regression, outliers have the potential to highly influence the least-square estimates \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\).\n\n\n\n\n\n\nWarning\n\n\nLeast-square estimates are not robust to the presence of outliers.\n\n\n\n\nEstimates that are robust include (not covered in this class)\n\nleast absolute deviation estimates, which minimize the SAR (sum of absolute residuals) instead of the SSR\nBayesian estimates"
+    "text": "Least-square estimates are not robust\nIn regression, outliers have the potential to highly influence the least-square estimates \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\).\n\n\n\n\n\n\nWarning\n\n\nLeast-square estimates are not robust to the presence of outliers.\n\n\n\n\nEstimates that are robust include (not covered in this class)\n\nleast absolute deviation estimates, which minimize the SAR (sum of absolute residuals) instead of the SSR\n\n\\[\nSAR = |e_1| + |e_2| + \\dots + |e_n|\n\\]\n\nBayesian estimates (STA360)"
   },
   {
     "objectID": "slides/lec-4.html#impact-of-outliers",
     "href": "slides/lec-4.html#impact-of-outliers",
     "title": "Simple Linear Regression Models",
     "section": "Impact of outliers",
-    "text": "Impact of outliers\nLet us contaminate the data with an outlier (cty \\(=10\\) and hwy \\(=1000\\))\n\nd_contaminated <- select(d, cty, hwy) %>%\n  add_row(cty = 40, hwy = 500) # add outlier\narrange(d_contaminated, desc(hwy)) %>% slice(1:5)\n\n# A tibble: 5 x 2\n    cty   hwy\n  <dbl> <dbl>\n1    40   500\n2    33    44\n3    35    44\n4    29    41\n5    28    37\n\n\n\n…and compare the two regression models.\n\nlm(hwy ~ cty, data = d)\n\n\nCall:\nlm(formula = hwy ~ cty, data = d)\n\nCoefficients:\n(Intercept)          cty  \n      0.892        1.337  \n\nlm(hwy ~ cty, data = d_contaminated)\n\n\nCall:\nlm(formula = hwy ~ cty, data = d_contaminated)\n\nCoefficients:\n(Intercept)          cty  \n    -33.841        3.498  \n\n\n\n\nThe value of the slope has almost tripled!"
+    "text": "Impact of outliers\nLet us contaminate the data with an outlier (cty \\(=10\\) and hwy \\(=1000\\))\n\nd_contaminated <- select(d, cty, hwy) %>%\n  add_row(cty = 40, hwy = 500) # add outlier\narrange(d_contaminated, desc(hwy)) %>% slice(1:5)\n\n# A tibble: 5 x 2\n    cty   hwy\n  <dbl> <dbl>\n1    40   500\n2    33    44\n3    35    44\n4    29    41\n5    28    37\n\n\n\n…and compare the two regression models.\n\nlm(hwy ~ cty, data = d)\n\n\nCall:\nlm(formula = hwy ~ cty, data = d)\n\nCoefficients:\n(Intercept)          cty  \n      0.892        1.337  \n\nlm(hwy ~ cty, data = d_contaminated)\n\n\nCall:\nlm(formula = hwy ~ cty, data = d_contaminated)\n\nCoefficients:\n(Intercept)          cty  \n    -33.841        3.498  \n\n\n\n\nThe slope estimate has almost tripled!"
   },
   {
     "objectID": "slides/lec-4.html#section-17",
     "href": "slides/lec-4.html#section-17",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "ggplot(d_contaminated) +\n  geom_point(aes(cty, hwy)) +\n  geom_abline(intercept = -26.046, slope = 3.013, col = \"purple\")\n\n\nThe regression line not longer fits the data well."
+    "text": "ggplot(d_contaminated) +\n  geom_point(aes(cty, hwy)) +\n  geom_abline(intercept = -33.841, slope = 3.498, col = \"purple\")\n\n\nThe regression line not longer fits the data well."
   },
   {
     "objectID": "slides/lec-4.html#recap-1",
     "href": "slides/lec-4.html#recap-1",
     "title": "Simple Linear Regression Models",
     "section": "Recap",
-    "text": "Recap\n\n\nsimple linear regression model\n\n\\[\n    \\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty}\n\\] - residuals - least-square estimates - parameter interpretation - model comparison with \\(R^2\\) - outliers\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+    "text": "Recap\n\nsimple linear regression model\n\n\\[\n    \\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty}\n\\]\n\nresiduals\nleast-square estimates\nparameter interpretation\nmodel comparison with \\(R^2\\)\n\noutliers\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
     "objectID": "slides/lec-5.html#announcements",

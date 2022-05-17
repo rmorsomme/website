@@ -65,7 +65,7 @@ knitr::opts_chunk$set(
 
     -   regrade window of 48 hours.
 -   Homework 2 has been published
-    -   Due on Wednesday
+    -   Due on Wednesday (tomorrow)
     -   Feel free to re-use the template from HW 1
     -   There should be no need for external code -- look in the lab!
 
@@ -143,11 +143,11 @@ We now want to find good values for these unknown parameters.
 
 Let us look at two sets of values:
 
-\$\$ \begin{align*}
+\begin{align*}
 \beta_0 = 1, \beta_1 = 1.3 \qquad & \Rightarrow \qquad \text{hwy} \approx 1 + 1.3 \text{cty} \\
 
 \beta_0 = 15, \beta_1 = 0.5 \qquad & \Rightarrow \qquad \text{hwy} \approx 15 + 0.5 \text{cty}
-\end{align*} \$\$
+\end{align*}
 
 ## 
 
@@ -282,15 +282,17 @@ $$e = \text{hwy} - \widehat{\text{hwy}}$$
 ```{r}
 #| out-width: "100%"
 #| echo: false
-d_m <- lm(hwy ~ cty, data = d) %>%
-  augment()
-d_m_small <- filter(d_m, cty > 28)
+d_m_small <- d %>%
+  filter(cty > 28) %>%
+  mutate(hwy_hat = 1 + 1.3 * cty)
 
-ggplot(d_m, aes(x = cty, y = hwy)) +
+ggplot(d, aes(x = cty, y = hwy)) +
   geom_point() +
-  geom_smooth(method = "lm", se = FALSE, color = "pink") +
-  geom_point(data = d_m_small, aes(y = .fitted), color = "maroon", shape = "triangle", size = 2) +
-  geom_segment(data = d_m_small, aes(xend = cty, yend = .fitted), size = 0.5, color = "gray20")
+  geom_abline(intercept = 1, slope = 1.3, color = "pink") +
+  geom_point(data = d_m_small, aes(y = hwy_hat), color = "maroon", shape = "triangle", size = 2) +
+  geom_segment(data = d_m_small, aes(xend = cty, yend = hwy_hat), size = 0.5, color = "gray20") +
+  ylim(25.1, 50)+
+  xlim(17.1, 37.5)
 ```
 :::
 :::
@@ -309,9 +311,7 @@ d %>%
   geom_abline(intercept = 0, slope = 0, col = "red")
 ```
 
-## Residual plots and linearity
-
-Residuals can be used to assess linearity.
+## Assessing linearity with residual plots
 
 ```{r, echo = F}
 neg_lin <- simulated_scatter %>% filter(group == 6)
@@ -383,7 +383,7 @@ We want to minimize the residuals.
 
 ## Minimizing residuals
 
-Perhaps the most natural thing to do is to find the values for $\beta_0$ and $\beta_1$ that minimize the **sum of absolute residuals**
+Perhaps the most natural thing to do is to find the values of $\beta_0$ and $\beta_1$ that minimize the **sum of absolute residuals**
 
 $$
 |e_1|+|e_2|+\dots+|e_n|
@@ -400,20 +400,20 @@ $$
 ## Why squaring the residuals?
 
 -   nice mathematical properties
-    -   can work by hand (pre-computer era)
+    -   can work by hand (pre-computer era; first derived by Gauss in the late 1700s ([Stigler, 1981](https://projecteuclid.org/journals/annals-of-statistics/volume-9/issue-3/Gauss-and-the-Invention-of-Least-Squares/10.1214/aos/1176345451.full)))
 -   reflects the assumptions that being off by $4$ is more than twice as bad as being off by $2$
--   mainstream, e.g. `lm` in `R`.
+-   mainstream, e.g. the command `lm` in `R`.
 
 ## Least-square estimates
 
-We find the values for $\beta_0$ and $\beta_1$ that minimize the SSR with the R command `lm`
+We simply find the values for $\beta_0$ and $\beta_1$ that minimize the SSR with the R command `lm`
 
 ```{r}
 m <- lm(hwy ~ cty, data = d) # find least-square estimates
 m
 ```
 
-We denote least-square estimates with the symbols $\hat{\beta}_0$ and $\hat{\beta}_1$.
+The symbols $\hat{\beta}_0$ and $\hat{\beta}_1$ denote least-square estimates.
 
 In our model, we therefore have $$\hat{\beta}_0 = 0.892, \qquad \hat{\beta}_1 = 1.337$$
 
@@ -484,7 +484,7 @@ Consider the third observation in the sample. What is its
 2.  predicted value for `hwy` based on the model?
 3.  actual value for `hwy`?
 4.  residual?
-5.  Did the model over- or under-predict?
+5.  Does the model over- or under-predict?
 :::
 
 ```{r, echo = F}
@@ -506,9 +506,9 @@ countdown(minutes = 3)
 ::: callout-tip
 ## Extrapolation
 
--   stick to the range of the data
-    -   extrapolate with care, not like [this](https://www.cc.com/video/l4nkoq/the-colbert-report-science-catfight-joe-bastardi-vs-brenda-ekwurzel)
--   the intercept will not always be meaningful
+-   Stick to the range of the data
+    -   if you extrapolate, do so with care, not like [this](https://www.cc.com/video/l4nkoq/the-colbert-report-science-catfight-joe-bastardi-vs-brenda-ekwurzel).
+-   The intercept will not always be meaningful
 :::
 
 ## 
@@ -516,7 +516,10 @@ countdown(minutes = 3)
 ::: {.callout-tip icon="false"}
 ## Group exercise - least-square estimates
 
-Exercise [7.21](https://openintro-ims.netlify.app/model-slr.html#chp7-exercises) - start by fitting the model in `R` with the following command. - skip part c
+Exercise [7.21](https://openintro-ims.netlify.app/model-slr.html#chp7-exercises)
+
+-   skip part c
+-   start by fitting the model in `R` with the following command,
 
 ```{r, eval=FALSE}
 d <- openintro::coast_starlight
@@ -647,9 +650,11 @@ We need a more *systematic* approach for comparing models.
 
 Instead of comparing histograms of residuals, we can compute the **SSR** (sum of squared residuals!)
 
-$$
-SSR = r_1^2+r_2^2+\dots+r^2_n
-$$
+\begin{align*}
+SSR
+& = r_1^2+r_2^2+\dots+r^2_n \\
+& = (y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}_2)^2 + \dots + (y_n - \hat{y}_n)^2
+\end{align*}
 
 -   small residuals will give a small SSR
 
@@ -677,7 +682,11 @@ sum(resid^2)
 SSR of the second model:
 
 ```{r}
-lm(hwy ~ displ, data = d) %>% augment %>% .[[".resid"]] %>% .^2 %>% sum
+lm(hwy ~ displ, data = d) %>%
+  augment %>% 
+  .[[".resid"]] %>% 
+  .^2 %>% 
+  sum
 ```
 
 . . .
@@ -686,14 +695,14 @@ We opt for the first model (smaller SSR).
 
 ## $R^2$ {.smaller}
 
-While the SSR can be used to select a model, it is also useful in describing the goodness of fit of the model.
+While the SSR is useful for comparing models, it can also be used to describe the goodness of fit of the model.
 
 . . .
 
 The **SST** (total sum of squares) is the sum of squared distance to the mean.
 
 $$
-SST = (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + \dots + (x_n - \bar{x})^2
+SST = (y_1 - \bar{y})^2 + (y_2 - \bar{y})^2 + \dots + (y_n - \bar{y})^2
 $$
 
 It measures the total amount of variability in the data.
@@ -703,7 +712,7 @@ It measures the total amount of variability in the data.
 Remember the formula for **SSR**
 
 $$
-SSR = (x_1 - \hat{x})^2 + (x_2 - \hat{x}_1)^2 + \dots + (x_n - \hat{x}_n)^2
+SSR = (y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}_2)^2 + \dots + (y_n - \hat{y}_n)^2
 $$
 
 It measures the amount of variability in the data left unexplained by the model.
@@ -746,7 +755,9 @@ m1 <- lm(hwy ~ cty, data = d)
 m_glance <- glance(m1)
 m_glance$r.squared
 
-lm(hwy ~ displ, data = d) %>% glance %>% .[["r.squared"]]
+lm(hwy ~ displ, data = d) %>% 
+  glance %>% 
+  .[["r.squared"]]
 ```
 
 The model with `cty` as a predictor has a $R^2$ value of $0.914$, and the model that uses `displ` has a $R^2$ of $0.59$ (worse).
@@ -762,15 +773,11 @@ The first model is better!
 
 -   Exercise [7.23](https://openintro-ims.netlify.app/model-slr.html#chp7-exercises)
     -   fit the model in `R`; do you obtain the same estimates?
-
-```{r, eval=FALSE}
-d <- usdata::county_2019
-```
-
     -   do parts a-d
     -   compute the SST, SSR and $R^2$ "by hand" in `R` (do not use `glance`). You can use the command `augment` to compute the residuals.
 
 ```{r, eval=FALSE}
+d <- usdata::county_2019
 m <- lm(. . .)
 m_augment <- augment(m)
 SST <- ...
@@ -813,7 +820,7 @@ ggplot(d) +
 countdown(minutes = 3)
 ```
 
-## Outliers, leverage and influential points
+## Outliers, leverage and influential points {.smaller}
 
 -   **outliers**: observations that fall far from the cloud of points;
 
@@ -831,7 +838,7 @@ countdown(minutes = 3)
 
 ## 
 
-```{r, eval=FALSE}
+```{r, echo=FALSE}
 d1 <- simulated_scatter %>% 
   filter(group == 24) %>%
   mutate(outlier = if_else(y == min(y), TRUE, FALSE))
@@ -952,7 +959,7 @@ Exercise [7.27](https://openintro-ims.netlify.app/model-slr.html#chp7-exercises)
 countdown(minutes = 3)
 ```
 
-## Least-square estimates are not robust
+## Least-square estimates are not robust {.smaller}
 
 In regression, outliers have the potential to highly influence the least-square estimates $\hat{\beta}_0$ and $\hat{\beta}_1$.
 
@@ -965,7 +972,12 @@ Least-square estimates are not *robust* to the presence of outliers.
 Estimates that are robust include (not covered in this class)
 
 -   least absolute deviation estimates, which minimize the SAR (sum of *absolute* residuals) instead of the SSR
--   Bayesian estimates
+
+$$
+SAR = |e_1| + |e_2| + \dots + |e_n|
+$$
+
+-   Bayesian estimates (STA360)
 
 ## Impact of outliers
 
@@ -988,14 +1000,14 @@ lm(hwy ~ cty, data = d_contaminated)
 
 . . .
 
-The value of the slope has almost tripled!
+The slope estimate has almost tripled!
 
 ## 
 
 ```{r}
 ggplot(d_contaminated) +
   geom_point(aes(cty, hwy)) +
-  geom_abline(intercept = -26.046, slope = 3.013, col = "purple")
+  geom_abline(intercept = -33.841, slope = 3.498, col = "purple")
 ```
 
 The regression line not longer fits the data well.
@@ -1004,10 +1016,14 @@ The regression line not longer fits the data well.
 
 ## Recap
 
-::: incremental
 -   simple linear regression model
 
 $$
     \text{hwy} \approx \beta_0 + \beta_1 \text{cty}
-$$ - residuals - least-square estimates - parameter interpretation - model comparison with $R^2$ - outliers
-:::
+$$ 
+
+-   residuals
+-   least-square estimates
+-   parameter interpretation
+-   model comparison with $R^2$
+-   outliers
