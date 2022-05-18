@@ -1,0 +1,95 @@
+---
+title: "Data science in action -- examples in various fields"
+subtitle: "STA 101L - Summer I 2022"
+author: "Raphael Morsomme"
+footer:  "[https://rmorsomme.github.io/website/](https://rmorsomme.github.io/website/)"
+logo: "images/logo.jpg"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    code-fold: false
+    code-summary: "Show the code"
+    code-link: true
+    code-copy: true
+    self-contained: true
+    scrollable: true
+editor: visual
+execute:
+  freeze: auto
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+## Outline
+
+-   7 billion -- are you typical?
+-   200 years of history through health and wealth
+-   Building a better NBA team through data science
+-   When data seem to contradict widely held believes
+-   Statistics in psychiatry and agriculture
+-   10 steps to get started in sport analytics
+
+## 7 billion -- are you typical?
+
+This [short video](https://youtu.be/4B2xOvKFFz4) by **National Geographic** illustrates the various ways in which demographic variables can be summarized.
+
+![](images/applications/typical.PNG){fig-align="center"}
+
+## 200 years of history through health and wealth {.smaller}
+
+::: columns
+::: {.column width="32%"}
+This [short video](https://youtu.be/jbkSRLYSojo) and this [Ted talk](https://youtu.be/jbkSRLYSojo) show the work of the public health scientist **Hans Rosling** who uses data visualization with great skills to tell a story.
+
+Can you identify all 5 variables that were necessary to make the animation in the short video? Visit the [Gapminder website](https://www.gapminder.org/tools/#$chart-type=bubbles&url=v1) to explore other variables.
+:::
+
+::: {.column width="68%"}
+![](images/applications/gapminder.png){fig-align="center"}
+:::
+:::
+
+## Building a better NBA team through data science {.smaller}
+
+::: columns
+::: {.column width="32%"}
+Learn about Dr. **Ivana Seric**'s work for the Philadelphia 76ers in this [short video](https://youtu.be/MpLHMKTolVw). She has used her mathematical background and passion for basketball to dive in the data and help the NBA team devise better strategies.
+
+Not interested in basketball, check this [article](https://www.r-bloggers.com/2021/08/10-steps-to-get-started-in-sports-analytics/) in which the R blogger Bill K shares 10 tips for any fan of sports to become a sports data analyst.
+:::
+
+::: {.column width="68%"}
+![](images/applications/bball.jpeg)
+:::
+:::
+
+## When data seem to contradict widely held believes
+
+In this [Ted talk](https://youtu.be/um5gMZcZWm0), Prof. Steven Levitt argues that the data do not seem to corroborate the idea that car seats are no more effective than seat belts in protecting kids from dying in cars.
+
+## Statistics in psychiatry and agriculture
+
+Hear about the work of the statistician [Susan Murphy](https://youtu.be/Bz0e5xGDHaU) and agricultural ecologist [David Lobell](https://youtu.be/Bz0e5xGDHaU), both recipients of the prestigious MacArthur Fellowship.
+
+Believe it or not, agriculture is where statistical methods (experiments, hypothesis tests, etc) were first used during the 1920s.
+
+## Estimating the effect of commute time on rent in New York {.smaller}
+
+::: columns
+::: {.column width="32%"}
+In this [article](https://fivethirtyeight.com/features/new-yorkers-will-pay-56-a-month-to-trim-a-minute-off-their-commute/), Carl Bialik looked at more than 100,000 homes present on StreetEasy. He observed that, unsurprisingly, the distance to the nearest metro does impact rent prices, and he even managed to put a number on that effect: \$56/minute.
+:::
+
+::: {.column width="2%"}
+:::
+
+::: {.column width="66%"}
+![](images/applications/rentdist.png) Source: [FiverThirtyEight](https://fivethirtyeight.com/features/new-yorkers-will-pay-56-a-month-to-trim-a-minute-off-their-commute/)
+:::
+:::
+
+## 

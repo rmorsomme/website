@@ -2,4 +2,128 @@
 title: "Prediction project"
 ---
 
-Details about the prediction project will be provided during week 1.
+## Overview
+
+In this prediction project, you will work in pairs to construct a regression model that will be used to make predictions. The prediction model is due on Tuesday, **May 31, at 9:00 am**, and the final report is due Wednesday, **June 1 at 9:00pm**.
+
+🍀 Good luck! 🍀
+
+## Introduction
+
+The goal of the prediction project is for you to use regression analysis to construct a linear regression model with good prediction accuracy, demonstrating proficiency in the techniques we have covered in class so far and applying them to a real data set in a meaningful way.
+
+All analyses must be done in RMarkdown, and all components of the project must be reproducible (with the exception of the presentation).
+
+## Academic Integrity
+
+By participating in this project, you pledge to uphold the Duke Community Standard:
+
+-   I will not lie, cheat, or steal in my academic endeavors;
+
+-   I will conduct myself honorably in all my endeavors; and
+
+-   I will act if the Standard is compromised.
+
+## Data
+
+We will work with the natality data for the U.S. in 2020. The response variable that we are interested in is newborn's weight. This variable is important to medical professionals since a newborn with a low birth weight is more likely to require additional care. You have access to a [random sample of 1,000 observations](/projects/training_set.csv) to construct your prediction model. I have kept a separate set of 20,000 observations to evaluate the prediction model that you select.
+
+Here is a detailed overview of the variable
+
+-   `newborn_birth_weight`: newborn birth weight in grams (**response**)
+-   `month`: birth month (`1` = January, ..., `12` = December)
+-   `mother_age`: age of the mother in years
+    -   `prenatal_care_starting_month`: month in which prenatal care began; if `0`, there was no prenatal care
+-   `daily_cigarette_prepregnancy`: daily number of cigarettes smoked before the pregnancy
+-   `daily_cigarette_trimester_1`: daily number of cigarettes smoked during the 1st trimester of the pregnancy
+-   `daily_cigarette_trimester_2`: daily number of cigarettes smoked during the 2nd trimester of the pregnancy
+-   `daily_cigarette_trimester_3`: daily number of cigarettes smoked during the 3rd trimester of the pregnancy
+-   `mother_height`: height of the mother in inches
+-   `mother_bmi`: body mass index of the mother
+-   `mother_weight_prepregnancy`: weight of the mother before the pregnancy in pounds
+-   `mother_weight_delivery`: weight of the mother at delivery in pounds
+-   `mother_diabetes_gestational`: whether the mother had diabetes during the pregnancy
+-   `newborn_sex`: sex of the newborn
+-   `gestation_week`: number of gestational weeks
+-   `mother_risk_factors`: whether the mother had any risk factor (diabetes, hypertension, previous preterm birth, previous cesarean, infertility treatment used, etc)
+
+## Submission
+
+The three primary deliverables for this project are:
+
+-   **Prediction model:** you need to submit a RDATA file that contains your prediction model. The prediction model must consist in a function that takes a test set (a dataframe with the same predictors as the training set, but no response variable) as an input and returns a prediction for each observation of the test set. The RDATA file should not contain anything else.
+
+-   **Informal presentation**: you will present your work orally to rest of the class. The presentation should be no longer than 5 minutes (aim for 2-6 slides). It is fine if the presentation is shorter than 5 minutes, but it cannot exceed 5 minutes. The two team members should speak roughly the same amount of time. Each presentation will be followed by a short QA session.
+
+-   **Final report:** The final report details your work. It needs to be realized using RMarkdown and submitted on Gradescope as a PDF. The RMD file also needs to be sent via email to the instruction team (reproducibility). The page limit is 6 pages (including code chunks, but excluding the appendix). Figures should go in the appendix, along with any work that you wish to include. Grading will largely be based on the content in the main body of the report. You should assume the reader will not see the material in the appendix unless prompted to view it in the main body of the report.
+
+## Final report content
+
+The final report should include the following sections, though you should feel free to include additional sections as necessary.
+
+-   **Short introduction**: briefly mention the variables you have considered, those you have engineered, and the approach you have chosen for model selection.
+-   **Variable selection and engineering**: list the variables that you have chosen to consider; briefly explain your reasoning; describe new variables that you have engineered; visualize every variable that you create.
+-   **Outliers**: if there were outliers, explain how you treated them.
+-   **Model fitting**: you need to fit at least 5 models:
+    -   *a simple linear regression model* with `gestation_week` as the predictor
+    -   *the full model* with all 15 raw predictors
+    -   at least 3 other models containing new variables that you have created
+-   **Model selection**: select the model that you will submit using
+    -   a model selection criterion,
+    -   the holdout method, and
+    -   cross-validation
+-   **Discussion/conclusion**: briefly discuss your result, any limitation to your work, and what predictor(s) you have liked to have in the dataset (e.g. weight of father) to make the prediction model more accurate.
+
+# Rubric (20 points)
+
++------------------------------------------------------------------------------------+-----------------+
+| **Part**                                                                           | **Points**      |
++:===================================================================================+:===============:+
+| **Prediction model**                                                               | **3**           |
+|                                                                                    |                 |
+| -   The RDATA file contains only a function                                        | 1               |
+|                                                                                    |                 |
+| -   The model takes a test set as input                                            | 1               |
+|                                                                                    |                 |
+| -   The model returns one prediction for each observation                          | 1               |
+|                                                                                    |                 |
+| -   Most accurate model of the class                                               | bragging rights |
++------------------------------------------------------------------------------------+-----------------+
+| **Report**                                                                         | **16**          |
+|                                                                                    |                 |
+| -   The analysis is fully reproducible                                             | 1               |
+|                                                                                    |                 |
+| -   The simple model with `gestation_week` is fitted                               | 1               |
+|                                                                                    |                 |
+| -   The full model is fitted                                                       | 1               |
+|                                                                                    |                 |
+| -   At least one new predictor is created via transformation                       | 1               |
+|                                                                                    |                 |
+| -   At least one new predictor is created via combination                          | 1               |
+|                                                                                    |                 |
+| -   At least one interaction is considered                                         | 1               |
+|                                                                                    |                 |
+| -   At least one categorical predictor is considered                               | 1               |
+|                                                                                    |                 |
+| -   Subject knowledge is used to guide variable selection and feature engineering  | 2               |
+|                                                                                    |                 |
+| -   Data visualization is used to guide variable selection and feature engineering | 2               |
+|                                                                                    |                 |
+| -   All figures are useful and neatly formatted                                    | 1               |
+|                                                                                    |                 |
+| -   Outliers, if any, are handled appropriately                                    | 1               |
+|                                                                                    |                 |
+| -   at least 3 models (excluding the simple and full models) are compared using    | \(3\)           |
+|                                                                                    |                 |
+|     -   the entire sample with a suitable criterion                                | 1               |
+|                                                                                    |                 |
+|     -   a test set with the holdout method                                         | 1               |
+|                                                                                    |                 |
+|     -   a test set with cross-validation                                           | 1               |
++------------------------------------------------------------------------------------+-----------------+
+| **Presentation**                                                                   | **1**           |
+|                                                                                    |                 |
+| -   You ask at least one question during QA                                        | 1               |
++------------------------------------------------------------------------------------+-----------------+
+| **Total**                                                                          | 20              |
++------------------------------------------------------------------------------------+-----------------+

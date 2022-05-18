@@ -10,24 +10,27 @@ The data can be found [here](https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Data
 
 ## Raw Data import
 
-```{r, eval=FALSE, cache=TRUE}
+```{r}
+knitr::opts_chunk$set(
+  eval = FALSE
+)
+```
 
+
+```{r}
 set.seed(0)
-
 library(tidyverse)
+
 d_sub <- read_csv(
   "../Nat2020us/Nat2020PublicUS.c20210506.r20210812.txt",
   col_names = FALSE, trim_ws = FALSE
   ) %>%
   slice_sample(n = 1e5)
-write_csv(d_sub , "projects/d_sub.csv")
 ```
 
 ## Variable extraction
 
-```{r, eval=FALSE}
-library(tidyverse)
-
+```{r}
 clean_data <- function(data){
   
   data_clean <- data %>%
@@ -48,7 +51,7 @@ clean_data <- function(data){
       mother_diabetes_gestational      = str_sub(string, 314, 314),
       mother_hypertension_prepregnancy = str_sub(string, 315, 315),
       mother_hypertension_gestational  = str_sub(string, 316, 316),
-      mother_risk_factors              = str_sub(string, 337, 337) %>% as.numeric,
+      mother_no_risk_factor            = str_sub(string, 337, 337) %>% as.numeric,
       mother_gonorrhea                 = str_sub(string, 343, 343),
       mother_syphilis                  = str_sub(string, 344, 344),
       mother_chlamydia                 = str_sub(string, 345, 345),
@@ -60,17 +63,17 @@ clean_data <- function(data){
       newborn_birth_weight             = str_sub(string, 504, 507) %>% as.numeric
       ) %>%
     filter(
+      gestation_week               <  99  ,
       number_newborns              == 1   ,
-      mother_risk_factors          <= 1   ,
+      mother_no_risk_factor        <= 1   ,
       mother_weight_delivery       <  999 ,
       mother_weight_prepregnancy   <  999 ,
-      mother_bmi                   <  999 ,
+      mother_bmi                   <  99  ,
       mother_height                <  99  ,
       daily_cigarette_trimester_3  <  98  ,
       daily_cigarette_trimester_2  <  98  ,
       daily_cigarette_trimester_1  <  98  ,
       daily_cigarette_prepregnancy <  98  ,
-      prenatal_care_starting_month <  99  ,
       prenatal_care_starting_month <  99  ,
       newborn_birth_weight         <  9999,
       mother_diabetes_prepregnancy == "N",
@@ -81,9 +84,10 @@ clean_data <- function(data){
       mother_hepatitis_B == "N",
       mother_hepatitis_C == "N"
       ) %>%
+  mutate(mother_risk_factor = !mother_no_risk_factor) %>%
     select(
       - string, - number_newborns,
-      - mother_diabetes_prepregnancy, - mother_hypertension_gestational, - mother_hypertension_prepregnancy, - mother_gonorrhea, - mother_syphilis, - mother_chlamydia, - mother_hepatitis_B, - mother_hepatitis_C
+      - mother_diabetes_prepregnancy, - mother_hypertension_gestational, - mother_hypertension_prepregnancy, - mother_gonorrhea, - mother_syphilis, - mother_chlamydia, - mother_hepatitis_B, - mother_hepatitis_C, - mother_no_risk_factor
       ) %>%
     select(
       newborn_birth_weight, everything()
@@ -92,118 +96,43 @@ clean_data <- function(data){
   return(data_clean)
   
 }
+```
 
-
+```{r}
 d_sub_clean <- clean_data(d_sub)
 
 d_train <- slice(d_sub_clean, 1     : 1e3)
 d_test  <- slice(d_sub_clean, 1e4+1 : 2e4)
 
 write_csv(d_train, "projects/training_set.csv")
-write_csv(d_test , "projects/test_set.csv"    )
+#write_csv(d_test , "projects/test_set.csv"    )
 ```
 
-## Checking training set
+## Checking subset
 
-```{r, eval = FALSE}
-d_num <- d_train %>% select_if(is.numeric)
+```{r}
+d_num <- d_sub_clean %>% select_if(is.numeric)
 for(i in 1 : ncol(d_num)){
   hist(d_num[[i]], breaks = 30, xlab = names(d_num)[i], main = i)
 }
 
-d_cha <- d_train %>% select_if(is.character)
+d_cha <- d_sub_clean %>% select_if(is.character)
 for(i in 1 : ncol(d_cha)){
   print(names(d_cha)[i])
   print(table(d_cha[[i]]))
 }
 ```
 
-```{r, eval = FALSE}
+```{r}
 m_simple <- lm(newborn_birth_weight ~ gestation_week, data = d_train)
 summary(m_simple)
 m_full <- lm(newborn_birth_weight ~ ., data = d_train)
 summary(m_full)
-y_hat <- predict.lm(m_full, d_test)
 y     <- d_test$newborn_birth_weight
-n     <- nrow(d_test)
 RMST <- sqrt(mean((y - mean(y))^2))
-RMSE <- sqrt(mean((y - y_hat  )^2))
+y_hat <- predict.lm(m_full, d_test)
+sqrt(mean((y - y_hat  )^2))
+y_hat <- predict.lm(m_simple, d_test)
+sqrt(mean((y - y_hat  )^2))
 ```
 
-# Instructions
-
-## Overview
-
-The prediction project is released Wednesday, May 18. The prediction model is due on Tuesday, May 31, at 9:00 am. The final report is due Wednesday, June 1 at 9:00pm.
-
-🍀 Good luck! 🍀
-
-## Academic Integrity
-
-By taking this exam, you pledge to uphold the Duke Community Standard:
-
--   I will not lie, cheat, or steal in my academic endeavors;
-
--   I will conduct myself honorably in all my endeavors; and
-
--   I will act if the Standard is compromised.
-
-## Submission
-
--   **Prediction model:** you need to submit a .RDATA file that contains your prediction model. The function takes a test set (same predictors as the training set, but no response variable) as an input and returns a prediction for each observation. The file should not contain anything else.
-
--   **Final report:** The final report details the work you have conducted. It needs to be between 2 and 4 pages long (including code chunks, but excluding figures). The figures go in the appendix, along with any work your deem relevant, but that is notreport
-
--   The report needs to be realized using RMarkdown and submitted on Gradescope as a PDF.
-
-# Rubric (20 points)
-
-+------------------------------------------------------------------------------------+-----------------+
-| **Part**                                                                           | **Points**      |
-+:===================================================================================+:===============:+
-| **Prediction model**                                                               | **3**           |
-|                                                                                    |                 |
-| -   .RDATA file only contains the model                                            | 1               |
-|                                                                                    |                 |
-| -   model takes a test set as input                                                | 1               |
-|                                                                                    |                 |
-| -   model returns one prediction for each observation                              | 1               |
-|                                                                                    |                 |
-| -   most accurate model                                                            | bragging rights |
-+------------------------------------------------------------------------------------+-----------------+
-| **Report**                                                                         | **16**          |
-|                                                                                    |                 |
-| -   fully reproducible analysis                                                    | 1               |
-|                                                                                    |                 |
-| -   simple model with `gestation_week` is fitted                                   | 1               |
-|                                                                                    |                 |
-| -   full model is fitted                                                           | 1               |
-|                                                                                    |                 |
-| -   at least one predictor is transformed                                          | 1               |
-|                                                                                    |                 |
-| -   variables are combined to create at least one new predictor                    | 1               |
-|                                                                                    |                 |
-| -   at least one interaction is considered                                         | 1               |
-|                                                                                    |                 |
-| -   at least a categorical predictor is considered                                 | 1               |
-|                                                                                    |                 |
-| -   subject knowledge is used to guide variable selection and feature engineering  | 2               |
-|                                                                                    |                 |
-| -   data visualization is used to guide variable selection and feature engineering | 2               |
-|                                                                                    |                 |
-| -   at least 3 models (excluding the simple and full models) are compared          | 1               |
-|                                                                                    |                 |
-|     -   using the entire sample with a suitable criterion                          | 2 (1)           |
-|                                                                                    |                 |
-|     -   using cross-validation (holdout method)                                    | 1               |
-|                                                                                    |                 |
-| -   reflection from in-class discussion                                            | 1               |
-|                                                                                    |                 |
-| -   outliers, if any, are handled appropriately                                    |                 |
-+------------------------------------------------------------------------------------+-----------------+
-| **Presentation**                                                                   | **1**           |
-|                                                                                    |                 |
-| -   ask a question in QA                                                           | 1               |
-+------------------------------------------------------------------------------------+-----------------+
-| **Total**                                                                          | 20              |
-+------------------------------------------------------------------------------------+-----------------+

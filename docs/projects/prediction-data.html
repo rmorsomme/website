@@ -194,11 +194,6 @@
   <a href="../course-faq.html" class="sidebar-item-text sidebar-link">FAQ</a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../course-cheatsheet.html" class="sidebar-item-text sidebar-link">RStudio cheat sheets</a>
-  </div>
-</li>
     </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -231,14 +226,7 @@
 <ul>
 <li><a href="#raw-data-import" class="nav-link active" data-scroll-target="#raw-data-import">Raw Data import</a></li>
 <li><a href="#variable-extraction" class="nav-link" data-scroll-target="#variable-extraction">Variable extraction</a></li>
-<li><a href="#checking-training-set" class="nav-link" data-scroll-target="#checking-training-set">Checking training set</a></li>
-<li><a href="#instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a>
-<ul class="collapse">
-<li><a href="#overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
-<li><a href="#academic-integrity" class="nav-link" data-scroll-target="#academic-integrity">Academic Integrity</a></li>
-<li><a href="#submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
-</ul></li>
-<li><a href="#rubric-20-points" class="nav-link" data-scroll-target="#rubric-20-points">Rubric (20 points)</a></li>
+<li><a href="#checking-subset" class="nav-link" data-scroll-target="#checking-subset">Checking subset</a></li>
 </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rmorsomme/website/edit/main/projects\prediction-data.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/rmorsomme/website/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -252,226 +240,127 @@
 <p>The data can be found <a href="https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2020us.zip">here</a> and the help file <a href="https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2020.pdf">here</a></p>
 <section id="raw-data-import" class="level2">
 <h2 class="anchored" data-anchor-id="raw-data-import">Raw Data import</h2>
-<div class="cell" data-hash="prediction-data_cache/html/unnamed-chunk-1_0dc77dd4f77fdd8423c4b596140d5585">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>d_sub <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"../Nat2020us/Nat2020PublicUS.c20210506.r20210812.txt"</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_names =</span> <span class="cn">FALSE</span>, <span class="at">trim_ws =</span> <span class="cn">FALSE</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="fl">1e5</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(d_sub , <span class="st">"projects/d_sub.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">eval =</span> <span class="cn">FALSE</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>d_sub <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"../Nat2020us/Nat2020PublicUS.c20210506.r20210812.txt"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_names =</span> <span class="cn">FALSE</span>, <span class="at">trim_ws =</span> <span class="cn">FALSE</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="fl">1e5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="variable-extraction" class="level2">
 <h2 class="anchored" data-anchor-id="variable-extraction">Variable extraction</h2>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>clean_data <span class="ot">&lt;-</span> <span class="cf">function</span>(data){</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  data_clean <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">string =</span> X1) <span class="sc">%&gt;%</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">month                            =</span> <span class="fu">str_sub</span>(string, <span class="dv">13</span> , <span class="dv">14</span> ) <span class="sc">%&gt;%</span> as.numeric,</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_age                       =</span> <span class="fu">str_sub</span>(string, <span class="dv">75</span> , <span class="dv">76</span> ) <span class="sc">%&gt;%</span> as.numeric,</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">prenatal_care_starting_month     =</span> <span class="fu">str_sub</span>(string, <span class="dv">224</span>, <span class="dv">225</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">daily_cigarette_prepregnancy     =</span> <span class="fu">str_sub</span>(string, <span class="dv">253</span>, <span class="dv">254</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">daily_cigarette_trimester_1      =</span> <span class="fu">str_sub</span>(string, <span class="dv">255</span>, <span class="dv">256</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">daily_cigarette_trimester_2      =</span> <span class="fu">str_sub</span>(string, <span class="dv">257</span>, <span class="dv">258</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">daily_cigarette_trimester_3      =</span> <span class="fu">str_sub</span>(string, <span class="dv">259</span>, <span class="dv">260</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_height                    =</span> <span class="fu">str_sub</span>(string, <span class="dv">280</span>, <span class="dv">281</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_bmi                       =</span> <span class="fu">str_sub</span>(string, <span class="dv">283</span>, <span class="dv">286</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_weight_prepregnancy       =</span> <span class="fu">str_sub</span>(string, <span class="dv">292</span>, <span class="dv">294</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_weight_delivery           =</span> <span class="fu">str_sub</span>(string, <span class="dv">299</span>, <span class="dv">301</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_diabetes_prepregnancy     =</span> <span class="fu">str_sub</span>(string, <span class="dv">313</span>, <span class="dv">313</span>),</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_diabetes_gestational      =</span> <span class="fu">str_sub</span>(string, <span class="dv">314</span>, <span class="dv">314</span>),</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_hypertension_prepregnancy =</span> <span class="fu">str_sub</span>(string, <span class="dv">315</span>, <span class="dv">315</span>),</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_hypertension_gestational  =</span> <span class="fu">str_sub</span>(string, <span class="dv">316</span>, <span class="dv">316</span>),</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_risk_factors              =</span> <span class="fu">str_sub</span>(string, <span class="dv">337</span>, <span class="dv">337</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_gonorrhea                 =</span> <span class="fu">str_sub</span>(string, <span class="dv">343</span>, <span class="dv">343</span>),</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_syphilis                  =</span> <span class="fu">str_sub</span>(string, <span class="dv">344</span>, <span class="dv">344</span>),</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_chlamydia                 =</span> <span class="fu">str_sub</span>(string, <span class="dv">345</span>, <span class="dv">345</span>),</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_hepatitis_B               =</span> <span class="fu">str_sub</span>(string, <span class="dv">346</span>, <span class="dv">346</span>),</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_hepatitis_C               =</span> <span class="fu">str_sub</span>(string, <span class="dv">347</span>, <span class="dv">347</span>),</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">number_newborns                  =</span> <span class="fu">str_sub</span>(string, <span class="dv">454</span>, <span class="dv">454</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">newborn_sex                      =</span> <span class="fu">str_sub</span>(string, <span class="dv">475</span>, <span class="dv">475</span>),</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">gestation_week                   =</span> <span class="fu">str_sub</span>(string, <span class="dv">490</span>, <span class="dv">491</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>      <span class="at">newborn_birth_weight             =</span> <span class="fu">str_sub</span>(string, <span class="dv">504</span>, <span class="dv">507</span>) <span class="sc">%&gt;%</span> as.numeric</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>      number_newborns              <span class="sc">==</span> <span class="dv">1</span>   ,</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>      mother_risk_factors          <span class="sc">&lt;=</span> <span class="dv">1</span>   ,</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>      mother_weight_delivery       <span class="sc">&lt;</span>  <span class="dv">999</span> ,</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>      mother_weight_prepregnancy   <span class="sc">&lt;</span>  <span class="dv">999</span> ,</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>      mother_bmi                   <span class="sc">&lt;</span>  <span class="dv">999</span> ,</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>      mother_height                <span class="sc">&lt;</span>  <span class="dv">99</span>  ,</span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>      daily_cigarette_trimester_3  <span class="sc">&lt;</span>  <span class="dv">98</span>  ,</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>      daily_cigarette_trimester_2  <span class="sc">&lt;</span>  <span class="dv">98</span>  ,</span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>      daily_cigarette_trimester_1  <span class="sc">&lt;</span>  <span class="dv">98</span>  ,</span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>      daily_cigarette_prepregnancy <span class="sc">&lt;</span>  <span class="dv">98</span>  ,</span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>      prenatal_care_starting_month <span class="sc">&lt;</span>  <span class="dv">99</span>  ,</span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>      prenatal_care_starting_month <span class="sc">&lt;</span>  <span class="dv">99</span>  ,</span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>      newborn_birth_weight         <span class="sc">&lt;</span>  <span class="dv">9999</span>,</span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>      mother_diabetes_prepregnancy <span class="sc">==</span> <span class="st">"N"</span>,</span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>      mother_hypertension_gestational <span class="sc">==</span> <span class="st">"N"</span>,</span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>      mother_gonorrhea <span class="sc">==</span> <span class="st">"N"</span>,</span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>      mother_syphilis <span class="sc">==</span> <span class="st">"N"</span>,</span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>      mother_chlamydia <span class="sc">==</span> <span class="st">"N"</span>,</span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>      mother_hepatitis_B <span class="sc">==</span> <span class="st">"N"</span>,</span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>      mother_hepatitis_C <span class="sc">==</span> <span class="st">"N"</span></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(</span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> string, <span class="sc">-</span> number_newborns,</span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> mother_diabetes_prepregnancy, <span class="sc">-</span> mother_hypertension_gestational, <span class="sc">-</span> mother_hypertension_prepregnancy, <span class="sc">-</span> mother_gonorrhea, <span class="sc">-</span> mother_syphilis, <span class="sc">-</span> mother_chlamydia, <span class="sc">-</span> mother_hepatitis_B, <span class="sc">-</span> mother_hepatitis_C</span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(</span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>      newborn_birth_weight, <span class="fu">everything</span>()</span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(data_clean)</span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>d_sub_clean <span class="ot">&lt;-</span> <span class="fu">clean_data</span>(d_sub)</span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>d_train <span class="ot">&lt;-</span> <span class="fu">slice</span>(d_sub_clean, <span class="dv">1</span>     <span class="sc">:</span> <span class="fl">1e3</span>)</span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>d_test  <span class="ot">&lt;-</span> <span class="fu">slice</span>(d_sub_clean, <span class="fl">1e4</span><span class="sc">+</span><span class="dv">1</span> <span class="sc">:</span> <span class="fl">2e4</span>)</span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(d_train, <span class="st">"projects/training_set.csv"</span>)</span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(d_test , <span class="st">"projects/test_set.csv"</span>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="checking-training-set" class="level2">
-<h2 class="anchored" data-anchor-id="checking-training-set">Checking training set</h2>
-<div class="cell">
-<div class="sourceCode" id="cb3"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>d_num <span class="ot">&lt;-</span> d_train <span class="sc">%&gt;%</span> <span class="fu">select_if</span>(is.numeric)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fu">ncol</span>(d_num)){</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hist</span>(d_num[[i]], <span class="at">breaks =</span> <span class="dv">30</span>, <span class="at">xlab =</span> <span class="fu">names</span>(d_num)[i], <span class="at">main =</span> i)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>d_cha <span class="ot">&lt;-</span> d_train <span class="sc">%&gt;%</span> <span class="fu">select_if</span>(is.character)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fu">ncol</span>(d_cha)){</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">names</span>(d_cha)[i])</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">table</span>(d_cha[[i]]))</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>clean_data <span class="ot">&lt;-</span> <span class="cf">function</span>(data){</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  data_clean <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">string =</span> X1) <span class="sc">%&gt;%</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">month                            =</span> <span class="fu">str_sub</span>(string, <span class="dv">13</span> , <span class="dv">14</span> ) <span class="sc">%&gt;%</span> as.numeric,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_age                       =</span> <span class="fu">str_sub</span>(string, <span class="dv">75</span> , <span class="dv">76</span> ) <span class="sc">%&gt;%</span> as.numeric,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">prenatal_care_starting_month     =</span> <span class="fu">str_sub</span>(string, <span class="dv">224</span>, <span class="dv">225</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">daily_cigarette_prepregnancy     =</span> <span class="fu">str_sub</span>(string, <span class="dv">253</span>, <span class="dv">254</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">daily_cigarette_trimester_1      =</span> <span class="fu">str_sub</span>(string, <span class="dv">255</span>, <span class="dv">256</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">daily_cigarette_trimester_2      =</span> <span class="fu">str_sub</span>(string, <span class="dv">257</span>, <span class="dv">258</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">daily_cigarette_trimester_3      =</span> <span class="fu">str_sub</span>(string, <span class="dv">259</span>, <span class="dv">260</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_height                    =</span> <span class="fu">str_sub</span>(string, <span class="dv">280</span>, <span class="dv">281</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_bmi                       =</span> <span class="fu">str_sub</span>(string, <span class="dv">283</span>, <span class="dv">286</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_weight_prepregnancy       =</span> <span class="fu">str_sub</span>(string, <span class="dv">292</span>, <span class="dv">294</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_weight_delivery           =</span> <span class="fu">str_sub</span>(string, <span class="dv">299</span>, <span class="dv">301</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_diabetes_prepregnancy     =</span> <span class="fu">str_sub</span>(string, <span class="dv">313</span>, <span class="dv">313</span>),</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_diabetes_gestational      =</span> <span class="fu">str_sub</span>(string, <span class="dv">314</span>, <span class="dv">314</span>),</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_hypertension_prepregnancy =</span> <span class="fu">str_sub</span>(string, <span class="dv">315</span>, <span class="dv">315</span>),</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_hypertension_gestational  =</span> <span class="fu">str_sub</span>(string, <span class="dv">316</span>, <span class="dv">316</span>),</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_no_risk_factor            =</span> <span class="fu">str_sub</span>(string, <span class="dv">337</span>, <span class="dv">337</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_gonorrhea                 =</span> <span class="fu">str_sub</span>(string, <span class="dv">343</span>, <span class="dv">343</span>),</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_syphilis                  =</span> <span class="fu">str_sub</span>(string, <span class="dv">344</span>, <span class="dv">344</span>),</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_chlamydia                 =</span> <span class="fu">str_sub</span>(string, <span class="dv">345</span>, <span class="dv">345</span>),</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_hepatitis_B               =</span> <span class="fu">str_sub</span>(string, <span class="dv">346</span>, <span class="dv">346</span>),</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">mother_hepatitis_C               =</span> <span class="fu">str_sub</span>(string, <span class="dv">347</span>, <span class="dv">347</span>),</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>      <span class="at">number_newborns                  =</span> <span class="fu">str_sub</span>(string, <span class="dv">454</span>, <span class="dv">454</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>      <span class="at">newborn_sex                      =</span> <span class="fu">str_sub</span>(string, <span class="dv">475</span>, <span class="dv">475</span>),</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">gestation_week                   =</span> <span class="fu">str_sub</span>(string, <span class="dv">490</span>, <span class="dv">491</span>) <span class="sc">%&gt;%</span> as.numeric,</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">newborn_birth_weight             =</span> <span class="fu">str_sub</span>(string, <span class="dv">504</span>, <span class="dv">507</span>) <span class="sc">%&gt;%</span> as.numeric</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>      gestation_week               <span class="sc">&lt;</span>  <span class="dv">99</span>  ,</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>      number_newborns              <span class="sc">==</span> <span class="dv">1</span>   ,</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>      mother_no_risk_factor        <span class="sc">&lt;=</span> <span class="dv">1</span>   ,</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>      mother_weight_delivery       <span class="sc">&lt;</span>  <span class="dv">999</span> ,</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>      mother_weight_prepregnancy   <span class="sc">&lt;</span>  <span class="dv">999</span> ,</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>      mother_bmi                   <span class="sc">&lt;</span>  <span class="dv">99</span>  ,</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>      mother_height                <span class="sc">&lt;</span>  <span class="dv">99</span>  ,</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>      daily_cigarette_trimester_3  <span class="sc">&lt;</span>  <span class="dv">98</span>  ,</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>      daily_cigarette_trimester_2  <span class="sc">&lt;</span>  <span class="dv">98</span>  ,</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>      daily_cigarette_trimester_1  <span class="sc">&lt;</span>  <span class="dv">98</span>  ,</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>      daily_cigarette_prepregnancy <span class="sc">&lt;</span>  <span class="dv">98</span>  ,</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>      prenatal_care_starting_month <span class="sc">&lt;</span>  <span class="dv">99</span>  ,</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>      newborn_birth_weight         <span class="sc">&lt;</span>  <span class="dv">9999</span>,</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>      mother_diabetes_prepregnancy <span class="sc">==</span> <span class="st">"N"</span>,</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>      mother_hypertension_gestational <span class="sc">==</span> <span class="st">"N"</span>,</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>      mother_gonorrhea <span class="sc">==</span> <span class="st">"N"</span>,</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>      mother_syphilis <span class="sc">==</span> <span class="st">"N"</span>,</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>      mother_chlamydia <span class="sc">==</span> <span class="st">"N"</span>,</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>      mother_hepatitis_B <span class="sc">==</span> <span class="st">"N"</span>,</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>      mother_hepatitis_C <span class="sc">==</span> <span class="st">"N"</span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mother_risk_factor =</span> <span class="sc">!</span>mother_no_risk_factor) <span class="sc">%&gt;%</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> string, <span class="sc">-</span> number_newborns,</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> mother_diabetes_prepregnancy, <span class="sc">-</span> mother_hypertension_gestational, <span class="sc">-</span> mother_hypertension_prepregnancy, <span class="sc">-</span> mother_gonorrhea, <span class="sc">-</span> mother_syphilis, <span class="sc">-</span> mother_chlamydia, <span class="sc">-</span> mother_hepatitis_B, <span class="sc">-</span> mother_hepatitis_C, <span class="sc">-</span> mother_no_risk_factor</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>      newborn_birth_weight, <span class="fu">everything</span>()</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(data_clean)</span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>m_simple <span class="ot">&lt;-</span> <span class="fu">lm</span>(newborn_birth_weight <span class="sc">~</span> gestation_week, <span class="at">data =</span> d_train)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m_simple)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>m_full <span class="ot">&lt;-</span> <span class="fu">lm</span>(newborn_birth_weight <span class="sc">~</span> ., <span class="at">data =</span> d_train)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m_full)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>y_hat <span class="ot">&lt;-</span> <span class="fu">predict.lm</span>(m_full, d_test)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>y     <span class="ot">&lt;-</span> d_test<span class="sc">$</span>newborn_birth_weight</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>n     <span class="ot">&lt;-</span> <span class="fu">nrow</span>(d_test)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>RMST <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>((y <span class="sc">-</span> <span class="fu">mean</span>(y))<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>RMSE <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>((y <span class="sc">-</span> y_hat  )<span class="sc">^</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>d_sub_clean <span class="ot">&lt;-</span> <span class="fu">clean_data</span>(d_sub)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>d_train <span class="ot">&lt;-</span> <span class="fu">slice</span>(d_sub_clean, <span class="dv">1</span>     <span class="sc">:</span> <span class="fl">1e3</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>d_test  <span class="ot">&lt;-</span> <span class="fu">slice</span>(d_sub_clean, <span class="fl">1e4</span><span class="sc">+</span><span class="dv">1</span> <span class="sc">:</span> <span class="fl">2e4</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(d_train, <span class="st">"projects/training_set.csv"</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#write_csv(d_test , "projects/test_set.csv"    )</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="instructions" class="level1">
-<h1>Instructions</h1>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>The prediction project is released Wednesday, May 18. The prediction model is due on Tuesday, May 31, at 9:00 am. The final report is due Wednesday, June 1 at 9:00pm.</p>
-<p>🍀 Good luck! 🍀</p>
-</section>
-<section id="academic-integrity" class="level2">
-<h2 class="anchored" data-anchor-id="academic-integrity">Academic Integrity</h2>
-<p>By taking this exam, you pledge to uphold the Duke Community Standard:</p>
-<ul>
-<li><p>I will not lie, cheat, or steal in my academic endeavors;</p></li>
-<li><p>I will conduct myself honorably in all my endeavors; and</p></li>
-<li><p>I will act if the Standard is compromised.</p></li>
-</ul>
-</section>
-<section id="submission" class="level2">
-<h2 class="anchored" data-anchor-id="submission">Submission</h2>
-<ul>
-<li><p><strong>Prediction model:</strong> you need to submit a .RDATA file that contains your prediction model. The function takes a test set (same predictors as the training set, but no response variable) as an input and returns a prediction for each observation. The file should not contain anything else.</p></li>
-<li><p><strong>Final report:</strong> The final report details the work you have conducted. It needs to be between 2 and 4 pages long (including code chunks, but excluding figures). The figures go in the appendix, along with any work your deem relevant, but that is notreport</p></li>
-<li><p>The report needs to be realized using RMarkdown and submitted on Gradescope as a PDF.</p></li>
-</ul>
-</section>
-</section>
-<section id="rubric-20-points" class="level1">
-<h1>Rubric (20 points)</h1>
-<table class="table">
-<colgroup>
-<col style="width: 82%">
-<col style="width: 17%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;"><strong>Part</strong></th>
-<th style="text-align: center;"><strong>Points</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><p><strong>Prediction model</strong></p>
-<ul>
-<li><p>.RDATA file only contains the model</p></li>
-<li><p>model takes a test set as input</p></li>
-<li><p>model returns one prediction for each observation</p></li>
-<li><p>most accurate model</p></li>
-</ul></td>
-<td style="text-align: center;"><p><strong>3</strong></p>
-<p>1</p>
-<p>1</p>
-<p>1</p>
-<p>bragging rights</p></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><p><strong>Report</strong></p>
-<ul>
-<li><p>fully reproducible analysis</p></li>
-<li><p>simple model with <code>gestation_week</code> is fitted</p></li>
-<li><p>full model is fitted</p></li>
-<li><p>at least one predictor is transformed</p></li>
-<li><p>variables are combined to create at least one new predictor</p></li>
-<li><p>at least one interaction is considered</p></li>
-<li><p>at least a categorical predictor is considered</p></li>
-<li><p>subject knowledge is used to guide variable selection and feature engineering</p></li>
-<li><p>data visualization is used to guide variable selection and feature engineering</p></li>
-<li><p>at least 3 models (excluding the simple and full models) are compared</p>
-<ul>
-<li><p>using the entire sample with a suitable criterion</p></li>
-<li><p>using cross-validation (holdout method)</p></li>
-</ul></li>
-<li><p>reflection from in-class discussion</p></li>
-<li><p>outliers, if any, are handled appropriately</p></li>
-</ul></td>
-<td style="text-align: center;"><p><strong>16</strong></p>
-<p>1</p>
-<p>1</p>
-<p>1</p>
-<p>1</p>
-<p>1</p>
-<p>1</p>
-<p>1</p>
-<p>2</p>
-<p>2</p>
-<p>1</p>
-<p>2 (1)</p>
-<p>1</p>
-<p>1</p></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><p><strong>Presentation</strong></p>
-<ul>
-<li>ask a question in QA</li>
-</ul></td>
-<td style="text-align: center;"><p><strong>1</strong></p>
-<p>1</p></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Total</strong></td>
-<td style="text-align: center;">20</td>
-</tr>
-</tbody>
-</table>
+<section id="checking-subset" class="level2">
+<h2 class="anchored" data-anchor-id="checking-subset">Checking subset</h2>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>d_num <span class="ot">&lt;-</span> d_sub_clean <span class="sc">%&gt;%</span> <span class="fu">select_if</span>(is.numeric)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fu">ncol</span>(d_num)){</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hist</span>(d_num[[i]], <span class="at">breaks =</span> <span class="dv">30</span>, <span class="at">xlab =</span> <span class="fu">names</span>(d_num)[i], <span class="at">main =</span> i)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>d_cha <span class="ot">&lt;-</span> d_sub_clean <span class="sc">%&gt;%</span> <span class="fu">select_if</span>(is.character)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fu">ncol</span>(d_cha)){</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">names</span>(d_cha)[i])</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">table</span>(d_cha[[i]]))</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>m_simple <span class="ot">&lt;-</span> <span class="fu">lm</span>(newborn_birth_weight <span class="sc">~</span> gestation_week, <span class="at">data =</span> d_train)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m_simple)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>m_full <span class="ot">&lt;-</span> <span class="fu">lm</span>(newborn_birth_weight <span class="sc">~</span> ., <span class="at">data =</span> d_train)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m_full)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>y     <span class="ot">&lt;-</span> d_test<span class="sc">$</span>newborn_birth_weight</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>RMST <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>((y <span class="sc">-</span> <span class="fu">mean</span>(y))<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>y_hat <span class="ot">&lt;-</span> <span class="fu">predict.lm</span>(m_full, d_test)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">mean</span>((y <span class="sc">-</span> y_hat  )<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>y_hat <span class="ot">&lt;-</span> <span class="fu">predict.lm</span>(m_simple, d_test)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">mean</span>((y <span class="sc">-</span> y_hat  )<span class="sc">^</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 

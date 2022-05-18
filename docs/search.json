@@ -28,13 +28,6 @@
     "text": "If the status shows something other than Operational, this means there is a known incident with the containers. Check back later to see if it’s been resolved. If there’s a deadline coming up soon, post on the course forum to let us know that there’s an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don’t anticipate this to happen regularly, the systems are Operational a huge majority of the time!\nIf the status shows Operational, this means the system is expected to be working. Check your internet connection, if need be, restart your computer to ensure a fresh new connection. If your issue persists, post on the course forum with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).\nEither way you can also fill out the form here, which will notify our the R TA for the department as well as our undergraduate coordinator. They’ll be able to help diagnose the issue."
   },
   {
-    "objectID": "course-cheatsheet.html",
-    "href": "course-cheatsheet.html",
-    "title": "Cheat sheets for RStudio",
-    "section": "",
-    "text": "RStudio\nRMarkdown\nggplot2\ndplyr"
-  },
-  {
     "objectID": "course-faq.html",
     "href": "course-faq.html",
     "title": "FAQ",
@@ -53,14 +46,14 @@
     "href": "course-links.html",
     "title": "Useful links",
     "section": "",
-    "text": "The R and RStudio software\n🔗 on R and RStudio\n\n\n\n\nAssignment submission and feedback\n🔗 on Gradescope\n\n\nIntroduction to Modern Statistics\n🔗 on Openintro\n\n\nR for Data Science\n🔗 on R4DS"
+    "text": "The R and RStudio software\n🔗 on R and RStudio\n\n\n\n\nAssignment submission and feedback\n🔗 on Gradescope\n\n\nIntroduction to Modern Statistics\n🔗 on Openintro\n\n\nR for Data Science\n🔗 on R4DS\n\n\nRStudi Cheatsheets\n🔗RStudio, RMarkdown, ggplot2, dplyr"
   },
   {
     "objectID": "course-overview.html",
     "href": "course-overview.html",
     "title": "STA 101L: Data Analysis and Statistical Inference",
     "section": "",
-    "text": "Learn approaches for analyzing quantitative data, emphasizing regression models, and statistical inference. Learn techniques for visualizing numerical and categorical data, building a forecasting model, and modeling real-world phenomena. Gain experience dealing with the challenges that arise in practice through hands-on assignments and projects that utilize real-world data. This class emphasizes data analysis over mathematical theory and has no prerequisite."
+    "text": "Did you know that statistics was first used in agriculture and that data science has probably revolutionized your favorite sport? Check out these slides to learn more about the impact that statistics and data sciences have had on various fields through short videos."
   },
   {
     "objectID": "course-support.html",
@@ -802,7 +795,42 @@
     "href": "project-prediction.html",
     "title": "Prediction project",
     "section": "",
-    "text": "Details about the prediction project will be provided during week 1."
+    "text": "In this prediction project, you will work in pairs to construct a regression model that will be used to make predictions. The prediction model is due on Tuesday, May 31, at 9:00 am, and the final report is due Wednesday, June 1 at 9:00pm.\n🍀 Good luck! 🍀"
+  },
+  {
+    "objectID": "project-prediction.html#introduction",
+    "href": "project-prediction.html#introduction",
+    "title": "Prediction project",
+    "section": "Introduction",
+    "text": "Introduction\nThe goal of the prediction project is for you to use regression analysis to construct a linear regression model with good prediction accuracy, demonstrating proficiency in the techniques we have covered in class so far and applying them to a real data set in a meaningful way.\nAll analyses must be done in RMarkdown, and all components of the project must be reproducible (with the exception of the presentation)."
+  },
+  {
+    "objectID": "project-prediction.html#academic-integrity",
+    "href": "project-prediction.html#academic-integrity",
+    "title": "Prediction project",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nBy participating in this project, you pledge to uphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised."
+  },
+  {
+    "objectID": "project-prediction.html#data",
+    "href": "project-prediction.html#data",
+    "title": "Prediction project",
+    "section": "Data",
+    "text": "Data\nWe will work with the natality data for the U.S. in 2020. The response variable that we are interested in is newborn’s weight. This variable is important to medical professionals since a newborn with a low birth weight is more likely to require additional care. You have access to a random sample of 1,000 observations to construct your prediction model. I have kept a separate set of 20,000 observations to evaluate the prediction model that you select.\nHere is a detailed overview of the variable\n\nnewborn_birth_weight: newborn birth weight in grams (response)\nmonth: birth month (1 = January, …, 12 = December)\nmother_age: age of the mother in years\n\nprenatal_care_starting_month: month in which prenatal care began; if 0, there was no prenatal care\n\ndaily_cigarette_prepregnancy: daily number of cigarettes smoked before the pregnancy\ndaily_cigarette_trimester_1: daily number of cigarettes smoked during the 1st trimester of the pregnancy\ndaily_cigarette_trimester_2: daily number of cigarettes smoked during the 2nd trimester of the pregnancy\ndaily_cigarette_trimester_3: daily number of cigarettes smoked during the 3rd trimester of the pregnancy\nmother_height: height of the mother in inches\nmother_bmi: body mass index of the mother\nmother_weight_prepregnancy: weight of the mother before the pregnancy in pounds\nmother_weight_delivery: weight of the mother at delivery in pounds\nmother_diabetes_gestational: whether the mother had diabetes during the pregnancy\nnewborn_sex: sex of the newborn\ngestation_week: number of gestational weeks\nmother_risk_factors: whether the mother had any risk factor (diabetes, hypertension, previous preterm birth, previous cesarean, infertility treatment used, etc)"
+  },
+  {
+    "objectID": "project-prediction.html#submission",
+    "href": "project-prediction.html#submission",
+    "title": "Prediction project",
+    "section": "Submission",
+    "text": "Submission\nThe three primary deliverables for this project are:\n\nPrediction model: you need to submit a RDATA file that contains your prediction model. The prediction model must consist in a function that takes a test set (a dataframe with the same predictors as the training set, but no response variable) as an input and returns a prediction for each observation of the test set. The RDATA file should not contain anything else.\nInformal presentation: you will present your work orally to rest of the class. The presentation should be no longer than 5 minutes (aim for 2-6 slides). It is fine if the presentation is shorter than 5 minutes, but it cannot exceed 5 minutes. The two team members should speak roughly the same amount of time. Each presentation will be followed by a short QA session.\nFinal report: The final report details your work. It needs to be realized using RMarkdown and submitted on Gradescope as a PDF. The RMD file also needs to be sent via email to the instruction team (reproducibility). The page limit is 6 pages (including code chunks, but excluding the appendix). Figures should go in the appendix, along with any work that you wish to include. Grading will largely be based on the content in the main body of the report. You should assume the reader will not see the material in the appendix unless prompted to view it in the main body of the report."
+  },
+  {
+    "objectID": "project-prediction.html#final-report-content",
+    "href": "project-prediction.html#final-report-content",
+    "title": "Prediction project",
+    "section": "Final report content",
+    "text": "Final report content\nThe final report should include the following sections, though you should feel free to include additional sections as necessary.\n\nShort introduction: briefly mention the variables you have considered, those you have engineered, and the approach you have chosen for model selection.\nVariable selection and engineering: list the variables that you have chosen to consider; briefly explain your reasoning; describe new variables that you have engineered; visualize every variable that you create.\nOutliers: if there were outliers, explain how you treated them.\nModel fitting: you need to fit at least 5 models:\n\na simple linear regression model with gestation_week as the predictor\nthe full model with all 15 raw predictors\nat least 3 other models containing new variables that you have created\n\nModel selection: select the model that you will submit using\n\na model selection criterion,\nthe holdout method, and\ncross-validation\n\nDiscussion/conclusion: briefly discuss your result, any limitation to your work, and what predictor(s) you have liked to have in the dataset (e.g. weight of father) to make the prediction model more accurate."
   },
   {
     "objectID": "project-tips-resources.html",
@@ -844,42 +872,77 @@
     "href": "projects/prediction-data.html#raw-data-import",
     "title": "Prediction Project - Data Prep",
     "section": "Raw Data import",
-    "text": "Raw Data import\n\nset.seed(0)\n\nlibrary(tidyverse)\nd_sub <- read_csv(\n  \"../Nat2020us/Nat2020PublicUS.c20210506.r20210812.txt\",\n  col_names = FALSE, trim_ws = FALSE\n  ) %>%\n  slice_sample(n = 1e5)\nwrite_csv(d_sub , \"projects/d_sub.csv\")"
+    "text": "Raw Data import\n\nknitr::opts_chunk$set(\n  eval = FALSE\n)\n\n\nset.seed(0)\nlibrary(tidyverse)\n\nd_sub <- read_csv(\n  \"../Nat2020us/Nat2020PublicUS.c20210506.r20210812.txt\",\n  col_names = FALSE, trim_ws = FALSE\n  ) %>%\n  slice_sample(n = 1e5)"
   },
   {
     "objectID": "projects/prediction-data.html#variable-extraction",
     "href": "projects/prediction-data.html#variable-extraction",
     "title": "Prediction Project - Data Prep",
     "section": "Variable extraction",
-    "text": "Variable extraction\n\nlibrary(tidyverse)\n\nclean_data <- function(data){\n  \n  data_clean <- data %>%\n    rename(string = X1) %>%\n    mutate(\n      month                            = str_sub(string, 13 , 14 ) %>% as.numeric,\n      mother_age                       = str_sub(string, 75 , 76 ) %>% as.numeric,\n      prenatal_care_starting_month     = str_sub(string, 224, 225) %>% as.numeric,\n      daily_cigarette_prepregnancy     = str_sub(string, 253, 254) %>% as.numeric,\n      daily_cigarette_trimester_1      = str_sub(string, 255, 256) %>% as.numeric,\n      daily_cigarette_trimester_2      = str_sub(string, 257, 258) %>% as.numeric,\n      daily_cigarette_trimester_3      = str_sub(string, 259, 260) %>% as.numeric,\n      mother_height                    = str_sub(string, 280, 281) %>% as.numeric,\n      mother_bmi                       = str_sub(string, 283, 286) %>% as.numeric,\n      mother_weight_prepregnancy       = str_sub(string, 292, 294) %>% as.numeric,\n      mother_weight_delivery           = str_sub(string, 299, 301) %>% as.numeric,\n      mother_diabetes_prepregnancy     = str_sub(string, 313, 313),\n      mother_diabetes_gestational      = str_sub(string, 314, 314),\n      mother_hypertension_prepregnancy = str_sub(string, 315, 315),\n      mother_hypertension_gestational  = str_sub(string, 316, 316),\n      mother_risk_factors              = str_sub(string, 337, 337) %>% as.numeric,\n      mother_gonorrhea                 = str_sub(string, 343, 343),\n      mother_syphilis                  = str_sub(string, 344, 344),\n      mother_chlamydia                 = str_sub(string, 345, 345),\n      mother_hepatitis_B               = str_sub(string, 346, 346),\n      mother_hepatitis_C               = str_sub(string, 347, 347),\n      number_newborns                  = str_sub(string, 454, 454) %>% as.numeric,\n      newborn_sex                      = str_sub(string, 475, 475),\n      gestation_week                   = str_sub(string, 490, 491) %>% as.numeric,\n      newborn_birth_weight             = str_sub(string, 504, 507) %>% as.numeric\n      ) %>%\n    filter(\n      number_newborns              == 1   ,\n      mother_risk_factors          <= 1   ,\n      mother_weight_delivery       <  999 ,\n      mother_weight_prepregnancy   <  999 ,\n      mother_bmi                   <  999 ,\n      mother_height                <  99  ,\n      daily_cigarette_trimester_3  <  98  ,\n      daily_cigarette_trimester_2  <  98  ,\n      daily_cigarette_trimester_1  <  98  ,\n      daily_cigarette_prepregnancy <  98  ,\n      prenatal_care_starting_month <  99  ,\n      prenatal_care_starting_month <  99  ,\n      newborn_birth_weight         <  9999,\n      mother_diabetes_prepregnancy == \"N\",\n      mother_hypertension_gestational == \"N\",\n      mother_gonorrhea == \"N\",\n      mother_syphilis == \"N\",\n      mother_chlamydia == \"N\",\n      mother_hepatitis_B == \"N\",\n      mother_hepatitis_C == \"N\"\n      ) %>%\n    select(\n      - string, - number_newborns,\n      - mother_diabetes_prepregnancy, - mother_hypertension_gestational, - mother_hypertension_prepregnancy, - mother_gonorrhea, - mother_syphilis, - mother_chlamydia, - mother_hepatitis_B, - mother_hepatitis_C\n      ) %>%\n    select(\n      newborn_birth_weight, everything()\n    )\n      \n  return(data_clean)\n  \n}\n\n\nd_sub_clean <- clean_data(d_sub)\n\nd_train <- slice(d_sub_clean, 1     : 1e3)\nd_test  <- slice(d_sub_clean, 1e4+1 : 2e4)\n\nwrite_csv(d_train, \"projects/training_set.csv\")\nwrite_csv(d_test , \"projects/test_set.csv\"    )"
+    "text": "Variable extraction\n\nclean_data <- function(data){\n  \n  data_clean <- data %>%\n    rename(string = X1) %>%\n    mutate(\n      month                            = str_sub(string, 13 , 14 ) %>% as.numeric,\n      mother_age                       = str_sub(string, 75 , 76 ) %>% as.numeric,\n      prenatal_care_starting_month     = str_sub(string, 224, 225) %>% as.numeric,\n      daily_cigarette_prepregnancy     = str_sub(string, 253, 254) %>% as.numeric,\n      daily_cigarette_trimester_1      = str_sub(string, 255, 256) %>% as.numeric,\n      daily_cigarette_trimester_2      = str_sub(string, 257, 258) %>% as.numeric,\n      daily_cigarette_trimester_3      = str_sub(string, 259, 260) %>% as.numeric,\n      mother_height                    = str_sub(string, 280, 281) %>% as.numeric,\n      mother_bmi                       = str_sub(string, 283, 286) %>% as.numeric,\n      mother_weight_prepregnancy       = str_sub(string, 292, 294) %>% as.numeric,\n      mother_weight_delivery           = str_sub(string, 299, 301) %>% as.numeric,\n      mother_diabetes_prepregnancy     = str_sub(string, 313, 313),\n      mother_diabetes_gestational      = str_sub(string, 314, 314),\n      mother_hypertension_prepregnancy = str_sub(string, 315, 315),\n      mother_hypertension_gestational  = str_sub(string, 316, 316),\n      mother_no_risk_factor            = str_sub(string, 337, 337) %>% as.numeric,\n      mother_gonorrhea                 = str_sub(string, 343, 343),\n      mother_syphilis                  = str_sub(string, 344, 344),\n      mother_chlamydia                 = str_sub(string, 345, 345),\n      mother_hepatitis_B               = str_sub(string, 346, 346),\n      mother_hepatitis_C               = str_sub(string, 347, 347),\n      number_newborns                  = str_sub(string, 454, 454) %>% as.numeric,\n      newborn_sex                      = str_sub(string, 475, 475),\n      gestation_week                   = str_sub(string, 490, 491) %>% as.numeric,\n      newborn_birth_weight             = str_sub(string, 504, 507) %>% as.numeric\n      ) %>%\n    filter(\n      gestation_week               <  99  ,\n      number_newborns              == 1   ,\n      mother_no_risk_factor        <= 1   ,\n      mother_weight_delivery       <  999 ,\n      mother_weight_prepregnancy   <  999 ,\n      mother_bmi                   <  99  ,\n      mother_height                <  99  ,\n      daily_cigarette_trimester_3  <  98  ,\n      daily_cigarette_trimester_2  <  98  ,\n      daily_cigarette_trimester_1  <  98  ,\n      daily_cigarette_prepregnancy <  98  ,\n      prenatal_care_starting_month <  99  ,\n      newborn_birth_weight         <  9999,\n      mother_diabetes_prepregnancy == \"N\",\n      mother_hypertension_gestational == \"N\",\n      mother_gonorrhea == \"N\",\n      mother_syphilis == \"N\",\n      mother_chlamydia == \"N\",\n      mother_hepatitis_B == \"N\",\n      mother_hepatitis_C == \"N\"\n      ) %>%\n  mutate(mother_risk_factor = !mother_no_risk_factor) %>%\n    select(\n      - string, - number_newborns,\n      - mother_diabetes_prepregnancy, - mother_hypertension_gestational, - mother_hypertension_prepregnancy, - mother_gonorrhea, - mother_syphilis, - mother_chlamydia, - mother_hepatitis_B, - mother_hepatitis_C, - mother_no_risk_factor\n      ) %>%\n    select(\n      newborn_birth_weight, everything()\n    )\n      \n  return(data_clean)\n  \n}\n\n\nd_sub_clean <- clean_data(d_sub)\n\nd_train <- slice(d_sub_clean, 1     : 1e3)\nd_test  <- slice(d_sub_clean, 1e4+1 : 2e4)\n\nwrite_csv(d_train, \"projects/training_set.csv\")\n#write_csv(d_test , \"projects/test_set.csv\"    )"
   },
   {
-    "objectID": "projects/prediction-data.html#checking-training-set",
-    "href": "projects/prediction-data.html#checking-training-set",
+    "objectID": "projects/prediction-data.html#checking-subset",
+    "href": "projects/prediction-data.html#checking-subset",
     "title": "Prediction Project - Data Prep",
-    "section": "Checking training set",
-    "text": "Checking training set\n\nd_num <- d_train %>% select_if(is.numeric)\nfor(i in 1 : ncol(d_num)){\n  hist(d_num[[i]], breaks = 30, xlab = names(d_num)[i], main = i)\n}\n\nd_cha <- d_train %>% select_if(is.character)\nfor(i in 1 : ncol(d_cha)){\n  print(names(d_cha)[i])\n  print(table(d_cha[[i]]))\n}\n\n\nm_simple <- lm(newborn_birth_weight ~ gestation_week, data = d_train)\nsummary(m_simple)\nm_full <- lm(newborn_birth_weight ~ ., data = d_train)\nsummary(m_full)\ny_hat <- predict.lm(m_full, d_test)\ny     <- d_test$newborn_birth_weight\nn     <- nrow(d_test)\nRMST <- sqrt(mean((y - mean(y))^2))\nRMSE <- sqrt(mean((y - y_hat  )^2))"
+    "section": "Checking subset",
+    "text": "Checking subset\n\nd_num <- d_sub_clean %>% select_if(is.numeric)\nfor(i in 1 : ncol(d_num)){\n  hist(d_num[[i]], breaks = 30, xlab = names(d_num)[i], main = i)\n}\n\nd_cha <- d_sub_clean %>% select_if(is.character)\nfor(i in 1 : ncol(d_cha)){\n  print(names(d_cha)[i])\n  print(table(d_cha[[i]]))\n}\n\n\nm_simple <- lm(newborn_birth_weight ~ gestation_week, data = d_train)\nsummary(m_simple)\nm_full <- lm(newborn_birth_weight ~ ., data = d_train)\nsummary(m_full)\ny     <- d_test$newborn_birth_weight\nRMST <- sqrt(mean((y - mean(y))^2))\ny_hat <- predict.lm(m_full, d_test)\nsqrt(mean((y - y_hat  )^2))\ny_hat <- predict.lm(m_simple, d_test)\nsqrt(mean((y - y_hat  )^2))"
   },
   {
-    "objectID": "projects/prediction-data.html#overview",
-    "href": "projects/prediction-data.html#overview",
-    "title": "Prediction Project - Data Prep",
-    "section": "Overview",
-    "text": "Overview\nThe prediction project is released Wednesday, May 18. The prediction model is due on Tuesday, May 31, at 9:00 am. The final report is due Wednesday, June 1 at 9:00pm.\n🍀 Good luck! 🍀"
+    "objectID": "slides/applications.html#outline",
+    "href": "slides/applications.html#outline",
+    "title": "Data science in action – examples in various fields",
+    "section": "Outline",
+    "text": "Outline\n\n7 billion – are you typical?\n200 years of history through health and wealth\nBuilding a better NBA team through data science\nWhen data seem to contradict widely held believes\nStatistics in psychiatry and agriculture\n10 steps to get started in sport analytics"
   },
   {
-    "objectID": "projects/prediction-data.html#academic-integrity",
-    "href": "projects/prediction-data.html#academic-integrity",
-    "title": "Prediction Project - Data Prep",
-    "section": "Academic Integrity",
-    "text": "Academic Integrity\nBy taking this exam, you pledge to uphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised."
+    "objectID": "slides/applications.html#billion-are-you-typical",
+    "href": "slides/applications.html#billion-are-you-typical",
+    "title": "Data science in action – examples in various fields",
+    "section": "7 billion – are you typical?",
+    "text": "7 billion – are you typical?\nThis short video by National Geographic illustrates the various ways in which demographic variables can be summarized."
   },
   {
-    "objectID": "projects/prediction-data.html#submission",
-    "href": "projects/prediction-data.html#submission",
-    "title": "Prediction Project - Data Prep",
-    "section": "Submission",
-    "text": "Submission\n\nPrediction model: you need to submit a .RDATA file that contains your prediction model. The function takes a test set (same predictors as the training set, but no response variable) as an input and returns a prediction for each observation. The file should not contain anything else.\nFinal report: The final report details the work you have conducted. It needs to be between 2 and 4 pages long (including code chunks, but excluding figures). The figures go in the appendix, along with any work your deem relevant, but that is notreport\nThe report needs to be realized using RMarkdown and submitted on Gradescope as a PDF."
+    "objectID": "slides/applications.html#years-of-history-through-health-and-wealth",
+    "href": "slides/applications.html#years-of-history-through-health-and-wealth",
+    "title": "Data science in action – examples in various fields",
+    "section": "200 years of history through health and wealth",
+    "text": "200 years of history through health and wealth\n\n\nThis short video and this Ted talk show the work of the public health scientist Hans Rosling who uses data visualization with great skills to tell a story.\nCan you identify all 5 variables that were necessary to make the animation in the short video? Visit the Gapminder website to explore other variables."
+  },
+  {
+    "objectID": "slides/applications.html#building-a-better-nba-team-through-data-science",
+    "href": "slides/applications.html#building-a-better-nba-team-through-data-science",
+    "title": "Data science in action – examples in various fields",
+    "section": "Building a better NBA team through data science",
+    "text": "Building a better NBA team through data science\n\n\nLearn about Dr. Ivana Seric’s work for the Philadelphia 76ers in this short video. She has used her mathematical background and passion for basketball to dive in the data and help the NBA team devise better strategies.\nNot interested in basketball, check this article in which the R blogger Bill K shares 10 tips for any fan of sports to become a sports data analyst."
+  },
+  {
+    "objectID": "slides/applications.html#when-data-seem-to-contradict-widely-held-believes",
+    "href": "slides/applications.html#when-data-seem-to-contradict-widely-held-believes",
+    "title": "Data science in action – examples in various fields",
+    "section": "When data seem to contradict widely held believes",
+    "text": "When data seem to contradict widely held believes\nIn this Ted talk, Prof. Steven Levitt argues that the data do not seem to corroborate the idea that car seats are no more effective than seat belts in protecting kids from dying in cars."
+  },
+  {
+    "objectID": "slides/applications.html#statistics-in-psychiatry-and-agriculture",
+    "href": "slides/applications.html#statistics-in-psychiatry-and-agriculture",
+    "title": "Data science in action – examples in various fields",
+    "section": "Statistics in psychiatry and agriculture",
+    "text": "Statistics in psychiatry and agriculture\nHear about the work of the statistician Susan Murphy and agricultural ecologist David Lobell, both recipients of the prestigious MacArthur Fellowship.\nBelieve it or not, agriculture is where statistical methods (experiments, hypothesis tests, etc) were first used during the 1920s."
+  },
+  {
+    "objectID": "slides/applications.html#estimating-the-effect-of-commute-time-on-rent-in-new-york",
+    "href": "slides/applications.html#estimating-the-effect-of-commute-time-on-rent-in-new-york",
+    "title": "Data science in action – examples in various fields",
+    "section": "Estimating the effect of commute time on rent in New York",
+    "text": "Estimating the effect of commute time on rent in New York\n\n\nIn this article, Carl Bialik looked at more than 100,000 homes present on StreetEasy. He observed that, unsurprisingly, the distance to the nearest metro does impact rent prices, and he even managed to put a number on that effect: $56/minute.\n\n\n\n Source: FiverThirtyEight"
+  },
+  {
+    "objectID": "slides/applications.html#section",
+    "href": "slides/applications.html#section",
+    "title": "Data science in action – examples in various fields",
+    "section": "",
+    "text": "https://rmorsomme.github.io/website/"
   },
   {
     "objectID": "slides/hw-1-lab-answers.html#setup",
@@ -1943,7 +2006,7 @@
     "href": "slides/lec-4.html#section-7",
     "title": "Simple Linear Regression Models",
     "section": "",
-    "text": "m_binary <- lm(hwy ~ year_binary, data = d_binary)\nm_binary\n\n\nCall:\nlm(formula = hwy ~ year_binary, data = d_binary)\n\nCoefficients:\n(Intercept)  year_binary  \n   23.45299     -0.02564  \n\n\nThe model equation is\n\\[\n\\text{hwy} \\approx 23.46 - 0.026 \\text{year_binary}\n\\]\n\nFor a new car from \\(1999\\), the variable year_binary takes the value \\(1\\) and our prediction is\n\\[\n\\widehat{\\text{hwy}} = 23.46 - 0.026*1 = 23.46 - 0.026 = 23.434\n\\]\n\n\nWhile for a car that not from \\(1999\\), the variable year_binary takes the value \\(1\\) and our prediction is\n\\[\n\\widehat{\\text{hwy}} = 23.46 - 0.026*0 = 23.46 - 0 = 23.46\n\\]"
+    "text": "m_binary <- lm(hwy ~ year_binary, data = d_binary)\nm_binary\n\n\nCall:\nlm(formula = hwy ~ year_binary, data = d_binary)\n\nCoefficients:\n(Intercept)  year_binary  \n   23.45299     -0.02564  \n\n\nThe model equation is\n\\[\n\\text{hwy} \\approx 23.46 - 0.026 \\text{year_binary}\n\\]\n\nFor a new car from \\(1999\\), the variable year_binary takes the value \\(1\\) and our prediction is\n\\[\n\\widehat{\\text{hwy}} = 23.46 - 0.026*1 = 23.46 - 0.026 = 23.434\n\\]\n\n\nWhile for a car that not from \\(1999\\), the variable year_binary takes the value \\(0\\) and our prediction is\n\\[\n\\widehat{\\text{hwy}} = 23.46 - 0.026*0 = 23.46 - 0 = 23.46\n\\]"
   },
   {
     "objectID": "slides/lec-4.html#alternative-model",
@@ -2511,54 +2574,5 @@
     "title": "Model Selection",
     "section": "Recap",
     "text": "Recap\n\n\n\nhttps://rmorsomme.github.io/website/"
-  },
-  {
-    "objectID": "slides/lec-applications.html#outline",
-    "href": "slides/lec-applications.html#outline",
-    "title": "Data science in action – examples in various fields",
-    "section": "Outline",
-    "text": "Outline\n\n7 billion – are you typical?\n200 years of history through health and wealth\nBuilding a better NBA team through data science\nWhen data seem to contradict widely held believes\nStatistics in psychiatry and agriculture"
-  },
-  {
-    "objectID": "slides/lec-applications.html#billion-are-you-typical",
-    "href": "slides/lec-applications.html#billion-are-you-typical",
-    "title": "Data science in action – examples in various fields",
-    "section": "7 billion – are you typical?",
-    "text": "7 billion – are you typical?\nThis short video by National Geographic illustrates the various ways in which demographic variables can be summarized."
-  },
-  {
-    "objectID": "slides/lec-applications.html#years-of-history-through-health-and-wealth",
-    "href": "slides/lec-applications.html#years-of-history-through-health-and-wealth",
-    "title": "Data science in action – examples in various fields",
-    "section": "200 years of history through health and wealth",
-    "text": "200 years of history through health and wealth\n\n\nThis short video and this Ted talk show the work of the public health scientist Hans Rosling who uses data visualization with great skills to tell a story.\nCan you identify all 5 variables that were necessary to make the animation in the short video? Visit the Gapminder website to explore other variables."
-  },
-  {
-    "objectID": "slides/lec-applications.html#building-a-better-nba-team-through-data-science",
-    "href": "slides/lec-applications.html#building-a-better-nba-team-through-data-science",
-    "title": "Data science in action – examples in various fields",
-    "section": "Building a better NBA team through data science",
-    "text": "Building a better NBA team through data science\n\n\nLearn about Dr. Ivana Seric’s work for the Philadelphia 76ers in this short video. She has used her mathematical background and passion for basketball to dive in the data and help the NBA team devise better strategies."
-  },
-  {
-    "objectID": "slides/lec-applications.html#when-data-seem-to-contradict-widely-held-believes",
-    "href": "slides/lec-applications.html#when-data-seem-to-contradict-widely-held-believes",
-    "title": "Data science in action – examples in various fields",
-    "section": "When data seem to contradict widely held believes",
-    "text": "When data seem to contradict widely held believes\nIn this Ted talk, Prof. Steven Levitt argues that the data do not seem to corroborate the idea that car seats are no more effective than seat belts in protecting kids from dying in cars."
-  },
-  {
-    "objectID": "slides/lec-applications.html#statistics-in-psychiatry-and-agriculture",
-    "href": "slides/lec-applications.html#statistics-in-psychiatry-and-agriculture",
-    "title": "Data science in action – examples in various fields",
-    "section": "Statistics in psychiatry and agriculture",
-    "text": "Statistics in psychiatry and agriculture\nHear about the work of the statistician Susan Murphy and agricultural ecologist David Lobell, both recipients of the prestigious MacArthur Fellowship.\nBelieve it or not, agriculture is where statistical methods (experiments, hypothesis tests, etc) were first used during the 1920s."
-  },
-  {
-    "objectID": "slides/lec-applications.html#estimating-the-effect-of-commute-time-on-rent-in-new-york",
-    "href": "slides/lec-applications.html#estimating-the-effect-of-commute-time-on-rent-in-new-york",
-    "title": "Data science in action – examples in various fields",
-    "section": "Estimating the effect of commute time on rent in New York",
-    "text": "Estimating the effect of commute time on rent in New York\n\n\nIn this article, Carl Bialik looked at more than 100,000 homes present on StreetEasy. He observed that, unsurprisingly, the distance to the nearest metro does impact rent prices, and he even managed to put a number on that effect: $56/minute.\n\n\n\n Source: FiverThirtyEight\n\n\n\n\n\nsta101-suI22.github.io/website"
   }
 ]

@@ -44,7 +44,7 @@ library(countdown)
 :::
 
 ::: {.column width="50%"}
--    Ph.D. student in biochemistry
+-   Ph.D. student in biochemistry
 -   Works at the Al-Hashimi Lab
 -   Likes traveling and cooking
 :::
