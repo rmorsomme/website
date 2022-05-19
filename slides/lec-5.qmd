@@ -60,14 +60,13 @@ options(scipen = 20)
 -   Prediction project
     -   teams
     -   deadlines: May 31 (model and presentation) and June 1 (report)
-    
+
 ## Project - reading in the data
 
 ```{r, eval = FALSE}
 library(readr)
 read_csv("https://rmorsomme.github.io/website/projects/training_set.csv")
 ```
-
 
 ## Recap
 
@@ -97,7 +96,6 @@ i.  find better estimates $\Rightarrow$ least-square estimates,
 . . .
 
 ii. use additional predictors $\Rightarrow$ **multiple linear regression models**
-
 
 . . .
 
@@ -178,7 +176,7 @@ For instance, to include the binary variable `year_binary`, we only added a sing
 lm(hwy ~ drv, data = d)
 ```
 
-The model equation with the least-square estimates is 
+The model equation with the least-square estimates is
 
 $$
 \text{hwy} \approx 19.175 + 8.986 \text{drv_f} + 1.825 \text{drv_r}
@@ -508,6 +506,7 @@ Note that the full model has two predictors, while our geometry-based model has 
 
 ::: callout-tip
 ## Feature engineering
+
 A carefully constructed predictor can do a better job than multiple raw predictors!
 :::
 

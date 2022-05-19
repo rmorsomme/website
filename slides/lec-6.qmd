@@ -529,7 +529,6 @@ Volume <- test_set$Volume
 sum(Volume - Volume_hat)^2
 ```
 
-
 ## Mean squared error
 
 In practice, the **(root) mean sum of squared errors** ((R)MSE) is often used.
@@ -540,10 +539,9 @@ $$
 
 $$
 RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}_2)^2 + \dots + (y_m - \hat{y}_m)^2}{m}}
-$$
-Again, small (R)MSE is better.
+$$ Again, small (R)MSE is better.
 
-##
+## 
 
 ```{r}
 SSE <- sum((Volume - Volume_hat)^2)
@@ -553,9 +551,8 @@ RMSE <- sqrt(MSE)
 SSE; MSE; RMSE
 ```
 
-:::callout-tip
-##(R)MSE
-The advantage of (R)MSE over the SSE is that we can compare models evaluate with test sets of different sizes.
+::: callout-tip
+##(R)MSE The advantage of (R)MSE over the SSE is that we can compare models evaluate with test sets of different sizes.
 :::
 
 ## Selecting a model
@@ -586,8 +583,7 @@ compute_RMSE <- function(test_set, model){
 }
 ```
 
-
-##
+## 
 
 ```{r}
 # Step 2
@@ -615,7 +611,7 @@ Models `m2` and `m3` were pretty close.
 
 Could we have obtained a different result with a different seed?
 
-##
+## 
 
 ```{r}
 # Step 1
@@ -637,13 +633,11 @@ compute_RMSE(test_set, m3)
 compute_RMSE(test_set, m48)
 ```
 
-
 ## The test set matters!
 
 A drawback of the holdout method is that the test set matters a lot.
 
 Repeating steps 2 and 3 with a different partition from step 1 may give different results.
-
 
 ## Cross-validation
 
@@ -651,18 +645,17 @@ Cross-validation (CV) is the natural generalization of the holdout method.
 
 . . .
 
-0.    randomly partition the sample into $k$ folds of equal size. $k$ is typically $5$ or $10$. 
-. . . 
+0.  randomly partition the sample into $k$ folds of equal size. $k$ is typically $5$ or $10$. . . .
 
 Repeat the following steps $k$ times
 
-1.    Let fold 1 be the test set and the other folds be the training set
+1.  Let fold 1 be the test set and the other folds be the training set
 
-2.    Fit the model to the training set (like the holdout method)
+2.  Fit the model to the training set (like the holdout method)
 
-3.    Evaluate the prediction accuracy of the model on the test set (like the holdout method)
+3.  Evaluate the prediction accuracy of the model on the test set (like the holdout method)
 
-4.    Go back to 1, letting the next fold be the test set.
+4.  Go back to 1, letting the next fold be the test set.
 
 . . .
 
@@ -752,7 +745,7 @@ Set $k=n$; that is, we use $n$ folds, each of size $1$. The test sets will there
 
 -   but this is something you should learn because it is widely used.
 
-. .
+. . .
 
 -   Akin the "throw cooked spaghetti to the wall and see what sticks" technique.
 
@@ -760,13 +753,11 @@ Set $k=n$; that is, we use $n$ folds, each of size $1$. The test sets will there
 
 Stepwise selection procedures ar of two types: (i) forward and (ii) backward.
 
-## Forward selection procedure
+## Forward selection procedure  {.smaller}
 
-1.  Choose a criterion that balances model fit (smaller SSR) and parsimony (small $k$).
+1.  Choose a criterion that balances model fit (smaller SSR) and parsimony (small $p$)
 
-<!-- -->
-
-i.  e.g. adjusted-$R^2$, **AIC** or BIC
+    $\Rightarrow$ adjusted-$R^2$, **AIC** or BIC
 
 . . .
 
@@ -774,19 +765,16 @@ i.  e.g. adjusted-$R^2$, **AIC** or BIC
 
 3.  Fit all possible models with one additional predictor.
 
-. .
+. . .
 
 4.  Compute the AIC of each of these models
-
-<!-- -->
-
-i.  Identify the model with the smallest AIC. This is our **candidate model**.
+5.  Identify the model with the smallest AIC. This is our **candidate model**.
 
 . . .
 
-ii. If the AIC of the candidate model is *smaller* (better) than the AIC of the current model, the candidate model becomes the current model, and we go back to step 3.
+6.  If the AIC of the candidate model is *smaller* (better) than the AIC of the current model, the candidate model becomes the current model, and we go back to step 3.
 
-iii. If the AIC of the candidate model is *larger* than the AIC of the current model (no new model improves on the current one), the procedure stops, and we select the current model.
+    If the AIC of the candidate model is *larger* than the AIC of the current model (no new model improves on the current one), the procedure stops, and we select the current model.
 
 ## Backward selection procedure
 
@@ -796,7 +784,7 @@ Similar to forward selection, except that
 -   remove one predictor at a time
 -   until removing any predictors makes the model worse.
 
-. . .
+## 
 
 Note that forward and backward selection need not agree; they may select different models.
 

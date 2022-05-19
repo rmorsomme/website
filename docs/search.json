@@ -2699,18 +2699,25 @@
     "href": "slides/lec-6.html#forward-selection-procedure",
     "title": "Model Selection",
     "section": "Forward selection procedure",
-    "text": "Forward selection procedure\n\nChoose a criterion that balances model fit (smaller SSR) and parsimony (small \\(k\\)).\n\n\ne.g. adjusted-\\(R^2\\), AIC or BIC\n\n\n\nStart with the empty model \\(Y \\approx \\beta_0\\), i.e. the model with no predictor. This is our current model\nFit all possible models with one additional predictor.\n\n. .\n\nCompute the AIC of each of these models\n\n\nIdentify the model with the smallest AIC. This is our candidate model.\n\n\n\n\nIf the AIC of the candidate model is smaller (better) than the AIC of the current model, the candidate model becomes the current model, and we go back to step 3.\nIf the AIC of the candidate model is larger than the AIC of the current model (no new model improves on the current one), the procedure stops, and we select the current model."
+    "text": "Forward selection procedure\n\n\nChoose a criterion that balances model fit (smaller SSR) and parsimony (small \\(p\\))\n\\(\\Rightarrow\\) adjusted-\\(R^2\\), AIC or BIC\n\n\n\n\nStart with the empty model \\(Y \\approx \\beta_0\\), i.e. the model with no predictor. This is our current model\nFit all possible models with one additional predictor.\n\n\n\n\nCompute the AIC of each of these models\nIdentify the model with the smallest AIC. This is our candidate model.\n\n\n\n\n\nIf the AIC of the candidate model is smaller (better) than the AIC of the current model, the candidate model becomes the current model, and we go back to step 3.\nIf the AIC of the candidate model is larger than the AIC of the current model (no new model improves on the current one), the procedure stops, and we select the current model."
   },
   {
     "objectID": "slides/lec-6.html#backward-selection-procedure",
     "href": "slides/lec-6.html#backward-selection-procedure",
     "title": "Model Selection",
     "section": "Backward selection procedure",
-    "text": "Backward selection procedure\nSimilar to forward selection, except that\n\nwe start with the full model,\nremove one predictor at a time\nuntil removing any predictors makes the model worse.\n\n\nNote that forward and backward selection need not agree; they may select different models.\n\n\n\nWhat to do in that case? Nobody knows."
+    "text": "Backward selection procedure\nSimilar to forward selection, except that\n\nwe start with the full model,\nremove one predictor at a time\nuntil removing any predictors makes the model worse."
   },
   {
     "objectID": "slides/lec-6.html#section-12",
     "href": "slides/lec-6.html#section-12",
+    "title": "Model Selection",
+    "section": "",
+    "text": "Note that forward and backward selection need not agree; they may select different models.\n\n\nWhat to do in that case? Nobody knows."
+  },
+  {
+    "objectID": "slides/lec-6.html#section-13",
+    "href": "slides/lec-6.html#section-13",
     "title": "Model Selection",
     "section": "",
     "text": "Group exercise - stepwise selection\n\n\n\nExercises 8.11, 8.13\nIn addition\n\n\nfit the first models in R\n\nidentify the baseline level of the categorical variable in each model.\n\n\nlibrary(openintro)\nd <- openintro::births14\n\n\n\n\n\n\n\n05:00"
