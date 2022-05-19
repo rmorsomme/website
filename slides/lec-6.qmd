@@ -50,17 +50,44 @@ options(scipen = 100)
 
 ## Announcements
 
--   assignments
+-   
 
-## Recap
+## Recap {.smaller}
 
-# Competing Models
+::: incremental
+-   simple linear regression model $$
+    Y \approx \beta_0 + \beta_1 X
+    $$
+
+-   multiple linear regression model $$
+    Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots +  + \beta_p X_p 
+    $$
+
+-   categorical predictor
+
+    -   $(k-1)$ indicator variables
+
+-   feature engineering
+
+    -   transforming variables
+    -   combining variables
+    -   interactions
+:::
+
+## Outline
+
+-   Competing models
+-   Overfitting
+
+# Competing models
+
+## Competing models
 
 -   Earlier, we saw that adding the predictor $\dfrac{1}{\text{displ}}$ gave a better fit.
 
 -   Let us see if the same idea work with the `trees` dataset.
 
-## a nonlinear association?
+## A nonlinear association?
 
 Suppose we want to predict volume using only the variable `girth`.
 
@@ -72,7 +99,7 @@ ggplot(d_tree) +
 
 One could argue that there is a slight nonlinear association
 
-## `R` function to compute $R^2$
+## Function to compute $R^2$
 
 ```{r}
 compute_R2 <- function(model){
@@ -99,6 +126,28 @@ m1 <- lm(Volume ~ Girth, data = d_tree)
 compute_R2(m1)
 ```
 
+## 
+
+::: panel-tabset
+## `R` code
+
+```{r}
+Girth_new <- seq(min(d_tree$Girth), max(d_tree$Girth), by = 0.001)
+new_data <- tibble(Girth = Girth_new)
+Volume_pred <- predict(m1, new_data)
+new_data <- mutate(new_data, Volume_pred = Volume_pred)
+head(new_data)
+```
+
+## Regression line
+
+```{r}
+ggplot() +
+  geom_point(data = d_tree  , aes(Girth, Volume     )) +
+  geom_line (data = new_data, aes(Girth, Volume_pred))
+```
+:::
+
 ## ...taking it up a notch...
 
 To capture the nonlinear association between `Girth` and `Volume`, we consider the predictor $\text{Girth}^2$.
@@ -107,7 +156,7 @@ $$
 \text{Volume} \approx \beta_0 + \beta_1 \text{girth} + \beta_2 \text{girth}^2
 $$
 
-The `R` to fit this model is
+The command to fit this model is
 
 ```{r}
 d_tree2 <- mutate(d_tree, Girth2 = Girth^2)
@@ -117,30 +166,7 @@ compute_R2(m2)
 
 . . .
 
-$R^2$ has increased! It went from `r compute_R2(m1)` to `r compute_R2(m2)`.
-
-## ...before taking things to the extreme
-
-What if we also include the predictors $\text{Girth}^3, \text{Girth}^4, \dots, \text{Girth}^{k}$ for some larger number $k$?
-
-The following `R` code fits such a model with $k=29$, that is, $$
-\text{Volume} \approx \beta_0 + \beta_1 \text{girth} + \beta_2 \text{girth}^2 + \dots + \beta_{29} \text{girth}^{29}
-$$
-
-```{r}
-m_extreme <- lm(Volume ~ poly(Girth, degree = 30, raw = TRUE), data = d_tree)
-compute_R2(m_extreme)
-```
-
-$R^2$ has again increased! It went from `r compute_R2(m2)` to `r compute_R2(m_extreme)`.
-
-## Overfitting
-
-In fact, if we keep adding predictors, $R^2$ will always increase. - additional predictors allow the regression line to be more flexible, hence to be closer to the points and reduce the residuals.
-
-. . .
-
-Is the `m_extreme` model a good model? - does it accurately represent the *population*? - remember that we want to learn about the relation between `Volume` and `Girth` present in the *population* (not the sample).
+$R^2$ has increased! It went from `r compute_R2(m1)` (model 1) to `r compute_R2(m2)`.
 
 ## 
 
@@ -148,8 +174,103 @@ Is the `m_extreme` model a good model? - does it accurately represent the *popul
 ## `R` code
 
 ```{r}
+Girth_new <- seq(min(d_tree$Girth), max(d_tree$Girth), by = 0.001)
+new_data <- tibble(Girth = Girth_new) %>% mutate(Girth2 = Girth^2)
+Volume_pred <- predict(m2, new_data)
+new_data <- mutate(new_data, Volume_pred = Volume_pred)
+head(new_data)
+```
+
+## Regression line
+
+```{r}
+ggplot() +
+  geom_point(data = d_tree  , aes(Girth, Volume     )) +
+  geom_line (data = new_data, aes(Girth, Volume_pred))
+```
+:::
+
+## ...taking it up another notch...
+
+Let us consider the predictor $\text{Girth}^3$.
+
+$$
+\text{Volume} \approx \beta_0 + \beta_1 \text{girth} + \beta_2 \text{girth}^2 + \beta_3 \text{girth}^3
+$$
+
+```{r}
+d_tree3 <- mutate(d_tree, Girth2 = Girth^2, Girth3 = Girth^3)
+m3 <- lm(Volume ~ Girth + Girth2 + Girth3, data = d_tree3)
+compute_R2(m3)
+```
+
+. . .
+
+$R^2$ has increased! It went from `r compute_R2(m2)` (model 2) to `r compute_R2(m3)`.
+
+## 
+
+::: panel-tabset
+## `R` code
+
+```{r}
+Girth_new <- seq(min(d_tree$Girth), max(d_tree$Girth), by = 0.001)
+new_data <- tibble(Girth = Girth_new) %>% mutate(Girth2 = Girth^2, Girth3 = Girth^3)
+Volume_pred <- predict(m3, new_data)
+new_data <- mutate(new_data, Volume_pred = Volume_pred)
+head(new_data)
+```
+
+## Regression line
+
+```{r}
+ggplot() +
+  geom_point(data = d_tree  , aes(Girth, Volume     )) +
+  geom_line (data = new_data, aes(Girth, Volume_pred))
+```
+:::
+
+## ...before taking things to the extreme
+
+What if we also include the predictors $\text{Girth}^4, \text{Girth}^5, \dots, \text{Girth}^{k}$ for some larger number $k$?
+
+The following `R` code fits such a model with $k=34$, that is,
+
+$$
+\text{Volume} \approx \beta_0 + \beta_1 \text{girth} + \beta_2 \text{girth}^2 + \dots + \beta_{29} \text{girth}^{34}
+$$
+
+```{r}
+m_extreme <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = d_tree)
+compute_R2(m_extreme)
+```
+
+$R^2$ has again increased! It went from `r compute_R2(m3)` (model 3) to `r compute_R2(m_extreme)`.
+
+## A limitation of $R^2$
+
+As we keep adding predictors, $R^2$ will always increase.
+
+-   additional predictors allow the regression line to be more flexible, hence to be closer to the points and reduce the residuals.
+
+. . .
+
+Is the model `m_extreme` a good model?
+
+::: callout-note
+We want to learn about the relation between `Volume` and `Girth` present in the *population* (not the sample).
+
+A good model should accurately represent the *population*.
+:::
+
+## 
+
+::: panel-tabset
+## `R` code
+
+```{r, cache=TRUE}
 #| code-line-numbers: "1|2|3|4|"
-Girth_new <- seq(min(d_tree$Girth), max(d_tree$Girth), by = 0.01)
+Girth_new <- seq(min(d_tree$Girth), max(d_tree$Girth), by = 0.00001)
 new_data <- tibble(Girth = Girth_new)
 Volume_pred <- predict(m_extreme, new_data)
 new_data <- mutate(new_data, Volume_pred = Volume_pred)
@@ -170,15 +291,15 @@ ggplot() +
 ggplot() +
   geom_point(data = d_tree  , aes(Girth, Volume     )) +
   geom_line (data = new_data, aes(Girth, Volume_pred)) +
-  ylim(10, 77)
+  ylim(0, 90)
 ```
 :::
 
-## 
+## Overfitting
 
 The model `m_extreme` **overfits** the data.
 
-A model overfits data when it corresponds very closely to the data set and does a poor job for new data.
+A model overfits the data when it fits the sample extremely well but does a poor job for new data.
 
 . . .
 
@@ -186,7 +307,7 @@ Remember that we want to learn about the *population*, not the *sample*!
 
 # Model selection: criteria
 
-## Adjusted-$R^2$
+## $R^2$
 
 We saw that $R^2$ keeps increasing as we add predictors.
 
@@ -194,11 +315,13 @@ $$
 R^2_{\text{adj}} = 1 - \dfrac{SSR}{SST}
 $$
 
-$R^2$ can therefore not be used to identify models that overfit the data.
-
 . . .
 
-Instead, we use the **adjusted-**$R^2$.
+$R^2$ can therefore not be used to identify models that overfit the data.
+
+## Adjusted-$R^2$
+
+The **adjusted-**$R^2$ is similar to \$R^2^, but penalizes large models:
 
 $$
 R^2_{\text{adj}} = 1 - \dfrac{SSR}{SST}\dfrac{n-1}{n-p-1}
@@ -208,26 +331,31 @@ where $p$ corresponds to the number of predictors.
 
 ## 
 
-The ratio $\dfrac{SSR}{SST}$ favors model that closely fit the data.
+The adjusted-$R^2$ therefore balances goodness of fit and parsimony:
 
-The ratio $\dfrac{n-1}{n-k-1}$ penalizes model with many predictors.
+-   The ratio $\dfrac{SSR}{SST}$ favors model with good fit (like $R^2$)
+-   The ratio $\dfrac{n-1}{n-k-1}$ favors parsimonious models
 
 . . .
 
-The model with the highest adjusted-$R^2$ typically hits the sweet spot.
+The model with the highest adjusted-$R^2$ typically provides a good fit without overfitting.
 
-## AIC and BIC
+## AIC and BIC {.smaller}
 
-Two popular criteria that balance goodness of fit (small SSR) and parsimony (small $p$) are
+Two other popular criteria that balance goodness of fit (small SSR) and parsimony (small $p$) are
 
 -   the Akaike Information Criterion (AIC)
 -   the Bayesian Inofrmation Criterion (BIC)
 
 . . .
 
-The formula for AIC and BIC are respectively $$
+The formula for AIC and BIC are respectively
+
+$$
 AIC = 2p - \text{GoF}, \qquad BIC = \ln(n)p- \text{GoF}
-$$ where $\text{GoF}$ is a measure of the *Goodness of fit* of the model[^1].
+$$
+
+where $\text{GoF}$ measures the *Goodness of fit* of the model[^1].
 
 [^1]: The exact formula for $\text{GoF}$ is beyond the scope of this class.
 
@@ -246,18 +374,19 @@ Easily accessible in `R` with the command `glance`. For instance,
 ```{r}
 glance(m1)
 glance(m2)
+glance(m3)
 glance(m_extreme)
 ```
 
 . . .
 
-In this case, all three criteria (ajudtsed-$R^2$, AIC and BIC) indicate that `m2` id the best model.
+In this case, AIC and BIC favor `m2`, while the adjusted-$R^2$ (wrongly) favor `m_extreme`.
 
 -   For AIC and BIC, smaller is better.
 
 # Model selection: predictive performance
 
-## Limitations of the previous methods
+## Limitations of the previous criteria
 
 The adjutsed-$R^2$, AIC and BIC all try to balance
 
@@ -270,19 +399,31 @@ They achieve this balance by favoring models with small SSR while penalizing mod
 
 . . .
 
-The form of the penalty for $p$ may seem somewhat arbitrary. - E.g. AIC versus BIC.
+But
+
+-   The form of the penalty for $p$ is somewhat arbitrary, e.g. AIC versus BIC.
+-   The adjusted-$R^2$ failed to penalize `m_extreme`, although it was clearly overfitting the data.
 
 ## Predictive performance
 
-Instead, we could look for the model with the best **predictions performance**; that is, the model that makes predictions for new observations that are the closest to the true values.
+Instead of using these criteria, we could look for the model with the best **predictions performance**.
 
-## The holdout method
+That is, the model that makes predictions for new observations that are the closest to the true values.
+
+. . .
+
+We will learn two approaches to accomplish this
+
+-   the holdout method
+-   cross-validation
+
+## The holdout method {.smaller}
 
 The holdout method is a simple method to evaluate the predictive performance of a model.
 
 . . .
 
-1.  Randomly partition your sample into two sets: a **training set** (typically 2/3 of the sample) and a **test set**.
+1.  Randomly partition your sample into two sets: a **training set** (typically 2/3 of the sample) and a **test set** (the remaining 1/3).
 
 . . .
 
@@ -290,7 +431,7 @@ The holdout method is a simple method to evaluate the predictive performance of 
 
 . . .
 
-3.  Evaluate the prediction accuracy on the test set.
+3.  Evaluate the prediction accuracy of the model on the test set.
 
 . . .
 
@@ -298,21 +439,27 @@ Note that the test set consists of *new* observations for the model.
 
 . . .
 
-A good model will model will have good prediction accuracy in step 3
+$\Rightarrow$ Select the model with the best prediction accuracy in step 3.
+
+## 
+
+![The holdout method.](images/lec-6/holdout.PNG){fig-align="center"}
+
+Source: [IMS](https://openintro-ims.netlify.app/inf-model-mlr.html#comparing-two-models-to-predict-body-mass-in-penguins)
 
 ## Step 1: training and test sets
 
 The following `R` function splits a sample into a training and a test set
 
 ```{r}
-construct_training_test <- function(sample, prop = 2/3){
+construct_training_test <- function(sample, prop_training = 2/3){
   
   n          <- nrow(sample)
-  n_training <- round(n*prop)
+  n_training <- round(n * prop_training)
   
   sample_random   <- slice_sample(sample, n = n)
-  sample_training <- slice(sample_random,   1:n_training )
-  sample_test     <- slice(sample_random, -(1:n_training))
+  sample_training <- slice(sample_random,    1 : n_training )
+  sample_test     <- slice(sample_random, - (1 : n_training))
   
   return(list(
     training = sample_training, test = sample_test
@@ -323,44 +470,93 @@ construct_training_test <- function(sample, prop = 2/3){
 
 ## 
 
+::: panel-tabset
+## Sample
+
 ```{r}
-d_car <- ggplot2::mpg
-training_test_sets <- construct_training_test(d_car) 
+d_tree # entire sample
+```
+
+## Training set
+
+```{r}
+set.seed(0)
+training_test_sets <- construct_training_test(d_tree) 
 training_set <- training_test_sets[["training"]]
 training_set
-test_set     <- training_test_sets[["test"]]
+```
+
+## Test set
+
+```{r}
+test_set <- training_test_sets[["test"]]
 test_set
 ```
+:::
 
 ## Step 2: fit the model to the training set
 
-We now fit our regression model to the training set, as we have done many times.
+We simply fit our regression model to the training set.
 
 ```{r}
-m <- lm(hwy ~ cty, data = training_set)
+m1 <- lm(Volume ~ Girth, data = training_set)
 ```
 
 ## Step 3: Evaluate the prediction accuracy on the test set
 
-To evaluate the prediction accuracy, we start by computing the predictions for the test set.
+To evaluate the prediction accuracy, we start by computing the predictions for the observations in test set.
 
 ```{r}
-hwy_hat <- predict(m, test_set)
+Volume_hat <- predict(m1, test_set)
 ```
 
 . . .
 
 A good model will make predictions that are closed to the true values of the response variable.
 
-. . .
+## Sum of squared errors
 
-A common measure of prediction accuracy is the **root mean of squared errors** (RMSE):
+A good measure of prediction accuracy is the **sum of squared errors** (SSE).
+
+$$
+SSE = (y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}_2)^2 + \dots + (y_m - \hat{y}_m)^2
+$$
+
+Small SSE is better.
+
+```{r}
+Volume <- test_set$Volume
+sum(Volume - Volume_hat)^2
+```
+
+
+## Mean squared error
+
+In practice, the **(root) mean sum of squared errors** ((R)MSE) is often used.
+
+$$
+MSE = \dfrac{SSE}{m} = \dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}_2)^2 + \dots + (y_m - \hat{y}_m)^2}{m}
+$$
 
 $$
 RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}_2)^2 + \dots + (y_m - \hat{y}_m)^2}{m}}
 $$
+Again, small (R)MSE is better.
 
-where $m$ corresponds to the size of the test set.
+##
+
+```{r}
+SSE <- sum((Volume - Volume_hat)^2)
+m <- nrow(test_set)
+MSE <- SSE / m
+RMSE <- sqrt(MSE)
+SSE; MSE; RMSE
+```
+
+:::callout-tip
+##(R)MSE
+The advantage of (R)MSE over the SSE is that we can compare models evaluate with test sets of different sizes.
+:::
 
 ## Selecting a model
 
@@ -368,43 +564,117 @@ Apply steps 2 and 3 on different models.
 
 -   use the same training and test sets for the different models
 
-Simply choose the model with the lowest SSE.
+Simply choose the model with the lowest (R)MSE.
 
 This model has the best **out-of-sample** accuracy.
 
-## Cross-validation
+## Function to compute the RMSE
 
-Cross-validation (CV) is the same as the holdout method, but repeated many times.
+```{r}
+compute_RMSE <- function(test_set, model){
+  
+  y     <- test_set$Volume
+  y_hat <- predict(model, test_set)
+  
+  E    <- y - y_hat
+  SSE  <- sum(E^2)
+  MSE  <- mean(E^2)
+  RMSE <- sqrt(MSE)
+  
+  return(RMSE)
+  
+}
+```
+
+
+##
+
+```{r}
+# Step 2
+m1  <- lm(Volume ~ poly(Girth, degree = 1 , raw = TRUE), data = training_set)
+m2  <- lm(Volume ~ poly(Girth, degree = 2 , raw = TRUE), data = training_set)
+m3  <- lm(Volume ~ poly(Girth, degree = 3 , raw = TRUE), data = training_set)
+m48 <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = training_set)
+
+# Step 3
+compute_RMSE(test_set, m1)
+compute_RMSE(test_set, m2)
+compute_RMSE(test_set, m3) # best
+compute_RMSE(test_set, m48)
+```
+
+We select `m3`.
+
+## Limitation of the holdout method
+
+The previous analysis was conducted with `set.seed(0)`.
 
 . . .
 
-drawback of the holdout method is that the test set matters a lot.
+Models `m2` and `m3` were pretty close.
+
+Could we have obtained a different result with a different seed?
+
+##
+
+```{r}
+# Step 1
+set.seed(1)
+training_test_sets <- construct_training_test(d_tree) 
+training_set <- training_test_sets[["training"]]
+test_set <- training_test_sets[["test"]]
+
+# Step 2
+m1  <- lm(Volume ~ poly(Girth, degree = 1 , raw = TRUE), data = training_set)
+m2  <- lm(Volume ~ poly(Girth, degree = 2 , raw = TRUE), data = training_set)
+m3  <- lm(Volume ~ poly(Girth, degree = 3 , raw = TRUE), data = training_set)
+m48 <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = training_set)
+
+# Step 3
+compute_RMSE(test_set, m1)
+compute_RMSE(test_set, m2) # best
+compute_RMSE(test_set, m3)
+compute_RMSE(test_set, m48)
+```
+
+
+## The test set matters!
+
+A drawback of the holdout method is that the test set matters a lot.
 
 Repeating steps 2 and 3 with a different partition from step 1 may give different results.
 
-. . .
 
-Idea of CV: let each observation be in the test set once
+## Cross-validation
 
-## $k$-fold CV
-
-Choose a number of folds $k$ (typically $5$ or $10$).
+Cross-validation (CV) is the natural generalization of the holdout method.
 
 . . .
 
-1.  Partition the data into $k$ folds of equal size.
+0.    randomly partition the sample into $k$ folds of equal size. $k$ is typically $5$ or $10$. 
+. . . 
+
+Repeat the following steps $k$ times
+
+1.    Let fold 1 be the test set and the other folds be the training set
+
+2.    Fit the model to the training set (like the holdout method)
+
+3.    Evaluate the prediction accuracy of the model on the test set (like the holdout method)
+
+4.    Go back to 1, letting the next fold be the test set.
 
 . . .
 
-2.  Let the test set be composed of fold $1$ and the training set of the other folds.
+$\Rightarrow$ Select the model with the best overall prediction accuracy in step 3.
 
-. . .
+## 
 
-3.  Apply steps 2 and 3 of the holdout method.
+![5-fold cross-validation](images/lec-6/cv.PNG){fig-align="center"}
 
-. . .
+Source: [towardsdatascience](https://towardsdatascience.com/validating-your-machine-learning-model-25b4c8643fb7)
 
-4.  Go back to step 2, this time letting the next fold be the test set.
+Reasoning behind CV: let each observation be in the test set once.
 
 ## 
 
@@ -556,18 +826,14 @@ d <- openintro::births14
 countdown(minutes = 5)
 ```
 
-# How to prevent overfiting?
+# How to prevent overfitting?
 
 -   Parsimony
     -   Use domain knowledge
     -   One-in-ten rule (could be one-in-five)
-
-- Multicollinearity
-    - select one predictor
-    - combine predictors, e.g. take the average.
-
-
-
+-   Multicollinearity
+    -   select one predictor
+    -   combine predictors, e.g. take the average.
 
 # Recap
 

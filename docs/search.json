@@ -361,7 +361,7 @@
     "href": "index.html",
     "title": "STA 101L: Data Analysis and Statistical Inference",
     "section": "",
-    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\nDue: Homework 2\n\n\n💻\n✍️\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n💻\n\n\n\n\n\nSun, May 22\nDue: Homework 3\n\n\n\n✍️\n\n\n\n2\nMon, May 23\nModel selection\n8.3-8.4; 25.2-25.3\n\n\n\n\n\n\n\nTue, May 24\nLogistic regression\n9.1-9.3\n\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n\n\n\n\n\n\nThu, May 26\nPrinciples of inference\nWork on project\n11.0; 11.3; 12.0; 12.3; 13.1-13.3\n\n\n\n\n\n\n\nFri, May 27\nLab 5 - work on prediction project [PP]\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP discussion\nInference for proportions I\n16.1-16.2\n\n\n\nPP model (9am)\nPP presentation\n\n\n\nWed, June 1\nLab 6 - work on PP\nDue: PP report\n\n\n\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.3\n\n\n\n\n\n\n\nFri, June 3\nLab 7 - Inference for proportions\n\n\n\n\n\n\n\n4\nMon, June 6\nInference for means I\n19.1-19.2\n\n\n\n\n\n\n\nTue, June 7\nInference for means II\n20.1-20.4; 21.1-21.3\n\n\n\n\n\n\n\nWed, June 8\nLab 8 - Inference for means\n\n\n\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.6; 25.1; 26.1-26.2\n\n\n\n\n\n\n\nFri, June 10\nLab 9 - inference for regression\n\n\n\n\n\n\n\n5\nMon, June 13\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n\n\n\n\n\n\n\nTue, June 14\nWork on inference project (IP)\n\n\n\n\n\n\n\n\nWed, June 15\nLab 10 - work on IP\n\n\n\n\n\n\n\n\nThu, June 16\nIP presentations\nWrap up\n\n\n\n\nIP presentation\n\n\n\nFri, June 17\nLab 11 - work on IP\n\n\n\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
+    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\nDue: Homework 2\n\n\n💻\n✍️\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n💻\n\n\n\n\n\nSun, May 22\nDue: Homework 3\n\n\n\n✍️\n\n\n\n2\nMon, May 23\nModel selection\n8.3-8.4; 25.2-25.3\n🖥️\n\n\n\n\n\n\nTue, May 24\nLogistic regression\n9.1-9.3\n\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n\n\n\n\n\n\nThu, May 26\nPrinciples of inference\nWork on project\n11.0; 11.3; 12.0; 12.3; 13.1-13.3\n\n\n\n\n\n\n\nFri, May 27\nLab 5 - work on prediction project [PP]\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP discussion\nInference for proportions I\n16.1-16.2\n\n\n\nPP model (9am)\nPP presentation\n\n\n\nWed, June 1\nLab 6 - work on PP\nDue: PP report\n\n\n\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.3\n\n\n\n\n\n\n\nFri, June 3\nLab 7 - Inference for proportions\n\n\n\n\n\n\n\n4\nMon, June 6\nInference for means I\n19.1-19.2\n\n\n\n\n\n\n\nTue, June 7\nInference for means II\n20.1-20.4; 21.1-21.3\n\n\n\n\n\n\n\nWed, June 8\nLab 8 - Inference for means\n\n\n\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.6; 25.1; 26.1-26.2\n\n\n\n\n\n\n\nFri, June 10\nLab 9 - inference for regression\n\n\n\n\n\n\n\n5\nMon, June 13\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n\n\n\n\n\n\n\nTue, June 14\nWork on inference project (IP)\n\n\n\n\n\n\n\n\nWed, June 15\nLab 10 - work on IP\n\n\n\n\n\n\n\n\nThu, June 16\nIP presentations\nWrap up\n\n\n\n\nIP presentation\n\n\n\nFri, June 17\nLab 11 - work on IP\n\n\n\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
   },
   {
     "objectID": "labs/lab-0x.html",
@@ -2405,28 +2405,42 @@
     "href": "slides/lec-6.html#announcements",
     "title": "Model Selection",
     "section": "Announcements",
-    "text": "Announcements\n\nassignments"
+    "text": "Announcements"
   },
   {
     "objectID": "slides/lec-6.html#recap",
     "href": "slides/lec-6.html#recap",
     "title": "Model Selection",
     "section": "Recap",
-    "text": "Recap"
+    "text": "Recap\n\n\nsimple linear regression model \\[\nY \\approx \\beta_0 + \\beta_1 X\n\\]\nmultiple linear regression model \\[\nY \\approx \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\dots +  + \\beta_p X_p\n\\]\n\ncategorical predictor\n\n\n\\((k-1)\\) indicator variables\n\n\n\nfeature engineering\n\ntransforming variables\ncombining variables\ninteractions"
+  },
+  {
+    "objectID": "slides/lec-6.html#outline",
+    "href": "slides/lec-6.html#outline",
+    "title": "Model Selection",
+    "section": "Outline",
+    "text": "Outline\n\nCompeting models\nOverfitting"
+  },
+  {
+    "objectID": "slides/lec-6.html#competing-models-1",
+    "href": "slides/lec-6.html#competing-models-1",
+    "title": "Model Selection",
+    "section": "Competing models",
+    "text": "Competing models\n\nEarlier, we saw that adding the predictor \\(\\dfrac{1}{\\text{displ}}\\) gave a better fit.\nLet us see if the same idea work with the trees dataset."
   },
   {
     "objectID": "slides/lec-6.html#a-nonlinear-association",
     "href": "slides/lec-6.html#a-nonlinear-association",
     "title": "Model Selection",
-    "section": "a nonlinear association?",
-    "text": "a nonlinear association?\nSuppose we want to predict volume using only the variable girth.\n\nd_tree <- datasets::trees\nggplot(d_tree) +\n  geom_point(aes(Girth, Volume))\n\n\nOne could argue that there is a slight nonlinear association"
+    "section": "A nonlinear association?",
+    "text": "A nonlinear association?\nSuppose we want to predict volume using only the variable girth.\n\nd_tree <- datasets::trees\nggplot(d_tree) +\n  geom_point(aes(Girth, Volume))\n\n\nOne could argue that there is a slight nonlinear association"
   },
   {
-    "objectID": "slides/lec-6.html#r-function-to-compute-r2",
-    "href": "slides/lec-6.html#r-function-to-compute-r2",
+    "objectID": "slides/lec-6.html#function-to-compute-r2",
+    "href": "slides/lec-6.html#function-to-compute-r2",
     "title": "Model Selection",
-    "section": "\nR function to compute \\(R^2\\)\n",
-    "text": "R function to compute \\(R^2\\)\n\n\ncompute_R2 <- function(model){\n  \n  model_glanced <- glance(model)\n  R2 <- model_glanced$r.squared\n  R2_rounded <- round(R2, 3) \n  \n  return(R2_rounded)\n  \n}"
+    "section": "Function to compute \\(R^2\\)\n",
+    "text": "Function to compute \\(R^2\\)\n\n\ncompute_R2 <- function(model){\n  \n  model_glanced <- glance(model)\n  R2 <- model_glanced$r.squared\n  R2_rounded <- round(R2, 3) \n  \n  return(R2_rounded)\n  \n}"
   },
   {
     "objectID": "slides/lec-6.html#starting-simple",
@@ -2436,141 +2450,239 @@
     "text": "Starting simple…\nWe start with the simple model\n\\[\n\\text{Volume} \\approx \\beta_0 + \\beta_1 \\text{girth}\n\\]\n\nm1 <- lm(Volume ~ Girth, data = d_tree)\ncompute_R2(m1)\n\n[1] 0.935"
   },
   {
-    "objectID": "slides/lec-6.html#taking-it-up-a-notch",
-    "href": "slides/lec-6.html#taking-it-up-a-notch",
-    "title": "Model Selection",
-    "section": "…taking it up a notch…",
-    "text": "…taking it up a notch…\nTo capture the nonlinear association between Girth and Volume, we consider the predictor \\(\\text{Girth}^2\\).\n\\[\n\\text{Volume} \\approx \\beta_0 + \\beta_1 \\text{girth} + \\beta_2 \\text{girth}^2\n\\]\nThe R to fit this model is\n\nd_tree2 <- mutate(d_tree, Girth2 = Girth^2)\nm2 <- lm(Volume ~ Girth + Girth2, data = d_tree2)\ncompute_R2(m2)\n\n[1] 0.962\n\n\n\n\\(R^2\\) has increased! It went from 0.935 to 0.962."
-  },
-  {
-    "objectID": "slides/lec-6.html#before-taking-things-to-the-extreme",
-    "href": "slides/lec-6.html#before-taking-things-to-the-extreme",
-    "title": "Model Selection",
-    "section": "…before taking things to the extreme",
-    "text": "…before taking things to the extreme\nWhat if we also include the predictors \\(\\text{Girth}^3, \\text{Girth}^4, \\dots, \\text{Girth}^{k}\\) for some larger number \\(k\\)?\nThe following R code fits such a model with \\(k=29\\), that is, \\[\n\\text{Volume} \\approx \\beta_0 + \\beta_1 \\text{girth} + \\beta_2 \\text{girth}^2 + \\dots + \\beta_{29} \\text{girth}^{29}\n\\]\n\nm_extreme <- lm(Volume ~ poly(Girth, degree = 30, raw = TRUE), data = d_tree)\ncompute_R2(m_extreme)\n\n[1] 0.975\n\n\n\\(R^2\\) has again increased! It went from 0.962 to 0.975."
-  },
-  {
-    "objectID": "slides/lec-6.html#overfitting",
-    "href": "slides/lec-6.html#overfitting",
-    "title": "Model Selection",
-    "section": "Overfitting",
-    "text": "Overfitting\nIn fact, if we keep adding predictors, \\(R^2\\) will always increase. - additional predictors allow the regression line to be more flexible, hence to be closer to the points and reduce the residuals.\n\nIs the m_extreme model a good model? - does it accurately represent the population? - remember that we want to learn about the relation between Volume and Girth present in the population (not the sample)."
-  },
-  {
     "objectID": "slides/lec-6.html#section",
     "href": "slides/lec-6.html#section",
     "title": "Model Selection",
     "section": "",
-    "text": "R code\nRegression line\nRegression line (zoomed)\n\n\n\n\nGirth_new <- seq(min(d_tree$Girth), max(d_tree$Girth), by = 0.01)\nnew_data <- tibble(Girth = Girth_new)\nVolume_pred <- predict(m_extreme, new_data)\nnew_data <- mutate(new_data, Volume_pred = Volume_pred)\nhead(new_data)\n\n# A tibble: 6 x 2\n  Girth Volume_pred\n  <dbl>       <dbl>\n1  8.3         10.2\n2  8.31        10.3\n3  8.32        10.4\n4  8.33        10.5\n5  8.34        10.6\n6  8.35        10.7\n\n\n\n\n\nggplot() +\n  geom_point(data = d_tree  , aes(Girth, Volume     )) +\n  geom_line (data = new_data, aes(Girth, Volume_pred))\n\n\n\n\n\n\n\n\n\n\nggplot() +\n  geom_point(data = d_tree  , aes(Girth, Volume     )) +\n  geom_line (data = new_data, aes(Girth, Volume_pred)) +\n  ylim(10, 77)"
+    "text": "R code\nRegression line\n\n\n\n\nGirth_new <- seq(min(d_tree$Girth), max(d_tree$Girth), by = 0.001)\nnew_data <- tibble(Girth = Girth_new)\nVolume_pred <- predict(m1, new_data)\nnew_data <- mutate(new_data, Volume_pred = Volume_pred)\nhead(new_data)\n\n# A tibble: 6 x 2\n  Girth Volume_pred\n  <dbl>       <dbl>\n1  8.3         5.10\n2  8.30        5.11\n3  8.30        5.11\n4  8.30        5.12\n5  8.30        5.12\n6  8.31        5.13\n\n\n\n\n\nggplot() +\n  geom_point(data = d_tree  , aes(Girth, Volume     )) +\n  geom_line (data = new_data, aes(Girth, Volume_pred))"
+  },
+  {
+    "objectID": "slides/lec-6.html#taking-it-up-a-notch",
+    "href": "slides/lec-6.html#taking-it-up-a-notch",
+    "title": "Model Selection",
+    "section": "…taking it up a notch…",
+    "text": "…taking it up a notch…\nTo capture the nonlinear association between Girth and Volume, we consider the predictor \\(\\text{Girth}^2\\).\n\\[\n\\text{Volume} \\approx \\beta_0 + \\beta_1 \\text{girth} + \\beta_2 \\text{girth}^2\n\\]\nThe command to fit this model is\n\nd_tree2 <- mutate(d_tree, Girth2 = Girth^2)\nm2 <- lm(Volume ~ Girth + Girth2, data = d_tree2)\ncompute_R2(m2)\n\n[1] 0.962\n\n\n\n\\(R^2\\) has increased! It went from 0.935 (model 1) to 0.962."
   },
   {
     "objectID": "slides/lec-6.html#section-1",
     "href": "slides/lec-6.html#section-1",
     "title": "Model Selection",
     "section": "",
-    "text": "The model m_extreme overfits the data.\nA model overfits data when it corresponds very closely to the data set and does a poor job for new data.\n\nRemember that we want to learn about the population, not the sample!"
+    "text": "R code\nRegression line\n\n\n\n\nGirth_new <- seq(min(d_tree$Girth), max(d_tree$Girth), by = 0.001)\nnew_data <- tibble(Girth = Girth_new) %>% mutate(Girth2 = Girth^2)\nVolume_pred <- predict(m2, new_data)\nnew_data <- mutate(new_data, Volume_pred = Volume_pred)\nhead(new_data)\n\n# A tibble: 6 x 3\n  Girth Girth2 Volume_pred\n  <dbl>  <dbl>       <dbl>\n1  8.3    68.9        11.0\n2  8.30   68.9        11.0\n3  8.30   68.9        11.0\n4  8.30   68.9        11.0\n5  8.30   69.0        11.0\n6  8.31   69.0        11.0\n\n\n\n\n\nggplot() +\n  geom_point(data = d_tree  , aes(Girth, Volume     )) +\n  geom_line (data = new_data, aes(Girth, Volume_pred))"
   },
   {
-    "objectID": "slides/lec-6.html#adjusted-r2",
-    "href": "slides/lec-6.html#adjusted-r2",
+    "objectID": "slides/lec-6.html#taking-it-up-another-notch",
+    "href": "slides/lec-6.html#taking-it-up-another-notch",
     "title": "Model Selection",
-    "section": "Adjusted-\\(R^2\\)\n",
-    "text": "Adjusted-\\(R^2\\)\n\nWe saw that \\(R^2\\) keeps increasing as we add predictors.\n\\[\nR^2_{\\text{adj}} = 1 - \\dfrac{SSR}{SST}\n\\]\n\\(R^2\\) can therefore not be used to identify models that overfit the data.\n\nInstead, we use the adjusted-\\(R^2\\).\n\\[\nR^2_{\\text{adj}} = 1 - \\dfrac{SSR}{SST}\\dfrac{n-1}{n-p-1}\n\\]\nwhere \\(p\\) corresponds to the number of predictors."
+    "section": "…taking it up another notch…",
+    "text": "…taking it up another notch…\nLet us consider the predictor \\(\\text{Girth}^3\\).\n\\[\n\\text{Volume} \\approx \\beta_0 + \\beta_1 \\text{girth} + \\beta_2 \\text{girth}^2 + \\beta_3 \\text{girth}^3\n\\]\n\nd_tree3 <- mutate(d_tree, Girth2 = Girth^2, Girth3 = Girth^3)\nm3 <- lm(Volume ~ Girth + Girth2 + Girth3, data = d_tree3)\ncompute_R2(m3)\n\n[1] 0.963\n\n\n\n\\(R^2\\) has increased! It went from 0.962 (model 2) to 0.963."
   },
   {
     "objectID": "slides/lec-6.html#section-2",
     "href": "slides/lec-6.html#section-2",
     "title": "Model Selection",
     "section": "",
-    "text": "The ratio \\(\\dfrac{SSR}{SST}\\) favors model that closely fit the data.\nThe ratio \\(\\dfrac{n-1}{n-k-1}\\) penalizes model with many predictors.\n\nThe model with the highest adjusted-\\(R^2\\) typically hits the sweet spot."
+    "text": "R code\nRegression line\n\n\n\n\nGirth_new <- seq(min(d_tree$Girth), max(d_tree$Girth), by = 0.001)\nnew_data <- tibble(Girth = Girth_new) %>% mutate(Girth2 = Girth^2, Girth3 = Girth^3)\nVolume_pred <- predict(m3, new_data)\nnew_data <- mutate(new_data, Volume_pred = Volume_pred)\nhead(new_data)\n\n# A tibble: 6 x 4\n  Girth Girth2 Girth3 Volume_pred\n  <dbl>  <dbl>  <dbl>       <dbl>\n1  8.3    68.9   572.        9.88\n2  8.30   68.9   572.        9.88\n3  8.30   68.9   572.        9.89\n4  8.30   68.9   572.        9.89\n5  8.30   69.0   573.        9.89\n6  8.31   69.0   573.        9.90\n\n\n\n\n\nggplot() +\n  geom_point(data = d_tree  , aes(Girth, Volume     )) +\n  geom_line (data = new_data, aes(Girth, Volume_pred))"
   },
   {
-    "objectID": "slides/lec-6.html#aic-and-bic",
-    "href": "slides/lec-6.html#aic-and-bic",
+    "objectID": "slides/lec-6.html#before-taking-things-to-the-extreme",
+    "href": "slides/lec-6.html#before-taking-things-to-the-extreme",
     "title": "Model Selection",
-    "section": "AIC and BIC",
-    "text": "AIC and BIC\nTwo popular criteria that balance goodness of fit (small SSR) and parsimony (small \\(p\\)) are\n\nthe Akaike Information Criterion (AIC)\nthe Bayesian Inofrmation Criterion (BIC)\n\n\nThe formula for AIC and BIC are respectively \\[\nAIC = 2p - \\text{GoF}, \\qquad BIC = \\ln(n)p- \\text{GoF}\n\\] where \\(\\text{GoF}\\) is a measure of the Goodness of fit of the model1.\n\n\nUnlike the adjusted-\\(R^2\\), smaller is better for the AIC and BIC.\n\n\nNote that the BIC penalizes the number of parameters \\(p\\) more strongly.\n\nThe exact formula for \\(\\text{GoF}\\) is beyond the scope of this class."
+    "section": "…before taking things to the extreme",
+    "text": "…before taking things to the extreme\nWhat if we also include the predictors \\(\\text{Girth}^4, \\text{Girth}^5, \\dots, \\text{Girth}^{k}\\) for some larger number \\(k\\)?\nThe following R code fits such a model with \\(k=34\\), that is,\n\\[\n\\text{Volume} \\approx \\beta_0 + \\beta_1 \\text{girth} + \\beta_2 \\text{girth}^2 + \\dots + \\beta_{29} \\text{girth}^{34}\n\\]\n\nm_extreme <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = d_tree)\ncompute_R2(m_extreme)\n\n[1] 0.98\n\n\n\\(R^2\\) has again increased! It went from 0.963 (model 3) to 0.98."
   },
   {
-    "objectID": "slides/lec-6.html#computing-aic-and-bic",
-    "href": "slides/lec-6.html#computing-aic-and-bic",
+    "objectID": "slides/lec-6.html#a-limitation-of-r2",
+    "href": "slides/lec-6.html#a-limitation-of-r2",
     "title": "Model Selection",
-    "section": "Computing AIC and BIC",
-    "text": "Computing AIC and BIC\nEasily accessible in R with the command glance. For instance,\n\nglance(m1)\n\n# A tibble: 1 x 12\n  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC\n      <dbl>         <dbl> <dbl>     <dbl>    <dbl> <dbl>  <dbl> <dbl> <dbl>\n1     0.935         0.933  4.25      419. 8.64e-19     1  -87.8  182.  186.\n# ... with 3 more variables: deviance <dbl>, df.residual <int>, nobs <int>\n\nglance(m2)\n\n# A tibble: 1 x 12\n  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC\n      <dbl>         <dbl> <dbl>     <dbl>    <dbl> <dbl>  <dbl> <dbl> <dbl>\n1     0.962         0.959  3.33      350. 1.52e-20     2  -79.7  167.  173.\n# ... with 3 more variables: deviance <dbl>, df.residual <int>, nobs <int>\n\nglance(m_extreme)\n\n# A tibble: 1 x 12\n  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC\n      <dbl>         <dbl> <dbl>     <dbl>    <dbl> <dbl>  <dbl> <dbl> <dbl>\n1     0.975         0.956  3.44      51.4 5.11e-11    13  -73.0  176.  197.\n# ... with 3 more variables: deviance <dbl>, df.residual <int>, nobs <int>\n\n\n\nIn this case, all three criteria (ajudtsed-\\(R^2\\), AIC and BIC) indicate that m2 id the best model.\n\nFor AIC and BIC, smaller is better."
-  },
-  {
-    "objectID": "slides/lec-6.html#limitations-of-the-previous-methods",
-    "href": "slides/lec-6.html#limitations-of-the-previous-methods",
-    "title": "Model Selection",
-    "section": "Limitations of the previous methods",
-    "text": "Limitations of the previous methods\nThe adjutsed-\\(R^2\\), AIC and BIC all try to balance\n\ngoodness of fit\nparsimony\n\n\nThey achieve this balance by favoring models with small SSR while penalizing models with larger \\(p\\).\n\n\nThe form of the penalty for \\(p\\) may seem somewhat arbitrary. - E.g. AIC versus BIC."
-  },
-  {
-    "objectID": "slides/lec-6.html#predictive-performance",
-    "href": "slides/lec-6.html#predictive-performance",
-    "title": "Model Selection",
-    "section": "Predictive performance",
-    "text": "Predictive performance\nInstead, we could look for the model with the best predictions performance; that is, the model that makes predictions for new observations that are the closest to the true values."
-  },
-  {
-    "objectID": "slides/lec-6.html#the-holdout-method",
-    "href": "slides/lec-6.html#the-holdout-method",
-    "title": "Model Selection",
-    "section": "The holdout method",
-    "text": "The holdout method\nThe holdout method is a simple method to evaluate the predictive performance of a model.\n\n\nRandomly partition your sample into two sets: a training set (typically 2/3 of the sample) and a test set.\n\n\n\n\nFit your model to the training set.\n\n\n\n\nEvaluate the prediction accuracy on the test set.\n\n\n\nNote that the test set consists of new observations for the model.\n\n\nA good model will model will have good prediction accuracy in step 3"
-  },
-  {
-    "objectID": "slides/lec-6.html#step-1-training-and-test-sets",
-    "href": "slides/lec-6.html#step-1-training-and-test-sets",
-    "title": "Model Selection",
-    "section": "Step 1: training and test sets",
-    "text": "Step 1: training and test sets\nThe following R function splits a sample into a training and a test set\n\nconstruct_training_test <- function(sample, prop = 2/3){\n  \n  n          <- nrow(sample)\n  n_training <- round(n*prop)\n  \n  sample_random   <- slice_sample(sample, n = n)\n  sample_training <- slice(sample_random,   1:n_training )\n  sample_test     <- slice(sample_random, -(1:n_training))\n  \n  return(list(\n    training = sample_training, test = sample_test\n    ))\n  \n}"
+    "section": "A limitation of \\(R^2\\)\n",
+    "text": "A limitation of \\(R^2\\)\n\nAs we keep adding predictors, \\(R^2\\) will always increase.\n\nadditional predictors allow the regression line to be more flexible, hence to be closer to the points and reduce the residuals.\n\n\nIs the model m_extreme a good model?\n\n\n\n\n\n\nNote\n\n\nWe want to learn about the relation between Volume and Girth present in the population (not the sample).\nA good model should accurately represent the population."
   },
   {
     "objectID": "slides/lec-6.html#section-3",
     "href": "slides/lec-6.html#section-3",
     "title": "Model Selection",
     "section": "",
-    "text": "d_car <- ggplot2::mpg\ntraining_test_sets <- construct_training_test(d_car) \ntraining_set <- training_test_sets[[\"training\"]]\ntraining_set\n\n# A tibble: 156 x 11\n   manufacturer model      displ  year   cyl trans drv     cty   hwy fl    class\n   <chr>        <chr>      <dbl> <int> <int> <chr> <chr> <int> <int> <chr> <chr>\n 1 nissan       pathfinde~   3.3  1999     6 auto~ 4        14    17 r     suv  \n 2 dodge        durango 4~   4.7  2008     8 auto~ 4        13    17 r     suv  \n 3 pontiac      grand prix   3.8  2008     6 auto~ f        18    28 r     mids~\n 4 jeep         grand che~   4.7  2008     8 auto~ 4         9    12 e     suv  \n 5 audi         a4 quattro   2    2008     4 auto~ 4        19    27 p     comp~\n 6 dodge        caravan 2~   3.8  1999     6 auto~ f        15    22 r     mini~\n 7 toyota       camry sol~   3    1999     6 auto~ f        18    26 r     comp~\n 8 honda        civic        1.6  1999     4 manu~ f        28    33 r     subc~\n 9 honda        civic        2    2008     4 manu~ f        21    29 p     subc~\n10 dodge        durango 4~   5.7  2008     8 auto~ 4        13    18 r     suv  \n# ... with 146 more rows\n\ntest_set     <- training_test_sets[[\"test\"]]\ntest_set\n\n# A tibble: 78 x 11\n   manufacturer model      displ  year   cyl trans drv     cty   hwy fl    class\n   <chr>        <chr>      <dbl> <int> <int> <chr> <chr> <int> <int> <chr> <chr>\n 1 ford         explorer ~   4    2008     6 auto~ 4        13    19 r     suv  \n 2 chevrolet    malibu       3.6  2008     6 auto~ f        17    26 r     mids~\n 3 mercury      mountaine~   4    1999     6 auto~ 4        14    17 r     suv  \n 4 chevrolet    k1500 tah~   5.3  2008     8 auto~ 4        11    14 e     suv  \n 5 subaru       impreza a~   2.2  1999     4 manu~ 4        19    26 r     subc~\n 6 audi         a4 quattro   3.1  2008     6 manu~ 4        15    25 p     comp~\n 7 volkswagen   jetta        2.5  2008     5 auto~ f        21    29 r     comp~\n 8 toyota       land crui~   5.7  2008     8 auto~ 4        13    18 r     suv  \n 9 nissan       pathfinde~   4    2008     6 auto~ 4        14    20 p     suv  \n10 volkswagen   new beetle   1.9  1999     4 auto~ f        29    41 d     subc~\n# ... with 68 more rows"
+    "text": "R code\nRegression line\nRegression line (zoomed)\n\n\n\n\nGirth_new <- seq(min(d_tree$Girth), max(d_tree$Girth), by = 0.00001)\nnew_data <- tibble(Girth = Girth_new)\nVolume_pred <- predict(m_extreme, new_data)\nnew_data <- mutate(new_data, Volume_pred = Volume_pred)\nhead(new_data)\n\n# A tibble: 6 x 2\n  Girth Volume_pred\n  <dbl>       <dbl>\n1  8.3         10.3\n2  8.30        10.3\n3  8.30        10.3\n4  8.30        10.3\n5  8.30        10.3\n6  8.30        10.3\n\n\n\n\n\nggplot() +\n  geom_point(data = d_tree  , aes(Girth, Volume     )) +\n  geom_line (data = new_data, aes(Girth, Volume_pred))\n\n\n\n\n\n\n\n\n\n\nggplot() +\n  geom_point(data = d_tree  , aes(Girth, Volume     )) +\n  geom_line (data = new_data, aes(Girth, Volume_pred)) +\n  ylim(0, 90)"
+  },
+  {
+    "objectID": "slides/lec-6.html#overfitting",
+    "href": "slides/lec-6.html#overfitting",
+    "title": "Model Selection",
+    "section": "Overfitting",
+    "text": "Overfitting\nThe model m_extreme overfits the data.\nA model overfits the data when it fits the sample extremely well but does a poor job for new data.\n\nRemember that we want to learn about the population, not the sample!"
+  },
+  {
+    "objectID": "slides/lec-6.html#r2",
+    "href": "slides/lec-6.html#r2",
+    "title": "Model Selection",
+    "section": "\\(R^2\\)",
+    "text": "\\(R^2\\)\nWe saw that \\(R^2\\) keeps increasing as we add predictors.\n\\[\nR^2_{\\text{adj}} = 1 - \\dfrac{SSR}{SST}\n\\]\n\n\\(R^2\\) can therefore not be used to identify models that overfit the data."
+  },
+  {
+    "objectID": "slides/lec-6.html#adjusted-r2",
+    "href": "slides/lec-6.html#adjusted-r2",
+    "title": "Model Selection",
+    "section": "Adjusted-\\(R^2\\)\n",
+    "text": "Adjusted-\\(R^2\\)\n\nThe adjusted-\\(R^2\\) is similar to $R2, but penalizes large models:\n\\[\nR^2_{\\text{adj}} = 1 - \\dfrac{SSR}{SST}\\dfrac{n-1}{n-p-1}\n\\]\nwhere \\(p\\) corresponds to the number of predictors."
+  },
+  {
+    "objectID": "slides/lec-6.html#section-4",
+    "href": "slides/lec-6.html#section-4",
+    "title": "Model Selection",
+    "section": "",
+    "text": "The adjusted-\\(R^2\\) therefore balances goodness of fit and parsimony:\n\nThe ratio \\(\\dfrac{SSR}{SST}\\) favors model with good fit (like \\(R^2\\))\nThe ratio \\(\\dfrac{n-1}{n-k-1}\\) favors parsimonious models\n\n\nThe model with the highest adjusted-\\(R^2\\) typically provides a good fit without overfitting."
+  },
+  {
+    "objectID": "slides/lec-6.html#aic-and-bic",
+    "href": "slides/lec-6.html#aic-and-bic",
+    "title": "Model Selection",
+    "section": "AIC and BIC",
+    "text": "AIC and BIC\nTwo other popular criteria that balance goodness of fit (small SSR) and parsimony (small \\(p\\)) are\n\nthe Akaike Information Criterion (AIC)\nthe Bayesian Inofrmation Criterion (BIC)\n\n\nThe formula for AIC and BIC are respectively\n\\[\nAIC = 2p - \\text{GoF}, \\qquad BIC = \\ln(n)p- \\text{GoF}\n\\]\nwhere \\(\\text{GoF}\\) measures the Goodness of fit of the model1.\n\n\nUnlike the adjusted-\\(R^2\\), smaller is better for the AIC and BIC.\n\n\nNote that the BIC penalizes the number of parameters \\(p\\) more strongly.\n\nThe exact formula for \\(\\text{GoF}\\) is beyond the scope of this class."
+  },
+  {
+    "objectID": "slides/lec-6.html#computing-aic-and-bic",
+    "href": "slides/lec-6.html#computing-aic-and-bic",
+    "title": "Model Selection",
+    "section": "Computing AIC and BIC",
+    "text": "Computing AIC and BIC\nEasily accessible in R with the command glance. For instance,\n\nglance(m1)\n\n# A tibble: 1 x 12\n  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC\n      <dbl>         <dbl> <dbl>     <dbl>    <dbl> <dbl>  <dbl> <dbl> <dbl>\n1     0.935         0.933  4.25      419. 8.64e-19     1  -87.8  182.  186.\n# ... with 3 more variables: deviance <dbl>, df.residual <int>, nobs <int>\n\nglance(m2)\n\n# A tibble: 1 x 12\n  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC\n      <dbl>         <dbl> <dbl>     <dbl>    <dbl> <dbl>  <dbl> <dbl> <dbl>\n1     0.962         0.959  3.33      350. 1.52e-20     2  -79.7  167.  173.\n# ... with 3 more variables: deviance <dbl>, df.residual <int>, nobs <int>\n\nglance(m3)\n\n# A tibble: 1 x 12\n  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC\n      <dbl>         <dbl> <dbl>     <dbl>    <dbl> <dbl>  <dbl> <dbl> <dbl>\n1     0.963         0.959  3.35      232. 2.17e-19     3  -79.3  169.  176.\n# ... with 3 more variables: deviance <dbl>, df.residual <int>, nobs <int>\n\nglance(m_extreme)\n\n# A tibble: 1 x 12\n  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC\n      <dbl>         <dbl> <dbl>     <dbl>    <dbl> <dbl>  <dbl> <dbl> <dbl>\n1     0.980         0.960  3.30      48.6 5.64e-10    15  -69.7  173.  198.\n# ... with 3 more variables: deviance <dbl>, df.residual <int>, nobs <int>\n\n\n\nIn this case, AIC and BIC favor m2, while the adjusted-\\(R^2\\) (wrongly) favor m_extreme.\n\nFor AIC and BIC, smaller is better."
+  },
+  {
+    "objectID": "slides/lec-6.html#limitations-of-the-previous-criteria",
+    "href": "slides/lec-6.html#limitations-of-the-previous-criteria",
+    "title": "Model Selection",
+    "section": "Limitations of the previous criteria",
+    "text": "Limitations of the previous criteria\nThe adjutsed-\\(R^2\\), AIC and BIC all try to balance\n\ngoodness of fit\nparsimony\n\n\nThey achieve this balance by favoring models with small SSR while penalizing models with larger \\(p\\).\n\n\nBut\n\nThe form of the penalty for \\(p\\) is somewhat arbitrary, e.g. AIC versus BIC.\nThe adjusted-\\(R^2\\) failed to penalize m_extreme, although it was clearly overfitting the data."
+  },
+  {
+    "objectID": "slides/lec-6.html#predictive-performance",
+    "href": "slides/lec-6.html#predictive-performance",
+    "title": "Model Selection",
+    "section": "Predictive performance",
+    "text": "Predictive performance\nInstead of using these criteria, we could look for the model with the best predictions performance.\nThat is, the model that makes predictions for new observations that are the closest to the true values.\n\nWe will learn two approaches to accomplish this\n\nthe holdout method\ncross-validation"
+  },
+  {
+    "objectID": "slides/lec-6.html#the-holdout-method",
+    "href": "slides/lec-6.html#the-holdout-method",
+    "title": "Model Selection",
+    "section": "The holdout method",
+    "text": "The holdout method\nThe holdout method is a simple method to evaluate the predictive performance of a model.\n\n\nRandomly partition your sample into two sets: a training set (typically 2/3 of the sample) and a test set (the remaining 1/3).\n\n\n\n\nFit your model to the training set.\n\n\n\n\nEvaluate the prediction accuracy of the model on the test set.\n\n\n\nNote that the test set consists of new observations for the model.\n\n\n\\(\\Rightarrow\\) Select the model with the best prediction accuracy in step 3."
+  },
+  {
+    "objectID": "slides/lec-6.html#section-5",
+    "href": "slides/lec-6.html#section-5",
+    "title": "Model Selection",
+    "section": "",
+    "text": "The holdout method.Source: IMS"
+  },
+  {
+    "objectID": "slides/lec-6.html#step-1-training-and-test-sets",
+    "href": "slides/lec-6.html#step-1-training-and-test-sets",
+    "title": "Model Selection",
+    "section": "Step 1: training and test sets",
+    "text": "Step 1: training and test sets\nThe following R function splits a sample into a training and a test set\n\nconstruct_training_test <- function(sample, prop_training = 2/3){\n  \n  n          <- nrow(sample)\n  n_training <- round(n * prop_training)\n  \n  sample_random   <- slice_sample(sample, n = n)\n  sample_training <- slice(sample_random,    1 : n_training )\n  sample_test     <- slice(sample_random, - (1 : n_training))\n  \n  return(list(\n    training = sample_training, test = sample_test\n    ))\n  \n}"
+  },
+  {
+    "objectID": "slides/lec-6.html#section-6",
+    "href": "slides/lec-6.html#section-6",
+    "title": "Model Selection",
+    "section": "",
+    "text": "Sample\nTraining set\nTest set\n\n\n\n\nd_tree # entire sample\n\n   Girth Height Volume\n1    8.3     70   10.3\n2    8.6     65   10.3\n3    8.8     63   10.2\n4   10.5     72   16.4\n5   10.7     81   18.8\n6   10.8     83   19.7\n7   11.0     66   15.6\n8   11.0     75   18.2\n9   11.1     80   22.6\n10  11.2     75   19.9\n11  11.3     79   24.2\n12  11.4     76   21.0\n13  11.4     76   21.4\n14  11.7     69   21.3\n15  12.0     75   19.1\n16  12.9     74   22.2\n17  12.9     85   33.8\n18  13.3     86   27.4\n19  13.7     71   25.7\n20  13.8     64   24.9\n21  14.0     78   34.5\n22  14.2     80   31.7\n23  14.5     74   36.3\n24  16.0     72   38.3\n25  16.3     77   42.6\n26  17.3     81   55.4\n27  17.5     82   55.7\n28  17.9     80   58.3\n29  18.0     80   51.5\n30  18.0     80   51.0\n31  20.6     87   77.0\n\n\n\n\n\nset.seed(0)\ntraining_test_sets <- construct_training_test(d_tree) \ntraining_set <- training_test_sets[[\"training\"]]\ntraining_set\n\n   Girth Height Volume\n1   11.7     69   21.3\n2   16.3     77   42.6\n3   10.5     72   16.4\n4   11.0     66   15.6\n5    8.3     70   10.3\n6    8.6     65   10.3\n7   14.5     74   36.3\n8   11.3     79   24.2\n9   20.6     87   77.0\n10  13.3     86   27.4\n11  13.7     71   25.7\n12  17.5     82   55.7\n13  11.2     75   19.9\n14  18.0     80   51.0\n15  14.0     78   34.5\n16  17.9     80   58.3\n17  11.1     80   22.6\n18  10.7     81   18.8\n19  14.2     80   31.7\n20  12.0     75   19.1\n21  11.4     76   21.0\n\n\n\n\n\ntest_set <- training_test_sets[[\"test\"]]\ntest_set\n\n   Girth Height Volume\n1   11.4     76   21.4\n2   12.9     85   33.8\n3   17.3     81   55.4\n4   11.0     75   18.2\n5   10.8     83   19.7\n6   13.8     64   24.9\n7   18.0     80   51.5\n8    8.8     63   10.2\n9   16.0     72   38.3\n10  12.9     74   22.2"
   },
   {
     "objectID": "slides/lec-6.html#step-2-fit-the-model-to-the-training-set",
     "href": "slides/lec-6.html#step-2-fit-the-model-to-the-training-set",
     "title": "Model Selection",
     "section": "Step 2: fit the model to the training set",
-    "text": "Step 2: fit the model to the training set\nWe now fit our regression model to the training set, as we have done many times.\n\nm <- lm(hwy ~ cty, data = training_set)"
+    "text": "Step 2: fit the model to the training set\nWe simply fit our regression model to the training set.\n\nm1 <- lm(Volume ~ Girth, data = training_set)"
   },
   {
     "objectID": "slides/lec-6.html#step-3-evaluate-the-prediction-accuracy-on-the-test-set",
     "href": "slides/lec-6.html#step-3-evaluate-the-prediction-accuracy-on-the-test-set",
     "title": "Model Selection",
     "section": "Step 3: Evaluate the prediction accuracy on the test set",
-    "text": "Step 3: Evaluate the prediction accuracy on the test set\nTo evaluate the prediction accuracy, we start by computing the predictions for the test set.\n\nhwy_hat <- predict(m, test_set)\n\n\nA good model will make predictions that are closed to the true values of the response variable.\n\n\nA common measure of prediction accuracy is the root mean of squared errors (RMSE):\n\\[\nRMSE = \\sqrt{\\dfrac{SSE}{m}} = \\sqrt{\\dfrac{(y_1 - \\hat{y}_1)^2 + (y_2 - \\hat{y}_2)^2 + \\dots + (y_m - \\hat{y}_m)^2}{m}}\n\\]\nwhere \\(m\\) corresponds to the size of the test set."
+    "text": "Step 3: Evaluate the prediction accuracy on the test set\nTo evaluate the prediction accuracy, we start by computing the predictions for the observations in test set.\n\nVolume_hat <- predict(m1, test_set)\n\n\nA good model will make predictions that are closed to the true values of the response variable."
+  },
+  {
+    "objectID": "slides/lec-6.html#sum-of-squared-errors",
+    "href": "slides/lec-6.html#sum-of-squared-errors",
+    "title": "Model Selection",
+    "section": "Sum of squared errors",
+    "text": "Sum of squared errors\nA good measure of prediction accuracy is the sum of squared errors (SSE).\n\\[\nSSE = (y_1 - \\hat{y}_1)^2 + (y_2 - \\hat{y}_2)^2 + \\dots + (y_m - \\hat{y}_m)^2\n\\]\nSmall SSE is better.\n\nVolume <- test_set$Volume\nsum(Volume - Volume_hat)^2\n\n[1] 149.2704"
+  },
+  {
+    "objectID": "slides/lec-6.html#mean-squared-error",
+    "href": "slides/lec-6.html#mean-squared-error",
+    "title": "Model Selection",
+    "section": "Mean squared error",
+    "text": "Mean squared error\nIn practice, the (root) mean sum of squared errors ((R)MSE) is often used.\n\\[\nMSE = \\dfrac{SSE}{m} = \\dfrac{(y_1 - \\hat{y}_1)^2 + (y_2 - \\hat{y}_2)^2 + \\dots + (y_m - \\hat{y}_m)^2}{m}\n\\]\n\\[\nRMSE = \\sqrt{\\dfrac{SSE}{m}} = \\sqrt{\\dfrac{(y_1 - \\hat{y}_1)^2 + (y_2 - \\hat{y}_2)^2 + \\dots + (y_m - \\hat{y}_m)^2}{m}}\n\\] Again, small (R)MSE is better."
+  },
+  {
+    "objectID": "slides/lec-6.html#section-7",
+    "href": "slides/lec-6.html#section-7",
+    "title": "Model Selection",
+    "section": "",
+    "text": "SSE <- sum((Volume - Volume_hat)^2)\nm <- nrow(test_set)\nMSE <- SSE / m\nRMSE <- sqrt(MSE)\nSSE; MSE; RMSE\n\n[1] 225.2413\n\n\n[1] 22.52413\n\n\n[1] 4.745959\n\n\n\n\n\n\n\n\nTip\n\n\n##(R)MSE The advantage of (R)MSE over the SSE is that we can compare models evaluate with test sets of different sizes."
   },
   {
     "objectID": "slides/lec-6.html#selecting-a-model",
     "href": "slides/lec-6.html#selecting-a-model",
     "title": "Model Selection",
     "section": "Selecting a model",
-    "text": "Selecting a model\nApply steps 2 and 3 on different models.\n\nuse the same training and test sets for the different models\n\nSimply choose the model with the lowest SSE.\nThis model has the best out-of-sample accuracy."
+    "text": "Selecting a model\nApply steps 2 and 3 on different models.\n\nuse the same training and test sets for the different models\n\nSimply choose the model with the lowest (R)MSE.\nThis model has the best out-of-sample accuracy."
+  },
+  {
+    "objectID": "slides/lec-6.html#function-to-compute-the-rmse",
+    "href": "slides/lec-6.html#function-to-compute-the-rmse",
+    "title": "Model Selection",
+    "section": "Function to compute the RMSE",
+    "text": "Function to compute the RMSE\n\ncompute_RMSE <- function(test_set, model){\n  \n  y     <- test_set$Volume\n  y_hat <- predict(model, test_set)\n  \n  E    <- y - y_hat\n  SSE  <- sum(E^2)\n  MSE  <- mean(E^2)\n  RMSE <- sqrt(MSE)\n  \n  return(RMSE)\n  \n}"
+  },
+  {
+    "objectID": "slides/lec-6.html#section-8",
+    "href": "slides/lec-6.html#section-8",
+    "title": "Model Selection",
+    "section": "",
+    "text": "# Step 2\nm1  <- lm(Volume ~ poly(Girth, degree = 1 , raw = TRUE), data = training_set)\nm2  <- lm(Volume ~ poly(Girth, degree = 2 , raw = TRUE), data = training_set)\nm3  <- lm(Volume ~ poly(Girth, degree = 3 , raw = TRUE), data = training_set)\nm48 <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = training_set)\n\n# Step 3\ncompute_RMSE(test_set, m1)\n\n[1] 4.745959\n\ncompute_RMSE(test_set, m2)\n\n[1] 4.16503\n\ncompute_RMSE(test_set, m3) # best\n\n[1] 4.093268\n\ncompute_RMSE(test_set, m48)\n\n[1] 13.47366\n\n\nWe select m3."
+  },
+  {
+    "objectID": "slides/lec-6.html#limitation-of-the-holdout-method",
+    "href": "slides/lec-6.html#limitation-of-the-holdout-method",
+    "title": "Model Selection",
+    "section": "Limitation of the holdout method",
+    "text": "Limitation of the holdout method\nThe previous analysis was conducted with set.seed(0).\n\nModels m2 and m3 were pretty close.\nCould we have obtained a different result with a different seed?"
+  },
+  {
+    "objectID": "slides/lec-6.html#section-9",
+    "href": "slides/lec-6.html#section-9",
+    "title": "Model Selection",
+    "section": "",
+    "text": "# Step 1\nset.seed(1)\ntraining_test_sets <- construct_training_test(d_tree) \ntraining_set <- training_test_sets[[\"training\"]]\ntest_set <- training_test_sets[[\"test\"]]\n\n# Step 2\nm1  <- lm(Volume ~ poly(Girth, degree = 1 , raw = TRUE), data = training_set)\nm2  <- lm(Volume ~ poly(Girth, degree = 2 , raw = TRUE), data = training_set)\nm3  <- lm(Volume ~ poly(Girth, degree = 3 , raw = TRUE), data = training_set)\nm48 <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = training_set)\n\n# Step 3\ncompute_RMSE(test_set, m1)\n\n[1] 6.589842\n\ncompute_RMSE(test_set, m2) # best\n\n[1] 4.332965\n\ncompute_RMSE(test_set, m3)\n\n[1] 5.437581\n\ncompute_RMSE(test_set, m48)\n\n[1] 310105724"
+  },
+  {
+    "objectID": "slides/lec-6.html#the-test-set-matters",
+    "href": "slides/lec-6.html#the-test-set-matters",
+    "title": "Model Selection",
+    "section": "The test set matters!",
+    "text": "The test set matters!\nA drawback of the holdout method is that the test set matters a lot.\nRepeating steps 2 and 3 with a different partition from step 1 may give different results."
   },
   {
     "objectID": "slides/lec-6.html#cross-validation",
     "href": "slides/lec-6.html#cross-validation",
     "title": "Model Selection",
     "section": "Cross-validation",
-    "text": "Cross-validation\nCross-validation (CV) is the same as the holdout method, but repeated many times.\n\ndrawback of the holdout method is that the test set matters a lot.\nRepeating steps 2 and 3 with a different partition from step 1 may give different results.\n\n\nIdea of CV: let each observation be in the test set once"
+    "text": "Cross-validation\nCross-validation (CV) is the natural generalization of the holdout method.\n\n\nrandomly partition the sample into \\(k\\) folds of equal size. \\(k\\) is typically \\(5\\) or \\(10\\). . . .\n\nRepeat the following steps \\(k\\) times\n\nLet fold 1 be the test set and the other folds be the training set\nFit the model to the training set (like the holdout method)\nEvaluate the prediction accuracy of the model on the test set (like the holdout method)\nGo back to 1, letting the next fold be the test set.\n\n\n\n\\(\\Rightarrow\\) Select the model with the best overall prediction accuracy in step 3."
   },
   {
-    "objectID": "slides/lec-6.html#k-fold-cv",
-    "href": "slides/lec-6.html#k-fold-cv",
+    "objectID": "slides/lec-6.html#section-10",
+    "href": "slides/lec-6.html#section-10",
     "title": "Model Selection",
-    "section": "\n\\(k\\)-fold CV",
-    "text": "\\(k\\)-fold CV\nChoose a number of folds \\(k\\) (typically \\(5\\) or \\(10\\)).\n\n\nPartition the data into \\(k\\) folds of equal size.\n\n\n\n\nLet the test set be composed of fold \\(1\\) and the training set of the other folds.\n\n\n\n\nApply steps 2 and 3 of the holdout method.\n\n\n\n\nGo back to step 2, this time letting the next fold be the test set."
+    "section": "",
+    "text": "5-fold cross-validationSource: towardsdatascience\nReasoning behind CV: let each observation be in the test set once."
   },
   {
-    "objectID": "slides/lec-6.html#section-4",
-    "href": "slides/lec-6.html#section-4",
+    "objectID": "slides/lec-6.html#section-11",
+    "href": "slides/lec-6.html#section-11",
     "title": "Model Selection",
     "section": "",
     "text": "set.seed(345)\n\nn_folds <- 10\n\ncounty_2019_nc_folds <- county_2019_nc %>%\n  slice_sample(n = nrow(county_2019_nc)) %>%\n  mutate(fold = rep(1:n_folds, n_folds)) %>%\n  arrange(fold)\n\npredict_folds <- function(i) {\n  fit <- lm(uninsured ~ hs_grad, data = county_2019_nc_folds %>% filter(fold != i))\n  predict(fit, newdata = county_2019_nc_folds %>% filter(fold == i)) %>%\n    bind_cols(county_2019_nc_folds %>% filter(fold == i), .fitted = .)\n}\n\nnc_fits <- map_df(1:n_folds, predict_folds)\n\np_nc_fits <- ggplot(nc_fits, aes(x = hs_grad, y = .fitted, group = fold)) +\n  geom_line(stat = \"smooth\", method = \"lm\", se = FALSE, size = 0.3, alpha = 0.5) +\n  scale_x_continuous(labels = label_percent(scale = 1, accuracy = 1)) +\n  scale_y_continuous(labels = label_percent(scale = 1, accuracy = 1)) +\n  labs(\n    x = \"High school graduate\", y = \"Uninsured\",\n    title = \"Predicted uninsurance rate in NC\",\n    subtitle = glue(\"For {n_folds} different testing datasets\")\n    )\n\np_nc_fits\n\n\nset.seed(123)\n\nn_folds <- 10\n\ncounty_2019_ny_folds <- county_2019_ny %>%\n  slice_sample(n = nrow(county_2019_ny)) %>%\n  mutate(fold = c(rep(1:n_folds, 6), 1, 2)) %>%\n  arrange(fold)\n\npredict_folds <- function(i) {\n  fit <- lm(uninsured ~ hs_grad, data = county_2019_ny_folds %>% filter(fold != i))\n  predict(fit, newdata = county_2019_ny_folds %>% filter(fold == i)) %>%\n    bind_cols(county_2019_ny_folds %>% filter(fold == i), .fitted = .)\n}\n\nny_fits <- map_df(1:n_folds, predict_folds)\n\np_ny_fits <- ggplot(ny_fits, aes(x = hs_grad, y = .fitted, group = fold)) +\n  geom_line(stat = \"smooth\", method = \"lm\", se = FALSE, size = 0.3, alpha = 0.5) +\n  scale_x_continuous(labels = label_percent(scale = 1, accuracy = 1)) +\n  scale_y_continuous(labels = label_percent(scale = 1, accuracy = 1)) +\n  labs(\n    x = \"High school graduate\", y = \"Uninsured\",\n    title = \"Predicted uninsurance rate in NY\",\n    subtitle = glue(\"For {n_folds} different testing datasets\")\n    )\n\np_ny_fits"
@@ -2597,8 +2709,8 @@
     "text": "Backward selection procedure\nSimilar to forward selection, except that\n\nwe start with the full model,\nremove one predictor at a time\nuntil removing any predictors makes the model worse.\n\n\nNote that forward and backward selection need not agree; they may select different models.\n\n\n\nWhat to do in that case? Nobody knows."
   },
   {
-    "objectID": "slides/lec-6.html#section-5",
-    "href": "slides/lec-6.html#section-5",
+    "objectID": "slides/lec-6.html#section-12",
+    "href": "slides/lec-6.html#section-12",
     "title": "Model Selection",
     "section": "",
     "text": "Group exercise - stepwise selection\n\n\n\nExercises 8.11, 8.13\nIn addition\n\n\nfit the first models in R\n\nidentify the baseline level of the categorical variable in each model.\n\n\nlibrary(openintro)\nd <- openintro::births14\n\n\n\n\n\n\n\n05:00"
