@@ -203,7 +203,7 @@ Can we do better? Yes!
 
 . . .
 
--   Take additional variable into account in the model (e.g. engine size, vehicle age, etc)
+-   Take additional variables into account in the model (e.g. engine size, vehicle age, etc)
 
 . . .
 
@@ -792,6 +792,8 @@ countdown(minutes = 5)
 
 # Outliers
 
+## Outliers in regression
+
 Remember, in a boxplot, outliers are observations far from the bulk of the data
 
 ```{r}
@@ -801,25 +803,26 @@ ggplot(d) +
 
 . . .
 
-In the context of regression model, an **outlier** is an observation that falls far from the cloud of points
+In the context of regression models, an **outlier** is an observation that falls far from the cloud of points
 
-## 
+## Identifying outliers
 
-::: {.callout-tip icon="false"}
-## Group exercise - outlier
-
--   Look at the scatterplot for the `mpg` data set. Are there outliers?
+In the following scatterplot, we see two outliers
 
 ```{r}
 ggplot(d) +
   geom_point(aes(cty, hwy))
 ```
 
--   Exercise [7.25](https://openintro-ims.netlify.app/model-slr.html#chp7-exercises)
+##
+
+::: {.callout-tip icon="false"}
+## Group exercise - outlier in regression
+Exercise [7.25](https://openintro-ims.netlify.app/model-slr.html#chp7-exercises)
 :::
 
 ```{r, echo = F}
-countdown(minutes = 3)
+countdown(minutes = 2)
 ```
 
 ## Outliers, leverage and influential points {.smaller}
@@ -862,7 +865,7 @@ p_1 <- ggplot(d1, aes(x = x, y = y)) +
   geom_point(data = d1 %>% filter(outlier), 
              size = 5, shape = "circle open", 
              color = IMSCOL["red", "full"], stroke = 2) +
-  labs(title = "A") +
+  labs(title = "Outl.") +
   theme(
     panel.grid = element_blank(),
     axis.text = element_blank(),
@@ -890,7 +893,7 @@ p_2 <- ggplot(d2, aes(x = x, y = y)) +
   geom_point(data = d2 %>% filter(outlier), 
              size = 5, shape = "circle open", 
              color = IMSCOL["green", "full"], stroke = 2) + 
-  labs(title = "B") +
+  labs(title = "Outl., H.L.") +
   theme(
     panel.grid = element_blank(),
     axis.text = element_blank(),
@@ -918,7 +921,7 @@ p_3 <- ggplot(d3, aes(x = x, y = y)) +
   geom_point(data = d3 %>% filter(outlier), 
              size = 5, shape = "circle open", 
              color = IMSCOL["pink", "full"], stroke = 2) +
-  labs(title = "C") +
+  labs(title = "Outl., H.L., infl.") +
   theme(
     panel.grid = element_blank(),
     axis.text = element_blank(),
@@ -991,7 +994,7 @@ d_contaminated <- select(d, cty, hwy) %>%
 arrange(d_contaminated, desc(hwy)) %>% slice(1:5)
 ```
 
-. . .
+##
 
 ...and compare the two regression models.
 
@@ -1013,6 +1016,19 @@ ggplot(d_contaminated) +
 ```
 
 The regression line not longer fits the data well.
+
+## Statistics as an art - dealing with outliers
+
+
+::: callout-note
+## Dealing with outliers
+
+Outliers can unduly influence parameter estimates. How to deal with an outlier depends on why the observation stands out. Outliers can either be
+
+-   removed
+-   corrected
+-   ignored
+:::
 
 # Recap
 

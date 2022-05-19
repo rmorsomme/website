@@ -25,7 +25,7 @@ d_sub <- read_csv(
   "../Nat2020us/Nat2020PublicUS.c20210506.r20210812.txt",
   col_names = FALSE, trim_ws = FALSE
   ) %>%
-  slice_sample(n = 1e5)
+  slice_sample(n = 5e4)
 ```
 
 ## Variable extraction

@@ -1,5 +1,7 @@
 ---
 title: "Prediction project"
+resources: 
+  - "*.csv"
 ---
 
 ## Overview

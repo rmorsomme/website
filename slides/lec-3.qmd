@@ -404,7 +404,7 @@ sd(x_uncontaminated); sd(x_contaminated)
 IQR(x_uncontaminated); IQR(x_contaminated)
 ```
 
-##
+## 
 
 ::: callout-warning
 ## Robustness of the median and the iqr
@@ -605,7 +605,7 @@ Source: [R 4 Data Science](https://r4ds.had.co.nz)
 ::: callout-note
 ## Outliers
 
-Outliers have an extreme value. How to deal with an outlier depends on why the observation stands out. outliers can be
+Outliers have an extreme value. How to deal with an outlier depends on why the observation stands out. Outliers can be
 
 -   removed
 -   corrected

@@ -56,7 +56,18 @@ options(scipen = 20)
 
 ## Announcements
 
--   assignments
+-   Find the last person you have not worked with
+-   Prediction project
+    -   teams
+    -   deadlines: May 31 (model and presentation) and June 1 (report)
+    
+## Project - reading in the data
+
+```{r, eval = FALSE}
+library(readr)
+read_csv("https://rmorsomme.github.io/website/projects/training_set.csv")
+```
+
 
 ## Recap
 
@@ -74,21 +85,19 @@ options(scipen = 20)
 ## Outline
 
 -   multiple linear regression
+-   categorical predictor
 -   feature engineering
--   model comparison
--   predictive performance
-
 
 # Multiple linear regression
 
-Remember, to improve our initial model with $(\beta_0, \beta_1) = (1, 1.3)$, we could 
+Remember, to improve our initial model with $(\beta_0, \beta_1) = (1, 1.3)$, we could
 
-i.    find better estimates, 
-ii.   use additional predictors
+i.  find better estimates $\Rightarrow$ least-square estimates,
 
 . . .
 
-For (i), the least-square estimates are usually very good (previous lecture); for (ii), we use a **multiple linear regression model**.
+ii. use additional predictors $\Rightarrow$ **multiple linear regression models**
+
 
 . . .
 
@@ -105,7 +114,7 @@ Instead of fitting a model with only `cty` or only `displ`, we could fit a linea
 
 ## Linear regression with 2 predictors
 
-The model equation is 
+The model equation is
 
 $$
 \text{hwy} \approx \beta_0 + \beta_1 \text{cty} + \beta_2 \text{displ}
@@ -145,7 +154,7 @@ In a regression model, categorical predictors are represented using indicator va
 
 To represent a categorical predictor with $k$ levels (categories), we use $(k-1)$ indicator variables.
 
-(advanced topic: identifiability)
+(identifiability -- advanced topic)
 
 ## Including `drv`
 
@@ -158,7 +167,7 @@ $$
 . . .
 
 ::: callout-tip
-For a binary variable $k=2$, so we only need $k-1=1$ indicator variable. 
+For a binary variable $k=2$, so we only need $k-1=1$ indicator variable.
 
 For instance, to include the binary variable `year_binary`, we only added a single indicator variable to the model.
 :::
@@ -170,6 +179,7 @@ lm(hwy ~ drv, data = d)
 ```
 
 The model equation with the least-square estimates is 
+
 $$
 \text{hwy} \approx 19.175 + 8.986 \text{drv_f} + 1.825 \text{drv_r}
 $$
@@ -194,7 +204,7 @@ If a new vehicle has a `drv` that is:
 
 . . .
 
-The level `4` is called the **reference level**.
+The level (category) `4` is called the **reference level**.
 
 ## 
 
@@ -204,16 +214,15 @@ The level `4` is called the **reference level**.
 -   Exercises [8.5](https://openintro-ims.netlify.app/model-mlr.html#chp8-exercises), [8.7](https://openintro-ims.netlify.app/model-mlr.html#chp8-exercises)
 
 -   In addition
+
     i.  identify the baseline level of the categorical variable in each model.
-    
-    
+
     ```{r, eval = FALSE}
     library(openintro)
     d <- openintro::births14
     ```
-    
-    ii. fit the first models in `R`
 
+    ii. fit the first model in `R`
 :::
 
 ```{r, echo = F}
@@ -239,8 +248,8 @@ glance(m_larger)$r.squared
 
 Unsurprisingly, including additional predictors makes the regression line closer to the points $\Rightarrow$ residuals are smaller $\Rightarrow$ SSR is smaller $\Rightarrow$ $R^2$ is larger.
 
-
 ## 
+
 ::: {.callout-tip icon="false"}
 ## Group exercise - computing $R^2$ by hand
 
@@ -252,18 +261,21 @@ d <- ggplot2::mpg
 m_larger <- lm(hwy ~ cty + drv + displ, data = d)
 m_augment <- augment(m_larger)
 ```
-
 :::
+
 ```{r, echo = F}
 countdown(minutes = 4)
 ```
 
+## Fitting the full[^1] model
 
-
-## Fitting the full^[This not exactly the full model since I do not include the variable `model` for the following technical reason. By including the variable `model` along with the other ones, we obtain perfect collinearity, making the model unidentifiable] model
+[^1]: This not exactly the full model since I do not include the variable `model` due to identifiability issues (technical point).
 
 ```{r}
-m_full <- lm(hwy ~ manufacturer + displ + year + cyl + trans + drv + cty + fl + class, data = d)
+m_full <- lm(
+  hwy ~ manufacturer + displ + year + cyl + trans + drv + cty + fl + class,
+  data = d
+  )
 ```
 
 Thanks to the additional predictors, the residuals are very small, making $R^2$ close to $1$.
@@ -274,7 +286,10 @@ glance(m_full)$r.squared
 
 . . .
 
-We will see in the next lecture that this is not always a good sign.
+Large $R^2$
+
+-   seems great!
+-   ...but we will see in the next lecture that this is not always a good sign.
 
 ## 
 
@@ -283,10 +298,10 @@ We will see in the next lecture that this is not always a good sign.
 
 Exercise [8.9](https://openintro-ims.netlify.app/model-mlr.html#chp8-exercises)
 
-i.    fit the model in `R`
-ii.   identify the type of each variable
-iii.  identify the baseline level of the categorical predictors
-iv.   do parts a-d
+i.  fit the model in `R`
+ii. identify the type of each variable
+iii. identify the baseline level of the categorical predictors
+iv. do parts a-d
 
 ```{r}
 library(openintro)
@@ -300,7 +315,6 @@ countdown(minutes = 5)
 
 # Statistics as an art -- feature engineering
 
-
 ## Feature engineering
 
 We saw that adding predictors to the model seems to help.
@@ -309,12 +323,12 @@ However, the variables included in the data set, e.g. `displ`, `year`, etc, may 
 
 . . .
 
-**Feature engineering** refers to the creation of new predictors from existing ones.
+**Feature engineering** refers to the creation of new predictors from the raw variables.
 
 . . .
 
 ::: callout-tip
-This is where your understanding of the data, scientific knowledge, etc, makes a big difference.
+This is where your understanding of the data, scientific knowledge and experience make a big difference.
 :::
 
 ## Transforming a variable
@@ -328,9 +342,9 @@ ggplot(d) +
 
 . . .
 
-The relation bwteen `displ` and `hwy` is not exactly linear.
+The relation between `displ` and `hwy` is not exactly linear.
 
-## {.smaller}
+##  {.smaller}
 
 Let us include the predictor $\dfrac{1}{\text{displ}}$ to capture this nonlinear relation.
 
@@ -338,7 +352,7 @@ Here is the model equation
 
 $$
 \text{hwy} \approx \beta_0+ \beta_1 \text{displ} + \beta_2 \dfrac{1}{\text{displ}}
-$$ 
+$$
 
 The least-square coefficient estimates are
 
@@ -371,7 +385,6 @@ augment(m) %>%
 -   Source: Atkinson, A. C. (1985) Plots, Transformations and Regression. Oxford University Press.
 :::
 
-
 ::: {.column width="5%"}
 :::
 
@@ -399,7 +412,7 @@ head(d_tree, n = 4)
 
 where `Girth` indicates the tree diameter (twice the radius) in inches.
 
-## 
+## Geomtric considerations
 
 Suppose we want to estimate `Volume` (expensive to measure) from `Girth` and `Height` (cheap to measure).
 
@@ -419,7 +432,7 @@ $$
 V = \frac{1}{3} \pi r^2 h
 $$
 
-##
+## 
 
 This suggests approximating the volume of a tree with the following model
 
@@ -427,16 +440,16 @@ $$
 \text{Volume} = \beta_1 \left[ \left(\dfrac{\text{Girth}}{2}\right)^2 * \text{Height}\right] = \beta_1X
 $$
 
-where 
+where
 
--   $\beta_1$ is an unknown parameter that we expect to be between $\pi$ (pure cylinder) and $\frac{1}{3}\pi$ (pure cone) 
--   $X = \left(\dfrac{\text{Girth}}{2}\right)^2 * \text{Height}$ is our predictor, which we construct from existing variables.
+-   $\beta_1$ is an unknown parameter that we expect to be between $\pi$ (pure cylinder) and $\frac{1}{3}\pi$ (pure cone)
+-   $X = \left[\left(\dfrac{\text{Girth}}{2}\right)^2 * \text{Height}\right]$ is our new predictor, which we construct from existing variables.
 
-##
+## 
 
-To accomplish this, we simply need to create a new variable corresponding to $\left(\dfrac{\text{Girth}}{2}\right)^2 * \text{Height}$.
+To accomplish this, we simply create a new variable corresponding to $\left(\dfrac{\text{Girth}}{2}\right)^2 * \text{Height}$.
 
-But before doing that, we have to transform `Girth` into feet to ensure that all variables have the same units.
+Before doing that, we just need to transform `Girth` into feet to ensure that all variables have the same units.
 
 ```{r}
 d_tree_comb <- d_tree %>%
@@ -449,19 +462,19 @@ d_tree_comb <- d_tree %>%
 head(d_tree_comb, n = 3)
 ```
 
-##
+## 
 
-My model does not include an intercept. To exclude the intercept from the model, I use `-1` in the `lm` command.
+Our model does not include an intercept. To exclude the intercept from the model, I use `-1` in the `lm` command.
 
 ```{r}
 #| code-line-numbers: "1"
-m <- lm(Volume ~ r2h - 1, data = d_tree_comb)
-m
+m_engineered <- lm(Volume ~ r2h - 1, data = d_tree_comb)
+m_engineered
 ```
 
 . . .
 
-This is between the two anticipated bounds $\pi=3.14$ and $\frac{\pi}{3}=1.047$.
+The coefficient estimate is between the two anticipated bounds $\pi=3.14$ and $\frac{\pi}{3}=1.047$!
 
 . . .
 
@@ -470,30 +483,33 @@ When we do not include the intercept in a model, $R^2$ measures something differ
 :::
 
 ```{r}
-glance(m)$r.squared
+glance(m_engineered)$r.squared
 ```
 
 ## Comparison with the full model {.smaller}
 
-Although $R^2$ has a different meaning when there is no intercept, it can be still used for comparison^[as long as both models exclude the intercept].
+Although $R^2$ has a different meaning when there is no intercept, it can be still used for comparison[^2].
+
+[^2]: as long as both models exclude the intercept
 
 . . .
 
 ```{r}
 m_full <- lm(Volume ~ Girth + Height -1, data = d_tree)
 glance(m_full)$r.squared
+glance(m_engineered)$r.squared
 ```
 
 Our new variable $\left(\dfrac{\text{Girth}}{2}\right)^2 * \text{Height}$ improves the model!
 
 . . .
 
-Note that the full model has two predictors, while our geometry-based model only has a single predictor!
+Note that the full model has two predictors, while our geometry-based model has only a single predictor!
 
 ::: callout-tip
+## Feature engineering
 A carefully constructed predictor can do a better job than multiple raw predictors!
 :::
-
 
 ## Special case of data combination: interaction {.smaller}
 
@@ -506,7 +522,6 @@ Two variables that impact the duration are (i) the **distance** of the race, and
 For simplicity, we measure the weather as either *good* (nice weather) or *bad* (rain, heat wave, etc).
 :::
 
-
 ::: {.column width="5%"}
 :::
 
@@ -515,10 +530,9 @@ For simplicity, we measure the weather as either *good* (nice weather) or *bad* 
 :::
 :::
 
+##  {.smaller}
 
-## {.smaller}
-
-Our model is therefore
+Te full model is
 
 $$
 \text{duration} \approx \beta_0 + \beta_1 \text{distance} + \beta_2 \text{weather_bad}
@@ -544,13 +558,13 @@ $$
 \text{duration} \approx \beta_0 + \beta_1 \text{distance} + \beta_2 \text{weather_bad} + \beta_3 \text{weather_bad}*\text{distance}
 $$
 
--   When the weather is good, the equation simplifies to 
+-   When the weather is good, the equation simplifies to
 
 $$
 \text{duration} \approx \beta_0 + \beta_1 \text{distance} + \beta_2 0 + \beta_3 0*\text{distance} = \beta_0 + \beta_1 \text{distance}
 $$
 
--   When the weather is bad, the equation simplifies to 
+-   When the weather is bad, the equation simplifies to
 
 $$
 \text{duration} \approx \beta_0 + \beta_1 \text{distance} + \beta_2 1 + \beta_3 1*\text{distance} = (\beta_0 + \beta_2) + (\beta_1+\beta_3) \text{distance}
@@ -564,7 +578,8 @@ $$
 
 ::: callout-tip
 ## Interactions
-The effect of the distance depends on the weather. Similarly, the effect of the weather depends on the distance. 
+
+The effect of the distance depends on the weather. Similarly, the effect of the weather depends on the distance.
 
 $\Rightarrow$ the two variables **interact**.
 :::
@@ -590,4 +605,5 @@ $\Rightarrow$ the two variables **interact**.
 
     -   transforming variables
     -   combining variables
+    -   interactions
 :::
