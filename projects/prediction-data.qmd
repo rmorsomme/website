@@ -16,7 +16,6 @@ knitr::opts_chunk$set(
 )
 ```
 
-
 ```{r}
 set.seed(0)
 library(tidyverse)
@@ -135,4 +134,3 @@ sqrt(mean((y - y_hat  )^2))
 y_hat <- predict.lm(m_simple, d_test)
 sqrt(mean((y - y_hat  )^2))
 ```
-
