@@ -1,33 +1,5 @@
 [
   {
-    "objectID": "computing-access.html",
-    "href": "computing-access.html",
-    "title": "Computing access",
-    "section": "",
-    "text": "If this is your first time accessing the containers, click on reserve STA210 on the Reservations available menu on the right. You only need to do this once, and when you do, you’ll see this container moved to the My reservations menu on the left.\nNext, click on STA210 under My reservations to access the RStudio instance you’ll use for the course."
-  },
-  {
-    "objectID": "computing-pipelines.html",
-    "href": "computing-pipelines.html",
-    "title": "Pipelines",
-    "section": "",
-    "text": "library(palmerpenguins)\nlibrary(tidyverse)\n\n-- Attaching packages --------------------------------------- tidyverse 1.3.1 --\n\n\nv ggplot2 3.3.5     v purrr   0.3.4\nv tibble  3.1.6     v dplyr   1.0.9\nv tidyr   1.2.0     v stringr 1.4.0\nv readr   2.1.2     v forcats 0.5.1\n\n\n-- Conflicts ------------------------------------------ tidyverse_conflicts() --\nx dplyr::filter() masks stats::filter()\nx dplyr::lag()    masks stats::lag()\n\nlibrary(tidymodels)\n\n-- Attaching packages -------------------------------------- tidymodels 0.2.0 --\n\n\nv broom        0.8.0     v rsample      0.1.1\nv dials        0.1.1     v tune         0.2.0\nv infer        1.0.0     v workflows    0.2.6\nv modeldata    0.1.1     v workflowsets 0.2.1\nv parsnip      0.2.1     v yardstick    0.0.9\nv recipes      0.2.0     \n\n\n-- Conflicts ----------------------------------------- tidymodels_conflicts() --\nx scales::discard() masks purrr::discard()\nx dplyr::filter()   masks stats::filter()\nx recipes::fixed()  masks stringr::fixed()\nx dplyr::lag()      masks stats::lag()\nx yardstick::spec() masks readr::spec()\nx recipes::step()   masks stats::step()\n* Search for functions across packages at https://www.tidymodels.org/find/\n\nlibrary(knitr)"
-  },
-  {
-    "objectID": "computing-pipelines.html#simple-linear-regression",
-    "href": "computing-pipelines.html#simple-linear-regression",
-    "title": "Pipelines",
-    "section": "Simple linear regression",
-    "text": "Simple linear regression\n\nModel fitting\nFit model:\n\npenguins_fit <- linear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(body_mass_g ~ flipper_length_mm, data = penguins)\n\nTidy model output:\n\ntidy(penguins_fit)\n\n# A tibble: 2 x 5\n  term              estimate std.error statistic   p.value\n  <chr>                <dbl>     <dbl>     <dbl>     <dbl>\n1 (Intercept)        -5781.     306.       -18.9 5.59e- 55\n2 flipper_length_mm     49.7      1.52      32.7 4.37e-107\n\n\nFormat model output as table:\n\ntidy(penguins_fit) %>%\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-5780.831\n305.815\n-18.903\n0\n\n\nflipper_length_mm\n49.686\n1.518\n32.722\n0\n\n\n\n\n\nAugment data with model:\n\naugment(penguins_fit$fit)\n\n# A tibble: 342 x 9\n   .rownames body_mass_g flipper_length_~ .fitted  .resid    .hat .sigma .cooksd\n   <chr>           <int>            <int>   <dbl>   <dbl>   <dbl>  <dbl>   <dbl>\n 1 1                3750              181   3212.  538.   0.00881   394. 8.34e-3\n 2 2                3800              186   3461.  339.   0.00622   394. 2.33e-3\n 3 3                3250              195   3908. -658.   0.00344   393. 4.83e-3\n 4 5                3450              193   3808. -358.   0.00385   394. 1.60e-3\n 5 6                3650              190   3659.   -9.43 0.00469   395. 1.35e-6\n 6 7                3625              181   3212.  413.   0.00881   394. 4.91e-3\n 7 8                4675              195   3908.  767.   0.00344   393. 6.56e-3\n 8 9                3475              193   3808. -333.   0.00385   394. 1.39e-3\n 9 10               4250              190   3659.  591.   0.00469   394. 5.31e-3\n10 11               3300              186   3461. -161.   0.00622   395. 5.23e-4\n# ... with 332 more rows, and 1 more variable: .std.resid <dbl>\n\n\n\n\nStatistical inference"
-  },
-  {
-    "objectID": "computing-troubleshooting.html",
-    "href": "computing-troubleshooting.html",
-    "title": "Computing troubleshooting",
-    "section": "",
-    "text": "If the status shows something other than Operational, this means there is a known incident with the containers. Check back later to see if it’s been resolved. If there’s a deadline coming up soon, post on the course forum to let us know that there’s an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don’t anticipate this to happen regularly, the systems are Operational a huge majority of the time!\nIf the status shows Operational, this means the system is expected to be working. Check your internet connection, if need be, restart your computer to ensure a fresh new connection. If your issue persists, post on the course forum with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).\nEither way you can also fill out the form here, which will notify our the R TA for the department as well as our undergraduate coordinator. They’ll be able to help diagnose the issue."
-  },
-  {
     "objectID": "course-faq.html",
     "href": "course-faq.html",
     "title": "FAQ",
@@ -1719,14 +1691,14 @@
     "href": "slides/lec-5.html#project---reading-in-the-data",
     "title": "Multiple Linear Regression Models",
     "section": "Project - reading in the data",
-    "text": "Project - reading in the data\n\nlibrary(readr)\nread_csv(\"https://rmorsomme.github.io/website/projects/training_set.csv\")"
+    "text": "Project - reading in the data\n\nlibrary(readr)\nd <- read_csv(\"https://rmorsomme.github.io/website/projects/training_set.csv\")"
   },
   {
     "objectID": "slides/lec-5.html#recap",
     "href": "slides/lec-5.html#recap",
     "title": "Multiple Linear Regression Models",
     "section": "Recap",
-    "text": "Recap\n\n\nsimple linear regression model \\[\n\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty}\n\\]\nresiduals\nleast-square estimates\nparameter interpretation\nmodel comparison with \\(R^2\\)\noutliers"
+    "text": "Recap\n\nsimple linear regression model\n\n\\[\n    \\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty}\n\\]\n\nresiduals\nleast-square estimates\nparameter interpretation\nmodel comparison with \\(R^2\\)\noutliers"
   },
   {
     "objectID": "slides/lec-5.html#outline",
@@ -1761,7 +1733,7 @@
     "href": "slides/lec-5.html#special-case-categorical-predictor",
     "title": "Multiple Linear Regression Models",
     "section": "Special case: categorical predictor",
-    "text": "Special case: categorical predictor\nIn a regression model, categorical predictors are represented using indicator variables.\nTo represent a categorical predictor with \\(k\\) levels (categories), we use \\((k-1)\\) indicator variables.\n(identifiability – advanced topic)"
+    "text": "Special case: categorical predictor\nIn a regression model, categorical predictors are represented using indicator variables.\nTo represent a categorical predictor with \\(k\\) levels (categories), we use \\((k-1)\\) indicator variables1.\nWe cannot use \\(k\\) indicator variables due to identifiability (advanced topic)"
   },
   {
     "objectID": "slides/lec-5.html#including-drv",
@@ -1834,15 +1806,15 @@
     "text": "Transforming a variable\nConsider the predictor displ\n\nggplot(d) +\n  geom_point(aes(displ, hwy))\n\n\n\nThe relation between displ and hwy is not exactly linear."
   },
   {
-    "objectID": "slides/lec-5.html#section-3",
-    "href": "slides/lec-5.html#section-3",
+    "objectID": "slides/lec-5.html#modeling-nonlinearity",
+    "href": "slides/lec-5.html#modeling-nonlinearity",
     "title": "Multiple Linear Regression Models",
-    "section": "",
-    "text": "Let us include the predictor \\(\\dfrac{1}{\\text{displ}}\\) to capture this nonlinear relation.\nHere is the model equation\n\\[\n\\text{hwy} \\approx \\beta_0+ \\beta_1 \\text{displ} + \\beta_2 \\dfrac{1}{\\text{displ}}\n\\]\nThe least-square coefficient estimates are\n\nd_transf <- mutate(d, displ_inv = 1/displ)\nm <- lm(hwy ~ displ + displ_inv, data = d_transf)\nm\n\n\nCall:\nlm(formula = hwy ~ displ + displ_inv, data = d_transf)\n\nCoefficients:\n(Intercept)        displ    displ_inv  \n    12.2601      -0.2332      36.1456"
+    "section": "Modeling nonlinearity",
+    "text": "Modeling nonlinearity\nLet us include the predictor \\(\\dfrac{1}{\\text{displ}}\\) to capture this nonlinear relation.\nHere is the model equation\n\\[\n\\text{hwy} \\approx \\beta_0+ \\beta_1 \\text{displ} + \\beta_2 \\dfrac{1}{\\text{displ}}\n\\]\nThe least-square coefficient estimates are\n\nd_transf <- mutate(d, displ_inv = 1/displ)\nm <- lm(hwy ~ displ + displ_inv, data = d_transf)\nm\n\n\nCall:\nlm(formula = hwy ~ displ + displ_inv, data = d_transf)\n\nCoefficients:\n(Intercept)        displ    displ_inv  \n    12.2601      -0.2332      36.1456"
   },
   {
-    "objectID": "slides/lec-5.html#section-4",
-    "href": "slides/lec-5.html#section-4",
+    "objectID": "slides/lec-5.html#section-3",
+    "href": "slides/lec-5.html#section-3",
     "title": "Multiple Linear Regression Models",
     "section": "",
     "text": "And the regression lines captures the nonlinear relation.\n\naugment(m) %>%\n  ggplot(aes(displ, hwy)) +\n  geom_point() +\n  geom_line(aes(y = .fitted))"
@@ -1869,22 +1841,22 @@
     "text": "Geomtric considerations\nSuppose we want to estimate Volume (expensive to measure) from Girth and Height (cheap to measure).\n\nYou might decide to approximate the shape of a tree with a shape that is between a cylinder and a cone.\nFrom geometry, we know that the volume of a cylinder is\n\\[\nV = \\pi r^2 h\n\\]\nand that of a cone is\n\\[\nV = \\frac{1}{3} \\pi r^2 h\n\\]"
   },
   {
-    "objectID": "slides/lec-5.html#section-5",
-    "href": "slides/lec-5.html#section-5",
+    "objectID": "slides/lec-5.html#section-4",
+    "href": "slides/lec-5.html#section-4",
     "title": "Multiple Linear Regression Models",
     "section": "",
     "text": "This suggests approximating the volume of a tree with the following model\n\\[\n\\text{Volume} = \\beta_1 \\left[ \\left(\\dfrac{\\text{Girth}}{2}\\right)^2 * \\text{Height}\\right] = \\beta_1X\n\\]\nwhere\n\n\\(\\beta_1\\) is an unknown parameter that we expect to be between \\(\\pi\\) (pure cylinder) and \\(\\frac{1}{3}\\pi\\) (pure cone)\n\\(X = \\left[\\left(\\dfrac{\\text{Girth}}{2}\\right)^2 * \\text{Height}\\right]\\) is our new predictor, which we construct from existing variables."
   },
   {
-    "objectID": "slides/lec-5.html#section-6",
-    "href": "slides/lec-5.html#section-6",
+    "objectID": "slides/lec-5.html#section-5",
+    "href": "slides/lec-5.html#section-5",
     "title": "Multiple Linear Regression Models",
     "section": "",
     "text": "To accomplish this, we simply create a new variable corresponding to \\(\\left(\\dfrac{\\text{Girth}}{2}\\right)^2 * \\text{Height}\\).\nBefore doing that, we just need to transform Girth into feet to ensure that all variables have the same units.\n\nd_tree_comb <- d_tree %>%\n  mutate(\n    Girth_ft    = Girth / 12,\n    radius      = Girth_ft / 2,\n    r_squared   = radius^2,\n    r2h = r_squared * Height\n  )\nhead(d_tree_comb, n = 3)\n\n  Girth Height Volume  Girth_ft    radius r_squared      r2h\n1   8.3     70   10.3 0.6916667 0.3458333 0.1196007 8.372049\n2   8.6     65   10.3 0.7166667 0.3583333 0.1284028 8.346181\n3   8.8     63   10.2 0.7333333 0.3666667 0.1344444 8.470000"
   },
   {
-    "objectID": "slides/lec-5.html#section-7",
-    "href": "slides/lec-5.html#section-7",
+    "objectID": "slides/lec-5.html#section-6",
+    "href": "slides/lec-5.html#section-6",
     "title": "Multiple Linear Regression Models",
     "section": "",
     "text": "Our model does not include an intercept. To exclude the intercept from the model, I use -1 in the lm command.\n\nm_engineered <- lm(Volume ~ r2h - 1, data = d_tree_comb)\nm_engineered\n\n\nCall:\nlm(formula = Volume ~ r2h - 1, data = d_tree_comb)\n\nCoefficients:\n  r2h  \n1.214  \n\n\n\nThe coefficient estimate is between the two anticipated bounds \\(\\pi=3.14\\) and \\(\\frac{\\pi}{3}=1.047\\)!\n\n\n\n\n\n\n\n\nWarning\n\n\nWhen we do not include the intercept in a model, \\(R^2\\) measures something different and should therefore not be interpreted in the usual way.\n\n\n\n\nglance(m_engineered)$r.squared\n\n[1] 0.9950219"
@@ -1904,11 +1876,11 @@
     "text": "Special case of data combination: interaction\n\n\nSuppose you are interested in predicting the average run time (duration) of amateur jogging races.\nTwo variables that impact the duration are (i) the distance of the race, and (ii) the weather.\nFor simplicity, we measure the weather as either good (nice weather) or bad (rain, heat wave, etc)."
   },
   {
-    "objectID": "slides/lec-5.html#section-8",
-    "href": "slides/lec-5.html#section-8",
+    "objectID": "slides/lec-5.html#fixed-effect-weather",
+    "href": "slides/lec-5.html#fixed-effect-weather",
     "title": "Multiple Linear Regression Models",
-    "section": "",
-    "text": "Te full model is\n\\[\n\\text{duration} \\approx \\beta_0 + \\beta_1 \\text{distance} + \\beta_2 \\text{weather_bad}\n\\]\nwhere \\(\\beta_1\\) indicate the effect of an additional miles on the expected duration and \\(\\beta_2\\) the effect of bad weather.\nNote that the effect of weather is fixed in this model, say “\\(+5\\) minutes” if \\(\\hat{\\beta}_2 = 5\\).\n\nIs this reasonable? No!\n\n\n\\(\\Rightarrow\\) the effect of weather should vary with distance. For shorter races, bad weather may add only 2 or 3 minutes, while for longer races, bad weather may increase the average duration by 10 or 15 minutes."
+    "section": "Fixed effect weather?",
+    "text": "Fixed effect weather?\nTe full model is\n\\[\n\\text{duration} \\approx \\beta_0 + \\beta_1 \\text{distance} + \\beta_2 \\text{weather_bad}\n\\]\nwhere \\(\\beta_1\\) indicate the effect of an additional miles on the expected duration and \\(\\beta_2\\) the effect of bad weather.\nNote that the effect of weather is fixed in this model, say “\\(+5\\) minutes” if \\(\\hat{\\beta}_2 = 5\\).\n\nIs this reasonable? No!\n\n\n\\(\\Rightarrow\\) the effect of weather should vary with distance. For shorter races, bad weather may add only 2 or 3 minutes, while for longer races, bad weather may increase the average duration by 10 or 15 minutes."
   },
   {
     "objectID": "slides/lec-5.html#model-equation-with-interaction",

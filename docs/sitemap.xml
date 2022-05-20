@@ -1,119 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://rmorsomme.github.io/website/computing-access.html</loc>
-    <lastmod>2022-05-20T18:00:28.080Z</lastmod>
-  </url>
-  <url>
-    <loc>https://rmorsomme.github.io/website/computing-pipelines.html</loc>
-    <lastmod>2022-05-20T18:00:29.690Z</lastmod>
-  </url>
-  <url>
-    <loc>https://rmorsomme.github.io/website/computing-troubleshooting.html</loc>
-    <lastmod>2022-05-20T18:00:30.638Z</lastmod>
-  </url>
-  <url>
     <loc>https://rmorsomme.github.io/website/course-faq.html</loc>
-    <lastmod>2022-05-20T18:00:31.417Z</lastmod>
+    <lastmod>2022-05-20T18:43:36.870Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/course-links.html</loc>
-    <lastmod>2022-05-20T18:00:32.309Z</lastmod>
+    <lastmod>2022-05-20T18:43:37.418Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/course-overview.html</loc>
-    <lastmod>2022-05-20T18:00:33.219Z</lastmod>
+    <lastmod>2022-05-20T18:43:37.912Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/course-support.html</loc>
-    <lastmod>2022-05-20T18:00:34.080Z</lastmod>
+    <lastmod>2022-05-20T18:43:38.554Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/course-syllabus.html</loc>
-    <lastmod>2022-05-20T18:00:35.503Z</lastmod>
+    <lastmod>2022-05-20T18:43:39.454Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/course-team.html</loc>
-    <lastmod>2022-05-20T18:00:36.722Z</lastmod>
+    <lastmod>2022-05-20T18:43:40.047Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/hw/hw-1.html</loc>
-    <lastmod>2022-05-20T18:00:38.735Z</lastmod>
+    <lastmod>2022-05-20T18:43:40.655Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/hw/hw-2.html</loc>
-    <lastmod>2022-05-20T18:00:39.681Z</lastmod>
+    <lastmod>2022-05-20T18:43:41.269Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/hw/hw-3.html</loc>
-    <lastmod>2022-05-20T18:00:41.433Z</lastmod>
+    <lastmod>2022-05-20T18:43:42.834Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/hw/hw-4.html</loc>
-    <lastmod>2022-05-20T18:00:43.279Z</lastmod>
+    <lastmod>2022-05-20T18:43:43.929Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/hw/template.html</loc>
-    <lastmod>2022-05-20T18:00:44.971Z</lastmod>
+    <lastmod>2022-05-20T18:43:45.150Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/index.html</loc>
-    <lastmod>2022-05-20T18:00:46.065Z</lastmod>
+    <lastmod>2022-05-20T18:43:45.946Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/LICENSE.html</loc>
-    <lastmod>2022-05-20T18:00:47.263Z</lastmod>
+    <lastmod>2022-05-20T18:43:46.905Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/project-inference.html</loc>
-    <lastmod>2022-05-20T18:00:48.085Z</lastmod>
+    <lastmod>2022-05-20T18:43:47.464Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/project-prediction.html</loc>
-    <lastmod>2022-05-20T18:00:49.071Z</lastmod>
+    <lastmod>2022-05-20T18:43:48.215Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/projects/prediction-data.html</loc>
-    <lastmod>2022-05-20T18:00:50.610Z</lastmod>
+    <lastmod>2022-05-20T18:43:49.485Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/slides/applications.html</loc>
-    <lastmod>2022-05-20T18:01:01.991Z</lastmod>
+    <lastmod>2022-05-20T18:44:00.430Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/slides/hw-1-lab-answers.html</loc>
-    <lastmod>2022-05-20T18:01:31.611Z</lastmod>
+    <lastmod>2022-05-20T18:44:10.091Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/slides/lec-1.html</loc>
-    <lastmod>2022-05-20T18:01:34.891Z</lastmod>
+    <lastmod>2022-05-20T18:44:11.948Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/slides/lec-2.html</loc>
-    <lastmod>2022-05-20T18:01:36.146Z</lastmod>
+    <lastmod>2022-05-20T18:44:13.268Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/slides/lec-27.html</loc>
-    <lastmod>2022-05-20T18:01:39.185Z</lastmod>
+    <lastmod>2022-05-20T18:44:15.725Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/slides/lec-28.html</loc>
-    <lastmod>2022-05-20T18:01:42.066Z</lastmod>
+    <lastmod>2022-05-20T18:44:18.158Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/slides/lec-3.html</loc>
-    <lastmod>2022-05-20T18:03:22.230Z</lastmod>
+    <lastmod>2022-05-20T18:44:27.529Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/slides/lec-4.html</loc>
-    <lastmod>2022-05-20T18:04:55.908Z</lastmod>
+    <lastmod>2022-05-20T18:44:36.847Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/slides/lec-5.html</loc>
-    <lastmod>2022-05-20T18:11:31.656Z</lastmod>
+    <lastmod>2022-05-20T18:45:23.158Z</lastmod>
   </url>
   <url>
     <loc>https://rmorsomme.github.io/website/slides/lec-6.html</loc>
-    <lastmod>2022-05-20T18:07:41.851Z</lastmod>
+    <lastmod>2022-05-20T18:45:43.239Z</lastmod>
   </url>
 </urlset>

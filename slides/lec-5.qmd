@@ -64,21 +64,22 @@ options(scipen = 20)
 
 ```{r, eval = FALSE}
 library(readr)
-read_csv("https://rmorsomme.github.io/website/projects/training_set.csv")
+d <- read_csv("https://rmorsomme.github.io/website/projects/training_set.csv")
 ```
 
 ## Recap
 
-::: incremental
--   simple linear regression model $$
+-   simple linear regression model 
+
+$$
     \text{hwy} \approx \beta_0 + \beta_1 \text{cty}
-    $$
+$$
+    
 -   residuals
 -   least-square estimates
 -   parameter interpretation
 -   model comparison with $R^2$
 -   outliers
-:::
 
 ## Outline
 
@@ -129,7 +130,7 @@ $$
 \text{hwy} \approx 1.15 + 1.33 \text{cty} - 0.034  \text{displ}
 $$
 
-## Interpretation
+## Interpretation {.smaller}
 
 -   Interpreting $\hat{\beta}_1 = 1.33$:
     -   "Keeping `displ` constant, for each additional unit in `cty`, we would expect `hwy` to be higher, on average, by 1.33 units."
@@ -149,9 +150,7 @@ $$
 
 In a regression model, categorical predictors are represented using indicator variables.
 
-To represent a categorical predictor with $k$ levels (categories), we use $(k-1)$ indicator variables.
-
-(identifiability -- advanced topic)
+To represent a categorical predictor with $k$ levels (categories), we use $(k-1)$ indicator variables^[We cannot use $k$ indicator variables due to identifiability (advanced topic)].
 
 ## Including `drv`
 
@@ -264,7 +263,7 @@ m_augment <- augment(m_larger)
 countdown(minutes = 4)
 ```
 
-## Fitting the full[^1] model
+## Fitting the full[^1] model {.smaller}
 
 [^1]: This not exactly the full model since I do not include the variable `model` due to identifiability issues (technical point).
 
@@ -341,7 +340,7 @@ ggplot(d) +
 
 The relation between `displ` and `hwy` is not exactly linear.
 
-##  {.smaller}
+## Modeling nonlinearity {.smaller}
 
 Let us include the predictor $\dfrac{1}{\text{displ}}$ to capture this nonlinear relation.
 
@@ -375,14 +374,11 @@ augment(m) %>%
 ## The `trees` data set {.smaller}
 
 ::: columns
-::: {.column width="45%"}
+::: {.column width="50%"}
 -   Measurements of the diameter, height and volume of timber in 31 felled black cherry trees.
 -   Note that the diameter (in inches) is erroneously labelled `Girth` in the data
 -   The diameter (`Girth`) is measured at 4 ft 6 in above the ground.
 -   Source: Atkinson, A. C. (1985) Plots, Transformations and Regression. Oxford University Press.
-:::
-
-::: {.column width="5%"}
 :::
 
 ::: {.column width="50%"}
@@ -512,7 +508,7 @@ A carefully constructed predictor can do a better job than multiple raw predicto
 ## Special case of data combination: interaction {.smaller}
 
 ::: columns
-::: {.column width="45%"}
+::: {.column width="50%"}
 Suppose you are interested in predicting the average run time (**duration**) of amateur jogging races.
 
 Two variables that impact the duration are (i) the **distance** of the race, and (ii) the **weather**.
@@ -520,15 +516,12 @@ Two variables that impact the duration are (i) the **distance** of the race, and
 For simplicity, we measure the weather as either *good* (nice weather) or *bad* (rain, heat wave, etc).
 :::
 
-::: {.column width="5%"}
-:::
-
 ::: {.column width="50%"}
 ![](images/lec-5/jogging.jpg)
 :::
 :::
 
-##  {.smaller}
+## Fixed effect weather? {.smaller}
 
 Te full model is
 
@@ -575,6 +568,7 @@ $$
 -   When the weather is **bad**, the slope estimate is $\hat{\beta}_1+\hat{\beta}_3$, meaning that the effect of an additional miles on the average duration is $\hat{\beta}_1+\hat{\beta}_3$ (not $\hat{\beta}_1$).
 
 ::: callout-tip
+
 ## Interactions
 
 The effect of the distance depends on the weather. Similarly, the effect of the weather depends on the distance.
