@@ -430,17 +430,17 @@ $$
 This suggests approximating the volume of a tree with the following model
 
 $$
-\text{Volume} = \beta_1 \left[ \left(\dfrac{\text{Girth}}{2}\right)^2 * \text{Height}\right] = \beta_1X
+\text{Volume} = \beta_1 [ (\dfrac{\text{Girth}}{2})^2 * \text{Height}] = \beta_1X
 $$
 
 where
 
 -   $\beta_1$ is an unknown parameter that we expect to be between $\pi$ (pure cylinder) and $\frac{1}{3}\pi$ (pure cone)
--   $X = \left[\left(\dfrac{\text{Girth}}{2}\right)^2 * \text{Height}\right]$ is our new predictor, which we construct from existing variables.
+-   $X = [(\dfrac{\text{Girth}}{2})^2 * \text{Height}]$ is our new predictor, which we construct from existing variables.
 
 ## 
 
-To accomplish this, we simply create a new variable corresponding to $\left(\dfrac{\text{Girth}}{2}\right)^2 * \text{Height}$.
+To accomplish this, we simply create a new variable corresponding to $(\dfrac{\text{Girth}}{2})^2 * \text{Height}$.
 
 Before doing that, we just need to transform `Girth` into feet to ensure that all variables have the same units.
 
@@ -493,7 +493,7 @@ glance(m_full)$r.squared
 glance(m_engineered)$r.squared
 ```
 
-Our new variable $\left(\dfrac{\text{Girth}}{2}\right)^2 * \text{Height}$ improves the model!
+Our new variable $(\dfrac{\text{Girth}}{2})^2 * \text{Height}$ improves the model!
 
 . . .
 
