@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="quarto-0.9.151">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>STA 101L - Summer I 2022 - Prediction project</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+
+  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="site_libs/clipboard/clipboard.min.js"></script>
+  <meta name="quarto:offset" content="./">
+  <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+  <script src="site_libs/quarto-search/fuse.min.js"></script>
+  <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <link href="./project-inference.html" rel="next">
+  <link href="./course-faq.html" rel="prev">
+  <script src="site_libs/quarto-html/quarto.js"></script>
+  <script src="site_libs/quarto-html/popper.min.js"></script>
+  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="site_libs/quarto-html/anchor.min.js"></script>
+  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link class="quarto-color-scheme" id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+  <link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css">
+  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link class="quarto-color-scheme" href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" href="site_libs/bootstrap/bootstrap-dark.min.css">
+  <script id="quarto-search-options" type="application/json">{
+    "location": "sidebar",
+    "copy-button": false,
+    "collapse-after": 3,
+    "panel-placement": "start",
+    "type": "textbox",
+    "limit": 20,
+    "language": {
+      "search-no-results-text": "No results",
+      "search-matching-documents-text": "matching documents",
+      "search-copy-link-title": "Copy link to search",
+      "search-hide-matches-text": "Hide additional matches",
+      "search-more-match-text": "more match in this document",
+      "search-more-matches-text": "more matches in this document",
+      "search-clear-button-title": "Clear",
+      "search-detached-cancel-button-title": "Cancel",
+      "search-submit-button-title": "Submit"
+    }
+  }</script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body class="docked">
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Prediction project</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="./">
+      <img src="./images/logo.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/rmorsomme/website" title="GitHub organization" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="https://sakai.duke.edu/portal/site/37c2d38d-400d-4210-8e42-83e19f9099b3/tool/bab0d8c9-88e8-4138-9490-2c2ad1a33858" title="Conversations" class="sidebar-tool px-1"><i class="bi bi-chat-dots"></i></a>
+    <a href="https://sakai.duke.edu/portal/site/37c2d38d-400d-4210-8e42-83e19f9099b3/tool/387381f7-e0c7-46d2-883e-7667517bc127/" title="Gradebook" class="sidebar-tool px-1"><i class="bi bi-bar-chart-line"></i></a>
+    <a href="https://www.gradescope.com/courses/394638" title="Gradescope" class="sidebar-tool px-1"><i class="bi bi-book"></i></a>
+  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">Course information</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-overview.html" class="sidebar-item-text sidebar-link">Overview</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-syllabus.html" class="sidebar-item-text sidebar-link">Syllabus</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-support.html" class="sidebar-item-text sidebar-link">Support</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-team.html" class="sidebar-item-text sidebar-link">Teaching team</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Schedule</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-links.html" class="sidebar-item-text sidebar-link">Useful links</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-faq.html" class="sidebar-item-text sidebar-link">FAQ</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Project</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project-prediction.html" class="sidebar-item-text sidebar-link active">Prediction project</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project-inference.html" class="sidebar-item-text sidebar-link">Inference project</a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+<h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+<li><a href="#introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+<li><a href="#academic-integrity" class="nav-link" data-scroll-target="#academic-integrity">Academic Integrity</a></li>
+<li><a href="#data" class="nav-link" data-scroll-target="#data">Data</a></li>
+<li><a href="#submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+<li><a href="#final-report-content" class="nav-link" data-scroll-target="#final-report-content">Final report content</a></li>
+<li><a href="#rubric-20-points" class="nav-link" data-scroll-target="#rubric-20-points">Rubric (20 points)</a></li>
+</ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rmorsomme/website/edit/main/project-prediction.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/rmorsomme/website/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<header id="title-block-header" class="quarto-title-block default">
+
+<div class="quarto-title"><h1 class="title d-none d-lg-block display-7">Prediction project</h1></div></header>
+
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>In this prediction project, you will work in pairs to construct a regression model that will be used to make predictions. The prediction model is due on Tuesday, <strong>May 31, at 9:00 am</strong>, and the final report is due Wednesday, <strong>June 1 at 9:00pm</strong>.</p>
+<p>🍀 Good luck! 🍀</p>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>The goal of the prediction project is for you to use regression analysis to construct a linear regression model with good prediction accuracy, demonstrating proficiency in the techniques we have covered in class so far and applying them to a real data set in a meaningful way.</p>
+<p>All analyses must be done in RMarkdown, and all components of the project must be reproducible (with the exception of the presentation).</p>
+</section>
+<section id="academic-integrity" class="level2">
+<h2 class="anchored" data-anchor-id="academic-integrity">Academic Integrity</h2>
+<p>By participating in this project, you pledge to uphold the Duke Community Standard:</p>
+<ul>
+<li><p>I will not lie, cheat, or steal in my academic endeavors;</p></li>
+<li><p>I will conduct myself honorably in all my endeavors; and</p></li>
+<li><p>I will act if the Standard is compromised.</p></li>
+</ul>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>We will work with the natality data for the U.S. in 2020. The response variable that we are interested in is newborn’s weight. This variable is important to medical professionals since a newborn with a low birth weight is more likely to require additional care. You have access to a <a href="./projects/training_set.csv">random sample of 1,000 observations</a> to construct your prediction model. I have kept a separate set of 20,000 observations to evaluate the prediction model that you select.</p>
+<p>Here is a detailed overview of the variable</p>
+<ul>
+<li><code>newborn_birth_weight</code>: newborn birth weight in grams (<strong>response</strong>)</li>
+<li><code>month</code>: birth month (<code>1</code> = January, …, <code>12</code> = December)</li>
+<li><code>mother_age</code>: age of the mother in years
+<ul>
+<li><code>prenatal_care_starting_month</code>: month in which prenatal care began; if <code>0</code>, there was no prenatal care</li>
+</ul></li>
+<li><code>daily_cigarette_prepregnancy</code>: daily number of cigarettes smoked before the pregnancy</li>
+<li><code>daily_cigarette_trimester_1</code>: daily number of cigarettes smoked during the 1st trimester of the pregnancy</li>
+<li><code>daily_cigarette_trimester_2</code>: daily number of cigarettes smoked during the 2nd trimester of the pregnancy</li>
+<li><code>daily_cigarette_trimester_3</code>: daily number of cigarettes smoked during the 3rd trimester of the pregnancy</li>
+<li><code>mother_height</code>: height of the mother in inches</li>
+<li><code>mother_bmi</code>: body mass index of the mother</li>
+<li><code>mother_weight_prepregnancy</code>: weight of the mother before the pregnancy in pounds</li>
+<li><code>mother_weight_delivery</code>: weight of the mother at delivery in pounds</li>
+<li><code>mother_diabetes_gestational</code>: whether the mother had diabetes during the pregnancy</li>
+<li><code>newborn_sex</code>: sex of the newborn</li>
+<li><code>gestation_week</code>: number of gestational weeks</li>
+<li><code>mother_risk_factors</code>: whether the mother had any risk factor (diabetes, hypertension, previous preterm birth, previous cesarean, infertility treatment used, etc)</li>
+</ul>
+</section>
+<section id="submission" class="level2">
+<h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<p>The three primary deliverables for this project are:</p>
+<ul>
+<li><p><strong>Prediction model:</strong> you need to submit a RDATA file that contains your prediction model. The prediction model must consist in a function that takes a test set (a dataframe with the same predictors as the training set, but no response variable) as an input and returns a prediction for each observation of the test set. The RDATA file should not contain anything else.</p></li>
+<li><p><strong>Informal presentation</strong>: you will present your work orally to rest of the class. The presentation should be no longer than 5 minutes (aim for 2-6 slides). It is fine if the presentation is shorter than 5 minutes, but it cannot exceed 5 minutes. The two team members should speak roughly the same amount of time. Each presentation will be followed by a short QA session.</p></li>
+<li><p><strong>Final report:</strong> The final report details your work. It needs to be realized using RMarkdown and submitted on Gradescope as a PDF. The RMD file also needs to be sent via email to the instruction team (reproducibility). The page limit is 6 pages (including code chunks, but excluding the appendix). Figures should go in the appendix, along with any work that you wish to include. Grading will largely be based on the content in the main body of the report. You should assume the reader will not see the material in the appendix unless prompted to view it in the main body of the report.</p></li>
+</ul>
+</section>
+<section id="final-report-content" class="level2">
+<h2 class="anchored" data-anchor-id="final-report-content">Final report content</h2>
+<p>The final report should include the following sections, though you should feel free to include additional sections as necessary.</p>
+<ul>
+<li><strong>Short introduction</strong>: briefly mention the variables you have considered, those you have engineered, and the approach you have chosen for model selection.</li>
+<li><strong>Variable selection and engineering</strong>: list the variables that you have chosen to consider; briefly explain your reasoning; describe new variables that you have engineered; visualize every variable that you create.</li>
+<li><strong>Outliers</strong>: if there were outliers, explain how you treated them.</li>
+<li><strong>Model fitting</strong>: you need to fit at least 5 models:
+<ul>
+<li><em>a simple linear regression model</em> with <code>gestation_week</code> as the predictor</li>
+<li><em>the full model</em> with all 15 raw predictors</li>
+<li>at least 3 other models containing new variables that you have created</li>
+</ul></li>
+<li><strong>Model selection</strong>: select the model that you will submit using
+<ul>
+<li>a model selection criterion,</li>
+<li>the holdout method, and</li>
+<li>cross-validation</li>
+</ul></li>
+<li><strong>Discussion/conclusion</strong>: briefly discuss your result, any limitation to your work, and what predictor(s) you have liked to have in the dataset (e.g.&nbsp;weight of father) to make the prediction model more accurate.</li>
+</ul>
+</section>
+<section id="rubric-20-points" class="level1">
+<h1>Rubric (20 points)</h1>
+<table class="table">
+<colgroup>
+<col style="width: 82%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Part</strong></th>
+<th style="text-align: center;"><strong>Points</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><p><strong>Prediction model</strong></p>
+<ul>
+<li><p>The RDATA file contains only a function</p></li>
+<li><p>The model takes a test set as input</p></li>
+<li><p>The model returns one prediction for each observation</p></li>
+<li><p>Most accurate model of the class</p></li>
+</ul></td>
+<td style="text-align: center;"><p><strong>3</strong></p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>bragging rights</p></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><p><strong>Report</strong></p>
+<ul>
+<li><p>The analysis is fully reproducible</p></li>
+<li><p>The simple model with <code>gestation_week</code> is fitted</p></li>
+<li><p>The full model is fitted</p></li>
+<li><p>At least one new predictor is created via transformation</p></li>
+<li><p>At least one new predictor is created via combination</p></li>
+<li><p>At least one interaction is considered</p></li>
+<li><p>At least one categorical predictor is considered</p></li>
+<li><p>Subject knowledge is used to guide variable selection and feature engineering</p></li>
+<li><p>Data visualization is used to guide variable selection and feature engineering</p></li>
+<li><p>All figures are useful and neatly formatted</p></li>
+<li><p>Outliers, if any, are handled appropriately</p></li>
+<li><p>at least 3 models (excluding the simple and full models) are compared using</p>
+<ul>
+<li><p>the entire sample with a suitable criterion</p></li>
+<li><p>a test set with the holdout method</p></li>
+<li><p>a test set with cross-validation</p></li>
+</ul></li>
+</ul></td>
+<td style="text-align: center;"><p><strong>16</strong></p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>2</p>
+<p>2</p>
+<p>1</p>
+<p>1</p>
+<p>(3)</p>
+<p>1</p>
+<p>1</p>
+<p>1</p></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><p><strong>Presentation</strong></p>
+<ul>
+<li>You ask at least one question during QA</li>
+</ul></td>
+<td style="text-align: center;"><p><strong>1</strong></p>
+<p>1</p></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: center;">20</td>
+</tr>
+</tbody>
+</table>
+
+
+
+</section>
+</main> <!-- /main -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+    } else {
+      disableStylesheet(alternateStylesheets);
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    setTimeout(function() {
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./course-faq.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">FAQ</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./project-inference.html" class="pagination-link">
+        <span class="nav-page-text">Inference project</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© Copyright 2022, Raphael Morsomme</div>   
+    <div class="nav-footer-right">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</div>
+  </div>
+</footer>
+
+
+</body></html>
