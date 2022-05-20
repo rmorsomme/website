@@ -1,0 +1,230 @@
+---
+title: "Lab 2 - College scorecard"
+editor: visual
+reference-location: margin
+---
+
+## Introduction
+
+In today's lab, you'll use simple linear regression to analyze the relationship between the admissions rate and total cost for colleges and universities in the United States.
+
+### Learning goals
+
+By the end of the lab you will...
+
+-   Be able to fit a simple linear regression model using R.
+-   Be able to interpret the slope and intercept for the model.
+-   Be able to use statistical inference to draw conclusions about the slope.
+-   Continue developing a workflow for reproducible data analysis.
+
+## Getting started
+
+-   Go to the [sta210-s22](https://www.github.com/sta210-s22) organization on GitHub.
+    Click on the repo with the prefix **lab-2**.
+    It contains the starter documents you need to complete the lab.
+
+-   Clone the repo and start a new project in RStudio.
+    See the [Lab 1 instructions](labs/lab-1.html) for details on cloning a repo, starting a new R project and configuring git.
+
+## Packages
+
+We will use the following package in today's lab.
+
+```{r}
+#| message: false
+
+library(tidyverse)  # for data wrangling + visualization
+library(tidymodels) # for modeling
+library(knitr)      # for pretty printing of tables
+```
+
+## Data: College scorecard
+
+The data for this lab is from the `scorecard` data set in the **rcfss** R package.
+It includes information originally obtained from the [U.S. Department of Education's College Scorecard](https://collegescorecard.ed.gov/data/) for 1753 colleges and universities during the 2018 - 2019 academic year.
+
+The lab focuses on the following variables:
+
+-   `admrate`: Undergraduate admissions rate (from 0-100%)
+
+-   `cost`: The average annual total cost of attendance, including tuition and fees, books and supplies, and living expenses
+
+-   `type`: Type of college (Public; Private, nonprofit; Private, for-profit)
+
+[Click here](https://uc-cfss.github.io/rcfss/reference/scorecard.html) to see a full list of variables and definitions.
+
+Use the code below to load the data set.
+
+```{r}
+#| message: false
+
+scorecard <- read_csv("data/scorecard.csv")
+```
+
+## Exercises
+
+::: callout-note
+Include axis labels and an informative title for all plots.
+Use the `kable()` function to neatly print tables and regression output.
+:::
+
+### Exercise 1
+
+Create a histogram to examine the distribution of `admrate` and calculate summary statistics for the center (mean and median) and the spread (standard deviation and IQR).
+
+### Exercise 2
+
+Use the results from the previous exercise to describe the distribution of `admrate`.
+Include the shape, center, spread, and if there are potential outliers.
+
+### Exercise 3
+
+Plot the distribution of `cost` and calculate the appropriate summary statistics.
+Describe the distribution of `cost` (shape, center, and spread, and outliers) using the plot and appropriate summary statistics.
+
+::: render-commit-push
+This is a good place to render, commit, and push changes to your remote lab repo on GitHub.
+Click the checkbox next to each file in the Git pane to stage the updates you've made, write an informative commit message, and push.
+After you push the changes, the Git pane in RStudio should be empty.
+:::
+
+### Exercise 4
+
+The goal of this analysis is to fit a regression model that can be used to understand the variability in the cost of college based on the admission rate.
+Before fitting the model, let's look at the relationship between the two variables.
+Create a scatterplot to display the relationship between cost and admissions rate.
+Describe the relationship between the two variables based on the plot.
+
+### Exercise 5
+
+Does the relationship between cost and admissions rate differ by type of college?
+Modify the plot from the previous exercise visualize the relationship by type of college.
+
+### Exercise 6
+
+Describe two new observations from the scatterplot in Exercise 5 that you didn't see in the scatterplot from Exercise 4.
+
+::: render-commit-push
+This is a good place to render, commit, and push changes to your remote lab repo on GitHub.
+Click the checkbox next to each file in the Git pane to stage the updates you've made, write an informative commit message, and push.
+After you push the changes, the Git pane in RStudio should be empty.
+:::
+
+### Exercise 7
+
+Fit the linear regression model.
+Use the `kable` function to neatly display the results with a reasonable number of decimals.
+
+### Exercise 8
+
+Consider the model from the previous exercise.
+
+-   Interpret the slope in the context of the problem.
+-   Does the intercept have a meaningful interpretation? If so, write the interpretation in the context of the problem. Otherwise, explain why the interpretation is not meaningful.
+
+### Exercise 9
+
+Construct a 95% confidence interval for the slope using bootstrapping.
+Follow these steps to accomplish this:
+
+-   First set a seed for simulating reproducibly.
+-   Then, simulate the bootstrap distribution of the slope using 1,000 bootstrap samples.
+-   Then, visually estimate the bounds of the bootstrap interval based on a histogram of the distribution of the bootstrapped slopes, using the percentile method.
+-   And then, use the `get_confidence_interval()` function to explicitly calculate the bounds of the confidence interval using the percentile method.
+-   Finally, interpret the confidence interval in the context of the data.
+
+::: render-commit-push
+This is a good place to render, commit, and push changes to your remote lab repo on GitHub.
+Click the checkbox next to each file in the Git pane to stage the updates you've made, write an informative commit message, and push.
+After you push the changes, the Git pane in RStudio should be empty.
+:::
+
+### Exercise 10
+
+Finally, we want to answer the question "Do the data provide sufficient evidence of a linear relationship between cost and admissions rate, i.e. $\beta_1$ is different from 0?"
+
+To answer this question we will use a hypothesis test.
+We can conduct a hypothesis test via simulation (what we'll do in this lab) or using mathematical models (what we'll do in the next class).
+
+Before we can conduct the hypothesis test, let's first set our hypotheses.
+Remember that the null hypothesis represents the status quo (nothing going on, i.e. there is no relationship) and the alternative hypothesis represents our research question (there is something going on, i.e. there is a relationship).
+
+-   $H_0$: There is no linear relationship between the admissions rate and cost of colleges in the United States, $\beta_1 = 0$
+-   $H_A$: There is a linear relationship between the admissions rate and cost of colleges in the United States, $\beta_1 \ne 0$
+
+To test these hypotheses, we will use a permutation test, where we
+
+-   Simulate new samples from the original sample via permutation under the assumption that the null hypothesis is true
+-   Fit models to each of the samples and estimate the slope
+-   Use features of the distribution of the permuted slopes to calculate the p-value for the hypothesis test
+
+The major difference between constructing a confidence interval and conducting a hypothesis test is that for the hypothesis test we assume that the null hypothesis is true.
+This requires a simulation scheme that will allow us to measure the natural variability in the data due to sampling but **not** due to cost and admission rate being correlated by permuting permute one variable to eliminate any existing relationship between the variables.
+To do so, we randomly assign each `admrate` value to `cost` of a given university, i.e. `cost` and `admrate` are no longer matched for a given university.
+
+In the following code chunk we
+
+-   First set a seed for simulating reproducibly.
+-   Then, we start with our data frame and specify our model as `cost` vs. `admrate`.
+-   Then, we set our null hypothesis (`cost` and `admrate` are independent)
+-   And then we generate 1000 replicates of our data where, for each replicate, we permute values of `admrate` to randomly assign them to values of `cost`
+-   Finally, we fit our model to each of our 1000 permuted datasets
+
+```{r}
+set.seed(1234)
+
+perm_fits <- scorecard %>%
+  specify(cost ~ admrate) %>%
+  hypothesize(null = "independence") %>%
+  generate(reps = 1000, type = "permute") %>%
+  fit()
+```
+
+The resulting dataset `perm_fits` has `nrow(perm_fits)` and `ncol(perm_fits)` columns.
+The first column, `replicate` indicates the replicate number of the dataset the models were fit to; the values in this column range between 1 and 1000.
+The second column, `term`, tells us which term (intercept of the model or slope of `admrate`) the `estimate` value in the third column is for.
+
+```{r}
+perm_fits
+```
+
+-   Create a histogram of the slope estimates in `perm_fits`. (Hint: Filter the dataset for just the slope values, `term == "admrate".`)
+-   Estimate the p-value of the hypothesis test based on this distribution.
+-   State your conclusion for the test in context.
+-   Indicate whether or not it is consistent with the results of the hypothesis test from the previous exercise. Briefly explain your response.
+
+::: render-commit-push
+This is a good place to render, commit, and push changes to your remote lab repo on GitHub.
+Click the checkbox next to each file in the Git pane to stage the updates you've made, write an informative commit message, and push.
+After you push the changes, the Git pane in RStudio should be empty.
+:::
+
+## Submission
+
+::: callout-warning
+Before you wrap up the assignment, make sure all documents are updated on your GitHub repo.
+We will be checking these to make sure you have been practicing how to commit and push changes.
+
+Remember -- you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.
+:::
+
+To submit your assignment:
+
+-   Go to [http://www.gradescope.com](http://www.gradescope.com/) and click *Log in* in the top right corner.
+-   Click *School Credentials* ➡️ *Duke NetID* and log in using your NetID credentials.
+-   Click on your *STA 210* course.
+-   Click on the assignment, and you'll be prompted to submit it.
+-   Mark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be "checked").
+-   Select the first page of your PDF submission to be associated with the *"Workflow & formatting"* section.
+
+## Grading
+
+Total points available: 50 points.
+
+| Component             | Points |
+|-----------------------|--------|
+| Ex 1 - 10             | 45     |
+| Workflow & formatting | 5[^1]  |
+
+[^1]: The "Workflow & formatting" grade is to assess the reproducible workflow.
+    This includes having at least 3 informative commit messages and updating the name and date in the YAML.

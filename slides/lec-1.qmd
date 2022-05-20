@@ -23,7 +23,7 @@ library(countdown)
 # Welcome
 
 ## Meet the instructor
-
+ 
 ::: columns
 ::: {.column width="50%"}
 ![Dr. Raphael Morsomme (he/him/his)](images/lec-1/raphael.jpg){fig-alt="Headshot of Raphael Morsomme" fig-align="center" width="200"}
