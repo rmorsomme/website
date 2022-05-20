@@ -12,7 +12,6 @@ format:
     slide-number: true
     code-fold: false
     code-summary: "Show the code"
-    code-link: true
     code-copy: true
     self-contained: true
     scrollable: true
@@ -814,10 +813,11 @@ ggplot(d) +
   geom_point(aes(cty, hwy))
 ```
 
-##
+## 
 
 ::: {.callout-tip icon="false"}
 ## Group exercise - outlier in regression
+
 Exercise [7.25](https://openintro-ims.netlify.app/model-slr.html#chp7-exercises)
 :::
 
@@ -994,7 +994,7 @@ d_contaminated <- select(d, cty, hwy) %>%
 arrange(d_contaminated, desc(hwy)) %>% slice(1:5)
 ```
 
-##
+## 
 
 ...and compare the two regression models.
 
@@ -1018,7 +1018,6 @@ ggplot(d_contaminated) +
 The regression line not longer fits the data well.
 
 ## Statistics as an art - dealing with outliers
-
 
 ::: callout-note
 ## Dealing with outliers

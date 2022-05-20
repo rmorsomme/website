@@ -12,7 +12,6 @@ format:
     slide-number: true
     code-fold: false
     code-summary: "Show the code"
-    code-link: true
     self-contained: true
     scrollable: true
 editor: visual
@@ -753,7 +752,7 @@ Set $k=n$; that is, we use $n$ folds, each of size $1$. The test sets will there
 
 Stepwise selection procedures ar of two types: (i) forward and (ii) backward.
 
-## Forward selection procedure  {.smaller}
+## Forward selection procedure {.smaller}
 
 1.  Choose a criterion that balances model fit (smaller SSR) and parsimony (small $p$)
 
