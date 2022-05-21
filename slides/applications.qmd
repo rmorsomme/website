@@ -12,9 +12,7 @@ format:
     slide-number: true
     code-fold: false
     code-summary: "Show the code"
-    code-link: true
     code-copy: true
-    self-contained: true
     scrollable: true
 editor: visual
 execute:

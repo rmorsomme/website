@@ -13,7 +13,6 @@ format:
     code-fold: false
     code-summary: "Show the code"
     code-copy: true
-    self-contained: true
     scrollable: true
 editor: visual
 execute:
