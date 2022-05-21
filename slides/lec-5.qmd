@@ -69,12 +69,12 @@ d <- read_csv("https://rmorsomme.github.io/website/projects/training_set.csv")
 
 ## Recap
 
--   simple linear regression model 
+-   simple linear regression model
 
 $$
     \text{hwy} \approx \beta_0 + \beta_1 \text{cty}
 $$
-    
+
 -   residuals
 -   least-square estimates
 -   parameter interpretation
@@ -86,6 +86,9 @@ $$
 -   multiple linear regression
 -   categorical predictor
 -   feature engineering
+    -   transformation
+    -   combination
+    -   interaction
 
 # Multiple linear regression
 
@@ -110,7 +113,7 @@ head(d, n = 4)
 
 Instead of fitting a model with only `cty` or only `displ`, we could fit a linear regression model with both predictors!
 
-## Linear regression with 2 predictors
+## Linear regression with 2 predictors {.smaller}
 
 The model equation is
 
@@ -150,7 +153,9 @@ $$
 
 In a regression model, categorical predictors are represented using indicator variables.
 
-To represent a categorical predictor with $k$ levels (categories), we use $(k-1)$ indicator variables^[We cannot use $k$ indicator variables due to identifiability (advanced topic)].
+To represent a categorical predictor with $k$ levels (categories), we use $(k-1)$ indicator variables[^1].
+
+[^1]: We cannot use $k$ indicator variables for identifiability reasons (advanced topic).
 
 ## Including `drv`
 
@@ -200,7 +205,7 @@ If a new vehicle has a `drv` that is:
 
 . . .
 
-The level (category) `4` is called the **reference level**.
+The level (category) `4` is called the **reference (baseline) level**.
 
 ## 
 
@@ -263,9 +268,9 @@ m_augment <- augment(m_larger)
 countdown(minutes = 4)
 ```
 
-## Fitting the full[^1] model {.smaller}
+## Fitting the full[^2] model {.smaller}
 
-[^1]: This not exactly the full model since I do not include the variable `model` due to identifiability issues (technical point).
+[^2]: This not exactly the full model since I do not include the variable `model` due to identifiability issues (technical point).
 
 ```{r}
 m_full <- lm(
@@ -371,7 +376,7 @@ augment(m) %>%
   geom_line(aes(y = .fitted))
 ```
 
-## The `trees` data set {.smaller}
+## Combining variables -- the `trees` data set {.smaller}
 
 ::: columns
 ::: {.column width="50%"}
@@ -481,9 +486,9 @@ glance(m_engineered)$r.squared
 
 ## Comparison with the full model {.smaller}
 
-Although $R^2$ has a different meaning when there is no intercept, it can be still used for comparison[^2].
+Although $R^2$ has a different meaning when there is no intercept, it can be still used for comparison[^3].
 
-[^2]: as long as both models exclude the intercept
+[^3]: as long as both models exclude the intercept
 
 . . .
 
@@ -568,7 +573,6 @@ $$
 -   When the weather is **bad**, the slope estimate is $\hat{\beta}_1+\hat{\beta}_3$, meaning that the effect of an additional miles on the average duration is $\hat{\beta}_1+\hat{\beta}_3$ (not $\hat{\beta}_1$).
 
 ::: callout-tip
-
 ## Interactions
 
 The effect of the distance depends on the weather. Similarly, the effect of the weather depends on the distance.
