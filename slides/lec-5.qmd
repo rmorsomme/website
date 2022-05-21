@@ -66,3 +66,40 @@ options(scipen = 20)
 library(readr)
 d <- read_csv("https://rmorsomme.github.io/website/projects/training_set.csv")
 ```
+
+## Recap
+
+-   simple linear regression model
+
+$$
+    \text{hwy} \approx \beta_0 + \beta_1 \text{cty}
+$$
+
+-   residuals
+-   least-square estimates
+-   parameter interpretation
+-   model comparison with $R^2$
+-   outliers
+
+## Outline
+
+-   multiple linear regression
+-   categorical predictor
+-   feature engineering
+    -   transformation
+    -   combination
+    -   interaction
+
+# Multiple linear regression
+
+Remember, to improve our initial model with $(\beta_0, \beta_1) = (1, 1.3)$, we could
+
+i.  find better estimates $\Rightarrow$ least-square estimates,
+
+. . .
+
+ii. use additional predictors $\Rightarrow$ **multiple linear regression models**
+
+. . .
+
+For instance, to predict `hwy` we could include multiple variables in our model.

@@ -1628,7 +1628,21 @@
     "href": "slides/lec-5.html#project---reading-in-the-data",
     "title": "Multiple Linear Regression Models",
     "section": "Project - reading in the data",
-    "text": "Project - reading in the data\n\nlibrary(readr)\nd <- read_csv(\"https://rmorsomme.github.io/website/projects/training_set.csv\")\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+    "text": "Project - reading in the data\n\nlibrary(readr)\nd <- read_csv(\"https://rmorsomme.github.io/website/projects/training_set.csv\")"
+  },
+  {
+    "objectID": "slides/lec-5.html#recap",
+    "href": "slides/lec-5.html#recap",
+    "title": "Multiple Linear Regression Models",
+    "section": "Recap",
+    "text": "Recap\n\nsimple linear regression model\n\n\\[\n    \\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty}\n\\]\n\nresiduals\nleast-square estimates\nparameter interpretation\nmodel comparison with \\(R^2\\)\noutliers"
+  },
+  {
+    "objectID": "slides/lec-5.html#outline",
+    "href": "slides/lec-5.html#outline",
+    "title": "Multiple Linear Regression Models",
+    "section": "Outline",
+    "text": "Outline\n\nmultiple linear regression\ncategorical predictor\nfeature engineering\n\ntransformation\ncombination\ninteraction"
   },
   {
     "objectID": "slides/lec-6.html#announcements",
