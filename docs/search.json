@@ -1615,5 +1615,607 @@
     "title": "Simple Linear Regression Models",
     "section": "Recap",
     "text": "Recap\n\nsimple linear regression model\n\n\\[\n    \\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty}\n\\]\n\nresiduals\nleast-square estimates\nparameter interpretation\nmodel comparison with \\(R^2\\)\noutliers\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+  },
+  {
+    "objectID": "slides/lec-5.html#announcements",
+    "href": "slides/lec-5.html#announcements",
+    "title": "Multiple Linear Regression Models",
+    "section": "Announcements",
+    "text": "Announcements\n\nFind the last person you have not worked with\nPrediction project\n\nteams\ndeadlines: May 31 (model and presentation) and June 1 (report)"
+  },
+  {
+    "objectID": "slides/lec-5.html#project---reading-in-the-data",
+    "href": "slides/lec-5.html#project---reading-in-the-data",
+    "title": "Multiple Linear Regression Models",
+    "section": "Project - reading in the data",
+    "text": "Project - reading in the data\n\nlibrary(readr)\nd <- read_csv(\"https://rmorsomme.github.io/website/projects/training_set.csv\")"
+  },
+  {
+    "objectID": "slides/lec-5.html#recap",
+    "href": "slides/lec-5.html#recap",
+    "title": "Multiple Linear Regression Models",
+    "section": "Recap",
+    "text": "Recap\n\nsimple linear regression model\n\n\\[\n    \\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty}\n\\]\n\nresiduals\nleast-square estimates\nparameter interpretation\nmodel comparison with \\(R^2\\)\noutliers"
+  },
+  {
+    "objectID": "slides/lec-5.html#outline",
+    "href": "slides/lec-5.html#outline",
+    "title": "Multiple Linear Regression Models",
+    "section": "Outline",
+    "text": "Outline\n\nmultiple linear regression\ncategorical predictor\nfeature engineering\n\ntransformation\ncombination\ninteraction"
+  },
+  {
+    "objectID": "slides/lec-5.html#the-mpg-data-set",
+    "href": "slides/lec-5.html#the-mpg-data-set",
+    "title": "Multiple Linear Regression Models",
+    "section": "The mpg data set",
+    "text": "The mpg data set\n\nd <- ggplot2::mpg\nhead(d, n = 4)\n\n# A tibble: 4 x 11\n  manufacturer model displ  year   cyl trans      drv     cty   hwy fl    class \n  <chr>        <chr> <dbl> <int> <int> <chr>      <chr> <int> <int> <chr> <chr> \n1 audi         a4      1.8  1999     4 auto(l5)   f        18    29 p     compa~\n2 audi         a4      1.8  1999     4 manual(m5) f        21    29 p     compa~\n3 audi         a4      2    2008     4 manual(m6) f        20    31 p     compa~\n4 audi         a4      2    2008     4 auto(av)   f        21    30 p     compa~\n\n\nInstead of fitting a model with only cty or only displ, we could fit a linear regression model with both predictors!"
+  },
+  {
+    "objectID": "slides/lec-5.html#linear-regression-with-2-predictors",
+    "href": "slides/lec-5.html#linear-regression-with-2-predictors",
+    "title": "Multiple Linear Regression Models",
+    "section": "Linear regression with 2 predictors",
+    "text": "Linear regression with 2 predictors\nThe model equation is\n\\[\n\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty} + \\beta_2 \\text{displ}\n\\]\nWe can find the least-square estimates (minimizing the SSR) with the command lm\n\nlm(hwy ~ cty + displ, data = d)\n\n\nCall:\nlm(formula = hwy ~ cty + displ, data = d)\n\nCoefficients:\n(Intercept)          cty        displ  \n    1.15145      1.32914     -0.03432  \n\n\nwhich give the following regression equation\n\\[\n\\text{hwy} \\approx 1.15 + 1.33 \\text{cty} - 0.034  \\text{displ}\n\\]"
+  },
+  {
+    "objectID": "slides/lec-5.html#interpretation",
+    "href": "slides/lec-5.html#interpretation",
+    "title": "Multiple Linear Regression Models",
+    "section": "Interpretation",
+    "text": "Interpretation\n\nInterpreting \\(\\hat{\\beta}_1 = 1.33\\):\n\n“Keeping displ constant, for each additional unit in cty, we would expect hwy to be higher, on average, by 1.33 units.”\n\n\n\n\nInterpreting \\(\\hat{\\beta}_2 = -0.034\\):\n\n“Keeping cty constant, for each additional unit in displ, we would expect hwy to be lower, on average, by 0.034 unit.”\n\n\n\n\n\nInterpreting \\(\\hat{\\beta}_0 = 1.15\\):\n\n“For a car with cty and displ equal to 0, we would expect hwy to be 1.15.”\nmeaningless in this context."
+  },
+  {
+    "objectID": "slides/lec-5.html#special-case-categorical-predictor",
+    "href": "slides/lec-5.html#special-case-categorical-predictor",
+    "title": "Multiple Linear Regression Models",
+    "section": "Special case: categorical predictor",
+    "text": "Special case: categorical predictor\nIn a regression model, categorical predictors are represented using indicator variables.\nTo represent a categorical predictor with \\(k\\) levels (categories), we use \\((k-1)\\) indicator variables1.\nWe cannot use \\(k\\) indicator variables for identifiability reasons (advanced topic)."
+  },
+  {
+    "objectID": "slides/lec-5.html#including-drv",
+    "href": "slides/lec-5.html#including-drv",
+    "title": "Multiple Linear Regression Models",
+    "section": "Including drv",
+    "text": "Including drv\nFor instance, the categorical variable drv has \\(k=3\\) levels (4, f and r), so we can represent it with \\(3-1=2\\) indicator variables with the following model equation\n\\[\n\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{drv_f} + \\beta_2 \\text{drv_r}\n\\]\n\n\n\n\n\n\n\nTip\n\n\nFor a binary variable \\(k=2\\), so we only need \\(k-1=1\\) indicator variable.\nFor instance, to include the binary variable year_binary, we only added a single indicator variable to the model."
+  },
+  {
+    "objectID": "slides/lec-5.html#using-categorical-predictors-in-r",
+    "href": "slides/lec-5.html#using-categorical-predictors-in-r",
+    "title": "Multiple Linear Regression Models",
+    "section": "Using categorical predictors in R",
+    "text": "Using categorical predictors in R\n\nlm(hwy ~ drv, data = d)\n\n\nCall:\nlm(formula = hwy ~ drv, data = d)\n\nCoefficients:\n(Intercept)         drvf         drvr  \n     19.175        8.986        1.825  \n\n\nThe model equation with the least-square estimates is\n\\[\n\\text{hwy} \\approx 19.175 + 8.986 \\text{drv_f} + 1.825 \\text{drv_r}\n\\]"
+  },
+  {
+    "objectID": "slides/lec-5.html#interpreting-the-output",
+    "href": "slides/lec-5.html#interpreting-the-output",
+    "title": "Multiple Linear Regression Models",
+    "section": "Interpreting the output",
+    "text": "Interpreting the output\n\\[\n\\text{hwy} \\approx 19.175 + 8.986 \\text{drv_f} + 1.825 \\text{drv_r}\n\\]\nIf a new vehicle has a drv that is:\n\n4, then the two indicator variables drv_f and drv_r take the value 0, and the prediction is \\(\\widehat{hwy} = 19.175\\)\n\n\n\nf, then the indicator variables drv_f takes the value 1 and drv_r the value 0, and the prediction is \\(\\widehat{hwy} = 19.175 + 8.986 = 28.161\\)\n\n\n\n\nr, then the indicator variables drv_f takes the value 0 and drv_r the value 1, and the prediction is \\(\\widehat{hwy} = 19.175 + 1.825 = 21\\)\n\n\n\nThe level (category) 4 is called the reference (baseline) level."
+  },
+  {
+    "objectID": "slides/lec-5.html#section",
+    "href": "slides/lec-5.html#section",
+    "title": "Multiple Linear Regression Models",
+    "section": "",
+    "text": "Group exercise - categorical predictor\n\n\n\nExercises 8.5, 8.7\nIn addition\n\nidentify the baseline level of the categorical variable in each model.\n\n\nlibrary(openintro)\nd <- openintro::births14\n\n\nfit the first model in R\n\n\n\n\n\n\n\n\n05:00"
+  },
+  {
+    "objectID": "slides/lec-5.html#fitting-a-larger-model",
+    "href": "slides/lec-5.html#fitting-a-larger-model",
+    "title": "Multiple Linear Regression Models",
+    "section": "Fitting a larger model",
+    "text": "Fitting a larger model\nLet us fit a model with cty, drv and disp\n\nm_larger <- lm(hwy ~ cty + drv + displ, data = d)\nm_larger\n\n\nCall:\nlm(formula = hwy ~ cty + drv + displ, data = d)\n\nCoefficients:\n(Intercept)          cty         drvf         drvr        displ  \n      3.424        1.157        2.158        2.360       -0.208  \n\n\nIts \\(R^2\\) is 0.938.\n\nglance(m_larger)$r.squared\n\n[1] 0.9384357\n\n\n\nUnsurprisingly, including additional predictors makes the regression line closer to the points \\(\\Rightarrow\\) residuals are smaller \\(\\Rightarrow\\) SSR is smaller \\(\\Rightarrow\\) \\(R^2\\) is larger."
+  },
+  {
+    "objectID": "slides/lec-5.html#section-1",
+    "href": "slides/lec-5.html#section-1",
+    "title": "Multiple Linear Regression Models",
+    "section": "",
+    "text": "Group exercise - computing \\(R^2\\) by hand\n\n\n\nWhat is the formula for \\(R^2\\)?\nCompute \\(R^2\\) by hand in R (do not use glance). You can use the following code.\n\n\nd <- ggplot2::mpg\nm_larger <- lm(hwy ~ cty + drv + displ, data = d)\nm_augment <- augment(m_larger)\n\n\n\n\n\n\n\n04:00"
+  },
+  {
+    "objectID": "slides/lec-5.html#fitting-the-full2-model",
+    "href": "slides/lec-5.html#fitting-the-full2-model",
+    "title": "Multiple Linear Regression Models",
+    "section": "Fitting the full1 model",
+    "text": "Fitting the full1 model\n\nm_full <- lm(\n  hwy ~ manufacturer + displ + year + cyl + trans + drv + cty + fl + class,\n  data = d\n  )\n\nThanks to the additional predictors, the residuals are very small, making \\(R^2\\) close to \\(1\\).\n\nglance(m_full)$r.squared\n\n[1] 0.9773386\n\n\n\nLarge \\(R^2\\)\n\nseems great!\n…but we will see in the next lecture that this is not always a good sign.\n\n\nThis not exactly the full model since I do not include the variable model due to identifiability issues (technical point)."
+  },
+  {
+    "objectID": "slides/lec-5.html#section-2",
+    "href": "slides/lec-5.html#section-2",
+    "title": "Multiple Linear Regression Models",
+    "section": "",
+    "text": "Group exercise - multiple linear regression\n\n\nExercise 8.9\n\nfit the model in R\nidentify the type of each variable\nidentify the baseline level of the categorical predictors\ndo parts a-d\n\n\nlibrary(openintro)\nd_birth <- openintro::births14\n\n\n\n\n\n\n\n05:00"
+  },
+  {
+    "objectID": "slides/lec-5.html#feature-engineering",
+    "href": "slides/lec-5.html#feature-engineering",
+    "title": "Multiple Linear Regression Models",
+    "section": "Feature engineering",
+    "text": "Feature engineering\nWe saw that adding predictors to the model seems to help.\nHowever, the variables included in the data set, e.g. displ, year, etc, may not be the most useful predictors for hwy.\n\nFeature engineering refers to the creation of new predictors from the raw variables.\n\n\n\n\n\n\n\n\nTip\n\n\nThis is where your understanding of the data, scientific knowledge and experience make a big difference."
+  },
+  {
+    "objectID": "slides/lec-5.html#transforming-a-variable",
+    "href": "slides/lec-5.html#transforming-a-variable",
+    "title": "Multiple Linear Regression Models",
+    "section": "Transforming a variable",
+    "text": "Transforming a variable\nConsider the predictor displ\n\nggplot(d) +\n  geom_point(aes(displ, hwy))\n\n\n\nThe relation between displ and hwy is not exactly linear."
+  },
+  {
+    "objectID": "slides/lec-5.html#modeling-nonlinearity",
+    "href": "slides/lec-5.html#modeling-nonlinearity",
+    "title": "Multiple Linear Regression Models",
+    "section": "Modeling nonlinearity",
+    "text": "Modeling nonlinearity\nLet us include the predictor \\(\\dfrac{1}{\\text{displ}}\\) to capture this nonlinear relation.\nHere is the model equation\n\\[\n\\text{hwy} \\approx \\beta_0+ \\beta_1 \\text{displ} + \\beta_2 \\dfrac{1}{\\text{displ}}\n\\]\nThe least-square coefficient estimates are\n\nd_transf <- mutate(d, displ_inv = 1/displ)\nm <- lm(hwy ~ displ + displ_inv, data = d_transf)\nm\n\n\nCall:\nlm(formula = hwy ~ displ + displ_inv, data = d_transf)\n\nCoefficients:\n(Intercept)        displ    displ_inv  \n    12.2601      -0.2332      36.1456"
+  },
+  {
+    "objectID": "slides/lec-5.html#section-3",
+    "href": "slides/lec-5.html#section-3",
+    "title": "Multiple Linear Regression Models",
+    "section": "",
+    "text": "And the regression lines captures the nonlinear relation.\n\naugment(m) %>%\n  ggplot(aes(displ, hwy)) +\n  geom_point() +\n  geom_line(aes(y = .fitted))"
+  },
+  {
+    "objectID": "slides/lec-5.html#combining-variables-the-trees-data-set",
+    "href": "slides/lec-5.html#combining-variables-the-trees-data-set",
+    "title": "Multiple Linear Regression Models",
+    "section": "Combining variables – the trees data set",
+    "text": "Combining variables – the trees data set\n\n\n\nMeasurements of the diameter, height and volume of timber in 31 felled black cherry trees.\nNote that the diameter (in inches) is erroneously labelled Girth in the data\nThe diameter (Girth) is measured at 4 ft 6 in above the ground.\nSource: Atkinson, A. C. (1985) Plots, Transformations and Regression. Oxford University Press."
+  },
+  {
+    "objectID": "slides/lec-5.html#combining-variables",
+    "href": "slides/lec-5.html#combining-variables",
+    "title": "Multiple Linear Regression Models",
+    "section": "Combining variables",
+    "text": "Combining variables\nTransforming a variable may be helpful …but we can go a step further!\n\nWe can construct new predictors by combining existing variables.\n\n\nConsider the trees dataset\n\nd_tree <- datasets::trees\nhead(d_tree, n = 4)\n\n  Girth Height Volume\n1   8.3     70   10.3\n2   8.6     65   10.3\n3   8.8     63   10.2\n4  10.5     72   16.4\n\n\nwhere Girth indicates the tree diameter (twice the radius) in inches."
+  },
+  {
+    "objectID": "slides/lec-5.html#geomtric-considerations",
+    "href": "slides/lec-5.html#geomtric-considerations",
+    "title": "Multiple Linear Regression Models",
+    "section": "Geomtric considerations",
+    "text": "Geomtric considerations\nSuppose we want to estimate Volume (expensive to measure) from Girth and Height (cheap to measure).\n\nYou might decide to approximate the shape of a tree with a shape that is between a cylinder and a cone.\nFrom geometry, we know that the volume of a cylinder is\n\\[\nV = \\pi r^2 h\n\\]\nand that of a cone is\n\\[\nV = \\frac{1}{3} \\pi r^2 h\n\\]"
+  },
+  {
+    "objectID": "slides/lec-5.html#section-4",
+    "href": "slides/lec-5.html#section-4",
+    "title": "Multiple Linear Regression Models",
+    "section": "",
+    "text": "This suggests approximating the volume of a tree with the following model\n\\[\n\\text{Volume} = \\beta_1 [ (\\dfrac{\\text{Girth}}{2})^2 * \\text{Height}] = \\beta_1X\n\\]\nwhere\n\n\\(\\beta_1\\) is an unknown parameter that we expect to be between \\(\\pi\\) (pure cylinder) and \\(\\frac{1}{3}\\pi\\) (pure cone)\n\\(X = [(\\dfrac{\\text{Girth}}{2})^2 * \\text{Height}]\\) is our new predictor, which we construct from existing variables."
+  },
+  {
+    "objectID": "slides/lec-5.html#section-5",
+    "href": "slides/lec-5.html#section-5",
+    "title": "Multiple Linear Regression Models",
+    "section": "",
+    "text": "To accomplish this, we simply create a new variable corresponding to \\((\\dfrac{\\text{Girth}}{2})^2 * \\text{Height}\\).\nBefore doing that, we just need to transform Girth into feet to ensure that all variables have the same units.\n\nd_tree_comb <- d_tree %>%\n  mutate(\n    Girth_ft    = Girth / 12,\n    radius      = Girth_ft / 2,\n    r_squared   = radius^2,\n    r2h = r_squared * Height\n  )\nhead(d_tree_comb, n = 3)\n\n  Girth Height Volume  Girth_ft    radius r_squared      r2h\n1   8.3     70   10.3 0.6916667 0.3458333 0.1196007 8.372049\n2   8.6     65   10.3 0.7166667 0.3583333 0.1284028 8.346181\n3   8.8     63   10.2 0.7333333 0.3666667 0.1344444 8.470000"
+  },
+  {
+    "objectID": "slides/lec-5.html#section-6",
+    "href": "slides/lec-5.html#section-6",
+    "title": "Multiple Linear Regression Models",
+    "section": "",
+    "text": "Our model does not include an intercept. To exclude the intercept from the model, I use -1 in the lm command.\n\nm_engineered <- lm(Volume ~ r2h - 1, data = d_tree_comb)\nm_engineered\n\n\nCall:\nlm(formula = Volume ~ r2h - 1, data = d_tree_comb)\n\nCoefficients:\n  r2h  \n1.214  \n\n\n\nThe coefficient estimate is between the two anticipated bounds \\(\\pi=3.14\\) and \\(\\frac{\\pi}{3}=1.047\\)!\n\n\n\n\n\n\n\n\nWarning\n\n\nWhen we do not include the intercept in a model, \\(R^2\\) measures something different and should therefore not be interpreted in the usual way.\n\n\n\n\nglance(m_engineered)$r.squared\n\n[1] 0.9950219"
+  },
+  {
+    "objectID": "slides/lec-5.html#comparison-with-the-full-model",
+    "href": "slides/lec-5.html#comparison-with-the-full-model",
+    "title": "Multiple Linear Regression Models",
+    "section": "Comparison with the full model",
+    "text": "Comparison with the full model\nAlthough \\(R^2\\) has a different meaning when there is no intercept, it can be still used for comparison1.\n\n\nm_full <- lm(Volume ~ Girth + Height -1, data = d_tree)\nglance(m_full)$r.squared\n\n[1] 0.9696913\n\nglance(m_engineered)$r.squared\n\n[1] 0.9950219\n\n\nOur new variable \\((\\dfrac{\\text{Girth}}{2})^2 * \\text{Height}\\) improves the model!\n\n\nNote that the full model has two predictors, while our geometry-based model has only a single predictor!\n\n\n\n\n\n\nFeature engineering\n\n\nA carefully constructed predictor can do a better job than multiple raw predictors!\n\n\n\n\nas long as both models exclude the intercept"
+  },
+  {
+    "objectID": "slides/lec-5.html#special-case-of-data-combination-interaction",
+    "href": "slides/lec-5.html#special-case-of-data-combination-interaction",
+    "title": "Multiple Linear Regression Models",
+    "section": "Special case of data combination: interaction",
+    "text": "Special case of data combination: interaction\n\n\nSuppose you are interested in predicting the average run time (duration) of amateur jogging races.\nTwo variables that impact the duration are (i) the distance of the race, and (ii) the weather.\nFor simplicity, we measure the weather as either good (nice weather) or bad (rain, heat wave, etc)."
+  },
+  {
+    "objectID": "slides/lec-5.html#fixed-effect-weather",
+    "href": "slides/lec-5.html#fixed-effect-weather",
+    "title": "Multiple Linear Regression Models",
+    "section": "Fixed effect weather?",
+    "text": "Fixed effect weather?\nTe full model is\n\\[\n\\text{duration} \\approx \\beta_0 + \\beta_1 \\text{distance} + \\beta_2 \\text{weather_bad}\n\\]\nwhere \\(\\beta_1\\) indicate the effect of an additional miles on the expected duration and \\(\\beta_2\\) the effect of bad weather.\nNote that the effect of weather is fixed in this model, say “\\(+5\\) minutes” if \\(\\hat{\\beta}_2 = 5\\).\n\nIs this reasonable? No!\n\n\n\\(\\Rightarrow\\) the effect of weather should vary with distance. For shorter races, bad weather may add only 2 or 3 minutes, while for longer races, bad weather may increase the average duration by 10 or 15 minutes."
+  },
+  {
+    "objectID": "slides/lec-5.html#model-equation-with-interaction",
+    "href": "slides/lec-5.html#model-equation-with-interaction",
+    "title": "Multiple Linear Regression Models",
+    "section": "Model equation with interaction",
+    "text": "Model equation with interaction\nWe capture such pattern using an interaction term.\n\\[\n\\text{duration} \\approx \\beta_0 + \\beta_1 \\text{distance} + \\beta_2 \\text{weather_bad} + \\beta_3 \\text{weather_bad}*\\text{distance}\n\\]\n\nWhen the weather is good, the equation simplifies to\n\n\\[\n\\text{duration} \\approx \\beta_0 + \\beta_1 \\text{distance} + \\beta_2 0 + \\beta_3 0*\\text{distance} = \\beta_0 + \\beta_1 \\text{distance}\n\\]\n\nWhen the weather is bad, the equation simplifies to\n\n\\[\n\\text{duration} \\approx \\beta_0 + \\beta_1 \\text{distance} + \\beta_2 1 + \\beta_3 1*\\text{distance} = (\\beta_0 + \\beta_2) + (\\beta_1+\\beta_3) \\text{distance}\n\\]"
+  },
+  {
+    "objectID": "slides/lec-5.html#interpreting-interactions",
+    "href": "slides/lec-5.html#interpreting-interactions",
+    "title": "Multiple Linear Regression Models",
+    "section": "Interpreting interactions",
+    "text": "Interpreting interactions\n\nWhen the weather is good, the slope estimate is \\(\\hat{\\beta}_1\\), meaning that the effect of an additional miles on the average duration is \\(\\hat{\\beta}_1\\).\nWhen the weather is bad, the slope estimate is \\(\\hat{\\beta}_1+\\hat{\\beta}_3\\), meaning that the effect of an additional miles on the average duration is \\(\\hat{\\beta}_1+\\hat{\\beta}_3\\) (not \\(\\hat{\\beta}_1\\)).\n\n\n\n\n\n\n\nInteractions\n\n\nThe effect of the distance depends on the weather. Similarly, the effect of the weather depends on the distance.\n\\(\\Rightarrow\\) the two variables interact."
+  },
+  {
+    "objectID": "slides/lec-5.html#recap-2",
+    "href": "slides/lec-5.html#recap-2",
+    "title": "Multiple Linear Regression Models",
+    "section": "Recap",
+    "text": "Recap\n\n\nsimple linear regression model \\[\nY \\approx \\beta_0 + \\beta_1 X\n\\]\nmultiple linear regression model \\[\nY \\approx \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\dots +  + \\beta_p X_p\n\\]\ncategorical predictor\n\n\\((k-1)\\) indicator variables\n\nfeature engineering\n\ntransforming variables\ncombining variables\ninteractions\n\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+  },
+  {
+    "objectID": "slides/lec-6.html#announcements",
+    "href": "slides/lec-6.html#announcements",
+    "title": "Model Selection",
+    "section": "Announcements",
+    "text": "Announcements"
+  },
+  {
+    "objectID": "slides/lec-6.html#recap",
+    "href": "slides/lec-6.html#recap",
+    "title": "Model Selection",
+    "section": "Recap",
+    "text": "Recap\n\n\nsimple linear regression model \\[\nY \\approx \\beta_0 + \\beta_1 X\n\\]\nmultiple linear regression model \\[\nY \\approx \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\dots +  + \\beta_p X_p\n\\]\ncategorical predictor\n\n\\((k-1)\\) indicator variables\n\nfeature engineering\n\ntransforming variables\ncombining variables\ninteractions"
+  },
+  {
+    "objectID": "slides/lec-6.html#outline",
+    "href": "slides/lec-6.html#outline",
+    "title": "Model Selection",
+    "section": "Outline",
+    "text": "Outline\n\nOverfitting\nLimitations of \\(R^2\\)\nModel selection through\n\ncriteria\npredictive performance\nstepwise procedure"
+  },
+  {
+    "objectID": "slides/lec-6.html#competing-models-1",
+    "href": "slides/lec-6.html#competing-models-1",
+    "title": "Model Selection",
+    "section": "Competing models",
+    "text": "Competing models\n\nEarlier, we saw that adding the predictor \\(\\dfrac{1}{\\text{displ}}\\) gave a better fit.\nLet us see if the same idea work with the trees dataset."
+  },
+  {
+    "objectID": "slides/lec-6.html#a-nonlinear-association",
+    "href": "slides/lec-6.html#a-nonlinear-association",
+    "title": "Model Selection",
+    "section": "A nonlinear association?",
+    "text": "A nonlinear association?\nSuppose we want to predict volume using only the variable girth.\n\nd_tree <- datasets::trees\nggplot(d_tree) +\n  geom_point(aes(Girth, Volume))\n\n\nOne could argue that there is a slight nonlinear association"
+  },
+  {
+    "objectID": "slides/lec-6.html#function-to-compute-r2",
+    "href": "slides/lec-6.html#function-to-compute-r2",
+    "title": "Model Selection",
+    "section": "Function to compute \\(R^2\\)",
+    "text": "Function to compute \\(R^2\\)\n\ncompute_R2 <- function(model){\n  \n  model_glanced <- glance(model)\n  R2 <- model_glanced$r.squared\n  R2_rounded <- round(R2, 3) \n  \n  return(R2_rounded)\n  \n}"
+  },
+  {
+    "objectID": "slides/lec-6.html#starting-simple",
+    "href": "slides/lec-6.html#starting-simple",
+    "title": "Model Selection",
+    "section": "Starting simple…",
+    "text": "Starting simple…\nWe start with the simple model\n\\[\n\\text{Volume} \\approx \\beta_0 + \\beta_1 \\text{girth}\n\\]\n\nm1 <- lm(Volume ~ Girth, data = d_tree)\ncompute_R2(m1)\n\n[1] 0.935"
+  },
+  {
+    "objectID": "slides/lec-6.html#section",
+    "href": "slides/lec-6.html#section",
+    "title": "Model Selection",
+    "section": "",
+    "text": "R codeRegression line\n\n\n\nGirth_new <- seq(min(d_tree$Girth), max(d_tree$Girth), by = 0.001)\nnew_data <- tibble(Girth = Girth_new)\nVolume_pred <- predict(m1, new_data)\nnew_data <- mutate(new_data, Volume_pred = Volume_pred)\nhead(new_data)\n\n# A tibble: 6 x 2\n  Girth Volume_pred\n  <dbl>       <dbl>\n1  8.3         5.10\n2  8.30        5.11\n3  8.30        5.11\n4  8.30        5.12\n5  8.30        5.12\n6  8.31        5.13\n\n\n\n\n\nggplot() +\n  geom_point(data = d_tree  , aes(Girth, Volume     )) +\n  geom_line (data = new_data, aes(Girth, Volume_pred))"
+  },
+  {
+    "objectID": "slides/lec-6.html#taking-it-up-a-notch",
+    "href": "slides/lec-6.html#taking-it-up-a-notch",
+    "title": "Model Selection",
+    "section": "…taking it up a notch…",
+    "text": "…taking it up a notch…\nTo capture the nonlinear association between Girth and Volume, we consider the predictor \\(\\text{Girth}^2\\).\n\\[\n\\text{Volume} \\approx \\beta_0 + \\beta_1 \\text{girth} + \\beta_2 \\text{girth}^2\n\\]\nThe command to fit this model is\n\nd_tree2 <- mutate(d_tree, Girth2 = Girth^2)\nm2 <- lm(Volume ~ Girth + Girth2, data = d_tree2)\ncompute_R2(m2)\n\n[1] 0.962\n\n\n\n\\(R^2\\) has increased! It went from 0.935 (model 1) to 0.962."
+  },
+  {
+    "objectID": "slides/lec-6.html#section-1",
+    "href": "slides/lec-6.html#section-1",
+    "title": "Model Selection",
+    "section": "",
+    "text": "R codeRegression line\n\n\n\nGirth_new <- seq(min(d_tree$Girth), max(d_tree$Girth), by = 0.001)\nnew_data <- tibble(Girth = Girth_new) %>% mutate(Girth2 = Girth^2)\nVolume_pred <- predict(m2, new_data)\nnew_data <- mutate(new_data, Volume_pred = Volume_pred)\nhead(new_data)\n\n# A tibble: 6 x 3\n  Girth Girth2 Volume_pred\n  <dbl>  <dbl>       <dbl>\n1  8.3    68.9        11.0\n2  8.30   68.9        11.0\n3  8.30   68.9        11.0\n4  8.30   68.9        11.0\n5  8.30   69.0        11.0\n6  8.31   69.0        11.0\n\n\n\n\n\nggplot() +\n  geom_point(data = d_tree  , aes(Girth, Volume     )) +\n  geom_line (data = new_data, aes(Girth, Volume_pred))"
+  },
+  {
+    "objectID": "slides/lec-6.html#taking-it-up-another-notch",
+    "href": "slides/lec-6.html#taking-it-up-another-notch",
+    "title": "Model Selection",
+    "section": "…taking it up another notch…",
+    "text": "…taking it up another notch…\nLet us consider the predictor \\(\\text{Girth}^3\\).\n\\[\n\\text{Volume} \\approx \\beta_0 + \\beta_1 \\text{girth} + \\beta_2 \\text{girth}^2 + \\beta_3 \\text{girth}^3\n\\]\n\nd_tree3 <- mutate(d_tree, Girth2 = Girth^2, Girth3 = Girth^3)\nm3 <- lm(Volume ~ Girth + Girth2 + Girth3, data = d_tree3)\ncompute_R2(m3)\n\n[1] 0.963\n\n\n\n\\(R^2\\) has increased! It went from 0.962 (model 2) to 0.963."
+  },
+  {
+    "objectID": "slides/lec-6.html#section-2",
+    "href": "slides/lec-6.html#section-2",
+    "title": "Model Selection",
+    "section": "",
+    "text": "R codeRegression line\n\n\n\nGirth_new <- seq(min(d_tree$Girth), max(d_tree$Girth), by = 0.001)\nnew_data <- tibble(Girth = Girth_new) %>% mutate(Girth2 = Girth^2, Girth3 = Girth^3)\nVolume_pred <- predict(m3, new_data)\nnew_data <- mutate(new_data, Volume_pred = Volume_pred)\nhead(new_data)\n\n# A tibble: 6 x 4\n  Girth Girth2 Girth3 Volume_pred\n  <dbl>  <dbl>  <dbl>       <dbl>\n1  8.3    68.9   572.        9.88\n2  8.30   68.9   572.        9.88\n3  8.30   68.9   572.        9.89\n4  8.30   68.9   572.        9.89\n5  8.30   69.0   573.        9.89\n6  8.31   69.0   573.        9.90\n\n\n\n\n\nggplot() +\n  geom_point(data = d_tree  , aes(Girth, Volume     )) +\n  geom_line (data = new_data, aes(Girth, Volume_pred))"
+  },
+  {
+    "objectID": "slides/lec-6.html#before-taking-things-to-the-extreme",
+    "href": "slides/lec-6.html#before-taking-things-to-the-extreme",
+    "title": "Model Selection",
+    "section": "…before taking things to the extreme",
+    "text": "…before taking things to the extreme\nWhat if we also include the predictors \\(\\text{Girth}^4, \\text{Girth}^5, \\dots, \\text{Girth}^{k}\\) for some larger number \\(k\\)?\nThe following R code fits such a model with \\(k=34\\), that is,\n\\[\n\\text{Volume} \\approx \\beta_0 + \\beta_1 \\text{girth} + \\beta_2 \\text{girth}^2 + \\dots + \\beta_{29} \\text{girth}^{34}\n\\]\n\nm_extreme <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = d_tree)\ncompute_R2(m_extreme)\n\n[1] 0.98\n\n\n\\(R^2\\) has again increased! It went from 0.963 (model 3) to 0.98."
+  },
+  {
+    "objectID": "slides/lec-6.html#a-limitation-of-r2",
+    "href": "slides/lec-6.html#a-limitation-of-r2",
+    "title": "Model Selection",
+    "section": "A limitation of \\(R^2\\)",
+    "text": "A limitation of \\(R^2\\)\nAs we keep adding predictors, \\(R^2\\) will always increase.\n\nadditional predictors allow the regression line to be more flexible, hence to be closer to the points and reduce the residuals.\n\n\nIs the model m_extreme a good model?\n\n\n\n\n\n\nNote\n\n\nWe want to learn about the relation between Volume and Girth present in the population (not the sample).\nA good model should accurately represent the population."
+  },
+  {
+    "objectID": "slides/lec-6.html#section-3",
+    "href": "slides/lec-6.html#section-3",
+    "title": "Model Selection",
+    "section": "",
+    "text": "R codeRegression lineRegression line (zoomed)\n\n\n\nGirth_new <- seq(min(d_tree$Girth), max(d_tree$Girth), by = 0.00001)\nnew_data <- tibble(Girth = Girth_new)\nVolume_pred <- predict(m_extreme, new_data)\nnew_data <- mutate(new_data, Volume_pred = Volume_pred)\nhead(new_data)\n\n# A tibble: 6 x 2\n  Girth Volume_pred\n  <dbl>       <dbl>\n1  8.3         10.3\n2  8.30        10.3\n3  8.30        10.3\n4  8.30        10.3\n5  8.30        10.3\n6  8.30        10.3\n\n\n\n\n\nggplot() +\n  geom_point(data = d_tree  , aes(Girth, Volume     )) +\n  geom_line (data = new_data, aes(Girth, Volume_pred))\n\n\n\n\n\n\n\n\n\n\n\nggplot() +\n  geom_point(data = d_tree  , aes(Girth, Volume     )) +\n  geom_line (data = new_data, aes(Girth, Volume_pred)) +\n  ylim(0, 90)"
+  },
+  {
+    "objectID": "slides/lec-6.html#overfitting",
+    "href": "slides/lec-6.html#overfitting",
+    "title": "Model Selection",
+    "section": "Overfitting",
+    "text": "Overfitting\nThe model m_extreme overfits the data.\nA model overfits the data when it fits the sample extremely well but does a poor job for new data.\n\nRemember that we want to learn about the population, not the sample!"
+  },
+  {
+    "objectID": "slides/lec-6.html#r2",
+    "href": "slides/lec-6.html#r2",
+    "title": "Model Selection",
+    "section": "\\(R^2\\)",
+    "text": "\\(R^2\\)\nWe saw that \\(R^2\\) keeps increasing as we add predictors.\n\\[\nR^2_{\\text{adj}} = 1 - \\dfrac{SSR}{SST}\n\\]\n\n\\(R^2\\) can therefore not be used to identify models that overfit the data."
+  },
+  {
+    "objectID": "slides/lec-6.html#adjusted-r2",
+    "href": "slides/lec-6.html#adjusted-r2",
+    "title": "Model Selection",
+    "section": "Adjusted-\\(R^2\\)",
+    "text": "Adjusted-\\(R^2\\)\nThe adjusted-\\(R^2\\) is similar to $R2, but penalizes large models:\n\\[\nR^2_{\\text{adj}} = 1 - \\dfrac{SSR}{SST}\\dfrac{n-1}{n-p-1}\n\\]\nwhere \\(p\\) corresponds to the number of predictors."
+  },
+  {
+    "objectID": "slides/lec-6.html#section-4",
+    "href": "slides/lec-6.html#section-4",
+    "title": "Model Selection",
+    "section": "",
+    "text": "The adjusted-\\(R^2\\) therefore balances goodness of fit and parsimony:\n\nThe ratio \\(\\dfrac{SSR}{SST}\\) favors model with good fit (like \\(R^2\\))\nThe ratio \\(\\dfrac{n-1}{n-k-1}\\) favors parsimonious models\n\n\nThe model with the highest adjusted-\\(R^2\\) typically provides a good fit without overfitting."
+  },
+  {
+    "objectID": "slides/lec-6.html#aic-and-bic",
+    "href": "slides/lec-6.html#aic-and-bic",
+    "title": "Model Selection",
+    "section": "AIC and BIC",
+    "text": "AIC and BIC\nTwo other popular criteria that balance goodness of fit (small SSR) and parsimony (small \\(p\\)) are\n\nthe Akaike Information Criterion (AIC)\nthe Bayesian Inofrmation Criterion (BIC)\n\n\nThe formula for AIC and BIC are respectively\n\\[\nAIC = 2p - \\text{GoF}, \\qquad BIC = \\ln(n)p- \\text{GoF}\n\\]\nwhere \\(\\text{GoF}\\) measures the Goodness of fit of the model1.\n\n\nUnlike the adjusted-\\(R^2\\), smaller is better for the AIC and BIC.\n\n\nNote that the BIC penalizes the number of parameters \\(p\\) more strongly.\n\nThe exact formula for \\(\\text{GoF}\\) is beyond the scope of this class."
+  },
+  {
+    "objectID": "slides/lec-6.html#computing-aic-and-bic",
+    "href": "slides/lec-6.html#computing-aic-and-bic",
+    "title": "Model Selection",
+    "section": "Computing AIC and BIC",
+    "text": "Computing AIC and BIC\nEasily accessible in R with the command glance. For instance,\n\nglance(m1)\n\n# A tibble: 1 x 12\n  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC\n      <dbl>         <dbl> <dbl>     <dbl>    <dbl> <dbl>  <dbl> <dbl> <dbl>\n1     0.935         0.933  4.25      419. 8.64e-19     1  -87.8  182.  186.\n# ... with 3 more variables: deviance <dbl>, df.residual <int>, nobs <int>\n\nglance(m2)\n\n# A tibble: 1 x 12\n  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC\n      <dbl>         <dbl> <dbl>     <dbl>    <dbl> <dbl>  <dbl> <dbl> <dbl>\n1     0.962         0.959  3.33      350. 1.52e-20     2  -79.7  167.  173.\n# ... with 3 more variables: deviance <dbl>, df.residual <int>, nobs <int>\n\nglance(m3)\n\n# A tibble: 1 x 12\n  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC\n      <dbl>         <dbl> <dbl>     <dbl>    <dbl> <dbl>  <dbl> <dbl> <dbl>\n1     0.963         0.959  3.35      232. 2.17e-19     3  -79.3  169.  176.\n# ... with 3 more variables: deviance <dbl>, df.residual <int>, nobs <int>\n\nglance(m_extreme)\n\n# A tibble: 1 x 12\n  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC\n      <dbl>         <dbl> <dbl>     <dbl>    <dbl> <dbl>  <dbl> <dbl> <dbl>\n1     0.980         0.960  3.30      48.6 5.64e-10    15  -69.7  173.  198.\n# ... with 3 more variables: deviance <dbl>, df.residual <int>, nobs <int>\n\n\n\nIn this case, AIC and BIC favor m2, while the adjusted-\\(R^2\\) (wrongly) favor m_extreme.\n\nFor AIC and BIC, smaller is better."
+  },
+  {
+    "objectID": "slides/lec-6.html#limitations-of-the-previous-criteria",
+    "href": "slides/lec-6.html#limitations-of-the-previous-criteria",
+    "title": "Model Selection",
+    "section": "Limitations of the previous criteria",
+    "text": "Limitations of the previous criteria\nThe adjutsed-\\(R^2\\), AIC and BIC all try to balance\n\ngoodness of fit\nparsimony\n\n\nThey achieve this balance by favoring models with small SSR while penalizing models with larger \\(p\\).\n\n\nBut\n\nThe form of the penalty for \\(p\\) is somewhat arbitrary, e.g. AIC versus BIC.\nThe adjusted-\\(R^2\\) failed to penalize m_extreme, although it was clearly overfitting the data."
+  },
+  {
+    "objectID": "slides/lec-6.html#predictive-performance",
+    "href": "slides/lec-6.html#predictive-performance",
+    "title": "Model Selection",
+    "section": "Predictive performance",
+    "text": "Predictive performance\nInstead of using these criteria, we could look for the model with the best predictions performance.\nThat is, the model that makes predictions for new observations that are the closest to the true values.\n\nWe will learn two approaches to accomplish this\n\nthe holdout method\ncross-validation"
+  },
+  {
+    "objectID": "slides/lec-6.html#the-holdout-method",
+    "href": "slides/lec-6.html#the-holdout-method",
+    "title": "Model Selection",
+    "section": "The holdout method",
+    "text": "The holdout method\nThe holdout method is a simple method to evaluate the predictive performance of a model.\n\n\nRandomly partition your sample into two sets: a training set (typically 2/3 of the sample) and a test set (the remaining 1/3).\n\n\n\n\nFit your model to the training set.\n\n\n\n\nEvaluate the prediction accuracy of the model on the test set.\n\n\n\nNote that the test set consists of new observations for the model.\n\n\n\\(\\Rightarrow\\) Select the model with the best prediction accuracy in step 3."
+  },
+  {
+    "objectID": "slides/lec-6.html#section-5",
+    "href": "slides/lec-6.html#section-5",
+    "title": "Model Selection",
+    "section": "",
+    "text": "The holdout method.Source: IMS"
+  },
+  {
+    "objectID": "slides/lec-6.html#step-1-training-and-test-sets",
+    "href": "slides/lec-6.html#step-1-training-and-test-sets",
+    "title": "Model Selection",
+    "section": "Step 1: training and test sets",
+    "text": "Step 1: training and test sets\nThe following R function splits a sample into a training and a test set\n\nconstruct_training_test <- function(sample, prop_training = 2/3){\n  \n  n          <- nrow(sample)\n  n_training <- round(n * prop_training)\n  \n  sample_random   <- slice_sample(sample, n = n)\n  sample_training <- slice(sample_random,    1 : n_training )\n  sample_test     <- slice(sample_random, - (1 : n_training))\n  \n  return(list(\n    training = sample_training, test = sample_test\n    ))\n  \n}"
+  },
+  {
+    "objectID": "slides/lec-6.html#section-6",
+    "href": "slides/lec-6.html#section-6",
+    "title": "Model Selection",
+    "section": "",
+    "text": "SampleTraining setTest set\n\n\n\nd_tree # entire sample\n\n   Girth Height Volume\n1    8.3     70   10.3\n2    8.6     65   10.3\n3    8.8     63   10.2\n4   10.5     72   16.4\n5   10.7     81   18.8\n6   10.8     83   19.7\n7   11.0     66   15.6\n8   11.0     75   18.2\n9   11.1     80   22.6\n10  11.2     75   19.9\n11  11.3     79   24.2\n12  11.4     76   21.0\n13  11.4     76   21.4\n14  11.7     69   21.3\n15  12.0     75   19.1\n16  12.9     74   22.2\n17  12.9     85   33.8\n18  13.3     86   27.4\n19  13.7     71   25.7\n20  13.8     64   24.9\n21  14.0     78   34.5\n22  14.2     80   31.7\n23  14.5     74   36.3\n24  16.0     72   38.3\n25  16.3     77   42.6\n26  17.3     81   55.4\n27  17.5     82   55.7\n28  17.9     80   58.3\n29  18.0     80   51.5\n30  18.0     80   51.0\n31  20.6     87   77.0\n\n\n\n\n\nset.seed(0)\ntraining_test_sets <- construct_training_test(d_tree) \ntraining_set <- training_test_sets[[\"training\"]]\ntraining_set\n\n   Girth Height Volume\n1   11.7     69   21.3\n2   16.3     77   42.6\n3   10.5     72   16.4\n4   11.0     66   15.6\n5    8.3     70   10.3\n6    8.6     65   10.3\n7   14.5     74   36.3\n8   11.3     79   24.2\n9   20.6     87   77.0\n10  13.3     86   27.4\n11  13.7     71   25.7\n12  17.5     82   55.7\n13  11.2     75   19.9\n14  18.0     80   51.0\n15  14.0     78   34.5\n16  17.9     80   58.3\n17  11.1     80   22.6\n18  10.7     81   18.8\n19  14.2     80   31.7\n20  12.0     75   19.1\n21  11.4     76   21.0\n\n\n\n\n\ntest_set <- training_test_sets[[\"test\"]]\ntest_set\n\n   Girth Height Volume\n1   11.4     76   21.4\n2   12.9     85   33.8\n3   17.3     81   55.4\n4   11.0     75   18.2\n5   10.8     83   19.7\n6   13.8     64   24.9\n7   18.0     80   51.5\n8    8.8     63   10.2\n9   16.0     72   38.3\n10  12.9     74   22.2"
+  },
+  {
+    "objectID": "slides/lec-6.html#step-2-fit-the-model-to-the-training-set",
+    "href": "slides/lec-6.html#step-2-fit-the-model-to-the-training-set",
+    "title": "Model Selection",
+    "section": "Step 2: fit the model to the training set",
+    "text": "Step 2: fit the model to the training set\nWe simply fit our regression model to the training set.\n\nm1 <- lm(Volume ~ Girth, data = training_set)"
+  },
+  {
+    "objectID": "slides/lec-6.html#step-3-evaluate-the-prediction-accuracy-on-the-test-set",
+    "href": "slides/lec-6.html#step-3-evaluate-the-prediction-accuracy-on-the-test-set",
+    "title": "Model Selection",
+    "section": "Step 3: Evaluate the prediction accuracy on the test set",
+    "text": "Step 3: Evaluate the prediction accuracy on the test set\nTo evaluate the prediction accuracy, we start by computing the predictions for the observations in test set.\n\nVolume_hat <- predict(m1, test_set)\n\n\nA good model will make predictions that are closed to the true values of the response variable."
+  },
+  {
+    "objectID": "slides/lec-6.html#sum-of-squared-errors",
+    "href": "slides/lec-6.html#sum-of-squared-errors",
+    "title": "Model Selection",
+    "section": "Sum of squared errors",
+    "text": "Sum of squared errors\nA good measure of prediction accuracy is the sum of squared errors (SSE).\n\\[\nSSE = (y_1 - \\hat{y}_1)^2 + (y_2 - \\hat{y}_2)^2 + \\dots + (y_m - \\hat{y}_m)^2\n\\]\nSmall SSE is better.\n\nVolume <- test_set$Volume\nsum(Volume - Volume_hat)^2\n\n[1] 149.2704"
+  },
+  {
+    "objectID": "slides/lec-6.html#mean-squared-error",
+    "href": "slides/lec-6.html#mean-squared-error",
+    "title": "Model Selection",
+    "section": "Mean squared error",
+    "text": "Mean squared error\nIn practice, the (root) mean sum of squared errors ((R)MSE) is often used.\n\\[\nMSE = \\dfrac{SSE}{m} = \\dfrac{(y_1 - \\hat{y}_1)^2 + (y_2 - \\hat{y}_2)^2 + \\dots + (y_m - \\hat{y}_m)^2}{m}\n\\]\n\\[\nRMSE = \\sqrt{\\dfrac{SSE}{m}} = \\sqrt{\\dfrac{(y_1 - \\hat{y}_1)^2 + (y_2 - \\hat{y}_2)^2 + \\dots + (y_m - \\hat{y}_m)^2}{m}}\n\\] Again, small (R)MSE is better."
+  },
+  {
+    "objectID": "slides/lec-6.html#section-7",
+    "href": "slides/lec-6.html#section-7",
+    "title": "Model Selection",
+    "section": "",
+    "text": "SSE <- sum((Volume - Volume_hat)^2)\nm <- nrow(test_set)\nMSE <- SSE / m\nRMSE <- sqrt(MSE)\nSSE; MSE; RMSE\n\n[1] 225.2413\n\n\n[1] 22.52413\n\n\n[1] 4.745959\n\n\n\n\n\n\n\n\nTip\n\n\n##(R)MSE The advantage of (R)MSE over the SSE is that we can compare models evaluate with test sets of different sizes."
+  },
+  {
+    "objectID": "slides/lec-6.html#selecting-a-model",
+    "href": "slides/lec-6.html#selecting-a-model",
+    "title": "Model Selection",
+    "section": "Selecting a model",
+    "text": "Selecting a model\nApply steps 2 and 3 on different models.\n\nuse the same training and test sets for the different models\n\nSimply choose the model with the lowest (R)MSE.\nThis model has the best out-of-sample accuracy."
+  },
+  {
+    "objectID": "slides/lec-6.html#function-to-compute-the-rmse",
+    "href": "slides/lec-6.html#function-to-compute-the-rmse",
+    "title": "Model Selection",
+    "section": "Function to compute the RMSE",
+    "text": "Function to compute the RMSE\n\ncompute_RMSE <- function(test_set, model){\n  \n  y     <- test_set$Volume\n  y_hat <- predict(model, test_set)\n  \n  E    <- y - y_hat\n  SSE  <- sum(E^2)\n  MSE  <- mean(E^2)\n  RMSE <- sqrt(MSE)\n  \n  return(RMSE)\n  \n}"
+  },
+  {
+    "objectID": "slides/lec-6.html#section-8",
+    "href": "slides/lec-6.html#section-8",
+    "title": "Model Selection",
+    "section": "",
+    "text": "# Step 2\nm1  <- lm(Volume ~ poly(Girth, degree = 1 , raw = TRUE), data = training_set)\nm2  <- lm(Volume ~ poly(Girth, degree = 2 , raw = TRUE), data = training_set)\nm3  <- lm(Volume ~ poly(Girth, degree = 3 , raw = TRUE), data = training_set)\nm48 <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = training_set)\n\n# Step 3\ncompute_RMSE(test_set, m1)\n\n[1] 4.745959\n\ncompute_RMSE(test_set, m2)\n\n[1] 4.16503\n\ncompute_RMSE(test_set, m3) # best\n\n[1] 4.093268\n\ncompute_RMSE(test_set, m48)\n\n[1] 13.47366\n\n\nWe select m3."
+  },
+  {
+    "objectID": "slides/lec-6.html#limitation-of-the-holdout-method",
+    "href": "slides/lec-6.html#limitation-of-the-holdout-method",
+    "title": "Model Selection",
+    "section": "Limitation of the holdout method",
+    "text": "Limitation of the holdout method\nThe previous analysis was conducted with set.seed(0).\n\nModels m2 and m3 were pretty close.\nCould we have obtained a different result with a different seed?"
+  },
+  {
+    "objectID": "slides/lec-6.html#section-9",
+    "href": "slides/lec-6.html#section-9",
+    "title": "Model Selection",
+    "section": "",
+    "text": "# Step 1\nset.seed(1) # new seed\ntraining_test_sets <- construct_training_test(d_tree) \ntraining_set <- training_test_sets[[\"training\"]]\ntest_set <- training_test_sets[[\"test\"]]\n\n# Step 2\nm1  <- lm(Volume ~ poly(Girth, degree = 1 , raw = TRUE), data = training_set)\nm2  <- lm(Volume ~ poly(Girth, degree = 2 , raw = TRUE), data = training_set)\nm3  <- lm(Volume ~ poly(Girth, degree = 3 , raw = TRUE), data = training_set)\nm48 <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = training_set)\n\n# Step 3\ncompute_RMSE(test_set, m1)\n\n[1] 6.589842\n\ncompute_RMSE(test_set, m2) # best\n\n[1] 4.332965\n\ncompute_RMSE(test_set, m3)\n\n[1] 5.437581\n\ncompute_RMSE(test_set, m48)\n\n[1] 310105724"
+  },
+  {
+    "objectID": "slides/lec-6.html#the-test-set-matters",
+    "href": "slides/lec-6.html#the-test-set-matters",
+    "title": "Model Selection",
+    "section": "The test set matters!",
+    "text": "The test set matters!\nA drawback of the holdout method is that the test set matters a lot.\nRepeating steps 2 and 3 with a different partition from step 1 may give different results."
+  },
+  {
+    "objectID": "slides/lec-6.html#cross-validation",
+    "href": "slides/lec-6.html#cross-validation",
+    "title": "Model Selection",
+    "section": "Cross-validation",
+    "text": "Cross-validation\nCross-validation (CV) is the natural generalization of the holdout method – you simply repeat the holdout method many times.\n\n\nrandomly partition the sample into \\(k\\) folds of equal size. \\(k\\) is typically \\(5\\) or \\(10\\).\n\n\n\nRepeat the following steps \\(k\\) times\n\nLet fold 1 be the test set and the remaining folds be the training set.\nFit the model to the training set (like the holdout method)\nEvaluate the prediction accuracy of the model on the test set (like the holdout method)\nGo back to 1, letting the next fold be the test set.\n\n\n\n\\(\\Rightarrow\\) Select the model with the best overall prediction accuracy in step 3."
+  },
+  {
+    "objectID": "slides/lec-6.html#section-10",
+    "href": "slides/lec-6.html#section-10",
+    "title": "Model Selection",
+    "section": "",
+    "text": "5-fold cross-validationSource: towardsdatascience"
+  },
+  {
+    "objectID": "slides/lec-6.html#step-0",
+    "href": "slides/lec-6.html#step-0",
+    "title": "Model Selection",
+    "section": "Step 0",
+    "text": "Step 0\n\nset.seed(0)\n\n# Setup\nn <- nrow(d_tree)\nn_folds <- 10\n\n# Fold assignment\nfolds <- c(rep(1:n_folds, n %/% n_folds), seq_along(n %% n_folds))\nfolds\n\n [1]  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5\n[26]  6  7  8  9 10  1\n\n# Step 1\nd_tree_fold <- d_tree %>%\n  slice_sample(n = n) %>%\n  mutate(fold = folds)\nhead(d_tree_fold)\n\n  Girth Height Volume fold\n1  11.7     69   21.3    1\n2  16.3     77   42.6    2\n3  10.5     72   16.4    3\n4  11.0     66   15.6    4\n5   8.3     70   10.3    5\n6   8.6     65   10.3    6"
+  },
+  {
+    "objectID": "slides/lec-6.html#steps-1-4-setup",
+    "href": "slides/lec-6.html#steps-1-4-setup",
+    "title": "Model Selection",
+    "section": "Steps 1-4 – Setup",
+    "text": "Steps 1-4 – Setup\n\ncreate_empty_RMSE <- function(){\n  tibble(\n    rmse_m1  = numeric(), \n    rmse_m2  = numeric(), \n    rmse_m3  = numeric(), \n    rmse_m48 = numeric()\n  )\n}\n\ncreate_empty_RMSE()\n\n# A tibble: 0 x 4\n# ... with 4 variables: rmse_m1 <dbl>, rmse_m2 <dbl>, rmse_m3 <dbl>,\n#   rmse_m48 <dbl>"
+  },
+  {
+    "objectID": "slides/lec-6.html#steps-1-4",
+    "href": "slides/lec-6.html#steps-1-4",
+    "title": "Model Selection",
+    "section": "Steps 1-4",
+    "text": "Steps 1-4\n\nRMSE <- create_empty_RMSE()\n\nfor(i in 1:n_folds){\n  \n  # Step 1\n  training_set <- filter(d_tree_fold, fold != i)\n  test_set     <- filter(d_tree_fold, fold == i)\n  \n  # Step 2\n  m1  <- lm(Volume ~ poly(Girth, degree = 1 , raw = TRUE), data = training_set)\n  m2  <- lm(Volume ~ poly(Girth, degree = 2 , raw = TRUE), data = training_set)\n  m3  <- lm(Volume ~ poly(Girth, degree = 3 , raw = TRUE), data = training_set)\n  m48 <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = training_set)\n  \n  # Step 3\n  rmse_m1  <- compute_RMSE(test_set, m1 )\n  rmse_m2  <- compute_RMSE(test_set, m2 )\n  rmse_m3  <- compute_RMSE(test_set, m3 )\n  rmse_m48 <- compute_RMSE(test_set, m48)\n  \n  RMSE <- add_row(RMSE, rmse_m1, rmse_m2, rmse_m3, rmse_m48)\n  \n}"
+  },
+  {
+    "objectID": "slides/lec-6.html#model-selection",
+    "href": "slides/lec-6.html#model-selection",
+    "title": "Model Selection",
+    "section": "Model selection",
+    "text": "Model selection\nWhich model has the lowest RMSE across all folds?\n\nRMSE\n\n# A tibble: 10 x 4\n   rmse_m1 rmse_m2 rmse_m3    rmse_m48\n     <dbl>   <dbl>   <dbl>       <dbl>\n 1    5.01    3.28    3.40        4.28\n 2    2.95    2.52    2.77        5.15\n 3    3.25    4.73    4.61        6.50\n 4    3.82    4.18    4.44        3.27\n 5    3.41    2.08    2.03      204.  \n 6    3.91    2.61    2.71       52.0 \n 7    5.13    4.08    4.00        3.03\n 8    3.19    4.01    3.78        2.56\n 9    7.09    1.89    2.39 10911566.  \n10    5.17    3.47    3.36        3.86"
+  },
+  {
+    "objectID": "slides/lec-6.html#section-11",
+    "href": "slides/lec-6.html#section-11",
+    "title": "Model Selection",
+    "section": "",
+    "text": "Group exercise - cross-validation\n\n\nExercise 25.9 (the book uses SSE for rSSR)\nIn part c, replace left and right, by top and bottom.\n\n\n\n\n\n\n03:00"
+  },
+  {
+    "objectID": "slides/lec-6.html#average-rmse",
+    "href": "slides/lec-6.html#average-rmse",
+    "title": "Model Selection",
+    "section": "Average RMSE",
+    "text": "Average RMSE\n\nsummarise_all(RMSE, mean)\n\n# A tibble: 1 x 4\n  rmse_m1 rmse_m2 rmse_m3 rmse_m48\n    <dbl>   <dbl>   <dbl>    <dbl>\n1    4.29    3.29    3.35 1091185.\n\n\nModel 2 has slightly better average RMSE"
+  },
+  {
+    "objectID": "slides/lec-6.html#taking-things-to-the-extreme-loocv",
+    "href": "slides/lec-6.html#taking-things-to-the-extreme-loocv",
+    "title": "Model Selection",
+    "section": "Taking things to the extreme: LOOCV",
+    "text": "Taking things to the extreme: LOOCV\nSet \\(k=n\\); that is, we use \\(n\\) folds, each of size \\(1\\). The test sets will therefore consist of a single observation and the training sets of \\(n-1\\) observations."
+  },
+  {
+    "objectID": "slides/lec-6.html#loocv",
+    "href": "slides/lec-6.html#loocv",
+    "title": "Model Selection",
+    "section": "LOOCV",
+    "text": "LOOCV\n\nRMSE <- create_empty_RMSE()\n\n# Step 0\nn <- nrow(d_tree)\nd_tree_loocv <- mutate(d_tree, folds = 1:n)\n\nfor(i in 1:n){\n  \n  # Step 1\n  training_set <- filter(d_tree_loocv, folds != i)\n  test_set     <- filter(d_tree_loocv, folds == i)\n  \n  # Step 2\n  m1  <- lm(Volume ~ poly(Girth, degree = 1 , raw = TRUE), data = training_set)\n  m2  <- lm(Volume ~ poly(Girth, degree = 2 , raw = TRUE), data = training_set)\n  m3  <- lm(Volume ~ poly(Girth, degree = 3 , raw = TRUE), data = training_set)\n  m48 <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = training_set)\n  \n  # Step 3\n  rmse_m1  <- compute_RMSE(test_set, m1 )\n  rmse_m2  <- compute_RMSE(test_set, m2 )\n  rmse_m3  <- compute_RMSE(test_set, m3 )\n  rmse_m48 <- compute_RMSE(test_set, m48)\n  \n  RMSE <- add_row(RMSE, rmse_m1, rmse_m2, rmse_m3, rmse_m48)\n  \n}\n\nsummarize_all(RMSE, mean)\n\n# A tibble: 1 x 4\n  rmse_m1 rmse_m2 rmse_m3 rmse_m48\n    <dbl>   <dbl>   <dbl>    <dbl>\n1    3.64    2.88    2.87 7224032."
+  },
+  {
+    "objectID": "slides/lec-6.html#forward-selection-procedure",
+    "href": "slides/lec-6.html#forward-selection-procedure",
+    "title": "Model Selection",
+    "section": "Forward selection procedure",
+    "text": "Forward selection procedure\n\nChoose a models election criterion that balances model fit (smaller SSR) and parsimony (small \\(p\\))\n\\(\\Rightarrow\\) adjusted-\\(R^2\\), AIC or BIC\n\n\n\nStart with the empty model \\(Y \\approx \\beta_0\\), i.e. the model with no predictor. This is our current model\nFit all possible models with one additional predictor.\n\n\n\n\nCompute the AIC of each of these models.\nIdentify the model with the smallest AIC. This is our candidate model.\n\n\n\n\nIf the AIC of the candidate model is smaller (better) than the AIC of the current model, the candidate model becomes the current model, and we go back to step 3.\n\nIf the AIC of the candidate model is larger than the AIC of the current model (no new model improves on the current one), the procedure stops, and we select the current model."
+  },
+  {
+    "objectID": "slides/lec-6.html#section-12",
+    "href": "slides/lec-6.html#section-12",
+    "title": "Model Selection",
+    "section": "",
+    "text": "Group exercise - stepwise selection\n\n\nExercise 8.11. In addition, fit the candidate models in R with the command lm.\n\nlibrary(openintro)\nd <- openintro::births14\n\n\n\n\n\n\n\n05:00"
+  },
+  {
+    "objectID": "slides/lec-6.html#backward-selection-procedure",
+    "href": "slides/lec-6.html#backward-selection-procedure",
+    "title": "Model Selection",
+    "section": "Backward selection procedure",
+    "text": "Backward selection procedure\nSimilar to forward selection, except that\n\nwe start with the full model,\nremove one predictor at a time\nuntil removing any predictor makes the model worse."
+  },
+  {
+    "objectID": "slides/lec-6.html#section-13",
+    "href": "slides/lec-6.html#section-13",
+    "title": "Model Selection",
+    "section": "",
+    "text": "Note that forward and backward selection need not agree; they may select different models.\n\n\nWhat to do in that case? Nobody knows."
+  },
+  {
+    "objectID": "slides/lec-6.html#section-14",
+    "href": "slides/lec-6.html#section-14",
+    "title": "Model Selection",
+    "section": "",
+    "text": "Group exercise - stepwise selection\n\n\nExercise 8.11. In addition, fit the current and candidate models in R with the command lm.\n\nlibrary(openintro)\nd <- openintro::births14\n\n\n\n\n\n\n\n05:00"
+  },
+  {
+    "objectID": "slides/lec-6.html#recap-2",
+    "href": "slides/lec-6.html#recap-2",
+    "title": "Model Selection",
+    "section": "Recap",
+    "text": "Recap\n\nOverfitting\nLimitations of \\(R^2\\)\nModel selection through\n\ncriteria\npredictive performance\nstepwise procedure\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   }
 ]
