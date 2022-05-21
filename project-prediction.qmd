@@ -35,7 +35,7 @@ Here is a detailed overview of the variable
 -   `newborn_birth_weight`: newborn birth weight in grams (**response**)
 -   `month`: birth month (`1` = January, ..., `12` = December)
 -   `mother_age`: age of the mother in years
-    -   `prenatal_care_starting_month`: month in which prenatal care began; if `0`, there was no prenatal care
+-   `prenatal_care_starting_month`: month in which prenatal care began; if `0`, there was no prenatal care
 -   `daily_cigarette_prepregnancy`: daily number of cigarettes smoked before the pregnancy
 -   `daily_cigarette_trimester_1`: daily number of cigarettes smoked during the 1st trimester of the pregnancy
 -   `daily_cigarette_trimester_2`: daily number of cigarettes smoked during the 2nd trimester of the pregnancy

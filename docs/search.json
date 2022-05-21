@@ -280,15 +280,43 @@
     "text": "This assignment needs to be completed with RMarkdown and submitted as a PDF on Gradescope. Feel free to re-use the template provided for HW1.\nWhen submitting your work on Gradescope, please assign a page for each question."
   },
   {
-    "objectID": "hw/hw-4.html#problem-set-25-points",
-    "href": "hw/hw-4.html#problem-set-25-points",
+    "objectID": "hw/hw-4.html#problem-set-and-applied-exercises-20-points",
+    "href": "hw/hw-4.html#problem-set-and-applied-exercises-20-points",
+    "title": "HW 4 - Multiple linear regression",
+    "section": "Problem set and applied exercises (20 points)",
+    "text": "Problem set and applied exercises (20 points)\n\n8.6 (2 points)\n8.10 (11 points)\n\nRead in the data in R with the following command. How many observations and variables are there?\n\nd <- palmerpenguins::penguins\n\nIdentify the type of each variable.\nFit the model in R using the lm command. You should obtain the same estimates as in the book.\nIdentify the baseline level of the categorical predictors.\nDo parts a-d.\nCompute \\(R^2\\) by hand (do not use glance). Hint: compute SSR and SST.\n\n8.12 (1 points)\n8.14 (3 points)\n\nFit the candidate model in R and compute its adjusted-\\(R^2\\) value. You should obtain the same value as in the book.\n\nd <- palmerpenguins::penguins\n\nDo the exercise.\n\n25.10 (3 points)"
+  },
+  {
+    "objectID": "hw/hw-4.html#lab-exercises---grading-the-professor-15-points",
+    "href": "hw/hw-4.html#lab-exercises---grading-the-professor-15-points",
+    "title": "HW 4 - Multiple linear regression",
+    "section": "Lab exercises - Grading the professor (15 points)",
+    "text": "Lab exercises - Grading the professor (15 points)\nYou can find the lab here\n\nExercise 1 (2 points)\nExercise 2 (2 points)\nExercise 3 (1 points)\n\nSkip exercises 4, 5, 6, 7, 8\n\nExercise 9 (2 points)\nExercise 10 (2 points)\n\nSkip exercises 11, 12\n\nExercise 13 (1 point)\nExercise 14 (5 point)\n\nDrop one variable at a time and peek at the adjusted \\(R^2\\). Removing which variable increases adjusted \\(R^2\\) the most?\nskip the rest of the question.\n\n\nSkip the remaining exercises."
+  },
+  {
+    "objectID": "hw/hw-4.html#function-for-loop-and-cross-validation-in-r-15-points",
+    "href": "hw/hw-4.html#function-for-loop-and-cross-validation-in-r-15-points",
+    "title": "HW 4 - Multiple linear regression",
+    "section": "Function, for-loop and cross-validation in R (15 points)",
+    "text": "Function, for-loop and cross-validation in R (15 points)\n\nFunction – Write a function that compute the average \\(\\bar{x}\\) of numerical variable from scratch (do not use the command mean. Your function should be called my_mean, take a vector of numbers as input and output its average. Show that your function works by applying in on the variable cty of the ggplot2::mpg data. You should obtain the same value of the command mean. (5 points)\nFor-loop – Write a for-loop that computes the first 20 Fibonacci numbers. The first few Fibonacci numbers are \\(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, …\\). These numbers follow the following rule: each is the sum of the previous two; that is,\n\\[\nx_n = x_{n-1}+x_{n-2},\n\\]\nand the first two numbers are \\(x_1=0\\) and \\(x_2=1\\). For instance, the third number is \\(1 = x_3 = x_2 + x_1 = 1 + 0\\) and the seventh number is \\(8 = x_7 = x_6 + x_5 = 5 + 3\\) (5 points).\nCross-validation – Use the code from lecture to implement \\(5\\)-fold cross-validation to compare the simple regression model with gestation_week as the predictor and the full model with all 15 raw predictors. (5 points)"
+  },
+  {
+    "objectID": "hw/hw-5.html",
+    "href": "hw/hw-5.html",
+    "title": "HW 4 - Multiple linear regression",
+    "section": "",
+    "text": "This assignment needs to be completed with RMarkdown and submitted as a PDF on Gradescope. Feel free to re-use the template provided for HW1.\nWhen submitting your work on Gradescope, please assign a page for each question."
+  },
+  {
+    "objectID": "hw/hw-5.html#problem-set-25-points",
+    "href": "hw/hw-5.html#problem-set-25-points",
     "title": "HW 4 - Multiple linear regression",
     "section": "Problem set (25 points)",
     "text": "Problem set (25 points)\n\n8.6 (2 points)\n8.10 (8 points)\n\nfit the model in R\n\nd <- palmerpenguins::penguins\n\nidentify the type of each variable\nidentify the baseline level of the categorical predictors\ndo parts a-d"
   },
   {
-    "objectID": "hw/hw-4.html#lab-exercises---the-human-freedom-index-25-points",
-    "href": "hw/hw-4.html#lab-exercises---the-human-freedom-index-25-points",
+    "objectID": "hw/hw-5.html#lab-exercises---the-human-freedom-index-25-points",
+    "href": "hw/hw-5.html#lab-exercises---the-human-freedom-index-25-points",
     "title": "HW 4 - Multiple linear regression",
     "section": "Lab exercises - the Human Freedom Index (25 points)",
     "text": "Lab exercises - the Human Freedom Index (25 points)\nYou can find the lab here\n\nExercise 1 (2 points)\nExercise 2 (2 points)\nExercise 3 (3 points)\nExercise 4 (2 points)\nExercise 5 (2 points)\nExercise 6 (3 points)\nExercise 7 (2 points)\nExercise 8 (2 points)\n\nSkip exercises 9-10.\n\nPractice 1 (2 points)\nPractice 2 (2 points)\nPractice 3 (1 points) – only evaluate linearity\nPractice 4 (2 points)"
@@ -347,7 +375,7 @@
     "href": "project-prediction.html#data",
     "title": "Prediction project",
     "section": "Data",
-    "text": "Data\nWe will work with the natality data for the U.S. in 2020. The response variable that we are interested in is newborn’s weight. This variable is important to medical professionals since a newborn with a low birth weight is more likely to require additional care. You have access to a random sample of 1,000 observations to construct your prediction model. I have kept a separate set of 20,000 observations to evaluate the prediction model that you select.\nHere is a detailed overview of the variable\n\nnewborn_birth_weight: newborn birth weight in grams (response)\nmonth: birth month (1 = January, …, 12 = December)\nmother_age: age of the mother in years\n\nprenatal_care_starting_month: month in which prenatal care began; if 0, there was no prenatal care\n\ndaily_cigarette_prepregnancy: daily number of cigarettes smoked before the pregnancy\ndaily_cigarette_trimester_1: daily number of cigarettes smoked during the 1st trimester of the pregnancy\ndaily_cigarette_trimester_2: daily number of cigarettes smoked during the 2nd trimester of the pregnancy\ndaily_cigarette_trimester_3: daily number of cigarettes smoked during the 3rd trimester of the pregnancy\nmother_height: height of the mother in inches\nmother_bmi: body mass index of the mother\nmother_weight_prepregnancy: weight of the mother before the pregnancy in pounds\nmother_weight_delivery: weight of the mother at delivery in pounds\nmother_diabetes_gestational: whether the mother had diabetes during the pregnancy\nnewborn_sex: sex of the newborn\ngestation_week: number of gestational weeks\nmother_risk_factors: whether the mother had any risk factor (diabetes, hypertension, previous preterm birth, previous cesarean, infertility treatment used, etc)"
+    "text": "Data\nWe will work with the natality data for the U.S. in 2020. The response variable that we are interested in is newborn’s weight. This variable is important to medical professionals since a newborn with a low birth weight is more likely to require additional care. You have access to a random sample of 1,000 observations to construct your prediction model. I have kept a separate set of 20,000 observations to evaluate the prediction model that you select.\nHere is a detailed overview of the variable\n\nnewborn_birth_weight: newborn birth weight in grams (response)\nmonth: birth month (1 = January, …, 12 = December)\nmother_age: age of the mother in years\nprenatal_care_starting_month: month in which prenatal care began; if 0, there was no prenatal care\ndaily_cigarette_prepregnancy: daily number of cigarettes smoked before the pregnancy\ndaily_cigarette_trimester_1: daily number of cigarettes smoked during the 1st trimester of the pregnancy\ndaily_cigarette_trimester_2: daily number of cigarettes smoked during the 2nd trimester of the pregnancy\ndaily_cigarette_trimester_3: daily number of cigarettes smoked during the 3rd trimester of the pregnancy\nmother_height: height of the mother in inches\nmother_bmi: body mass index of the mother\nmother_weight_prepregnancy: weight of the mother before the pregnancy in pounds\nmother_weight_delivery: weight of the mother at delivery in pounds\nmother_diabetes_gestational: whether the mother had diabetes during the pregnancy\nnewborn_sex: sex of the newborn\ngestation_week: number of gestational weeks\nmother_risk_factors: whether the mother had any risk factor (diabetes, hypertension, previous preterm birth, previous cesarean, infertility treatment used, etc)"
   },
   {
     "objectID": "project-prediction.html#submission",
