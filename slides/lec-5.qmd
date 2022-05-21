@@ -51,3 +51,18 @@ knitr::opts_chunk$set(
 options(scipen = 20)
 ```
 
+# Welcome
+
+## Announcements
+
+-   Find the last person you have not worked with
+-   Prediction project
+    -   teams
+    -   deadlines: May 31 (model and presentation) and June 1 (report)
+
+## Project - reading in the data
+
+```{r, eval = FALSE}
+library(readr)
+d <- read_csv("https://rmorsomme.github.io/website/projects/training_set.csv")
+```

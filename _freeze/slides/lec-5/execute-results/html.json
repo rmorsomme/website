@@ -1,7 +1,7 @@
 {
-  "hash": "164b1bf4201cf118c692eb2b1e970da7",
+  "hash": "9b71b9879207bed1947853769cb14365",
   "result": {
-    "markdown": "---\ntitle: \"Multiple Linear Regression Models\"\nsubtitle: \"STA 101L - Summer I 2022\"\nauthor: \"Raphael Morsomme\"\nfooter:  \"[https://rmorsomme.github.io/website/](https://rmorsomme.github.io/website/)\"\nlogo: \"images/logo.jpg\"\nformat: \n  revealjs: \n    theme: slides.scss\n    multiplex: true\n    transition: fade\n    slide-number: true\n    code-fold: false\n    code-summary: \"Show the code\"\n    self-contained: true\n    scrollable: true\neditor: visual\nexecute:\n  freeze: auto\n  echo: true\neditor_options: \n  chunk_output_type: console\n---\n\n\n",
+    "markdown": "---\ntitle: \"Multiple Linear Regression Models\"\nsubtitle: \"STA 101L - Summer I 2022\"\nauthor: \"Raphael Morsomme\"\nfooter:  \"[https://rmorsomme.github.io/website/](https://rmorsomme.github.io/website/)\"\nlogo: \"images/logo.jpg\"\nformat: \n  revealjs: \n    theme: slides.scss\n    multiplex: true\n    transition: fade\n    slide-number: true\n    code-fold: false\n    code-summary: \"Show the code\"\n    self-contained: true\n    scrollable: true\neditor: visual\nexecute:\n  freeze: auto\n  echo: true\neditor_options: \n  chunk_output_type: console\n---\n\n\n\n# Welcome\n\n## Announcements\n\n-   Find the last person you have not worked with\n-   Prediction project\n    -   teams\n    -   deadlines: May 31 (model and presentation) and June 1 (report)\n\n## Project - reading in the data\n\n::: {.cell layout-align=\"center\"}\n\n```{.r .cell-code}\nlibrary(readr)\nd <- read_csv(\"https://rmorsomme.github.io/website/projects/training_set.csv\")\n```\n:::",
     "supporting": [
       "lec-5_files"
     ],
