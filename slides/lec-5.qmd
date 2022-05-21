@@ -378,12 +378,18 @@ augment(m) %>%
 ## Combining variables -- the `trees` data set {.smaller}
 
 ::: columns
-::: {.column width="50%"}
+::: {.column width="45%"}
 -   Measurements of the diameter, height and volume of timber in 31 felled black cherry trees.
 -   Note that the diameter (in inches) is erroneously labelled `Girth` in the data
 -   The diameter (`Girth`) is measured at 4 ft 6 in above the ground.
 -   Source: Atkinson, A. C. (1985) Plots, Transformations and Regression. Oxford University Press.
 :::
+
+
+::: columns
+::: {.column width="5%"}
+:::
+
 
 ::: {.column width="50%"}
 ![](images/lec-5/tree.jpg)
@@ -434,17 +440,17 @@ $$
 This suggests approximating the volume of a tree with the following model
 
 $$
-\text{Volume} = \beta_1 [ (\dfrac{\text{Girth}}{2})^2 * \text{Height}] = \beta_1X
+\text{Volume} = \beta_1 \left[ \left(\dfrac{\text{Girth}}{2}\right)^2 * \text{Height}\right] = \beta_1X
 $$
 
 where
 
 -   $\beta_1$ is an unknown parameter that we expect to be between $\pi$ (pure cylinder) and $\frac{1}{3}\pi$ (pure cone)
--   $X = [(\dfrac{\text{Girth}}{2})^2 * \text{Height}]$ is our new predictor, which we construct from existing variables.
+-   $X = \left[\left(\dfrac{\text{Girth}}{2}\right)^2 * \text{Height}\right]$ is our new predictor.
 
 ## 
 
-To accomplish this, we simply create a new variable corresponding to $(\dfrac{\text{Girth}}{2})^2 * \text{Height}$.
+To accomplish this, we simply create a new variable corresponding to $\left[\left(\dfrac{\text{Girth}}{2}\right)^2 * \text{Height}\right]$.
 
 Before doing that, we just need to transform `Girth` into feet to ensure that all variables have the same units.
 
@@ -512,12 +518,16 @@ A carefully constructed predictor can do a better job than multiple raw predicto
 ## Special case of data combination: interaction {.smaller}
 
 ::: columns
-::: {.column width="50%"}
+::: {.column width="45%"}
 Suppose you are interested in predicting the average run time (**duration**) of amateur jogging races.
 
 Two variables that impact the duration are (i) the **distance** of the race, and (ii) the **weather**.
 
 For simplicity, we measure the weather as either *good* (nice weather) or *bad* (rain, heat wave, etc).
+:::
+
+::: columns
+::: {.column width="5%"}
 :::
 
 ::: {.column width="50%"}
