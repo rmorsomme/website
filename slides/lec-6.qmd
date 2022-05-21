@@ -48,7 +48,7 @@ options(scipen = 100)
 
 ## Announcements
 
--   
+-   Homework 4 is due on Thursday
 
 ## Recap {.smaller}
 
