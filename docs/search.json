@@ -1617,13 +1617,6 @@
     "text": "Recap\n\nsimple linear regression model\n\n\\[\n    \\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty}\n\\]\n\nresiduals\nleast-square estimates\nparameter interpretation\nmodel comparison with \\(R^2\\)\noutliers\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
-    "objectID": "slides/lec-5.html#announcements",
-    "href": "slides/lec-5.html#announcements",
-    "title": "Multiple Linear Regression Models",
-    "section": "Announcements",
-    "text": "Announcements\n\nFind the last person you have not worked with\nPrediction project\n\nteams\ndeadlines: May 31 (model and presentation) and June 1 (report)\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
-  },
-  {
     "objectID": "slides/lec-6.html#announcements",
     "href": "slides/lec-6.html#announcements",
     "title": "Model Selection",
