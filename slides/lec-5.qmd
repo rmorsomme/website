@@ -1,0 +1,53 @@
+---
+title: "Multiple Linear Regression Models"
+subtitle: "STA 101L - Summer I 2022"
+author: "Raphael Morsomme"
+footer:  "[https://rmorsomme.github.io/website/](https://rmorsomme.github.io/website/)"
+logo: "images/logo.jpg"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    code-fold: false
+    code-summary: "Show the code"
+    self-contained: true
+    scrollable: true
+editor: visual
+execute:
+  freeze: auto
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup}
+#| include: false
+
+# load packages
+library(tidyverse)   # for data wrangling and visualization
+library(tidymodels)  # for modeling
+library(usdata)      # for the county_2019 dataset
+library(openintro)   # for the duke_forest dataset
+library(scales)      # for pretty axis labels
+library(glue)        # for constructing character strings
+library(knitr)       # for pretty tables
+
+library(countdown)
+
+# set default theme and larger font size for ggplot2
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))
+
+knitr::opts_chunk$set(
+  fig.width = 8,
+  fig.asp = 0.618,
+  fig.retina = 3,
+  dpi = 300,
+  out.width = "80%",
+  fig.align = "center"
+)
+
+options(scipen = 20)
+```
+
