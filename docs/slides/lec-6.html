@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="quarto-0.9.151">
+  <meta name="author" content="Raphael Morsomme">
+  <title>STA 101L - Summer I 2022 - Model Selection</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
+
+  <script src="../site_libs/clipboard/clipboard.min.js"></script>
+  <script src="../site_libs/quarto-html/tabby.min.js"></script>
+  <script src="../site_libs/quarto-html/popper.min.js"></script>
+  <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+  <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet">
+  <link id="quarto-text-highlighting-styles" href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.7em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-captioned.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-captioned) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-captioned.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-captioned .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-captioned .callout-caption  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-captioned.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-captioned.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-caption {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-caption {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-caption {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-captioned .callout-body > :last-child,
+  .callout.callout-captioned .callout-body > div > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-captioned .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-captioned) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-caption {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-caption {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-caption {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-caption {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-caption {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <link href="..\site_libs/countdown-0.3.5/countdown.css" rel="stylesheet">
+  <script src="..\site_libs/countdown-0.3.5/countdown.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="center">
+  <h1 class="title">Model Selection</h1>
+  <p class="subtitle">STA 101L - Summer I 2022</p>
+  <p class="author">Raphael Morsomme</p>
+</section>
+
+<section>
+<section id="welcome" class="title-slide slide level1 center">
+<h1>Welcome</h1>
+
+</section>
+<section id="announcements" class="slide level2">
+<h2>Announcements</h2>
+<ul>
+<li></li>
+</ul>
+</section>
+<section id="recap" class="slide level2 smaller">
+<h2>Recap</h2>
+<div>
+<ul>
+<li class="fragment"><p>simple linear regression model <span class="math display">\[
+Y \approx \beta_0 + \beta_1 X
+\]</span></p></li>
+<li class="fragment"><p>multiple linear regression model <span class="math display">\[
+Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots +  + \beta_p X_p
+\]</span></p></li>
+<li class="fragment"><p>categorical predictor</p>
+<ul>
+<li class="fragment"><span class="math inline">\((k-1)\)</span> indicator variables</li>
+</ul></li>
+<li class="fragment"><p>feature engineering</p>
+<ul>
+<li class="fragment">transforming variables</li>
+<li class="fragment">combining variables</li>
+<li class="fragment">interactions</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="outline" class="slide level2">
+<h2>Outline</h2>
+<ul>
+<li>Overfitting</li>
+<li>Limitations of <span class="math inline">\(R^2\)</span></li>
+<li>Model selection through
+<ul>
+<li>criteria</li>
+<li>predictive performance</li>
+<li>stepwise procedure</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="competing-models" class="title-slide slide level1 center">
+<h1>Competing models</h1>
+
+</section>
+<section id="competing-models-1" class="slide level2">
+<h2>Competing models</h2>
+<ul>
+<li><p>Earlier, we saw that adding the predictor <span class="math inline">\(\dfrac{1}{\text{displ}}\)</span> gave a better fit.</p></li>
+<li><p>Let us see if the same idea work with the <code>trees</code> dataset.</p></li>
+</ul>
+</section>
+<section id="a-nonlinear-association" class="slide level2">
+<h2>A nonlinear association?</h2>
+<p>Suppose we want to predict volume using only the variable <code>girth</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>d_tree <span class="ot">&lt;-</span> datasets<span class="sc">::</span>trees</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">ggplot</span>(d_tree) <span class="sc">+</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(Girth, Volume))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lec-6_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"><p>One could argue that there is a slight nonlinear association</p>
+</section>
+<section id="function-to-compute-r2" class="slide level2">
+<h2>Function to compute <span class="math inline">\(R^2\)</span></h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>compute_R2 <span class="ot">&lt;-</span> <span class="cf">function</span>(model){</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  </span>
+<span id="cb2-3"><a href="#cb2-3"></a>  model_glanced <span class="ot">&lt;-</span> <span class="fu">glance</span>(model)</span>
+<span id="cb2-4"><a href="#cb2-4"></a>  R2 <span class="ot">&lt;-</span> model_glanced<span class="sc">$</span>r.squared</span>
+<span id="cb2-5"><a href="#cb2-5"></a>  R2_rounded <span class="ot">&lt;-</span> <span class="fu">round</span>(R2, <span class="dv">3</span>) </span>
+<span id="cb2-6"><a href="#cb2-6"></a>  </span>
+<span id="cb2-7"><a href="#cb2-7"></a>  <span class="fu">return</span>(R2_rounded)</span>
+<span id="cb2-8"><a href="#cb2-8"></a>  </span>
+<span id="cb2-9"><a href="#cb2-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="starting-simple" class="slide level2">
+<h2>Starting simple…</h2>
+<p>We start with the simple model</p>
+<p><span class="math display">\[
+\text{Volume} \approx \beta_0 + \beta_1 \text{girth}
+\]</span></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> Girth, <span class="at">data =</span> d_tree)</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">compute_R2</span>(m1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>[1] 0.935</code></pre>
+</div>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1"><code>R</code> code</a></li><li><a href="#tabset-1-2">Regression line</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>Girth_new <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(d_tree<span class="sc">$</span>Girth), <span class="fu">max</span>(d_tree<span class="sc">$</span>Girth), <span class="at">by =</span> <span class="fl">0.001</span>)</span>
+<span id="cb5-2"><a href="#cb5-2"></a>new_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Girth =</span> Girth_new)</span>
+<span id="cb5-3"><a href="#cb5-3"></a>Volume_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(m1, new_data)</span>
+<span id="cb5-4"><a href="#cb5-4"></a>new_data <span class="ot">&lt;-</span> <span class="fu">mutate</span>(new_data, <span class="at">Volume_pred =</span> Volume_pred)</span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">head</span>(new_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 6 x 2
+  Girth Volume_pred
+  &lt;dbl&gt;       &lt;dbl&gt;
+1  8.3         5.10
+2  8.30        5.11
+3  8.30        5.11
+4  8.30        5.12
+5  8.30        5.12
+6  8.31        5.13</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> d_tree  , <span class="fu">aes</span>(Girth, Volume     )) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">geom_line</span> (<span class="at">data =</span> new_data, <span class="fu">aes</span>(Girth, Volume_pred))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lec-6_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="taking-it-up-a-notch" class="slide level2">
+<h2>…taking it up a notch…</h2>
+<p>To capture the nonlinear association between <code>Girth</code> and <code>Volume</code>, we consider the predictor <span class="math inline">\(\text{Girth}^2\)</span>.</p>
+<p><span class="math display">\[
+\text{Volume} \approx \beta_0 + \beta_1 \text{girth} + \beta_2 \text{girth}^2
+\]</span></p>
+<p>The command to fit this model is</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>d_tree2 <span class="ot">&lt;-</span> <span class="fu">mutate</span>(d_tree, <span class="at">Girth2 =</span> Girth<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb8-2"><a href="#cb8-2"></a>m2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> Girth <span class="sc">+</span> Girth2, <span class="at">data =</span> d_tree2)</span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="fu">compute_R2</span>(m2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>[1] 0.962</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p><span class="math inline">\(R^2\)</span> has increased! It went from 0.935 (model 1) to 0.962.</p>
+</div>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1"><code>R</code> code</a></li><li><a href="#tabset-2-2">Regression line</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>Girth_new <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(d_tree<span class="sc">$</span>Girth), <span class="fu">max</span>(d_tree<span class="sc">$</span>Girth), <span class="at">by =</span> <span class="fl">0.001</span>)</span>
+<span id="cb10-2"><a href="#cb10-2"></a>new_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Girth =</span> Girth_new) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Girth2 =</span> Girth<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb10-3"><a href="#cb10-3"></a>Volume_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(m2, new_data)</span>
+<span id="cb10-4"><a href="#cb10-4"></a>new_data <span class="ot">&lt;-</span> <span class="fu">mutate</span>(new_data, <span class="at">Volume_pred =</span> Volume_pred)</span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="fu">head</span>(new_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 6 x 3
+  Girth Girth2 Volume_pred
+  &lt;dbl&gt;  &lt;dbl&gt;       &lt;dbl&gt;
+1  8.3    68.9        11.0
+2  8.30   68.9        11.0
+3  8.30   68.9        11.0
+4  8.30   68.9        11.0
+5  8.30   69.0        11.0
+6  8.31   69.0        11.0</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> d_tree  , <span class="fu">aes</span>(Girth, Volume     )) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">geom_line</span> (<span class="at">data =</span> new_data, <span class="fu">aes</span>(Girth, Volume_pred))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lec-6_files/figure-revealjs/unnamed-chunk-8-1.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="taking-it-up-another-notch" class="slide level2">
+<h2>…taking it up another notch…</h2>
+<p>Let us consider the predictor <span class="math inline">\(\text{Girth}^3\)</span>.</p>
+<p><span class="math display">\[
+\text{Volume} \approx \beta_0 + \beta_1 \text{girth} + \beta_2 \text{girth}^2 + \beta_3 \text{girth}^3
+\]</span></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>d_tree3 <span class="ot">&lt;-</span> <span class="fu">mutate</span>(d_tree, <span class="at">Girth2 =</span> Girth<span class="sc">^</span><span class="dv">2</span>, <span class="at">Girth3 =</span> Girth<span class="sc">^</span><span class="dv">3</span>)</span>
+<span id="cb13-2"><a href="#cb13-2"></a>m3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> Girth <span class="sc">+</span> Girth2 <span class="sc">+</span> Girth3, <span class="at">data =</span> d_tree3)</span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="fu">compute_R2</span>(m3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>[1] 0.963</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p><span class="math inline">\(R^2\)</span> has increased! It went from 0.962 (model 2) to 0.963.</p>
+</div>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1"><code>R</code> code</a></li><li><a href="#tabset-3-2">Regression line</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>Girth_new <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(d_tree<span class="sc">$</span>Girth), <span class="fu">max</span>(d_tree<span class="sc">$</span>Girth), <span class="at">by =</span> <span class="fl">0.001</span>)</span>
+<span id="cb15-2"><a href="#cb15-2"></a>new_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Girth =</span> Girth_new) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Girth2 =</span> Girth<span class="sc">^</span><span class="dv">2</span>, <span class="at">Girth3 =</span> Girth<span class="sc">^</span><span class="dv">3</span>)</span>
+<span id="cb15-3"><a href="#cb15-3"></a>Volume_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(m3, new_data)</span>
+<span id="cb15-4"><a href="#cb15-4"></a>new_data <span class="ot">&lt;-</span> <span class="fu">mutate</span>(new_data, <span class="at">Volume_pred =</span> Volume_pred)</span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="fu">head</span>(new_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 6 x 4
+  Girth Girth2 Girth3 Volume_pred
+  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;       &lt;dbl&gt;
+1  8.3    68.9   572.        9.88
+2  8.30   68.9   572.        9.88
+3  8.30   68.9   572.        9.89
+4  8.30   68.9   572.        9.89
+5  8.30   69.0   573.        9.89
+6  8.31   69.0   573.        9.90</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-3-2">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> d_tree  , <span class="fu">aes</span>(Girth, Volume     )) <span class="sc">+</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">geom_line</span> (<span class="at">data =</span> new_data, <span class="fu">aes</span>(Girth, Volume_pred))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lec-6_files/figure-revealjs/unnamed-chunk-11-1.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="before-taking-things-to-the-extreme" class="slide level2">
+<h2>…before taking things to the extreme</h2>
+<p>What if we also include the predictors <span class="math inline">\(\text{Girth}^4, \text{Girth}^5, \dots, \text{Girth}^{k}\)</span> for some larger number <span class="math inline">\(k\)</span>?</p>
+<p>The following <code>R</code> code fits such a model with <span class="math inline">\(k=34\)</span>, that is,</p>
+<p><span class="math display">\[
+\text{Volume} \approx \beta_0 + \beta_1 \text{girth} + \beta_2 \text{girth}^2 + \dots + \beta_{29} \text{girth}^{34}
+\]</span></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>m_extreme <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">48</span>, <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> d_tree)</span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">compute_R2</span>(m_extreme)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>[1] 0.98</code></pre>
+</div>
+</div>
+<p><span class="math inline">\(R^2\)</span> has again increased! It went from 0.963 (model 3) to 0.98.</p>
+</section>
+<section id="a-limitation-of-r2" class="slide level2">
+<h2>A limitation of <span class="math inline">\(R^2\)</span></h2>
+<p>As we keep adding predictors, <span class="math inline">\(R^2\)</span> will always increase.</p>
+<ul>
+<li>additional predictors allow the regression line to be more flexible, hence to be closer to the points and reduce the residuals.</li>
+</ul>
+<div class="fragment">
+<p>Is the model <code>m_extreme</code> a good model?</p>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>We want to learn about the relation between <code>Volume</code> and <code>Girth</code> present in the <em>population</em> (not the sample).</p>
+<p>A good model should accurately represent the <em>population</em>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1"><code>R</code> code</a></li><li><a href="#tabset-4-2">Regression line</a></li><li><a href="#tabset-4-3">Regression line (zoomed)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<div class="cell" data-layout-align="center" data-hash="lec-6_cache/revealjs/unnamed-chunk-13_55e139a5fc3b2c342b07f99c3b3629a9">
+<div class="sourceCode" id="cb20" data-code-line-numbers="1|2|3|4|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>Girth_new <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(d_tree<span class="sc">$</span>Girth), <span class="fu">max</span>(d_tree<span class="sc">$</span>Girth), <span class="at">by =</span> <span class="fl">0.00001</span>)</span>
+<span id="cb20-2"><a href="#cb20-2"></a>new_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Girth =</span> Girth_new)</span>
+<span id="cb20-3"><a href="#cb20-3"></a>Volume_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(m_extreme, new_data)</span>
+<span id="cb20-4"><a href="#cb20-4"></a>new_data <span class="ot">&lt;-</span> <span class="fu">mutate</span>(new_data, <span class="at">Volume_pred =</span> Volume_pred)</span>
+<span id="cb20-5"><a href="#cb20-5"></a><span class="fu">head</span>(new_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 6 x 2
+  Girth Volume_pred
+  &lt;dbl&gt;       &lt;dbl&gt;
+1  8.3         10.3
+2  8.30        10.3
+3  8.30        10.3
+4  8.30        10.3
+5  8.30        10.3
+6  8.30        10.3</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-4-2">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> d_tree  , <span class="fu">aes</span>(Girth, Volume     )) <span class="sc">+</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">geom_line</span> (<span class="at">data =</span> new_data, <span class="fu">aes</span>(Girth, Volume_pred))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lec-6_files/figure-revealjs/unnamed-chunk-14-1.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-4-3">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> d_tree  , <span class="fu">aes</span>(Girth, Volume     )) <span class="sc">+</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">geom_line</span> (<span class="at">data =</span> new_data, <span class="fu">aes</span>(Girth, Volume_pred)) <span class="sc">+</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">90</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lec-6_files/figure-revealjs/unnamed-chunk-15-1.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="overfitting" class="slide level2">
+<h2>Overfitting</h2>
+<p>The model <code>m_extreme</code> <strong>overfits</strong> the data.</p>
+<p>A model overfits the data when it fits the sample extremely well but does a poor job for new data.</p>
+<div class="fragment">
+<p>Remember that we want to learn about the <em>population</em>, not the <em>sample</em>!</p>
+</div>
+</section></section>
+<section>
+<section id="model-selection-criteria" class="title-slide slide level1 center">
+<h1>Model selection: criteria</h1>
+
+</section>
+<section id="r2" class="slide level2">
+<h2><span class="math inline">\(R^2\)</span></h2>
+<p>We saw that <span class="math inline">\(R^2\)</span> keeps increasing as we add predictors.</p>
+<p><span class="math display">\[
+R^2_{\text{adj}} = 1 - \dfrac{SSR}{SST}
+\]</span></p>
+<div class="fragment">
+<p><span class="math inline">\(R^2\)</span> can therefore not be used to identify models that overfit the data.</p>
+</div>
+</section>
+<section id="adjusted-r2" class="slide level2">
+<h2>Adjusted-<span class="math inline">\(R^2\)</span></h2>
+<p>The <strong>adjusted-</strong><span class="math inline">\(R^2\)</span> is similar to $R<sup>2</sup>, but penalizes large models:</p>
+<p><span class="math display">\[
+R^2_{\text{adj}} = 1 - \dfrac{SSR}{SST}\dfrac{n-1}{n-p-1}
+\]</span></p>
+<p>where <span class="math inline">\(p\)</span> corresponds to the number of predictors.</p>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<p>The adjusted-<span class="math inline">\(R^2\)</span> therefore balances goodness of fit and parsimony:</p>
+<ul>
+<li>The ratio <span class="math inline">\(\dfrac{SSR}{SST}\)</span> favors model with good fit (like <span class="math inline">\(R^2\)</span>)</li>
+<li>The ratio <span class="math inline">\(\dfrac{n-1}{n-k-1}\)</span> favors parsimonious models</li>
+</ul>
+<div class="fragment">
+<p>The model with the highest adjusted-<span class="math inline">\(R^2\)</span> typically provides a good fit without overfitting.</p>
+</div>
+</section>
+<section id="aic-and-bic" class="slide level2 smaller">
+<h2>AIC and BIC</h2>
+<p>Two other popular criteria that balance goodness of fit (small SSR) and parsimony (small <span class="math inline">\(p\)</span>) are</p>
+<ul>
+<li>the Akaike Information Criterion (AIC)</li>
+<li>the Bayesian Inofrmation Criterion (BIC)</li>
+</ul>
+<div class="fragment">
+<p>The formula for AIC and BIC are respectively</p>
+<p><span class="math display">\[
+AIC = 2p - \text{GoF}, \qquad BIC = \ln(n)p- \text{GoF}
+\]</span></p>
+<p>where <span class="math inline">\(\text{GoF}\)</span> measures the <em>Goodness of fit</em> of the model<sup>1</sup>.</p>
+</div>
+<div class="fragment">
+<p>Unlike the adjusted-<span class="math inline">\(R^2\)</span>, smaller is better for the AIC and BIC.</p>
+</div>
+<div class="fragment">
+<p>Note that the BIC penalizes the number of parameters <span class="math inline">\(p\)</span> more strongly.</p>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn1" role="doc-endnote"><p>The exact formula for <span class="math inline">\(\text{GoF}\)</span> is beyond the scope of this class.</p></li></ol></aside></section>
+<section id="computing-aic-and-bic" class="slide level2">
+<h2>Computing AIC and BIC</h2>
+<p>Easily accessible in <code>R</code> with the command <code>glance</code>. For instance,</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">glance</span>(m1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 1 x 12
+  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC
+      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1     0.935         0.933  4.25      419. 8.64e-19     1  -87.8  182.  186.
+# ... with 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
+</div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">glance</span>(m2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 1 x 12
+  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC
+      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1     0.962         0.959  3.33      350. 1.52e-20     2  -79.7  167.  173.
+# ... with 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
+</div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">glance</span>(m3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 1 x 12
+  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC
+      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1     0.963         0.959  3.35      232. 2.17e-19     3  -79.3  169.  176.
+# ... with 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
+</div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">glance</span>(m_extreme)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 1 x 12
+  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC
+      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1     0.980         0.960  3.30      48.6 5.64e-10    15  -69.7  173.  198.
+# ... with 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>In this case, AIC and BIC favor <code>m2</code>, while the adjusted-<span class="math inline">\(R^2\)</span> (wrongly) favor <code>m_extreme</code>.</p>
+<ul>
+<li>For AIC and BIC, smaller is better.</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="model-selection-predictive-performance" class="title-slide slide level1 center">
+<h1>Model selection: predictive performance</h1>
+
+</section>
+<section id="limitations-of-the-previous-criteria" class="slide level2">
+<h2>Limitations of the previous criteria</h2>
+<p>The adjutsed-<span class="math inline">\(R^2\)</span>, AIC and BIC all try to balance</p>
+<ol type="1">
+<li>goodness of fit</li>
+<li>parsimony</li>
+</ol>
+<div class="fragment">
+<p>They achieve this balance by favoring models with small SSR while penalizing models with larger <span class="math inline">\(p\)</span>.</p>
+</div>
+<div class="fragment">
+<p>But</p>
+<ul>
+<li>The form of the penalty for <span class="math inline">\(p\)</span> is somewhat arbitrary, e.g.&nbsp;AIC versus BIC.</li>
+<li>The adjusted-<span class="math inline">\(R^2\)</span> failed to penalize <code>m_extreme</code>, although it was clearly overfitting the data.</li>
+</ul>
+</div>
+</section>
+<section id="predictive-performance" class="slide level2">
+<h2>Predictive performance</h2>
+<p>Instead of using these criteria, we could look for the model with the best <strong>predictions performance</strong>.</p>
+<p>That is, the model that makes predictions for new observations that are the closest to the true values.</p>
+<div class="fragment">
+<p>We will learn two approaches to accomplish this</p>
+<ul>
+<li>the holdout method</li>
+<li>cross-validation</li>
+</ul>
+</div>
+</section>
+<section id="the-holdout-method" class="slide level2 smaller">
+<h2>The holdout method</h2>
+<p>The holdout method is a simple method to evaluate the predictive performance of a model.</p>
+<div class="fragment">
+<ol type="1">
+<li>Randomly partition your sample into two sets: a <strong>training set</strong> (typically 2/3 of the sample) and a <strong>test set</strong> (the remaining 1/3).</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="2" type="1">
+<li>Fit your model to the training set.</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="3" type="1">
+<li>Evaluate the prediction accuracy of the model on the test set.</li>
+</ol>
+</div>
+<div class="fragment">
+<p>Note that the test set consists of <em>new</em> observations for the model.</p>
+</div>
+<div class="fragment">
+<p><span class="math inline">\(\Rightarrow\)</span> Select the model with the best prediction accuracy in step 3.</p>
+</div>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+
+<img data-src="images/lec-6/holdout.PNG" class="r-stretch quarto-figure-center"><p class="caption">The holdout method.</p><p>Source: <a href="https://openintro-ims.netlify.app/inf-model-mlr.html#comparing-two-models-to-predict-body-mass-in-penguins">IMS</a></p>
+</section>
+<section id="step-1-training-and-test-sets" class="slide level2">
+<h2>Step 1: training and test sets</h2>
+<p>The following <code>R</code> function splits a sample into a training and a test set</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>construct_training_test <span class="ot">&lt;-</span> <span class="cf">function</span>(sample, <span class="at">prop_training =</span> <span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>){</span>
+<span id="cb32-2"><a href="#cb32-2"></a>  </span>
+<span id="cb32-3"><a href="#cb32-3"></a>  n          <span class="ot">&lt;-</span> <span class="fu">nrow</span>(sample)</span>
+<span id="cb32-4"><a href="#cb32-4"></a>  n_training <span class="ot">&lt;-</span> <span class="fu">round</span>(n <span class="sc">*</span> prop_training)</span>
+<span id="cb32-5"><a href="#cb32-5"></a>  </span>
+<span id="cb32-6"><a href="#cb32-6"></a>  sample_random   <span class="ot">&lt;-</span> <span class="fu">slice_sample</span>(sample, <span class="at">n =</span> n)</span>
+<span id="cb32-7"><a href="#cb32-7"></a>  sample_training <span class="ot">&lt;-</span> <span class="fu">slice</span>(sample_random,    <span class="dv">1</span> <span class="sc">:</span> n_training )</span>
+<span id="cb32-8"><a href="#cb32-8"></a>  sample_test     <span class="ot">&lt;-</span> <span class="fu">slice</span>(sample_random, <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">:</span> n_training))</span>
+<span id="cb32-9"><a href="#cb32-9"></a>  </span>
+<span id="cb32-10"><a href="#cb32-10"></a>  <span class="fu">return</span>(<span class="fu">list</span>(</span>
+<span id="cb32-11"><a href="#cb32-11"></a>    <span class="at">training =</span> sample_training, <span class="at">test =</span> sample_test</span>
+<span id="cb32-12"><a href="#cb32-12"></a>    ))</span>
+<span id="cb32-13"><a href="#cb32-13"></a>  </span>
+<span id="cb32-14"><a href="#cb32-14"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Sample</a></li><li><a href="#tabset-5-2">Training set</a></li><li><a href="#tabset-5-3">Test set</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>d_tree <span class="co"># entire sample</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>   Girth Height Volume
+1    8.3     70   10.3
+2    8.6     65   10.3
+3    8.8     63   10.2
+4   10.5     72   16.4
+5   10.7     81   18.8
+6   10.8     83   19.7
+7   11.0     66   15.6
+8   11.0     75   18.2
+9   11.1     80   22.6
+10  11.2     75   19.9
+11  11.3     79   24.2
+12  11.4     76   21.0
+13  11.4     76   21.4
+14  11.7     69   21.3
+15  12.0     75   19.1
+16  12.9     74   22.2
+17  12.9     85   33.8
+18  13.3     86   27.4
+19  13.7     71   25.7
+20  13.8     64   24.9
+21  14.0     78   34.5
+22  14.2     80   31.7
+23  14.5     74   36.3
+24  16.0     72   38.3
+25  16.3     77   42.6
+26  17.3     81   55.4
+27  17.5     82   55.7
+28  17.9     80   58.3
+29  18.0     80   51.5
+30  18.0     80   51.0
+31  20.6     87   77.0</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-5-2">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
+<span id="cb35-2"><a href="#cb35-2"></a>training_test_sets <span class="ot">&lt;-</span> <span class="fu">construct_training_test</span>(d_tree) </span>
+<span id="cb35-3"><a href="#cb35-3"></a>training_set <span class="ot">&lt;-</span> training_test_sets[[<span class="st">"training"</span>]]</span>
+<span id="cb35-4"><a href="#cb35-4"></a>training_set</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>   Girth Height Volume
+1   11.7     69   21.3
+2   16.3     77   42.6
+3   10.5     72   16.4
+4   11.0     66   15.6
+5    8.3     70   10.3
+6    8.6     65   10.3
+7   14.5     74   36.3
+8   11.3     79   24.2
+9   20.6     87   77.0
+10  13.3     86   27.4
+11  13.7     71   25.7
+12  17.5     82   55.7
+13  11.2     75   19.9
+14  18.0     80   51.0
+15  14.0     78   34.5
+16  17.9     80   58.3
+17  11.1     80   22.6
+18  10.7     81   18.8
+19  14.2     80   31.7
+20  12.0     75   19.1
+21  11.4     76   21.0</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-5-3">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>test_set <span class="ot">&lt;-</span> training_test_sets[[<span class="st">"test"</span>]]</span>
+<span id="cb37-2"><a href="#cb37-2"></a>test_set</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>   Girth Height Volume
+1   11.4     76   21.4
+2   12.9     85   33.8
+3   17.3     81   55.4
+4   11.0     75   18.2
+5   10.8     83   19.7
+6   13.8     64   24.9
+7   18.0     80   51.5
+8    8.8     63   10.2
+9   16.0     72   38.3
+10  12.9     74   22.2</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2-fit-the-model-to-the-training-set" class="slide level2">
+<h2>Step 2: fit the model to the training set</h2>
+<p>We simply fit our regression model to the training set.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> Girth, <span class="at">data =</span> training_set)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="step-3-evaluate-the-prediction-accuracy-on-the-test-set" class="slide level2">
+<h2>Step 3: Evaluate the prediction accuracy on the test set</h2>
+<p>To evaluate the prediction accuracy, we start by computing the predictions for the observations in test set.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>Volume_hat <span class="ot">&lt;-</span> <span class="fu">predict</span>(m1, test_set)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>A good model will make predictions that are closed to the true values of the response variable.</p>
+</div>
+</section>
+<section id="sum-of-squared-errors" class="slide level2">
+<h2>Sum of squared errors</h2>
+<p>A good measure of prediction accuracy is the <strong>sum of squared errors</strong> (SSE).</p>
+<p><span class="math display">\[
+SSE = (y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}_2)^2 + \dots + (y_m - \hat{y}_m)^2
+\]</span></p>
+<p>Small SSE is better.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>Volume <span class="ot">&lt;-</span> test_set<span class="sc">$</span>Volume</span>
+<span id="cb41-2"><a href="#cb41-2"></a><span class="fu">sum</span>(Volume <span class="sc">-</span> Volume_hat)<span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>[1] 149.2704</code></pre>
+</div>
+</div>
+</section>
+<section id="mean-squared-error" class="slide level2">
+<h2>Mean squared error</h2>
+<p>In practice, the <strong>(root) mean sum of squared errors</strong> ((R)MSE) is often used.</p>
+<p><span class="math display">\[
+MSE = \dfrac{SSE}{m} = \dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}_2)^2 + \dots + (y_m - \hat{y}_m)^2}{m}
+\]</span></p>
+<p><span class="math display">\[
+RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}_2)^2 + \dots + (y_m - \hat{y}_m)^2}{m}}
+\]</span> Again, small (R)MSE is better.</p>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>SSE <span class="ot">&lt;-</span> <span class="fu">sum</span>((Volume <span class="sc">-</span> Volume_hat)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb43-2"><a href="#cb43-2"></a>m <span class="ot">&lt;-</span> <span class="fu">nrow</span>(test_set)</span>
+<span id="cb43-3"><a href="#cb43-3"></a>MSE <span class="ot">&lt;-</span> SSE <span class="sc">/</span> m</span>
+<span id="cb43-4"><a href="#cb43-4"></a>RMSE <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(MSE)</span>
+<span id="cb43-5"><a href="#cb43-5"></a>SSE; MSE; RMSE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>[1] 225.2413</code></pre>
+</div>
+<div class="cell-output-stdout">
+<pre><code>[1] 22.52413</code></pre>
+</div>
+<div class="cell-output-stdout">
+<pre><code>[1] 4.745959</code></pre>
+</div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>##(R)MSE The advantage of (R)MSE over the SSE is that we can compare models evaluate with test sets of different sizes.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="selecting-a-model" class="slide level2">
+<h2>Selecting a model</h2>
+<p>Apply steps 2 and 3 on different models.</p>
+<ul>
+<li>use the same training and test sets for the different models</li>
+</ul>
+<p>Simply choose the model with the lowest (R)MSE.</p>
+<p>This model has the best <strong>out-of-sample</strong> accuracy.</p>
+</section>
+<section id="function-to-compute-the-rmse" class="slide level2">
+<h2>Function to compute the RMSE</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>compute_RMSE <span class="ot">&lt;-</span> <span class="cf">function</span>(test_set, model){</span>
+<span id="cb47-2"><a href="#cb47-2"></a>  </span>
+<span id="cb47-3"><a href="#cb47-3"></a>  y     <span class="ot">&lt;-</span> test_set<span class="sc">$</span>Volume</span>
+<span id="cb47-4"><a href="#cb47-4"></a>  y_hat <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, test_set)</span>
+<span id="cb47-5"><a href="#cb47-5"></a>  </span>
+<span id="cb47-6"><a href="#cb47-6"></a>  E    <span class="ot">&lt;-</span> y <span class="sc">-</span> y_hat</span>
+<span id="cb47-7"><a href="#cb47-7"></a>  SSE  <span class="ot">&lt;-</span> <span class="fu">sum</span>(E<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb47-8"><a href="#cb47-8"></a>  MSE  <span class="ot">&lt;-</span> <span class="fu">mean</span>(E<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb47-9"><a href="#cb47-9"></a>  RMSE <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(MSE)</span>
+<span id="cb47-10"><a href="#cb47-10"></a>  </span>
+<span id="cb47-11"><a href="#cb47-11"></a>  <span class="fu">return</span>(RMSE)</span>
+<span id="cb47-12"><a href="#cb47-12"></a>  </span>
+<span id="cb47-13"><a href="#cb47-13"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># Step 2</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a>m1  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">1</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb48-3"><a href="#cb48-3"></a>m2  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">2</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb48-4"><a href="#cb48-4"></a>m3  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">3</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb48-5"><a href="#cb48-5"></a>m48 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">48</span>, <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb48-6"><a href="#cb48-6"></a></span>
+<span id="cb48-7"><a href="#cb48-7"></a><span class="co"># Step 3</span></span>
+<span id="cb48-8"><a href="#cb48-8"></a><span class="fu">compute_RMSE</span>(test_set, m1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>[1] 4.745959</code></pre>
+</div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="fu">compute_RMSE</span>(test_set, m2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>[1] 4.16503</code></pre>
+</div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="fu">compute_RMSE</span>(test_set, m3) <span class="co"># best</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>[1] 4.093268</code></pre>
+</div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="fu">compute_RMSE</span>(test_set, m48)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>[1] 13.47366</code></pre>
+</div>
+</div>
+<p>We select <code>m3</code>.</p>
+</section>
+<section id="limitation-of-the-holdout-method" class="slide level2">
+<h2>Limitation of the holdout method</h2>
+<p>The previous analysis was conducted with <code>set.seed(0)</code>.</p>
+<div class="fragment">
+<p>Models <code>m2</code> and <code>m3</code> were pretty close.</p>
+<p>Could we have obtained a different result with a different seed?</p>
+</div>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb56"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="co"># Step 1</span></span>
+<span id="cb56-2"><a href="#cb56-2"></a><span class="fu">set.seed</span>(<span class="dv">1</span>) <span class="co"># new seed</span></span>
+<span id="cb56-3"><a href="#cb56-3"></a>training_test_sets <span class="ot">&lt;-</span> <span class="fu">construct_training_test</span>(d_tree) </span>
+<span id="cb56-4"><a href="#cb56-4"></a>training_set <span class="ot">&lt;-</span> training_test_sets[[<span class="st">"training"</span>]]</span>
+<span id="cb56-5"><a href="#cb56-5"></a>test_set <span class="ot">&lt;-</span> training_test_sets[[<span class="st">"test"</span>]]</span>
+<span id="cb56-6"><a href="#cb56-6"></a></span>
+<span id="cb56-7"><a href="#cb56-7"></a><span class="co"># Step 2</span></span>
+<span id="cb56-8"><a href="#cb56-8"></a>m1  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">1</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb56-9"><a href="#cb56-9"></a>m2  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">2</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb56-10"><a href="#cb56-10"></a>m3  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">3</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb56-11"><a href="#cb56-11"></a>m48 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">48</span>, <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb56-12"><a href="#cb56-12"></a></span>
+<span id="cb56-13"><a href="#cb56-13"></a><span class="co"># Step 3</span></span>
+<span id="cb56-14"><a href="#cb56-14"></a><span class="fu">compute_RMSE</span>(test_set, m1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>[1] 6.589842</code></pre>
+</div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="fu">compute_RMSE</span>(test_set, m2) <span class="co"># best</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>[1] 4.332965</code></pre>
+</div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="fu">compute_RMSE</span>(test_set, m3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>[1] 5.437581</code></pre>
+</div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a><span class="fu">compute_RMSE</span>(test_set, m48)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>[1] 310105724</code></pre>
+</div>
+</div>
+</section>
+<section id="the-test-set-matters" class="slide level2">
+<h2>The test set matters!</h2>
+<p>A drawback of the holdout method is that the test set matters a lot.</p>
+<p>Repeating steps 2 and 3 with a different partition from step 1 may give different results.</p>
+</section>
+<section id="cross-validation" class="slide level2">
+<h2>Cross-validation</h2>
+<p>Cross-validation (CV) is the natural generalization of the holdout method – you simply repeat the holdout method many times.</p>
+<div class="fragment">
+<ol start="0" type="1">
+<li>randomly partition the sample into <span class="math inline">\(k\)</span> folds of equal size. <span class="math inline">\(k\)</span> is typically <span class="math inline">\(5\)</span> or <span class="math inline">\(10\)</span>.</li>
+</ol>
+</div>
+<div class="fragment">
+<p>Repeat the following steps <span class="math inline">\(k\)</span> times</p>
+<ol type="1">
+<li><p>Let fold 1 be the test set and the remaining folds be the training set.</p></li>
+<li><p>Fit the model to the training set (like the holdout method)</p></li>
+<li><p>Evaluate the prediction accuracy of the model on the test set (like the holdout method)</p></li>
+<li><p>Go back to 1, letting the next fold be the test set.</p></li>
+</ol>
+</div>
+<div class="fragment">
+<p><span class="math inline">\(\Rightarrow\)</span> Select the model with the best overall prediction accuracy in step 3.</p>
+</div>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+
+<img data-src="images/lec-6/cv.PNG" class="r-stretch quarto-figure-center"><p class="caption">5-fold cross-validation</p><p>Source: <a href="https://towardsdatascience.com/validating-your-machine-learning-model-25b4c8643fb7">towardsdatascience</a></p>
+</section>
+<section id="step-0" class="slide level2">
+<h2>Step 0</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb64"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
+<span id="cb64-2"><a href="#cb64-2"></a></span>
+<span id="cb64-3"><a href="#cb64-3"></a><span class="co"># Setup</span></span>
+<span id="cb64-4"><a href="#cb64-4"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(d_tree)</span>
+<span id="cb64-5"><a href="#cb64-5"></a>n_folds <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb64-6"><a href="#cb64-6"></a></span>
+<span id="cb64-7"><a href="#cb64-7"></a><span class="co"># Fold assignment</span></span>
+<span id="cb64-8"><a href="#cb64-8"></a>folds <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>n_folds, n <span class="sc">%/%</span> n_folds), <span class="fu">seq_along</span>(n <span class="sc">%%</span> n_folds))</span>
+<span id="cb64-9"><a href="#cb64-9"></a>folds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5
+[26]  6  7  8  9 10  1</code></pre>
+</div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a><span class="co"># Step 1</span></span>
+<span id="cb66-2"><a href="#cb66-2"></a>d_tree_fold <span class="ot">&lt;-</span> d_tree <span class="sc">%&gt;%</span></span>
+<span id="cb66-3"><a href="#cb66-3"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> n) <span class="sc">%&gt;%</span></span>
+<span id="cb66-4"><a href="#cb66-4"></a>  <span class="fu">mutate</span>(<span class="at">fold =</span> folds)</span>
+<span id="cb66-5"><a href="#cb66-5"></a><span class="fu">head</span>(d_tree_fold)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>  Girth Height Volume fold
+1  11.7     69   21.3    1
+2  16.3     77   42.6    2
+3  10.5     72   16.4    3
+4  11.0     66   15.6    4
+5   8.3     70   10.3    5
+6   8.6     65   10.3    6</code></pre>
+</div>
+</div>
+</section>
+<section id="steps-1-4-setup" class="slide level2">
+<h2>Steps 1-4 – Setup</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb68"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a>create_empty_RMSE <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
+<span id="cb68-2"><a href="#cb68-2"></a>  <span class="fu">tibble</span>(</span>
+<span id="cb68-3"><a href="#cb68-3"></a>    <span class="at">rmse_m1  =</span> <span class="fu">numeric</span>(), </span>
+<span id="cb68-4"><a href="#cb68-4"></a>    <span class="at">rmse_m2  =</span> <span class="fu">numeric</span>(), </span>
+<span id="cb68-5"><a href="#cb68-5"></a>    <span class="at">rmse_m3  =</span> <span class="fu">numeric</span>(), </span>
+<span id="cb68-6"><a href="#cb68-6"></a>    <span class="at">rmse_m48 =</span> <span class="fu">numeric</span>()</span>
+<span id="cb68-7"><a href="#cb68-7"></a>  )</span>
+<span id="cb68-8"><a href="#cb68-8"></a>}</span>
+<span id="cb68-9"><a href="#cb68-9"></a></span>
+<span id="cb68-10"><a href="#cb68-10"></a><span class="fu">create_empty_RMSE</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 0 x 4
+# ... with 4 variables: rmse_m1 &lt;dbl&gt;, rmse_m2 &lt;dbl&gt;, rmse_m3 &lt;dbl&gt;,
+#   rmse_m48 &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="steps-1-4" class="slide level2">
+<h2>Steps 1-4</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb70"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a>RMSE <span class="ot">&lt;-</span> <span class="fu">create_empty_RMSE</span>()</span>
+<span id="cb70-2"><a href="#cb70-2"></a></span>
+<span id="cb70-3"><a href="#cb70-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_folds){</span>
+<span id="cb70-4"><a href="#cb70-4"></a>  </span>
+<span id="cb70-5"><a href="#cb70-5"></a>  <span class="co"># Step 1</span></span>
+<span id="cb70-6"><a href="#cb70-6"></a>  training_set <span class="ot">&lt;-</span> <span class="fu">filter</span>(d_tree_fold, fold <span class="sc">!=</span> i)</span>
+<span id="cb70-7"><a href="#cb70-7"></a>  test_set     <span class="ot">&lt;-</span> <span class="fu">filter</span>(d_tree_fold, fold <span class="sc">==</span> i)</span>
+<span id="cb70-8"><a href="#cb70-8"></a>  </span>
+<span id="cb70-9"><a href="#cb70-9"></a>  <span class="co"># Step 2</span></span>
+<span id="cb70-10"><a href="#cb70-10"></a>  m1  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">1</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb70-11"><a href="#cb70-11"></a>  m2  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">2</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb70-12"><a href="#cb70-12"></a>  m3  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">3</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb70-13"><a href="#cb70-13"></a>  m48 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">48</span>, <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb70-14"><a href="#cb70-14"></a>  </span>
+<span id="cb70-15"><a href="#cb70-15"></a>  <span class="co"># Step 3</span></span>
+<span id="cb70-16"><a href="#cb70-16"></a>  rmse_m1  <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m1 )</span>
+<span id="cb70-17"><a href="#cb70-17"></a>  rmse_m2  <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m2 )</span>
+<span id="cb70-18"><a href="#cb70-18"></a>  rmse_m3  <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m3 )</span>
+<span id="cb70-19"><a href="#cb70-19"></a>  rmse_m48 <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m48)</span>
+<span id="cb70-20"><a href="#cb70-20"></a>  </span>
+<span id="cb70-21"><a href="#cb70-21"></a>  RMSE <span class="ot">&lt;-</span> <span class="fu">add_row</span>(RMSE, rmse_m1, rmse_m2, rmse_m3, rmse_m48)</span>
+<span id="cb70-22"><a href="#cb70-22"></a>  </span>
+<span id="cb70-23"><a href="#cb70-23"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="model-selection" class="slide level2">
+<h2>Model selection</h2>
+<p>Which model has the lowest RMSE across all folds?</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb71"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a>RMSE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 10 x 4
+   rmse_m1 rmse_m2 rmse_m3    rmse_m48
+     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+ 1    5.01    3.28    3.40        4.28
+ 2    2.95    2.52    2.77        5.15
+ 3    3.25    4.73    4.61        6.50
+ 4    3.82    4.18    4.44        3.27
+ 5    3.41    2.08    2.03      204.  
+ 6    3.91    2.61    2.71       52.0 
+ 7    5.13    4.08    4.00        3.03
+ 8    3.19    4.01    3.78        2.56
+ 9    7.09    1.89    2.39 10911566.  
+10    5.17    3.47    3.36        3.86</code></pre>
+</div>
+</div>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Group exercise - cross-validation</strong></p>
+</div>
+<div class="callout-content">
+<p>Exercise <a href="https://openintro-ims.netlify.app/inf-model-mlr.html#chp25-exercises">25.9</a> (the book uses SSE for rSSR)</p>
+<p>In part c, replace <em>left</em> and <em>right</em>, by <em>top</em> and <em>bottom</em>.</p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_628924b8" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="average-rmse" class="slide level2">
+<h2>Average RMSE</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb73"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a><span class="fu">summarise_all</span>(RMSE, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 1 x 4
+  rmse_m1 rmse_m2 rmse_m3 rmse_m48
+    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
+1    4.29    3.29    3.35 1091185.</code></pre>
+</div>
+</div>
+<p>Model 2 has slightly better average RMSE</p>
+</section>
+<section id="taking-things-to-the-extreme-loocv" class="slide level2">
+<h2>Taking things to the extreme: LOOCV</h2>
+<p>Set <span class="math inline">\(k=n\)</span>; that is, we use <span class="math inline">\(n\)</span> folds, each of size <span class="math inline">\(1\)</span>. The test sets will therefore consist of a single observation and the training sets of <span class="math inline">\(n-1\)</span> observations.</p>
+</section>
+<section id="loocv" class="slide level2 smaller">
+<h2>LOOCV</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb75"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1"></a>RMSE <span class="ot">&lt;-</span> <span class="fu">create_empty_RMSE</span>()</span>
+<span id="cb75-2"><a href="#cb75-2"></a></span>
+<span id="cb75-3"><a href="#cb75-3"></a><span class="co"># Step 0</span></span>
+<span id="cb75-4"><a href="#cb75-4"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(d_tree)</span>
+<span id="cb75-5"><a href="#cb75-5"></a>d_tree_loocv <span class="ot">&lt;-</span> <span class="fu">mutate</span>(d_tree, <span class="at">folds =</span> <span class="dv">1</span><span class="sc">:</span>n)</span>
+<span id="cb75-6"><a href="#cb75-6"></a></span>
+<span id="cb75-7"><a href="#cb75-7"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n){</span>
+<span id="cb75-8"><a href="#cb75-8"></a>  </span>
+<span id="cb75-9"><a href="#cb75-9"></a>  <span class="co"># Step 1</span></span>
+<span id="cb75-10"><a href="#cb75-10"></a>  training_set <span class="ot">&lt;-</span> <span class="fu">filter</span>(d_tree_loocv, folds <span class="sc">!=</span> i)</span>
+<span id="cb75-11"><a href="#cb75-11"></a>  test_set     <span class="ot">&lt;-</span> <span class="fu">filter</span>(d_tree_loocv, folds <span class="sc">==</span> i)</span>
+<span id="cb75-12"><a href="#cb75-12"></a>  </span>
+<span id="cb75-13"><a href="#cb75-13"></a>  <span class="co"># Step 2</span></span>
+<span id="cb75-14"><a href="#cb75-14"></a>  m1  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">1</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb75-15"><a href="#cb75-15"></a>  m2  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">2</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb75-16"><a href="#cb75-16"></a>  m3  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">3</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb75-17"><a href="#cb75-17"></a>  m48 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">48</span>, <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb75-18"><a href="#cb75-18"></a>  </span>
+<span id="cb75-19"><a href="#cb75-19"></a>  <span class="co"># Step 3</span></span>
+<span id="cb75-20"><a href="#cb75-20"></a>  rmse_m1  <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m1 )</span>
+<span id="cb75-21"><a href="#cb75-21"></a>  rmse_m2  <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m2 )</span>
+<span id="cb75-22"><a href="#cb75-22"></a>  rmse_m3  <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m3 )</span>
+<span id="cb75-23"><a href="#cb75-23"></a>  rmse_m48 <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m48)</span>
+<span id="cb75-24"><a href="#cb75-24"></a>  </span>
+<span id="cb75-25"><a href="#cb75-25"></a>  RMSE <span class="ot">&lt;-</span> <span class="fu">add_row</span>(RMSE, rmse_m1, rmse_m2, rmse_m3, rmse_m48)</span>
+<span id="cb75-26"><a href="#cb75-26"></a>  </span>
+<span id="cb75-27"><a href="#cb75-27"></a>}</span>
+<span id="cb75-28"><a href="#cb75-28"></a></span>
+<span id="cb75-29"><a href="#cb75-29"></a><span class="fu">summarize_all</span>(RMSE, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 1 x 4
+  rmse_m1 rmse_m2 rmse_m3 rmse_m48
+    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
+1    3.64    2.88    2.87 7224032.</code></pre>
+</div>
+</div>
+</section></section>
+<section>
+<section id="model-selection-stepwise-procedures" class="title-slide slide level1 center">
+<h1>Model selection: stepwise procedures</h1>
+<ul>
+<li><p>Not my favorite method,</p></li>
+<li><p>but this is something you should learn because it is widely used.</p></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Akin the “throw cooked spaghetti to the wall and see what sticks” technique.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>There are two types of stepwise selection procedures: (i) forward and (ii) backward.</p>
+</div>
+</section>
+<section id="forward-selection-procedure" class="slide level2 smaller">
+<h2>Forward selection procedure</h2>
+<ol type="1">
+<li><p>Choose a models election criterion that balances model fit (smaller SSR) and parsimony (small <span class="math inline">\(p\)</span>)</p>
+<p><span class="math inline">\(\Rightarrow\)</span> adjusted-<span class="math inline">\(R^2\)</span>, AIC or BIC</p></li>
+</ol>
+<div class="fragment">
+<ol start="2" type="1">
+<li><p>Start with the <strong>empty</strong> model <span class="math inline">\(Y \approx \beta_0\)</span>, i.e.&nbsp;the model with no predictor. This is our <strong>current model</strong></p></li>
+<li><p>Fit all possible models with one additional predictor.</p></li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="4" type="1">
+<li><p>Compute the AIC of each of these models.</p></li>
+<li><p>Identify the model with the smallest AIC. This is our <strong>candidate model</strong>.</p></li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="6" type="1">
+<li>If the AIC of the candidate model is <em>smaller</em> (better) than the AIC of the current model, the candidate model becomes the current model, and we go back to step 3.</li>
+</ol>
+<p>If the AIC of the candidate model is <em>larger</em> than the AIC of the current model (no new model improves on the current one), the procedure stops, and we select the current model.</p>
+</div>
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Group exercise - stepwise selection</strong></p>
+</div>
+<div class="callout-content">
+<p>Exercise <a href="https://openintro-ims.netlify.app/model-mlr.html#chp8-exercises">8.11</a>. In addition, fit the candidate models in <code>R</code> with the command <code>lm</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb77"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1"></a><span class="fu">library</span>(openintro)</span>
+<span id="cb77-2"><a href="#cb77-2"></a>d <span class="ot">&lt;-</span> openintro<span class="sc">::</span>births14</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_628921fd" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="backward-selection-procedure" class="slide level2">
+<h2>Backward selection procedure</h2>
+<p>Similar to forward selection, except that</p>
+<ul>
+<li>we start with the full model,</li>
+<li>remove one predictor at a time</li>
+<li>until removing any predictor makes the model worse.</li>
+</ul>
+</section>
+<section id="section-13" class="slide level2">
+<h2></h2>
+<p>Note that forward and backward selection need not agree; they may select different models.</p>
+<div class="fragment">
+<ul>
+<li>What to do in that case? Nobody knows.</li>
+</ul>
+</div>
+</section>
+<section id="section-14" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Group exercise - stepwise selection</strong></p>
+</div>
+<div class="callout-content">
+<p>Exercise <a href="https://openintro-ims.netlify.app/model-mlr.html#chp8-exercises">8.11</a>. In addition, fit the current and candidate models in <code>R</code> with the command <code>lm</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb78"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1"></a><span class="fu">library</span>(openintro)</span>
+<span id="cb78-2"><a href="#cb78-2"></a>d <span class="ot">&lt;-</span> openintro<span class="sc">::</span>births14</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_628922d1" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section></section>
+<section id="how-to-prevent-overfitting" class="title-slide slide level1 center">
+<h1>How to prevent overfitting?</h1>
+<p>::: tabset-tip ## Parsimony To obtain a parsimonious model</p>
+<ul>
+<li>use your knowledge of the subject to carefuly choose which variables to consider and construct new ones, and</li>
+<li>implement a model selection procedure</li>
+</ul>
+</section>
+
+<section>
+<section id="recap-1" class="title-slide slide level1 center">
+<h1>Recap</h1>
+
+</section>
+<section id="recap-2" class="slide level2">
+<h2>Recap</h2>
+<ul>
+<li>Overfitting</li>
+<li>Limitations of <span class="math inline">\(R^2\)</span></li>
+<li>Model selection through
+<ul>
+<li>criteria</li>
+<li>predictive performance</li>
+<li>stepwise procedure</li>
+</ul></li>
+</ul>
+
+
+<img src="images/logo.jpg" class="slide-logo r-stretch"><div class="footer footer-default">
+<p><a href="https://rmorsomme.github.io/website/">https://rmorsomme.github.io/website/</a></p>
+</div>
+</section></section>
+
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/multiplex/socket.io.js"></script>
+  <script src="../site_libs/revealjs/plugin/multiplex/multiplex.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'multiplex': {"secret":null,"id":"c63a47cc700786cd","url":"https://reveal-multiplex.glitch.me/"},
+'smaller': false,
+
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          // dispatch for htmlwidgets
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for reveal
+        if (window.Reveal) {
+          window.Reveal.addEventListener("slidechanged", function(event) {
+            fireSlideChanged(event.previousSlide, event.currentSlide);
+          });
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        target: function(trigger) {
+          return trigger.previousElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        setTimeout(function() {
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto-reveal',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          let href = ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+        tippyHover(ref, function() {
+          var popup = window.document.createElement('div');
+          cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    });
+    </script>
+    
+
+</body></html>
