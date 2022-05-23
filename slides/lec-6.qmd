@@ -48,7 +48,14 @@ options(scipen = 100)
 
 ## Announcements
 
--   Homework 4 is due on Thursday
+-   Homework 4 is due on **Thursday**.
+-   Homework 5 will be due after the prediction project on Sunday June 5.
+-   Prediction project
+    -   Find your teammate [here](slides/prediction-project-teams.html).
+
+    -   If you have not started yet, start now. You can do already do 80% of the project.
+
+    -   You will have the tools to do the remaining 20% after this lecture.
 
 ## Recap {.smaller}
 
@@ -75,11 +82,11 @@ options(scipen = 100)
 ## Outline
 
 -   Overfitting
--   Limitations of $R^2$
+    -   limitations of $R^2$ for model selection
 -   Model selection through
-    -   criteria
-    -   predictive performance
-    -   stepwise procedure
+    -   overall criteria (adjusted-$R^2$, AIC, BIC)
+    -   predictive performance (holdout method, cross-validation)
+    -   stepwise procedure (forward, backward)
 
 # Competing models
 
@@ -94,7 +101,9 @@ options(scipen = 100)
 Suppose we want to predict volume using only the variable `girth`.
 
 ```{r}
-d_tree <- datasets::trees
+set.seed(0)
+d_tree <- datasets::trees %>% 
+  mutate(Girth = Girth + rnorm(nrow(.), 0, 0.5)) # add some random noise to girth for illustration purpose
 ggplot(d_tree) +
   geom_point(aes(Girth, Volume))
 ```
@@ -236,14 +245,14 @@ ggplot() +
 
 What if we also include the predictors $\text{Girth}^4, \text{Girth}^5, \dots, \text{Girth}^{k}$ for some larger number $k$?
 
-The following `R` code fits such a model with $k=34$, that is,
+The following `R` command fits the model with $k=81$, that is,
 
 $$
-\text{Volume} \approx \beta_0 + \beta_1 \text{girth} + \beta_2 \text{girth}^2 + \dots + \beta_{29} \text{girth}^{34}
+\text{Volume} \approx \beta_0 + \beta_1 \text{girth} + \beta_2 \text{girth}^2 + \dots + \beta_{81} \text{girth}^{81}
 $$
 
 ```{r}
-m_extreme <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = d_tree)
+m_extreme <- lm(Volume ~ poly(Girth, degree = 81, raw = TRUE), data = d_tree)
 compute_R2(m_extreme)
 ```
 
@@ -272,7 +281,7 @@ A good model should accurately represent the *population*.
 
 ```{r, cache=TRUE}
 #| code-line-numbers: "1|2|3|4|"
-Girth_new <- seq(min(d_tree$Girth), max(d_tree$Girth), by = 0.00001)
+Girth_new <- seq(min(d_tree$Girth), max(d_tree$Girth), by = 0.0001)
 new_data <- tibble(Girth = Girth_new)
 Volume_pred <- predict(m_extreme, new_data)
 new_data <- mutate(new_data, Volume_pred = Volume_pred)
@@ -307,14 +316,14 @@ A model overfits the data when it fits the sample extremely well but does a poor
 
 Remember that we want to learn about the *population*, not the *sample*!
 
-# Model selection: criteria
+# Model selection: overall criteria
 
 ## $R^2$
 
 We saw that $R^2$ keeps increasing as we add predictors.
 
 $$
-R^2_{\text{adj}} = 1 - \dfrac{SSR}{SST}
+R^2 = 1 - \dfrac{SSR}{SST}
 $$
 
 . . .
@@ -323,13 +332,13 @@ $R^2$ can therefore not be used to identify models that overfit the data.
 
 ## Adjusted-$R^2$
 
-The **adjusted-**$R^2$ is similar to \$R^2^, but penalizes large models:
+The **adjusted-**$R^2$ is similar to $R^2$, but penalizes large models:
 
 $$
 R^2_{\text{adj}} = 1 - \dfrac{SSR}{SST}\dfrac{n-1}{n-p-1}
 $$
 
-where $p$ corresponds to the number of predictors.
+where $p$ corresponds to the number of predictors (model size).
 
 ## 
 
@@ -342,12 +351,38 @@ The adjusted-$R^2$ therefore balances goodness of fit and parsimony:
 
 The model with the highest adjusted-$R^2$ typically provides a good fit without overfitting.
 
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercise - a function for the adjusted-$R^2$
+
+Consider the function `compute_R2` which takes a model as input and returns its $R^2$ rounded to the 3rd decimal.
+
+```{r}
+compute_R2 <- function(model){
+  
+  model_glanced <- glance(model)
+  R2 <- model_glanced$r.squared
+  R2_rounded <- round(R2, 3) 
+  
+  return(R2_rounded)
+  
+}
+```
+
+Adapt the function so that it computes the adjusted-$R^2$ instead of $R^2$. Give an appropriate name to the new function.
+:::
+
+```{r, echo = F}
+countdown(minutes = 4)
+```
+
 ## AIC and BIC {.smaller}
 
-Two other popular criteria that balance goodness of fit (small SSR) and parsimony (small $p$) are
+Two other popular overall criteria that balance goodness of fit (small SSR) and parsimony (small $p$) are
 
--   the Akaike Information Criterion (AIC)
--   the Bayesian Inofrmation Criterion (BIC)
+-   the Akaike Information Criterion (**AIC**)
+-   the Bayesian Information Criterion (**BIC**)
 
 . . .
 
@@ -357,40 +392,42 @@ $$
 AIC = 2p - \text{GoF}, \qquad BIC = \ln(n)p- \text{GoF}
 $$
 
-where $\text{GoF}$ measures the *Goodness of fit* of the model[^1].
+where $\text{GoF}$ measures the *goodness of fit* of the model[^1].
 
 [^1]: The exact formula for $\text{GoF}$ is beyond the scope of this class.
 
+## AIC and BIC in practice
+
+::: callout-warning
+Unlike the adjusted-$R^2$, **smaller is better for the AIC and BIC**.
+:::
+
 . . .
 
-Unlike the adjusted-$R^2$, smaller is better for the AIC and BIC.
-
-. . .
-
-Note that the BIC penalizes the number of parameters $p$ more strongly.
+::: callout-note
+The BIC penalizes the number of parameters $p$ more strongly than AIC. BIC will therefore tend to favor smaller models (models with fewer parameters).
+:::
 
 ## Computing AIC and BIC
 
-Easily accessible in `R` with the command `glance`. For instance,
+AIC and BIC are easily accessible in `R` with the command `glance`.
 
 ```{r}
-glance(m1)
-glance(m2)
-glance(m3)
-glance(m_extreme)
+rbind(glance(m1), glance(m2), glance(m3), glance(m_extreme))
 ```
 
 . . .
 
-In this case, AIC and BIC favor `m2`, while the adjusted-$R^2$ (wrongly) favor `m_extreme`.
+In this case, BIC favor `m2`, AIC cannot decide between `m2` and `m3` and the adjusted-$R^2$ (wrongly) favors `m_extreme`.
 
--   For AIC and BIC, smaller is better.
+-   For AIC and BIC, smaller is better!
+-   BIC favors more parsimonious models than AIC.
 
 # Model selection: predictive performance
 
 ## Limitations of the previous criteria
 
-The adjutsed-$R^2$, AIC and BIC all try to balance
+The adjusted-$R^2$, AIC and BIC all try to balance
 
 1.  goodness of fit
 2.  parsimony
@@ -401,7 +438,7 @@ They achieve this balance by favoring models with small SSR while penalizing mod
 
 . . .
 
-But
+...But
 
 -   The form of the penalty for $p$ is somewhat arbitrary, e.g. AIC versus BIC.
 -   The adjusted-$R^2$ failed to penalize `m_extreme`, although it was clearly overfitting the data.
@@ -410,7 +447,7 @@ But
 
 Instead of using these criteria, we could look for the model with the best **predictions performance**.
 
-That is, the model that makes predictions for new observations that are the closest to the true values.
+That is, the model that makes predictions for **new** observations that are the closest to the true values.
 
 . . .
 
@@ -528,7 +565,7 @@ Small SSE is better.
 
 ```{r}
 Volume <- test_set$Volume
-sum(Volume - Volume_hat)^2
+sum((Volume - Volume_hat)^2)
 ```
 
 ## Mean squared error
@@ -541,7 +578,7 @@ $$
 
 $$
 RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}_2)^2 + \dots + (y_m - \hat{y}_m)^2}{m}}
-$$ Again, small (R)MSE is better.
+$$ Again, **small (R)MSE is better**.
 
 ## 
 
@@ -554,18 +591,22 @@ SSE; MSE; RMSE
 ```
 
 ::: callout-tip
-##(R)MSE The advantage of (R)MSE over the SSE is that we can compare models evaluate with test sets of different sizes.
+## (R)MSE
+
+The advantage of (R)MSE over the SSE is that we can compare models evaluate with test sets of different sizes.
 :::
 
 ## Selecting a model
 
 Apply steps 2 and 3 on different models.
 
--   use the same training and test sets for the different models
+-   use the same training and test sets from step 1 for the different models
 
-Simply choose the model with the lowest (R)MSE.
+. . .
 
-This model has the best **out-of-sample** accuracy.
+$\Rightarrow$ Choose the model with the lowest (R)MSE!
+
+This model has the best **predictive accuracy**.
 
 ## Function to compute the RMSE
 
@@ -576,7 +617,6 @@ compute_RMSE <- function(test_set, model){
   y_hat <- predict(model, test_set)
   
   E    <- y - y_hat
-  SSE  <- sum(E^2)
   MSE  <- mean(E^2)
   RMSE <- sqrt(MSE)
   
@@ -637,15 +677,86 @@ compute_RMSE(test_set, m48)
 
 ## The test set matters!
 
+With `set.seed(1)`, the holdout method indicates that `m2` is the best model.
+
+-   Our previous best model `m3` is even to be worse than `m1`!
+
+. . .
+
 A drawback of the holdout method is that the test set matters a lot.
 
-Repeating steps 2 and 3 with a different partition from step 1 may give different results.
+-   Repeating steps 2 and 3 with a different partition from step 1 may give different results.
+
+## 
+::: {.callout-tip icon="false"}
+## Group exercise - limitation of the holdout method
+
+Copy and paste the following code in your `R` session. Try a few different seed numbers. Which models usually have the smallest RMSE? Is `m1` ever the best model?
+
+You can ignore the warning message.
+
+```{r, eval=FALSE}
+# Setup
+set.seed(0) # do not change this seed number
+d_tree <- datasets::trees %>% mutate(Girth = Girth + rnorm(nrow(.), 0, 0.5))
+compute_RMSE <- function(test_set, model){
+  
+  y     <- test_set$Volume
+  y_hat <- predict(model, test_set)
+  
+  E    <- y - y_hat
+  MSE  <- mean(E^2)
+  RMSE <- sqrt(MSE)
+  
+  return(RMSE)
+  
+}
+construct_training_test <- function(sample, prop_training = 2/3){
+  
+  n          <- nrow(sample)
+  n_training <- round(n * prop_training)
+  
+  sample_random   <- slice_sample(sample, n = n)
+  sample_training <- slice(sample_random,    1 : n_training )
+  sample_test     <- slice(sample_random, - (1 : n_training))
+  
+  return(list(
+    training = sample_training, test = sample_test
+    ))
+  
+}
+
+# Step 1
+set.seed(2) # try a few different seed numbers
+training_test_sets <- construct_training_test(d_tree) 
+training_set <- training_test_sets[["training"]]
+test_set <- training_test_sets[["test"]]
+
+# Step 2
+m1  <- lm(Volume ~ poly(Girth, degree = 1 , raw = TRUE), data = training_set)
+m2  <- lm(Volume ~ poly(Girth, degree = 2 , raw = TRUE), data = training_set)
+m3  <- lm(Volume ~ poly(Girth, degree = 3 , raw = TRUE), data = training_set)
+m48 <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = training_set)
+
+# Step 3
+compute_RMSE(test_set, m1)
+compute_RMSE(test_set, m2)
+compute_RMSE(test_set, m3)
+compute_RMSE(test_set, m48)
+```
+
+:::
+```{r, echo = F}
+countdown(minutes = 5)
+```
 
 ## Cross-validation
 
-Cross-validation (CV) is the natural generalization of the holdout method -- you simply repeat the holdout method many times.
+Cross-validation (CV) is the natural generalization of the holdout method:
 
-. . .
+-   simply repeat the holdout method many times.
+
+\##
 
 0.  randomly partition the sample into $k$ folds of equal size. $k$ is typically $5$ or $10$.
 
@@ -703,7 +814,8 @@ create_empty_RMSE <- function(){
   )
 }
 
-create_empty_RMSE()
+RMSE <- create_empty_RMSE()
+RMSE
 ```
 
 ## Steps 1-4
@@ -729,12 +841,12 @@ for(i in 1:n_folds){
   rmse_m3  <- compute_RMSE(test_set, m3 )
   rmse_m48 <- compute_RMSE(test_set, m48)
   
-  RMSE <- add_row(RMSE, rmse_m1, rmse_m2, rmse_m3, rmse_m48)
+  RMSE <- RMSE %>% add_row(rmse_m1, rmse_m2, rmse_m3, rmse_m48)
   
 }
 ```
 
-## Model selection
+## Model selection with RMSE
 
 Which model has the lowest RMSE across all folds?
 
@@ -742,12 +854,19 @@ Which model has the lowest RMSE across all folds?
 RMSE
 ```
 
+```{r}
+summarise_all(RMSE, mean)
+summarise_all(RMSE, sum) # what the book uses
+```
+
+`m2` has slightly better average RMSE.
+
 ## 
 
 ::: {.callout-tip icon="false"}
 ## Group exercise - cross-validation
 
-Exercise [25.9](https://openintro-ims.netlify.app/inf-model-mlr.html#chp25-exercises) (the book uses SSE for rSSR)
+Exercise [25.9](https://openintro-ims.netlify.app/inf-model-mlr.html#chp25-exercises), [25.11](https://openintro-ims.netlify.app/inf-model-mlr.html#chp25-exercises), [25.12](https://openintro-ims.netlify.app/inf-model-mlr.html#chp25-exercises)
 
 In part c, replace *left* and *right*, by *top* and *bottom*.
 :::
@@ -756,17 +875,23 @@ In part c, replace *left* and *right*, by *top* and *bottom*.
 countdown(minutes = 3)
 ```
 
-## Average RMSE
+## Short podcast on cross-validation
 
-```{r}
-summarise_all(RMSE, mean)
-```
+Still confused by corss-validation?
 
-Model 2 has slightly better average RMSE
+Check out this [podcast](https://dataskeptic.com/blog/episodes/2014/cross-validation) to hear more about this important topic.
+
+. . .
+
+These other two podcasts on [muliple linear regression](https://dataskeptic.com/blog/episodes/2016/multiple-regression) and [$R^2$](https://dataskeptic.com/blog/episodes/2016/r-squared) are also excellent.
 
 ## Taking things to the extreme: LOOCV
 
-Set $k=n$; that is, we use $n$ folds, each of size $1$. The test sets will therefore consist of a single observation and the training sets of $n-1$ observations.
+Set $k=n$.
+
+-   Use $n$ folds, each of size $1$.
+
+-   The test sets will therefore consist of a single observation and the training sets of the remaining $n-1$ observations.
 
 ## LOOCV {.smaller}
 
@@ -775,7 +900,7 @@ RMSE <- create_empty_RMSE()
 
 # Step 0
 n <- nrow(d_tree)
-d_tree_loocv <- mutate(d_tree, folds = 1:n)
+d_tree_loocv <- mutate(d_tree, folds = 1 : n) # every observation belongs to a different fold 
 
 for(i in 1:n){
   
@@ -814,11 +939,11 @@ summarize_all(RMSE, mean)
 
 . . .
 
-There are two types of stepwise selection procedures: (i) forward and (ii) backward.
+Two types of stepwise procedures: (i) **forward selection** and (ii) **backward elimination**.
 
-## Forward selection procedure {.smaller}
+## Forward selection {.smaller}
 
-1.  Choose a models election criterion that balances model fit (smaller SSR) and parsimony (small $p$)
+1.  Choose an overall criterion that balances model fit (smaller SSR) and parsimony (small $p$)
 
     $\Rightarrow$ adjusted-$R^2$, AIC or BIC
 
@@ -836,16 +961,16 @@ There are two types of stepwise selection procedures: (i) forward and (ii) backw
 
 . . .
 
-6.  If the AIC of the candidate model is *smaller* (better) than the AIC of the current model, the candidate model becomes the current model, and we go back to step 3.
+6.  If the AIC of the candidate model is *smaller* (better) than the AIC of the current model, the candidate model becomes the current model. Go back to step 3.
 
-If the AIC of the candidate model is *larger* than the AIC of the current model (no new model improves on the current one), the procedure stops, and we select the current model.
+    If the AIC of the candidate model is *larger* than the AIC of the current model (no new model improves on the current one), the procedure stops, and we select the current model.
 
 ## 
 
 ::: {.callout-tip icon="false"}
-## Group exercise - stepwise selection
+## Group exercise - forward selection
 
-Exercise [8.11](https://openintro-ims.netlify.app/model-mlr.html#chp8-exercises). In addition, fit the candidate models in `R` with the command `lm`.
+Exercise [8.13](https://openintro-ims.netlify.app/model-mlr.html#chp8-exercises). In addition, fit the candidate model (a single model) in `R` with the command `lm`.
 
 ```{r}
 library(openintro)
@@ -857,26 +982,18 @@ d <- openintro::births14
 countdown(minutes = 5)
 ```
 
-## Backward selection procedure
+## Backward elimination
 
 Similar to forward selection, except that
 
--   we start with the full model,
--   remove one predictor at a time
+-   Start with the full model.
+-   Remove one predictor at a time,
 -   until removing any predictor makes the model worse.
 
 ## 
 
-Note that forward and backward selection need not agree; they may select different models.
-
-. . .
-
--   What to do in that case? Nobody knows.
-
-## 
-
 ::: {.callout-tip icon="false"}
-## Group exercise - stepwise selection
+## Group exercise - backward elimination
 
 Exercise [8.11](https://openintro-ims.netlify.app/model-mlr.html#chp8-exercises). In addition, fit the current and candidate models in `R` with the command `lm`.
 
@@ -890,21 +1007,36 @@ d <- openintro::births14
 countdown(minutes = 5)
 ```
 
-# How to prevent overfitting?
+## 
 
-::: tabset-tip \## Parsimony To obtain a parsimonious model
+Note that forward and backward stepwise selection need not agree; they may select different models.
 
--   use your knowledge of the subject to carefuly choose which variables to consider and construct new ones, and
--   implement a model selection procedure
+. . .
+
+-   What to do in that case? Nobody knows.
+
+## How to prevent overfitting?
+
+::: tabset-tip
+## Parsimony
+
+To obtain a parsimonious model
+
+-   use your knowledge of the subject to **carefuly** choose which variables to consider and construct new ones, and
+-   implement a model selection procedure.
+:::
 
 # Recap
 
 ## Recap
 
 -   Overfitting
--   Limitations of $R^2$
+    -   limitations of $R^2$ for model selection
 -   Model selection through
-    -   criteria
-    -   predictive performance
-    -   stepwise procedure
--   You are ready for the prediction project!
+    -   overall criteria (adjusted-$R^2$, AIC, BIC)
+
+    -   predictive performance (holdout method, cross-validation)
+
+    -   stepwise procedure (forward, backward)
+
+You are now ready for the prediction project!
