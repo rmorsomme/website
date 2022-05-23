@@ -2258,7 +2258,7 @@
     "href": "slides/lec-7.html#recap",
     "title": "Logistic Regression",
     "section": "Recap",
-    "text": "Recap\n\n\nOverfitting\nLimitations of \\(R^2\\)\nModel selection through\n\ncriteria\npredictive performance\nstepwise procedure"
+    "text": "Recap\n\n\nOverfitting\nLimitations of \\(R^2\\)\nModel selection through\n\ncriteria (adjusted \\(R^2\\), AIC, BIC)\npredictive performance (holdout method, cross-validation)\nstepwise procedure (forward, backward)"
   },
   {
     "objectID": "slides/lec-7.html#outline",
@@ -2272,7 +2272,7 @@
     "href": "slides/lec-7.html#example-stanford-university-heart-transplant-study",
     "title": "Logistic Regression",
     "section": "Example – Stanford University Heart Transplant Study",
-    "text": "Example – Stanford University Heart Transplant Study\n\n\n\nGoals: determining whether an experimental heart transplant program increased lifespan\nobservations: patients\nresponse: survival after 5 years (binary)\npredictors: age, prior surgery, waiting time for transplant."
+    "text": "Example – Stanford University Heart Transplant Study\n\n\n\nGoals: to determine whether an experimental heart transplant program increases lifespan\nobservations: patients\nresponse: survival after 5 years (binary)\npredictors: age, prior surgery, waiting time for transplant."
   },
   {
     "objectID": "slides/lec-7.html#data",
@@ -2293,7 +2293,7 @@
     "href": "slides/lec-7.html#binary-response",
     "title": "Logistic Regression",
     "section": "Binary response",
-    "text": "Binary response\n\nTechnical problem: levels of the response are labels\n\ncan’t fit a regression model to words, only to numbers\n\nuse mutate to create a binary variable (either 0 or 1)\n\n\nd <- d %>%\n  mutate(is_alive = ifelse(survived == \"alive\", 1, 0))"
+    "text": "Binary response\n\nTechnical problem: levels of the response are labels\n\ncan’t fit a regression model to words, only to numbers\n\nuse mutate to create a binary variable (either 0 or 1)\n\n\nd <- d %>%\n  mutate(is_alive = if_else(survived == \"alive\", 1, 0))"
   },
   {
     "objectID": "slides/lec-7.html#section",
@@ -2307,7 +2307,7 @@
     "href": "slides/lec-7.html#linear-regression",
     "title": "Logistic Regression",
     "section": "Linear regression?",
-    "text": "Linear regression?\nLet us fit a linear regression model\n\\[\n\\text{is_alive} \\approx \\beta_0 + \\beta_1 age\n\\]\n\nm_lrm <- lm(is_alive ~ age, data = d)"
+    "text": "Linear regression?\nIntuitively, age should be a good predictor of survival.\n\nLet us fit a linear regression model\n\\[\n\\text{is_alive} \\approx \\beta_0 + \\beta_1 age\n\\]\n\nm_lrm <- lm(is_alive ~ age, data = d)"
   },
   {
     "objectID": "slides/lec-7.html#section-1",
@@ -2335,28 +2335,28 @@
     "href": "slides/lec-7.html#glms",
     "title": "Logistic Regression",
     "section": "GLMs",
-    "text": "GLMs\nGeneralized linear models (GLMs) extend the linear regression framework to settings where the response variable is restricted\n\nlogistic regression with binary response\nmultinomial regression with categorical response\nordinal regression with ordinal response\npoisson regression with count response, e.g. number of children\ngamma regression with positive response variable.\nbeta regression with continuous response between 0 and 1 (percentage)\n\nTo learn more about logistic regression and other GLMs, consider taking STA310."
+    "text": "GLMs\nGeneralized linear models (GLMs – STA310) extend the linear regression framework to settings where the response variable is restricted:\n\nlogistic regression with binary response\nmultinomial regression with nominal (categorical) response, e.g. voting in multiparty systems\nordinal regression with ordinal (categorical) response, e.g. course letter grade\npoisson regression with count response, e.g. number of children\ngamma regression with positive response variable, e.g. mpg, insurance costs\nbeta regression with continuous response between 0 and 1 (percentage), e.g. cancer rates in counties"
   },
   {
     "objectID": "slides/lec-7.html#logistic-regression-1",
     "href": "slides/lec-7.html#logistic-regression-1",
     "title": "Logistic Regression",
     "section": "Logistic regression",
-    "text": "Logistic regression\n\nExample of a generalized linear model\nFocus on implementation and interpretation, not math\nPotentially useful for inference project\nLogistic regression: model the probability of success \\(p\\)."
+    "text": "Logistic regression\n\nExample of a generalized linear model\nFocus on implementation and interpretation\nUseful for inference project\n\nLogistic regression: model the probability of success \\(p\\) based on a set of predictors \\(X_1, \\dots, X_p\\)."
   },
   {
     "objectID": "slides/lec-7.html#binary-outcome-and-probability",
     "href": "slides/lec-7.html#binary-outcome-and-probability",
     "title": "Logistic Regression",
     "section": "Binary outcome and probability",
-    "text": "Binary outcome and probability\nLet \\(Y_i\\) denote the response of person \\(i\\).\nThe logistic regression model assumes that\n\\[\nY_i =\n\\begin{cases}\n1, \\text{with probability } p_i, \\\\\n0, \\text{with probability } 1-p_i.\n\\end{cases}\n\\]\nwhere \\(p_i\\) denotes the probability of success of person \\(i\\)."
+    "text": "Binary outcome and probability\nLet \\(Y_i\\) denote the response of person \\(i\\).\nThe logistic regression model assumes that\n\\[\nY_i =\n\\begin{cases}\n1 (\\text{success}), \\text{with probability } p_i, \\\\\n0 (\\text{failure}), \\text{with probability } 1-p_i.\n\\end{cases}\n\\]\nwhere \\(p_i\\) denotes the probability of success of person \\(i\\)."
   },
   {
     "objectID": "slides/lec-7.html#modeling-a-probability-with-linear-regression",
     "href": "slides/lec-7.html#modeling-a-probability-with-linear-regression",
     "title": "Logistic Regression",
     "section": "Modeling a probability with linear regression?",
-    "text": "Modeling a probability with linear regression?\nWe saw that we cannot model \\(p\\) with a lrm (\\(p \\approx \\beta_0 + \\beta\\text{age}\\))\n\n\\(0\\le p_i\\le1\\)\nbut \\(\\beta_0 + \\beta_1 \\text{age}\\) may be negative or larger than 1\n\nin fact, the regression line extends infinitely in either either direction\n\n\n\n\n\n\n\n\nWarning\n\n\nBinary variables should not be modeled using linear regression!"
+    "text": "Modeling a probability with linear regression?\nWe saw that we cannot model \\(p\\) with a lrm (\\(p \\approx \\beta_0 + \\beta_1\\text{age}\\))\n\n\\(0\\le p_i\\le1\\)\n…but \\(\\beta_0 + \\beta_1 \\text{age}\\) may be negative or larger than 1!\n\nin fact, the regression line extends infinitely in either either direction\n\n\n\n\n\n\n\n\nWarning\n\n\nBinary variables should not be modeled using linear regression!"
   },
   {
     "objectID": "slides/lec-7.html#modeling-a-probability-with-logistic-regression",
@@ -2391,7 +2391,7 @@
     "href": "slides/lec-7.html#modeling-mu",
     "title": "Logistic Regression",
     "section": "Modeling \\(\\mu\\)",
-    "text": "Modeling \\(\\mu\\)\nWe can now simply model \\(\\mu\\) using a simple lrm with age\n\\[\n\\mu \\approx \\beta_0 + \\beta_1 \\text{age}\n\\]\nand then transform \\(\\mu\\) into \\(p\\) with the logit transformation\n\\[\np = \\dfrac{e^{\\mu}}{1+e^{\\mu}}\n\\]\n\nPutting everything together gives the logistic regression model\n\\[\np = \\dfrac{e^{\\mu}}{1+e^{\\mu}} \\approx \\dfrac{e^{\\beta_0 + \\beta_1 \\text{age}}}{1+e^{\\beta_0 + \\beta_1 \\text{age}}}\n\\]"
+    "text": "Modeling \\(\\mu\\)\nWe can now simply model \\(\\mu\\) using a simple lrm with age\n\\[\n\\mu \\approx \\beta_0 + \\beta_1 \\text{age}\n\\]\nand then transform \\(\\mu\\) into \\(p\\) using the logit transformation\n\\[\np = \\dfrac{e^{\\mu}}{1+e^{\\mu}}\n\\]\n\nPutting everything together gives the logistic regression model\n\\[\np = \\dfrac{e^{\\mu}}{1+e^{\\mu}} \\approx \\dfrac{e^{\\beta_0 + \\beta_1 \\text{age}}}{1+e^{\\beta_0 + \\beta_1 \\text{age}}}\n\\]"
   },
   {
     "objectID": "slides/lec-7.html#section-5",
@@ -2412,21 +2412,21 @@
     "href": "slides/lec-7.html#glm",
     "title": "Logistic Regression",
     "section": "glm",
-    "text": "glm\nWe fit a logistic regression model in R with the command glm (not lm)\n\nm <- glm(\n  is_alive ~ age, \n  family = binomial, # logistic regression\n  data = d\n  )\nm\n\n\nCall:  glm(formula = is_alive ~ age, family = binomial, data = d)\n\nCoefficients:\n(Intercept)          age  \n    1.56438     -0.05847  \n\nDegrees of Freedom: 102 Total (i.e. Null);  101 Residual\nNull Deviance:      120.5 \nResidual Deviance: 113.7    AIC: 117.7"
+    "text": "glm\nWe fit a logistic regression model in R with the command glm (not lm)\n\nm <- glm( # glm, not lm\n  is_alive ~ age, \n  family = binomial, # logistic regression\n  data = d\n  )\nm\n\n\nCall:  glm(formula = is_alive ~ age, family = binomial, data = d)\n\nCoefficients:\n(Intercept)          age  \n    1.56438     -0.05847  \n\nDegrees of Freedom: 102 Total (i.e. Null);  101 Residual\nNull Deviance:      120.5 \nResidual Deviance: 113.7    AIC: 117.7"
   },
   {
     "objectID": "slides/lec-7.html#r-output",
     "href": "slides/lec-7.html#r-output",
     "title": "Logistic Regression",
     "section": "R output",
-    "text": "R output\nFor the moment simply focus on\n\ncoefficient estimates\nAIC (no (adjusted-) \\(R^2\\)) for model selection\n\ncan also use cross-validation, using the proportion of correct predictions instead of the RMSE.\n\nwe will learn about p-values in the 2nd half of the course.\n\n\n\n\n\n\n\nglm not lm\n\n\nTo fit a logistic regression model in R, use the command glm (not lm) with the argument family set to binomial."
+    "text": "R output\nFor the moment simply focus on\n\ncoefficient estimates\nAIC (no (adjusted-) \\(R^2\\))\n\nmodel selection\n\n\n\n\n\n\n\n\nglm not lm\n\n\nTo fit a logistic regression model in R, use the command glm (not lm) with the argument family set to binomial."
   },
   {
     "objectID": "slides/lec-7.html#interpretation",
     "href": "slides/lec-7.html#interpretation",
     "title": "Logistic Regression",
     "section": "Interpretation",
-    "text": "Interpretation\nA positive coefficient estimate indicate that a higher value of the predictor is associated with a higher probability of success; and vice-versa for a smaller value.\nIn our case, the coefficient estimate for age (-0.0584664) is negative, so the model suggests that older participants have a smaller probability of surviving."
+    "text": "Interpretation\nA positive coefficient estimate indicates that a higher value of the predictor is associated with a higher probability of success; and vice-versa for a smaller value.\nIn our case, the coefficient estimate for age (-0.058) is negative, so the model indicates that older participants have a smaller probability of surviving."
   },
   {
     "objectID": "slides/lec-7.html#visualizing-the-regression-curve",
@@ -2468,14 +2468,14 @@
     "href": "slides/lec-7.html#implementation-in-r",
     "title": "Logistic Regression",
     "section": "Implementation in R",
-    "text": "Implementation in R\n\nm2 <- glm(\n  is_alive ~ age + transplant, \n  family = binomial, # logistic regression\n  data = d\n  )\nm2\n\n\nCall:  glm(formula = is_alive ~ age + transplant, family = binomial, \n    data = d)\n\nCoefficients:\n        (Intercept)                  age  transplanttreatment  \n            0.97311             -0.07632              1.82316  \n\nDegrees of Freedom: 102 Total (i.e. Null);  100 Residual\nNull Deviance:      120.5 \nResidual Deviance: 103.9    AIC: 109.9"
+    "text": "Implementation in R\n\nm2 <- glm( # glm, not lm\n  is_alive ~ age + transplant, \n  family = binomial, # logistic regression\n  data = d\n  )\nm2\n\n\nCall:  glm(formula = is_alive ~ age + transplant, family = binomial, \n    data = d)\n\nCoefficients:\n        (Intercept)                  age  transplanttreatment  \n            0.97311             -0.07632              1.82316  \n\nDegrees of Freedom: 102 Total (i.e. Null);  100 Residual\nNull Deviance:      120.5 \nResidual Deviance: 103.9    AIC: 109.9"
   },
   {
     "objectID": "slides/lec-7.html#section-8",
     "href": "slides/lec-7.html#section-8",
     "title": "Logistic Regression",
     "section": "",
-    "text": "Group exercise - Interpretation\n\n\nWhat is the interpretation of the coefficient estimates for age and transplant?\n\n\n\n\n\n\n03:00"
+    "text": "Group exercise - interpretation\n\n\nWhat is the interpretation of the coefficient estimates for age and transplant?\n\n\n\n\n\n\n02:00"
   },
   {
     "objectID": "slides/lec-7.html#artificial-data",
@@ -2503,6 +2503,55 @@
     "href": "slides/lec-7.html#confusion-matrix",
     "title": "Logistic Regression",
     "section": "Confusion matrix",
-    "text": "Confusion matrix\n\nd_augm %>%\n  select(is_alive, is_alive_hat) %>%\n  table()\n\n        is_alive_hat\nis_alive  0  1\n       0 71  4\n       1 20  8\n\n\nThe model got \\(71+8=79\\) observations right out of \\(71+4+20+8=103\\); so its in-sample accuracy is\n\\[\n\\frac{79}{103} \\approx 77\\%\n\\]\nTo compute out-of-sample accuracy, simply use the holdout method or cross-validation.\n\n\n\nhttps://rmorsomme.github.io/website/"
+    "text": "Confusion matrix\n\nd_augm %>%\n  select(is_alive, is_alive_hat) %>%\n  table()\n\n        is_alive_hat\nis_alive  0  1\n       0 71  4\n       1 20  8\n\n\nThe model got \\(71+8=79\\) observations right out of \\(71+4+20+8=103\\); so its accuracy is\n\\[\n\\frac{79}{103} \\approx 77\\%\n\\]\nTo estimate the accuracy on new data, simply use the holdout method or cross-validation."
+  },
+  {
+    "objectID": "slides/lec-7.html#section-9",
+    "href": "slides/lec-7.html#section-9",
+    "title": "Logistic Regression",
+    "section": "",
+    "text": "Group exercise - interpretation\n\n\nExercise 9.5\n\n\n\n\n\n\n04:00"
+  },
+  {
+    "objectID": "slides/lec-7.html#section-10",
+    "href": "slides/lec-7.html#section-10",
+    "title": "Logistic Regression",
+    "section": "",
+    "text": "Group exercise - implementation\n\n\nExercise 9.3: simply fit the two models in R. The possum data used in this exercise can be found in the openintro R package. You should obtain the same coefficient estimates as in the book, though with an opposite sign.\nSave these models; you will need them later!\nYou do not need to do parts a and b.\n\n\n\n\n\n\n04:00"
+  },
+  {
+    "objectID": "slides/lec-7.html#model-selection",
+    "href": "slides/lec-7.html#model-selection",
+    "title": "Logistic Regression",
+    "section": "Model selection",
+    "text": "Model selection\n\nAIC, BIC (not adjusted-\\(R^2\\))\nthe holdout method using accuracy (not RMSE)\ncross-validation using accuracy (not RMSE)\n\n\n\n\n\n\n\nAIC and BIC\n\n\nWith AIC and BIC, lower is better!\n\\[\nAIC = 2p - \\text{Goodness of fit}, \\qquad BIC = p\\ln(n) - \\text{Goodness of fit}\n\\]"
+  },
+  {
+    "objectID": "slides/lec-7.html#section-11",
+    "href": "slides/lec-7.html#section-11",
+    "title": "Logistic Regression",
+    "section": "",
+    "text": "Group exercise - model comparison with AIC\n\n\nGo back to the two models you fitted for exercise 9.3. What are their respective AIC? Which model is better?\nSimilarly, compare the AIC of the simple (age) and multiple (age + implant) logistic regression models for the heart transplant study. Which model is better?"
+  },
+  {
+    "objectID": "slides/lec-7.html#section-12",
+    "href": "slides/lec-7.html#section-12",
+    "title": "Logistic Regression",
+    "section": "",
+    "text": "Group exercise - stepwise model selection with AIC\n\n\nExercise 9.7\n\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+  },
+  {
+    "objectID": "slides/lec-7.html#multiple-logistic-regression",
+    "href": "slides/lec-7.html#multiple-logistic-regression",
+    "title": "Logistic Regression",
+    "section": "Multiple logistic regression",
+    "text": "Multiple logistic regression\nBased on what we know about multiple lrm, it is easy to extend the previous model to multiple logistic regression:\n\\[\np = \\dfrac{e^{\\mu}}{1+e^{\\mu}}\n\\]\nwhere\n\\[\n\\mu \\approx \\beta_0 + \\beta_1 X_1 + \\dots + \\beta_p X_p\n\\]"
+  },
+  {
+    "objectID": "slides/lec-7.html#prediction",
+    "href": "slides/lec-7.html#prediction",
+    "title": "Logistic Regression",
+    "section": "Prediction",
+    "text": "Prediction\n\nd_augm <- augment(m2, type.predict = \"response\") %>%\n  mutate(is_alive_hat = if_else(.fitted < 0.5, 0, 1)) %>%\n  select(is_alive, age, transplant, .fitted, is_alive_hat)\nd_augm\n\n# A tibble: 103 x 5\n   is_alive   age transplant .fitted is_alive_hat\n      <dbl> <int> <fct>        <dbl>        <dbl>\n 1        0    53 control     0.0443            0\n 2        0    43 control     0.0904            0\n 3        0    52 control     0.0476            0\n 4        0    52 control     0.0476            0\n 5        0    54 control     0.0412            0\n 6        0    36 control     0.145             0\n 7        0    47 control     0.0682            0\n 8        0    41 treatment   0.418             0\n 9        0    47 control     0.0682            0\n10        0    51 control     0.0512            0\n# ... with 93 more rows"
   }
 ]

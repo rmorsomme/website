@@ -411,9 +411,9 @@
 <li class="fragment"><p>Limitations of <span class="math inline">\(R^2\)</span></p></li>
 <li class="fragment"><p>Model selection through</p>
 <ul>
-<li class="fragment"><p>criteria</p></li>
-<li class="fragment"><p>predictive performance</p></li>
-<li class="fragment"><p>stepwise procedure</p></li>
+<li class="fragment"><p>criteria (adjusted <span class="math inline">\(R^2\)</span>, AIC, BIC)</p></li>
+<li class="fragment"><p>predictive performance (holdout method, cross-validation)</p></li>
+<li class="fragment"><p>stepwise procedure (forward, backward)</p></li>
 </ul></li>
 </ul>
 </div>
@@ -438,7 +438,7 @@
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
-<li><p>Goals: determining whether an experimental heart transplant program increased lifespan</p></li>
+<li><p>Goals: to determine whether an experimental heart transplant program increases lifespan</p></li>
 <li><p>observations: patients</p></li>
 <li><p>response: survival after 5 years (binary)</p></li>
 <li><p>predictors: age, prior surgery, waiting time for transplant.</p></li>
@@ -526,7 +526,7 @@
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>d <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">mutate</span>(<span class="at">is_alive =</span> <span class="fu">ifelse</span>(survived <span class="sc">==</span> <span class="st">"alive"</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">mutate</span>(<span class="at">is_alive =</span> <span class="fu">if_else</span>(survived <span class="sc">==</span> <span class="st">"alive"</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="section" class="slide level2">
@@ -539,12 +539,15 @@
 <img data-src="lec-7_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
 <section id="linear-regression" class="slide level2">
 <h2>Linear regression?</h2>
+<p>Intuitively, <code>age</code> should be a good predictor of survival.</p>
+<div class="fragment">
 <p>Let us fit a linear regression model</p>
 <p><span class="math display">\[
 \text{is_alive} \approx \beta_0 + \beta_1 age
 \]</span></p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>m_lrm <span class="ot">&lt;-</span> <span class="fu">lm</span>(is_alive <span class="sc">~</span> age, <span class="at">data =</span> d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="section-1" class="slide level2">
@@ -577,7 +580,7 @@
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628ae512" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_628b9f7f" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -590,16 +593,15 @@
 </section>
 <section id="glms" class="slide level2 smaller">
 <h2>GLMs</h2>
-<p>Generalized linear models (GLMs) extend the linear regression framework to settings where the response variable is restricted</p>
+<p><strong>Generalized linear models</strong> (GLMs – STA310) extend the linear regression framework to settings where the response variable is <em>restricted</em>:</p>
 <ul>
 <li><p><strong>logistic regression</strong> with binary response</p></li>
-<li><p>multinomial regression with categorical response</p></li>
-<li><p>ordinal regression with ordinal response</p></li>
+<li><p>multinomial regression with nominal (categorical) response, e.g.&nbsp;voting in multiparty systems</p></li>
+<li><p>ordinal regression with ordinal (categorical) response, e.g.&nbsp;course letter grade</p></li>
 <li><p>poisson regression with count response, e.g.&nbsp;number of children</p></li>
-<li><p>gamma regression with positive response variable.</p></li>
-<li><p>beta regression with continuous response between 0 and 1 (percentage)</p></li>
+<li><p>gamma regression with positive response variable, e.g.&nbsp;mpg, insurance costs</p></li>
+<li><p>beta regression with continuous response between 0 and 1 (percentage), e.g.&nbsp;cancer rates in counties</p></li>
 </ul>
-<p>To learn more about logistic regression and other GLMs, consider taking STA310.</p>
 </section></section>
 <section>
 <section id="logistic-regression" class="title-slide slide level1 center">
@@ -610,10 +612,10 @@
 <h2>Logistic regression</h2>
 <ul>
 <li><p>Example of a <em>generalized linear model</em></p></li>
-<li><p>Focus on implementation and interpretation, not math</p></li>
-<li><p>Potentially useful for inference project</p></li>
-<li><p><strong>Logistic regression</strong>: model the probability of success <span class="math inline">\(p\)</span>.</p></li>
+<li><p>Focus on implementation and interpretation</p></li>
+<li><p>Useful for inference project</p></li>
 </ul>
+<p><strong>Logistic regression</strong>: model the probability of success <span class="math inline">\(p\)</span> based on a set of predictors <span class="math inline">\(X_1, \dots, X_p\)</span>.</p>
 </section>
 <section id="binary-outcome-and-probability" class="slide level2">
 <h2>Binary outcome and probability</h2>
@@ -622,18 +624,18 @@
 <p><span class="math display">\[
 Y_i =
 \begin{cases}
-1, \text{with probability } p_i, \\
-0, \text{with probability } 1-p_i.
+1 (\text{success}), \text{with probability } p_i, \\
+0 (\text{failure}), \text{with probability } 1-p_i.
 \end{cases}
 \]</span></p>
 <p>where <span class="math inline">\(p_i\)</span> denotes the probability of success of person <span class="math inline">\(i\)</span>.</p>
 </section>
 <section id="modeling-a-probability-with-linear-regression" class="slide level2 smaller">
 <h2>Modeling a probability with linear regression?</h2>
-<p>We saw that we cannot model <span class="math inline">\(p\)</span> with a lrm (<span class="math inline">\(p \approx \beta_0 + \beta\text{age}\)</span>)</p>
+<p>We saw that we cannot model <span class="math inline">\(p\)</span> with a lrm (<span class="math inline">\(p \approx \beta_0 + \beta_1\text{age}\)</span>)</p>
 <ul>
 <li><p><span class="math inline">\(0\le p_i\le1\)</span></p></li>
-<li><p>but <span class="math inline">\(\beta_0 + \beta_1 \text{age}\)</span> may be negative or larger than 1</p>
+<li><p>…but <span class="math inline">\(\beta_0 + \beta_1 \text{age}\)</span> may be negative or larger than 1!</p>
 <ul>
 <li>in fact, the regression line extends infinitely in either either direction</li>
 </ul></li>
@@ -647,7 +649,7 @@ Y_i =
 <p><strong>Warning</strong></p>
 </div>
 <div class="callout-content">
-<p>Binary variables should not be modeled using linear regression!</p>
+<p>Binary variables should <strong>not</strong> be modeled using linear regression!</p>
 </div>
 </div>
 </div>
@@ -710,7 +712,7 @@ p = \dfrac{e^{\mu}}{1+e^{\mu}}
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628ae378" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_628b9c5f" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -722,7 +724,7 @@ p = \dfrac{e^{\mu}}{1+e^{\mu}}
 <p><span class="math display">\[
 \mu \approx \beta_0 + \beta_1 \text{age}
 \]</span></p>
-<p>and then transform <span class="math inline">\(\mu\)</span> into <span class="math inline">\(p\)</span> with the logit transformation</p>
+<p>and then transform <span class="math inline">\(\mu\)</span> into <span class="math inline">\(p\)</span> using the logit transformation</p>
 <p><span class="math display">\[
 p = \dfrac{e^{\mu}}{1+e^{\mu}}
 \]</span></p>
@@ -767,7 +769,7 @@ p = \dfrac{e^{\mu}}{1+e^{\mu}} \approx \dfrac{e^{\beta_0 + \beta_1 \text{age}}}{
 <h2><code>glm</code></h2>
 <p>We fit a logistic regression model in <code>R</code> with the command <code>glm</code> (not <code>lm</code>)</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>m <span class="ot">&lt;-</span> <span class="fu">glm</span>(</span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>m <span class="ot">&lt;-</span> <span class="fu">glm</span>( <span class="co"># glm, not lm</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a>  is_alive <span class="sc">~</span> age, </span>
 <span id="cb10-3"><a href="#cb10-3"></a>  <span class="at">family =</span> binomial, <span class="co"># logistic regression</span></span>
 <span id="cb10-4"><a href="#cb10-4"></a>  <span class="at">data =</span> d</span>
@@ -792,11 +794,10 @@ Residual Deviance: 113.7    AIC: 117.7</code></pre>
 <p>For the moment simply focus on</p>
 <ul>
 <li><p>coefficient estimates</p></li>
-<li><p>AIC (no (adjusted-) <span class="math inline">\(R^2\)</span>) for model selection</p>
+<li><p>AIC (no (adjusted-) <span class="math inline">\(R^2\)</span>)</p>
 <ul>
-<li>can also use cross-validation, using the proportion of correct predictions instead of the RMSE.</li>
+<li>model selection</li>
 </ul></li>
-<li><p>we will learn about p-values in the 2nd half of the course.</p></li>
 </ul>
 <div class="callout callout-warning callout-captioned callout-style-default">
 <div class="callout-body">
@@ -814,8 +815,8 @@ Residual Deviance: 113.7    AIC: 117.7</code></pre>
 </section>
 <section id="interpretation" class="slide level2">
 <h2>Interpretation</h2>
-<p>A positive coefficient estimate indicate that a higher value of the predictor is associated with a higher probability of success; and vice-versa for a smaller value.</p>
-<p>In our case, the coefficient estimate for age (-0.0584664) is negative, so the model suggests that older participants have a smaller probability of surviving.</p>
+<p>A positive coefficient estimate indicates that a higher value of the predictor is associated with a higher probability of success; and vice-versa for a smaller value.</p>
+<p>In our case, the coefficient estimate for age (-0.058) is negative, so the model indicates that older participants have a smaller probability of surviving.</p>
 </section>
 <section id="visualizing-the-regression-curve" class="slide level2">
 <h2>Visualizing the regression curve</h2>
@@ -886,9 +887,9 @@ Residual Deviance: 113.7    AIC: 117.7</code></pre>
 
 </div>
 <img data-src="lec-7_files/figure-revealjs/unnamed-chunk-15-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
-<section id="multivariate-logistic-regression" class="slide level2">
-<h2>Multivariate logistic regression</h2>
-<p>Based on what we know about multiple lrm, it is easy to extend the previous model to multiple logistic regression:</p>
+<section id="multiple-logistic-regression" class="slide level2">
+<h2>Multiple logistic regression</h2>
+<p>Based on what we know about multiple lrm, it is easy to extend the previous model to <strong>multiple</strong> logistic regression:</p>
 <p><span class="math display">\[
 p = \dfrac{e^{\mu}}{1+e^{\mu}}
 \]</span></p>
@@ -900,7 +901,7 @@ p = \dfrac{e^{\mu}}{1+e^{\mu}}
 <section id="implementation-in-r" class="slide level2">
 <h2>Implementation in <code>R</code></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">glm</span>(</span>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">glm</span>( <span class="co"># glm, not lm</span></span>
 <span id="cb18-2"><a href="#cb18-2"></a>  is_alive <span class="sc">~</span> age <span class="sc">+</span> transplant, </span>
 <span id="cb18-3"><a href="#cb18-3"></a>  <span class="at">family =</span> binomial, <span class="co"># logistic regression</span></span>
 <span id="cb18-4"><a href="#cb18-4"></a>  <span class="at">data =</span> d</span>
@@ -926,7 +927,7 @@ Residual Deviance: 103.9    AIC: 109.9</code></pre>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
-<p><strong>Group exercise - Interpretation</strong></p>
+<p><strong>Group exercise - interpretation</strong></p>
 </div>
 <div class="callout-content">
 <p>What is the interpretation of the coefficient estimates for <code>age</code> and <code>transplant</code>?</p>
@@ -935,8 +936,50 @@ Residual Deviance: 103.9    AIC: 109.9</code></pre>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628ae453" style="right:0;bottom:0;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<div class="countdown" id="timer_628b9c01" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Group exercise - interpretation</strong></p>
+</div>
+<div class="callout-content">
+<p>Exercise <a href="https://openintro-ims.netlify.app/model-logistic.html#chp09-exercises">9.5</a></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_628b9e4b" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Group exercise - implementation</strong></p>
+</div>
+<div class="callout-content">
+<p>Exercise <a href="https://openintro-ims.netlify.app/model-logistic.html#chp09-exercises">9.3</a>: simply fit the two models in <code>R</code>. The <code>possum</code> data used in this exercise can be found in the <code>openintro</code> <code>R</code> package. You should obtain the same coefficient estimates as in the book, though with an opposite sign.</p>
+<p>Save these models; you will need them later!</p>
+<p><strong>You do not need to do parts a and b.</strong></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_628b9e61" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -979,9 +1022,9 @@ Residual Deviance: 103.9    AIC: 109.9</code></pre>
 <span id="cb22-5"><a href="#cb22-5"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> p_hat, <span class="at">col =</span> transplant))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="lec-7_files/figure-revealjs/unnamed-chunk-19-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
-<section id="in-sample-prediction" class="slide level2">
-<h2>In-sample prediction</h2>
+<img data-src="lec-7_files/figure-revealjs/unnamed-chunk-21-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
+<section id="prediction" class="slide level2">
+<h2>Prediction</h2>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>d_augm <span class="ot">&lt;-</span> <span class="fu">augment</span>(m2, <span class="at">type.predict =</span> <span class="st">"response"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">mutate</span>(<span class="at">is_alive_hat =</span> <span class="fu">if_else</span>(.fitted <span class="sc">&lt;</span> <span class="fl">0.5</span>, <span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">%&gt;%</span></span>
@@ -1018,11 +1061,62 @@ is_alive  0  1
        1 20  8</code></pre>
 </div>
 </div>
-<p>The model got <span class="math inline">\(71+8=79\)</span> observations right out of <span class="math inline">\(71+4+20+8=103\)</span>; so its in-sample accuracy is</p>
+<p>The model got <span class="math inline">\(71+8=79\)</span> observations right out of <span class="math inline">\(71+4+20+8=103\)</span>; so its <strong>accuracy</strong> is</p>
 <p><span class="math display">\[
 \frac{79}{103} \approx 77\%
 \]</span></p>
-<p>To compute out-of-sample accuracy, simply use the holdout method or cross-validation.</p>
+<p>To estimate the accuracy on new data, simply use the holdout method or cross-validation.</p>
+</section>
+<section id="model-selection" class="slide level2">
+<h2>Model selection</h2>
+<ul>
+<li><p>AIC, BIC (not adjusted-<span class="math inline">\(R^2\)</span>)</p></li>
+<li><p>the holdout method using <em>accuracy</em> (not RMSE)</p></li>
+<li><p>cross-validation using <em>accuracy</em> (not RMSE)</p></li>
+</ul>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>AIC and BIC</strong></p>
+</div>
+<div class="callout-content">
+<p>With AIC and BIC, lower is better!</p>
+<p><span class="math display">\[
+AIC = 2p - \text{Goodness of fit}, \qquad BIC = p\ln(n) - \text{Goodness of fit}
+\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Group exercise - model comparison with AIC</strong></p>
+</div>
+<div class="callout-content">
+<p>Go back to the two models you fitted for exercise <a href="https://openintro-ims.netlify.app/model-logistic.html#chp09-exercises">9.3</a>. What are their respective AIC? Which model is better?</p>
+<p>Similarly, compare the AIC of the simple (<code>age</code>) and multiple (<code>age + implant</code>) logistic regression models for the heart transplant study. Which model is better?</p>
+</div>
+</div>
+</div>
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Group exercise - stepwise model selection with AIC</strong></p>
+</div>
+<div class="callout-content">
+<p>Exercise <a href="https://openintro-ims.netlify.app/model-logistic.html#chp09-exercises">9.7</a></p>
+</div>
+</div>
+</div>
 
 
 <img src="images/logo.jpg" class="slide-logo r-stretch"><div class="footer footer-default">

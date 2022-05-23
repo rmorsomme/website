@@ -60,11 +60,11 @@ options(scipen = 100)
 
 -   Model selection through
 
-    -   criteria
+    -   criteria (adjusted $R^2$, AIC, BIC)
 
-    -   predictive performance
+    -   predictive performance (holdout method, cross-validation)
 
-    -   stepwise procedure
+    -   stepwise procedure (forward, backward)
 :::
 
 ## Outline
@@ -81,7 +81,7 @@ options(scipen = 100)
 
 ::: columns
 ::: {.column width="60%"}
--   Goals: determining whether an experimental heart transplant program increased lifespan
+-   Goals: to determine whether an experimental heart transplant program increases lifespan
 
 -   observations: patients
 
@@ -136,7 +136,7 @@ d %>%
 
 ```{r}
 d <- d %>%
-  mutate(is_alive = ifelse(survived == "alive", 1, 0))
+  mutate(is_alive = if_else(survived == "alive", 1, 0))
 ```
 
 ## 
@@ -147,6 +147,10 @@ ggplot(data = d, aes(x = age, y = is_alive)) +
 ```
 
 ## Linear regression?
+
+Intuitively, `age` should be a good predictor of survival.
+
+. . .
 
 Let us fit a linear regression model
 
@@ -176,6 +180,7 @@ ggplot(data = d, aes(x = age, y = is_alive)) +
 
 ::: {.callout-tip icon="false"}
 ## Group exercise - limitation of linear regression
+
 What is the prediction for a 70-year-old patient?
 :::
 
@@ -187,21 +192,20 @@ countdown(minutes = 2)
 
 ## GLMs {.smaller}
 
-Generalized linear models (GLMs) extend the linear regression framework to settings where the response variable is restricted
+**Generalized linear models** (GLMs -- STA310) extend the linear regression framework to settings where the response variable is *restricted*:
 
 -   **logistic regression** with binary response
 
--   multinomial regression with categorical response
+-   multinomial regression with nominal (categorical) response, e.g. voting in multiparty systems
 
--   ordinal regression with ordinal response
+-   ordinal regression with ordinal (categorical) response, e.g. course letter grade 
 
 -   poisson regression with count response, e.g. number of children
 
--   gamma regression with positive response variable.
+-   gamma regression with positive response variable, e.g. mpg, insurance costs
 
--   beta regression with continuous response between 0 and 1 (percentage)
+-   beta regression with continuous response between 0 and 1 (percentage), e.g. cancer rates in counties
 
-To learn more about logistic regression and other GLMs, consider taking STA310.
 
 # Logistic regression
 
@@ -209,11 +213,11 @@ To learn more about logistic regression and other GLMs, consider taking STA310.
 
 -   Example of a *generalized linear model*
 
--   Focus on implementation and interpretation, not math
+-   Focus on implementation and interpretation
 
--   Potentially useful for inference project
+-   Useful for inference project
 
--   **Logistic regression**: model the probability of success $p$.
+**Logistic regression**: model the probability of success $p$ based on a set of predictors $X_1, \dots, X_p$.
 
 ## Binary outcome and probability
 
@@ -224,8 +228,8 @@ The logistic regression model assumes that
 $$
 Y_i = 
 \begin{cases}
-1, \text{with probability } p_i, \\
-0, \text{with probability } 1-p_i.
+1 (\text{success}), \text{with probability } p_i, \\
+0 (\text{failure}), \text{with probability } 1-p_i.
 \end{cases}
 $$
 
@@ -233,15 +237,16 @@ where $p_i$ denotes the probability of success of person $i$.
 
 ## Modeling a probability with linear regression? {.smaller}
 
-We saw that we cannot model $p$ with a lrm ($p \approx \beta_0 + \beta\text{age}$)
+We saw that we cannot model $p$ with a lrm ($p \approx \beta_0 + \beta_1\text{age}$)
 
 -   $0\le p_i\le1$
 
--   but $\beta_0 + \beta_1 \text{age}$ may be negative or larger than 1
+-   ...but $\beta_0 + \beta_1 \text{age}$ may be negative or larger than 1!
+
     -   in fact, the regression line extends infinitely in either either direction
 
 ::: callout-warning
-Binary variables should not be modeled using linear regression!
+Binary variables should **not** be modeled using linear regression!
 :::
 
 ## Modeling a probability with logistic regression
@@ -264,7 +269,7 @@ $$
 
 where $\mu$ can be any number.
 
-##
+## 
 
 ```{r}
 tibble(mu = seq(-7.5, 7.5, by = 0.01)) %>%
@@ -277,7 +282,7 @@ Note that $\dfrac{e^{\mu}}{1+e^{\mu}}$ is bounded between 0 and 1.
 
 Moreover, larger values of $\mu$ will give larger $p$, and smaller $\mu$ will give smaller $p$.
 
-##
+## 
 
 ::: callout-tip
 ## Group exercise - logit transformation
@@ -311,7 +316,7 @@ $$
 \mu \approx \beta_0 + \beta_1 \text{age}
 $$
 
-and then transform $\mu$ into $p$ with the logit transformation
+and then transform $\mu$ into $p$ using the logit transformation
 
 $$
 p = \dfrac{e^{\mu}}{1+e^{\mu}}
@@ -325,10 +330,11 @@ $$
 p = \dfrac{e^{\mu}}{1+e^{\mu}} \approx \dfrac{e^{\beta_0 + \beta_1 \text{age}}}{1+e^{\beta_0 + \beta_1 \text{age}}}
 $$
 
-##
+## 
 
 ::: callout-note
-## Alternative formulation 
+## Alternative formulation
+
 The formulation
 
 $$
@@ -342,7 +348,11 @@ is also widely to describe the logistic regression model. This formulation is eq
 
 How are the unknown coefficients $\beta_0$ and $\beta_1$ estimated?
 
-When we fit a logistic regression model with `R`, the so-called *maximum likelihood estimates* (MLE^[MLE are extremely popular in statistics.]) are returned.
+When we fit a logistic regression model with `R`, the so-called *maximum likelihood estimates* (MLE[^1]) are returned.
+
+. . .
+
+[^1]: MLE are extremely popular in statistics.
 
 # Implementation
 
@@ -351,7 +361,7 @@ When we fit a logistic regression model with `R`, the so-called *maximum likelih
 We fit a logistic regression model in `R` with the command `glm` (not `lm`)
 
 ```{r}
-m <- glm(
+m <- glm( # glm, not lm
   is_alive ~ age, 
   family = binomial, # logistic regression
   data = d
@@ -365,11 +375,8 @@ For the moment simply focus on
 
 -   coefficient estimates
 
--   AIC (no (adjusted-) $R^2$) for model selection
-
-    -   can also use cross-validation, using the proportion of correct predictions instead of the RMSE.
-
--   we will learn about p-values in the 2nd half of the course.
+-   AIC (no (adjusted-) $R^2$)
+    -   model selection
 
 ::: callout-warning
 ## glm not lm
@@ -379,9 +386,9 @@ To fit a logistic regression model in `R`, use the command `glm` (not `lm`) with
 
 ## Interpretation
 
-A positive coefficient estimate indicate that a higher value of the predictor is associated with a higher probability of success; and vice-versa for a smaller value.
+A positive coefficient estimate indicates that a higher value of the predictor is associated with a higher probability of success; and vice-versa for a smaller value.
 
-In our case, the coefficient estimate for age (`r m$coefficients[2]`) is negative, so the model suggests that older participants have a smaller probability of surviving.
+In our case, the coefficient estimate for age (`r signif(m$coefficients[2], 2)`) is negative, so the model indicates that older participants have a smaller probability of surviving.
 
 ## Visualizing the regression curve
 
@@ -390,7 +397,7 @@ d_augm <- augment(m, type.predict = "response")
 d_augm # .fitted is equivalent to p_hat 
 ```
 
-##
+## 
 
 ```{r}
 d_augm %>%
@@ -410,7 +417,7 @@ d_artificial <- mutate(d_artificial, p_hat = p_hat)
 d_artificial
 ```
 
-##
+## 
 
 ```{r}
 ggplot(mapping = aes(x = age)) +
@@ -418,9 +425,9 @@ ggplot(mapping = aes(x = age)) +
   geom_line(data = d_artificial, aes(y = p_hat), col = "maroon", size = 2)
 ```
 
-## Multivariate logistic regression
+## Multiple logistic regression
 
-Based on what we know about multiple lrm, it is easy to extend the previous model to multiple logistic regression:
+Based on what we know about multiple lrm, it is easy to extend the previous model to **multiple** logistic regression:
 
 $$
 p = \dfrac{e^{\mu}}{1+e^{\mu}}
@@ -435,7 +442,7 @@ $$
 ## Implementation in `R`
 
 ```{r}
-m2 <- glm(
+m2 <- glm( # glm, not lm
   is_alive ~ age + transplant, 
   family = binomial, # logistic regression
   data = d
@@ -444,12 +451,45 @@ m2
 ```
 
 ## 
+
 ::: {.callout-tip icon="false"}
-## Group exercise - Interpretation
+## Group exercise - interpretation
+
 What is the interpretation of the coefficient estimates for `age` and `transplant`?
+
 :::
+
 ```{r, echo = F}
-countdown(minutes = 3)
+countdown(minutes = 2)
+```
+
+
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercise - interpretation
+
+Exercise [9.5](https://openintro-ims.netlify.app/model-logistic.html#chp09-exercises)
+:::
+
+```{r, echo = F}
+countdown(minutes = 4)
+```
+
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercise - implementation
+
+Exercise [9.3](https://openintro-ims.netlify.app/model-logistic.html#chp09-exercises): simply fit the two models in `R`. The `possum` data used in this exercise can be found in the `openintro` `R` package. You should obtain the same coefficient estimates as in the book, though with an opposite sign.
+
+Save these models; you will need them later!
+
+**You do not need to do parts a and b.**
+:::
+
+```{r, echo = F}
+countdown(minutes = 4)
 ```
 
 ## Artificial data
@@ -474,7 +514,7 @@ d_artificial %>%
   geom_line(aes(x = age, y = p_hat, col = transplant))
 ```
 
-## In-sample prediction
+## Prediction
 
 ```{r}
 d_augm <- augment(m2, type.predict = "response") %>%
@@ -491,10 +531,45 @@ d_augm %>%
   table()
 ```
 
-The model got $71+8=79$ observations right out of $71+4+20+8=103$; so its in-sample accuracy is
+The model got $71+8=79$ observations right out of $71+4+20+8=103$; so its **accuracy** is
 
 $$
 \frac{79}{103} \approx 77\%
 $$
 
-To compute out-of-sample accuracy, simply use the holdout method or cross-validation.
+To estimate the accuracy on new data, simply use the holdout method or cross-validation.
+
+## Model selection
+
+-   AIC, BIC (not adjusted-$R^2$)
+
+-   the holdout method using *accuracy* (not RMSE)
+
+-   cross-validation using *accuracy* (not RMSE)
+
+::: callout-tip
+## AIC and BIC
+With AIC and BIC, lower is better!
+
+$$
+AIC = 2p - \text{Goodness of fit}, \qquad BIC = p\ln(n) - \text{Goodness of fit}
+$$
+:::
+
+
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercise - model comparison with AIC
+
+Go back to the two models you fitted for exercise [9.3](https://openintro-ims.netlify.app/model-logistic.html#chp09-exercises). What are their respective AIC? Which model is better?
+
+Similarly, compare the AIC of the simple (`age`) and multiple (`age + implant`) logistic regression models for the heart transplant study. Which model is better?
+:::
+
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercise - stepwise model selection with AIC
+Exercise [9.7](https://openintro-ims.netlify.app/model-logistic.html#chp09-exercises)
+:::
