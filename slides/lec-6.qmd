@@ -907,3 +907,4 @@ countdown(minutes = 5)
     -   criteria
     -   predictive performance
     -   stepwise procedure
+-   You are ready for the prediction project!
