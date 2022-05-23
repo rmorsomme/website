@@ -624,7 +624,7 @@ Coefficients:
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628925f2" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_628be19c" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -679,7 +679,7 @@ Coefficients:
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62892648" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_628be28c" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -732,7 +732,7 @@ Coefficients:
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628925b1" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_628be39e" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -765,9 +765,10 @@ Coefficients:
 </div>
 </div>
 </div>
-</section>
-<section id="transforming-a-variable" class="slide level2">
-<h2>Transforming a variable</h2>
+</section></section>
+<section>
+<section id="transforming-a-variable" class="title-slide slide level1 center">
+<h1>Transforming a variable</h1>
 <p>Consider the predictor <code>displ</code></p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">ggplot</span>(d) <span class="sc">+</span></span>
@@ -811,9 +812,14 @@ Coefficients:
 <span id="cb21-4"><a href="#cb21-4"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> .fitted))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="lec-5_files/figure-revealjs/unnamed-chunk-17-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
-<section id="combining-variables-the-trees-data-set" class="slide level2 smaller">
-<h2>Combining variables – the <code>trees</code> data set</h2>
+<img data-src="lec-5_files/figure-revealjs/unnamed-chunk-17-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section></section>
+<section>
+<section id="combining-variables" class="title-slide slide level1 smaller center">
+<h1>Combining variables</h1>
+
+</section>
+<section id="the-trees-data-set" class="slide level2 smaller">
+<h2>The <code>trees</code> data set</h2>
 <div class="columns">
 <div class="column" style="width:45%;">
 <ul>
@@ -822,13 +828,14 @@ Coefficients:
 <li>The diameter (<code>Girth</code>) is measured at 4 ft 6 in above the ground.</li>
 <li>Source: Atkinson, A. C. (1985) Plots, Transformations and Regression. Oxford University Press.</li>
 </ul>
-</div><div class="columns">
-<div class="column" style="width:5%;">
+</div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/lec-5/tree.jpg"></p>
 </div>
-</div><section id="combining-variables" class="slide level2">
+</div>
+</section>
+<section id="combining-variables-1" class="slide level2">
 <h2>Combining variables</h2>
 <p>Transforming a variable may be helpful …but we can go a step further!</p>
 <div class="fragment">
@@ -849,7 +856,8 @@ Coefficients:
 </div>
 <p>where <code>Girth</code> indicates the tree diameter (twice the radius) in inches.</p>
 </div>
-</section><section id="geomtric-considerations" class="slide level2">
+</section>
+<section id="geomtric-considerations" class="slide level2">
 <h2>Geomtric considerations</h2>
 <p>Suppose we want to estimate <code>Volume</code> (expensive to measure) from <code>Girth</code> and <code>Height</code> (cheap to measure).</p>
 <div class="fragment">
@@ -863,7 +871,8 @@ V = \pi r^2 h
 V = \frac{1}{3} \pi r^2 h
 \]</span></p>
 </div>
-</section><section id="section-4" class="slide level2">
+</section>
+<section id="section-4" class="slide level2">
 <h2></h2>
 <p>This suggests approximating the volume of a tree with the following model</p>
 <p><span class="math display">\[
@@ -874,7 +883,8 @@ V = \frac{1}{3} \pi r^2 h
 <li><span class="math inline">\(\beta_1\)</span> is an unknown parameter that we expect to be between <span class="math inline">\(\pi\)</span> (pure cylinder) and <span class="math inline">\(\frac{1}{3}\pi\)</span> (pure cone)</li>
 <li><span class="math inline">\(X = \left[\left(\dfrac{\text{Girth}}{2}\right)^2 * \text{Height}\right]\)</span> is our new predictor.</li>
 </ul>
-</section><section id="section-5" class="slide level2">
+</section>
+<section id="section-5" class="slide level2">
 <h2></h2>
 <p>To accomplish this, we simply create a new variable corresponding to <span class="math inline">\(\left[\left(\dfrac{\text{Girth}}{2}\right)^2 * \text{Height}\right]\)</span>.</p>
 <p>Before doing that, we just need to transform <code>Girth</code> into feet to ensure that all variables have the same units.</p>
@@ -894,7 +904,8 @@ V = \frac{1}{3} \pi r^2 h
 3   8.8     63   10.2 0.7333333 0.3666667 0.1344444 8.470000</code></pre>
 </div>
 </div>
-</section><section id="section-6" class="slide level2">
+</section>
+<section id="section-6" class="slide level2">
 <h2></h2>
 <p>Our model does not include an intercept. To exclude the intercept from the model, I use <code>-1</code> in the <code>lm</code> command.</p>
 <div class="cell" data-layout-align="center">
@@ -934,7 +945,8 @@ Coefficients:
 </div>
 </div>
 </div>
-</section><section id="comparison-with-the-full-model" class="slide level2 smaller">
+</section>
+<section id="comparison-with-the-full-model" class="slide level2 smaller">
 <h2>Comparison with the full model</h2>
 <p>Although <span class="math inline">\(R^2\)</span> has a different meaning when there is no intercept, it can be still used for comparison<sup>1</sup>.</p>
 <div class="fragment">
@@ -967,21 +979,22 @@ Coefficients:
 </div>
 </div>
 </div>
-</section><section id="special-case-of-data-combination-interaction" class="slide level2 smaller">
-<h2>Special case of data combination: interaction</h2>
-<p>::: columns ::: {.column width=“45%”} Suppose you are interested in predicting the average run time (<strong>duration</strong>) of amateur jogging races.</p>
+<aside><ol class="aside-footnotes"><li id="fn3" role="doc-endnote"><p>as long as both models exclude the intercept</p></li></ol></aside></section></section>
+<section>
+<section id="special-case-of-data-combination-interaction" class="title-slide slide level1 smaller center">
+<h1>Special case of data combination: interaction</h1>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>Suppose you are interested in predicting the average run time (<strong>duration</strong>) of amateur jogging races.</p>
 <p>Two variables that impact the duration are (i) the <strong>distance</strong> of the race, and (ii) the <strong>weather</strong>.</p>
 <p>For simplicity, we measure the weather as either <em>good</em> (nice weather) or <em>bad</em> (rain, heat wave, etc).</p>
-</section>
-</div>
-<div class="columns">
-<div class="column" style="width:5%;">
+</div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/lec-5/jogging.jpg"></p>
 </div>
 </div>
-<aside><ol class="aside-footnotes"><li id="fn3" role="doc-endnote"><p>as long as both models exclude the intercept</p></li></ol></aside></section>
+</section>
 <section id="fixed-effect-weather" class="slide level2 smaller">
 <h2>Fixed effect weather?</h2>
 <p>Te full model is</p>

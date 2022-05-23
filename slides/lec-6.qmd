@@ -1015,7 +1015,7 @@ Note that forward and backward stepwise selection need not agree; they may selec
 
 -   What to do in that case? Nobody knows.
 
-## How to prevent overfitting?
+# How to prevent overfitting?
 
 ::: tabset-tip
 ## Parsimony

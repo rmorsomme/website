@@ -331,7 +331,7 @@ However, the variables included in the data set, e.g. `displ`, `year`, etc, may 
 This is where your understanding of the data, scientific knowledge and experience make a big difference.
 :::
 
-## Transforming a variable
+# Transforming a variable
 
 Consider the predictor `displ`
 
@@ -375,7 +375,9 @@ augment(m) %>%
   geom_line(aes(y = .fitted))
 ```
 
-## Combining variables -- the `trees` data set {.smaller}
+# Combining variables {.smaller}
+
+## The `trees` data set {.smaller}
 
 ::: columns
 ::: {.column width="45%"}
@@ -385,11 +387,8 @@ augment(m) %>%
 -   Source: Atkinson, A. C. (1985) Plots, Transformations and Regression. Oxford University Press.
 :::
 
-
-::: columns
 ::: {.column width="5%"}
 :::
-
 
 ::: {.column width="50%"}
 ![](images/lec-5/tree.jpg)
@@ -515,7 +514,7 @@ Note that the full model has two predictors, while our geometry-based model has 
 A carefully constructed predictor can do a better job than multiple raw predictors!
 :::
 
-## Special case of data combination: interaction {.smaller}
+# Special case of data combination: interaction {.smaller}
 
 ::: columns
 ::: {.column width="45%"}
@@ -526,7 +525,6 @@ Two variables that impact the duration are (i) the **distance** of the race, and
 For simplicity, we measure the weather as either *good* (nice weather) or *bad* (rain, heat wave, etc).
 :::
 
-::: columns
 ::: {.column width="5%"}
 :::
 
