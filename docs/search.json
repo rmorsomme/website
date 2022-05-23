@@ -1873,7 +1873,7 @@
     "href": "slides/lec-6.html#announcements",
     "title": "Model Selection",
     "section": "Announcements",
-    "text": "Announcements"
+    "text": "Announcements\n\nHomework 4 is due on Thursday"
   },
   {
     "objectID": "slides/lec-6.html#recap",
@@ -2244,6 +2244,265 @@
     "href": "slides/lec-6.html#recap-2",
     "title": "Model Selection",
     "section": "Recap",
-    "text": "Recap\n\nOverfitting\nLimitations of \\(R^2\\)\nModel selection through\n\ncriteria\npredictive performance\nstepwise procedure\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+    "text": "Recap\n\nOverfitting\nLimitations of \\(R^2\\)\nModel selection through\n\ncriteria\npredictive performance\nstepwise procedure\n\nYou are ready for the prediction project!\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+  },
+  {
+    "objectID": "slides/lec-7.html#announcements",
+    "href": "slides/lec-7.html#announcements",
+    "title": "Logistic Regression",
+    "section": "Announcements",
+    "text": "Announcements"
+  },
+  {
+    "objectID": "slides/lec-7.html#recap",
+    "href": "slides/lec-7.html#recap",
+    "title": "Logistic Regression",
+    "section": "Recap",
+    "text": "Recap\n\n\nOverfitting\nLimitations of \\(R^2\\)\nModel selection through\n\ncriteria\npredictive performance\nstepwise procedure"
+  },
+  {
+    "objectID": "slides/lec-7.html#outline",
+    "href": "slides/lec-7.html#outline",
+    "title": "Logistic Regression",
+    "section": "Outline",
+    "text": "Outline\n\nModeling a binary response\nLogistic regression\nOne predictor\nVisualization\nMultiple predictors"
+  },
+  {
+    "objectID": "slides/lec-7.html#example-stanford-university-heart-transplant-study",
+    "href": "slides/lec-7.html#example-stanford-university-heart-transplant-study",
+    "title": "Logistic Regression",
+    "section": "Example – Stanford University Heart Transplant Study",
+    "text": "Example – Stanford University Heart Transplant Study\n\n\n\nGoals: determining whether an experimental heart transplant program increased lifespan\nobservations: patients\nresponse: survival after 5 years (binary)\npredictors: age, prior surgery, waiting time for transplant."
+  },
+  {
+    "objectID": "slides/lec-7.html#data",
+    "href": "slides/lec-7.html#data",
+    "title": "Logistic Regression",
+    "section": "Data",
+    "text": "Data\n\nd <- as_tibble(heart_transplant)\nd\n\n# A tibble: 103 x 8\n      id acceptyear   age survived survtime prior transplant  wait\n   <int>      <int> <int> <fct>       <int> <fct> <fct>      <int>\n 1    15         68    53 dead            1 no    control       NA\n 2    43         70    43 dead            2 no    control       NA\n 3    61         71    52 dead            2 no    control       NA\n 4    75         72    52 dead            2 no    control       NA\n 5     6         68    54 dead            3 no    control       NA\n 6    42         70    36 dead            3 no    control       NA\n 7    54         71    47 dead            3 no    control       NA\n 8    38         70    41 dead            5 no    treatment      5\n 9    85         73    47 dead            5 no    control       NA\n10     2         68    51 dead            6 no    control       NA\n# ... with 93 more rows"
+  },
+  {
+    "objectID": "slides/lec-7.html#effect-of-age-on-survival",
+    "href": "slides/lec-7.html#effect-of-age-on-survival",
+    "title": "Logistic Regression",
+    "section": "Effect of age on survival",
+    "text": "Effect of age on survival\n\ngeom_pointgeom_jitter\n\n\n\nd %>%\n  ggplot(aes(x = age, y = survived)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\n\nd %>%\n  ggplot(aes(x = age, y = survived)) +\n  geom_jitter(     # add random noise to point location\n    width = 0,     # horizontal jitter\n    height = 0.05, # vertical jitter\n    alpha = 0.5    # transparency\n    )"
+  },
+  {
+    "objectID": "slides/lec-7.html#binary-response",
+    "href": "slides/lec-7.html#binary-response",
+    "title": "Logistic Regression",
+    "section": "Binary response",
+    "text": "Binary response\n\nTechnical problem: levels of the response are labels\n\ncan’t fit a regression model to words, only to numbers\n\nuse mutate to create a binary variable (either 0 or 1)\n\n\nd <- d %>%\n  mutate(is_alive = ifelse(survived == \"alive\", 1, 0))"
+  },
+  {
+    "objectID": "slides/lec-7.html#section",
+    "href": "slides/lec-7.html#section",
+    "title": "Logistic Regression",
+    "section": "",
+    "text": "ggplot(data = d, aes(x = age, y = is_alive)) + \n  geom_jitter(width = 0, height = 0.05, alpha = 0.5)"
+  },
+  {
+    "objectID": "slides/lec-7.html#linear-regression",
+    "href": "slides/lec-7.html#linear-regression",
+    "title": "Logistic Regression",
+    "section": "Linear regression?",
+    "text": "Linear regression?\nLet us fit a linear regression model\n\\[\n\\text{is_alive} \\approx \\beta_0 + \\beta_1 age\n\\]\n\nm_lrm <- lm(is_alive ~ age, data = d)"
+  },
+  {
+    "objectID": "slides/lec-7.html#section-1",
+    "href": "slides/lec-7.html#section-1",
+    "title": "Logistic Regression",
+    "section": "",
+    "text": "ggplot(data = d, aes(x = age, y = is_alive)) + \n  geom_jitter(width = 0, height = 0.05, alpha = 0.5) +\n  geom_abline(intercept = 0.80955, slope = -0.01205)"
+  },
+  {
+    "objectID": "slides/lec-7.html#problems-with-linear-regression",
+    "href": "slides/lec-7.html#problems-with-linear-regression",
+    "title": "Logistic Regression",
+    "section": "Problems with linear regression",
+    "text": "Problems with linear regression\n\nThe response is not continuous like fuel consumption, tree volume or newborn weight\nnonsensical predictions, even for reasonable value of age."
+  },
+  {
+    "objectID": "slides/lec-7.html#section-2",
+    "href": "slides/lec-7.html#section-2",
+    "title": "Logistic Regression",
+    "section": "",
+    "text": "Group exercise - limitation of linear regression\n\n\nWhat is the prediction for a 70-year-old patient?\n\n\n\n\n\n\n02:00"
+  },
+  {
+    "objectID": "slides/lec-7.html#glms",
+    "href": "slides/lec-7.html#glms",
+    "title": "Logistic Regression",
+    "section": "GLMs",
+    "text": "GLMs\nGeneralized linear models (GLMs) extend the linear regression framework to settings where the response variable is restricted\n\nlogistic regression with binary response\nmultinomial regression with categorical response\nordinal regression with ordinal response\npoisson regression with count response, e.g. number of children\ngamma regression with positive response variable.\nbeta regression with continuous response between 0 and 1 (percentage)\n\nTo learn more about logistic regression and other GLMs, consider taking STA310."
+  },
+  {
+    "objectID": "slides/lec-7.html#logistic-regression-1",
+    "href": "slides/lec-7.html#logistic-regression-1",
+    "title": "Logistic Regression",
+    "section": "Logistic regression",
+    "text": "Logistic regression\n\nExample of a generalized linear model\nFocus on implementation and interpretation, not math\nPotentially useful for inference project\nLogistic regression: model the probability of success \\(p\\)."
+  },
+  {
+    "objectID": "slides/lec-7.html#binary-outcome-and-probability",
+    "href": "slides/lec-7.html#binary-outcome-and-probability",
+    "title": "Logistic Regression",
+    "section": "Binary outcome and probability",
+    "text": "Binary outcome and probability\nLet \\(Y_i\\) denote the response of person \\(i\\).\nThe logistic regression model assumes that\n\\[\nY_i =\n\\begin{cases}\n1, \\text{with probability } p_i, \\\\\n0, \\text{with probability } 1-p_i.\n\\end{cases}\n\\]\nwhere \\(p_i\\) denotes the probability of success of person \\(i\\)."
+  },
+  {
+    "objectID": "slides/lec-7.html#modeling-a-probability-with-linear-regression",
+    "href": "slides/lec-7.html#modeling-a-probability-with-linear-regression",
+    "title": "Logistic Regression",
+    "section": "Modeling a probability with linear regression?",
+    "text": "Modeling a probability with linear regression?\nWe saw that we cannot model \\(p\\) with a lrm (\\(p \\approx \\beta_0 + \\beta\\text{age}\\))\n\n\\(0\\le p_i\\le1\\)\nbut \\(\\beta_0 + \\beta_1 \\text{age}\\) may be negative or larger than 1\n\nin fact, the regression line extends infinitely in either either direction\n\n\n\n\n\n\n\n\nWarning\n\n\nBinary variables should not be modeled using linear regression!"
+  },
+  {
+    "objectID": "slides/lec-7.html#modeling-a-probability-with-logistic-regression",
+    "href": "slides/lec-7.html#modeling-a-probability-with-logistic-regression",
+    "title": "Logistic Regression",
+    "section": "Modeling a probability with logistic regression",
+    "text": "Modeling a probability with logistic regression\nIntuitively, an older patient should have a smaller probability of surviving.\n\\(\\Rightarrow\\) We want a model that associates a smaller probability \\(p\\) for a patient with a larger year variable.\n\n\\(\\Rightarrow\\) We need to find a way to go from age (could be any number) to \\(p\\) (between 0 and 1)"
+  },
+  {
+    "objectID": "slides/lec-7.html#the-logit-transformation",
+    "href": "slides/lec-7.html#the-logit-transformation",
+    "title": "Logistic Regression",
+    "section": "The logit transformation",
+    "text": "The logit transformation\nConsider the logit transformation\n\\[\np = \\dfrac{e^{\\mu}}{1+e^{\\mu}}\n\\]\nwhere \\(\\mu\\) can be any number."
+  },
+  {
+    "objectID": "slides/lec-7.html#section-3",
+    "href": "slides/lec-7.html#section-3",
+    "title": "Logistic Regression",
+    "section": "",
+    "text": "tibble(mu = seq(-7.5, 7.5, by = 0.01)) %>%\n  mutate(p = exp(mu)/(1+exp(mu))) %>%\n  ggplot() + \n  geom_line(aes(x = mu, y = p))\n\n\nNote that \\(\\dfrac{e^{\\mu}}{1+e^{\\mu}}\\) is bounded between 0 and 1.\nMoreover, larger values of \\(\\mu\\) will give larger \\(p\\), and smaller \\(\\mu\\) will give smaller \\(p\\)."
+  },
+  {
+    "objectID": "slides/lec-7.html#section-4",
+    "href": "slides/lec-7.html#section-4",
+    "title": "Logistic Regression",
+    "section": "",
+    "text": "Group exercise - logit transformation\n\n\n\nWhat value of \\(p\\) corresponds to\n\n\\(\\mu = 0.5\\)?\n\\(\\mu = 2\\)?\n\\(\\mu = -2\\)?\n\nWhat value of \\(\\mu\\) gives\n\n\\(p=0.5\\)?\n\\(p=0.9\\)?\n\\(p=0.1\\)?\n\n\n\n\n\n\n\n\n03:00"
+  },
+  {
+    "objectID": "slides/lec-7.html#modeling-mu",
+    "href": "slides/lec-7.html#modeling-mu",
+    "title": "Logistic Regression",
+    "section": "Modeling \\(\\mu\\)",
+    "text": "Modeling \\(\\mu\\)\nWe can now simply model \\(\\mu\\) using a simple lrm with age\n\\[\n\\mu \\approx \\beta_0 + \\beta_1 \\text{age}\n\\]\nand then transform \\(\\mu\\) into \\(p\\) with the logit transformation\n\\[\np = \\dfrac{e^{\\mu}}{1+e^{\\mu}}\n\\]\n\nPutting everything together gives the logistic regression model\n\\[\np = \\dfrac{e^{\\mu}}{1+e^{\\mu}} \\approx \\dfrac{e^{\\beta_0 + \\beta_1 \\text{age}}}{1+e^{\\beta_0 + \\beta_1 \\text{age}}}\n\\]"
+  },
+  {
+    "objectID": "slides/lec-7.html#section-5",
+    "href": "slides/lec-7.html#section-5",
+    "title": "Logistic Regression",
+    "section": "",
+    "text": "Alternative formulation\n\n\nThe formulation\n\\[\n\\log\\left(\\frac{p}{1-p}\\right) \\approx \\beta_0 +\\beta_1 \\text{age}\n\\]\nis also widely to describe the logistic regression model. This formulation is equivalent to that used on the previous slide."
+  },
+  {
+    "objectID": "slides/lec-7.html#maximum-likelihood-estimates",
+    "href": "slides/lec-7.html#maximum-likelihood-estimates",
+    "title": "Logistic Regression",
+    "section": "Maximum likelihood estimates",
+    "text": "Maximum likelihood estimates\nHow are the unknown coefficients \\(\\beta_0\\) and \\(\\beta_1\\) estimated?\nWhen we fit a logistic regression model with R, the so-called maximum likelihood estimates (MLE1) are returned.\nMLE are extremely popular in statistics."
+  },
+  {
+    "objectID": "slides/lec-7.html#glm",
+    "href": "slides/lec-7.html#glm",
+    "title": "Logistic Regression",
+    "section": "glm",
+    "text": "glm\nWe fit a logistic regression model in R with the command glm (not lm)\n\nm <- glm(\n  is_alive ~ age, \n  family = binomial, # logistic regression\n  data = d\n  )\nm\n\n\nCall:  glm(formula = is_alive ~ age, family = binomial, data = d)\n\nCoefficients:\n(Intercept)          age  \n    1.56438     -0.05847  \n\nDegrees of Freedom: 102 Total (i.e. Null);  101 Residual\nNull Deviance:      120.5 \nResidual Deviance: 113.7    AIC: 117.7"
+  },
+  {
+    "objectID": "slides/lec-7.html#r-output",
+    "href": "slides/lec-7.html#r-output",
+    "title": "Logistic Regression",
+    "section": "R output",
+    "text": "R output\nFor the moment simply focus on\n\ncoefficient estimates\nAIC (no (adjusted-) \\(R^2\\)) for model selection\n\ncan also use cross-validation, using the proportion of correct predictions instead of the RMSE.\n\nwe will learn about p-values in the 2nd half of the course.\n\n\n\n\n\n\n\nglm not lm\n\n\nTo fit a logistic regression model in R, use the command glm (not lm) with the argument family set to binomial."
+  },
+  {
+    "objectID": "slides/lec-7.html#interpretation",
+    "href": "slides/lec-7.html#interpretation",
+    "title": "Logistic Regression",
+    "section": "Interpretation",
+    "text": "Interpretation\nA positive coefficient estimate indicate that a higher value of the predictor is associated with a higher probability of success; and vice-versa for a smaller value.\nIn our case, the coefficient estimate for age (-0.0584664) is negative, so the model suggests that older participants have a smaller probability of surviving."
+  },
+  {
+    "objectID": "slides/lec-7.html#visualizing-the-regression-curve",
+    "href": "slides/lec-7.html#visualizing-the-regression-curve",
+    "title": "Logistic Regression",
+    "section": "Visualizing the regression curve",
+    "text": "Visualizing the regression curve\n\nd_augm <- augment(m, type.predict = \"response\")\nd_augm # .fitted is equivalent to p_hat \n\n# A tibble: 103 x 8\n   is_alive   age .fitted .resid .std.resid   .hat .sigma .cooksd\n      <dbl> <int>   <dbl>  <dbl>      <dbl>  <dbl>  <dbl>   <dbl>\n 1        0    53   0.177 -0.625     -0.630 0.0156   1.06 0.00174\n 2        0    43   0.279 -0.809     -0.813 0.0106   1.06 0.00210\n 3        0    52   0.186 -0.642     -0.646 0.0147   1.06 0.00173\n 4        0    52   0.186 -0.642     -0.646 0.0147   1.06 0.00173\n 5        0    54   0.169 -0.608     -0.614 0.0166   1.06 0.00175\n 6        0    36   0.368 -0.958     -0.967 0.0181   1.06 0.00548\n 7        0    47   0.234 -0.731     -0.735 0.0111   1.06 0.00174\n 8        0    41   0.303 -0.850     -0.855 0.0115   1.06 0.00257\n 9        0    47   0.234 -0.731     -0.735 0.0111   1.06 0.00174\n10        0    51   0.195 -0.659     -0.663 0.0138   1.06 0.00172\n# ... with 93 more rows"
+  },
+  {
+    "objectID": "slides/lec-7.html#section-6",
+    "href": "slides/lec-7.html#section-6",
+    "title": "Logistic Regression",
+    "section": "",
+    "text": "d_augm %>%\n  ggplot(aes(x = age)) +\n  geom_jitter(aes(y = is_alive), width = 0, height = 0.05, alpha = 0.5) +\n  geom_line(aes(y = .fitted), col = \"maroon\", size = 2) # .fitted is equivalent to p_hat"
+  },
+  {
+    "objectID": "slides/lec-7.html#extending-the-regression-curve",
+    "href": "slides/lec-7.html#extending-the-regression-curve",
+    "title": "Logistic Regression",
+    "section": "Extending the regression curve",
+    "text": "Extending the regression curve\n\n#artificial data with larger range (0 to 100)\nd_artificial <- tibble(age = seq(0, 100, by = 0.1))\np_hat <- predict(m, newdata = d_artificial, type = \"response\")\n\nd_artificial <- mutate(d_artificial, p_hat = p_hat)\nd_artificial\n\n# A tibble: 1,001 x 2\n     age p_hat\n   <dbl> <dbl>\n 1   0   0.827\n 2   0.1 0.826\n 3   0.2 0.825\n 4   0.3 0.824\n 5   0.4 0.824\n 6   0.5 0.823\n 7   0.6 0.822\n 8   0.7 0.821\n 9   0.8 0.820\n10   0.9 0.819\n# ... with 991 more rows"
+  },
+  {
+    "objectID": "slides/lec-7.html#section-7",
+    "href": "slides/lec-7.html#section-7",
+    "title": "Logistic Regression",
+    "section": "",
+    "text": "ggplot(mapping = aes(x = age)) +\n  geom_jitter(data = d, aes(y = is_alive), width = 0, height = 0.05, alpha = 0.5) +\n  geom_line(data = d_artificial, aes(y = p_hat), col = \"maroon\", size = 2)"
+  },
+  {
+    "objectID": "slides/lec-7.html#multivariate-logistic-regression",
+    "href": "slides/lec-7.html#multivariate-logistic-regression",
+    "title": "Logistic Regression",
+    "section": "Multivariate logistic regression",
+    "text": "Multivariate logistic regression\nBased on what we know about multiple lrm, it is easy to extend the previous model to multiple logistic regression:\n\\[\np = \\dfrac{e^{\\mu}}{1+e^{\\mu}}\n\\]\nwhere\n\\[\n\\mu \\approx \\beta_0 + \\beta_1 X_1 + \\dots + \\beta_p X_p\n\\]"
+  },
+  {
+    "objectID": "slides/lec-7.html#implementation-in-r",
+    "href": "slides/lec-7.html#implementation-in-r",
+    "title": "Logistic Regression",
+    "section": "Implementation in R",
+    "text": "Implementation in R\n\nm2 <- glm(\n  is_alive ~ age + transplant, \n  family = binomial, # logistic regression\n  data = d\n  )\nm2\n\n\nCall:  glm(formula = is_alive ~ age + transplant, family = binomial, \n    data = d)\n\nCoefficients:\n        (Intercept)                  age  transplanttreatment  \n            0.97311             -0.07632              1.82316  \n\nDegrees of Freedom: 102 Total (i.e. Null);  100 Residual\nNull Deviance:      120.5 \nResidual Deviance: 103.9    AIC: 109.9"
+  },
+  {
+    "objectID": "slides/lec-7.html#section-8",
+    "href": "slides/lec-7.html#section-8",
+    "title": "Logistic Regression",
+    "section": "",
+    "text": "Group exercise - Interpretation\n\n\nWhat is the interpretation of the coefficient estimates for age and transplant?\n\n\n\n\n\n\n03:00"
+  },
+  {
+    "objectID": "slides/lec-7.html#artificial-data",
+    "href": "slides/lec-7.html#artificial-data",
+    "title": "Logistic Regression",
+    "section": "Artificial data",
+    "text": "Artificial data\n\nd_artificial <- expand.grid(\n  age = seq(0, 100, by = 0.1),\n  transplant = c(\"treatment\", \"control\")\n  ) %>%\n  as_tibble() %>%\n  arrange(age)\nd_artificial\n\n# A tibble: 2,002 x 2\n     age transplant\n   <dbl> <fct>     \n 1   0   treatment \n 2   0   control   \n 3   0.1 treatment \n 4   0.1 control   \n 5   0.2 treatment \n 6   0.2 control   \n 7   0.3 treatment \n 8   0.3 control   \n 9   0.4 treatment \n10   0.4 control   \n# ... with 1,992 more rows"
+  },
+  {
+    "objectID": "slides/lec-7.html#visualization",
+    "href": "slides/lec-7.html#visualization",
+    "title": "Logistic Regression",
+    "section": "Visualization",
+    "text": "Visualization\n\np_hat <- predict(m2, d_artificial, type = \"response\")\nd_artificial %>%\n  mutate(p_hat = p_hat) %>%\n  ggplot() +\n  geom_line(aes(x = age, y = p_hat, col = transplant))"
+  },
+  {
+    "objectID": "slides/lec-7.html#in-sample-prediction",
+    "href": "slides/lec-7.html#in-sample-prediction",
+    "title": "Logistic Regression",
+    "section": "In-sample prediction",
+    "text": "In-sample prediction\n\nd_augm <- augment(m2, type.predict = \"response\") %>%\n  mutate(is_alive_hat = if_else(.fitted < 0.5, 0, 1)) %>%\n  select(is_alive, age, transplant, .fitted, is_alive_hat)\nd_augm\n\n# A tibble: 103 x 5\n   is_alive   age transplant .fitted is_alive_hat\n      <dbl> <int> <fct>        <dbl>        <dbl>\n 1        0    53 control     0.0443            0\n 2        0    43 control     0.0904            0\n 3        0    52 control     0.0476            0\n 4        0    52 control     0.0476            0\n 5        0    54 control     0.0412            0\n 6        0    36 control     0.145             0\n 7        0    47 control     0.0682            0\n 8        0    41 treatment   0.418             0\n 9        0    47 control     0.0682            0\n10        0    51 control     0.0512            0\n# ... with 93 more rows"
+  },
+  {
+    "objectID": "slides/lec-7.html#confusion-matrix",
+    "href": "slides/lec-7.html#confusion-matrix",
+    "title": "Logistic Regression",
+    "section": "Confusion matrix",
+    "text": "Confusion matrix\n\nd_augm %>%\n  select(is_alive, is_alive_hat) %>%\n  table()\n\n        is_alive_hat\nis_alive  0  1\n       0 71  4\n       1 20  8\n\n\nThe model got \\(71+8=79\\) observations right out of \\(71+4+20+8=103\\); so its in-sample accuracy is\n\\[\n\\frac{79}{103} \\approx 77\\%\n\\]\nTo compute out-of-sample accuracy, simply use the holdout method or cross-validation.\n\n\n\nhttps://rmorsomme.github.io/website/"
   }
 ]

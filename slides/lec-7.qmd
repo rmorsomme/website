@@ -1,0 +1,500 @@
+---
+title: "Logistic Regression"
+subtitle: "STA 101L - Summer I 2022"
+author: "Raphael Morsomme"
+footer:  "[https://rmorsomme.github.io/website/](https://rmorsomme.github.io/website/)"
+logo: "images/logo.jpg"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    code-fold: false
+    code-summary: "Show the code"
+    scrollable: true
+editor: visual
+execute:
+  freeze: auto
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup}
+#| include: false
+
+knitr::opts_chunk$set(
+  fig.width = 8,
+  fig.asp = 0.618,
+  fig.retina = 3,
+  dpi = 300,
+  out.width = "80%",
+  fig.align = "center"
+)
+
+# load packages
+library(tidyverse)   # for data wrangling and visualization
+library(tidymodels)  # for modeling
+library(countdown)
+library(openintro)
+
+# set default theme and larger font size for ggplot2
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))
+
+options(scipen = 100)
+```
+
+# Welcome
+
+## Announcements
+
+-   
+
+## Recap {.smaller}
+
+::: incremental
+-   Overfitting
+
+-   Limitations of $R^2$
+
+-   Model selection through
+
+    -   criteria
+
+    -   predictive performance
+
+    -   stepwise procedure
+:::
+
+## Outline
+
+-   Modeling a binary response
+-   Logistic regression
+-   One predictor
+-   Visualization
+-   Multiple predictors
+
+# Modeling a binary response
+
+## Example -- [Stanford University Heart Transplant Study](https://www.jstor.org/tc/accept?origin=%2Fstable%2Fpdf%2F2285502.pdf%3Fcasa_token%3DtsfisPZrE4QAAAAA%3AjmSc4CpJPjkyTwKwoUdROLd5ZMHodUmGdclzMIXQGWUXmT0FQ7zbwLympmqvjcGrsbH-iU2qfA3DYSY5oxC4E0qSbRvoQN4hAlB5Jy01zwHbvwVrHPU&is_image=False)
+
+::: columns
+::: {.column width="60%"}
+-   Goals: determining whether an experimental heart transplant program increased lifespan
+
+-   observations: patients
+
+-   response: survival after 5 years (binary)
+
+-   predictors: age, prior surgery, waiting time for transplant.
+:::
+
+::: {.column width="40%"}
+![](images/lec-7/surgery.jpg){fig-align="center"}
+:::
+:::
+
+## Data
+
+```{r}
+d <- as_tibble(heart_transplant)
+d
+```
+
+## Effect of age on survival
+
+::: panel-tabset
+## geom_point
+
+```{r}
+d %>%
+  ggplot(aes(x = age, y = survived)) +
+  geom_point()
+```
+
+## geom_jitter
+
+```{r}
+d %>%
+  ggplot(aes(x = age, y = survived)) +
+  geom_jitter(     # add random noise to point location
+    width = 0,     # horizontal jitter
+    height = 0.05, # vertical jitter
+    alpha = 0.5    # transparency
+    )
+```
+:::
+
+## Binary response
+
+-   Technical problem: levels of the response are labels
+
+    -   can't fit a regression model to words, only to numbers
+
+-   use `mutate` to create a binary variable (either 0 or 1)
+
+```{r}
+d <- d %>%
+  mutate(is_alive = ifelse(survived == "alive", 1, 0))
+```
+
+## 
+
+```{r}
+ggplot(data = d, aes(x = age, y = is_alive)) + 
+  geom_jitter(width = 0, height = 0.05, alpha = 0.5)
+```
+
+## Linear regression?
+
+Let us fit a linear regression model
+
+$$
+\text{is_alive} \approx \beta_0 + \beta_1 age
+$$
+
+```{r}
+m_lrm <- lm(is_alive ~ age, data = d)
+```
+
+## 
+
+```{r}
+ggplot(data = d, aes(x = age, y = is_alive)) + 
+  geom_jitter(width = 0, height = 0.05, alpha = 0.5) +
+  geom_abline(intercept = 0.80955, slope = -0.01205)
+```
+
+## Problems with linear regression
+
+-   The response is not continuous like fuel consumption, tree volume or newborn weight
+
+-   nonsensical predictions, even for reasonable value of `age`.
+
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercise - limitation of linear regression
+What is the prediction for a 70-year-old patient?
+:::
+
+```{r, echo = F}
+countdown(minutes = 2)
+```
+
+# Generalized linear models
+
+## GLMs {.smaller}
+
+Generalized linear models (GLMs) extend the linear regression framework to settings where the response variable is restricted
+
+-   **logistic regression** with binary response
+
+-   multinomial regression with categorical response
+
+-   ordinal regression with ordinal response
+
+-   poisson regression with count response, e.g. number of children
+
+-   gamma regression with positive response variable.
+
+-   beta regression with continuous response between 0 and 1 (percentage)
+
+To learn more about logistic regression and other GLMs, consider taking STA310.
+
+# Logistic regression
+
+## Logistic regression
+
+-   Example of a *generalized linear model*
+
+-   Focus on implementation and interpretation, not math
+
+-   Potentially useful for inference project
+
+-   **Logistic regression**: model the probability of success $p$.
+
+## Binary outcome and probability
+
+Let $Y_i$ denote the response of person $i$.
+
+The logistic regression model assumes that
+
+$$
+Y_i = 
+\begin{cases}
+1, \text{with probability } p_i, \\
+0, \text{with probability } 1-p_i.
+\end{cases}
+$$
+
+where $p_i$ denotes the probability of success of person $i$.
+
+## Modeling a probability with linear regression? {.smaller}
+
+We saw that we cannot model $p$ with a lrm ($p \approx \beta_0 + \beta\text{age}$)
+
+-   $0\le p_i\le1$
+
+-   but $\beta_0 + \beta_1 \text{age}$ may be negative or larger than 1
+    -   in fact, the regression line extends infinitely in either either direction
+
+::: callout-warning
+Binary variables should not be modeled using linear regression!
+:::
+
+## Modeling a probability with logistic regression
+
+Intuitively, an older patient should have a smaller probability of surviving.
+
+$\Rightarrow$ We want a model that associates a smaller probability $p$ for a patient with a larger `year` variable.
+
+. . .
+
+$\Rightarrow$ We need to find a way to go from `age` (could be any number) to $p$ (between 0 and 1)
+
+## The logit transformation
+
+Consider the **logit transformation**
+
+$$
+p = \dfrac{e^{\mu}}{1+e^{\mu}}
+$$
+
+where $\mu$ can be any number.
+
+##
+
+```{r}
+tibble(mu = seq(-7.5, 7.5, by = 0.01)) %>%
+  mutate(p = exp(mu)/(1+exp(mu))) %>%
+  ggplot() + 
+  geom_line(aes(x = mu, y = p))
+```
+
+Note that $\dfrac{e^{\mu}}{1+e^{\mu}}$ is bounded between 0 and 1.
+
+Moreover, larger values of $\mu$ will give larger $p$, and smaller $\mu$ will give smaller $p$.
+
+##
+
+::: callout-tip
+## Group exercise - logit transformation
+
+-   What value of $p$ corresponds to
+
+    -   $\mu = 0.5$?
+
+    -   $\mu = 2$?
+
+    -   $\mu = -2$?
+
+-   What value of $\mu$ gives
+
+    -   $p=0.5$?
+
+    -   $p=0.9$?
+
+    -   $p=0.1$?
+:::
+
+```{r, echo = F}
+countdown(minutes = 3)
+```
+
+## Modeling $\mu$ {.smaller}
+
+We can now simply model $\mu$ using a simple lrm with age
+
+$$
+\mu \approx \beta_0 + \beta_1 \text{age}
+$$
+
+and then transform $\mu$ into $p$ with the logit transformation
+
+$$
+p = \dfrac{e^{\mu}}{1+e^{\mu}}
+$$
+
+. . .
+
+Putting everything together gives the **logistic regression model**
+
+$$
+p = \dfrac{e^{\mu}}{1+e^{\mu}} \approx \dfrac{e^{\beta_0 + \beta_1 \text{age}}}{1+e^{\beta_0 + \beta_1 \text{age}}}
+$$
+
+##
+
+::: callout-note
+## Alternative formulation 
+The formulation
+
+$$
+\log\left(\frac{p}{1-p}\right) \approx \beta_0 +\beta_1 \text{age}
+$$
+
+is also widely to describe the logistic regression model. This formulation is equivalent to that used on the previous slide.
+:::
+
+## Maximum likelihood estimates
+
+How are the unknown coefficients $\beta_0$ and $\beta_1$ estimated?
+
+When we fit a logistic regression model with `R`, the so-called *maximum likelihood estimates* (MLE^[MLE are extremely popular in statistics.]) are returned.
+
+# Implementation
+
+## `glm`
+
+We fit a logistic regression model in `R` with the command `glm` (not `lm`)
+
+```{r}
+m <- glm(
+  is_alive ~ age, 
+  family = binomial, # logistic regression
+  data = d
+  )
+m
+```
+
+## `R` output {.smaller}
+
+For the moment simply focus on
+
+-   coefficient estimates
+
+-   AIC (no (adjusted-) $R^2$) for model selection
+
+    -   can also use cross-validation, using the proportion of correct predictions instead of the RMSE.
+
+-   we will learn about p-values in the 2nd half of the course.
+
+::: callout-warning
+## glm not lm
+
+To fit a logistic regression model in `R`, use the command `glm` (not `lm`) with the argument `family` set to `binomial`.
+:::
+
+## Interpretation
+
+A positive coefficient estimate indicate that a higher value of the predictor is associated with a higher probability of success; and vice-versa for a smaller value.
+
+In our case, the coefficient estimate for age (`r m$coefficients[2]`) is negative, so the model suggests that older participants have a smaller probability of surviving.
+
+## Visualizing the regression curve
+
+```{r}
+d_augm <- augment(m, type.predict = "response")
+d_augm # .fitted is equivalent to p_hat 
+```
+
+##
+
+```{r}
+d_augm %>%
+  ggplot(aes(x = age)) +
+  geom_jitter(aes(y = is_alive), width = 0, height = 0.05, alpha = 0.5) +
+  geom_line(aes(y = .fitted), col = "maroon", size = 2) # .fitted is equivalent to p_hat 
+```
+
+## Extending the regression curve
+
+```{r}
+#artificial data with larger range (0 to 100)
+d_artificial <- tibble(age = seq(0, 100, by = 0.1))
+p_hat <- predict(m, newdata = d_artificial, type = "response")
+
+d_artificial <- mutate(d_artificial, p_hat = p_hat)
+d_artificial
+```
+
+##
+
+```{r}
+ggplot(mapping = aes(x = age)) +
+  geom_jitter(data = d, aes(y = is_alive), width = 0, height = 0.05, alpha = 0.5) +
+  geom_line(data = d_artificial, aes(y = p_hat), col = "maroon", size = 2)
+```
+
+## Multivariate logistic regression
+
+Based on what we know about multiple lrm, it is easy to extend the previous model to multiple logistic regression:
+
+$$
+p = \dfrac{e^{\mu}}{1+e^{\mu}}
+$$
+
+where
+
+$$
+\mu \approx \beta_0 + \beta_1 X_1 + \dots + \beta_p X_p
+$$
+
+## Implementation in `R`
+
+```{r}
+m2 <- glm(
+  is_alive ~ age + transplant, 
+  family = binomial, # logistic regression
+  data = d
+  )
+m2
+```
+
+## 
+::: {.callout-tip icon="false"}
+## Group exercise - Interpretation
+What is the interpretation of the coefficient estimates for `age` and `transplant`?
+:::
+```{r, echo = F}
+countdown(minutes = 3)
+```
+
+## Artificial data
+
+```{r}
+d_artificial <- expand.grid(
+  age = seq(0, 100, by = 0.1),
+  transplant = c("treatment", "control")
+  ) %>%
+  as_tibble() %>%
+  arrange(age)
+d_artificial
+```
+
+## Visualization
+
+```{r}
+p_hat <- predict(m2, d_artificial, type = "response")
+d_artificial %>%
+  mutate(p_hat = p_hat) %>%
+  ggplot() +
+  geom_line(aes(x = age, y = p_hat, col = transplant))
+```
+
+## In-sample prediction
+
+```{r}
+d_augm <- augment(m2, type.predict = "response") %>%
+  mutate(is_alive_hat = if_else(.fitted < 0.5, 0, 1)) %>%
+  select(is_alive, age, transplant, .fitted, is_alive_hat)
+d_augm
+```
+
+## Confusion matrix
+
+```{r}
+d_augm %>%
+  select(is_alive, is_alive_hat) %>%
+  table()
+```
+
+The model got $71+8=79$ observations right out of $71+4+20+8=103$; so its in-sample accuracy is
+
+$$
+\frac{79}{103} \approx 77\%
+$$
+
+To compute out-of-sample accuracy, simply use the holdout method or cross-validation.
