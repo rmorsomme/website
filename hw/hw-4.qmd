@@ -34,7 +34,7 @@ When submitting your work on Gradescope, please assign a page for each question.
         d <- palmerpenguins::penguins
         ```
 
-    -   Do the exercise.
+    -   Do exercise 8.14.
 -   25.10 (3 points)
 
 ## Lab exercises - **Grading the professor** (15 points)
@@ -58,13 +58,13 @@ Skip exercises 11, 12
 
     -   Drop one variable at a time and peek at the adjusted $R^2$. Removing which variable increases adjusted $R^2$ the most?
 
-    -   skip the rest of the question.
+    -   Skip the rest of the question.
 
 Skip the remaining exercises.
 
 ## Function, for-loop and cross-validation in `R` (15 points)
 
--   **Function** -- Write a function that compute the average $\bar{x}$ of numerical variable from scratch (do not use the command `mean`. Your function should be called `my_mean`, take a vector of numbers as input and output its average. Show that your function works by applying in on the variable `cty` of the `ggplot2::mpg` data. You should obtain the same value of the command `mean`. (5 points)
+-   **Function** -- Write a function in `R` that computes the average $\bar{x}$ of numerical variable from scratch (do not use the command `mean`). Your function should be called `my_mean`, should take a vector of numbers as input and should output its average. Show that your function works by applying in on the variable `cty` of the `ggplot2::mpg` data. You should obtain the same value as the command `mean`. (5 points)
 
 -   **For-loop** -- Write a for-loop that computes the first 20 [Fibonacci numbers](https://en.wikipedia.org/wiki/Fibonacci_number). The first few Fibonacci numbers are $0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, …$. These numbers follow the following rule: each is the sum of the previous two; that is,
 
@@ -74,4 +74,4 @@ Skip the remaining exercises.
 
     and the first two numbers are $x_1=0$ and $x_2=1$. For instance, the third number is $1 = x_3 = x_2 + x_1 = 1 + 0$ and the seventh number is $8 = x_7 = x_6 + x_5 = 5 + 3$ (5 points).
 
--   **Cross-validation** -- Use the code from lecture to implement $5$-fold cross-validation to compare the simple regression model with `gestation_week` as the predictor and the full model with all 15 raw predictors. (5 points)
+-   **Cross-validation** -- Use the code from lecture to implement $5$-fold cross-validation on the prediction project data to compare the simple regression model with `gestation_week` as the predictor and the full model with all 15 raw predictors. (5 points)
