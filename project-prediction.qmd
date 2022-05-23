@@ -6,7 +6,7 @@ resources:
 
 ## Overview
 
-In this prediction project, you will work in pairs to construct a regression model that will be used to make predictions. The prediction model is due on Tuesday, **May 31, at 9:00 am**, and the final report is due Wednesday, **June 1 at 9:00pm**.
+In this prediction project, you will work in pairs to construct a regression model that will be used to make predictions. The prediction model is due on Tuesday, **May 31, at 9:00 am**, and the final report is due Wednesday, **June 1 at 9:00pm**. You can find your teammate [here](/slides/project-prediction-teams.html).
 
 🍀 Good luck! 🍀
 
