@@ -2174,7 +2174,7 @@
     "href": "slides/lec-6.html#section-13",
     "title": "Model Selection",
     "section": "",
-    "text": "5-fold cross-validationSource: towardsdatascience"
+    "text": "Source: towardsdatascience"
   },
   {
     "objectID": "slides/lec-6.html#step-0",
@@ -2581,5 +2581,54 @@
     "title": "Logistic Regression",
     "section": "",
     "text": "Group exercise - stepwise model selection with AIC\n\n\nExercise 9.7\n\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+  },
+  {
+    "objectID": "slides/lec-8.html#announcements",
+    "href": "slides/lec-8.html#announcements",
+    "title": "Principles of Inference",
+    "section": "Announcements",
+    "text": "Announcements"
+  },
+  {
+    "objectID": "slides/lec-8.html#recap",
+    "href": "slides/lec-8.html#recap",
+    "title": "Principles of Inference",
+    "section": "Recap",
+    "text": "Recap"
+  },
+  {
+    "objectID": "slides/lec-8.html#outline",
+    "href": "slides/lec-8.html#outline",
+    "title": "Principles of Inference",
+    "section": "Outline",
+    "text": "Outline\n\nConfidence intervals\nHypothesis tests\nTypes of errors"
+  },
+  {
+    "objectID": "slides/lec-8.html#learning-about-a-proportion",
+    "href": "slides/lec-8.html#learning-about-a-proportion",
+    "title": "Principles of Inference",
+    "section": "Learning about a proportion",
+    "text": "Learning about a proportion\nexample"
+  },
+  {
+    "objectID": "slides/lec-8.html#point-estimate",
+    "href": "slides/lec-8.html#point-estimate",
+    "title": "Principles of Inference",
+    "section": "Point estimate",
+    "text": "Point estimate\nparameter of interest: proportion in the population\nsample statistic: sample proportion\nIt seems natural to use the sample proportion as an estimate for the population proportion."
+  },
+  {
+    "objectID": "slides/lec-8.html#limitation-of-point-estimate",
+    "href": "slides/lec-8.html#limitation-of-point-estimate",
+    "title": "Principles of Inference",
+    "section": "Limitation of point estimate",
+    "text": "Limitation of point estimate\nA single point does not indicate how confident we are in our estimation.\n\nif we have a large sample, then we can be pretty confident that our estimate will be close to the true value fo the parameter\nif we have a small sample, then we know that are estimate may be pretty far from the truth"
+  },
+  {
+    "objectID": "slides/lec-8.html#statistical-inference-1",
+    "href": "slides/lec-8.html#statistical-inference-1",
+    "title": "Principles of Inference",
+    "section": "Statistical inference",
+    "text": "Statistical inference\nFramework to make rigorous statements about uncertainty in our estimates\n\nconfidence intervals\nhypothesis tests\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   }
 ]

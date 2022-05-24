@@ -783,7 +783,7 @@ $\Rightarrow$ Select the model with the best overall prediction accuracy in step
 
 ## 
 
-![5-fold cross-validation](images/lec-6/cv.PNG){fig-align="center"}
+![](images/lec-6/cv.png)
 
 Source: [towardsdatascience](https://towardsdatascience.com/validating-your-machine-learning-model-25b4c8643fb7)
 
@@ -1022,16 +1022,14 @@ countdown(minutes = 5)
 ## 
 
 ::: callout-warning
+## Forward selection versus backward elimination
 
-## Forward selection versus backward elimination 
 Note that forward selection and backward elimination need not agree; they may select different models!
 
 . . .
 
 -   What to do in that case? Nobody knows.
-
 :::
-
 
 # How to prevent overfitting?
 
@@ -1062,7 +1060,6 @@ To obtain a parsimonious model
 
     -   stepwise procedure (forward, backward)
     :::
-    
 :::
 
 . . .
