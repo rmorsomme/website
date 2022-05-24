@@ -171,7 +171,9 @@ ggplot(data = d, aes(x = age, y = is_alive)) +
 
 ## Problems with linear regression
 
--   The response is not continuous like fuel consumption, tree volume or newborn weight
+-   The response is not continuous
+
+    -   unlike fuel consumption, tree volume or newborn weight
 
 -   nonsensical predictions, even for reasonable value of `age`.
 
@@ -193,6 +195,7 @@ countdown(minutes = 2)
 
 **Generalized linear models** (GLMs -- STA310) extend the linear regression framework to settings where the response variable is *restricted*:
 
+::: incremental
 -   **logistic regression** with binary response
 
 -   multinomial regression with nominal (categorical) response, e.g. voting in multiparty systems
@@ -204,6 +207,7 @@ countdown(minutes = 2)
 -   gamma regression with positive response variable, e.g. mpg, insurance costs
 
 -   beta regression with continuous response between 0 and 1 (percentage), e.g. cancer rates in counties
+:::
 
 # Logistic regression
 
@@ -211,9 +215,9 @@ countdown(minutes = 2)
 
 -   Example of a *generalized linear model*
 
--   Focus on implementation and interpretation
+-   We'll focus on implementation and interpretation
 
--   Useful for inference project
+-   Useful for inference project (not the prediction project)
 
 **Logistic regression**: model the probability of success $p$ based on a set of predictors $X_1, \dots, X_p$.
 
@@ -226,12 +230,12 @@ The logistic regression model assumes that
 $$
 Y_i = 
 \begin{cases}
-1 (\text{success}), \text{with probability } p_i, \\
-0 (\text{failure}), \text{with probability } 1-p_i.
+1 \text{ (success)}, \text{with probability } p_i, \\
+0 \text{ (failure)}, \text{with probability } 1-p_i.
 \end{cases}
 $$
 
-where $p_i$ denotes the probability of success of person $i$.
+where $p_i$ denotes the probability of success (survival) of person $i$.
 
 ## Modeling a probability with linear regression? {.smaller}
 
@@ -350,8 +354,6 @@ When we fit a logistic regression model with `R`, the so-called *maximum likelih
 
 [^1]: MLE are extremely popular in statistics.
 
-. . .
-
 # Implementation
 
 ## `glm`
@@ -359,6 +361,7 @@ When we fit a logistic regression model with `R`, the so-called *maximum likelih
 We fit a logistic regression model in `R` with the command `glm` (not `lm`)
 
 ```{r}
+#| code-line-numbers: "1|2|3|4|"
 m <- glm( # glm, not lm
   is_alive ~ age, 
   family = binomial, # logistic regression
@@ -373,14 +376,12 @@ For the moment simply focus on
 
 -   coefficient estimates
 
--   AIC (no (adjusted-) $R^2$)
-
-    -   model selection
+-   AIC (no (adjusted-) $R^2$) for model selection
 
 ::: callout-warning
 ## glm not lm
 
-To fit a logistic regression model in `R`, use the command `glm` (not `lm`) with the argument `family` set to `binomial`.
+To fit a logistic regression model in `R`, use the command `glm` (not `lm`) with the argument `family = binomial`.
 :::
 
 ## Interpretation
@@ -426,7 +427,7 @@ ggplot(mapping = aes(x = age)) +
 
 ## Multiple logistic regression
 
-Based on what we know about multiple lrm, it is easy to extend the previous model to **multiple** logistic regression:
+Based on what we know about multiple lrm, it is easy to extend the previous framework to **multiple** logistic regression:
 
 $$
 p = \dfrac{e^{\mu}}{1+e^{\mu}}
@@ -478,11 +479,13 @@ countdown(minutes = 4)
 ::: {.callout-tip icon="false"}
 ## Group exercise - implementation
 
-Exercise [9.3](https://openintro-ims.netlify.app/model-logistic.html#chp09-exercises): simply fit the two models in `R`. The `possum` data used in this exercise can be found in the `openintro` `R` package. You should obtain the same coefficient estimates as in the book, though with an opposite sign.
-
-Save these models; you will need them later!
+Exercise [9.3](https://openintro-ims.netlify.app/model-logistic.html#chp09-exercises)
 
 **You do not need to do parts a and b.**
+
+Simply fit the two models in `R`. The `possum` data used in this exercise can be found in the `openintro` `R` package. You should obtain the same coefficient estimates as in the book, though with an opposite sign.
+
+Save these models; you will need them later!
 :::
 
 ```{r, echo = F}
@@ -534,15 +537,15 @@ $$
 \frac{79}{103} \approx 77\%
 $$
 
-To estimate the accuracy on new data, simply use the holdout method or cross-validation.
+To estimate the prediction accuracy on new data, simply use the holdout method or cross-validation.
 
 ## Model selection
 
 -   AIC, BIC (not adjusted-$R^2$)
 
--   the holdout method using *accuracy* (not RMSE)
+-   the holdout method using *prediction* *accuracy* (not RMSE)
 
--   cross-validation using *accuracy* (not RMSE)
+-   cross-validation using *prediction* *accuracy* (not RMSE)
 
 ::: callout-tip
 ## AIC and BIC
