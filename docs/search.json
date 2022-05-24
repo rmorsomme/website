@@ -2553,5 +2553,19 @@
     "title": "Logistic Regression",
     "section": "",
     "text": "Group exercise - stepwise model selection with AIC\n\n\nExercise 9.7\n\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+  },
+  {
+    "objectID": "slides/lec-5.html#predicting-amateur-jogging-races-duration",
+    "href": "slides/lec-5.html#predicting-amateur-jogging-races-duration",
+    "title": "Multiple Linear Regression Models",
+    "section": "Predicting amateur jogging races duration",
+    "text": "Predicting amateur jogging races duration\n\n\nSuppose you are interested in predicting the average run time (duration) of amateur jogging races.\nTwo variables that impact the duration are (i) the distance of the race, and (ii) the weather.\nFor simplicity, we measure the weather as either good (nice weather) or bad (rain, heat wave, etc)."
+  },
+  {
+    "objectID": "slides/lec-5.html#nonlinearity",
+    "href": "slides/lec-5.html#nonlinearity",
+    "title": "Multiple Linear Regression Models",
+    "section": "Nonlinearity",
+    "text": "Nonlinearity\nConsider the relation between the predictor displ and the response hwy\n\nggplot(d) +\n  geom_point(aes(displ, hwy))\n\n\n\nThe relationis not exactly linear."
   }
 ]

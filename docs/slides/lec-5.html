@@ -624,7 +624,7 @@ Coefficients:
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628be19c" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_628cd709" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -679,7 +679,7 @@ Coefficients:
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628be28c" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_628cd717" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -732,7 +732,7 @@ Coefficients:
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628be39e" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_628cd6d6" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -769,14 +769,18 @@ Coefficients:
 <section>
 <section id="transforming-a-variable" class="title-slide slide level1 center">
 <h1>Transforming a variable</h1>
-<p>Consider the predictor <code>displ</code></p>
+
+</section>
+<section id="nonlinearity" class="slide level2">
+<h2>Nonlinearity</h2>
+<p>Consider the relation between the predictor <code>displ</code> and the response <code>hwy</code></p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">ggplot</span>(d) <span class="sc">+</span></span>
 <span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(displ, hwy))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="lec-5_files/figure-revealjs/unnamed-chunk-15-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"><div class="fragment">
-<p>The relation between <code>displ</code> and <code>hwy</code> is not exactly linear.</p>
+<p>The relationis not exactly linear.</p>
 </div>
 </section>
 <section id="modeling-nonlinearity" class="slide level2 smaller">
@@ -981,8 +985,12 @@ Coefficients:
 </div>
 <aside><ol class="aside-footnotes"><li id="fn3" role="doc-endnote"><p>as long as both models exclude the intercept</p></li></ol></aside></section></section>
 <section>
-<section id="special-case-of-data-combination-interaction" class="title-slide slide level1 smaller center">
+<section id="special-case-of-data-combination-interaction" class="title-slide slide level1 center">
 <h1>Special case of data combination: interaction</h1>
+
+</section>
+<section id="predicting-amateur-jogging-races-duration" class="slide level2 smaller">
+<h2>Predicting amateur jogging races duration</h2>
 <div class="columns">
 <div class="column" style="width:45%;">
 <p>Suppose you are interested in predicting the average run time (<strong>duration</strong>) of amateur jogging races.</p>

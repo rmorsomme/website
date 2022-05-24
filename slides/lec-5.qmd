@@ -333,7 +333,9 @@ This is where your understanding of the data, scientific knowledge and experienc
 
 # Transforming a variable
 
-Consider the predictor `displ`
+## Nonlinearity
+
+Consider the relation between the predictor `displ` and the response `hwy`
 
 ```{r}
 ggplot(d) +
@@ -342,7 +344,7 @@ ggplot(d) +
 
 . . .
 
-The relation between `displ` and `hwy` is not exactly linear.
+The relationis not exactly linear.
 
 ## Modeling nonlinearity {.smaller}
 
@@ -514,7 +516,9 @@ Note that the full model has two predictors, while our geometry-based model has 
 A carefully constructed predictor can do a better job than multiple raw predictors!
 :::
 
-# Special case of data combination: interaction {.smaller}
+# Special case of data combination: interaction
+
+## Predicting amateur jogging races duration  {.smaller}
 
 ::: columns
 ::: {.column width="45%"}
