@@ -519,7 +519,7 @@ d_tree # entire sample
 ## Training set
 
 ```{r}
-set.seed(0)
+set.seed(0) # set the seed of the random number generator to 0
 training_test_sets <- construct_training_test(d_tree) 
 training_set <- training_test_sets[["training"]]
 training_set
@@ -535,7 +535,7 @@ test_set
 
 ## Step 2: fit the model to the training set
 
-We simply fit our regression model to the training set.
+We simply fit our regression model to the **training set**.
 
 ```{r}
 m1 <- lm(Volume ~ Girth, data = training_set)
@@ -543,7 +543,7 @@ m1 <- lm(Volume ~ Girth, data = training_set)
 
 ## Step 3: Evaluate the prediction accuracy on the test set
 
-To evaluate the prediction accuracy, we start by computing the predictions for the observations in test set.
+To evaluate the prediction accuracy, we start by computing the predictions for the observations in the **test set**.
 
 ```{r}
 Volume_hat <- predict(m1, test_set)
@@ -583,9 +583,8 @@ $$ Again, **small (R)MSE is better**.
 ## 
 
 ```{r}
-SSE <- sum((Volume - Volume_hat)^2)
-m <- nrow(test_set)
-MSE <- SSE / m
+SSE <- sum ((Volume - Volume_hat)^2)
+MSE <- mean((Volume - Volume_hat)^2)
 RMSE <- sqrt(MSE)
 SSE; MSE; RMSE
 ```
@@ -593,7 +592,7 @@ SSE; MSE; RMSE
 ::: callout-tip
 ## (R)MSE
 
-The advantage of (R)MSE over the SSE is that we can compare models evaluate with test sets of different sizes.
+The advantage of (R)MSE over SSE is that we can compare models that are evaluated with test sets of different sizes.
 :::
 
 ## Selecting a model
@@ -613,8 +612,8 @@ This model has the best **predictive accuracy**.
 ```{r}
 compute_RMSE <- function(test_set, model){
   
-  y     <- test_set$Volume
-  y_hat <- predict(model, test_set)
+  y     <- test_set$Volume # truth
+  y_hat <- predict(model, test_set) # predicted value
   
   E    <- y - y_hat
   MSE  <- mean(E^2)
@@ -627,14 +626,17 @@ compute_RMSE <- function(test_set, model){
 
 ## 
 
-```{r}
-# Step 2
+```{r, results='hold'}
+# Step 1 - partition sample into a training set and a test set
+# already done
+
+# Step 2 - fit models to training set
 m1  <- lm(Volume ~ poly(Girth, degree = 1 , raw = TRUE), data = training_set)
 m2  <- lm(Volume ~ poly(Girth, degree = 2 , raw = TRUE), data = training_set)
 m3  <- lm(Volume ~ poly(Girth, degree = 3 , raw = TRUE), data = training_set)
 m48 <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = training_set)
 
-# Step 3
+# Step 3 - evaluate models on test set
 compute_RMSE(test_set, m1)
 compute_RMSE(test_set, m2)
 compute_RMSE(test_set, m3) # best
@@ -649,13 +651,15 @@ The previous analysis was conducted with `set.seed(0)`.
 
 . . .
 
-Models `m2` and `m3` were pretty close.
+Note that models `m2` and `m3` were pretty close.
 
 Could we have obtained a different result with a different seed?
 
 ## 
 
 ```{r}
+#| code-line-numbers: "2|"
+#| results: hold
 # Step 1
 set.seed(1) # new seed
 training_test_sets <- construct_training_test(d_tree) 
@@ -679,21 +683,22 @@ compute_RMSE(test_set, m48)
 
 With `set.seed(1)`, the holdout method indicates that `m2` is the best model.
 
--   Our previous best model `m3` is even to be worse than `m1`!
+-   `m3`, our previous best model, is worse than `m1`!
 
 . . .
 
 A drawback of the holdout method is that the test set matters a lot.
 
--   Repeating steps 2 and 3 with a different partition from step 1 may give different results.
+-   Repeating steps 2 and 3 with a different partition in step 1 may give different results.
 
 ## 
+
 ::: {.callout-tip icon="false"}
 ## Group exercise - limitation of the holdout method
 
-Copy and paste the following code in your `R` session. Try a few different seed numbers. Which models usually have the smallest RMSE? Is `m1` ever the best model?
+Copy and paste the following code in your `R` session. Try a few different seed numbers for step 1. Keep track of which model has the lowest RMSE. Is `m1` ever the best model?
 
-You can ignore the warning message.
+You can safely ignore the warning messages.
 
 ```{r, eval=FALSE}
 # Setup
@@ -744,19 +749,19 @@ compute_RMSE(test_set, m2)
 compute_RMSE(test_set, m3)
 compute_RMSE(test_set, m48)
 ```
-
 :::
+
 ```{r, echo = F}
 countdown(minutes = 5)
 ```
 
 ## Cross-validation
 
-Cross-validation (CV) is the natural generalization of the holdout method:
+Cross-validation (CV) is a natural generalization of the holdout method:
 
--   simply repeat the holdout method many times.
+-   repeat the holdout method many times with different partitions in step 1.
 
-\##
+## 
 
 0.  randomly partition the sample into $k$ folds of equal size. $k$ is typically $5$ or $10$.
 
@@ -770,7 +775,7 @@ Repeat the following steps $k$ times
 
 3.  Evaluate the prediction accuracy of the model on the test set (like the holdout method)
 
-4.  Go back to 1, letting the next fold be the test set.
+4.  Go back to step 1, let the next fold be the test set.
 
 . . .
 
@@ -793,11 +798,13 @@ n_folds <- 10
 
 # Fold assignment
 folds <- c(rep(1:n_folds, n %/% n_folds), seq_along(n %% n_folds))
+# you do not need to understand the details of the previous line
+# just note that it creates folds of (almost) the same size
 folds
 
 # Step 1
 d_tree_fold <- d_tree %>%
-  slice_sample(n = n) %>%
+  slice_sample(n = n) %>% # shuffle the rows
   mutate(fold = folds)
 head(d_tree_fold)
 ```
@@ -807,6 +814,7 @@ head(d_tree_fold)
 ```{r}
 create_empty_RMSE <- function(){
   tibble(
+    fold     = numeric(),
     rmse_m1  = numeric(), 
     rmse_m2  = numeric(), 
     rmse_m3  = numeric(), 
@@ -823,7 +831,7 @@ RMSE
 ```{r, warning=FALSE}
 RMSE <- create_empty_RMSE()
 
-for(i in 1:n_folds){
+for(i in 1 : n_folds){
   
   # Step 1
   training_set <- filter(d_tree_fold, fold != i)
@@ -841,7 +849,8 @@ for(i in 1:n_folds){
   rmse_m3  <- compute_RMSE(test_set, m3 )
   rmse_m48 <- compute_RMSE(test_set, m48)
   
-  RMSE <- RMSE %>% add_row(rmse_m1, rmse_m2, rmse_m3, rmse_m48)
+  RMSE <- RMSE %>% 
+    add_row(fold = i, rmse_m1, rmse_m2, rmse_m3, rmse_m48)
   
 }
 ```
@@ -856,10 +865,10 @@ RMSE
 
 ```{r}
 summarise_all(RMSE, mean)
-summarise_all(RMSE, sum) # what the book uses
+summarise_all(RMSE, sum ) # what the book uses
 ```
 
-`m2` has slightly better average RMSE.
+`m2` has slightly better overall RMSE.
 
 ## 
 
@@ -868,30 +877,30 @@ summarise_all(RMSE, sum) # what the book uses
 
 Exercise [25.9](https://openintro-ims.netlify.app/inf-model-mlr.html#chp25-exercises), [25.11](https://openintro-ims.netlify.app/inf-model-mlr.html#chp25-exercises), [25.12](https://openintro-ims.netlify.app/inf-model-mlr.html#chp25-exercises)
 
-In part c, replace *left* and *right*, by *top* and *bottom*.
+In part c (25.9 and 25.11) , replace *left* and *right*, by *top* and *bottom*.
 :::
 
 ```{r, echo = F}
-countdown(minutes = 3)
+countdown(minutes = 4)
 ```
 
 ## Short podcast on cross-validation
 
-Still confused by corss-validation?
+Cross-validation is a central technique in machine learning.
 
-Check out this [podcast](https://dataskeptic.com/blog/episodes/2014/cross-validation) to hear more about this important topic.
+Still not totally clear how it works? Check out this [podcast](https://dataskeptic.com/blog/episodes/2014/cross-validation) to hear more about this important topic.
 
 . . .
 
-These other two podcasts on [muliple linear regression](https://dataskeptic.com/blog/episodes/2016/multiple-regression) and [$R^2$](https://dataskeptic.com/blog/episodes/2016/r-squared) are also excellent.
+These two other podcasts on [muliple linear regression](https://dataskeptic.com/blog/episodes/2016/multiple-regression) and [$R^2$](https://dataskeptic.com/blog/episodes/2016/r-squared) are also excellent.
 
 ## Taking things to the extreme: LOOCV
 
 Set $k=n$.
 
--   Use $n$ folds, each of size $1$.
+-   that is, use $n$ folds, each of size $1$.
 
--   The test sets will therefore consist of a single observation and the training sets of the remaining $n-1$ observations.
+-   Each test set will therefore consist of a single observation and the corresponding training set of the remaining $n-1$ observations.
 
 ## LOOCV {.smaller}
 
@@ -920,7 +929,8 @@ for(i in 1:n){
   rmse_m3  <- compute_RMSE(test_set, m3 )
   rmse_m48 <- compute_RMSE(test_set, m48)
   
-  RMSE <- add_row(RMSE, rmse_m1, rmse_m2, rmse_m3, rmse_m48)
+  RMSE <- RMSE %>%
+    add_row(fold = i, rmse_m1, rmse_m2, rmse_m3, rmse_m48)
   
 }
 
@@ -929,13 +939,15 @@ summarize_all(RMSE, mean)
 
 # Model selection: stepwise procedures
 
--   Not my favorite method,
+## Stepwise procedures
 
--   but this is something you should learn because it is widely used.
+Not my favorite method, but it is widely used.
 
 . . .
 
 -   Akin the "throw cooked spaghetti to the wall and see what sticks" technique.
+-   This is what you do when you are clueless about what variables may be good predictors
+    -   ...but then you should probably collaborate with a scientific expert.
 
 . . .
 
@@ -943,7 +955,7 @@ Two types of stepwise procedures: (i) **forward selection** and (ii) **backward 
 
 ## Forward selection {.smaller}
 
-1.  Choose an overall criterion that balances model fit (smaller SSR) and parsimony (small $p$)
+1.  Choose an overall criterion that balances GoF (small SSR) and parsimony (small $p$)
 
     $\Rightarrow$ adjusted-$R^2$, AIC or BIC
 
@@ -955,7 +967,7 @@ Two types of stepwise procedures: (i) **forward selection** and (ii) **backward 
 
 . . .
 
-4.  Compute the AIC of each of these models.
+4.  Compute the criterion, say the AIC, of each of these models.
 
 5.  Identify the model with the smallest AIC. This is our **candidate model**.
 
@@ -986,8 +998,8 @@ countdown(minutes = 5)
 
 Similar to forward selection, except that
 
--   Start with the full model.
--   Remove one predictor at a time,
+-   We start with the full model.
+-   We remove one predictor at a time,
 -   until removing any predictor makes the model worse.
 
 ## 
@@ -1009,11 +1021,17 @@ countdown(minutes = 5)
 
 ## 
 
-Note that forward and backward stepwise selection need not agree; they may select different models.
+::: callout-warning
+
+## Forward selection versus backward elimination 
+Note that forward selection and backward elimination need not agree; they may select different models!
 
 . . .
 
 -   What to do in that case? Nobody knows.
+
+:::
+
 
 # How to prevent overfitting?
 
@@ -1028,15 +1046,27 @@ To obtain a parsimonious model
 
 # Recap
 
-## Recap
+## Recap {.smaller}
 
+::: incremental
 -   Overfitting
+
     -   limitations of $R^2$ for model selection
+
 -   Model selection through
+
+    ::: incremental
     -   overall criteria (adjusted-$R^2$, AIC, BIC)
 
     -   predictive performance (holdout method, cross-validation)
 
     -   stepwise procedure (forward, backward)
+    :::
+    
+:::
 
-You are now ready for the prediction project!
+. . .
+
+You are now fully equipped for the prediction project!
+
+🍀 Good luck! 🍀

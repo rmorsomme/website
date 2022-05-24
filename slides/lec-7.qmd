@@ -54,17 +54,17 @@ options(scipen = 100)
 ## Recap {.smaller}
 
 ::: incremental
--   Overfitting
+-   Simple and multiple lrm
 
--   Limitations of $R^2$
+    -   numerical response
 
--   Model selection through
+-   model selection
 
-    -   criteria (adjusted $R^2$, AIC, BIC)
+    -   overall criterion
 
-    -   predictive performance (holdout method, cross-validation)
+    -   predictive performance
 
-    -   stepwise procedure (forward, backward)
+    -   stepwise procedures
 :::
 
 ## Outline
@@ -72,7 +72,6 @@ options(scipen = 100)
 -   Modeling a binary response
 -   Logistic regression
 -   One predictor
--   Visualization
 -   Multiple predictors
 
 # Modeling a binary response
@@ -198,14 +197,13 @@ countdown(minutes = 2)
 
 -   multinomial regression with nominal (categorical) response, e.g. voting in multiparty systems
 
--   ordinal regression with ordinal (categorical) response, e.g. course letter grade 
+-   ordinal regression with ordinal (categorical) response, e.g. course letter grade
 
 -   poisson regression with count response, e.g. number of children
 
 -   gamma regression with positive response variable, e.g. mpg, insurance costs
 
 -   beta regression with continuous response between 0 and 1 (percentage), e.g. cancer rates in counties
-
 
 # Logistic regression
 
@@ -350,9 +348,9 @@ How are the unknown coefficients $\beta_0$ and $\beta_1$ estimated?
 
 When we fit a logistic regression model with `R`, the so-called *maximum likelihood estimates* (MLE[^1]) are returned.
 
-. . .
-
 [^1]: MLE are extremely popular in statistics.
+
+. . .
 
 # Implementation
 
@@ -376,6 +374,7 @@ For the moment simply focus on
 -   coefficient estimates
 
 -   AIC (no (adjusted-) $R^2$)
+
     -   model selection
 
 ::: callout-warning
@@ -456,13 +455,11 @@ m2
 ## Group exercise - interpretation
 
 What is the interpretation of the coefficient estimates for `age` and `transplant`?
-
 :::
 
 ```{r, echo = F}
 countdown(minutes = 2)
 ```
-
 
 ## 
 
@@ -549,13 +546,13 @@ To estimate the accuracy on new data, simply use the holdout method or cross-val
 
 ::: callout-tip
 ## AIC and BIC
+
 With AIC and BIC, lower is better!
 
 $$
 AIC = 2p - \text{Goodness of fit}, \qquad BIC = p\ln(n) - \text{Goodness of fit}
 $$
 :::
-
 
 ## 
 
@@ -571,5 +568,6 @@ Similarly, compare the AIC of the simple (`age`) and multiple (`age + implant`) 
 
 ::: {.callout-tip icon="false"}
 ## Group exercise - stepwise model selection with AIC
+
 Exercise [9.7](https://openintro-ims.netlify.app/model-logistic.html#chp09-exercises)
 :::

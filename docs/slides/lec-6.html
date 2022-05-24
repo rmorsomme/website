@@ -829,7 +829,7 @@ R^2_{\text{adj}} = 1 - \dfrac{SSR}{SST}\dfrac{n-1}{n-p-1}
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628be35c" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_628cf1f7" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1036,7 +1036,7 @@ AIC = 2p - \text{GoF}, \qquad BIC = \ln(n)p- \text{GoF}
 </div>
 <div id="tabset-5-2">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>) <span class="co"># set the seed of the random number generator to 0</span></span>
 <span id="cb30-2"><a href="#cb30-2"></a>training_test_sets <span class="ot">&lt;-</span> <span class="fu">construct_training_test</span>(d_tree) </span>
 <span id="cb30-3"><a href="#cb30-3"></a>training_set <span class="ot">&lt;-</span> training_test_sets[[<span class="st">"training"</span>]]</span>
 <span id="cb30-4"><a href="#cb30-4"></a>training_set</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1090,14 +1090,14 @@ AIC = 2p - \text{GoF}, \qquad BIC = \ln(n)p- \text{GoF}
 </section>
 <section id="step-2-fit-the-model-to-the-training-set" class="slide level2">
 <h2>Step 2: fit the model to the training set</h2>
-<p>We simply fit our regression model to the training set.</p>
+<p>We simply fit our regression model to the <strong>training set</strong>.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb34"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> Girth, <span class="at">data =</span> training_set)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="step-3-evaluate-the-prediction-accuracy-on-the-test-set" class="slide level2">
 <h2>Step 3: Evaluate the prediction accuracy on the test set</h2>
-<p>To evaluate the prediction accuracy, we start by computing the predictions for the observations in test set.</p>
+<p>To evaluate the prediction accuracy, we start by computing the predictions for the observations in the <strong>test set</strong>.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb35"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>Volume_hat <span class="ot">&lt;-</span> <span class="fu">predict</span>(m1, test_set)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1133,11 +1133,10 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <section id="section-8" class="slide level2">
 <h2></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>SSE <span class="ot">&lt;-</span> <span class="fu">sum</span>((Volume <span class="sc">-</span> Volume_hat)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb38-2"><a href="#cb38-2"></a>m <span class="ot">&lt;-</span> <span class="fu">nrow</span>(test_set)</span>
-<span id="cb38-3"><a href="#cb38-3"></a>MSE <span class="ot">&lt;-</span> SSE <span class="sc">/</span> m</span>
-<span id="cb38-4"><a href="#cb38-4"></a>RMSE <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(MSE)</span>
-<span id="cb38-5"><a href="#cb38-5"></a>SSE; MSE; RMSE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>SSE <span class="ot">&lt;-</span> <span class="fu">sum</span> ((Volume <span class="sc">-</span> Volume_hat)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb38-2"><a href="#cb38-2"></a>MSE <span class="ot">&lt;-</span> <span class="fu">mean</span>((Volume <span class="sc">-</span> Volume_hat)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb38-3"><a href="#cb38-3"></a>RMSE <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(MSE)</span>
+<span id="cb38-4"><a href="#cb38-4"></a>SSE; MSE; RMSE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>[1] 211.4543</code></pre>
 </div>
@@ -1157,7 +1156,7 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <p><strong>(R)MSE</strong></p>
 </div>
 <div class="callout-content">
-<p>The advantage of (R)MSE over the SSE is that we can compare models evaluate with test sets of different sizes.</p>
+<p>The advantage of (R)MSE over SSE is that we can compare models that are evaluated with test sets of different sizes.</p>
 </div>
 </div>
 </div>
@@ -1178,8 +1177,8 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb42"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>compute_RMSE <span class="ot">&lt;-</span> <span class="cf">function</span>(test_set, model){</span>
 <span id="cb42-2"><a href="#cb42-2"></a>  </span>
-<span id="cb42-3"><a href="#cb42-3"></a>  y     <span class="ot">&lt;-</span> test_set<span class="sc">$</span>Volume</span>
-<span id="cb42-4"><a href="#cb42-4"></a>  y_hat <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, test_set)</span>
+<span id="cb42-3"><a href="#cb42-3"></a>  y     <span class="ot">&lt;-</span> test_set<span class="sc">$</span>Volume <span class="co"># truth</span></span>
+<span id="cb42-4"><a href="#cb42-4"></a>  y_hat <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, test_set) <span class="co"># predicted value</span></span>
 <span id="cb42-5"><a href="#cb42-5"></a>  </span>
 <span id="cb42-6"><a href="#cb42-6"></a>  E    <span class="ot">&lt;-</span> y <span class="sc">-</span> y_hat</span>
 <span id="cb42-7"><a href="#cb42-7"></a>  MSE  <span class="ot">&lt;-</span> <span class="fu">mean</span>(E<span class="sc">^</span><span class="dv">2</span>)</span>
@@ -1193,28 +1192,25 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <section id="section-9" class="slide level2">
 <h2></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># Step 2</span></span>
-<span id="cb43-2"><a href="#cb43-2"></a>m1  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">1</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
-<span id="cb43-3"><a href="#cb43-3"></a>m2  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">2</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
-<span id="cb43-4"><a href="#cb43-4"></a>m3  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">3</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
-<span id="cb43-5"><a href="#cb43-5"></a>m48 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">48</span>, <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
-<span id="cb43-6"><a href="#cb43-6"></a></span>
-<span id="cb43-7"><a href="#cb43-7"></a><span class="co"># Step 3</span></span>
-<span id="cb43-8"><a href="#cb43-8"></a><span class="fu">compute_RMSE</span>(test_set, m1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># Step 1 - partition sample into a training set and a test set</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a><span class="co"># already done</span></span>
+<span id="cb43-3"><a href="#cb43-3"></a></span>
+<span id="cb43-4"><a href="#cb43-4"></a><span class="co"># Step 2 - fit models to training set</span></span>
+<span id="cb43-5"><a href="#cb43-5"></a>m1  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">1</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb43-6"><a href="#cb43-6"></a>m2  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">2</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb43-7"><a href="#cb43-7"></a>m3  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">3</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb43-8"><a href="#cb43-8"></a>m48 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">48</span>, <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb43-9"><a href="#cb43-9"></a></span>
+<span id="cb43-10"><a href="#cb43-10"></a><span class="co"># Step 3 - evaluate models on test set</span></span>
+<span id="cb43-11"><a href="#cb43-11"></a><span class="fu">compute_RMSE</span>(test_set, m1)</span>
+<span id="cb43-12"><a href="#cb43-12"></a><span class="fu">compute_RMSE</span>(test_set, m2)</span>
+<span id="cb43-13"><a href="#cb43-13"></a><span class="fu">compute_RMSE</span>(test_set, m3) <span class="co"># best</span></span>
+<span id="cb43-14"><a href="#cb43-14"></a><span class="fu">compute_RMSE</span>(test_set, m48)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>[1] 4.598416</code></pre>
-</div>
-<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="fu">compute_RMSE</span>(test_set, m2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
-<pre><code>[1] 4.07333</code></pre>
-</div>
-<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">compute_RMSE</span>(test_set, m3) <span class="co"># best</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
-<pre><code>[1] 3.957379</code></pre>
-</div>
-<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="fu">compute_RMSE</span>(test_set, m48)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
-<pre><code>[1] 29.97533</code></pre>
+<pre><code>[1] 4.598416
+[1] 4.07333
+[1] 3.957379
+[1] 29.97533</code></pre>
 </div>
 </div>
 <p>We select <code>m3</code>.</p>
@@ -1223,41 +1219,35 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <h2>Limitation of the holdout method</h2>
 <p>The previous analysis was conducted with <code>set.seed(0)</code>.</p>
 <div class="fragment">
-<p>Models <code>m2</code> and <code>m3</code> were pretty close.</p>
+<p>Note that models <code>m2</code> and <code>m3</code> were pretty close.</p>
 <p>Could we have obtained a different result with a different seed?</p>
 </div>
 </section>
 <section id="section-10" class="slide level2">
 <h2></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="co"># Step 1</span></span>
-<span id="cb51-2"><a href="#cb51-2"></a><span class="fu">set.seed</span>(<span class="dv">1</span>) <span class="co"># new seed</span></span>
-<span id="cb51-3"><a href="#cb51-3"></a>training_test_sets <span class="ot">&lt;-</span> <span class="fu">construct_training_test</span>(d_tree) </span>
-<span id="cb51-4"><a href="#cb51-4"></a>training_set <span class="ot">&lt;-</span> training_test_sets[[<span class="st">"training"</span>]]</span>
-<span id="cb51-5"><a href="#cb51-5"></a>test_set <span class="ot">&lt;-</span> training_test_sets[[<span class="st">"test"</span>]]</span>
-<span id="cb51-6"><a href="#cb51-6"></a></span>
-<span id="cb51-7"><a href="#cb51-7"></a><span class="co"># Step 2</span></span>
-<span id="cb51-8"><a href="#cb51-8"></a>m1  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">1</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
-<span id="cb51-9"><a href="#cb51-9"></a>m2  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">2</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
-<span id="cb51-10"><a href="#cb51-10"></a>m3  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">3</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
-<span id="cb51-11"><a href="#cb51-11"></a>m48 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">48</span>, <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
-<span id="cb51-12"><a href="#cb51-12"></a></span>
-<span id="cb51-13"><a href="#cb51-13"></a><span class="co"># Step 3</span></span>
-<span id="cb51-14"><a href="#cb51-14"></a><span class="fu">compute_RMSE</span>(test_set, m1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb45" data-code-line-numbers="2|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># Step 1</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a><span class="fu">set.seed</span>(<span class="dv">1</span>) <span class="co"># new seed</span></span>
+<span id="cb45-3"><a href="#cb45-3"></a>training_test_sets <span class="ot">&lt;-</span> <span class="fu">construct_training_test</span>(d_tree) </span>
+<span id="cb45-4"><a href="#cb45-4"></a>training_set <span class="ot">&lt;-</span> training_test_sets[[<span class="st">"training"</span>]]</span>
+<span id="cb45-5"><a href="#cb45-5"></a>test_set <span class="ot">&lt;-</span> training_test_sets[[<span class="st">"test"</span>]]</span>
+<span id="cb45-6"><a href="#cb45-6"></a></span>
+<span id="cb45-7"><a href="#cb45-7"></a><span class="co"># Step 2</span></span>
+<span id="cb45-8"><a href="#cb45-8"></a>m1  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">1</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb45-9"><a href="#cb45-9"></a>m2  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">2</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb45-10"><a href="#cb45-10"></a>m3  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">3</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb45-11"><a href="#cb45-11"></a>m48 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">48</span>, <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb45-12"><a href="#cb45-12"></a></span>
+<span id="cb45-13"><a href="#cb45-13"></a><span class="co"># Step 3</span></span>
+<span id="cb45-14"><a href="#cb45-14"></a><span class="fu">compute_RMSE</span>(test_set, m1)</span>
+<span id="cb45-15"><a href="#cb45-15"></a><span class="fu">compute_RMSE</span>(test_set, m2) <span class="co"># best</span></span>
+<span id="cb45-16"><a href="#cb45-16"></a><span class="fu">compute_RMSE</span>(test_set, m3)</span>
+<span id="cb45-17"><a href="#cb45-17"></a><span class="fu">compute_RMSE</span>(test_set, m48)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>[1] 6.097541</code></pre>
-</div>
-<div class="sourceCode" id="cb53"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="fu">compute_RMSE</span>(test_set, m2) <span class="co"># best</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
-<pre><code>[1] 4.248172</code></pre>
-</div>
-<div class="sourceCode" id="cb55"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="fu">compute_RMSE</span>(test_set, m3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
-<pre><code>[1] 10.37698</code></pre>
-</div>
-<div class="sourceCode" id="cb57"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="fu">compute_RMSE</span>(test_set, m48)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
-<pre><code>[1] 103753769</code></pre>
+<pre><code>[1] 6.097541
+[1] 4.248172
+[1] 10.37698
+[1] 103753769</code></pre>
 </div>
 </div>
 </section>
@@ -1265,12 +1255,12 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <h2>The test set matters!</h2>
 <p>With <code>set.seed(1)</code>, the holdout method indicates that <code>m2</code> is the best model.</p>
 <ul>
-<li>Our previous best model <code>m3</code> is even to be worse than <code>m1</code>!</li>
+<li><code>m3</code>, our previous best model, is worse than <code>m1</code>!</li>
 </ul>
 <div class="fragment">
 <p>A drawback of the holdout method is that the test set matters a lot.</p>
 <ul>
-<li>Repeating steps 2 and 3 with a different partition from step 1 may give different results.</li>
+<li>Repeating steps 2 and 3 with a different partition in step 1 may give different results.</li>
 </ul>
 </div>
 </section>
@@ -1282,63 +1272,63 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <p><strong>Group exercise - limitation of the holdout method</strong></p>
 </div>
 <div class="callout-content">
-<p>Copy and paste the following code in your <code>R</code> session. Try a few different seed numbers. Which models usually have the smallest RMSE? Is <code>m1</code> ever the best model?</p>
-<p>You can ignore the warning message.</p>
+<p>Copy and paste the following code in your <code>R</code> session. Try a few different seed numbers for step 1. Keep track of which model has the lowest RMSE. Is <code>m1</code> ever the best model?</p>
+<p>You can safely ignore the warning messages.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb59"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a><span class="co"># Setup</span></span>
-<span id="cb59-2"><a href="#cb59-2"></a><span class="fu">set.seed</span>(<span class="dv">0</span>) <span class="co"># do not change this seed number</span></span>
-<span id="cb59-3"><a href="#cb59-3"></a>d_tree <span class="ot">&lt;-</span> datasets<span class="sc">::</span>trees <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Girth =</span> Girth <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">nrow</span>(.), <span class="dv">0</span>, <span class="fl">0.5</span>))</span>
-<span id="cb59-4"><a href="#cb59-4"></a>compute_RMSE <span class="ot">&lt;-</span> <span class="cf">function</span>(test_set, model){</span>
-<span id="cb59-5"><a href="#cb59-5"></a>  </span>
-<span id="cb59-6"><a href="#cb59-6"></a>  y     <span class="ot">&lt;-</span> test_set<span class="sc">$</span>Volume</span>
-<span id="cb59-7"><a href="#cb59-7"></a>  y_hat <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, test_set)</span>
-<span id="cb59-8"><a href="#cb59-8"></a>  </span>
-<span id="cb59-9"><a href="#cb59-9"></a>  E    <span class="ot">&lt;-</span> y <span class="sc">-</span> y_hat</span>
-<span id="cb59-10"><a href="#cb59-10"></a>  MSE  <span class="ot">&lt;-</span> <span class="fu">mean</span>(E<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb59-11"><a href="#cb59-11"></a>  RMSE <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(MSE)</span>
-<span id="cb59-12"><a href="#cb59-12"></a>  </span>
-<span id="cb59-13"><a href="#cb59-13"></a>  <span class="fu">return</span>(RMSE)</span>
-<span id="cb59-14"><a href="#cb59-14"></a>  </span>
-<span id="cb59-15"><a href="#cb59-15"></a>}</span>
-<span id="cb59-16"><a href="#cb59-16"></a>construct_training_test <span class="ot">&lt;-</span> <span class="cf">function</span>(sample, <span class="at">prop_training =</span> <span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>){</span>
-<span id="cb59-17"><a href="#cb59-17"></a>  </span>
-<span id="cb59-18"><a href="#cb59-18"></a>  n          <span class="ot">&lt;-</span> <span class="fu">nrow</span>(sample)</span>
-<span id="cb59-19"><a href="#cb59-19"></a>  n_training <span class="ot">&lt;-</span> <span class="fu">round</span>(n <span class="sc">*</span> prop_training)</span>
-<span id="cb59-20"><a href="#cb59-20"></a>  </span>
-<span id="cb59-21"><a href="#cb59-21"></a>  sample_random   <span class="ot">&lt;-</span> <span class="fu">slice_sample</span>(sample, <span class="at">n =</span> n)</span>
-<span id="cb59-22"><a href="#cb59-22"></a>  sample_training <span class="ot">&lt;-</span> <span class="fu">slice</span>(sample_random,    <span class="dv">1</span> <span class="sc">:</span> n_training )</span>
-<span id="cb59-23"><a href="#cb59-23"></a>  sample_test     <span class="ot">&lt;-</span> <span class="fu">slice</span>(sample_random, <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">:</span> n_training))</span>
-<span id="cb59-24"><a href="#cb59-24"></a>  </span>
-<span id="cb59-25"><a href="#cb59-25"></a>  <span class="fu">return</span>(<span class="fu">list</span>(</span>
-<span id="cb59-26"><a href="#cb59-26"></a>    <span class="at">training =</span> sample_training, <span class="at">test =</span> sample_test</span>
-<span id="cb59-27"><a href="#cb59-27"></a>    ))</span>
-<span id="cb59-28"><a href="#cb59-28"></a>  </span>
-<span id="cb59-29"><a href="#cb59-29"></a>}</span>
-<span id="cb59-30"><a href="#cb59-30"></a></span>
-<span id="cb59-31"><a href="#cb59-31"></a><span class="co"># Step 1</span></span>
-<span id="cb59-32"><a href="#cb59-32"></a><span class="fu">set.seed</span>(<span class="dv">2</span>) <span class="co"># try a few different seed numbers</span></span>
-<span id="cb59-33"><a href="#cb59-33"></a>training_test_sets <span class="ot">&lt;-</span> <span class="fu">construct_training_test</span>(d_tree) </span>
-<span id="cb59-34"><a href="#cb59-34"></a>training_set <span class="ot">&lt;-</span> training_test_sets[[<span class="st">"training"</span>]]</span>
-<span id="cb59-35"><a href="#cb59-35"></a>test_set <span class="ot">&lt;-</span> training_test_sets[[<span class="st">"test"</span>]]</span>
-<span id="cb59-36"><a href="#cb59-36"></a></span>
-<span id="cb59-37"><a href="#cb59-37"></a><span class="co"># Step 2</span></span>
-<span id="cb59-38"><a href="#cb59-38"></a>m1  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">1</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
-<span id="cb59-39"><a href="#cb59-39"></a>m2  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">2</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
-<span id="cb59-40"><a href="#cb59-40"></a>m3  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">3</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
-<span id="cb59-41"><a href="#cb59-41"></a>m48 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">48</span>, <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
-<span id="cb59-42"><a href="#cb59-42"></a></span>
-<span id="cb59-43"><a href="#cb59-43"></a><span class="co"># Step 3</span></span>
-<span id="cb59-44"><a href="#cb59-44"></a><span class="fu">compute_RMSE</span>(test_set, m1)</span>
-<span id="cb59-45"><a href="#cb59-45"></a><span class="fu">compute_RMSE</span>(test_set, m2)</span>
-<span id="cb59-46"><a href="#cb59-46"></a><span class="fu">compute_RMSE</span>(test_set, m3)</span>
-<span id="cb59-47"><a href="#cb59-47"></a><span class="fu">compute_RMSE</span>(test_set, m48)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="co"># Setup</span></span>
+<span id="cb47-2"><a href="#cb47-2"></a><span class="fu">set.seed</span>(<span class="dv">0</span>) <span class="co"># do not change this seed number</span></span>
+<span id="cb47-3"><a href="#cb47-3"></a>d_tree <span class="ot">&lt;-</span> datasets<span class="sc">::</span>trees <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Girth =</span> Girth <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">nrow</span>(.), <span class="dv">0</span>, <span class="fl">0.5</span>))</span>
+<span id="cb47-4"><a href="#cb47-4"></a>compute_RMSE <span class="ot">&lt;-</span> <span class="cf">function</span>(test_set, model){</span>
+<span id="cb47-5"><a href="#cb47-5"></a>  </span>
+<span id="cb47-6"><a href="#cb47-6"></a>  y     <span class="ot">&lt;-</span> test_set<span class="sc">$</span>Volume</span>
+<span id="cb47-7"><a href="#cb47-7"></a>  y_hat <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, test_set)</span>
+<span id="cb47-8"><a href="#cb47-8"></a>  </span>
+<span id="cb47-9"><a href="#cb47-9"></a>  E    <span class="ot">&lt;-</span> y <span class="sc">-</span> y_hat</span>
+<span id="cb47-10"><a href="#cb47-10"></a>  MSE  <span class="ot">&lt;-</span> <span class="fu">mean</span>(E<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb47-11"><a href="#cb47-11"></a>  RMSE <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(MSE)</span>
+<span id="cb47-12"><a href="#cb47-12"></a>  </span>
+<span id="cb47-13"><a href="#cb47-13"></a>  <span class="fu">return</span>(RMSE)</span>
+<span id="cb47-14"><a href="#cb47-14"></a>  </span>
+<span id="cb47-15"><a href="#cb47-15"></a>}</span>
+<span id="cb47-16"><a href="#cb47-16"></a>construct_training_test <span class="ot">&lt;-</span> <span class="cf">function</span>(sample, <span class="at">prop_training =</span> <span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>){</span>
+<span id="cb47-17"><a href="#cb47-17"></a>  </span>
+<span id="cb47-18"><a href="#cb47-18"></a>  n          <span class="ot">&lt;-</span> <span class="fu">nrow</span>(sample)</span>
+<span id="cb47-19"><a href="#cb47-19"></a>  n_training <span class="ot">&lt;-</span> <span class="fu">round</span>(n <span class="sc">*</span> prop_training)</span>
+<span id="cb47-20"><a href="#cb47-20"></a>  </span>
+<span id="cb47-21"><a href="#cb47-21"></a>  sample_random   <span class="ot">&lt;-</span> <span class="fu">slice_sample</span>(sample, <span class="at">n =</span> n)</span>
+<span id="cb47-22"><a href="#cb47-22"></a>  sample_training <span class="ot">&lt;-</span> <span class="fu">slice</span>(sample_random,    <span class="dv">1</span> <span class="sc">:</span> n_training )</span>
+<span id="cb47-23"><a href="#cb47-23"></a>  sample_test     <span class="ot">&lt;-</span> <span class="fu">slice</span>(sample_random, <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">:</span> n_training))</span>
+<span id="cb47-24"><a href="#cb47-24"></a>  </span>
+<span id="cb47-25"><a href="#cb47-25"></a>  <span class="fu">return</span>(<span class="fu">list</span>(</span>
+<span id="cb47-26"><a href="#cb47-26"></a>    <span class="at">training =</span> sample_training, <span class="at">test =</span> sample_test</span>
+<span id="cb47-27"><a href="#cb47-27"></a>    ))</span>
+<span id="cb47-28"><a href="#cb47-28"></a>  </span>
+<span id="cb47-29"><a href="#cb47-29"></a>}</span>
+<span id="cb47-30"><a href="#cb47-30"></a></span>
+<span id="cb47-31"><a href="#cb47-31"></a><span class="co"># Step 1</span></span>
+<span id="cb47-32"><a href="#cb47-32"></a><span class="fu">set.seed</span>(<span class="dv">2</span>) <span class="co"># try a few different seed numbers</span></span>
+<span id="cb47-33"><a href="#cb47-33"></a>training_test_sets <span class="ot">&lt;-</span> <span class="fu">construct_training_test</span>(d_tree) </span>
+<span id="cb47-34"><a href="#cb47-34"></a>training_set <span class="ot">&lt;-</span> training_test_sets[[<span class="st">"training"</span>]]</span>
+<span id="cb47-35"><a href="#cb47-35"></a>test_set <span class="ot">&lt;-</span> training_test_sets[[<span class="st">"test"</span>]]</span>
+<span id="cb47-36"><a href="#cb47-36"></a></span>
+<span id="cb47-37"><a href="#cb47-37"></a><span class="co"># Step 2</span></span>
+<span id="cb47-38"><a href="#cb47-38"></a>m1  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">1</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb47-39"><a href="#cb47-39"></a>m2  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">2</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb47-40"><a href="#cb47-40"></a>m3  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">3</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb47-41"><a href="#cb47-41"></a>m48 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">48</span>, <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb47-42"><a href="#cb47-42"></a></span>
+<span id="cb47-43"><a href="#cb47-43"></a><span class="co"># Step 3</span></span>
+<span id="cb47-44"><a href="#cb47-44"></a><span class="fu">compute_RMSE</span>(test_set, m1)</span>
+<span id="cb47-45"><a href="#cb47-45"></a><span class="fu">compute_RMSE</span>(test_set, m2)</span>
+<span id="cb47-46"><a href="#cb47-46"></a><span class="fu">compute_RMSE</span>(test_set, m3)</span>
+<span id="cb47-47"><a href="#cb47-47"></a><span class="fu">compute_RMSE</span>(test_set, m48)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628be3b9" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_628cf12c" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1346,11 +1336,13 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 </section>
 <section id="cross-validation" class="slide level2">
 <h2>Cross-validation</h2>
-<p>Cross-validation (CV) is the natural generalization of the holdout method:</p>
+<p>Cross-validation (CV) is a natural generalization of the holdout method:</p>
 <ul>
-<li>simply repeat the holdout method many times.</li>
+<li>repeat the holdout method many times with different partitions in step 1.</li>
 </ul>
-<p>##</p>
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
 <ol start="0" type="1">
 <li>randomly partition the sample into <span class="math inline">\(k\)</span> folds of equal size. <span class="math inline">\(k\)</span> is typically <span class="math inline">\(5\)</span> or <span class="math inline">\(10\)</span>.</li>
 </ol>
@@ -1360,14 +1352,14 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <li><p>Let fold 1 be the test set and the remaining folds be the training set.</p></li>
 <li><p>Fit the model to the training set (like the holdout method)</p></li>
 <li><p>Evaluate the prediction accuracy of the model on the test set (like the holdout method)</p></li>
-<li><p>Go back to 1, letting the next fold be the test set.</p></li>
+<li><p>Go back to step 1, let the next fold be the test set.</p></li>
 </ol>
 </div>
 <div class="fragment">
 <p><span class="math inline">\(\Rightarrow\)</span> Select the model with the best overall prediction accuracy in step 3.</p>
 </div>
 </section>
-<section id="section-12" class="slide level2">
+<section id="section-13" class="slide level2">
 <h2></h2>
 
 <img data-src="images/lec-6/cv.PNG" class="r-stretch quarto-figure-center"><p class="caption">5-fold cross-validation</p><p>Source: <a href="https://towardsdatascience.com/validating-your-machine-learning-model-25b4c8643fb7">towardsdatascience</a></p>
@@ -1375,24 +1367,26 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <section id="step-0" class="slide level2">
 <h2>Step 0</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb60"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
-<span id="cb60-2"><a href="#cb60-2"></a></span>
-<span id="cb60-3"><a href="#cb60-3"></a><span class="co"># Setup</span></span>
-<span id="cb60-4"><a href="#cb60-4"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(d_tree)</span>
-<span id="cb60-5"><a href="#cb60-5"></a>n_folds <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb60-6"><a href="#cb60-6"></a></span>
-<span id="cb60-7"><a href="#cb60-7"></a><span class="co"># Fold assignment</span></span>
-<span id="cb60-8"><a href="#cb60-8"></a>folds <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>n_folds, n <span class="sc">%/%</span> n_folds), <span class="fu">seq_along</span>(n <span class="sc">%%</span> n_folds))</span>
-<span id="cb60-9"><a href="#cb60-9"></a>folds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
+<span id="cb48-2"><a href="#cb48-2"></a></span>
+<span id="cb48-3"><a href="#cb48-3"></a><span class="co"># Setup</span></span>
+<span id="cb48-4"><a href="#cb48-4"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(d_tree)</span>
+<span id="cb48-5"><a href="#cb48-5"></a>n_folds <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb48-6"><a href="#cb48-6"></a></span>
+<span id="cb48-7"><a href="#cb48-7"></a><span class="co"># Fold assignment</span></span>
+<span id="cb48-8"><a href="#cb48-8"></a>folds <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>n_folds, n <span class="sc">%/%</span> n_folds), <span class="fu">seq_along</span>(n <span class="sc">%%</span> n_folds))</span>
+<span id="cb48-9"><a href="#cb48-9"></a><span class="co"># you do not need to understand the details of the previous line</span></span>
+<span id="cb48-10"><a href="#cb48-10"></a><span class="co"># just note that it creates folds of (almost) the same size</span></span>
+<span id="cb48-11"><a href="#cb48-11"></a>folds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code> [1]  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5
 [26]  6  7  8  9 10  1</code></pre>
 </div>
-<div class="sourceCode" id="cb62"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a><span class="co"># Step 1</span></span>
-<span id="cb62-2"><a href="#cb62-2"></a>d_tree_fold <span class="ot">&lt;-</span> d_tree <span class="sc">%&gt;%</span></span>
-<span id="cb62-3"><a href="#cb62-3"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> n) <span class="sc">%&gt;%</span></span>
-<span id="cb62-4"><a href="#cb62-4"></a>  <span class="fu">mutate</span>(<span class="at">fold =</span> folds)</span>
-<span id="cb62-5"><a href="#cb62-5"></a><span class="fu">head</span>(d_tree_fold)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="co"># Step 1</span></span>
+<span id="cb50-2"><a href="#cb50-2"></a>d_tree_fold <span class="ot">&lt;-</span> d_tree <span class="sc">%&gt;%</span></span>
+<span id="cb50-3"><a href="#cb50-3"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> n) <span class="sc">%&gt;%</span> <span class="co"># shuffle the rows</span></span>
+<span id="cb50-4"><a href="#cb50-4"></a>  <span class="fu">mutate</span>(<span class="at">fold =</span> folds)</span>
+<span id="cb50-5"><a href="#cb50-5"></a><span class="fu">head</span>(d_tree_fold)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>      Girth Height Volume fold
 1 11.555269     69   21.3    1
@@ -1407,92 +1401,94 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <section id="steps-1-4-setup" class="slide level2">
 <h2>Steps 1-4 – Setup</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb64"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a>create_empty_RMSE <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
-<span id="cb64-2"><a href="#cb64-2"></a>  <span class="fu">tibble</span>(</span>
-<span id="cb64-3"><a href="#cb64-3"></a>    <span class="at">rmse_m1  =</span> <span class="fu">numeric</span>(), </span>
-<span id="cb64-4"><a href="#cb64-4"></a>    <span class="at">rmse_m2  =</span> <span class="fu">numeric</span>(), </span>
-<span id="cb64-5"><a href="#cb64-5"></a>    <span class="at">rmse_m3  =</span> <span class="fu">numeric</span>(), </span>
-<span id="cb64-6"><a href="#cb64-6"></a>    <span class="at">rmse_m48 =</span> <span class="fu">numeric</span>()</span>
-<span id="cb64-7"><a href="#cb64-7"></a>  )</span>
-<span id="cb64-8"><a href="#cb64-8"></a>}</span>
-<span id="cb64-9"><a href="#cb64-9"></a></span>
-<span id="cb64-10"><a href="#cb64-10"></a>RMSE <span class="ot">&lt;-</span> <span class="fu">create_empty_RMSE</span>()</span>
-<span id="cb64-11"><a href="#cb64-11"></a>RMSE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a>create_empty_RMSE <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
+<span id="cb52-2"><a href="#cb52-2"></a>  <span class="fu">tibble</span>(</span>
+<span id="cb52-3"><a href="#cb52-3"></a>    <span class="at">fold     =</span> <span class="fu">numeric</span>(),</span>
+<span id="cb52-4"><a href="#cb52-4"></a>    <span class="at">rmse_m1  =</span> <span class="fu">numeric</span>(), </span>
+<span id="cb52-5"><a href="#cb52-5"></a>    <span class="at">rmse_m2  =</span> <span class="fu">numeric</span>(), </span>
+<span id="cb52-6"><a href="#cb52-6"></a>    <span class="at">rmse_m3  =</span> <span class="fu">numeric</span>(), </span>
+<span id="cb52-7"><a href="#cb52-7"></a>    <span class="at">rmse_m48 =</span> <span class="fu">numeric</span>()</span>
+<span id="cb52-8"><a href="#cb52-8"></a>  )</span>
+<span id="cb52-9"><a href="#cb52-9"></a>}</span>
+<span id="cb52-10"><a href="#cb52-10"></a></span>
+<span id="cb52-11"><a href="#cb52-11"></a>RMSE <span class="ot">&lt;-</span> <span class="fu">create_empty_RMSE</span>()</span>
+<span id="cb52-12"><a href="#cb52-12"></a>RMSE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code># A tibble: 0 x 4
-# ... with 4 variables: rmse_m1 &lt;dbl&gt;, rmse_m2 &lt;dbl&gt;, rmse_m3 &lt;dbl&gt;,
-#   rmse_m48 &lt;dbl&gt;</code></pre>
+<pre><code># A tibble: 0 x 5
+# ... with 5 variables: fold &lt;dbl&gt;, rmse_m1 &lt;dbl&gt;, rmse_m2 &lt;dbl&gt;,
+#   rmse_m3 &lt;dbl&gt;, rmse_m48 &lt;dbl&gt;</code></pre>
 </div>
 </div>
 </section>
 <section id="steps-1-4" class="slide level2">
 <h2>Steps 1-4</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb66"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a>RMSE <span class="ot">&lt;-</span> <span class="fu">create_empty_RMSE</span>()</span>
-<span id="cb66-2"><a href="#cb66-2"></a></span>
-<span id="cb66-3"><a href="#cb66-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_folds){</span>
-<span id="cb66-4"><a href="#cb66-4"></a>  </span>
-<span id="cb66-5"><a href="#cb66-5"></a>  <span class="co"># Step 1</span></span>
-<span id="cb66-6"><a href="#cb66-6"></a>  training_set <span class="ot">&lt;-</span> <span class="fu">filter</span>(d_tree_fold, fold <span class="sc">!=</span> i)</span>
-<span id="cb66-7"><a href="#cb66-7"></a>  test_set     <span class="ot">&lt;-</span> <span class="fu">filter</span>(d_tree_fold, fold <span class="sc">==</span> i)</span>
-<span id="cb66-8"><a href="#cb66-8"></a>  </span>
-<span id="cb66-9"><a href="#cb66-9"></a>  <span class="co"># Step 2</span></span>
-<span id="cb66-10"><a href="#cb66-10"></a>  m1  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">1</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
-<span id="cb66-11"><a href="#cb66-11"></a>  m2  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">2</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
-<span id="cb66-12"><a href="#cb66-12"></a>  m3  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">3</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
-<span id="cb66-13"><a href="#cb66-13"></a>  m48 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">48</span>, <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
-<span id="cb66-14"><a href="#cb66-14"></a>  </span>
-<span id="cb66-15"><a href="#cb66-15"></a>  <span class="co"># Step 3</span></span>
-<span id="cb66-16"><a href="#cb66-16"></a>  rmse_m1  <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m1 )</span>
-<span id="cb66-17"><a href="#cb66-17"></a>  rmse_m2  <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m2 )</span>
-<span id="cb66-18"><a href="#cb66-18"></a>  rmse_m3  <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m3 )</span>
-<span id="cb66-19"><a href="#cb66-19"></a>  rmse_m48 <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m48)</span>
-<span id="cb66-20"><a href="#cb66-20"></a>  </span>
-<span id="cb66-21"><a href="#cb66-21"></a>  RMSE <span class="ot">&lt;-</span> RMSE <span class="sc">%&gt;%</span> <span class="fu">add_row</span>(rmse_m1, rmse_m2, rmse_m3, rmse_m48)</span>
-<span id="cb66-22"><a href="#cb66-22"></a>  </span>
-<span id="cb66-23"><a href="#cb66-23"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a>RMSE <span class="ot">&lt;-</span> <span class="fu">create_empty_RMSE</span>()</span>
+<span id="cb54-2"><a href="#cb54-2"></a></span>
+<span id="cb54-3"><a href="#cb54-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> n_folds){</span>
+<span id="cb54-4"><a href="#cb54-4"></a>  </span>
+<span id="cb54-5"><a href="#cb54-5"></a>  <span class="co"># Step 1</span></span>
+<span id="cb54-6"><a href="#cb54-6"></a>  training_set <span class="ot">&lt;-</span> <span class="fu">filter</span>(d_tree_fold, fold <span class="sc">!=</span> i)</span>
+<span id="cb54-7"><a href="#cb54-7"></a>  test_set     <span class="ot">&lt;-</span> <span class="fu">filter</span>(d_tree_fold, fold <span class="sc">==</span> i)</span>
+<span id="cb54-8"><a href="#cb54-8"></a>  </span>
+<span id="cb54-9"><a href="#cb54-9"></a>  <span class="co"># Step 2</span></span>
+<span id="cb54-10"><a href="#cb54-10"></a>  m1  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">1</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb54-11"><a href="#cb54-11"></a>  m2  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">2</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb54-12"><a href="#cb54-12"></a>  m3  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">3</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb54-13"><a href="#cb54-13"></a>  m48 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">48</span>, <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb54-14"><a href="#cb54-14"></a>  </span>
+<span id="cb54-15"><a href="#cb54-15"></a>  <span class="co"># Step 3</span></span>
+<span id="cb54-16"><a href="#cb54-16"></a>  rmse_m1  <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m1 )</span>
+<span id="cb54-17"><a href="#cb54-17"></a>  rmse_m2  <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m2 )</span>
+<span id="cb54-18"><a href="#cb54-18"></a>  rmse_m3  <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m3 )</span>
+<span id="cb54-19"><a href="#cb54-19"></a>  rmse_m48 <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m48)</span>
+<span id="cb54-20"><a href="#cb54-20"></a>  </span>
+<span id="cb54-21"><a href="#cb54-21"></a>  RMSE <span class="ot">&lt;-</span> RMSE <span class="sc">%&gt;%</span> </span>
+<span id="cb54-22"><a href="#cb54-22"></a>    <span class="fu">add_row</span>(<span class="at">fold =</span> i, rmse_m1, rmse_m2, rmse_m3, rmse_m48)</span>
+<span id="cb54-23"><a href="#cb54-23"></a>  </span>
+<span id="cb54-24"><a href="#cb54-24"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="model-selection-with-rmse" class="slide level2">
 <h2>Model selection with RMSE</h2>
 <p>Which model has the lowest RMSE across all folds?</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb67"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a>RMSE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a>RMSE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code># A tibble: 10 x 4
-   rmse_m1 rmse_m2 rmse_m3   rmse_m48
-     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;
- 1    5.07    3.50    3.54       4.25
- 2    2.89    2.34    1.95      10.8 
- 3    4.78    5.02    5.11       5.54
- 4    2.82    3.49    3.45       3.15
- 5    1.67    2.99    2.67      72.5 
- 6    6.38    4.45    5.38     412.  
- 7    3.52    2.89    2.83       4.73
- 8    1.37    2.01    1.77       3.90
- 9    7.49    3.14    3.92 2481852.  
-10    5.60    4.53    4.27       4.47</code></pre>
+<pre><code># A tibble: 10 x 5
+    fold rmse_m1 rmse_m2 rmse_m3   rmse_m48
+   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;
+ 1     1    5.07    3.50    3.54       4.25
+ 2     2    2.89    2.34    1.95      10.8 
+ 3     3    4.78    5.02    5.11       5.54
+ 4     4    2.82    3.49    3.45       3.15
+ 5     5    1.67    2.99    2.67      72.5 
+ 6     6    6.38    4.45    5.38     412.  
+ 7     7    3.52    2.89    2.83       4.73
+ 8     8    1.37    2.01    1.77       3.90
+ 9     9    7.49    3.14    3.92 2481852.  
+10    10    5.60    4.53    4.27       4.47</code></pre>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb69"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a><span class="fu">summarise_all</span>(RMSE, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="fu">summarise_all</span>(RMSE, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code># A tibble: 1 x 4
-  rmse_m1 rmse_m2 rmse_m3 rmse_m48
-    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
-1    4.16    3.44    3.49  248237.</code></pre>
+<pre><code># A tibble: 1 x 5
+   fold rmse_m1 rmse_m2 rmse_m3 rmse_m48
+  &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
+1   5.5    4.16    3.44    3.49  248237.</code></pre>
 </div>
-<div class="sourceCode" id="cb71"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a><span class="fu">summarise_all</span>(RMSE, sum) <span class="co"># what the book uses</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a><span class="fu">summarise_all</span>(RMSE, sum ) <span class="co"># what the book uses</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code># A tibble: 1 x 4
-  rmse_m1 rmse_m2 rmse_m3 rmse_m48
-    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
-1    41.6    34.4    34.9 2482374.</code></pre>
+<pre><code># A tibble: 1 x 5
+   fold rmse_m1 rmse_m2 rmse_m3 rmse_m48
+  &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
+1    55    41.6    34.4    34.9 2482374.</code></pre>
 </div>
 </div>
-<p><code>m2</code> has slightly better average RMSE.</p>
+<p><code>m2</code> has slightly better overall RMSE.</p>
 </section>
-<section id="section-13" class="slide level2">
+<section id="section-14" class="slide level2">
 <h2></h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
@@ -1501,84 +1497,90 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 </div>
 <div class="callout-content">
 <p>Exercise <a href="https://openintro-ims.netlify.app/inf-model-mlr.html#chp25-exercises">25.9</a>, <a href="https://openintro-ims.netlify.app/inf-model-mlr.html#chp25-exercises">25.11</a>, <a href="https://openintro-ims.netlify.app/inf-model-mlr.html#chp25-exercises">25.12</a></p>
-<p>In part c, replace <em>left</em> and <em>right</em>, by <em>top</em> and <em>bottom</em>.</p>
+<p>In part c (25.9 and 25.11) , replace <em>left</em> and <em>right</em>, by <em>top</em> and <em>bottom</em>.</p>
 </div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628be117" style="right:0;bottom:0;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<div class="countdown" id="timer_628cf001" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
 </section>
 <section id="short-podcast-on-cross-validation" class="slide level2">
 <h2>Short podcast on cross-validation</h2>
-<p>Still confused by corss-validation?</p>
-<p>Check out this <a href="https://dataskeptic.com/blog/episodes/2014/cross-validation">podcast</a> to hear more about this important topic.</p>
+<p>Cross-validation is a central technique in machine learning.</p>
+<p>Still not totally clear how it works? Check out this <a href="https://dataskeptic.com/blog/episodes/2014/cross-validation">podcast</a> to hear more about this important topic.</p>
 <div class="fragment">
-<p>These other two podcasts on <a href="https://dataskeptic.com/blog/episodes/2016/multiple-regression">muliple linear regression</a> and <a href="https://dataskeptic.com/blog/episodes/2016/r-squared"><span class="math inline">\(R^2\)</span></a> are also excellent.</p>
+<p>These two other podcasts on <a href="https://dataskeptic.com/blog/episodes/2016/multiple-regression">muliple linear regression</a> and <a href="https://dataskeptic.com/blog/episodes/2016/r-squared"><span class="math inline">\(R^2\)</span></a> are also excellent.</p>
 </div>
 </section>
 <section id="taking-things-to-the-extreme-loocv" class="slide level2">
 <h2>Taking things to the extreme: LOOCV</h2>
 <p>Set <span class="math inline">\(k=n\)</span>.</p>
 <ul>
-<li><p>Use <span class="math inline">\(n\)</span> folds, each of size <span class="math inline">\(1\)</span>.</p></li>
-<li><p>The test sets will therefore consist of a single observation and the training sets of the remaining <span class="math inline">\(n-1\)</span> observations.</p></li>
+<li><p>that is, use <span class="math inline">\(n\)</span> folds, each of size <span class="math inline">\(1\)</span>.</p></li>
+<li><p>Each test set will therefore consist of a single observation and the corresponding training set of the remaining <span class="math inline">\(n-1\)</span> observations.</p></li>
 </ul>
 </section>
 <section id="loocv" class="slide level2 smaller">
 <h2>LOOCV</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb73"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a>RMSE <span class="ot">&lt;-</span> <span class="fu">create_empty_RMSE</span>()</span>
-<span id="cb73-2"><a href="#cb73-2"></a></span>
-<span id="cb73-3"><a href="#cb73-3"></a><span class="co"># Step 0</span></span>
-<span id="cb73-4"><a href="#cb73-4"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(d_tree)</span>
-<span id="cb73-5"><a href="#cb73-5"></a>d_tree_loocv <span class="ot">&lt;-</span> <span class="fu">mutate</span>(d_tree, <span class="at">folds =</span> <span class="dv">1</span> <span class="sc">:</span> n) <span class="co"># every observation belongs to a different fold </span></span>
-<span id="cb73-6"><a href="#cb73-6"></a></span>
-<span id="cb73-7"><a href="#cb73-7"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n){</span>
-<span id="cb73-8"><a href="#cb73-8"></a>  </span>
-<span id="cb73-9"><a href="#cb73-9"></a>  <span class="co"># Step 1</span></span>
-<span id="cb73-10"><a href="#cb73-10"></a>  training_set <span class="ot">&lt;-</span> <span class="fu">filter</span>(d_tree_loocv, folds <span class="sc">!=</span> i)</span>
-<span id="cb73-11"><a href="#cb73-11"></a>  test_set     <span class="ot">&lt;-</span> <span class="fu">filter</span>(d_tree_loocv, folds <span class="sc">==</span> i)</span>
-<span id="cb73-12"><a href="#cb73-12"></a>  </span>
-<span id="cb73-13"><a href="#cb73-13"></a>  <span class="co"># Step 2</span></span>
-<span id="cb73-14"><a href="#cb73-14"></a>  m1  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">1</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
-<span id="cb73-15"><a href="#cb73-15"></a>  m2  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">2</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
-<span id="cb73-16"><a href="#cb73-16"></a>  m3  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">3</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
-<span id="cb73-17"><a href="#cb73-17"></a>  m48 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">48</span>, <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
-<span id="cb73-18"><a href="#cb73-18"></a>  </span>
-<span id="cb73-19"><a href="#cb73-19"></a>  <span class="co"># Step 3</span></span>
-<span id="cb73-20"><a href="#cb73-20"></a>  rmse_m1  <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m1 )</span>
-<span id="cb73-21"><a href="#cb73-21"></a>  rmse_m2  <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m2 )</span>
-<span id="cb73-22"><a href="#cb73-22"></a>  rmse_m3  <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m3 )</span>
-<span id="cb73-23"><a href="#cb73-23"></a>  rmse_m48 <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m48)</span>
-<span id="cb73-24"><a href="#cb73-24"></a>  </span>
-<span id="cb73-25"><a href="#cb73-25"></a>  RMSE <span class="ot">&lt;-</span> <span class="fu">add_row</span>(RMSE, rmse_m1, rmse_m2, rmse_m3, rmse_m48)</span>
-<span id="cb73-26"><a href="#cb73-26"></a>  </span>
-<span id="cb73-27"><a href="#cb73-27"></a>}</span>
-<span id="cb73-28"><a href="#cb73-28"></a></span>
-<span id="cb73-29"><a href="#cb73-29"></a><span class="fu">summarize_all</span>(RMSE, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a>RMSE <span class="ot">&lt;-</span> <span class="fu">create_empty_RMSE</span>()</span>
+<span id="cb61-2"><a href="#cb61-2"></a></span>
+<span id="cb61-3"><a href="#cb61-3"></a><span class="co"># Step 0</span></span>
+<span id="cb61-4"><a href="#cb61-4"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(d_tree)</span>
+<span id="cb61-5"><a href="#cb61-5"></a>d_tree_loocv <span class="ot">&lt;-</span> <span class="fu">mutate</span>(d_tree, <span class="at">folds =</span> <span class="dv">1</span> <span class="sc">:</span> n) <span class="co"># every observation belongs to a different fold </span></span>
+<span id="cb61-6"><a href="#cb61-6"></a></span>
+<span id="cb61-7"><a href="#cb61-7"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n){</span>
+<span id="cb61-8"><a href="#cb61-8"></a>  </span>
+<span id="cb61-9"><a href="#cb61-9"></a>  <span class="co"># Step 1</span></span>
+<span id="cb61-10"><a href="#cb61-10"></a>  training_set <span class="ot">&lt;-</span> <span class="fu">filter</span>(d_tree_loocv, folds <span class="sc">!=</span> i)</span>
+<span id="cb61-11"><a href="#cb61-11"></a>  test_set     <span class="ot">&lt;-</span> <span class="fu">filter</span>(d_tree_loocv, folds <span class="sc">==</span> i)</span>
+<span id="cb61-12"><a href="#cb61-12"></a>  </span>
+<span id="cb61-13"><a href="#cb61-13"></a>  <span class="co"># Step 2</span></span>
+<span id="cb61-14"><a href="#cb61-14"></a>  m1  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">1</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb61-15"><a href="#cb61-15"></a>  m2  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">2</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb61-16"><a href="#cb61-16"></a>  m3  <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">3</span> , <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb61-17"><a href="#cb61-17"></a>  m48 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">48</span>, <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> training_set)</span>
+<span id="cb61-18"><a href="#cb61-18"></a>  </span>
+<span id="cb61-19"><a href="#cb61-19"></a>  <span class="co"># Step 3</span></span>
+<span id="cb61-20"><a href="#cb61-20"></a>  rmse_m1  <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m1 )</span>
+<span id="cb61-21"><a href="#cb61-21"></a>  rmse_m2  <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m2 )</span>
+<span id="cb61-22"><a href="#cb61-22"></a>  rmse_m3  <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m3 )</span>
+<span id="cb61-23"><a href="#cb61-23"></a>  rmse_m48 <span class="ot">&lt;-</span> <span class="fu">compute_RMSE</span>(test_set, m48)</span>
+<span id="cb61-24"><a href="#cb61-24"></a>  </span>
+<span id="cb61-25"><a href="#cb61-25"></a>  RMSE <span class="ot">&lt;-</span> RMSE <span class="sc">%&gt;%</span></span>
+<span id="cb61-26"><a href="#cb61-26"></a>    <span class="fu">add_row</span>(<span class="at">fold =</span> i, rmse_m1, rmse_m2, rmse_m3, rmse_m48)</span>
+<span id="cb61-27"><a href="#cb61-27"></a>  </span>
+<span id="cb61-28"><a href="#cb61-28"></a>}</span>
+<span id="cb61-29"><a href="#cb61-29"></a></span>
+<span id="cb61-30"><a href="#cb61-30"></a><span class="fu">summarize_all</span>(RMSE, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code># A tibble: 1 x 4
-  rmse_m1 rmse_m2 rmse_m3 rmse_m48
-    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
-1    3.64    3.11    3.12  142697.</code></pre>
+<pre><code># A tibble: 1 x 5
+   fold rmse_m1 rmse_m2 rmse_m3 rmse_m48
+  &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
+1    16    3.64    3.11    3.12  142697.</code></pre>
 </div>
 </div>
 </section></section>
 <section>
 <section id="model-selection-stepwise-procedures" class="title-slide slide level1 center">
 <h1>Model selection: stepwise procedures</h1>
-<ul>
-<li><p>Not my favorite method,</p></li>
-<li><p>but this is something you should learn because it is widely used.</p></li>
-</ul>
+
+</section>
+<section id="stepwise-procedures" class="slide level2">
+<h2>Stepwise procedures</h2>
+<p>Not my favorite method, but it is widely used.</p>
 <div class="fragment">
 <ul>
 <li>Akin the “throw cooked spaghetti to the wall and see what sticks” technique.</li>
+<li>This is what you do when you are clueless about what variables may be good predictors
+<ul>
+<li>…but then you should probably collaborate with a scientific expert.</li>
+</ul></li>
 </ul>
 </div>
 <div class="fragment">
@@ -1588,7 +1590,7 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <section id="forward-selection" class="slide level2 smaller">
 <h2>Forward selection</h2>
 <ol type="1">
-<li><p>Choose an overall criterion that balances model fit (smaller SSR) and parsimony (small <span class="math inline">\(p\)</span>)</p>
+<li><p>Choose an overall criterion that balances GoF (small SSR) and parsimony (small <span class="math inline">\(p\)</span>)</p>
 <p><span class="math inline">\(\Rightarrow\)</span> adjusted-<span class="math inline">\(R^2\)</span>, AIC or BIC</p></li>
 </ol>
 <div class="fragment">
@@ -1599,7 +1601,7 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 </div>
 <div class="fragment">
 <ol start="4" type="1">
-<li><p>Compute the AIC of each of these models.</p></li>
+<li><p>Compute the criterion, say the AIC, of each of these models.</p></li>
 <li><p>Identify the model with the smallest AIC. This is our <strong>candidate model</strong>.</p></li>
 </ol>
 </div>
@@ -1610,7 +1612,7 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 </ol>
 </div>
 </section>
-<section id="section-14" class="slide level2">
+<section id="section-15" class="slide level2">
 <h2></h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
@@ -1620,15 +1622,15 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <div class="callout-content">
 <p>Exercise <a href="https://openintro-ims.netlify.app/model-mlr.html#chp8-exercises">8.13</a>. In addition, fit the candidate model (a single model) in <code>R</code> with the command <code>lm</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb75"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1"></a><span class="fu">library</span>(openintro)</span>
-<span id="cb75-2"><a href="#cb75-2"></a>d <span class="ot">&lt;-</span> openintro<span class="sc">::</span>births14</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a><span class="fu">library</span>(openintro)</span>
+<span id="cb63-2"><a href="#cb63-2"></a>d <span class="ot">&lt;-</span> openintro<span class="sc">::</span>births14</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628be1e3" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_628cf26f" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1638,12 +1640,12 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <h2>Backward elimination</h2>
 <p>Similar to forward selection, except that</p>
 <ul>
-<li>Start with the full model.</li>
-<li>Remove one predictor at a time,</li>
+<li>We start with the full model.</li>
+<li>We remove one predictor at a time,</li>
 <li>until removing any predictor makes the model worse.</li>
 </ul>
 </section>
-<section id="section-15" class="slide level2">
+<section id="section-16" class="slide level2">
 <h2></h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
@@ -1653,27 +1655,38 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <div class="callout-content">
 <p>Exercise <a href="https://openintro-ims.netlify.app/model-mlr.html#chp8-exercises">8.11</a>. In addition, fit the current and candidate models in <code>R</code> with the command <code>lm</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb76"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1"></a><span class="fu">library</span>(openintro)</span>
-<span id="cb76-2"><a href="#cb76-2"></a>d <span class="ot">&lt;-</span> openintro<span class="sc">::</span>births14</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a><span class="fu">library</span>(openintro)</span>
+<span id="cb64-2"><a href="#cb64-2"></a>d <span class="ot">&lt;-</span> openintro<span class="sc">::</span>births14</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628be2f2" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_628cf2b5" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
 </section>
-<section id="section-16" class="slide level2">
+<section id="section-17" class="slide level2">
 <h2></h2>
-<p>Note that forward and backward stepwise selection need not agree; they may select different models.</p>
-<div class="fragment">
+<div class="callout callout-warning callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Forward selection versus backward elimination</strong></p>
+</div>
+<div class="callout-content">
+<p>Note that forward selection and backward elimination need not agree; they may select different models!</p>
+<p>. . .</p>
 <ul>
 <li>What to do in that case? Nobody knows.</li>
 </ul>
+</div>
+</div>
 </div>
 </section></section>
 <section>
@@ -1694,25 +1707,32 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <h1>Recap</h1>
 
 </section>
-<section id="recap-2" class="slide level2">
+<section id="recap-2" class="slide level2 smaller">
 <h2>Recap</h2>
+<div>
 <ul>
-<li>Overfitting
+<li class="fragment"><p>Overfitting</p>
 <ul>
-<li>limitations of <span class="math inline">\(R^2\)</span> for model selection</li>
+<li class="fragment">limitations of <span class="math inline">\(R^2\)</span> for model selection</li>
 </ul></li>
-<li>Model selection through
+<li class="fragment"><p>Model selection through</p>
+<div>
 <ul>
-<li><p>overall criteria (adjusted-<span class="math inline">\(R^2\)</span>, AIC, BIC)</p></li>
-<li><p>predictive performance (holdout method, cross-validation)</p></li>
-<li><p>stepwise procedure (forward, backward)</p></li>
-</ul></li>
+<li class="fragment"><p>overall criteria (adjusted-<span class="math inline">\(R^2\)</span>, AIC, BIC)</p></li>
+<li class="fragment"><p>predictive performance (holdout method, cross-validation)</p></li>
+<li class="fragment"><p>stepwise procedure (forward, backward)</p></li>
 </ul>
-<p>You are now ready for the prediction project!</p>
+</div></li>
+</ul>
+</div>
+<div class="fragment">
+<p>You are now fully equipped for the prediction project!</p>
+<p>🍀 Good luck! 🍀</p>
 
-
-<img src="images/logo.jpg" class="slide-logo r-stretch"><div class="footer footer-default">
+<p><img src="images/logo.jpg" class="slide-logo"></p>
+<div class="footer footer-default">
 <p><a href="https://rmorsomme.github.io/website/">https://rmorsomme.github.io/website/</a></p>
+</div>
 </div>
 </section></section>
 

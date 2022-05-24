@@ -1764,6 +1764,13 @@
     "text": "Feature engineering\nWe saw that adding predictors to the model seems to help.\nHowever, the variables included in the data set, e.g. displ, year, etc, may not be the most useful predictors for hwy.\n\nFeature engineering refers to the creation of new predictors from the raw variables.\n\n\n\n\n\n\n\n\nTip\n\n\nThis is where your understanding of the data, scientific knowledge and experience make a big difference."
   },
   {
+    "objectID": "slides/lec-5.html#nonlinearity",
+    "href": "slides/lec-5.html#nonlinearity",
+    "title": "Multiple Linear Regression Models",
+    "section": "Nonlinearity",
+    "text": "Nonlinearity\nConsider the relation between the predictor displ and the response hwy\n\nggplot(d) +\n  geom_point(aes(displ, hwy))\n\n\n\nThe relationis not exactly linear."
+  },
+  {
     "objectID": "slides/lec-5.html#modeling-nonlinearity",
     "href": "slides/lec-5.html#modeling-nonlinearity",
     "title": "Multiple Linear Regression Models",
@@ -1825,6 +1832,13 @@
     "title": "Multiple Linear Regression Models",
     "section": "Comparison with the full model",
     "text": "Comparison with the full model\nAlthough \\(R^2\\) has a different meaning when there is no intercept, it can be still used for comparison1.\n\n\nm_full <- lm(Volume ~ Girth + Height -1, data = d_tree)\nglance(m_full)$r.squared\n\n[1] 0.9696913\n\nglance(m_engineered)$r.squared\n\n[1] 0.9950219\n\n\nOur new variable \\((\\dfrac{\\text{Girth}}{2})^2 * \\text{Height}\\) improves the model!\n\n\nNote that the full model has two predictors, while our geometry-based model has only a single predictor!\n\n\n\n\n\n\nFeature engineering\n\n\nA carefully constructed predictor can do a better job than multiple raw predictors!\n\n\n\n\nas long as both models exclude the intercept"
+  },
+  {
+    "objectID": "slides/lec-5.html#predicting-amateur-jogging-races-duration",
+    "href": "slides/lec-5.html#predicting-amateur-jogging-races-duration",
+    "title": "Multiple Linear Regression Models",
+    "section": "Predicting amateur jogging races duration",
+    "text": "Predicting amateur jogging races duration\n\n\nSuppose you are interested in predicting the average run time (duration) of amateur jogging races.\nTwo variables that impact the duration are (i) the distance of the race, and (ii) the weather.\nFor simplicity, we measure the weather as either good (nice weather) or bad (rain, heat wave, etc)."
   },
   {
     "objectID": "slides/lec-5.html#fixed-effect-weather",
@@ -2055,7 +2069,7 @@
     "href": "slides/lec-6.html#section-7",
     "title": "Model Selection",
     "section": "",
-    "text": "SampleTraining setTest set\n\n\n\nd_tree # entire sample\n\n       Girth Height Volume\n1   8.931477     70   10.3\n2   8.436883     65   10.3\n3   9.464900     63   10.2\n4  11.136215     72   16.4\n5  10.907321     81   18.8\n6  10.030025     83   19.7\n7  10.535716     66   15.6\n8  10.852640     75   18.2\n9  11.097116     80   22.6\n10 12.402327     75   19.9\n11 11.681797     79   24.2\n12 11.000495     76   21.0\n13 10.826171     76   21.4\n14 11.555269     69   21.3\n15 11.850392     75   19.1\n16 12.694245     74   22.2\n17 13.026112     85   33.8\n18 12.854039     86   27.4\n19 13.917842     71   25.7\n20 13.181231     64   24.9\n21 13.887866     78   34.5\n22 14.388698     80   31.7\n23 14.566668     74   36.3\n24 16.402095     72   38.3\n25 16.271447     77   42.6\n26 17.551804     81   55.4\n27 18.042885     82   55.7\n28 17.554523     80   58.3\n29 17.357700     80   51.5\n30 18.023363     80   51.0\n31 20.482147     87   77.0\n\n\n\n\n\nset.seed(0)\ntraining_test_sets <- construct_training_test(d_tree) \ntraining_set <- training_test_sets[[\"training\"]]\ntraining_set\n\n       Girth Height Volume\n1  11.555269     69   21.3\n2  16.271447     77   42.6\n3  11.136215     72   16.4\n4  10.535716     66   15.6\n5   8.931477     70   10.3\n6   8.436883     65   10.3\n7  14.566668     74   36.3\n8  11.681797     79   24.2\n9  20.482147     87   77.0\n10 12.854039     86   27.4\n11 13.917842     71   25.7\n12 18.042885     82   55.7\n13 12.402327     75   19.9\n14 18.023363     80   51.0\n15 13.887866     78   34.5\n16 17.554523     80   58.3\n17 11.097116     80   22.6\n18 10.907321     81   18.8\n19 14.388698     80   31.7\n20 11.850392     75   19.1\n21 11.000495     76   21.0\n\n\n\n\n\ntest_set <- training_test_sets[[\"test\"]]\ntest_set\n\n      Girth Height Volume\n1  10.82617     76   21.4\n2  13.02611     85   33.8\n3  17.55180     81   55.4\n4  10.85264     75   18.2\n5  10.03002     83   19.7\n6  13.18123     64   24.9\n7  17.35770     80   51.5\n8   9.46490     63   10.2\n9  16.40209     72   38.3\n10 12.69424     74   22.2"
+    "text": "SampleTraining setTest set\n\n\n\nd_tree # entire sample\n\n       Girth Height Volume\n1   8.931477     70   10.3\n2   8.436883     65   10.3\n3   9.464900     63   10.2\n4  11.136215     72   16.4\n5  10.907321     81   18.8\n6  10.030025     83   19.7\n7  10.535716     66   15.6\n8  10.852640     75   18.2\n9  11.097116     80   22.6\n10 12.402327     75   19.9\n11 11.681797     79   24.2\n12 11.000495     76   21.0\n13 10.826171     76   21.4\n14 11.555269     69   21.3\n15 11.850392     75   19.1\n16 12.694245     74   22.2\n17 13.026112     85   33.8\n18 12.854039     86   27.4\n19 13.917842     71   25.7\n20 13.181231     64   24.9\n21 13.887866     78   34.5\n22 14.388698     80   31.7\n23 14.566668     74   36.3\n24 16.402095     72   38.3\n25 16.271447     77   42.6\n26 17.551804     81   55.4\n27 18.042885     82   55.7\n28 17.554523     80   58.3\n29 17.357700     80   51.5\n30 18.023363     80   51.0\n31 20.482147     87   77.0\n\n\n\n\n\nset.seed(0) # set the seed of the random number generator to 0\ntraining_test_sets <- construct_training_test(d_tree) \ntraining_set <- training_test_sets[[\"training\"]]\ntraining_set\n\n       Girth Height Volume\n1  11.555269     69   21.3\n2  16.271447     77   42.6\n3  11.136215     72   16.4\n4  10.535716     66   15.6\n5   8.931477     70   10.3\n6   8.436883     65   10.3\n7  14.566668     74   36.3\n8  11.681797     79   24.2\n9  20.482147     87   77.0\n10 12.854039     86   27.4\n11 13.917842     71   25.7\n12 18.042885     82   55.7\n13 12.402327     75   19.9\n14 18.023363     80   51.0\n15 13.887866     78   34.5\n16 17.554523     80   58.3\n17 11.097116     80   22.6\n18 10.907321     81   18.8\n19 14.388698     80   31.7\n20 11.850392     75   19.1\n21 11.000495     76   21.0\n\n\n\n\n\ntest_set <- training_test_sets[[\"test\"]]\ntest_set\n\n      Girth Height Volume\n1  10.82617     76   21.4\n2  13.02611     85   33.8\n3  17.55180     81   55.4\n4  10.85264     75   18.2\n5  10.03002     83   19.7\n6  13.18123     64   24.9\n7  17.35770     80   51.5\n8   9.46490     63   10.2\n9  16.40209     72   38.3\n10 12.69424     74   22.2"
   },
   {
     "objectID": "slides/lec-6.html#step-2-fit-the-model-to-the-training-set",
@@ -2069,7 +2083,7 @@
     "href": "slides/lec-6.html#step-3-evaluate-the-prediction-accuracy-on-the-test-set",
     "title": "Model Selection",
     "section": "Step 3: Evaluate the prediction accuracy on the test set",
-    "text": "Step 3: Evaluate the prediction accuracy on the test set\nTo evaluate the prediction accuracy, we start by computing the predictions for the observations in test set.\n\nVolume_hat <- predict(m1, test_set)\n\n\nA good model will make predictions that are closed to the true values of the response variable."
+    "text": "Step 3: Evaluate the prediction accuracy on the test set\nTo evaluate the prediction accuracy, we start by computing the predictions for the observations in the test set.\n\nVolume_hat <- predict(m1, test_set)\n\n\nA good model will make predictions that are closed to the true values of the response variable."
   },
   {
     "objectID": "slides/lec-6.html#sum-of-squared-errors",
@@ -2090,7 +2104,7 @@
     "href": "slides/lec-6.html#section-8",
     "title": "Model Selection",
     "section": "",
-    "text": "SSE <- sum((Volume - Volume_hat)^2)\nm <- nrow(test_set)\nMSE <- SSE / m\nRMSE <- sqrt(MSE)\nSSE; MSE; RMSE\n\n[1] 211.4543\n\n\n[1] 21.14543\n\n\n[1] 4.598416\n\n\n\n\n\n\n\n\n(R)MSE\n\n\nThe advantage of (R)MSE over the SSE is that we can compare models evaluate with test sets of different sizes."
+    "text": "SSE <- sum ((Volume - Volume_hat)^2)\nMSE <- mean((Volume - Volume_hat)^2)\nRMSE <- sqrt(MSE)\nSSE; MSE; RMSE\n\n[1] 211.4543\n\n\n[1] 21.14543\n\n\n[1] 4.598416\n\n\n\n\n\n\n\n\n(R)MSE\n\n\nThe advantage of (R)MSE over SSE is that we can compare models that are evaluated with test sets of different sizes."
   },
   {
     "objectID": "slides/lec-6.html#selecting-a-model",
@@ -2104,53 +2118,60 @@
     "href": "slides/lec-6.html#function-to-compute-the-rmse",
     "title": "Model Selection",
     "section": "Function to compute the RMSE",
-    "text": "Function to compute the RMSE\n\ncompute_RMSE <- function(test_set, model){\n  \n  y     <- test_set$Volume\n  y_hat <- predict(model, test_set)\n  \n  E    <- y - y_hat\n  MSE  <- mean(E^2)\n  RMSE <- sqrt(MSE)\n  \n  return(RMSE)\n  \n}"
+    "text": "Function to compute the RMSE\n\ncompute_RMSE <- function(test_set, model){\n  \n  y     <- test_set$Volume # truth\n  y_hat <- predict(model, test_set) # predicted value\n  \n  E    <- y - y_hat\n  MSE  <- mean(E^2)\n  RMSE <- sqrt(MSE)\n  \n  return(RMSE)\n  \n}"
   },
   {
     "objectID": "slides/lec-6.html#section-9",
     "href": "slides/lec-6.html#section-9",
     "title": "Model Selection",
     "section": "",
-    "text": "# Step 2\nm1  <- lm(Volume ~ poly(Girth, degree = 1 , raw = TRUE), data = training_set)\nm2  <- lm(Volume ~ poly(Girth, degree = 2 , raw = TRUE), data = training_set)\nm3  <- lm(Volume ~ poly(Girth, degree = 3 , raw = TRUE), data = training_set)\nm48 <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = training_set)\n\n# Step 3\ncompute_RMSE(test_set, m1)\n\n[1] 4.598416\n\ncompute_RMSE(test_set, m2)\n\n[1] 4.07333\n\ncompute_RMSE(test_set, m3) # best\n\n[1] 3.957379\n\ncompute_RMSE(test_set, m48)\n\n[1] 29.97533\n\n\nWe select m3."
+    "text": "# Step 1 - partition sample into a training set and a test set\n# already done\n\n# Step 2 - fit models to training set\nm1  <- lm(Volume ~ poly(Girth, degree = 1 , raw = TRUE), data = training_set)\nm2  <- lm(Volume ~ poly(Girth, degree = 2 , raw = TRUE), data = training_set)\nm3  <- lm(Volume ~ poly(Girth, degree = 3 , raw = TRUE), data = training_set)\nm48 <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = training_set)\n\n# Step 3 - evaluate models on test set\ncompute_RMSE(test_set, m1)\ncompute_RMSE(test_set, m2)\ncompute_RMSE(test_set, m3) # best\ncompute_RMSE(test_set, m48)\n\n[1] 4.598416\n[1] 4.07333\n[1] 3.957379\n[1] 29.97533\n\n\nWe select m3."
   },
   {
     "objectID": "slides/lec-6.html#limitation-of-the-holdout-method",
     "href": "slides/lec-6.html#limitation-of-the-holdout-method",
     "title": "Model Selection",
     "section": "Limitation of the holdout method",
-    "text": "Limitation of the holdout method\nThe previous analysis was conducted with set.seed(0).\n\nModels m2 and m3 were pretty close.\nCould we have obtained a different result with a different seed?"
+    "text": "Limitation of the holdout method\nThe previous analysis was conducted with set.seed(0).\n\nNote that models m2 and m3 were pretty close.\nCould we have obtained a different result with a different seed?"
   },
   {
     "objectID": "slides/lec-6.html#section-10",
     "href": "slides/lec-6.html#section-10",
     "title": "Model Selection",
     "section": "",
-    "text": "# Step 1\nset.seed(1) # new seed\ntraining_test_sets <- construct_training_test(d_tree) \ntraining_set <- training_test_sets[[\"training\"]]\ntest_set <- training_test_sets[[\"test\"]]\n\n# Step 2\nm1  <- lm(Volume ~ poly(Girth, degree = 1 , raw = TRUE), data = training_set)\nm2  <- lm(Volume ~ poly(Girth, degree = 2 , raw = TRUE), data = training_set)\nm3  <- lm(Volume ~ poly(Girth, degree = 3 , raw = TRUE), data = training_set)\nm48 <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = training_set)\n\n# Step 3\ncompute_RMSE(test_set, m1)\n\n[1] 6.097541\n\ncompute_RMSE(test_set, m2) # best\n\n[1] 4.248172\n\ncompute_RMSE(test_set, m3)\n\n[1] 10.37698\n\ncompute_RMSE(test_set, m48)\n\n[1] 103753769"
+    "text": "# Step 1\nset.seed(1) # new seed\ntraining_test_sets <- construct_training_test(d_tree) \ntraining_set <- training_test_sets[[\"training\"]]\ntest_set <- training_test_sets[[\"test\"]]\n\n# Step 2\nm1  <- lm(Volume ~ poly(Girth, degree = 1 , raw = TRUE), data = training_set)\nm2  <- lm(Volume ~ poly(Girth, degree = 2 , raw = TRUE), data = training_set)\nm3  <- lm(Volume ~ poly(Girth, degree = 3 , raw = TRUE), data = training_set)\nm48 <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = training_set)\n\n# Step 3\ncompute_RMSE(test_set, m1)\ncompute_RMSE(test_set, m2) # best\ncompute_RMSE(test_set, m3)\ncompute_RMSE(test_set, m48)\n\n[1] 6.097541\n[1] 4.248172\n[1] 10.37698\n[1] 103753769"
   },
   {
     "objectID": "slides/lec-6.html#the-test-set-matters",
     "href": "slides/lec-6.html#the-test-set-matters",
     "title": "Model Selection",
     "section": "The test set matters!",
-    "text": "The test set matters!\nWith set.seed(1), the holdout method indicates that m2 is the best model.\n\nOur previous best model m3 is even to be worse than m1!\n\n\nA drawback of the holdout method is that the test set matters a lot.\n\nRepeating steps 2 and 3 with a different partition from step 1 may give different results."
+    "text": "The test set matters!\nWith set.seed(1), the holdout method indicates that m2 is the best model.\n\nm3, our previous best model, is worse than m1!\n\n\nA drawback of the holdout method is that the test set matters a lot.\n\nRepeating steps 2 and 3 with a different partition in step 1 may give different results."
   },
   {
     "objectID": "slides/lec-6.html#section-11",
     "href": "slides/lec-6.html#section-11",
     "title": "Model Selection",
     "section": "",
-    "text": "Group exercise - limitation of the holdout method\n\n\nCopy and paste the following code in your R session. Try a few different seed numbers. Which models usually have the smallest RMSE? Is m1 ever the best model?\nYou can ignore the warning message.\n\n# Setup\nset.seed(0) # do not change this seed number\nd_tree <- datasets::trees %>% mutate(Girth = Girth + rnorm(nrow(.), 0, 0.5))\ncompute_RMSE <- function(test_set, model){\n  \n  y     <- test_set$Volume\n  y_hat <- predict(model, test_set)\n  \n  E    <- y - y_hat\n  MSE  <- mean(E^2)\n  RMSE <- sqrt(MSE)\n  \n  return(RMSE)\n  \n}\nconstruct_training_test <- function(sample, prop_training = 2/3){\n  \n  n          <- nrow(sample)\n  n_training <- round(n * prop_training)\n  \n  sample_random   <- slice_sample(sample, n = n)\n  sample_training <- slice(sample_random,    1 : n_training )\n  sample_test     <- slice(sample_random, - (1 : n_training))\n  \n  return(list(\n    training = sample_training, test = sample_test\n    ))\n  \n}\n\n# Step 1\nset.seed(2) # try a few different seed numbers\ntraining_test_sets <- construct_training_test(d_tree) \ntraining_set <- training_test_sets[[\"training\"]]\ntest_set <- training_test_sets[[\"test\"]]\n\n# Step 2\nm1  <- lm(Volume ~ poly(Girth, degree = 1 , raw = TRUE), data = training_set)\nm2  <- lm(Volume ~ poly(Girth, degree = 2 , raw = TRUE), data = training_set)\nm3  <- lm(Volume ~ poly(Girth, degree = 3 , raw = TRUE), data = training_set)\nm48 <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = training_set)\n\n# Step 3\ncompute_RMSE(test_set, m1)\ncompute_RMSE(test_set, m2)\ncompute_RMSE(test_set, m3)\ncompute_RMSE(test_set, m48)\n\n\n\n\n\n\n\n05:00"
+    "text": "Group exercise - limitation of the holdout method\n\n\nCopy and paste the following code in your R session. Try a few different seed numbers for step 1. Keep track of which model has the lowest RMSE. Is m1 ever the best model?\nYou can safely ignore the warning messages.\n\n# Setup\nset.seed(0) # do not change this seed number\nd_tree <- datasets::trees %>% mutate(Girth = Girth + rnorm(nrow(.), 0, 0.5))\ncompute_RMSE <- function(test_set, model){\n  \n  y     <- test_set$Volume\n  y_hat <- predict(model, test_set)\n  \n  E    <- y - y_hat\n  MSE  <- mean(E^2)\n  RMSE <- sqrt(MSE)\n  \n  return(RMSE)\n  \n}\nconstruct_training_test <- function(sample, prop_training = 2/3){\n  \n  n          <- nrow(sample)\n  n_training <- round(n * prop_training)\n  \n  sample_random   <- slice_sample(sample, n = n)\n  sample_training <- slice(sample_random,    1 : n_training )\n  sample_test     <- slice(sample_random, - (1 : n_training))\n  \n  return(list(\n    training = sample_training, test = sample_test\n    ))\n  \n}\n\n# Step 1\nset.seed(2) # try a few different seed numbers\ntraining_test_sets <- construct_training_test(d_tree) \ntraining_set <- training_test_sets[[\"training\"]]\ntest_set <- training_test_sets[[\"test\"]]\n\n# Step 2\nm1  <- lm(Volume ~ poly(Girth, degree = 1 , raw = TRUE), data = training_set)\nm2  <- lm(Volume ~ poly(Girth, degree = 2 , raw = TRUE), data = training_set)\nm3  <- lm(Volume ~ poly(Girth, degree = 3 , raw = TRUE), data = training_set)\nm48 <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = training_set)\n\n# Step 3\ncompute_RMSE(test_set, m1)\ncompute_RMSE(test_set, m2)\ncompute_RMSE(test_set, m3)\ncompute_RMSE(test_set, m48)\n\n\n\n\n\n\n\n05:00"
   },
   {
     "objectID": "slides/lec-6.html#cross-validation",
     "href": "slides/lec-6.html#cross-validation",
     "title": "Model Selection",
     "section": "Cross-validation",
-    "text": "Cross-validation\nCross-validation (CV) is the natural generalization of the holdout method:\n\nsimply repeat the holdout method many times.\n\n##\n\nrandomly partition the sample into \\(k\\) folds of equal size. \\(k\\) is typically \\(5\\) or \\(10\\).\n\n\nRepeat the following steps \\(k\\) times\n\nLet fold 1 be the test set and the remaining folds be the training set.\nFit the model to the training set (like the holdout method)\nEvaluate the prediction accuracy of the model on the test set (like the holdout method)\nGo back to 1, letting the next fold be the test set.\n\n\n\n\\(\\Rightarrow\\) Select the model with the best overall prediction accuracy in step 3."
+    "text": "Cross-validation\nCross-validation (CV) is a natural generalization of the holdout method:\n\nrepeat the holdout method many times with different partitions in step 1."
   },
   {
     "objectID": "slides/lec-6.html#section-12",
     "href": "slides/lec-6.html#section-12",
+    "title": "Model Selection",
+    "section": "",
+    "text": "randomly partition the sample into \\(k\\) folds of equal size. \\(k\\) is typically \\(5\\) or \\(10\\).\n\n\nRepeat the following steps \\(k\\) times\n\nLet fold 1 be the test set and the remaining folds be the training set.\nFit the model to the training set (like the holdout method)\nEvaluate the prediction accuracy of the model on the test set (like the holdout method)\nGo back to step 1, let the next fold be the test set.\n\n\n\n\\(\\Rightarrow\\) Select the model with the best overall prediction accuracy in step 3."
+  },
+  {
+    "objectID": "slides/lec-6.html#section-13",
+    "href": "slides/lec-6.html#section-13",
     "title": "Model Selection",
     "section": "",
     "text": "5-fold cross-validationSource: towardsdatascience"
@@ -2160,67 +2181,74 @@
     "href": "slides/lec-6.html#step-0",
     "title": "Model Selection",
     "section": "Step 0",
-    "text": "Step 0\n\nset.seed(0)\n\n# Setup\nn <- nrow(d_tree)\nn_folds <- 10\n\n# Fold assignment\nfolds <- c(rep(1:n_folds, n %/% n_folds), seq_along(n %% n_folds))\nfolds\n\n [1]  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5\n[26]  6  7  8  9 10  1\n\n# Step 1\nd_tree_fold <- d_tree %>%\n  slice_sample(n = n) %>%\n  mutate(fold = folds)\nhead(d_tree_fold)\n\n      Girth Height Volume fold\n1 11.555269     69   21.3    1\n2 16.271447     77   42.6    2\n3 11.136215     72   16.4    3\n4 10.535716     66   15.6    4\n5  8.931477     70   10.3    5\n6  8.436883     65   10.3    6"
+    "text": "Step 0\n\nset.seed(0)\n\n# Setup\nn <- nrow(d_tree)\nn_folds <- 10\n\n# Fold assignment\nfolds <- c(rep(1:n_folds, n %/% n_folds), seq_along(n %% n_folds))\n# you do not need to understand the details of the previous line\n# just note that it creates folds of (almost) the same size\nfolds\n\n [1]  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5\n[26]  6  7  8  9 10  1\n\n# Step 1\nd_tree_fold <- d_tree %>%\n  slice_sample(n = n) %>% # shuffle the rows\n  mutate(fold = folds)\nhead(d_tree_fold)\n\n      Girth Height Volume fold\n1 11.555269     69   21.3    1\n2 16.271447     77   42.6    2\n3 11.136215     72   16.4    3\n4 10.535716     66   15.6    4\n5  8.931477     70   10.3    5\n6  8.436883     65   10.3    6"
   },
   {
     "objectID": "slides/lec-6.html#steps-1-4-setup",
     "href": "slides/lec-6.html#steps-1-4-setup",
     "title": "Model Selection",
     "section": "Steps 1-4 – Setup",
-    "text": "Steps 1-4 – Setup\n\ncreate_empty_RMSE <- function(){\n  tibble(\n    rmse_m1  = numeric(), \n    rmse_m2  = numeric(), \n    rmse_m3  = numeric(), \n    rmse_m48 = numeric()\n  )\n}\n\nRMSE <- create_empty_RMSE()\nRMSE\n\n# A tibble: 0 x 4\n# ... with 4 variables: rmse_m1 <dbl>, rmse_m2 <dbl>, rmse_m3 <dbl>,\n#   rmse_m48 <dbl>"
+    "text": "Steps 1-4 – Setup\n\ncreate_empty_RMSE <- function(){\n  tibble(\n    fold     = numeric(),\n    rmse_m1  = numeric(), \n    rmse_m2  = numeric(), \n    rmse_m3  = numeric(), \n    rmse_m48 = numeric()\n  )\n}\n\nRMSE <- create_empty_RMSE()\nRMSE\n\n# A tibble: 0 x 5\n# ... with 5 variables: fold <dbl>, rmse_m1 <dbl>, rmse_m2 <dbl>,\n#   rmse_m3 <dbl>, rmse_m48 <dbl>"
   },
   {
     "objectID": "slides/lec-6.html#steps-1-4",
     "href": "slides/lec-6.html#steps-1-4",
     "title": "Model Selection",
     "section": "Steps 1-4",
-    "text": "Steps 1-4\n\nRMSE <- create_empty_RMSE()\n\nfor(i in 1:n_folds){\n  \n  # Step 1\n  training_set <- filter(d_tree_fold, fold != i)\n  test_set     <- filter(d_tree_fold, fold == i)\n  \n  # Step 2\n  m1  <- lm(Volume ~ poly(Girth, degree = 1 , raw = TRUE), data = training_set)\n  m2  <- lm(Volume ~ poly(Girth, degree = 2 , raw = TRUE), data = training_set)\n  m3  <- lm(Volume ~ poly(Girth, degree = 3 , raw = TRUE), data = training_set)\n  m48 <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = training_set)\n  \n  # Step 3\n  rmse_m1  <- compute_RMSE(test_set, m1 )\n  rmse_m2  <- compute_RMSE(test_set, m2 )\n  rmse_m3  <- compute_RMSE(test_set, m3 )\n  rmse_m48 <- compute_RMSE(test_set, m48)\n  \n  RMSE <- RMSE %>% add_row(rmse_m1, rmse_m2, rmse_m3, rmse_m48)\n  \n}"
+    "text": "Steps 1-4\n\nRMSE <- create_empty_RMSE()\n\nfor(i in 1 : n_folds){\n  \n  # Step 1\n  training_set <- filter(d_tree_fold, fold != i)\n  test_set     <- filter(d_tree_fold, fold == i)\n  \n  # Step 2\n  m1  <- lm(Volume ~ poly(Girth, degree = 1 , raw = TRUE), data = training_set)\n  m2  <- lm(Volume ~ poly(Girth, degree = 2 , raw = TRUE), data = training_set)\n  m3  <- lm(Volume ~ poly(Girth, degree = 3 , raw = TRUE), data = training_set)\n  m48 <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = training_set)\n  \n  # Step 3\n  rmse_m1  <- compute_RMSE(test_set, m1 )\n  rmse_m2  <- compute_RMSE(test_set, m2 )\n  rmse_m3  <- compute_RMSE(test_set, m3 )\n  rmse_m48 <- compute_RMSE(test_set, m48)\n  \n  RMSE <- RMSE %>% \n    add_row(fold = i, rmse_m1, rmse_m2, rmse_m3, rmse_m48)\n  \n}"
   },
   {
     "objectID": "slides/lec-6.html#model-selection-with-rmse",
     "href": "slides/lec-6.html#model-selection-with-rmse",
     "title": "Model Selection",
     "section": "Model selection with RMSE",
-    "text": "Model selection with RMSE\nWhich model has the lowest RMSE across all folds?\n\nRMSE\n\n# A tibble: 10 x 4\n   rmse_m1 rmse_m2 rmse_m3   rmse_m48\n     <dbl>   <dbl>   <dbl>      <dbl>\n 1    5.07    3.50    3.54       4.25\n 2    2.89    2.34    1.95      10.8 \n 3    4.78    5.02    5.11       5.54\n 4    2.82    3.49    3.45       3.15\n 5    1.67    2.99    2.67      72.5 \n 6    6.38    4.45    5.38     412.  \n 7    3.52    2.89    2.83       4.73\n 8    1.37    2.01    1.77       3.90\n 9    7.49    3.14    3.92 2481852.  \n10    5.60    4.53    4.27       4.47\n\n\n\nsummarise_all(RMSE, mean)\n\n# A tibble: 1 x 4\n  rmse_m1 rmse_m2 rmse_m3 rmse_m48\n    <dbl>   <dbl>   <dbl>    <dbl>\n1    4.16    3.44    3.49  248237.\n\nsummarise_all(RMSE, sum) # what the book uses\n\n# A tibble: 1 x 4\n  rmse_m1 rmse_m2 rmse_m3 rmse_m48\n    <dbl>   <dbl>   <dbl>    <dbl>\n1    41.6    34.4    34.9 2482374.\n\n\nm2 has slightly better average RMSE."
+    "text": "Model selection with RMSE\nWhich model has the lowest RMSE across all folds?\n\nRMSE\n\n# A tibble: 10 x 5\n    fold rmse_m1 rmse_m2 rmse_m3   rmse_m48\n   <dbl>   <dbl>   <dbl>   <dbl>      <dbl>\n 1     1    5.07    3.50    3.54       4.25\n 2     2    2.89    2.34    1.95      10.8 \n 3     3    4.78    5.02    5.11       5.54\n 4     4    2.82    3.49    3.45       3.15\n 5     5    1.67    2.99    2.67      72.5 \n 6     6    6.38    4.45    5.38     412.  \n 7     7    3.52    2.89    2.83       4.73\n 8     8    1.37    2.01    1.77       3.90\n 9     9    7.49    3.14    3.92 2481852.  \n10    10    5.60    4.53    4.27       4.47\n\n\n\nsummarise_all(RMSE, mean)\n\n# A tibble: 1 x 5\n   fold rmse_m1 rmse_m2 rmse_m3 rmse_m48\n  <dbl>   <dbl>   <dbl>   <dbl>    <dbl>\n1   5.5    4.16    3.44    3.49  248237.\n\nsummarise_all(RMSE, sum ) # what the book uses\n\n# A tibble: 1 x 5\n   fold rmse_m1 rmse_m2 rmse_m3 rmse_m48\n  <dbl>   <dbl>   <dbl>   <dbl>    <dbl>\n1    55    41.6    34.4    34.9 2482374.\n\n\nm2 has slightly better overall RMSE."
   },
   {
-    "objectID": "slides/lec-6.html#section-13",
-    "href": "slides/lec-6.html#section-13",
+    "objectID": "slides/lec-6.html#section-14",
+    "href": "slides/lec-6.html#section-14",
     "title": "Model Selection",
     "section": "",
-    "text": "Group exercise - cross-validation\n\n\nExercise 25.9, 25.11, 25.12\nIn part c, replace left and right, by top and bottom.\n\n\n\n\n\n\n03:00"
+    "text": "Group exercise - cross-validation\n\n\nExercise 25.9, 25.11, 25.12\nIn part c (25.9 and 25.11) , replace left and right, by top and bottom.\n\n\n\n\n\n\n04:00"
   },
   {
     "objectID": "slides/lec-6.html#short-podcast-on-cross-validation",
     "href": "slides/lec-6.html#short-podcast-on-cross-validation",
     "title": "Model Selection",
     "section": "Short podcast on cross-validation",
-    "text": "Short podcast on cross-validation\nStill confused by corss-validation?\nCheck out this podcast to hear more about this important topic.\n\nThese other two podcasts on muliple linear regression and \\(R^2\\) are also excellent."
+    "text": "Short podcast on cross-validation\nCross-validation is a central technique in machine learning.\nStill not totally clear how it works? Check out this podcast to hear more about this important topic.\n\nThese two other podcasts on muliple linear regression and \\(R^2\\) are also excellent."
   },
   {
     "objectID": "slides/lec-6.html#taking-things-to-the-extreme-loocv",
     "href": "slides/lec-6.html#taking-things-to-the-extreme-loocv",
     "title": "Model Selection",
     "section": "Taking things to the extreme: LOOCV",
-    "text": "Taking things to the extreme: LOOCV\nSet \\(k=n\\).\n\nUse \\(n\\) folds, each of size \\(1\\).\nThe test sets will therefore consist of a single observation and the training sets of the remaining \\(n-1\\) observations."
+    "text": "Taking things to the extreme: LOOCV\nSet \\(k=n\\).\n\nthat is, use \\(n\\) folds, each of size \\(1\\).\nEach test set will therefore consist of a single observation and the corresponding training set of the remaining \\(n-1\\) observations."
   },
   {
     "objectID": "slides/lec-6.html#loocv",
     "href": "slides/lec-6.html#loocv",
     "title": "Model Selection",
     "section": "LOOCV",
-    "text": "LOOCV\n\nRMSE <- create_empty_RMSE()\n\n# Step 0\nn <- nrow(d_tree)\nd_tree_loocv <- mutate(d_tree, folds = 1 : n) # every observation belongs to a different fold \n\nfor(i in 1:n){\n  \n  # Step 1\n  training_set <- filter(d_tree_loocv, folds != i)\n  test_set     <- filter(d_tree_loocv, folds == i)\n  \n  # Step 2\n  m1  <- lm(Volume ~ poly(Girth, degree = 1 , raw = TRUE), data = training_set)\n  m2  <- lm(Volume ~ poly(Girth, degree = 2 , raw = TRUE), data = training_set)\n  m3  <- lm(Volume ~ poly(Girth, degree = 3 , raw = TRUE), data = training_set)\n  m48 <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = training_set)\n  \n  # Step 3\n  rmse_m1  <- compute_RMSE(test_set, m1 )\n  rmse_m2  <- compute_RMSE(test_set, m2 )\n  rmse_m3  <- compute_RMSE(test_set, m3 )\n  rmse_m48 <- compute_RMSE(test_set, m48)\n  \n  RMSE <- add_row(RMSE, rmse_m1, rmse_m2, rmse_m3, rmse_m48)\n  \n}\n\nsummarize_all(RMSE, mean)\n\n# A tibble: 1 x 4\n  rmse_m1 rmse_m2 rmse_m3 rmse_m48\n    <dbl>   <dbl>   <dbl>    <dbl>\n1    3.64    3.11    3.12  142697."
+    "text": "LOOCV\n\nRMSE <- create_empty_RMSE()\n\n# Step 0\nn <- nrow(d_tree)\nd_tree_loocv <- mutate(d_tree, folds = 1 : n) # every observation belongs to a different fold \n\nfor(i in 1:n){\n  \n  # Step 1\n  training_set <- filter(d_tree_loocv, folds != i)\n  test_set     <- filter(d_tree_loocv, folds == i)\n  \n  # Step 2\n  m1  <- lm(Volume ~ poly(Girth, degree = 1 , raw = TRUE), data = training_set)\n  m2  <- lm(Volume ~ poly(Girth, degree = 2 , raw = TRUE), data = training_set)\n  m3  <- lm(Volume ~ poly(Girth, degree = 3 , raw = TRUE), data = training_set)\n  m48 <- lm(Volume ~ poly(Girth, degree = 48, raw = TRUE), data = training_set)\n  \n  # Step 3\n  rmse_m1  <- compute_RMSE(test_set, m1 )\n  rmse_m2  <- compute_RMSE(test_set, m2 )\n  rmse_m3  <- compute_RMSE(test_set, m3 )\n  rmse_m48 <- compute_RMSE(test_set, m48)\n  \n  RMSE <- RMSE %>%\n    add_row(fold = i, rmse_m1, rmse_m2, rmse_m3, rmse_m48)\n  \n}\n\nsummarize_all(RMSE, mean)\n\n# A tibble: 1 x 5\n   fold rmse_m1 rmse_m2 rmse_m3 rmse_m48\n  <dbl>   <dbl>   <dbl>   <dbl>    <dbl>\n1    16    3.64    3.11    3.12  142697."
+  },
+  {
+    "objectID": "slides/lec-6.html#stepwise-procedures",
+    "href": "slides/lec-6.html#stepwise-procedures",
+    "title": "Model Selection",
+    "section": "Stepwise procedures",
+    "text": "Stepwise procedures\nNot my favorite method, but it is widely used.\n\n\nAkin the “throw cooked spaghetti to the wall and see what sticks” technique.\nThis is what you do when you are clueless about what variables may be good predictors\n\n…but then you should probably collaborate with a scientific expert.\n\n\n\n\nTwo types of stepwise procedures: (i) forward selection and (ii) backward elimination."
   },
   {
     "objectID": "slides/lec-6.html#forward-selection",
     "href": "slides/lec-6.html#forward-selection",
     "title": "Model Selection",
     "section": "Forward selection",
-    "text": "Forward selection\n\nChoose an overall criterion that balances model fit (smaller SSR) and parsimony (small \\(p\\))\n\\(\\Rightarrow\\) adjusted-\\(R^2\\), AIC or BIC\n\n\n\nStart with the empty model \\(Y \\approx \\beta_0\\), i.e. the model with no predictor. This is our current model\nFit all possible models with one additional predictor.\n\n\n\n\nCompute the AIC of each of these models.\nIdentify the model with the smallest AIC. This is our candidate model.\n\n\n\n\nIf the AIC of the candidate model is smaller (better) than the AIC of the current model, the candidate model becomes the current model. Go back to step 3.\nIf the AIC of the candidate model is larger than the AIC of the current model (no new model improves on the current one), the procedure stops, and we select the current model."
+    "text": "Forward selection\n\nChoose an overall criterion that balances GoF (small SSR) and parsimony (small \\(p\\))\n\\(\\Rightarrow\\) adjusted-\\(R^2\\), AIC or BIC\n\n\n\nStart with the empty model \\(Y \\approx \\beta_0\\), i.e. the model with no predictor. This is our current model\nFit all possible models with one additional predictor.\n\n\n\n\nCompute the criterion, say the AIC, of each of these models.\nIdentify the model with the smallest AIC. This is our candidate model.\n\n\n\n\nIf the AIC of the candidate model is smaller (better) than the AIC of the current model, the candidate model becomes the current model. Go back to step 3.\nIf the AIC of the candidate model is larger than the AIC of the current model (no new model improves on the current one), the procedure stops, and we select the current model."
   },
   {
-    "objectID": "slides/lec-6.html#section-14",
-    "href": "slides/lec-6.html#section-14",
+    "objectID": "slides/lec-6.html#section-15",
+    "href": "slides/lec-6.html#section-15",
     "title": "Model Selection",
     "section": "",
     "text": "Group exercise - forward selection\n\n\nExercise 8.13. In addition, fit the candidate model (a single model) in R with the command lm.\n\nlibrary(openintro)\nd <- openintro::births14\n\n\n\n\n\n\n\n05:00"
@@ -2230,21 +2258,21 @@
     "href": "slides/lec-6.html#backward-elimination",
     "title": "Model Selection",
     "section": "Backward elimination",
-    "text": "Backward elimination\nSimilar to forward selection, except that\n\nStart with the full model.\nRemove one predictor at a time,\nuntil removing any predictor makes the model worse."
-  },
-  {
-    "objectID": "slides/lec-6.html#section-15",
-    "href": "slides/lec-6.html#section-15",
-    "title": "Model Selection",
-    "section": "",
-    "text": "Group exercise - backward elimination\n\n\nExercise 8.11. In addition, fit the current and candidate models in R with the command lm.\n\nlibrary(openintro)\nd <- openintro::births14\n\n\n\n\n\n\n\n05:00"
+    "text": "Backward elimination\nSimilar to forward selection, except that\n\nWe start with the full model.\nWe remove one predictor at a time,\nuntil removing any predictor makes the model worse."
   },
   {
     "objectID": "slides/lec-6.html#section-16",
     "href": "slides/lec-6.html#section-16",
     "title": "Model Selection",
     "section": "",
-    "text": "Note that forward and backward stepwise selection need not agree; they may select different models.\n\n\nWhat to do in that case? Nobody knows."
+    "text": "Group exercise - backward elimination\n\n\nExercise 8.11. In addition, fit the current and candidate models in R with the command lm.\n\nlibrary(openintro)\nd <- openintro::births14\n\n\n\n\n\n\n\n05:00"
+  },
+  {
+    "objectID": "slides/lec-6.html#section-17",
+    "href": "slides/lec-6.html#section-17",
+    "title": "Model Selection",
+    "section": "",
+    "text": "Forward selection versus backward elimination\n\n\nNote that forward selection and backward elimination need not agree; they may select different models!\n. . .\n\nWhat to do in that case? Nobody knows."
   },
   {
     "objectID": "slides/lec-6.html#parsimony",
@@ -2258,7 +2286,7 @@
     "href": "slides/lec-6.html#recap-2",
     "title": "Model Selection",
     "section": "Recap",
-    "text": "Recap\n\nOverfitting\n\nlimitations of \\(R^2\\) for model selection\n\nModel selection through\n\noverall criteria (adjusted-\\(R^2\\), AIC, BIC)\npredictive performance (holdout method, cross-validation)\nstepwise procedure (forward, backward)\n\n\nYou are now ready for the prediction project!\n\n\n\nhttps://rmorsomme.github.io/website/"
+    "text": "Recap\n\n\nOverfitting\n\nlimitations of \\(R^2\\) for model selection\n\nModel selection through\n\n\noverall criteria (adjusted-\\(R^2\\), AIC, BIC)\npredictive performance (holdout method, cross-validation)\nstepwise procedure (forward, backward)\n\n\n\n\n\nYou are now fully equipped for the prediction project!\n🍀 Good luck! 🍀\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
     "objectID": "slides/lec-7.html#announcements",
@@ -2272,14 +2300,14 @@
     "href": "slides/lec-7.html#recap",
     "title": "Logistic Regression",
     "section": "Recap",
-    "text": "Recap\n\n\nOverfitting\nLimitations of \\(R^2\\)\nModel selection through\n\ncriteria (adjusted \\(R^2\\), AIC, BIC)\npredictive performance (holdout method, cross-validation)\nstepwise procedure (forward, backward)"
+    "text": "Recap\n\n\nSimple and multiple lrm\n\nnumerical response\n\nmodel selection\n\noverall criterion\npredictive performance\nstepwise procedures"
   },
   {
     "objectID": "slides/lec-7.html#outline",
     "href": "slides/lec-7.html#outline",
     "title": "Logistic Regression",
     "section": "Outline",
-    "text": "Outline\n\nModeling a binary response\nLogistic regression\nOne predictor\nVisualization\nMultiple predictors"
+    "text": "Outline\n\nModeling a binary response\nLogistic regression\nOne predictor\nMultiple predictors"
   },
   {
     "objectID": "slides/lec-7.html#example-stanford-university-heart-transplant-study",
@@ -2553,19 +2581,5 @@
     "title": "Logistic Regression",
     "section": "",
     "text": "Group exercise - stepwise model selection with AIC\n\n\nExercise 9.7\n\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
-  },
-  {
-    "objectID": "slides/lec-5.html#predicting-amateur-jogging-races-duration",
-    "href": "slides/lec-5.html#predicting-amateur-jogging-races-duration",
-    "title": "Multiple Linear Regression Models",
-    "section": "Predicting amateur jogging races duration",
-    "text": "Predicting amateur jogging races duration\n\n\nSuppose you are interested in predicting the average run time (duration) of amateur jogging races.\nTwo variables that impact the duration are (i) the distance of the race, and (ii) the weather.\nFor simplicity, we measure the weather as either good (nice weather) or bad (rain, heat wave, etc)."
-  },
-  {
-    "objectID": "slides/lec-5.html#nonlinearity",
-    "href": "slides/lec-5.html#nonlinearity",
-    "title": "Multiple Linear Regression Models",
-    "section": "Nonlinearity",
-    "text": "Nonlinearity\nConsider the relation between the predictor displ and the response hwy\n\nggplot(d) +\n  geom_point(aes(displ, hwy))\n\n\n\nThe relationis not exactly linear."
   }
 ]
