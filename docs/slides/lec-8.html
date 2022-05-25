@@ -403,57 +403,91 @@
 <h1>Five cases</h1>
 
 </section>
-<section id="single-proportion" class="slide level2 smaller">
-<h2>Single proportion</h2>
+<section id="case-1-single-proportion" class="slide level2 smaller">
+<h2>Case 1 – Single proportion</h2>
 <p>What is the proportion of vegetarian among Duke students?</p>
 <div class="fragment">
 <p><strong>Population parameter</strong>: proportion of vegetarian among Duke students (<span class="math inline">\(p\)</span>)</p>
 <p><strong>sample statistics</strong>: proportion of vegetarian in the sample <span class="math inline">\(\hat{p}\)</span></p>
 </div>
 <div class="fragment">
-<p>Confidence interval: <span class="math inline">\((0.31, 0.43)\)</span></p>
+<p><strong>Confidence interval</strong>: <span class="math inline">\((0.31, 0.43)\)</span></p>
 <ul>
 <li>we are 95% confident that the interval <span class="math inline">\((0.31, 0.43)\)</span> capture the proportion of vegetarian among Duke students.</li>
 </ul>
 </div>
 <div class="fragment">
-<p>Hypothesis test: is the proportion of vegetarian among Duke students <span class="math inline">\(0.5\)</span>?</p>
+<p><strong>Hypothesis test</strong>: is the proportion of vegetarian among Duke students <span class="math inline">\(0.5\)</span>?</p>
 <ul>
 <li><p><span class="math inline">\(H_0:p=0.5, H_a:p\neq0.5\)</span></p></li>
-<li><p>The data collected provide strong evidence against <span class="math inline">\(H_0\)</span>, that is, against the hypothesis that half od Duke students are vegetarian.</p></li>
+<li><p>The data collected provide strong evidence against <span class="math inline">\(H_0\)</span>, that is, against the hypothesis that half of Duke students are vegetarian.</p></li>
 </ul>
 </div>
 </section>
-<section id="difference-between-two-proportions" class="slide level2 smaller">
-<h2>Difference between two proportions</h2>
+<section id="case-2-difference-between-two-proportions" class="slide level2 smaller">
+<h2>Case 2 – Difference between two proportions</h2>
 <p>Is the proportion of vegetarian the same among undergraduate Duke student and graduate Duke students?</p>
 <p><strong>Population parameter</strong>: difference between the proportion of vegetarian among undergraduate Duke students and graduate Duke students (<span class="math inline">\(p_{diff} = p_{undergrad}-p_{grad}\)</span>)</p>
 <p><strong>sample statistics</strong>: different in proportion of vegetarian in the sample <span class="math inline">\(\hat{p}_{diff} = \hat{p}_{undergrad} - \hat{p}_{grad}\)</span></p>
 <div class="fragment">
-<p>Confidence interval: <span class="math inline">\((-0.05, 0.08)\)</span></p>
+<p><strong>Confidence interval</strong>: <span class="math inline">\((-0.05, 0.08)\)</span></p>
 <ul>
 <li>we are 95% confident that the interval <span class="math inline">\((-0.05, 0.08)\)</span> capture the true value of <span class="math inline">\(p_{diff}\)</span>.</li>
 </ul>
 </div>
 <div class="fragment">
-<p>Hypothesis test: is the proportion of vegetarian the same among undergraduate and graduate Duke students?</p>
+<p><strong>Hypothesis test</strong>: is the proportion of vegetarian the same among undergraduate and graduate Duke students?</p>
 <ul>
-<li><p><span class="math inline">\(H_0:p_{diff}=0.5, H_a:p_{diff}\neq0.5\)</span></p></li>
-<li><p>The data collected do not provide strong evidence against <span class="math inline">\(H_0\)</span>, that is, against the hypothesis that <span class="math inline">\(p_{diff}=0.5\)</span>.</p></li>
+<li><p><span class="math inline">\(H_0:p_{diff}=0, H_a:p_{diff}\neq0\)</span></p></li>
+<li><p>The data collected do not provide strong evidence against <span class="math inline">\(H_0\)</span>, that is, against the hypothesis that <span class="math inline">\(p_{diff}=0\)</span>.</p></li>
 </ul>
 </div>
 </section>
-<section id="single-mean" class="slide level2">
-<h2>Single mean</h2>
+<section id="case-3-single-mean" class="slide level2">
+<h2>Case 3 – Single mean</h2>
 <p>How much time do Duke students sleep on average per night?</p>
+<div class="fragment">
+<p><strong>Population parameter</strong>: mean amount of time that Duke students sleep per night (<span class="math inline">\(\mu\)</span>)</p>
+<p><strong>sample statistics</strong>: average amount of time that Duke students in the sample sleep per night (<span class="math inline">\(\bar{x}\)</span>)</p>
+</div>
+<div class="fragment">
+<p><strong>Confidence interval</strong>: <span class="math inline">\((5.5, 7.5)\)</span></p>
+<ul>
+<li>we are 95% confident that the interval <span class="math inline">\((5.5, 7.5)\)</span> capture <span class="math inline">\(\mu\)</span>.</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Hypothesis test</strong>: is the proportion of vegetarian among Duke students <span class="math inline">\(0.5\)</span>?</p>
+<ul>
+<li><p><span class="math inline">\(H_0:\mu=8, H_a:\mu\neq8\)</span></p></li>
+<li><p>The data collected provide strong evidence against <span class="math inline">\(H_0\)</span>, that is, against the hypothesis that Duke students sleep on average 8 hours per night.</p></li>
+</ul>
+</div>
 </section>
-<section id="difference-between-two-proportions-1" class="slide level2">
-<h2>Difference between two proportions</h2>
+<section id="case-4-difference-between-two-proportions" class="slide level2">
+<h2>Case 4 – Difference between two proportions</h2>
 <p>Do undergraduate Duke students sleep the same mount of time per night as graduate Duke students do?</p>
+<div class="fragment">
+<p><strong>Population parameter</strong>: difference between the mean amount of time that Duke undergraduate and graduate students sleep per night (<span class="math inline">\(\mu_{diff} = \mu_{undergrad}-\mu_{grad}\)</span>)</p>
+<p><strong>sample statistics</strong>: difference between the mean amount of time that Duke undergraduate and graduate students in the sample sleep per night (<span class="math inline">\(\bar{x}_{diff} = \bar{x}_{undergrad} - \bar{x}_{grad}\)</span>)</p>
+</div>
+<div class="fragment">
+<p><strong>Confidence interval</strong>: <span class="math inline">\((-0.5, 1)\)</span></p>
+<ul>
+<li>we are 95% confident that the interval <span class="math inline">\((-0.5, 1)\)</span> capture <span class="math inline">\(\mu_{diff}\)</span>.</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Hypothesis test</strong>: is the proportion of vegetarian among Duke students <span class="math inline">\(0.5\)</span>?</p>
+<ul>
+<li><p><span class="math inline">\(H_0:\mu_{diff}=0, H_a:\mu_{diff}\neq0\)</span></p></li>
+<li><p>The data collected do not provide strong evidence against <span class="math inline">\(H_0\)</span>, that is, against the hypothesis that undergraduate and graduate Duke students sleep on average the amount of time per night.</p></li>
+</ul>
 
-
-<img src="images/logo.jpg" class="slide-logo r-stretch"><div class="footer footer-default">
+<p><img src="images/logo.jpg" class="slide-logo"></p>
+<div class="footer footer-default">
 <p><a href="https://rmorsomme.github.io/website/">https://rmorsomme.github.io/website/</a></p>
+</div>
 </div>
 </section></section>
     </div>

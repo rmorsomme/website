@@ -2658,5 +2658,33 @@
     "title": "Principles of Inference",
     "section": "Difference between two proportions",
     "text": "Difference between two proportions\nDo undergraduate Duke students sleep the same mount of time per night as graduate Duke students do?\n\n\n\nhttps://rmorsomme.github.io/website/"
+  },
+  {
+    "objectID": "slides/lec-8.html#case-1-single-proportion",
+    "href": "slides/lec-8.html#case-1-single-proportion",
+    "title": "Principles of Inference",
+    "section": "Case 1 – Single proportion",
+    "text": "Case 1 – Single proportion\nWhat is the proportion of vegetarian among Duke students?\n\nPopulation parameter: proportion of vegetarian among Duke students (\\(p\\))\nsample statistics: proportion of vegetarian in the sample \\(\\hat{p}\\)\n\n\nConfidence interval: \\((0.31, 0.43)\\)\n\nwe are 95% confident that the interval \\((0.31, 0.43)\\) capture the proportion of vegetarian among Duke students.\n\n\n\nHypothesis test: is the proportion of vegetarian among Duke students \\(0.5\\)?\n\n\\(H_0:p=0.5, H_a:p\\neq0.5\\)\nThe data collected provide strong evidence against \\(H_0\\), that is, against the hypothesis that half of Duke students are vegetarian."
+  },
+  {
+    "objectID": "slides/lec-8.html#case-2-difference-between-two-proportions",
+    "href": "slides/lec-8.html#case-2-difference-between-two-proportions",
+    "title": "Principles of Inference",
+    "section": "Case 2 – Difference between two proportions",
+    "text": "Case 2 – Difference between two proportions\nIs the proportion of vegetarian the same among undergraduate Duke student and graduate Duke students?\nPopulation parameter: difference between the proportion of vegetarian among undergraduate Duke students and graduate Duke students (\\(p_{diff} = p_{undergrad}-p_{grad}\\))\nsample statistics: different in proportion of vegetarian in the sample \\(\\hat{p}_{diff} = \\hat{p}_{undergrad} - \\hat{p}_{grad}\\)\n\nConfidence interval: \\((-0.05, 0.08)\\)\n\nwe are 95% confident that the interval \\((-0.05, 0.08)\\) capture the true value of \\(p_{diff}\\).\n\n\n\nHypothesis test: is the proportion of vegetarian the same among undergraduate and graduate Duke students?\n\n\\(H_0:p_{diff}=0, H_a:p_{diff}\\neq0\\)\nThe data collected do not provide strong evidence against \\(H_0\\), that is, against the hypothesis that \\(p_{diff}=0\\)."
+  },
+  {
+    "objectID": "slides/lec-8.html#case-3-single-mean",
+    "href": "slides/lec-8.html#case-3-single-mean",
+    "title": "Principles of Inference",
+    "section": "Case 3 – Single mean",
+    "text": "Case 3 – Single mean\nHow much time do Duke students sleep on average per night?\n\nPopulation parameter: mean amount of time that Duke students sleep per night (\\(\\mu\\))\nsample statistics: average amount of time that Duke students in the sample sleep per night (\\(\\bar{x}\\))\n\n\nConfidence interval: \\((5.5, 7.5)\\)\n\nwe are 95% confident that the interval \\((5.5, 7.5)\\) capture \\(\\mu\\).\n\n\n\nHypothesis test: is the proportion of vegetarian among Duke students \\(0.5\\)?\n\n\\(H_0:\\mu=8, H_a:\\mu\\neq8\\)\nThe data collected provide strong evidence against \\(H_0\\), that is, against the hypothesis that Duke students sleep on average 8 hours per night."
+  },
+  {
+    "objectID": "slides/lec-8.html#case-4-difference-between-two-proportions",
+    "href": "slides/lec-8.html#case-4-difference-between-two-proportions",
+    "title": "Principles of Inference",
+    "section": "Case 4 – Difference between two proportions",
+    "text": "Case 4 – Difference between two proportions\nDo undergraduate Duke students sleep the same mount of time per night as graduate Duke students do?\n\nPopulation parameter: difference between the mean amount of time that Duke undergraduate and graduate students sleep per night (\\(\\mu_{diff} = \\mu_{undergrad}-\\mu_{grad}\\))\nsample statistics: difference between the mean amount of time that Duke undergraduate and graduate students in the sample sleep per night (\\(\\bar{x}_{diff} = \\bar{x}_{undergrad} - \\bar{x}_{grad}\\))\n\n\nConfidence interval: \\((-0.5, 1)\\)\n\nwe are 95% confident that the interval \\((-0.5, 1)\\) capture \\(\\mu_{diff}\\).\n\n\n\nHypothesis test: is the proportion of vegetarian among Duke students \\(0.5\\)?\n\n\\(H_0:\\mu_{diff}=0, H_a:\\mu_{diff}\\neq0\\)\nThe data collected do not provide strong evidence against \\(H_0\\), that is, against the hypothesis that undergraduate and graduate Duke students sleep on average the amount of time per night.\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   }
 ]

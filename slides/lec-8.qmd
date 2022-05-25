@@ -108,7 +108,7 @@ Framework to make rigorous statements about uncertainty in our estimates
 
 # Five cases
 
-## Single proportion  {.smaller}
+## Case 1 -- Single proportion {.smaller}
 
 What is the proportion of vegetarian among Duke students?
 
@@ -120,19 +120,19 @@ What is the proportion of vegetarian among Duke students?
 
 . . .
 
-Confidence interval: $(0.31, 0.43)$
+**Confidence interval**: $(0.31, 0.43)$
 
 -   we are 95% confident that the interval $(0.31, 0.43)$ capture the proportion of vegetarian among Duke students.
 
 . . .
 
-Hypothesis test: is the proportion of vegetarian among Duke students $0.5$?
+**Hypothesis test**: is the proportion of vegetarian among Duke students $0.5$?
 
 -   $H_0:p=0.5, H_a:p\neq0.5$
 
--   The data collected provide strong evidence against $H_0$, that is, against the hypothesis that half od Duke students are vegetarian.
+-   The data collected provide strong evidence against $H_0$, that is, against the hypothesis that half of Duke students are vegetarian.
 
-## Difference between two proportions  {.smaller}
+## Case 2 -- Difference between two proportions {.smaller}
 
 Is the proportion of vegetarian the same among undergraduate Duke student and graduate Duke students?
 
@@ -142,22 +142,62 @@ Is the proportion of vegetarian the same among undergraduate Duke student and gr
 
 . . .
 
-Confidence interval: $(-0.05, 0.08)$
+**Confidence interval**: $(-0.05, 0.08)$
 
 -   we are 95% confident that the interval $(-0.05, 0.08)$ capture the true value of $p_{diff}$.
 
 . . .
 
-Hypothesis test: is the proportion of vegetarian the same among undergraduate and graduate Duke students?
+**Hypothesis test**: is the proportion of vegetarian the same among undergraduate and graduate Duke students?
 
--   $H_0:p_{diff}=0.5, H_a:p_{diff}\neq0.5$
+-   $H_0:p_{diff}=0, H_a:p_{diff}\neq0$
 
--   The data collected do not provide strong evidence against $H_0$, that is, against the hypothesis that $p_{diff}=0.5$.
+-   The data collected do not provide strong evidence against $H_0$, that is, against the hypothesis that $p_{diff}=0$.
 
-## Single mean
+## Case 3 -- Single mean
 
 How much time do Duke students sleep on average per night?
 
-## Difference between two proportions
+. . .
+
+**Population parameter**: mean amount of time that Duke students sleep per night ($\mu$)
+
+**sample statistics**: average amount of time that Duke students in the sample sleep per night ($\bar{x}$)
+
+. . .
+
+**Confidence interval**: $(5.5, 7.5)$
+
+-   we are 95% confident that the interval $(5.5, 7.5)$ capture $\mu$.
+
+. . .
+
+**Hypothesis test**: is the proportion of vegetarian among Duke students $0.5$?
+
+-   $H_0:\mu=8, H_a:\mu\neq8$
+
+-   The data collected provide strong evidence against $H_0$, that is, against the hypothesis that Duke students sleep on average 8 hours per night.
+
+## Case 4 -- Difference between two proportions
 
 Do undergraduate Duke students sleep the same mount of time per night as graduate Duke students do?
+
+. . .
+
+**Population parameter**: difference between the mean amount of time that Duke undergraduate and graduate students sleep per night ($\mu_{diff} = \mu_{undergrad}-\mu_{grad}$)
+
+**sample statistics**: difference between the mean amount of time that Duke undergraduate and graduate students in the sample sleep per night ($\bar{x}_{diff} = \bar{x}_{undergrad} - \bar{x}_{grad}$)
+
+. . .
+
+**Confidence interval**: $(-0.5, 1)$
+
+-   we are 95% confident that the interval $(-0.5, 1)$ capture $\mu_{diff}$.
+
+. . .
+
+**Hypothesis test**: is the proportion of vegetarian among Duke students $0.5$?
+
+-   $H_0:\mu_{diff}=0, H_a:\mu_{diff}\neq0$
+
+-   The data collected do not provide strong evidence against $H_0$, that is, against the hypothesis that undergraduate and graduate Duke students sleep on average the amount of time per night.
