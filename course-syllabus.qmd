@@ -11,8 +11,8 @@ title: "Syllabus - STA101L Summer I 2022"
 
 |          | Day            | Time              | Location                   |
 |----------|----------------|-------------------|----------------------------|
-| Lectures | Mon, Tue & Thu | 3:30 pm - 5:35 pm | Old Chemistry Building 003 |
-| Labs     | Wed & Fri      | 3:30 pm - 4:45 pm | Old Chemistry Building 003 |
+| Lectures | Mon, Tue & Thu | 3:30 pm - 5:35 pm | Old Chemistry Building 123 |
+| Labs     | Wed & Fri      | 3:30 pm - 4:45 pm | Old Chemistry Building 123 |
 
 ## Overview
 
