@@ -18,7 +18,7 @@
     "href": "course-links.html",
     "title": "Useful links",
     "section": "",
-    "text": "The R and RStudio software\n🔗 on R and RStudio\n\n\n\n\nAssignment submission and feedback\n🔗 on Gradescope\n\n\nIntroduction to Modern Statistics\n🔗 on Openintro\n\n\nR for Data Science\n🔗 on R4DS\n\n\nRStudi Cheatsheets\n🔗RStudio, RMarkdown, ggplot2, dplyr"
+    "text": "Software\n🔗R and RStudio (demo)\n\n\n\n\nAssignment submission & feedback\n🔗 on Gradescope\n\n\nTextbooks\n🔗Introduction to Modern Statistics and R for Data Science\n\n\nRStudio Cheatsheets\n🔗 RStudio, RMarkdown, ggplot2 and dplyr"
   },
   {
     "objectID": "course-overview.html",
@@ -2630,34 +2630,6 @@
     "title": "Principles of Inference",
     "section": "Statistical inference",
     "text": "Statistical inference\nFramework to make rigorous statements about uncertainty in our estimates\n\nconfidence intervals\n\n“we are 90% confident that the interval \\((20\\%, 30\\%)\\) captures the true value of the population proportion”.\n\nhypothesis tests\n\n“we reject the claim that the population proportion is \\(50\\%\\)”."
-  },
-  {
-    "objectID": "slides/lec-8.html#single-proportion",
-    "href": "slides/lec-8.html#single-proportion",
-    "title": "Principles of Inference",
-    "section": "Single proportion",
-    "text": "Single proportion\nWhat is the proportion of vegetarian among Duke students?\n\nPopulation parameter: proportion of vegetarian among Duke students (\\(p\\))\nsample statistics: proportion of vegetarian in the sample \\(\\hat{p}\\)\n\n\nConfidence interval: \\((0.31, 0.43)\\)\n\nwe are 95% confident that the interval \\((0.31, 0.43)\\) capture the proportion of vegetarian among Duke students.\n\n\n\nHypothesis test: is the proportion of vegetarian among Duke students \\(0.5\\)?\n\n\\(H_0:p=0.5, H_a:p\\neq0.5\\)\nThe data collected provide strong evidence against \\(H_0\\), that is, against the hypothesis that half od Duke students are vegetarian."
-  },
-  {
-    "objectID": "slides/lec-8.html#difference-between-two-proportions",
-    "href": "slides/lec-8.html#difference-between-two-proportions",
-    "title": "Principles of Inference",
-    "section": "Difference between two proportions",
-    "text": "Difference between two proportions\nIs the proportion of vegetarian the same among undergraduate Duke student and graduate Duke students?\nPopulation parameter: difference between the proportion of vegetarian among undergraduate Duke students and graduate Duke students (\\(p_{diff} = p_{undergrad}-p_{grad}\\))\nsample statistics: different in proportion of vegetarian in the sample \\(\\hat{p}_{diff} = \\hat{p}_{undergrad} - \\hat{p}_{grad}\\)\n\nConfidence interval: \\((-0.05, 0.08)\\)\n\nwe are 95% confident that the interval \\((-0.05, 0.08)\\) capture the true value of \\(p_{diff}\\).\n\n\n\nHypothesis test: is the proportion of vegetarian the same among undergraduate and graduate Duke students?\n\n\\(H_0:p_{diff}=0.5, H_a:p_{diff}\\neq0.5\\)\nThe data collected do not provide strong evidence against \\(H_0\\), that is, against the hypothesis that \\(p_{diff}=0.5\\)."
-  },
-  {
-    "objectID": "slides/lec-8.html#single-mean",
-    "href": "slides/lec-8.html#single-mean",
-    "title": "Principles of Inference",
-    "section": "Single mean",
-    "text": "Single mean\nHow much time do Duke students sleep on average per night?"
-  },
-  {
-    "objectID": "slides/lec-8.html#difference-between-two-proportions-1",
-    "href": "slides/lec-8.html#difference-between-two-proportions-1",
-    "title": "Principles of Inference",
-    "section": "Difference between two proportions",
-    "text": "Difference between two proportions\nDo undergraduate Duke students sleep the same mount of time per night as graduate Duke students do?\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
     "objectID": "slides/lec-8.html#case-1-single-proportion",
