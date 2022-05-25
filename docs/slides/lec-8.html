@@ -344,9 +344,20 @@
 <section id="outline" class="slide level2">
 <h2>Outline</h2>
 <ul>
+<li>Statistical inference</li>
 <li>Confidence intervals</li>
-<li>Hypothesis tests</li>
+<li>Hypothesis tests
+<ul>
 <li>Types of errors</li>
+</ul></li>
+<li>Five cases
+<ul>
+<li><p>single proportion</p></li>
+<li><p>difference between two portions</p></li>
+<li><p>single mean</p></li>
+<li><p>difference between two means</p></li>
+<li><p>regression parameters</p></li>
+</ul></li>
 </ul>
 </section></section>
 <section>
@@ -368,17 +379,77 @@
 <h2>Limitation of point estimate</h2>
 <p>A single point does not indicate how confident we are in our estimation.</p>
 <ul>
-<li><p>if we have a large sample, then we can be pretty confident that our estimate will be close to the true value fo the parameter</p></li>
-<li><p>if we have a small sample, then we know that are estimate may be pretty far from the truth</p></li>
+<li><p>If we have a <em>large</em> sample, then we can be pretty confident that our estimate will likely be close to the true value fo the parameter,</p></li>
+<li><p>if we have a <em>small</em> sample, then we know that our estimate may be far from the truth.</p></li>
+<li><p>e.g.&nbsp;basketball free throws, ratings on Yelp or Amazon</p></li>
 </ul>
 </section>
 <section id="statistical-inference-1" class="slide level2">
 <h2>Statistical inference</h2>
 <p>Framework to make rigorous statements about uncertainty in our estimates</p>
 <ul>
-<li><p>confidence intervals</p></li>
-<li><p>hypothesis tests</p></li>
+<li><p>confidence intervals</p>
+<ul>
+<li>“we are 90% confident that the interval <span class="math inline">\((20\%, 30\%)\)</span> captures the true value of the population proportion”.</li>
+</ul></li>
+<li><p>hypothesis tests</p>
+<ul>
+<li>“we reject the claim that the population proportion is <span class="math inline">\(50\%\)</span>”.</li>
+</ul></li>
 </ul>
+</section></section>
+<section>
+<section id="five-cases" class="title-slide slide level1 center">
+<h1>Five cases</h1>
+
+</section>
+<section id="single-proportion" class="slide level2 smaller">
+<h2>Single proportion</h2>
+<p>What is the proportion of vegetarian among Duke students?</p>
+<div class="fragment">
+<p><strong>Population parameter</strong>: proportion of vegetarian among Duke students (<span class="math inline">\(p\)</span>)</p>
+<p><strong>sample statistics</strong>: proportion of vegetarian in the sample <span class="math inline">\(\hat{p}\)</span></p>
+</div>
+<div class="fragment">
+<p>Confidence interval: <span class="math inline">\((0.31, 0.43)\)</span></p>
+<ul>
+<li>we are 95% confident that the interval <span class="math inline">\((0.31, 0.43)\)</span> capture the proportion of vegetarian among Duke students.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Hypothesis test: is the proportion of vegetarian among Duke students <span class="math inline">\(0.5\)</span>?</p>
+<ul>
+<li><p><span class="math inline">\(H_0:p=0.5, H_a:p\neq0.5\)</span></p></li>
+<li><p>The data collected provide strong evidence against <span class="math inline">\(H_0\)</span>, that is, against the hypothesis that half od Duke students are vegetarian.</p></li>
+</ul>
+</div>
+</section>
+<section id="difference-between-two-proportions" class="slide level2 smaller">
+<h2>Difference between two proportions</h2>
+<p>Is the proportion of vegetarian the same among undergraduate Duke student and graduate Duke students?</p>
+<p><strong>Population parameter</strong>: difference between the proportion of vegetarian among undergraduate Duke students and graduate Duke students (<span class="math inline">\(p_{diff} = p_{undergrad}-p_{grad}\)</span>)</p>
+<p><strong>sample statistics</strong>: different in proportion of vegetarian in the sample <span class="math inline">\(\hat{p}_{diff} = \hat{p}_{undergrad} - \hat{p}_{grad}\)</span></p>
+<div class="fragment">
+<p>Confidence interval: <span class="math inline">\((-0.05, 0.08)\)</span></p>
+<ul>
+<li>we are 95% confident that the interval <span class="math inline">\((-0.05, 0.08)\)</span> capture the true value of <span class="math inline">\(p_{diff}\)</span>.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Hypothesis test: is the proportion of vegetarian the same among undergraduate and graduate Duke students?</p>
+<ul>
+<li><p><span class="math inline">\(H_0:p_{diff}=0.5, H_a:p_{diff}\neq0.5\)</span></p></li>
+<li><p>The data collected do not provide strong evidence against <span class="math inline">\(H_0\)</span>, that is, against the hypothesis that <span class="math inline">\(p_{diff}=0.5\)</span>.</p></li>
+</ul>
+</div>
+</section>
+<section id="single-mean" class="slide level2">
+<h2>Single mean</h2>
+<p>How much time do Duke students sleep on average per night?</p>
+</section>
+<section id="difference-between-two-proportions-1" class="slide level2">
+<h2>Difference between two proportions</h2>
+<p>Do undergraduate Duke students sleep the same mount of time per night as graduate Duke students do?</p>
 
 
 <img src="images/logo.jpg" class="slide-logo r-stretch"><div class="footer footer-default">

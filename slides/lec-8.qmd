@@ -55,9 +55,20 @@ options(scipen = 100)
 
 ## Outline
 
+-   Statistical inference
 -   Confidence intervals
 -   Hypothesis tests
--   Types of errors
+    -   Types of errors
+-   Five cases
+    -   single proportion
+
+    -   difference between two portions
+
+    -   single mean
+
+    -   difference between two means
+
+    -   regression parameters
 
 # Statistical inference
 
@@ -77,9 +88,11 @@ It seems natural to use the sample proportion as an estimate for the population 
 
 A single point does not indicate how confident we are in our estimation.
 
--   if we have a large sample, then we can be pretty confident that our estimate will be close to the true value fo the parameter
+-   If we have a *large* sample, then we can be pretty confident that our estimate will likely be close to the true value fo the parameter,
 
--   if we have a small sample, then we know that are estimate may be pretty far from the truth
+-   if we have a *small* sample, then we know that our estimate may be far from the truth.
+
+-   e.g. basketball free throws, ratings on Yelp or Amazon
 
 ## Statistical inference
 
@@ -87,4 +100,64 @@ Framework to make rigorous statements about uncertainty in our estimates
 
 -   confidence intervals
 
+    -   "we are 90% confident that the interval $(20\%, 30\%)$ captures the true value of the population proportion".
+
 -   hypothesis tests
+
+    -   "we reject the claim that the population proportion is $50\%$".
+
+# Five cases
+
+## Single proportion  {.smaller}
+
+What is the proportion of vegetarian among Duke students?
+
+. . .
+
+**Population parameter**: proportion of vegetarian among Duke students ($p$)
+
+**sample statistics**: proportion of vegetarian in the sample $\hat{p}$
+
+. . .
+
+Confidence interval: $(0.31, 0.43)$
+
+-   we are 95% confident that the interval $(0.31, 0.43)$ capture the proportion of vegetarian among Duke students.
+
+. . .
+
+Hypothesis test: is the proportion of vegetarian among Duke students $0.5$?
+
+-   $H_0:p=0.5, H_a:p\neq0.5$
+
+-   The data collected provide strong evidence against $H_0$, that is, against the hypothesis that half od Duke students are vegetarian.
+
+## Difference between two proportions  {.smaller}
+
+Is the proportion of vegetarian the same among undergraduate Duke student and graduate Duke students?
+
+**Population parameter**: difference between the proportion of vegetarian among undergraduate Duke students and graduate Duke students ($p_{diff} = p_{undergrad}-p_{grad}$)
+
+**sample statistics**: different in proportion of vegetarian in the sample $\hat{p}_{diff} = \hat{p}_{undergrad} - \hat{p}_{grad}$
+
+. . .
+
+Confidence interval: $(-0.05, 0.08)$
+
+-   we are 95% confident that the interval $(-0.05, 0.08)$ capture the true value of $p_{diff}$.
+
+. . .
+
+Hypothesis test: is the proportion of vegetarian the same among undergraduate and graduate Duke students?
+
+-   $H_0:p_{diff}=0.5, H_a:p_{diff}\neq0.5$
+
+-   The data collected do not provide strong evidence against $H_0$, that is, against the hypothesis that $p_{diff}=0.5$.
+
+## Single mean
+
+How much time do Duke students sleep on average per night?
+
+## Difference between two proportions
+
+Do undergraduate Duke students sleep the same mount of time per night as graduate Duke students do?
