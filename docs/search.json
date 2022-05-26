@@ -315,11 +315,11 @@
     "text": "Problem set (25 points)\n\n11.2 (2 points)\n\nDo parts a-d.\nYou do not need to do part e\n\n11.6 (2 points)\n12.2 (2 points)\n12.4 (4 points)\n\nRe-create the figures on R. Hint: use the rbinom command.\nDo the exercise.\n\n12.8 (3 points)\n13 points"
   },
   {
-    "objectID": "hw/hw-5.html#lab-exercises---the-human-freedom-index-25-points",
-    "href": "hw/hw-5.html#lab-exercises---the-human-freedom-index-25-points",
-    "title": "HW 4 - Multiple linear regression",
-    "section": "Lab exercises - the Human Freedom Index (25 points)",
-    "text": "Lab exercises - the Human Freedom Index (25 points)\nYou can find the lab here\n\nExercise 1 (2 points)\nExercise 2 (2 points)\nExercise 3 (3 points)\nExercise 4 (2 points)\nExercise 5 (2 points)\nExercise 6 (3 points)\nExercise 7 (2 points)\nExercise 8 (2 points)\n\nSkip exercises 9-10.\n\nPractice 1 (2 points)\nPractice 2 (2 points)\nPractice 3 (1 points) – only evaluate linearity\nPractice 4 (2 points)"
+    "objectID": "hw/hw-5.html#lab-exercises---the-youth-risk-behavior-surveillance-system-25-points",
+    "href": "hw/hw-5.html#lab-exercises---the-youth-risk-behavior-surveillance-system-25-points",
+    "title": "HW 5 - Inference for proportions",
+    "section": "Lab exercises - the Youth Risk Behavior Surveillance System (25 points)",
+    "text": "Lab exercises - the Youth Risk Behavior Surveillance System (25 points)\nYou can find the lab here\n\nExercise 1 (2 points)\nExercise 2 (2 points)\nExercise 3 (2 points)\nExercise 4 (2 points)\nExercise 5 (2 points)\nExercise 6 (2 points)\nExercise 7 (2 points)\nExercise 8 (2 points)\nExercise 9 (3 points)\nExercise 10 (3 points)\nExercise 11 (3 points)"
   },
   {
     "objectID": "hw/template.html",
@@ -2742,12 +2742,5 @@
     "title": "Principles of Inference",
     "section": "Two outcomes",
     "text": "Two outcomes\nSuppose you observe the following sample: out of 100 flips, you get 55 heads\n\\(\\Rightarrow\\) the sample is plausible under \\(H_0\\); the observed data do not provide strong evidence against the null hypothesis; we fail to reject the claim that the coin is fair\n\nThe coin might be unfair, but the data do not provide strong evidence against fairness.\n\n\nNow suppose that out of 100 flips, you observe 65 heads.\n\\(\\Rightarrow\\) this result is unlikely under \\(H_0\\); the observed data provide strong evidence against the null hypothesis; we reject the claim that the coin is fair\n\nThe coin might be fair, but \\(65\\) is extreme enough to make reject the claim that the coin is fair."
-  },
-  {
-    "objectID": "hw/hw-5.html#lab-exercises---the-youth-risk-behavior-surveillance-system-25-points",
-    "href": "hw/hw-5.html#lab-exercises---the-youth-risk-behavior-surveillance-system-25-points",
-    "title": "HW 5 - Inference for proportions",
-    "section": "Lab exercises - the Youth Risk Behavior Surveillance System (25 points)",
-    "text": "Lab exercises - the Youth Risk Behavior Surveillance System (25 points)\nYou can find the lab here\n\nExercise 1 (2 points)\nExercise 2 (2 points)\nExercise 3 (2 points)\nExercise 4 (2 points)\nExercise 5 (2 points)\nExercise 6 (2 points)\nExercise 7 (2 points)\nExercise 8 (2 points)\nExercise 9 (3 points)\nExercise 10 (3 points)\nExercise 11 (3 points)"
   }
 ]
