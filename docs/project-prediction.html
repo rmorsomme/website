@@ -200,7 +200,7 @@
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>We will work with the natality data for the U.S. in 2020. The response variable that we are interested in is newborn’s weight. This variable is important to medical professionals since a newborn with a low birth weight is more likely to require additional care. You have access to a <a href="./projects/training_set.csv">random sample of 1,000 observations</a> to construct your prediction model. I have kept a separate set of 20,000 observations to evaluate the prediction model that you select.</p>
+<p>We will work with the natality data for the U.S. in 2020. The response variable that we are interested in is newborn’s weight. This variable is important to medical professionals since a newborn with a low birth weight is more likely to require additional care. You have access to a <a href="./projects/training_set.csv">random sample of 1,000 observations</a> to construct your prediction model. I have kept a separate set of random 20,000 observations to evaluate the prediction model that you select.</p>
 <p>Here is a detailed overview of the variable</p>
 <ul>
 <li><code>newborn_birth_weight</code>: newborn birth weight in grams (<strong>response</strong>)</li>
@@ -225,7 +225,7 @@
 <h2 class="anchored" data-anchor-id="submission">Submission</h2>
 <p>The three primary deliverables for this project are:</p>
 <ul>
-<li><p><strong>Prediction model:</strong> you need to submit a RDATA file that contains your prediction model. The prediction model must consist in a function that takes a test set (a dataframe with the same predictors as the training set, but no response variable) as an input and returns a prediction for each observation of the test set. The RDATA file should not contain anything else.</p></li>
+<li><p><strong>Prediction model:</strong> you need to submit a .RDATA file that contains your prediction model. The prediction model must consist in a model fitted using the <code>lm</code> command in <code>R</code>. You can only use the 1,000 observations provided <a href="./projects/training_set.csv">here</a> to fit your model. The .RDATA file should not contain anything else.</p></li>
 <li><p><strong>Informal presentation</strong>: you will present your work orally to rest of the class. The presentation should be no longer than 5 minutes (aim for 2-6 slides). It is fine if the presentation is shorter than 5 minutes, but it cannot exceed 5 minutes. The two team members should speak roughly the same amount of time. Each presentation will be followed by a short QA session.</p></li>
 <li><p><strong>Final report:</strong> The final report details your work. It needs to be realized using RMarkdown and submitted on Gradescope as a PDF. The RMD file also needs to be sent via email to the instruction team (reproducibility). The page limit is 6 pages (including code chunks, but excluding the appendix). Figures should go in the appendix, along with any work that you wish to include. Grading will largely be based on the content in the main body of the report. You should assume the reader will not see the material in the appendix unless prompted to view it in the main body of the report.</p></li>
 </ul>
@@ -269,9 +269,9 @@
 <tr class="odd">
 <td style="text-align: left;"><p><strong>Prediction model</strong></p>
 <ul>
-<li><p>The RDATA file contains only a function</p></li>
-<li><p>The model takes a test set as input</p></li>
-<li><p>The model returns one prediction for each observation</p></li>
+<li><p>The RDATA file contains only the selected model</p></li>
+<li><p>The model is fitted using the <code>lm</code> command in <code>R</code></p></li>
+<li><p>The model is fitted using only the sample provided</p></li>
 <li><p>Most accurate model of the class</p></li>
 </ul></td>
 <td style="text-align: center;"><p><strong>3</strong></p>

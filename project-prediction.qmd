@@ -28,7 +28,7 @@ By participating in this project, you pledge to uphold the Duke Community Standa
 
 ## Data
 
-We will work with the natality data for the U.S. in 2020. The response variable that we are interested in is newborn's weight. This variable is important to medical professionals since a newborn with a low birth weight is more likely to require additional care. You have access to a [random sample of 1,000 observations](/projects/training_set.csv) to construct your prediction model. I have kept a separate set of 20,000 observations to evaluate the prediction model that you select.
+We will work with the natality data for the U.S. in 2020. The response variable that we are interested in is newborn's weight. This variable is important to medical professionals since a newborn with a low birth weight is more likely to require additional care. You have access to a [random sample of 1,000 observations](/projects/training_set.csv) to construct your prediction model. I have kept a separate set of random 20,000 observations to evaluate the prediction model that you select.
 
 Here is a detailed overview of the variable
 
@@ -53,7 +53,7 @@ Here is a detailed overview of the variable
 
 The three primary deliverables for this project are:
 
--   **Prediction model:** you need to submit a RDATA file that contains your prediction model. The prediction model must consist in a function that takes a test set (a dataframe with the same predictors as the training set, but no response variable) as an input and returns a prediction for each observation of the test set. The RDATA file should not contain anything else.
+-   **Prediction model:** you need to submit a .RDATA file that contains your prediction model. The prediction model must consist in a model fitted using the `lm` command in `R`. You can only use the 1,000 observations provided [here](/projects/training_set.csv) to fit your model. The .RDATA file should not contain anything else.
 
 -   **Informal presentation**: you will present your work orally to rest of the class. The presentation should be no longer than 5 minutes (aim for 2-6 slides). It is fine if the presentation is shorter than 5 minutes, but it cannot exceed 5 minutes. The two team members should speak roughly the same amount of time. Each presentation will be followed by a short QA session.
 
@@ -83,11 +83,11 @@ The final report should include the following sections, though you should feel f
 +:===================================================================================+:===============:+
 | **Prediction model**                                                               | **3**           |
 |                                                                                    |                 |
-| -   The RDATA file contains only a function                                        | 1               |
+| -   The RDATA file contains only the selected model                                | 1               |
 |                                                                                    |                 |
-| -   The model takes a test set as input                                            | 1               |
+| -   The model is fitted using the `lm` command in `R`                              | 1               |
 |                                                                                    |                 |
-| -   The model returns one prediction for each observation                          | 1               |
+| -   The model is fitted using only the sample provided                             | 1               |
 |                                                                                    |                 |
 | -   Most accurate model of the class                                               | bragging rights |
 +------------------------------------------------------------------------------------+-----------------+
