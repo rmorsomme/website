@@ -303,16 +303,16 @@
   {
     "objectID": "hw/hw-5.html",
     "href": "hw/hw-5.html",
-    "title": "HW 4 - Multiple linear regression",
+    "title": "HW 5 - Inference for proportions",
     "section": "",
     "text": "This assignment needs to be completed with RMarkdown and submitted as a PDF on Gradescope. Feel free to re-use the template provided for HW1.\nWhen submitting your work on Gradescope, please assign a page for each question."
   },
   {
     "objectID": "hw/hw-5.html#problem-set-25-points",
     "href": "hw/hw-5.html#problem-set-25-points",
-    "title": "HW 4 - Multiple linear regression",
+    "title": "HW 5 - Inference for proportions",
     "section": "Problem set (25 points)",
-    "text": "Problem set (25 points)\n\n8.6 (2 points)\n8.10 (8 points)\n\nfit the model in R\n\nd <- palmerpenguins::penguins\n\nidentify the type of each variable\nidentify the baseline level of the categorical predictors\ndo parts a-d"
+    "text": "Problem set (25 points)\n\n11.2 (2 points)\n\nDo parts a-d.\nYou do not need to do part e\n\n11.6 (2 points)\n12.2 (2 points)\n12.4 (4 points)\n\nRe-create the figures on R. Hint: use the rbinom command.\nDo the exercise.\n\n12.8 (3 points)\n13 points"
   },
   {
     "objectID": "hw/hw-5.html#lab-exercises---the-human-freedom-index-25-points",
@@ -2601,62 +2601,153 @@
     "href": "slides/lec-8.html#outline",
     "title": "Principles of Inference",
     "section": "Outline",
-    "text": "Outline\n\nStatistical inference\nConfidence intervals\nHypothesis tests\n\nTypes of errors\n\nFive cases\n\nsingle proportion\ndifference between two portions\nsingle mean\ndifference between two means\nregression parameters"
-  },
-  {
-    "objectID": "slides/lec-8.html#learning-about-a-proportion",
-    "href": "slides/lec-8.html#learning-about-a-proportion",
-    "title": "Principles of Inference",
-    "section": "Learning about a proportion",
-    "text": "Learning about a proportion\nexample"
-  },
-  {
-    "objectID": "slides/lec-8.html#point-estimate",
-    "href": "slides/lec-8.html#point-estimate",
-    "title": "Principles of Inference",
-    "section": "Point estimate",
-    "text": "Point estimate\nparameter of interest: proportion in the population\nsample statistic: sample proportion\nIt seems natural to use the sample proportion as an estimate for the population proportion."
-  },
-  {
-    "objectID": "slides/lec-8.html#limitation-of-point-estimate",
-    "href": "slides/lec-8.html#limitation-of-point-estimate",
-    "title": "Principles of Inference",
-    "section": "Limitation of point estimate",
-    "text": "Limitation of point estimate\nA single point does not indicate how confident we are in our estimation.\n\nIf we have a large sample, then we can be pretty confident that our estimate will likely be close to the true value fo the parameter,\nif we have a small sample, then we know that our estimate may be far from the truth.\ne.g. basketball free throws, ratings on Yelp or Amazon"
+    "text": "Outline\n\nStatistical inference\nConfidence intervals\nHypothesis tests\n\nTypes of errors\n\nFive cases\n\nsingle proportion\ndifference between two portions\nsingle mean\ndifference between two means\nregression parameters\n\nHypothesis test\nModern statistics"
   },
   {
     "objectID": "slides/lec-8.html#statistical-inference-1",
     "href": "slides/lec-8.html#statistical-inference-1",
     "title": "Principles of Inference",
     "section": "Statistical inference",
-    "text": "Statistical inference\nFramework to make rigorous statements about uncertainty in our estimates\n\nconfidence intervals\n\n“we are 90% confident that the interval \\((20\\%, 30\\%)\\) captures the true value of the population proportion”.\n\nhypothesis tests\n\n“we reject the claim that the population proportion is \\(50\\%\\)”."
+    "text": "Statistical inference\nWe are want to learn about the (unknown) parameter of some population of interest.\nWe dispose of a sample\n\nIn the remainder of the course, we will always assume that we have a random sample\n\n\nInference: estimate the population parameter from the sample.\nInference: estimate the population parameter from the sample and rigorously quantify our certainty in the estimate."
+  },
+  {
+    "objectID": "slides/lec-8.html#section",
+    "href": "slides/lec-8.html#section",
+    "title": "Principles of Inference",
+    "section": "",
+    "text": "Group exercise - identify the parameter\n\n\nExercise 11.1\n\n\n\n\n\n\n03:00"
+  },
+  {
+    "objectID": "slides/lec-8.html#estimating-a-proportion",
+    "href": "slides/lec-8.html#estimating-a-proportion",
+    "title": "Principles of Inference",
+    "section": "Estimating a proportion",
+    "text": "Estimating a proportion\nparameter of interest: proportion in the population\nsample statistic: sample proportion\nIt seems natural to use the sample proportion as an estimate for the population proportion."
+  },
+  {
+    "objectID": "slides/lec-8.html#our-certainty-in-the-estimate-matters",
+    "href": "slides/lec-8.html#our-certainty-in-the-estimate-matters",
+    "title": "Principles of Inference",
+    "section": "Our certainty in the estimate matters",
+    "text": "Our certainty in the estimate matters\nA single point does not indicate how confident we are in our estimation.\n\nIf we have a large sample, then we can be pretty confident that our estimate will likely be close to the true value fo the parameter,\nif we have a small sample, then we know that our estimate may be far from the truth.\ne.g. basketball free throws, ratings on Yelp or Amazon"
+  },
+  {
+    "objectID": "slides/lec-8.html#statistical-inference-2",
+    "href": "slides/lec-8.html#statistical-inference-2",
+    "title": "Principles of Inference",
+    "section": "Statistical inference",
+    "text": "Statistical inference\nFramework to make rigorous statements about uncertainty in our estimates\n\nconfidence intervals\n\nrange of plausible values for the population parameter\n“we are 90% confident that the interval \\((20\\%, 30\\%)\\) captures the true value of the population proportion”.\n\nhypothesis tests\n\nevaluate competing claims using data\n“we reject the claim that the population proportion is \\(50\\%\\)”."
   },
   {
     "objectID": "slides/lec-8.html#case-1-single-proportion",
     "href": "slides/lec-8.html#case-1-single-proportion",
     "title": "Principles of Inference",
     "section": "Case 1 – Single proportion",
-    "text": "Case 1 – Single proportion\nWhat is the proportion of vegetarian among Duke students?\n\nPopulation parameter: proportion of vegetarian among Duke students (\\(p\\))\nsample statistics: proportion of vegetarian in the sample \\(\\hat{p}\\)\n\n\nConfidence interval: \\((0.31, 0.43)\\)\n\nwe are 95% confident that the interval \\((0.31, 0.43)\\) capture the proportion of vegetarian among Duke students.\n\n\n\nHypothesis test: is the proportion of vegetarian among Duke students \\(0.5\\)?\n\n\\(H_0:p=0.5, H_a:p\\neq0.5\\)\nThe data collected provide strong evidence against \\(H_0\\), that is, against the hypothesis that half of Duke students are vegetarian."
+    "text": "Case 1 – Single proportion\n\n\nWhat is the proportion of vegetarian among Duke students?\n. . .\nPopulation parameter: proportion of vegetarian among Duke students (\\(p\\))\nsample statistics: proportion of vegetarian in the sample \\(\\hat{p}\\)\n\n\n\n\n\nConfidence interval: \\((0.31, 0.43)\\)\n\nwe are 95% confident that the interval \\((0.31, 0.43)\\) capture the proportion of vegetarian among Duke students.\n\n\n\nHypothesis test: is the proportion of vegetarian among Duke students \\(0.5\\)?\n\n\\(H_0:p=0.5, H_a:p\\neq0.5\\)\nThe data collected provide strong evidence against \\(H_0\\), that is, against the hypothesis that half of Duke students are vegetarian. In other words, the data conflict so much with \\(H_0\\), that the null hypothesis is not plausible."
   },
   {
     "objectID": "slides/lec-8.html#case-2-difference-between-two-proportions",
     "href": "slides/lec-8.html#case-2-difference-between-two-proportions",
     "title": "Principles of Inference",
     "section": "Case 2 – Difference between two proportions",
-    "text": "Case 2 – Difference between two proportions\nIs the proportion of vegetarian the same among undergraduate Duke student and graduate Duke students?\nPopulation parameter: difference between the proportion of vegetarian among undergraduate Duke students and graduate Duke students (\\(p_{diff} = p_{undergrad}-p_{grad}\\))\nsample statistics: different in proportion of vegetarian in the sample \\(\\hat{p}_{diff} = \\hat{p}_{undergrad} - \\hat{p}_{grad}\\)\n\nConfidence interval: \\((-0.05, 0.08)\\)\n\nwe are 95% confident that the interval \\((-0.05, 0.08)\\) capture the true value of \\(p_{diff}\\).\n\n\n\nHypothesis test: is the proportion of vegetarian the same among undergraduate and graduate Duke students?\n\n\\(H_0:p_{diff}=0, H_a:p_{diff}\\neq0\\)\nThe data collected do not provide strong evidence against \\(H_0\\), that is, against the hypothesis that \\(p_{diff}=0\\)."
+    "text": "Case 2 – Difference between two proportions\nIs the proportion of vegetarian the same among undergraduate Duke student and graduate Duke students?\nPopulation parameter: difference between the proportion of vegetarian among undergraduate Duke students and graduate Duke students (\\(p_{diff} = p_{undergrad}-p_{grad}\\))\nsample statistics: different in proportion of vegetarian in the sample \\(\\hat{p}_{diff} = \\hat{p}_{undergrad} - \\hat{p}_{grad}\\)\n\nConfidence interval: \\((-0.05, 0.08)\\)\n\nwe are 95% confident that the interval \\((-0.05, 0.08)\\) capture the true value of \\(p_{diff}\\).\n\n\n\nHypothesis test: is the proportion of vegetarian the same among undergraduate and graduate Duke students?\n\n\\(H_0:p_{diff}=0, H_a:p_{diff}\\neq0\\) (no difference)\nThe data collected do not provide strong evidence against \\(H_0\\), that is, against the hypothesis that \\(p_{diff}=0\\)."
   },
   {
     "objectID": "slides/lec-8.html#case-3-single-mean",
     "href": "slides/lec-8.html#case-3-single-mean",
     "title": "Principles of Inference",
     "section": "Case 3 – Single mean",
-    "text": "Case 3 – Single mean\nHow much time do Duke students sleep on average per night?\n\nPopulation parameter: mean amount of time that Duke students sleep per night (\\(\\mu\\))\nsample statistics: average amount of time that Duke students in the sample sleep per night (\\(\\bar{x}\\))\n\n\nConfidence interval: \\((5.5, 7.5)\\)\n\nwe are 95% confident that the interval \\((5.5, 7.5)\\) capture \\(\\mu\\).\n\n\n\nHypothesis test: is the proportion of vegetarian among Duke students \\(0.5\\)?\n\n\\(H_0:\\mu=8, H_a:\\mu\\neq8\\)\nThe data collected provide strong evidence against \\(H_0\\), that is, against the hypothesis that Duke students sleep on average 8 hours per night."
+    "text": "Case 3 – Single mean\n\n\nHow much time do Duke students sleep on average per night?\n. . .\nPopulation parameter: mean amount of time that Duke students sleep per night (\\(\\mu\\))\nsample statistics: average amount of time that Duke students in the sample sleep per night (\\(\\bar{x}\\))\n\n\n\n\n\nConfidence interval: \\((5.5, 7.5)\\)\n\nwe are 95% confident that the interval \\((5.5, 7.5)\\) capture \\(\\mu\\).\n\n\n\nHypothesis test: is the proportion of vegetarian among Duke students \\(0.5\\)?\n\n\\(H_0:\\mu=8, H_a:\\mu\\neq8\\)\nThe data collected provide strong evidence against \\(H_0\\), that is, against the hypothesis that Duke students sleep on average 8 hours per night."
   },
   {
     "objectID": "slides/lec-8.html#case-4-difference-between-two-proportions",
     "href": "slides/lec-8.html#case-4-difference-between-two-proportions",
     "title": "Principles of Inference",
     "section": "Case 4 – Difference between two proportions",
-    "text": "Case 4 – Difference between two proportions\nDo undergraduate Duke students sleep the same mount of time per night as graduate Duke students do?\n\nPopulation parameter: difference between the mean amount of time that Duke undergraduate and graduate students sleep per night (\\(\\mu_{diff} = \\mu_{undergrad}-\\mu_{grad}\\))\nsample statistics: difference between the mean amount of time that Duke undergraduate and graduate students in the sample sleep per night (\\(\\bar{x}_{diff} = \\bar{x}_{undergrad} - \\bar{x}_{grad}\\))\n\n\nConfidence interval: \\((-0.5, 1)\\)\n\nwe are 95% confident that the interval \\((-0.5, 1)\\) capture \\(\\mu_{diff}\\).\n\n\n\nHypothesis test: is the proportion of vegetarian among Duke students \\(0.5\\)?\n\n\\(H_0:\\mu_{diff}=0, H_a:\\mu_{diff}\\neq0\\)\nThe data collected do not provide strong evidence against \\(H_0\\), that is, against the hypothesis that undergraduate and graduate Duke students sleep on average the amount of time per night.\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+    "text": "Case 4 – Difference between two proportions\nDo undergraduate Duke students sleep the same mount of time per night as graduate Duke students do?\n\nPopulation parameter: difference between the mean amount of time that Duke undergraduate and graduate students sleep per night (\\(\\mu_{diff} = \\mu_{undergrad}-\\mu_{grad}\\))\nsample statistics: difference between the mean amount of time that Duke undergraduate and graduate students in the sample sleep per night (\\(\\bar{x}_{diff} = \\bar{x}_{undergrad} - \\bar{x}_{grad}\\))\n\n\nConfidence interval: \\((-0.5, 1)\\)\n\nwe are 95% confident that the interval \\((-0.5, 1)\\) capture \\(\\mu_{diff}\\).\n\n\n\nHypothesis test: is the proportion of vegetarian among Duke students \\(0.5\\)?\n\n\\(H_0:\\mu_{diff}=0, H_a:\\mu_{diff}\\neq0\\)\nThe data collected do not provide strong evidence against \\(H_0\\), that is, against the hypothesis that undergraduate and graduate Duke students sleep on average the amount of time per night."
+  },
+  {
+    "objectID": "slides/lec-8.html#the-null-hypothesis-and-the-alternative-hypothesis",
+    "href": "slides/lec-8.html#the-null-hypothesis-and-the-alternative-hypothesis",
+    "title": "Principles of Inference",
+    "section": "The null hypothesis and the alternative hypothesis",
+    "text": "The null hypothesis and the alternative hypothesis\nConsider the 2nd case (difference in proportion of vegetarians between undergrad and grad students).\n\nIf \\(H_0\\) is true (the two populations have the same proportion)\n\nwe’ll probably still observe a small difference in the sample\n\nIf \\(H_a\\) is true,\n\nwe’ll probably observed a larger difference in the sample,\nbut we might also observe no difference at all,\nor observe a different in the wrong direction!"
+  },
+  {
+    "objectID": "slides/lec-8.html#section-1",
+    "href": "slides/lec-8.html#section-1",
+    "title": "Principles of Inference",
+    "section": "",
+    "text": "Group exercise - hypotheses\n\n\nExercises 11.3, 11.5\n\n\n\n\n\n\n05:00"
+  },
+  {
+    "objectID": "slides/lec-8.html#natural-variability",
+    "href": "slides/lec-8.html#natural-variability",
+    "title": "Principles of Inference",
+    "section": "Natural variability",
+    "text": "Natural variability\n\n\n\n\n\n\nNatural variability and hypothesis tests\n\n\nObserving a difference in the sample is not sufficient to reject \\(H_0\\). There will always be some natural variability inherent to the data.\nDetermining whether the observed difference is due to natural variation or provides convincing evidence of a true difference between the two groups is at the heart of hypothesis tests."
+  },
+  {
+    "objectID": "slides/lec-8.html#section-2",
+    "href": "slides/lec-8.html#section-2",
+    "title": "Principles of Inference",
+    "section": "",
+    "text": "Group exercise - convincing evidence\n\n\nSuppose we have sample of size with the same number of undergrad and grad students and \\(\\hat{p}_{diff} = \\hat{p}_{undergrad} - \\hat{p}_{grad} = 0.6 - 0.4 = 0.2\\). For what sample sizes \\(n\\) do you intuitively feel that the observed difference provides convincing evidence that the two populations are different?\n\n\\(n=10\\) (5 undergrad and 5 grad students)\n\\(n=20\\)\n\\(n=50\\)\n\\(n=100\\)\n\\(n=250\\)\n\\(n=500\\)\n\\(n=1000\\)\n\n\n\n\n\n\n\n04:00"
+  },
+  {
+    "objectID": "slides/lec-8.html#confidence-interval-1",
+    "href": "slides/lec-8.html#confidence-interval-1",
+    "title": "Principles of Inference",
+    "section": "Confidence interval",
+    "text": "Confidence interval\nCI: range of plausible values for the population parameter.\nThere always is natural variability in the data\n\nIf we draw a second sample from the population, the proportion in the two sample will probably differ\nthere is thus no reason to believe that the proportion in the first sanoke is exactly equal to the population proportion"
+  },
+  {
+    "objectID": "slides/lec-8.html#classical-and-modern-approaches",
+    "href": "slides/lec-8.html#classical-and-modern-approaches",
+    "title": "Principles of Inference",
+    "section": "Classical and modern approaches",
+    "text": "Classical and modern approaches\nThere will be two approaches for each of the CI and HT for each of the five cases (\\(2*2*5=20\\) methods)\nLuckily, they are all very similar, and most require at most 3 lines of code in R (and most s single line!).\n\nClassical approaches are based on (simple) mathematical formula – pen and paper.\nModern approaches rely on (simple) computer simulations – R"
+  },
+  {
+    "objectID": "slides/lec-8.html#section-3",
+    "href": "slides/lec-8.html#section-3",
+    "title": "Principles of Inference",
+    "section": "",
+    "text": "::: {.callout-tip icon=“false”} ## Group exercise - simulation Suppose you flip a coin 100 times and count the number of heads. Earlier in the class, you were asked to identify what number of heads would make you doubt that the coin is fair.\nWe will run an experiment together to see if you gut feeling was feel was correct.\nUse the following commands to simulate 100 flips of a coin and count the number of heads. Repeat the experiment 20 times, keeping track of the number of heads.\n\nset.seed(0)\nflips <- rbernoulli(100, p = 0.5) # 100 flips -- TRUE is heads and FALSE is tails\nsum(flips) # number of heads (number of TRUEs)\n\n[1] 48"
+  },
+  {
+    "objectID": "slides/lec-8.html#for-loop",
+    "href": "slides/lec-8.html#for-loop",
+    "title": "Principles of Inference",
+    "section": "For-loop",
+    "text": "For-loop\nThe following for-loop does the previous experiment more efficiently!\n\nset.seed(0)\nresults <- tibble(n_heads = numeric())\nfor(i in 1 : 3e3){ # repeat the experiment 3,000 times\n  flips   <- rbernoulli(100, p = 0.5)\n  n_heads <- sum(flips)\n  results <- results %>% add_row(n_heads)\n}\nresults %>%\n  ggplot() +\n  geom_histogram(aes(n_heads), binwidth = 1) # set the binwidth to 1 to ensure that each bin corresponds to exactly one integer."
+  },
+  {
+    "objectID": "slides/lec-8.html#hypothesis-test",
+    "href": "slides/lec-8.html#hypothesis-test",
+    "title": "Principles of Inference",
+    "section": "Hypothesis test",
+    "text": "Hypothesis test\n\n\n\n\n\n\nPopulation and parameter first\n\n\nAlways start with defining the population and the parameter of interest.\nPopulation: flips of the coin\nParameter: probability that a flip is head\n\n\n\n\n\n\\(H_0:p=0.5\\) (the coin is fair)\n\\(H_0:p\\neq0.5\\) (the coin is not fair)"
+  },
+  {
+    "objectID": "slides/lec-8.html#like-a-court-in-the-justice-system",
+    "href": "slides/lec-8.html#like-a-court-in-the-justice-system",
+    "title": "Principles of Inference",
+    "section": "Like a court in the justice system",
+    "text": "Like a court in the justice system\n\n\\(H_0:\\) innocent (the coin is fair)\n\\(H_0:\\) guilty (the coin is not fair)\n\nQuestion: do the facts (data sample) provide sufficient evidence to reject the claim that the defendant is innocent (that the coin is fair)?\n\nIf so, we reject \\(H_0\\)\nOtherwise, we fail to reject \\(H_0\\).\n\n\n\n\n\n\n\nNever accept the null hypothesis\n\n\nWe never accept the null hypothesis! We only reject of fail to reject it."
+  },
+  {
+    "objectID": "slides/lec-8.html#two-outcomes",
+    "href": "slides/lec-8.html#two-outcomes",
+    "title": "Principles of Inference",
+    "section": "Two outcomes",
+    "text": "Two outcomes\nSuppose you observe the following sample: out of 100 flips, you get 55 heads\n\\(\\Rightarrow\\) the sample is plausible under \\(H_0\\); the observed data do not provide strong evidence against the null hypothesis; we fail to reject the claim that the coin is fair\n\nThe coin might be unfair, but the data do not provide strong evidence against fairness.\n\n\nNow suppose that out of 100 flips, you observe 65 heads.\n\\(\\Rightarrow\\) this result is unlikely under \\(H_0\\); the observed data provide strong evidence against the null hypothesis; we reject the claim that the coin is fair\n\nThe coin might be fair, but \\(65\\) is extreme enough to make reject the claim that the coin is fair."
+  },
+  {
+    "objectID": "hw/hw-5.html#lab-exercises---the-youth-risk-behavior-surveillance-system-25-points",
+    "href": "hw/hw-5.html#lab-exercises---the-youth-risk-behavior-surveillance-system-25-points",
+    "title": "HW 5 - Inference for proportions",
+    "section": "Lab exercises - the Youth Risk Behavior Surveillance System (25 points)",
+    "text": "Lab exercises - the Youth Risk Behavior Surveillance System (25 points)\nYou can find the lab here\n\nExercise 1 (2 points)\nExercise 2 (2 points)\nExercise 3 (2 points)\nExercise 4 (2 points)\nExercise 5 (2 points)\nExercise 6 (2 points)\nExercise 7 (2 points)\nExercise 8 (2 points)\nExercise 9 (3 points)\nExercise 10 (3 points)\nExercise 11 (3 points)"
   }
 ]

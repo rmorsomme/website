@@ -61,22 +61,40 @@ options(scipen = 100)
     -   Types of errors
 -   Five cases
     -   single proportion
-
     -   difference between two portions
-
     -   single mean
-
     -   difference between two means
-
     -   regression parameters
+-   Hypothesis test
+-   Modern statistics
 
 # Statistical inference
 
-## Learning about a proportion
+## Statistical inference
 
-example
+We are want to learn about the (unknown) **parameter** of some **population** of interest.
 
-## Point estimate
+We dispose of a **sample**
+
+-   In the remainder of the course, we will always assume that we have a *random* sample
+
+. . .
+
+**Inference**: estimate the **population parameter** from the **sample**.
+
+**Inference**: estimate the **population parameter** from the **sample** and rigorously quantify our certainty in the estimate.
+
+
+## 
+::: {.callout-tip icon="false"}
+## Group exercise - identify the parameter
+Exercise [11.1](https://openintro-ims.netlify.app/foundations-randomization.html#chp11-exercises)
+:::
+```{r, echo = F}
+countdown(minutes = 3)
+```
+
+## Estimating a proportion
 
 **parameter of interest**: proportion in the population
 
@@ -84,7 +102,7 @@ example
 
 It seems natural to use the sample proportion as an estimate for the population proportion.
 
-## Limitation of point estimate
+## Our certainty in the estimate matters
 
 A single point does not indicate how confident we are in our estimation.
 
@@ -99,10 +117,14 @@ A single point does not indicate how confident we are in our estimation.
 Framework to make rigorous statements about uncertainty in our estimates
 
 -   confidence intervals
+    
+    -   range of plausible values for the population parameter
 
     -   "we are 90% confident that the interval $(20\%, 30\%)$ captures the true value of the population proportion".
 
 -   hypothesis tests
+
+    -   evaluate competing claims using data
 
     -   "we reject the claim that the population proportion is $50\%$".
 
@@ -110,6 +132,8 @@ Framework to make rigorous statements about uncertainty in our estimates
 
 ## Case 1 -- Single proportion {.smaller}
 
+::: columns
+::: {.column width="50%"}
 What is the proportion of vegetarian among Duke students?
 
 . . .
@@ -117,6 +141,12 @@ What is the proportion of vegetarian among Duke students?
 **Population parameter**: proportion of vegetarian among Duke students ($p$)
 
 **sample statistics**: proportion of vegetarian in the sample $\hat{p}$
+:::
+
+::: {.column width="50%"}
+![](images/lec-8/vegetarian.jpg)
+:::
+:::
 
 . . .
 
@@ -130,7 +160,7 @@ What is the proportion of vegetarian among Duke students?
 
 -   $H_0:p=0.5, H_a:p\neq0.5$
 
--   The data collected provide strong evidence against $H_0$, that is, against the hypothesis that half of Duke students are vegetarian.
+-   The data collected provide strong evidence against $H_0$, that is, against the hypothesis that half of Duke students are vegetarian. In other words, the data conflict so much with $H_0$, that the null hypothesis is not plausible.
 
 ## Case 2 -- Difference between two proportions {.smaller}
 
@@ -150,12 +180,14 @@ Is the proportion of vegetarian the same among undergraduate Duke student and gr
 
 **Hypothesis test**: is the proportion of vegetarian the same among undergraduate and graduate Duke students?
 
--   $H_0:p_{diff}=0, H_a:p_{diff}\neq0$
+-   $H_0:p_{diff}=0, H_a:p_{diff}\neq0$ (no difference)
 
 -   The data collected do not provide strong evidence against $H_0$, that is, against the hypothesis that $p_{diff}=0$.
 
 ## Case 3 -- Single mean
 
+::: columns
+::: {.column width="50%"}
 How much time do Duke students sleep on average per night?
 
 . . .
@@ -163,6 +195,12 @@ How much time do Duke students sleep on average per night?
 **Population parameter**: mean amount of time that Duke students sleep per night ($\mu$)
 
 **sample statistics**: average amount of time that Duke students in the sample sleep per night ($\bar{x}$)
+:::
+
+::: {.column width="50%"}
+![](images/lec-8/sleep.jpg)
+:::
+:::
 
 . . .
 
@@ -201,3 +239,177 @@ Do undergraduate Duke students sleep the same mount of time per night as graduat
 -   $H_0:\mu_{diff}=0, H_a:\mu_{diff}\neq0$
 
 -   The data collected do not provide strong evidence against $H_0$, that is, against the hypothesis that undergraduate and graduate Duke students sleep on average the amount of time per night.
+
+# Hypothesis tests
+
+## The null hypothesis and the alternative hypothesis
+Consider the 2nd case (difference in proportion of vegetarians between undergrad and grad students).
+
+-   If $H_0$ is true (the two populations have the same proportion)
+    -   we'll probably still observe a small difference in the sample
+
+-   If $H_a$ is true,
+    -   we'll probably observed a larger difference in the sample,
+    -   but we might also observe no difference at all,
+    -   or observe a different in the wrong direction!
+
+. . .
+
+
+## 
+::: {.callout-tip icon="false"}
+## Group exercise - hypotheses
+Exercises [11.3](https://openintro-ims.netlify.app/foundations-randomization.html#chp11-exercises), [11.5](https://openintro-ims.netlify.app/foundations-randomization.html#chp11-exercises)
+:::
+```{r, echo = F}
+countdown(minutes = 5)
+```
+
+
+## Natural variability
+
+::: callout-warning
+## Natural variability and hypothesis tests
+
+Observing a difference in the sample is not sufficient to reject $H_0$. There will always be some natural variability inherent to the data.
+
+Determining whether the observed difference is due to natural variation or provides convincing evidence of a true difference between the two groups is at the heart of hypothesis tests. 
+:::
+
+## 
+::: {.callout-tip icon="false"}
+## Group exercise - convincing evidence
+Suppose we have sample of size with the same number of undergrad and grad students and $\hat{p}_{diff} = \hat{p}_{undergrad} - \hat{p}_{grad} = 0.6 - 0.4 = 0.2$. For what sample sizes $n$ do you *intuitively feel* that the observed difference provides **convincing evidence** that the two populations are different?
+
+-   $n=10$ (5 undergrad and 5 grad students)
+-   $n=20$
+-   $n=50$
+-   $n=100$
+-   $n=250$
+-   $n=500$
+-   $n=1000$
+:::
+```{r, echo = F}
+countdown(minutes = 4)
+```
+
+# Confidence interval
+
+## Confidence interval
+
+**CI**: range of plausible values for the population parameter.
+
+There always is natural variability in the data
+
+-   If we draw a second sample from the population, the proportion in the two sample will probably differ
+
+-   there is thus no reason to believe that the proportion in the first sanoke is exactly equal to the population proportion
+
+
+
+
+# Modern statistics
+
+## Classical and modern approaches
+
+There will be two approaches for each of the CI and HT for each of the five cases ($2*2*5=20$ methods)
+
+Luckily, they are all very similar, and most require at most 3 lines of code in `R` (and most s single line!).
+
+. . . 
+
+**Classical approaches** are based on (simple) mathematical formula -- pen and paper.
+
+**Modern approaches** rely on (simple) computer simulations -- `R`
+
+# A first glimpse of modern statistics for HT
+
+## 
+::: {.callout-tip icon="false"}
+## Group exercise - simulation
+Suppose you flip a coin 100 times and count the number of heads.
+Earlier in the class, you were asked to identify what number of heads would make you doubt that the coin is fair.
+
+We will run an experiment together to see if you gut feeling was feel was correct.
+
+Use the following commands to simulate 100 flips of a coin and count the number of heads. Repeat the experiment 20 times, keeping track of the number of heads.
+
+```{r}
+set.seed(0)
+flips <- rbernoulli(100, p = 0.5) # 100 flips -- TRUE is heads and FALSE is tails
+sum(flips) # number of heads (number of TRUEs)
+```
+
+
+## For-loop
+
+The following for-loop does the previous experiment more efficiently!
+
+```{r}
+set.seed(0)
+results <- tibble(n_heads = numeric())
+for(i in 1 : 3e3){ # repeat the experiment 3,000 times
+  flips   <- rbernoulli(100, p = 0.5)
+  n_heads <- sum(flips)
+  results <- results %>% add_row(n_heads)
+}
+results %>%
+  ggplot() +
+  geom_histogram(aes(n_heads), binwidth = 1) # set the binwidth to 1 to ensure that each bin corresponds to exactly one integer.
+```
+
+## Hypothesis test
+
+::: callout-tip
+## Population and parameter first
+Always start with defining the population and the parameter of interest.
+
+**Population**: flips of the coin
+
+**Parameter**: probability that a flip is head
+:::
+
+. . .
+
+-   $H_0:p=0.5$ (the coin is fair)
+
+-   $H_0:p\neq0.5$ (the coin is not fair)
+
+
+## Like a court in the justice system
+
+-   $H_0:$ innocent (the coin is fair)
+
+-   $H_0:$ guilty (the coin is not fair)
+
+Question: do the facts (data sample) provide sufficient evidence to reject the claim that the defendant is innocent (that the coin is fair)?
+
+-   If so, we **reject $H_0$**
+
+-   Otherwise, we **fail to reject $H_0$**.
+
+::: callout-note
+## Never accept the null hypothesis
+We **never** accept the null hypothesis! We only *reject* of *fail to reject* it.
+:::
+
+## Two outcomes {.smaller}
+
+Suppose you observe the following sample: out of 100 flips, you get **55 heads**
+
+$\Rightarrow$ the sample is plausible under $H_0$; the observed data do not provide strong evidence against the null hypothesis; we fail to reject the claim that the coin is fair
+
+-   The coin might be unfair, but the data do not provide strong evidence against fairness.
+
+. . .
+
+Now suppose that out of 100 flips, you observe **65 heads**.
+
+$\Rightarrow$ this result is unlikely under $H_0$; the observed data provide strong evidence against the null hypothesis; we reject the claim that the coin is fair
+
+-   The coin might be fair, but $65$ is extreme enough to make reject the claim that the coin is fair.
+
+
+# A first glimpse of modern statistics for HT
+
+
