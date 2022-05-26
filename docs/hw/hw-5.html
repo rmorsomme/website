@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.151">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>STA 101L - Summer I 2022 - HW 4 - Multiple linear regression</title>
+  <title>STA 101L - Summer I 2022 - HW 5 - Inference for proportions</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -11,69 +11,6 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
 
   <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -121,7 +58,7 @@
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">HW 4 - Multiple linear regression</h1>
+      <h1 class="quarto-secondary-nav-title">HW 5 - Inference for proportions</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -225,7 +162,7 @@
 <h2 id="toc-title">On this page</h2>
 <ul>
 <li><a href="#problem-set-25-points" class="nav-link active" data-scroll-target="#problem-set-25-points">Problem set (25 points)</a></li>
-<li><a href="#lab-exercises---the-human-freedom-index-25-points" class="nav-link" data-scroll-target="#lab-exercises---the-human-freedom-index-25-points">Lab exercises - the Human Freedom Index (25 points)</a></li>
+<li><a href="#lab-exercises---the-youth-risk-behavior-surveillance-system-25-points" class="nav-link" data-scroll-target="#lab-exercises---the-youth-risk-behavior-surveillance-system-25-points">Lab exercises - the Youth Risk Behavior Surveillance System (25 points)</a></li>
 </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rmorsomme/website/edit/main/hw\hw-5.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/rmorsomme/website/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -234,47 +171,44 @@
 <header id="title-block-header" class="quarto-title-block default">
 
 
-<div class="quarto-title"><h1 class="title d-none d-lg-block display-7">HW 4 - Multiple linear regression</h1><p class="subtitle lead">Due Sunday, May 22, 9:00pm on Gradescope</p></div></header>
+<div class="quarto-title"><h1 class="title d-none d-lg-block display-7">HW 5 - Inference for proportions</h1><p class="subtitle lead">Due Sunday, June 5, 9:00pm on Gradescope</p></div></header>
 
 <p>This assignment needs to be completed with RMarkdown and submitted as a PDF on <a href="https://www.gradescope.com/courses/394638">Gradescope</a>. Feel free to re-use the template provided for HW1.</p>
 <p>When submitting your work on Gradescope, please assign a page for each question.</p>
 <section id="problem-set-25-points" class="level2">
 <h2 class="anchored" data-anchor-id="problem-set-25-points">Problem set (25 points)</h2>
 <ul>
-<li>8.6 (2 points)</li>
-<li>8.10 (8 points)
+<li>11.2 (2 points)
 <ul>
-<li><p>fit the model in <code>R</code></p>
-<div class="cell">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> palmerpenguins<span class="sc">::</span>penguins</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></li>
-<li><p>identify the type of each variable</p></li>
-<li><p>identify the baseline level of the categorical predictors</p></li>
-<li><p>do parts a-d</p></li>
+<li><p>Do parts a-d.</p></li>
+<li><p>You do not need to do part e</p></li>
 </ul></li>
-<li></li>
+<li>11.6 (2 points)</li>
+<li>12.2 (2 points)</li>
+<li>12.4 (4 points)
+<ul>
+<li><p>Re-create the figures on <code>R</code>. Hint: use the <code>rbinom</code> command.</p></li>
+<li><p>Do the exercise.</p></li>
+</ul></li>
+<li>12.8 (3 points)</li>
+<li>13 points</li>
 </ul>
-<div style="page-break-after: always;"></div>
 </section>
-<section id="lab-exercises---the-human-freedom-index-25-points" class="level2">
-<h2 class="anchored" data-anchor-id="lab-exercises---the-human-freedom-index-25-points">Lab exercises - the Human Freedom Index (25 points)</h2>
-<p>You can find the lab <a href="http://openintrostat.github.io/oilabs-tidy/08_simple_regression/simple_regression.html">here</a></p>
+<section id="lab-exercises---the-youth-risk-behavior-surveillance-system-25-points" class="level2">
+<h2 class="anchored" data-anchor-id="lab-exercises---the-youth-risk-behavior-surveillance-system-25-points">Lab exercises - the Youth Risk Behavior Surveillance System (25 points)</h2>
+<p>You can find the lab <a href="https://openintro.shinyapps.io/inf_for_categorical_data/">here</a></p>
 <ul>
 <li>Exercise 1 (2 points)</li>
 <li>Exercise 2 (2 points)</li>
-<li>Exercise 3 (3 points)</li>
+<li>Exercise 3 (2 points)</li>
 <li>Exercise 4 (2 points)</li>
 <li>Exercise 5 (2 points)</li>
-<li>Exercise 6 (3 points)</li>
+<li>Exercise 6 (2 points)</li>
 <li>Exercise 7 (2 points)</li>
 <li>Exercise 8 (2 points)</li>
-</ul>
-<p>Skip exercises 9-10.</p>
-<ul>
-<li>Practice 1 (2 points)</li>
-<li>Practice 2 (2 points)</li>
-<li>Practice 3 (1 points) – only evaluate linearity</li>
-<li>Practice 4 (2 points)</li>
+<li>Exercise 9 (3 points)</li>
+<li>Exercise 10 (3 points)</li>
+<li>Exercise 11 (3 points)</li>
 </ul>
 
 

@@ -1,6 +1,6 @@
 ---
-title: "HW 4 - Multiple linear regression"
-subtitle: "Due Sunday, May 22, 9:00pm on Gradescope"
+title: "HW 5 - Inference for proportions"
+subtitle: "Due Sunday, June 5, 9:00pm on Gradescope"
 ---
 
 This assignment needs to be completed with RMarkdown and submitted as a PDF on [Gradescope](https://www.gradescope.com/courses/394638). Feel free to re-use the template provided for HW1.
@@ -9,39 +9,31 @@ When submitting your work on Gradescope, please assign a page for each question.
 
 ## Problem set (25 points)
 
--   8.6 (2 points)
--   8.10 (8 points)
-    -   fit the model in `R`
+-   11.2 (2 points)
+    -   Do parts a-d.
 
-        ```{r}
-        d <- palmerpenguins::penguins
-        ```
+    -   You do not need to do part e
+-   11.6 (2 points)
+-   12.2 (2 points)
+-   12.4 (4 points)
+    -   Re-create the figures on `R`. Hint: use the `rbinom` command.
 
-    -   identify the type of each variable
+    -   Do the exercise.
+-   12.8 (3 points)
+-   13 points
 
-    -   identify the baseline level of the categorical predictors
+## Lab exercises - the Youth Risk Behavior Surveillance System (25 points)
 
-    -   do parts a-d
--   
-
-\newpage
-
-## Lab exercises - the Human Freedom Index (25 points)
-
-You can find the lab [here](http://openintrostat.github.io/oilabs-tidy/08_simple_regression/simple_regression.html)
+You can find the lab [here](https://openintro.shinyapps.io/inf_for_categorical_data/)
 
 -   Exercise 1 (2 points)
 -   Exercise 2 (2 points)
--   Exercise 3 (3 points)
+-   Exercise 3 (2 points)
 -   Exercise 4 (2 points)
 -   Exercise 5 (2 points)
--   Exercise 6 (3 points)
+-   Exercise 6 (2 points)
 -   Exercise 7 (2 points)
 -   Exercise 8 (2 points)
-
-Skip exercises 9-10.
-
--   Practice 1 (2 points)
--   Practice 2 (2 points)
--   Practice 3 (1 points) -- only evaluate linearity
--   Practice 4 (2 points)
+-   Exercise 9 (3 points)
+-   Exercise 10 (3 points)
+-   Exercise 11 (3 points)
