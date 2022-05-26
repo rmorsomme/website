@@ -29,7 +29,7 @@ editor_options:
 -   Building a better NBA team through data science
 -   When data seem to contradict widely held believes
 -   Statistics in psychiatry and agriculture
--   10 steps to get started in sport analytics
+-   Can you still predict elections?
 
 ## 7 billion -- are you typical?
 
@@ -91,3 +91,23 @@ In this [article](https://fivethirtyeight.com/features/new-yorkers-will-pay-56-a
 :::
 
 ## 
+
+## Can you still predict elections?
+
+
+::: columns
+::: {.column width="32%"}
+In this [podcast](https://statsandstories.net/politics1/can-you-still-predict-elections) from **Andrew Gelman**, Professor of statistics and political science at Columbia University, reflects on the use of statistics in election forecasting shortly before the 2020 US election.
+
+Prof. Gelman is widely decorated and very influential statistician.
+:::
+
+::: {.column width="2%"}
+:::
+
+::: {.column width="66%"}
+![](images/applications/election.jpg)
+:::
+:::
+
+

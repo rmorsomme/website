@@ -89,7 +89,7 @@ The final report should include the following sections, though you should feel f
 |                                                                                    |                 |
 | -   The model is fitted using only the sample provided                             | 1               |
 |                                                                                    |                 |
-| -   Most accurate model of the class                                               | bragging rights |
+| -   Most accurate model of the class                                               | Bragging rights |
 +------------------------------------------------------------------------------------+-----------------+
 | **Report**                                                                         | **16**          |
 |                                                                                    |                 |
@@ -115,7 +115,7 @@ The final report should include the following sections, though you should feel f
 |                                                                                    |                 |
 | -   Outliers, if any, are handled appropriately                                    | 1               |
 |                                                                                    |                 |
-| -   at least 3 models (excluding the simple and full models) are compared using    | \(3\)           |
+| -   At least 5 models (including the simple and full models) are compared using    | \(3\)           |
 |                                                                                    |                 |
 |     -   the entire sample with a suitable criterion                                | 1               |
 |                                                                                    |                 |

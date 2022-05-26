@@ -424,7 +424,7 @@
     "href": "slides/applications.html#outline",
     "title": "Data science in action – examples in various fields",
     "section": "Outline",
-    "text": "Outline\n\n7 billion – are you typical?\n200 years of history through health and wealth\nBuilding a better NBA team through data science\nWhen data seem to contradict widely held believes\nStatistics in psychiatry and agriculture\n10 steps to get started in sport analytics"
+    "text": "Outline\n\n7 billion – are you typical?\n200 years of history through health and wealth\nBuilding a better NBA team through data science\nWhen data seem to contradict widely held believes\nStatistics in psychiatry and agriculture\nCan you still predict elections?"
   },
   {
     "objectID": "slides/applications.html#billion-are-you-typical",
@@ -469,11 +469,11 @@
     "text": "Estimating the effect of commute time on rent in New York\n\n\nIn this article, Carl Bialik looked at more than 100,000 homes present on StreetEasy. He observed that, unsurprisingly, the distance to the nearest metro does impact rent prices, and he even managed to put a number on that effect: $56/minute.\n\n\n\n Source: FiverThirtyEight"
   },
   {
-    "objectID": "slides/applications.html#section",
-    "href": "slides/applications.html#section",
+    "objectID": "slides/applications.html#can-you-still-predict-elections",
+    "href": "slides/applications.html#can-you-still-predict-elections",
     "title": "Data science in action – examples in various fields",
-    "section": "",
-    "text": "https://rmorsomme.github.io/website/"
+    "section": "Can you still predict elections?",
+    "text": "Can you still predict elections?\n\n\nIn this podcast from Andrew Gelman, Professor of statistics and political science at Columbia University, reflects on the use of statistics in election forecasting shortly before the 2020 US election.\nProf. Gelman is widely decorated and very influential statistician.\n\n\n\n\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
     "objectID": "slides/hw-1-lab-answers.html#setup",
