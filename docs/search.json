@@ -333,7 +333,7 @@
     "href": "index.html",
     "title": "STA 101L: Data Analysis and Statistical Inference",
     "section": "",
-    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\nDue: Homework 2\n\n\n💻\n✍️\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n💻\n\n\n\n\n\nSun, May 22\nDue: Homework 3\n\n\n\n✍️\n\n\n\n2\nMon, May 23\nModel selection I\n8.3\n🖥️\n\n\n\n\n\n\nTue, May 24\nModel selection II\n8.4; 25.3\n🖥️\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n💻\n\n\n\n\n\nThu, May 26\nLogistic regression\nWork on project\nDue: Homework 4\n9.1-9.3\n\n\n✍️\n\n\n\n\nFri, May 27\nLab 5 - work on prediction project [PP]\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP presentations\nPrinciples of inference\n11.0; 11.3; 12.0; 12.3; 13.1-13.3\n\n\n\nPP model (9:00am)\nPP presentation\n\n\n\nWed, June 1\nLab 6 - Lecture on inference for proportions I\nDue: PP report\n16.1-16.2\n\n\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.3\n\n\n\n\n\n\n\nFri, June 3\nLab 7 - Inference for proportions\n\n\n💻\n\n\n\n\n\nSun, June 5\nDue: homework 5\n\n\n\n\n\n\n\n4\nMon, June 6\nInference for means I\n19.1-19.2\n\n\n\n\n\n\n\nTue, June 7\nInference for means II\n20.1-20.4; 21.1-21.3\n\n\n\n\n\n\n\nWed, June 8\nLab 8 - Inference for means\n\n\n\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.6; 25.1; 26.1-26.2\n\n\n\n\n\n\n\nFri, June 10\nLab 9 - inference for regression\n\n\n\n\n\n\n\n5\nMon, June 13\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n\n\n\n\n\n\n\nTue, June 14\nWork on inference project (IP)\n\n\n\n\n\n\n\n\nWed, June 15\nLab 10 - work on IP\n\n\n\n\n\n\n\n\nThu, June 16\nIP presentations\nWrap up\n\n\n\n\nIP presentation\n\n\n\nFri, June 17\nLab 11 - work on IP\n\n\n\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
+    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\nDue: Homework 2\n\n\n💻\n✍️\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n💻\n\n\n\n\n\nSun, May 22\nDue: Homework 3\n\n\n\n✍️\n\n\n\n2\nMon, May 23\nModel selection I\n8.3\n🖥️\n\n\n\n\n\n\nTue, May 24\nModel selection II\n8.4; 25.3\n🖥️\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n💻\n\n\n\n\n\nThu, May 26\nLogistic regression\nWork on project\nDue: Homework 4\n9.1-9.3\n🖥️\n\n✍️\n📂\n\n\n\nFri, May 27\nLab 5 - work on prediction project [PP]\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP presentations\nPrinciples of inference\n11.0; 11.3; 12.0; 12.3; 13.1-13.3\n\n\n\nPP model (9:00am)\nPP presentation\n\n\n\nWed, June 1\nLab 6 - Lecture on inference for proportions I\nDue: PP report\n16.1-16.2\n\n\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.3\n\n\n\n\n\n\n\nFri, June 3\nLab 7 - Inference for proportions\n\n\n💻\n\n\n\n\n\nSun, June 5\nDue: homework 5\n\n\n\n\n\n\n\n4\nMon, June 6\nInference for means I\n19.1-19.2\n\n\n\n\n\n\n\nTue, June 7\nInference for means II\n20.1-20.4; 21.1-21.3\n\n\n\n\n\n\n\nWed, June 8\nLab 8 - Inference for means\n\n\n\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.6; 25.1; 26.1-26.2\n\n\n\n\n\n\n\nFri, June 10\nLab 9 - inference for regression\n\n\n\n\n\n\n\n5\nMon, June 13\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n\n\n\n\n\n\n\nTue, June 14\nWork on inference project (IP)\n\n\n\n\n\n\n\n\nWed, June 15\nLab 10 - work on IP\n\n\n\n\n\n\n\n\nThu, June 16\nIP presentations\nWrap up\n\n\n\n\nIP presentation\n\n\n\nFri, June 17\nLab 11 - work on IP\n\n\n\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
   },
   {
     "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
@@ -418,6 +418,69 @@
     "title": "Prediction Project - Data Prep",
     "section": "Checking subset",
     "text": "Checking subset\n\nd_num <- d_sub_clean %>% select_if(is.numeric)\nfor(i in 1 : ncol(d_num)){\n  hist(d_num[[i]], breaks = 30, xlab = names(d_num)[i], main = i)\n}\n\nd_cha <- d_sub_clean %>% select_if(is.character)\nfor(i in 1 : ncol(d_cha)){\n  print(names(d_cha)[i])\n  print(table(d_cha[[i]]))\n}\n\n\nm_simple <- lm(newborn_birth_weight ~ gestation_week, data = d_train)\nsummary(m_simple)\nm_full <- lm(newborn_birth_weight ~ ., data = d_train)\nsummary(m_full)\ny     <- d_test$newborn_birth_weight\nRMST <- sqrt(mean((y - mean(y))^2))\ny_hat <- predict.lm(m_full, d_test)\nsqrt(mean((y - y_hat  )^2))\ny_hat <- predict.lm(m_simple, d_test)\nsqrt(mean((y - y_hat  )^2))"
+  },
+  {
+    "objectID": "projects/rmd_tips.html",
+    "href": "projects/rmd_tips.html",
+    "title": "rmd_demo",
+    "section": "",
+    "text": "This document contains a few tips for working with RMD files. The source file has been sent by email."
+  },
+  {
+    "objectID": "projects/rmd_tips.html#level-2-title-typically-better-than-level-1",
+    "href": "projects/rmd_tips.html#level-2-title-typically-better-than-level-1",
+    "title": "rmd_demo",
+    "section": "Level-2 title (typically better than level-1)",
+    "text": "Level-2 title (typically better than level-1)\nYou always want to start by loading the packages you will need.\n\nlibrary(tidyverse)\nlibrary(broom)\n\nThe next step typically consists in downloading the data\n\nd <- read_csv(\"https://rmorsomme.github.io/website/projects/training_set.csv\")\n\nRows: 1000 Columns: 16\n-- Column specification --------------------------------------------------------\nDelimiter: \",\"\nchr  (2): mother_diabetes_gestational, newborn_sex\ndbl (13): newborn_birth_weight, month, mother_age, prenatal_care_starting_mo...\nlgl  (1): mother_risk_factor\n\ni Use `spec()` to retrieve the full column specification for this data.\ni Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nand then perhaps fitting a model.\n\nm <- lm(mother_bmi ~ mother_weight_prepregnancy, data = d)\nm\n\n\nCall:\nlm(formula = mother_bmi ~ mother_weight_prepregnancy, data = d)\n\nCoefficients:\n               (Intercept)  mother_weight_prepregnancy  \n                    2.6622                      0.1552  \n\n\nThis is simply an illustration. In the project, you should not use mother_bmi as the response!\nFor the project, simply save the model you have selected in a RDATA file and send it to the instruction team.\n\nsave(m, file = \"my_predictive_model.RDATA\")\nrm(m) # removes the object `m` from the environment\n\nOnce we have everybody’s model, we will use the following commands to load them into R and test them on new data.\n\nload(\"my_predictive_model.RDATA\")\n\nnew_data <- tibble(mother_weight_prepregnancy = 150) # new data\npredict(m, new_data)\n\n       1 \n25.93563"
+  },
+  {
+    "objectID": "projects/rmd_tips.html#we-can-use-rmd-to-write-mathematical-expressions",
+    "href": "projects/rmd_tips.html#we-can-use-rmd-to-write-mathematical-expressions",
+    "title": "rmd_demo",
+    "section": "We can use RMD to write mathematical expressions",
+    "text": "We can use RMD to write mathematical expressions\nTo write a small mathematical expression, simply write it between $ signs.\nFor instance, \\(x = 5 + 9\\).\nTo write longer expression, use two $ signs.\n\\[\nY \\approx \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2\n\\]\nTo write a word in a math equation, use \\text{}\n\\[\n\\text{BMI} \\approx \\beta_0 + \\beta_1 \\text{weight} + \\beta_3 X^2\n\\]"
+  },
+  {
+    "objectID": "projects/rmd_tips.html#running-r-code",
+    "href": "projects/rmd_tips.html#running-r-code",
+    "title": "rmd_demo",
+    "section": "Running R code",
+    "text": "Running R code\nYou can run R code in R chunks:\n\n5+5\n\n[1] 10\n\n\nYou can also directly run R code in a paragraph as follows: using ` r 5+5`. For instance, the \\(R^2\\) value of model m is 0.882."
+  },
+  {
+    "objectID": "projects/rmd_tips.html#learning-more-about-rmd",
+    "href": "projects/rmd_tips.html#learning-more-about-rmd",
+    "title": "rmd_demo",
+    "section": "Learning more about RMD",
+    "text": "Learning more about RMD\nCome to OH, ask questions during/after class.\nCheck the RMD cheatsheet or the longer reference guide."
+  },
+  {
+    "objectID": "projects/rmd_tips.html#overall-goal-of-the-prediction-project",
+    "href": "projects/rmd_tips.html#overall-goal-of-the-prediction-project",
+    "title": "rmd_demo",
+    "section": "Overall goal of the prediction project",
+    "text": "Overall goal of the prediction project\n\ntwo baseline models (simple and full) + 3 models that you construct\nfeature engineering + model selection\nthe outcome of that procedure should be a model that predicts the response variable reasonably well\nplease refer to the rubric"
+  },
+  {
+    "objectID": "projects/rmd_tips.html#missing-values-in-the-penguin-dataset",
+    "href": "projects/rmd_tips.html#missing-values-in-the-penguin-dataset",
+    "title": "rmd_demo",
+    "section": "Missing values in the penguin dataset?",
+    "text": "Missing values in the penguin dataset?\n\nd <- palmerpenguins::penguins\n\nfilter(d,  is.na(body_mass_g)) # keeps the rows with a missing value for body_mass_g\n\n# A tibble: 2 x 8\n  species island bill_length_mm bill_depth_mm flipper_length_~ body_mass_g sex  \n  <fct>   <fct>           <dbl>         <dbl>            <int>       <int> <fct>\n1 Adelie  Torge~             NA            NA               NA          NA <NA> \n2 Gentoo  Biscoe             NA            NA               NA          NA <NA> \n# ... with 1 more variable: year <int>\n\nfilter(d, !is.na(body_mass_g)) # keeps the rows without a missing value for body_mass_g\n\n# A tibble: 342 x 8\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   <fct>   <fct>              <dbl>         <dbl>             <int>       <int>\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           36.7          19.3               193        3450\n 5 Adelie  Torgersen           39.3          20.6               190        3650\n 6 Adelie  Torgersen           38.9          17.8               181        3625\n 7 Adelie  Torgersen           39.2          19.6               195        4675\n 8 Adelie  Torgersen           34.1          18.1               193        3475\n 9 Adelie  Torgersen           42            20.2               190        4250\n10 Adelie  Torgersen           37.8          17.1               186        3300\n# ... with 332 more rows, and 2 more variables: sex <fct>, year <int>"
+  },
+  {
+    "objectID": "projects/rmd_tips.html#conclusion",
+    "href": "projects/rmd_tips.html#conclusion",
+    "title": "rmd_demo",
+    "section": "Conclusion",
+    "text": "Conclusion\nThis is the end of the main body"
+  },
+  {
+    "objectID": "projects/rmd_tips.html#appendix",
+    "href": "projects/rmd_tips.html#appendix",
+    "title": "rmd_demo",
+    "section": "Appendix",
+    "text": "Appendix\nFigures should go here.\n\nggplot(mpg, aes(cty, hwy)) + geom_point()"
   },
   {
     "objectID": "slides/applications.html#outline",
@@ -2597,6 +2660,13 @@
     "text": "Recap\n\nTypes of data\nVisualization and numerical summaries\nRegression models\n\nlinear rm\nlogistic rm\nmodel selection"
   },
   {
+    "objectID": "slides/lec-8.html#types-of-data",
+    "href": "slides/lec-8.html#types-of-data",
+    "title": "Principles of Inference",
+    "section": "Types of data",
+    "text": "Types of data\n\nBreakdown of variables into their respective types.Source: IMS"
+  },
+  {
     "objectID": "slides/lec-8.html#outline",
     "href": "slides/lec-8.html#outline",
     "title": "Principles of Inference",
@@ -2604,11 +2674,11 @@
     "text": "Outline\n\nStatistical inference\nFive cases\nHypothesis test\nConfidence interval\nA first glimpse of modern statistics"
   },
   {
-    "objectID": "slides/lec-8.html#statistical-inference-1",
-    "href": "slides/lec-8.html#statistical-inference-1",
+    "objectID": "slides/lec-8.html#population-parameters",
+    "href": "slides/lec-8.html#population-parameters",
     "title": "Principles of Inference",
-    "section": "Statistical inference",
-    "text": "Statistical inference\nInference: to estimate the population parameter from the sample.\nStatistical inference: to estimate the population parameter from the sample and rigorously quantify our certainty in the estimate."
+    "section": "Population parameters",
+    "text": "Population parameters\nWe want to learn about some (unknown) parameter of some population of interest from a (small) sample of observations\n\n\nExamples of parameters: proportion of vegetarian among Duke students, average weight gained by Duke students during the Covid-19 pandemic, etc.\n\n\n\n\nIn the remainder of the course, we will always assume that we have a random sample"
   },
   {
     "objectID": "slides/lec-8.html#section",
@@ -2618,18 +2688,32 @@
     "text": "Group exercise - identify the parameter\n\n\nExercise 11.1\n\n\n\n\n\n\n03:00"
   },
   {
-    "objectID": "slides/lec-8.html#estimating-a-proportion",
-    "href": "slides/lec-8.html#estimating-a-proportion",
+    "objectID": "slides/lec-8.html#statistical-inference-1",
+    "href": "slides/lec-8.html#statistical-inference-1",
     "title": "Principles of Inference",
-    "section": "Estimating a proportion",
-    "text": "Estimating a proportion\nparameter of interest: proportion in the population\nsample statistic: sample proportion\nIt seems natural to use the sample proportion as an estimate for the population proportion."
+    "section": "Statistical inference",
+    "text": "Statistical inference\nInference: to estimate the population parameter from the sample.\nStatistical inference: to estimate the population parameter from the sample and rigorously quantify our certainty in the estimate."
   },
   {
-    "objectID": "slides/lec-8.html#our-certainty-in-the-estimate-matters",
-    "href": "slides/lec-8.html#our-certainty-in-the-estimate-matters",
+    "objectID": "slides/lec-8.html#statistic",
+    "href": "slides/lec-8.html#statistic",
     "title": "Principles of Inference",
-    "section": "Our certainty in the estimate matters",
-    "text": "Our certainty in the estimate matters\nA single point does not indicate how confident we are in our estimation.\n\nIf we have a large sample, then we can be pretty confident that our estimates will be close to the true value of the parameter,\nif we have a small sample, then we know that our estimate may be far from the truth.\ne.g. Duke students, basketball free throws, ratings on Yelp or Amazon"
+    "section": "Statistic",
+    "text": "Statistic\nStatistic: any function of some data. E.g., average, median, iqr, maximum, etc\nsample statistic: a statistic computed on the sample\nsummary statistic: a statistic used to summarize a sample\ntest statistic: statistic used for statistical inference"
+  },
+  {
+    "objectID": "slides/lec-8.html#estimating-a-parameter",
+    "href": "slides/lec-8.html#estimating-a-parameter",
+    "title": "Principles of Inference",
+    "section": "Estimating a parameter",
+    "text": "Estimating a parameter\nTo estimate a population parameter, we can simply\n\ncollect data on a representative sample, and\nuse the corresponding sample statistic as an estimate\n\nto estimate the median age of Duke students, simply compute the median of your sample."
+  },
+  {
+    "objectID": "slides/lec-8.html#certainty-matters",
+    "href": "slides/lec-8.html#certainty-matters",
+    "title": "Principles of Inference",
+    "section": "Certainty matters",
+    "text": "Certainty matters\nA single point (the sample statistic) does not indicate how confident we are in our estimate.\n\nIf we have a large sample, then we can be pretty confident that our estimates will be close to the true value of the parameter,\nif we have a small sample, then we know that our estimate may be far from the truth.\ne.g. Duke students, basketball free throws."
   },
   {
     "objectID": "slides/lec-8.html#statistical-inference-2",
@@ -2667,11 +2751,32 @@
     "text": "Case 4 – Difference between two proportions\nDo Duke undergraduate and graduate students sleep on average the same amount of time per night?\n\nPopulation parameter: difference between the mean amount of time that Duke undergraduate and graduate students sleep per night \\((\\mu_{diff} = \\mu_{undergrad}-\\mu_{grad})\\)\nSample statistic: difference between the two sample averages \\((\\bar{x}_{diff} = \\bar{x}_{undergrad} - \\bar{x}_{grad})\\)\n\n\nConfidence interval for \\(\\mu_{diff}\\) : \\((-0.5, 1)\\)\n\n\nHypothesis test: Do Duke undergraduate and graduate students sleep on average the same amount of time per night?\n\n\\(H_0:\\mu_{diff}=0, H_a:\\mu_{diff}\\neq0\\)"
   },
   {
+    "objectID": "slides/lec-8.html#case-5-linear-regression",
+    "href": "slides/lec-8.html#case-5-linear-regression",
+    "title": "Principles of Inference",
+    "section": "Case 5 – Linear regression",
+    "text": "Case 5 – Linear regression\nWhat is the relation between fuel consumption in the city and on the highway?\n\nPopulation parameter: the coefficient \\(\\beta_1\\) is the equation \\(\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty}\\).\nSample statistic: the least-square estimate \\(\\hat{\\beta}_1\\).\n\n\nConfidence interval for \\(\\beta_1\\): \\((1.05, 1.2)\\)\n\n\nHypothesis test: are the variables \\(\\text{cty}\\) and \\(\\text{hwy}\\) independent?\n\n\\(H_0:\\beta_1=0, H_a:\\beta_1\\neq0\\)"
+  },
+  {
     "objectID": "slides/lec-8.html#the-null-hypothesis-and-the-alternative-hypothesis",
     "href": "slides/lec-8.html#the-null-hypothesis-and-the-alternative-hypothesis",
     "title": "Principles of Inference",
     "section": "The null hypothesis and the alternative hypothesis",
     "text": "The null hypothesis and the alternative hypothesis\nA HT considers two competing hypotheses:\n\nthe null hypothesis \\(H_0\\)\n\n“nothing is going on”: there is no effect, no difference\n\nthe alternative hypothesis \\(H_a\\)\n\n“something is going on”: there is an effect, there is a difference"
+  },
+  {
+    "objectID": "slides/lec-8.html#example",
+    "href": "slides/lec-8.html#example",
+    "title": "Principles of Inference",
+    "section": "Example",
+    "text": "Example\nConsider the 2nd case (difference in proportion of vegetarians between undergrad and grad students).\n\n\\(H_0:\\) the proportion of vegetarian is the same among undergraduate and graduate students (“nothing is going on”) \\[\nH_0: p_{diff}=p_{undegrad}-p_{grad}=0\n\\] \\[\nH_0: p_{undegrad}=p_{grad}\n\\]\n\\(H_a:\\) the proportion of vegetarians among undergraduate and graduate students is not the same (“something is going on”). \\[\nH_0: p_{diff}=p_{undegrad}-p_{grad}\\neq0\n\\] \\[\nH_0: p_{undegrad}\\neq p_{grad}\n\\]"
+  },
+  {
+    "objectID": "slides/lec-8.html#more-examples",
+    "href": "slides/lec-8.html#more-examples",
+    "title": "Principles of Inference",
+    "section": "More examples",
+    "text": "More examples\n\nAre the Covid-19 vaccines equally effective?\n\n\\(H_0:\\) all the vaccines are equally effective; \\(H_a:\\) the vaccines are not all equally effective\n\nDoes caffeine consumption affect student participation in class\n\n\\(H_0:\\) caffeine consumption does not affect student participation; \\(H_a:\\) caffeine consumption affects student participation\n\nAre men and women paid equally in the workplace?\n\n\\(H_0:\\) men and women are paid equally; \\(H_a:\\) men and women are not paid equally\n\nHave Duke students gained weight since the start of the Covid-19 pandemic?\n\n\\(H_0:\\) Duke student have not gained weight; \\(H_a:\\) Duke students have gained weight."
   },
   {
     "objectID": "slides/lec-8.html#section-1",
@@ -2688,6 +2793,13 @@
     "text": "Natural variability\nGo back to the 2nd case and suppose that \\(H_0\\) is true.\n\nWe’ll probably still observe a small difference in the sample.\n\n\nNow suppose that \\(H_a\\) is true.\n\nWe’ll probably observed a larger difference in the sample,\nbut we might also observe no difference at all,\nor observe a different in the wrong direction!"
   },
   {
+    "objectID": "slides/lec-8.html#natural-variability-and-hypothesis-tests",
+    "href": "slides/lec-8.html#natural-variability-and-hypothesis-tests",
+    "title": "Principles of Inference",
+    "section": "Natural variability and hypothesis tests",
+    "text": "Natural variability and hypothesis tests\n\n\n\n\n\n\nWe’ll always observe a difference\n\n\nObserving a difference in the sample is not sufficient to reject \\(H_0\\). When we collect a sample, there will always be some natural variability inherent to the data.\nDetermining whether the observed difference is due to natural variation or provides convincing evidence of a true difference between the two groups is at the heart of hypothesis tests."
+  },
+  {
     "objectID": "slides/lec-8.html#section-2",
     "href": "slides/lec-8.html#section-2",
     "title": "Principles of Inference",
@@ -2702,11 +2814,18 @@
     "text": "Confidence interval\nCI: range of plausible values for the population parameter.\nThere always is natural variability in the data.\n\nIf we draw a second sample from the population, the two sample statistic will probably differ.\nThere is thus no reason to believe that the sample statistic in the first sample is exactly equal to the population parameter."
   },
   {
+    "objectID": "slides/lec-8.html#examples",
+    "href": "slides/lec-8.html#examples",
+    "title": "Principles of Inference",
+    "section": "Examples",
+    "text": "Examples\n\nWhat is the approval rate of the US president?\nWhat proportion of Duke students is vegetarian?\nHow much weight have Duke students gained since the start of the Covid-19 pandemic?"
+  },
+  {
     "objectID": "slides/lec-8.html#classical-and-modern-approaches",
     "href": "slides/lec-8.html#classical-and-modern-approaches",
     "title": "Principles of Inference",
     "section": "Classical and modern approaches",
-    "text": "Classical and modern approaches\nWe will learn two approaches to statistical inference\n\nclassical\n\npen and paper, pre-computer era\nbased on simple mathematical formula\n\nmodern (computer-intensive)\n\nwe model the variability in the data by repeating a procedure many times (for-loop)"
+    "text": "Classical and modern approaches\nWe will learn two approaches to statistical inference\n\nclassical\n\npen and paper, pre-computer era\nbased on simple mathematical formula\nrequires the data to satisfy certain conditions\n\n\nmodern (computer-intensive)\n\nwe model the variability in the data by repeating a procedure many times (for-loop)\nalways applicable"
   },
   {
     "objectID": "slides/lec-8.html#section-3",
@@ -2723,46 +2842,32 @@
     "text": "For-loop\nThe following for-loop does the previous experiment more efficiently!\n\nset.seed(0)\nresults <- tibble(n_heads = numeric()) # empty data frame to collect the results\nfor(i in 1 : 1e3){ # repeat the experiment 1,000 times\n  flips   <- rbernoulli(100, p = 0.5)\n  n_heads <- sum(flips)\n  results <- results %>% add_row(n_heads)\n}"
   },
   {
-    "objectID": "slides/lec-8.html#hypothesis-test",
-    "href": "slides/lec-8.html#hypothesis-test",
-    "title": "Principles of Inference",
-    "section": "Hypothesis test",
-    "text": "Hypothesis test\n\n\n\n\n\n\nPopulation and parameter first\n\n\nAlways start by defining the population and the parameter of interest.\nPopulation: flips of the coin\nParameter: probability that a flip is head\n\n\n\n\n\n\\(H_0:p=0.5\\) (the coin is fair)\n\\(H_0:p\\neq0.5\\) (the coin is not fair)"
-  },
-  {
-    "objectID": "slides/lec-8.html#like-a-court-in-the-justice-system",
-    "href": "slides/lec-8.html#like-a-court-in-the-justice-system",
-    "title": "Principles of Inference",
-    "section": "Like a court in the justice system",
-    "text": "Like a court in the justice system\n\n\\(H_0:\\) innocent (the coin is fair)\n\\(H_0:\\) guilty (the coin is not fair)\n\nQuestion: do the facts (data sample) provide sufficient evidence to reject the claim that the defendant is innocent (that the coin is fair)?\n\nIf so, we reject \\(H_0\\)\nOtherwise, we fail to reject \\(H_0\\).\n\n\n\n\n\n\n\nNever accept the null hypothesis\n\n\nWe never accept the null hypothesis! We only reject of fail to reject it."
-  },
-  {
-    "objectID": "slides/lec-8.html#two-outcomes",
-    "href": "slides/lec-8.html#two-outcomes",
-    "title": "Principles of Inference",
-    "section": "Two outcomes",
-    "text": "Two outcomes\nSuppose you observe the following sample: out of 100 flips, you get 55 heads\n\\(\\Rightarrow\\) the sample is plausible under \\(H_0\\); the observed data do not provide strong evidence against the null hypothesis; we fail to reject the claim that the coin is fair\n\nThe coin might be unfair, but the data do not provide strong evidence against fairness.\n\n\nNow suppose that out of 100 flips, you observe 65 heads.\n\\(\\Rightarrow\\) this result is extremely unlikely under \\(H_0\\); the observed data provide strong evidence against the null hypothesis; we reject the claim that the coin is fair.\n\nThe coin might be fair, but a fair coin could not have plausibly given \\(65\\) heads out of \\(100\\) flips."
-  },
-  {
-    "objectID": "slides/lec-8.html#types-of-data",
-    "href": "slides/lec-8.html#types-of-data",
-    "title": "Principles of Inference",
-    "section": "Types of data",
-    "text": "Types of data\n\nBreakdown of variables into their respective types.Source: IMS"
-  },
-  {
-    "objectID": "slides/lec-8.html#estimating-a-proportion-and-a-mean",
-    "href": "slides/lec-8.html#estimating-a-proportion-and-a-mean",
-    "title": "Principles of Inference",
-    "section": "Estimating a proportion and a mean",
-    "text": "Estimating a proportion and a mean\nTo estimate the proportion of Duke students (population) who are vegetarian (parameter 1) or the average amount of time that they sleep per night (parameter 2), we can simply\n\ncollect data (diet, amount of sleep) on a sample of student, and\nuse the proportion of vegetarian in the sample and the average of sleep in the sample as estimates for the two population parameters."
-  },
-  {
     "objectID": "slides/lec-8.html#section-4",
     "href": "slides/lec-8.html#section-4",
     "title": "Principles of Inference",
     "section": "",
     "text": "Here is the distribution of the sample statistic \\(\\hat{p}\\) when \\(H_0\\) is true.\n\nggplot(results) +\n  geom_histogram(aes(n_heads), binwidth = 1) # set the binwidth to 1 to ensure that each bin corresponds to exactly one integer."
+  },
+  {
+    "objectID": "slides/lec-8.html#population-and-parameter",
+    "href": "slides/lec-8.html#population-and-parameter",
+    "title": "Principles of Inference",
+    "section": "Population and parameter",
+    "text": "Population and parameter\n\n\n\n\n\n\nPopulation and parameter first\n\n\nAlways start by defining the population and the parameter of interest.\nPopulation: flips of the coin\nParameter: probability that a flip is head"
+  },
+  {
+    "objectID": "slides/lec-8.html#null-and-alternative-hypotheses",
+    "href": "slides/lec-8.html#null-and-alternative-hypotheses",
+    "title": "Principles of Inference",
+    "section": "Null and alternative hypotheses",
+    "text": "Null and alternative hypotheses\n\n\\(H_0:p=0.5\\) (the coin is fair)\n\\(H_0:p\\neq0.5\\) (the coin is not fair)"
+  },
+  {
+    "objectID": "slides/lec-8.html#like-jurors-in-the-justice-system",
+    "href": "slides/lec-8.html#like-jurors-in-the-justice-system",
+    "title": "Principles of Inference",
+    "section": "Like jurors in the justice system",
+    "text": "Like jurors in the justice system\n\n\\(H_0:\\) innocent (the coin is fair)\n\\(H_0:\\) guilty (the coin is not fair)\n\nQuestion: do the facts (data sample) provide sufficient evidence to reject the claim that the defendant is innocent (that the coin is fair)?\n\nIf so, we reject \\(H_0\\)\nOtherwise, we fail to reject \\(H_0\\).\n\n\n\n\n\n\n\nNever accept the null hypothesis\n\n\nWe never accept the null hypothesis! We only reject of fail to reject it."
   },
   {
     "objectID": "slides/lec-8.html#section-5",
@@ -2772,32 +2877,11 @@
     "text": "ggplot(results) + geom_histogram(aes(n_heads), binwidth = 1)"
   },
   {
-    "objectID": "slides/lec-8.html#case-5-linear-regression",
-    "href": "slides/lec-8.html#case-5-linear-regression",
+    "objectID": "slides/lec-8.html#two-outcomes",
+    "href": "slides/lec-8.html#two-outcomes",
     "title": "Principles of Inference",
-    "section": "Case 5 – Linear regression",
-    "text": "Case 5 – Linear regression\nWhat is the relation between fuel consumption in the city and on the highway?\n\nPopulation parameter: the coefficient \\(\\beta_1\\) is the equation \\(\\text{hwy} \\approx \\beta_0 + \\beta_1 \\text{cty}\\).\nSample statistic: the least-square estimate \\(\\hat{\\beta}_1\\).\n\n\nConfidence interval for \\(\\beta_1\\): \\((1.05, 1.2)\\)\n\n\nHypothesis test: are the variables \\(\\text{cty}\\) and \\(\\text{hwy}\\) independent?\n\n\\(H_0:\\beta_1=0, H_a:\\beta_1\\neq0\\)"
-  },
-  {
-    "objectID": "slides/lec-8.html#examples",
-    "href": "slides/lec-8.html#examples",
-    "title": "Principles of Inference",
-    "section": "Examples",
-    "text": "Examples\n\nWhat is the approval rate of the US president?\nWhat proportion of Duke students is vegetarian?\nHow much weight have Duke students gained since the start of the Covid-19 pandemic?"
-  },
-  {
-    "objectID": "slides/lec-8.html#examples-1",
-    "href": "slides/lec-8.html#examples-1",
-    "title": "Principles of Inference",
-    "section": "Examples",
-    "text": "Examples\n\nWhat is the approval rate of the US president?\nWhat proportion of Duke students have pets?\nHow much weight have Duke students gained since the start of the pandemic?"
-  },
-  {
-    "objectID": "slides/lec-8.html#like-jurors-in-the-justice-system",
-    "href": "slides/lec-8.html#like-jurors-in-the-justice-system",
-    "title": "Principles of Inference",
-    "section": "Like jurors in the justice system",
-    "text": "Like jurors in the justice system\n\n\\(H_0:\\) innocent (the coin is fair)\n\\(H_0:\\) guilty (the coin is not fair)\n\nQuestion: do the facts (data sample) provide sufficient evidence to reject the claim that the defendant is innocent (that the coin is fair)?\n\nIf so, we reject \\(H_0\\)\nOtherwise, we fail to reject \\(H_0\\).\n\n\n\n\n\n\n\nNever accept the null hypothesis\n\n\nWe never accept the null hypothesis! We only reject of fail to reject it."
+    "section": "Two outcomes",
+    "text": "Two outcomes\nSuppose you observe the following sample: out of 100 flips, you get 55 heads\n\\(\\Rightarrow\\) the sample is plausible under \\(H_0\\); the observed data do not provide strong evidence against the null hypothesis; we fail to reject the claim that the coin is fair\n\nThe coin might be unfair, but the data do not provide strong evidence against fairness.\n\n\nNow suppose that out of 100 flips, you observe 65 heads.\n\\(\\Rightarrow\\) this result is extremely unlikely under \\(H_0\\); the observed data provide strong evidence against the null hypothesis; we reject the claim that the coin is fair.\n\nThe coin might be fair, but a fair coin could not have plausibly given \\(65\\) heads out of \\(100\\) flips."
   },
   {
     "objectID": "slides/lec-8.html#natural-variability-1",
@@ -2828,6 +2912,27 @@
     "text": "Source: IMS"
   },
   {
+    "objectID": "slides/lec-8.html#from-bootstrap-samples-to-ci",
+    "href": "slides/lec-8.html#from-bootstrap-samples-to-ci",
+    "title": "Principles of Inference",
+    "section": "From bootstrap samples to CI",
+    "text": "From bootstrap samples to CI\nComputing the sample statistic of each bootstrap sample provides its sampling distribution.\nTo construct a 90% CI, we simply identify the 5th and 95th percentiles of the sampling distribution.\n\n“We are 90% confident that the interval captures the true value of the population parameter”."
+  },
+  {
+    "objectID": "slides/lec-8.html#little-variability-rightarrow-narrow-ci",
+    "href": "slides/lec-8.html#little-variability-rightarrow-narrow-ci",
+    "title": "Principles of Inference",
+    "section": "Little variability \\(\\Rightarrow\\) narrow CI",
+    "text": "Little variability \\(\\Rightarrow\\) narrow CI\nLittle variability in the data\n\\(\\Rightarrow\\) little sample-to-sample variability\n\\(\\Rightarrow\\) little variability between bootstrap samples\n\\(\\Rightarrow\\) sampling distribution of mean/proportion is concentrated\n\\(\\Rightarrow\\) CI is narrow."
+  },
+  {
+    "objectID": "slides/lec-8.html#much-variability-rightarrow-large-ci",
+    "href": "slides/lec-8.html#much-variability-rightarrow-large-ci",
+    "title": "Principles of Inference",
+    "section": "Much variability \\(\\Rightarrow\\) large CI",
+    "text": "Much variability \\(\\Rightarrow\\) large CI\nMuch variability in the data\n\\(\\Rightarrow\\) much sample-to-sample variability\n\\(\\Rightarrow\\) much variability between bootstrap samples\n\\(\\Rightarrow\\) sampling distribution of mean/proportion is diffuse\n\\(\\Rightarrow\\) CI is large."
+  },
+  {
     "objectID": "slides/lec-8.html#sample_bootstrap",
     "href": "slides/lec-8.html#sample_bootstrap",
     "title": "Principles of Inference",
@@ -2835,11 +2940,53 @@
     "text": "sample_bootstrap\n\nsample_bootstrap <- function(data){\n  n       <- nrow(data)\n  indices <- sample(1:n, size = n, replace = TRUE)\n  sample_bootstrap <- data[indices,]\n  return(sample_bootstrap)\n}"
   },
   {
+    "objectID": "slides/lec-8.html#computing-bootstrap-ci",
+    "href": "slides/lec-8.html#computing-bootstrap-ci",
+    "title": "Principles of Inference",
+    "section": "Computing bootstrap CI",
+    "text": "Computing bootstrap CI\n\nd <- ggplot2::mpg\nresults <- tibble(mean = numeric(), sd = numeric())\nfor(i in 1 : 1e3){\n  d_boot <- sample_bootstrap(d)\n  results <- results %>% \n    add_row(mean = mean(d_boot$cty), sd = sd(d_boot$cty))\n}"
+  },
+  {
     "objectID": "slides/lec-8.html#section-7",
     "href": "slides/lec-8.html#section-7",
     "title": "Principles of Inference",
     "section": "",
     "text": "ggplot(results) +\n  geom_histogram(aes(mean))"
+  },
+  {
+    "objectID": "slides/lec-8.html#section-8",
+    "href": "slides/lec-8.html#section-8",
+    "title": "Principles of Inference",
+    "section": "",
+    "text": "ggplot(results) +\n  geom_histogram(aes(sd))"
+  },
+  {
+    "objectID": "slides/lec-8.html#section-9",
+    "href": "slides/lec-8.html#section-9",
+    "title": "Principles of Inference",
+    "section": "",
+    "text": "# 90% bootstrap CI for the mean cty in the population\nquantile(results$mean, c(0.05, 0.95))\n\n      5%      95% \n16.41880 17.32051 \n\n# 90% bootstrap CI for the sd of cty in the population\nquantile(results$sd  , c(0.05, 0.95))\n\n      5%      95% \n3.839925 4.673212"
+  },
+  {
+    "objectID": "slides/lec-8.html#section-10",
+    "href": "slides/lec-8.html#section-10",
+    "title": "Principles of Inference",
+    "section": "",
+    "text": "Group exercise - bootstrap CI\n\n\nExercises 12.1, 12.3, 12.7\n\n\n\n\n\n\n06:00"
+  },
+  {
+    "objectID": "slides/lec-8.html#section-11",
+    "href": "slides/lec-8.html#section-11",
+    "title": "Principles of Inference",
+    "section": "",
+    "text": "Group exercise - bootstrap CI\n\n\nRe-use the code from the previous slide to compute a 90% bootstrap CI of the variance of cty in the population.\n\n\n\n\n\n\n05:00"
+  },
+  {
+    "objectID": "slides/lec-8.html#recap-2",
+    "href": "slides/lec-8.html#recap-2",
+    "title": "Principles of Inference",
+    "section": "Recap",
+    "text": "Recap\n\n\nStatistical inference\nFive cases\n\nsingle proportion\ndifference between two portions\nsingle mean\ndifference between two means\nregression parameters\n\nHypothesis test\nConfidence interval\nA first glimpse of modern statistics\n\nHT\nCI\n\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
     "objectID": "slides/lec-9.html#announcements",
@@ -2919,13 +3066,6 @@
     "text": "p-value in practice\nIn practice, if a p-value is smaller than 0.05 we reject \\(H_0\\)\n\nless than 5% of the simulated sample were at least as extreme as the observed sample,\nit is highly unlikely that the observed sample could have arisen if \\(H_0\\) were true.\nthe results are statistically significant.\n\n\n\n\n\n\n\n\nWhy 0.05\n\n\nTo know why 0.05 is widely used, check out this short video."
   },
   {
-    "objectID": "slides/lec-9.html#ci-via-bootstrap",
-    "href": "slides/lec-9.html#ci-via-bootstrap",
-    "title": "Logistic Regression",
-    "section": "CI via bootstrap",
-    "text": "CI via bootstrap\nSample with repetition from the observed sample to construct many bootstrap samples.\nBootstrap samples \\(\\Rightarrow\\) sampling distribution \\(\\Rightarrow\\) bootstrap CI"
-  },
-  {
     "objectID": "slides/lec-9.html#bootstrap",
     "href": "slides/lec-9.html#bootstrap",
     "title": "Logistic Regression",
@@ -2968,13 +3108,6 @@
     "text": "Group exercise - two proportions\n\n\nWhat are \\(\\hat{p}_f\\), \\(\\hat{p}_m\\) and \\(\\hat{p}_{diff}\\)? Do you intuitively feel that there is the data provide convincing evidence of discrimination?\n\n\n\n\n\n\n03:00"
   },
   {
-    "objectID": "slides/lec-9.html#ht-via-simulation-1",
-    "href": "slides/lec-9.html#ht-via-simulation-1",
-    "title": "Logistic Regression",
-    "section": "HT via simulation",
-    "text": "HT via simulation\n\\(H_0:\\hat{p}_{diff}=0\\)\n\\(H_a:\\hat{p}_{diff}\\neq 0\\)\n\n\nSimulate many sample under \\(H_0\\) (assuming that there is no discrimination)\nDetermine if the observed data could have plausibly arisen under \\(H_0\\)"
-  },
-  {
     "objectID": "slides/lec-9.html#simulating-under-h_0",
     "href": "slides/lec-9.html#simulating-under-h_0",
     "title": "Logistic Regression",
@@ -3003,11 +3136,11 @@
     "text": "Simulating under H_0\n\nd <- gender_discrimination %>% select(gender)\npromotions_ordered <- c(rep(1, 35), rep(0, 48 - 35)) # 35 promotions and 13 non-promotions\npromotions_sim <- sample(promotions_ordered, 48) # shuffle promotions\nd_sim <- d %>% mutate(response = promotions_sim)\nd_sim\n\n# A tibble: 48 x 2\n   gender response\n   <fct>     <dbl>\n 1 male          0\n 2 male          1\n 3 male          0\n 4 male          1\n 5 male          1\n 6 male          1\n 7 male          0\n 8 male          1\n 9 male          1\n10 male          1\n# ... with 38 more rows"
   },
   {
-    "objectID": "slides/lec-9.html#fucntion-for-computing-the-test-statistic",
-    "href": "slides/lec-9.html#fucntion-for-computing-the-test-statistic",
+    "objectID": "slides/lec-9.html#function-for-computing-the-test-statistic",
+    "href": "slides/lec-9.html#function-for-computing-the-test-statistic",
     "title": "Logistic Regression",
-    "section": "Fucntion for computing the test statistic",
-    "text": "Fucntion for computing the test statistic\n\ncompute_p_diff <- function(data){\n  p_hat <- data %>%\n    group_by(gender) %>%\n    summarize(p_hat = mean(promotions_sim))\n  p_diff_hat <- p_hat$p_hat[1] - p_hat$p_hat[2]\n  return(p_diff_hat)\n}\ncompute_p_diff(d_sim)\n\n[1] 0.2083333"
+    "section": "Function for computing the test statistic",
+    "text": "Function for computing the test statistic\n\ncompute_p_diff <- function(data){\n  p_hat <- data %>%\n    group_by(gender) %>%\n    summarize(p_hat = mean(response))\n  p_diff_hat <- p_hat$p_hat[1] - p_hat$p_hat[2]\n  return(p_diff_hat)\n}\ncompute_p_diff(d_sim)\n\n[1] -0.125"
   },
   {
     "objectID": "slides/lec-9.html#for-loop-for-simulating-under-h_0",
@@ -3031,32 +3164,11 @@
     "text": "p-value\np-value: the probability of observing a test statistic at least as extreme as the observed one under the null hypothesis.\n\nthe probability that $_{diff} > $ 0.2916667 or $ < $ -0.2916667 if there is no discrimination.\n\n\nresults %>%\n  mutate(is_more_extreme = p_diff_hat >= p_diff_obs | p_diff_hat <= -p_diff_obs) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.048"
   },
   {
-    "objectID": "slides/lec-9.html#p-value-2",
-    "href": "slides/lec-9.html#p-value-2",
+    "objectID": "slides/lec-9.html#significance-level-alpha-0.05",
+    "href": "slides/lec-9.html#significance-level-alpha-0.05",
     "title": "Logistic Regression",
-    "section": "p-value",
-    "text": "p-value\nWhat if we do not have a clear-cut case?\n\ne.g., \\(\\hat{p}=0.525\\)"
-  },
-  {
-    "objectID": "slides/lec-9.html#p-value-in-r-1",
-    "href": "slides/lec-9.html#p-value-in-r-1",
-    "title": "Logistic Regression",
-    "section": "p-value in R",
-    "text": "p-value in R\n\nresults <- results %>%\n  mutate(is_more_extreme = !between(p_hat, 0.475, 0.525))\nresults\n\n# A tibble: 1,000 x 2\n   p_diff_hat is_more_extreme\n        <dbl> <lgl>          \n 1    -0.0417 FALSE          \n 2    -0.0417 FALSE          \n 3    -0.125  FALSE          \n 4    -0.0417 FALSE          \n 5     0.208  FALSE          \n 6     0.0417 FALSE          \n 7     0.0417 FALSE          \n 8    -0.125  FALSE          \n 9     0.208  FALSE          \n10     0.125  FALSE          \n# ... with 990 more rows\n\n\n\nsummarize(results, p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1       0"
-  },
-  {
-    "objectID": "slides/lec-9.html#p-value-in-practice-1",
-    "href": "slides/lec-9.html#p-value-in-practice-1",
-    "title": "Logistic Regression",
-    "section": "p-value in practice",
-    "text": "p-value in practice\nIn practice, if a p-value is smaller than 0.05 we reject \\(H_0\\)\n\nless than 5% of the simulated sample were at least as extreme as the observed sample,\nit is highly unlikely that the observed sample could have arisen if \\(H_0\\) were true.\n\n\n\n\n\n\n\n\nWhy 0.05\n\n\nTo know why 0.05 is widely used, check out this short video."
-  },
-  {
-    "objectID": "slides/lec-9.html#ci-via-bootstrap-1",
-    "href": "slides/lec-9.html#ci-via-bootstrap-1",
-    "title": "Logistic Regression",
-    "section": "CI via bootstrap",
-    "text": "CI via bootstrap\nSample with repetition from the observed sample to construct many bootstrap samples.\nBootstrap samples \\(\\Rightarrow\\) sampling distribution \\(\\Rightarrow\\) bootstrap CI"
+    "section": "significance level \\(\\alpha = 0.05\\)",
+    "text": "significance level \\(\\alpha = 0.05\\)\nUsing the usually significance level \\(\\alpha = 0.05\\), we fail to reject the null hypothesis\n\nthe data do not provide sufficient evidence to reject the null hypothesis,\nit is plausible to observe the sample collected in the study if there is no discrimination just by chance.\n\n::: callout-note ## Statistician as messengers Statisticians are only messengers of the data; they only"
   },
   {
     "objectID": "slides/lec-9.html#bootstrap-1",
@@ -3080,171 +3192,10 @@
     "text": "sample_bootstrap(sample_observed_m) # bootstrap sample\n\n# A tibble: 24 x 2\n   response gender\n      <dbl> <chr> \n 1        1 male  \n 2        1 male  \n 3        0 male  \n 4        1 male  \n 5        1 male  \n 6        0 male  \n 7        1 male  \n 8        0 male  \n 9        1 male  \n10        1 male  \n# ... with 14 more rows\n\nsample_bootstrap(sample_observed_f) # bootstrap sample\n\n# A tibble: 24 x 2\n   response gender\n      <dbl> <chr> \n 1        1 female\n 2        1 female\n 3        1 female\n 4        1 female\n 5        1 female\n 6        1 female\n 7        1 female\n 8        1 female\n 9        1 female\n10        1 female\n# ... with 14 more rows\n\n\n\nresults <- tibble(p_diff_hat = numeric())\nfor(i in 1 : 1e3){\n  d_boot_m <- sample_bootstrap(sample_observed_m)\n  d_boot_f <- sample_bootstrap(sample_observed_f)\n  \n  p_diff_hat <- compute_p_diff(rbind(d_boot_m, d_boot_f))\n  \n  results <- results %>% add_row(p_diff_hat = p_diff_hat)\n}\nquantile(results$p_diff_hat, c(0.05 , 0.95 )) # 90% CI\n\n         5%         95% \n-0.45833333 -0.08333333 \n\nquantile(results$p_diff_hat, c(0.025, 0.975)) # 95% CI\n\n       2.5%       97.5% \n-0.50000000 -0.04166667"
   },
   {
-    "objectID": "slides/lec-8.html#from-bootstrap-samples-to-boostrap-ci",
-    "href": "slides/lec-8.html#from-bootstrap-samples-to-boostrap-ci",
-    "title": "Principles of Inference",
-    "section": "From bootstrap samples to boostrap CI",
-    "text": "From bootstrap samples to boostrap CI\nComputing the mean/proportion of each bootstrap sample provides its sampling distribution.\nTo construct a 90% CI, we simply identify the 5th and 95th percentiles of the sampling distribution.\n\nLittle variability in the data \\(\\Rightarrow\\) little sample-to-sample variability \\(\\Rightarrow\\) little variability between bootstrap samples \\(\\Rightarrow\\) sampling distribution of mean/proportion is concentrated \\(\\Rightarrow\\) CI is narrow.\nMuch variability in the data \\(\\Rightarrow\\) much sample-to-sample variability \\(\\Rightarrow\\) much variability between bootstrap samples \\(\\Rightarrow\\) sampling distribution of mean/proportion is diffuse \\(\\Rightarrow\\) CI is large."
-  },
-  {
-    "objectID": "slides/lec-8.html#computing-bootstrap-ci",
-    "href": "slides/lec-8.html#computing-bootstrap-ci",
-    "title": "Principles of Inference",
-    "section": "Computing bootstrap CI",
-    "text": "Computing bootstrap CI\n\nd <- ggplot2::mpg\nresults <- tibble(mean = numeric(), sd = numeric())\nfor(i in 1 : 1e3){\n  d_boot <- sample_bootstrap(d)\n  results <- results %>% \n    add_row(mean = mean(d_boot$cty), sd = sd(d_boot$cty))\n}"
-  },
-  {
-    "objectID": "slides/lec-8.html#section-8",
-    "href": "slides/lec-8.html#section-8",
-    "title": "Principles of Inference",
-    "section": "",
-    "text": "ggplot(results) +\n  geom_histogram(aes(sd))"
-  },
-  {
-    "objectID": "slides/lec-8.html#section-9",
-    "href": "slides/lec-8.html#section-9",
-    "title": "Principles of Inference",
-    "section": "",
-    "text": "# 90% bootstrap CI for the mean cty in the population\nquantile(results$mean, c(0.05, 0.95))\n\n      5%      95% \n16.41880 17.32051 \n\n# 90% bootstrap CI for the sd of cty in the population\nquantile(results$sd  , c(0.05, 0.95))\n\n      5%      95% \n3.839925 4.673212"
-  },
-  {
-    "objectID": "slides/lec-8.html#section-10",
-    "href": "slides/lec-8.html#section-10",
-    "title": "Principles of Inference",
-    "section": "",
-    "text": "Group exercise - bootstrap CI\n\n\nExercises 12.1, 12.3, 12.7\n\n\n\n\n\n\n06:00"
-  },
-  {
-    "objectID": "slides/lec-8.html#section-11",
-    "href": "slides/lec-8.html#section-11",
-    "title": "Principles of Inference",
-    "section": "",
-    "text": "Group exercise - bootstrap CI\n\n\nRe-use the code from the previous slide to compute the 90% bootstrap CI of the variance of cty in the population.\n\n\n\n\n\n\n05:00"
-  },
-  {
-    "objectID": "slides/lec-8.html#recap-2",
-    "href": "slides/lec-8.html#recap-2",
-    "title": "Principles of Inference",
-    "section": "Recap",
-    "text": "Recap\n\n\nStatistical inference\n\nConfidence intervals\nHypothesis tests\n\nFive cases\n\nsingle proportion\ndifference between two portions\nsingle mean\ndifference between two means\nregression parameters\n\nHypothesis test\nConfidence interval\nA first glimpse of modern statistics\n\nHT\nCI\n\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
-  },
-  {
-    "objectID": "slides/lec-8.html#population-parameters",
-    "href": "slides/lec-8.html#population-parameters",
-    "title": "Principles of Inference",
-    "section": "Population parameters",
-    "text": "Population parameters\nWe want to learn about some (unknown) parameter of some population of interest from a (small) sample of observations\n\n\nExamples of parameters: proportion of vegetarian among Duke students, average weight gained by Duke students during the Covid-19 pandemic, etc.\n\n\n\n\nIn the remainder of the course, we will always assume that we have a random sample"
-  },
-  {
-    "objectID": "slides/lec-8.html#statistic",
-    "href": "slides/lec-8.html#statistic",
-    "title": "Principles of Inference",
-    "section": "Statistic",
-    "text": "Statistic\nStatistic: any function of some data. E.g., average, median, iqr, maximum, etc\nsample statistic: a statistic computed on the sample\nsummary statistic: a statistic used to summarize a sample\ntest statistic: statistic used for statistical inference"
-  },
-  {
-    "objectID": "slides/lec-8.html#estimating-a-parameter",
-    "href": "slides/lec-8.html#estimating-a-parameter",
-    "title": "Principles of Inference",
-    "section": "Estimating a parameter",
-    "text": "Estimating a parameter\nTo estimate a population parameter, we can simply\n\ncollect data on a representative sample, and\nuse the corresponding sample statistic as an estimate\n\nto estimate the median age of Duke students, simply compute the median of your sample."
-  },
-  {
-    "objectID": "slides/lec-8.html#certainty-matters",
-    "href": "slides/lec-8.html#certainty-matters",
-    "title": "Principles of Inference",
-    "section": "Certainty matters",
-    "text": "Certainty matters\nA single point (the sample statistic) does not indicate how confident we are in our estimate.\n\nIf we have a large sample, then we can be pretty confident that our estimates will be close to the true value of the parameter,\nif we have a small sample, then we know that our estimate may be far from the truth.\ne.g. Duke students, basketball free throws."
-  },
-  {
-    "objectID": "slides/lec-9.html#function-for-computing-the-test-statistic",
-    "href": "slides/lec-9.html#function-for-computing-the-test-statistic",
-    "title": "Logistic Regression",
-    "section": "Function for computing the test statistic",
-    "text": "Function for computing the test statistic\n\ncompute_p_diff <- function(data){\n  p_hat <- data %>%\n    group_by(gender) %>%\n    summarize(p_hat = mean(response))\n  p_diff_hat <- p_hat$p_hat[1] - p_hat$p_hat[2]\n  return(p_diff_hat)\n}\ncompute_p_diff(d_sim)\n\n[1] -0.125"
-  },
-  {
-    "objectID": "slides/lec-9.html#significance-level-alpha-0.05",
-    "href": "slides/lec-9.html#significance-level-alpha-0.05",
-    "title": "Logistic Regression",
-    "section": "significance level \\(\\alpha = 0.05\\)",
-    "text": "significance level \\(\\alpha = 0.05\\)\nUsing the usually significance level \\(\\alpha = 0.05\\), we fail to reject the null hypothesis\n\nthe data do not provide sufficient evidence to reject the null hypothesis,\nit is plausible to observe the sample collected in the study if there is no discrimination just by chance.\n\n::: callout-note ## Statistician as messengers Statisticians are only messengers of the data; they only"
-  },
-  {
     "objectID": "slides/lec-9.html#section-5",
     "href": "slides/lec-9.html#section-5",
     "title": "Logistic Regression",
     "section": "",
     "text": "ggplot(results) + geom_histogram(aes(p_diff_hat))\n\n\n\n\n\n\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
-  },
-  {
-    "objectID": "slides/lec-8.html#example",
-    "href": "slides/lec-8.html#example",
-    "title": "Principles of Inference",
-    "section": "Example",
-    "text": "Example\nConsider the 2nd case (difference in proportion of vegetarians between undergrad and grad students).\n\n\\(H_0:\\) the proportion of vegetarian is the same among undergraduate and graduate students (“nothing is going on”) \\[\nH_0: p_{diff}=p_{undegrad}-p_{grad}=0\n\\] \\[\nH_0: p_{undegrad}=p_{grad}\n\\]\n\\(H_a:\\) the proportion of vegetarians among undergraduate and graduate students is not the same (“something is going on”). \\[\nH_0: p_{diff}=p_{undegrad}-p_{grad}\\neq0\n\\] \\[\nH_0: p_{undegrad}\\neq p_{grad}\n\\]"
-  },
-  {
-    "objectID": "slides/lec-8.html#more-examples",
-    "href": "slides/lec-8.html#more-examples",
-    "title": "Principles of Inference",
-    "section": "More examples",
-    "text": "More examples\n\nAre the Covid-19 vaccines equally effective?\n\n\\(H_0:\\) all the vaccines are equally effective; \\(H_a:\\) the vaccines are not all equally effective\n\nDoes caffeine consumption affect student participation in class\n\n\\(H_0:\\) caffeine consumption does not affect student participation; \\(H_a:\\) caffeine consumption affects student participation\n\nAre men and women paid equally in the workplace?\n\n\\(H_0:\\) men and women are paid equally; \\(H_a:\\) men and women are not paid equally\n\nHave Duke students gained weight since the start of the Covid-19 pandemic?\n\n\\(H_0:\\) Duke student have not gained weight; \\(H_a:\\) Duke students have gained weight."
-  },
-  {
-    "objectID": "slides/lec-8.html#natural-variability-and-hypothesis-tests",
-    "href": "slides/lec-8.html#natural-variability-and-hypothesis-tests",
-    "title": "Principles of Inference",
-    "section": "Natural variability and hypothesis tests",
-    "text": "Natural variability and hypothesis tests\n\n\n\n\n\n\nWe’ll always observe a difference\n\n\nObserving a difference in the sample is not sufficient to reject \\(H_0\\). When we collect a sample, there will always be some natural variability inherent to the data.\nDetermining whether the observed difference is due to natural variation or provides convincing evidence of a true difference between the two groups is at the heart of hypothesis tests."
-  },
-  {
-    "objectID": "slides/lec-8.html#population-and-parameter",
-    "href": "slides/lec-8.html#population-and-parameter",
-    "title": "Principles of Inference",
-    "section": "Population and parameter",
-    "text": "Population and parameter\n\n\n\n\n\n\nPopulation and parameter first\n\n\nAlways start by defining the population and the parameter of interest.\nPopulation: flips of the coin\nParameter: probability that a flip is head"
-  },
-  {
-    "objectID": "slides/lec-8.html#null-and-alternative-hypotheses",
-    "href": "slides/lec-8.html#null-and-alternative-hypotheses",
-    "title": "Principles of Inference",
-    "section": "Null and alternative hypotheses",
-    "text": "Null and alternative hypotheses\n\n\\(H_0:p=0.5\\) (the coin is fair)\n\\(H_0:p\\neq0.5\\) (the coin is not fair)"
-  },
-  {
-    "objectID": "slides/lec-8.html#from-bootstrap-samples-to-ci",
-    "href": "slides/lec-8.html#from-bootstrap-samples-to-ci",
-    "title": "Principles of Inference",
-    "section": "From bootstrap samples to CI",
-    "text": "From bootstrap samples to CI\nComputing the sample statistic of each bootstrap sample provides its sampling distribution.\nTo construct a 90% CI, we simply identify the 5th and 95th percentiles of the sampling distribution.\n\n“We are 90% confident that the interval captures the true value of the population parameter”."
-  },
-  {
-    "objectID": "slides/lec-8.html#section-12",
-    "href": "slides/lec-8.html#section-12",
-    "title": "Principles of Inference",
-    "section": "",
-    "text": "Group exercise - bootstrap CI\n\n\nExercises 12.1, 12.3, 12.7\n\n\n\n\n\n\n06:00"
-  },
-  {
-    "objectID": "slides/lec-8.html#section-13",
-    "href": "slides/lec-8.html#section-13",
-    "title": "Principles of Inference",
-    "section": "",
-    "text": "Group exercise - bootstrap CI\n\n\nRe-use the code from the previous slide to compute the 90% bootstrap CI of the variance of cty in the population.\n\n\n\n\n\n\n05:00"
-  },
-  {
-    "objectID": "slides/lec-8.html#little-variability-rightarrow-narrow-ci",
-    "href": "slides/lec-8.html#little-variability-rightarrow-narrow-ci",
-    "title": "Principles of Inference",
-    "section": "Little variability \\(\\Rightarrow\\) narrow CI",
-    "text": "Little variability \\(\\Rightarrow\\) narrow CI\nLittle variability in the data\n\\(\\Rightarrow\\) little sample-to-sample variability\n\\(\\Rightarrow\\) little variability between bootstrap samples\n\\(\\Rightarrow\\) sampling distribution of mean/proportion is concentrated\n\\(\\Rightarrow\\) CI is narrow."
-  },
-  {
-    "objectID": "slides/lec-8.html#much-variability-rightarrow-large-ci",
-    "href": "slides/lec-8.html#much-variability-rightarrow-large-ci",
-    "title": "Principles of Inference",
-    "section": "Much variability \\(\\Rightarrow\\) large CI",
-    "text": "Much variability \\(\\Rightarrow\\) large CI\nMuch variability in the data\n\\(\\Rightarrow\\) much sample-to-sample variability\n\\(\\Rightarrow\\) much variability between bootstrap samples\n\\(\\Rightarrow\\) sampling distribution of mean/proportion is diffuse\n\\(\\Rightarrow\\) CI is large."
   }
 ]

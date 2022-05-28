@@ -1,0 +1,117 @@
+---
+title: "rmd_demo"
+author: "Raphael Morsomme"
+date: "`r Sys.Date()`"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+This document contains a few tips for working with RMD files. The source file has been sent by email.
+
+# Level-1 title (often too large)
+
+## Level-2 title (typically better than level-1)
+
+You always want to start by loading the packages you will need.
+
+```{r, message = FALSE}
+library(tidyverse)
+library(broom)
+```
+
+The next step typically consists in downloading the data
+
+```{r}
+d <- read_csv("https://rmorsomme.github.io/website/projects/training_set.csv")
+```
+
+and then perhaps fitting a model.
+
+```{r}
+m <- lm(mother_bmi ~ mother_weight_prepregnancy, data = d)
+m
+```
+
+This is simply an illustration. In the project, you should not use `mother_bmi` as the response!
+
+For the project, simply save the model you have selected in a RDATA file and send it to the instruction team.
+
+```{r}
+save(m, file = "my_predictive_model.RDATA")
+rm(m) # removes the object `m` from the environment
+```
+
+Once we have everybody's model, we will use the following commands to load them into `R` and test them on new data.
+
+```{r}
+load("my_predictive_model.RDATA")
+
+new_data <- tibble(mother_weight_prepregnancy = 150) # new data
+predict(m, new_data)
+```
+
+## We can use RMD to write mathematical expressions
+
+To write a small mathematical expression, simply write it between `$` signs.
+
+For instance, $x = 5 + 9$.
+
+To write longer expression, use two `$` signs.
+
+$$
+Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 
+$$
+
+To write a word in a math equation, use `\text{}`
+
+$$
+\text{BMI} \approx \beta_0 + \beta_1 \text{weight} + \beta_3 X^2
+$$
+
+## Running `R` code
+
+You can run `R` code in `R` chunks:
+
+```{r}
+5+5
+```
+
+You can also directly run `R` code in a paragraph as follows: using \` r 5+5\`. For instance, the $R^2$ value of model `m` is `r round(glance(m)$r.squared, 3)`.
+
+## Learning more about RMD
+
+Come to OH, ask questions during/after class.
+
+Check the RMD [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf) or the longer [reference guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf).
+
+## Overall goal of the prediction project
+
+-   two baseline models (simple and full) + 3 models that you construct
+
+-   feature engineering + model selection
+
+-   the outcome of that procedure should be a model that predicts the response variable *reasonably* well
+
+-   please refer to the rubric
+
+## Missing values in the penguin dataset?
+
+```{r}
+d <- palmerpenguins::penguins
+
+filter(d,  is.na(body_mass_g)) # keeps the rows with a missing value for body_mass_g
+filter(d, !is.na(body_mass_g)) # keeps the rows without a missing value for body_mass_g
+```
+
+## Conclusion
+
+This is the end of the main body
+
+## Appendix
+
+Figures should go here.
+
+```{r}
+ggplot(mpg, aes(cty, hwy)) + geom_point()
+```
