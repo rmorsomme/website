@@ -40,7 +40,7 @@ library(countdown)
 library(openintro)
 
 # set default theme and larger font size for ggplot2
-ggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))
+theme_set(theme_minimal(base_size = 16))
 
 options(scipen = 100)
 ```
@@ -49,246 +49,351 @@ options(scipen = 100)
 
 ## Announcements
 
--   
+-   Homework 5 due on Sunday
 
 ## Recap
+
+-   Types of data
+
+-   Visualization and numerical summaries
+
+-   Regression models
+
+    -   linear rm
+
+    -   logistic rm
+
+    -   model selection
+
+## Types of data
+
+```{r variables, echo = FALSE, fig.cap = "Breakdown of variables into their respective types.", fig.asp = 0.5, fig.alt = "Types of variables are broken down into numerical (which can be discrete or continuous) and categorical (which can be ordinal or nominal)."}
+par_og <- par(no.readonly = TRUE) # save original par
+par(mar = rep(0, 4))
+plot(c(-0.15, 1.3), 0:1, type = "n", axes = FALSE)
+text(0.6, 0.9, "all variables")
+rect(0.4, 0.8, 0.8, 1)
+text(0.25, 0.5, "numerical")
+rect(0.1, 0.4, 0.4, 0.6)
+arrows(0.45, 0.78, 0.34, 0.62, length = 0.08)
+text(0.9, 0.5, "categorical")
+rect(0.73, 0.4, 1.07, 0.6)
+arrows(0.76, 0.78, 0.85, 0.62, length = 0.08)
+text(0, 0.1, "discrete")
+rect(-0.17, 0, 0.17, 0.2)
+arrows(0.13, 0.38, 0.05, 0.22, length = 0.08)
+text(0.39, 0.1, "continuous")
+rect(0.25, 0, 0.53, 0.2)
+arrows(0.35, 0.38, 0.4, 0.22, length = 0.08)
+text(0.77, 0.105, "ordinal")
+rect(0.64, 0, 0.9, 0.2)
+arrows(0.82, 0.38, 0.77, 0.22, length = 0.08)
+text(1.12, 0.1, "nominal")
+rect(0.99, 0, 1.25, 0.2)
+arrows(1.02, 0.38, 1.1, 0.22, length = 0.08)
+par(par_og) # restore original par
+```
+
+Source: [IMS](https://www.openintro.org/book/ims/)
 
 ## Outline
 
 -   Statistical inference
--   Confidence intervals
--   Hypothesis tests
-    -   Types of errors
+
 -   Five cases
-    -   single proportion
-    -   difference between two portions
-    -   single mean
-    -   difference between two means
-    -   regression parameters
+
 -   Hypothesis test
--   Modern statistics
+
+-   Confidence interval
+
+-   A first glimpse of modern statistics
 
 # Statistical inference
 
-## Statistical inference
+## Population parameters
 
-We are want to learn about the (unknown) **parameter** of some **population** of interest.
-
-We dispose of a **sample**
-
--   In the remainder of the course, we will always assume that we have a *random* sample
+We want to learn about some (unknown) **parameter** of some **population** of interest from a (small) **sample** of observations
 
 . . .
 
-**Inference**: estimate the **population parameter** from the **sample**.
+-   Examples of parameters: proportion of vegetarian among Duke students, average weight gained by Duke students during the Covid-19 pandemic, etc.
 
-**Inference**: estimate the **population parameter** from the **sample** and rigorously quantify our certainty in the estimate.
+. . .
 
+-   In the remainder of the course, we will always assume that we have a *random* sample
 
 ## 
+
 ::: {.callout-tip icon="false"}
 ## Group exercise - identify the parameter
+
 Exercise [11.1](https://openintro-ims.netlify.app/foundations-randomization.html#chp11-exercises)
 :::
+
 ```{r, echo = F}
 countdown(minutes = 3)
 ```
 
-## Estimating a proportion
+## Statistical inference
 
-**parameter of interest**: proportion in the population
+**Inference**: to estimate the population parameter from the sample.
 
-**sample statistic**: sample proportion
+**Statistical inference**: to estimate the population parameter from the sample and rigorously quantify our *certainty* in the estimate.
 
-It seems natural to use the sample proportion as an estimate for the population proportion.
+## Statistic
 
-## Our certainty in the estimate matters
+**Statistic**: any function of some data. E.g., average, median, iqr, maximum, etc
 
-A single point does not indicate how confident we are in our estimation.
+**sample statistic**: a statistic computed on the sample
 
--   If we have a *large* sample, then we can be pretty confident that our estimate will likely be close to the true value fo the parameter,
+**summary statistic**: a statistic used to summarize a sample
+
+**test statistic**: statistic used for statistical inference
+
+## Estimating a parameter 
+
+To estimate a population parameter, we can simply
+
+-   collect data on a representative sample, and
+
+-   use the corresponding sample statistic as an estimate
+    -   to estimate the median age of Duke students, simply compute the median of your sample.
+
+## Certainty matters
+
+A single point (the sample statistic) does not indicate how confident we are in our estimate.
+
+-   If we have a *large* sample, then we can be pretty confident that our estimates will be close to the true value of the parameter,
 
 -   if we have a *small* sample, then we know that our estimate may be far from the truth.
 
--   e.g. basketball free throws, ratings on Yelp or Amazon
+-   e.g. Duke students, basketball free throws.
 
 ## Statistical inference
 
 Framework to make rigorous statements about uncertainty in our estimates
 
 -   confidence intervals
-    
-    -   range of plausible values for the population parameter
 
-    -   "we are 90% confident that the interval $(20\%, 30\%)$ captures the true value of the population proportion".
+    -   range of plausible values for the population parameter
 
 -   hypothesis tests
 
     -   evaluate competing claims using data
-
-    -   "we reject the claim that the population proportion is $50\%$".
 
 # Five cases
 
 ## Case 1 -- Single proportion {.smaller}
 
 ::: columns
-::: {.column width="50%"}
+::: {.column width="55%"}
 What is the proportion of vegetarian among Duke students?
 
-. . .
+**Population parameter**: proportion of vegetarian among Duke students $(p)$
 
-**Population parameter**: proportion of vegetarian among Duke students ($p$)
-
-**sample statistics**: proportion of vegetarian in the sample $\hat{p}$
+**Sample statistic**: proportion of vegetarian in the sample $(\hat{p})$
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ![](images/lec-8/vegetarian.jpg)
 :::
 :::
 
 . . .
 
-**Confidence interval**: $(0.31, 0.43)$
+**Confidence interval**: a range a plausible values for the population parameter $p$
 
--   we are 95% confident that the interval $(0.31, 0.43)$ capture the proportion of vegetarian among Duke students.
+-   $(0.31, 0.43)$
 
 . . .
 
 **Hypothesis test**: is the proportion of vegetarian among Duke students $0.5$?
 
--   $H_0:p=0.5, H_a:p\neq0.5$
-
--   The data collected provide strong evidence against $H_0$, that is, against the hypothesis that half of Duke students are vegetarian. In other words, the data conflict so much with $H_0$, that the null hypothesis is not plausible.
+-   $H_0:p=0.5, \qquad    H_a:p\neq0.5$
 
 ## Case 2 -- Difference between two proportions {.smaller}
 
-Is the proportion of vegetarian the same among undergraduate Duke student and graduate Duke students?
+Is the proportion of vegetarian the same among Duke undergraduate and graduate students?
 
-**Population parameter**: difference between the proportion of vegetarian among undergraduate Duke students and graduate Duke students ($p_{diff} = p_{undergrad}-p_{grad}$)
+**Population parameter**: difference between the proportion of vegetarian among Duke undergraduate and graduate students $(p_{diff} = p_{undergrad}-p_{grad})$
 
-**sample statistics**: different in proportion of vegetarian in the sample $\hat{p}_{diff} = \hat{p}_{undergrad} - \hat{p}_{grad}$
-
-. . .
-
-**Confidence interval**: $(-0.05, 0.08)$
-
--   we are 95% confident that the interval $(-0.05, 0.08)$ capture the true value of $p_{diff}$.
+**Sample statistic**: difference in proportion of vegetarian in the sample $(\hat{p}_{diff} = \hat{p}_{undergrad} - \hat{p}_{grad})$
 
 . . .
 
-**Hypothesis test**: is the proportion of vegetarian the same among undergraduate and graduate Duke students?
+**Confidence interval** for $p_{diff}$: $(-0.05, 0.08)$
 
--   $H_0:p_{diff}=0, H_a:p_{diff}\neq0$ (no difference)
+. . .
 
--   The data collected do not provide strong evidence against $H_0$, that is, against the hypothesis that $p_{diff}=0$.
+**Hypothesis test**: is the proportion of vegetarian the same among Duke undergraduate and graduate students?
 
-## Case 3 -- Single mean
+-   $H_0:p_{diff}=0, \qquad H_a:p_{diff}\neq0$
+
+
+## Case 3 -- Single mean {.smaller}
 
 ::: columns
-::: {.column width="50%"}
+::: {.column width="60%"}
 How much time do Duke students sleep on average per night?
 
-. . .
+**Population parameter**: mean amount of time that Duke students sleep per night $(\mu)$
 
-**Population parameter**: mean amount of time that Duke students sleep per night ($\mu$)
+**Sample statistic**: average amount of time in the sample $(\bar{x})$
 
-**sample statistics**: average amount of time that Duke students in the sample sleep per night ($\bar{x}$)
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ![](images/lec-8/sleep.jpg)
 :::
 :::
 
 . . .
 
-**Confidence interval**: $(5.5, 7.5)$
-
--   we are 95% confident that the interval $(5.5, 7.5)$ capture $\mu$.
+**Confidence interval** for $\mu$: $(5.5, 7.5)$
 
 . . .
 
-**Hypothesis test**: is the proportion of vegetarian among Duke students $0.5$?
+**Hypothesis test**: Do Duke students sleep on average $8$ hours per night? 
 
 -   $H_0:\mu=8, H_a:\mu\neq8$
 
--   The data collected provide strong evidence against $H_0$, that is, against the hypothesis that Duke students sleep on average 8 hours per night.
+## Case 4 -- Difference between two proportions {.smaller}
 
-## Case 4 -- Difference between two proportions
-
-Do undergraduate Duke students sleep the same mount of time per night as graduate Duke students do?
+Do Duke undergraduate and graduate students sleep on average the same amount of time per night?
 
 . . .
 
-**Population parameter**: difference between the mean amount of time that Duke undergraduate and graduate students sleep per night ($\mu_{diff} = \mu_{undergrad}-\mu_{grad}$)
+**Population parameter**: difference between the mean amount of time that Duke undergraduate and graduate students sleep per night $(\mu_{diff} = \mu_{undergrad}-\mu_{grad})$
 
-**sample statistics**: difference between the mean amount of time that Duke undergraduate and graduate students in the sample sleep per night ($\bar{x}_{diff} = \bar{x}_{undergrad} - \bar{x}_{grad}$)
-
-. . .
-
-**Confidence interval**: $(-0.5, 1)$
-
--   we are 95% confident that the interval $(-0.5, 1)$ capture $\mu_{diff}$.
+**Sample statistic**: difference between the two sample averages $(\bar{x}_{diff} = \bar{x}_{undergrad} - \bar{x}_{grad})$
 
 . . .
 
-**Hypothesis test**: is the proportion of vegetarian among Duke students $0.5$?
+**Confidence interval** for $\mu_{diff}$ : $(-0.5, 1)$
+
+. . .
+
+**Hypothesis test**: Do Duke undergraduate and graduate students sleep on average the same amount of time per night?
 
 -   $H_0:\mu_{diff}=0, H_a:\mu_{diff}\neq0$
 
--   The data collected do not provide strong evidence against $H_0$, that is, against the hypothesis that undergraduate and graduate Duke students sleep on average the amount of time per night.
+## Case 5 -- Linear regression {.smaller}
+
+What is the relation between fuel consumption in the city and on the highway?
+
+. . .
+
+**Population parameter**: the coefficient $\beta_1$ is the equation $\text{hwy} \approx \beta_0 + \beta_1 \text{cty}$.
+
+**Sample statistic**: the least-square estimate $\hat{\beta}_1$.
+
+. . .
+
+**Confidence interval** for $\beta_1$: $(1.05, 1.2)$
+
+. . .
+
+**Hypothesis test**: are the variables $\text{cty}$ and $\text{hwy}$ independent?
+
+-   $H_0:\beta_1=0, H_a:\beta_1\neq0$
 
 # Hypothesis tests
 
 ## The null hypothesis and the alternative hypothesis
+
+A HT considers two competing hypotheses:
+
+-   the **null hypothesis** $H_0$
+    -   "nothing is going on": there is no effect, no difference
+-   the **alternative hypothesis** $H_a$
+    -   "something is going on": there is an effect, there is a difference
+    
+## Example {.smaller}
+
 Consider the 2nd case (difference in proportion of vegetarians between undergrad and grad students).
 
--   If $H_0$ is true (the two populations have the same proportion)
-    -   we'll probably still observe a small difference in the sample
+-   $H_0:$ the proportion of vegetarian is the same among undergraduate and graduate students ("nothing is going on")
+$$
+H_0: p_{diff}=p_{undegrad}-p_{grad}=0
+$$
+$$
+H_0: p_{undegrad}=p_{grad}
+$$
 
--   If $H_a$ is true,
-    -   we'll probably observed a larger difference in the sample,
-    -   but we might also observe no difference at all,
-    -   or observe a different in the wrong direction!
+-   $H_a:$ the proportion of vegetarians among undergraduate and graduate students is not the same ("something is going on").
+$$
+H_0: p_{diff}=p_{undegrad}-p_{grad}\neq0
+$$
+$$
+H_0: p_{undegrad}\neq p_{grad}
+$$
 
-. . .
+## More examples {.smaller}
 
+-   Are the Covid-19 vaccines equally effective?
+    -   $H_0:$ all the vaccines are equally effective; $H_a:$ the vaccines are not all equally effective
+
+-   Does caffeine consumption affect student participation in class
+    -   $H_0:$ caffeine consumption does not affect student participation; $H_a:$ caffeine consumption affects student participation
+
+-   Are men and women paid equally in the workplace?
+    -   $H_0:$ men and women are paid equally; $H_a:$ men and women are not paid equally
+
+-   Have Duke students gained weight since the start of the Covid-19 pandemic?
+    -   $H_0:$ Duke student have not gained weight; $H_a:$ Duke students have gained weight.
 
 ## 
+
 ::: {.callout-tip icon="false"}
 ## Group exercise - hypotheses
+
 Exercises [11.3](https://openintro-ims.netlify.app/foundations-randomization.html#chp11-exercises), [11.5](https://openintro-ims.netlify.app/foundations-randomization.html#chp11-exercises)
 :::
+
 ```{r, echo = F}
 countdown(minutes = 5)
 ```
 
-
 ## Natural variability
 
-::: callout-warning
+Go back to the 2nd case and suppose that $H_0$ is true.
+
+-   We'll probably still observe a small difference in the sample.
+
+. . .
+
+Now suppose that $H_a$ is true.
+
+-   We'll probably observed a larger difference in the sample,
+-   but we might also observe no difference at all,
+-   or observe a different in the wrong direction!
+
 ## Natural variability and hypothesis tests
 
-Observing a difference in the sample is not sufficient to reject $H_0$. There will always be some natural variability inherent to the data.
+::: callout-warning
+## We'll always observe a difference
 
-Determining whether the observed difference is due to natural variation or provides convincing evidence of a true difference between the two groups is at the heart of hypothesis tests. 
+Observing a difference in the sample is not sufficient to reject $H_0$. When we collect a sample, there will always be some natural variability inherent to the data.
+
+Determining whether the observed difference is due to natural variation or provides **convincing evidence** of a true difference between the two groups is at the heart of hypothesis tests.
 :::
 
 ## 
+
 ::: {.callout-tip icon="false"}
 ## Group exercise - convincing evidence
-Suppose we have sample of size with the same number of undergrad and grad students and $\hat{p}_{diff} = \hat{p}_{undergrad} - \hat{p}_{grad} = 0.6 - 0.4 = 0.2$. For what sample sizes $n$ do you *intuitively feel* that the observed difference provides **convincing evidence** that the two populations are different?
+
+Suppose we have a sample with the same number of undergrad and grad students and $\hat{p}_{diff} = \hat{p}_{undergrad} - \hat{p}_{grad} = 0.6 - 0.4 = 0.2$. For what sample sizes $n$ do you *intuitively feel* that the observed difference provides **convincing evidence** that the two groups are different?
 
 -   $n=10$ (5 undergrad and 5 grad students)
--   $n=20$
--   $n=50$
+-   $n=20$ (10 undergrad and 10 grad students)
+-   $n=50$ (...)
 -   $n=100$
 -   $n=250$
 -   $n=500$
 -   $n=1000$
 :::
+
 ```{r, echo = F}
 countdown(minutes = 4)
 ```
@@ -299,47 +404,58 @@ countdown(minutes = 4)
 
 **CI**: range of plausible values for the population parameter.
 
-There always is natural variability in the data
+There always is natural variability in the data.
 
--   If we draw a second sample from the population, the proportion in the two sample will probably differ
+-   If we draw a second sample from the population, the two sample statistic will probably differ.
 
--   there is thus no reason to believe that the proportion in the first sanoke is exactly equal to the population proportion
+-   There is thus no reason to believe that the sample statistic in the first sample is exactly equal to the population parameter.
 
+## Examples
 
+-   What is the approval rate of the US president?
 
+-   What proportion of Duke students is vegetarian?
+
+-   How much weight have Duke students gained since the start of the Covid-19 pandemic?
 
 # Modern statistics
 
 ## Classical and modern approaches
 
-There will be two approaches for each of the CI and HT for each of the five cases ($2*2*5=20$ methods)
+We will learn two approaches to statistical inference
 
-Luckily, they are all very similar, and most require at most 3 lines of code in `R` (and most s single line!).
-
-. . . 
-
-**Classical approaches** are based on (simple) mathematical formula -- pen and paper.
-
-**Modern approaches** rely on (simple) computer simulations -- `R`
+-   **classical** 
+    -   pen and paper, pre-computer era
+    -   based on simple mathematical formula 
+    -   requires the data to satisfy certain conditions 
+    -   
+-   **modern** (computer-intensive)
+    -   we model the variability in the data by repeating a procedure many times (for-loop)
+    -   always applicable
 
 # A first glimpse of modern statistics for HT
 
-## 
+##
+
 ::: {.callout-tip icon="false"}
-## Group exercise - simulation
-Suppose you flip a coin 100 times and count the number of heads.
-Earlier in the class, you were asked to identify what number of heads would make you doubt that the coin is fair.
+## Individual exercise -- simulation
 
-We will run an experiment together to see if you gut feeling was feel was correct.
+Suppose you flip a coin 100 times and count the number of heads. In the first lecture, you were asked to identify what number of heads would make you doubt that the coin is fair.
 
-Use the following commands to simulate 100 flips of a coin and count the number of heads. Repeat the experiment 20 times, keeping track of the number of heads.
+We will run an experiment together to see if your gut feeling was correct.
+
+Use the following commands to simulate 100 flips of a coin and count the number of heads. Repeat the experiment 5 times, keeping track of the number of heads.
 
 ```{r}
-set.seed(0)
-flips <- rbernoulli(100, p = 0.5) # 100 flips -- TRUE is heads and FALSE is tails
+set.seed(0) # change the seed for each run
+flips <- rbernoulli(100, p = 0.5) # 100 flips - TRUE is heads and FALSE is tails
 sum(flips) # number of heads (number of TRUEs)
 ```
+:::
 
+```{r, echo = F}
+countdown(minutes = 3)
+```
 
 ## For-loop
 
@@ -347,36 +463,42 @@ The following for-loop does the previous experiment more efficiently!
 
 ```{r}
 set.seed(0)
-results <- tibble(n_heads = numeric())
-for(i in 1 : 3e3){ # repeat the experiment 3,000 times
+results <- tibble(n_heads = numeric()) # empty data frame to collect the results
+for(i in 1 : 1e3){ # repeat the experiment 1,000 times
   flips   <- rbernoulli(100, p = 0.5)
   n_heads <- sum(flips)
   results <- results %>% add_row(n_heads)
 }
-results %>%
-  ggplot() +
+```
+
+##
+
+Here is the distribution of the sample statistic $\hat{p}$ when $H_0$ is true.
+
+```{r}
+ggplot(results) +
   geom_histogram(aes(n_heads), binwidth = 1) # set the binwidth to 1 to ensure that each bin corresponds to exactly one integer.
 ```
 
-## Hypothesis test
+## Population and parameter
 
 ::: callout-tip
 ## Population and parameter first
-Always start with defining the population and the parameter of interest.
+
+Always start by defining the population and the parameter of interest.
 
 **Population**: flips of the coin
 
 **Parameter**: probability that a flip is head
 :::
 
-. . .
+## Null and alternative hypotheses
 
 -   $H_0:p=0.5$ (the coin is fair)
 
 -   $H_0:p\neq0.5$ (the coin is not fair)
 
-
-## Like a court in the justice system
+## Like jurors in the justice system {.smaller}
 
 -   $H_0:$ innocent (the coin is fair)
 
@@ -384,14 +506,21 @@ Always start with defining the population and the parameter of interest.
 
 Question: do the facts (data sample) provide sufficient evidence to reject the claim that the defendant is innocent (that the coin is fair)?
 
--   If so, we **reject $H_0$**
+-   If so, we **reject** $H_0$
 
--   Otherwise, we **fail to reject $H_0$**.
+-   Otherwise, we **fail to reject** $H_0$.
 
 ::: callout-note
 ## Never accept the null hypothesis
+
 We **never** accept the null hypothesis! We only *reject* of *fail to reject* it.
 :::
+
+## 
+
+```{r}
+ggplot(results) + geom_histogram(aes(n_heads), binwidth = 1)
+```
 
 ## Two outcomes {.smaller}
 
@@ -405,11 +534,181 @@ $\Rightarrow$ the sample is plausible under $H_0$; the observed data do not prov
 
 Now suppose that out of 100 flips, you observe **65 heads**.
 
-$\Rightarrow$ this result is unlikely under $H_0$; the observed data provide strong evidence against the null hypothesis; we reject the claim that the coin is fair
+$\Rightarrow$ this result is extremely unlikely under $H_0$; the observed data provide strong evidence against the null hypothesis; we reject the claim that the coin is fair.
 
--   The coin might be fair, but $65$ is extreme enough to make reject the claim that the coin is fair.
+-   The coin might be fair, but a fair coin could not have plausibly given $65$ heads out of $100$ flips.
+
+# A first glimpse of modern statistics for CI
+
+## Natural variability
+
+Due to the natural variability of the data, each sample is different.
+
+. . .
+
+In practice we only get to observe a single sample. But if we could observe other samples,
+
+-   they would all be a bit different
+-   our estimates (based on the samples) would also be different.
+
+## Sample-to-sample variability
+
+If the samples are very different
+
+-   we say that the sample-to-sample variability is large.
+-   we would not be very confident in our estimate
+
+If the samples are all similar
+
+-   we say that the sample-to-sample variability is small
+-   we would be confident that our estimate is close to the truth
+
+## From a single sample to bootstrap samples
+
+Problem: we only get to observe a single sample!
+
+. . .
+
+Solution: Use the sample to approximate the population and take repeated samples from the estimated population to simulate many samples.
+
+-   Equivalent to **sampling with repetition** from the sample.
+
+## 
+
+![](images/lec-8/bootstrap.png)
 
 
-# A first glimpse of modern statistics for HT
+Source: [IMS](https://www.openintro.org/book/ims/)
+
+## From bootstrap samples to CI
+
+Computing the sample statistic of each bootstrap sample provides its **sampling distribution**.
+
+To construct a 90% CI, we simply identify the 5th and 95th percentiles of the sampling distribution.
+
+. . .
+
+"We are 90% confident that the interval captures the true value of the population parameter".
+
+## Little variability $\Rightarrow$ narrow CI
+
+**Little variability** in the data 
+
+$\Rightarrow$ little sample-to-sample variability
+
+$\Rightarrow$ little variability between bootstrap samples
+
+$\Rightarrow$ sampling distribution of mean/proportion is concentrated 
+
+$\Rightarrow$ **CI is narrow**.
+
+## Much variability $\Rightarrow$ large CI
+
+Much variability in the data 
+
+$\Rightarrow$ much sample-to-sample variability 
+
+$\Rightarrow$ much variability between bootstrap samples 
+
+$\Rightarrow$ sampling distribution of mean/proportion is diffuse 
+
+$\Rightarrow$ **CI is large**.
+
+## `sample_bootstrap`
+
+```{r}
+sample_bootstrap <- function(data){
+  n       <- nrow(data)
+  indices <- sample(1:n, size = n, replace = TRUE)
+  sample_bootstrap <- data[indices,]
+  return(sample_bootstrap)
+}
+```
+
+## Computing bootstrap CI
+
+```{r}
+#| code-line-numbers: "2|4|5|"
+d <- ggplot2::mpg
+results <- tibble(mean = numeric(), sd = numeric())
+for(i in 1 : 1e3){
+  d_boot <- sample_bootstrap(d)
+  results <- results %>% 
+    add_row(mean = mean(d_boot$cty), sd = sd(d_boot$cty))
+}
+```
+
+## 
+
+```{r}
+ggplot(results) +
+  geom_histogram(aes(mean))
+```
+
+## 
+
+```{r}
+ggplot(results) +
+  geom_histogram(aes(sd))
+```
+
+## 
+
+```{r}
+# 90% bootstrap CI for the mean cty in the population
+quantile(results$mean, c(0.05, 0.95))
+# 90% bootstrap CI for the sd of cty in the population
+quantile(results$sd  , c(0.05, 0.95))
+```
 
 
+## 
+::: {.callout-tip icon="false"}
+## Group exercise - bootstrap CI
+Exercises [12.1](https://openintro-ims.netlify.app/foundations-bootstrapping.html#chp12-exercises), [12.3](https://openintro-ims.netlify.app/foundations-bootstrapping.html#chp12-exercises), [12.7](https://openintro-ims.netlify.app/foundations-bootstrapping.html#chp12-exercises)
+:::
+```{r, echo = F}
+countdown(minutes = 6)
+```
+
+## 
+::: {.callout-tip icon="false"}
+## Group exercise - bootstrap CI
+Re-use the code from the previous slide to compute a 90% bootstrap CI of the variance of `cty` in the population. 
+:::
+```{r, echo = F}
+countdown(minutes = 5)
+```
+
+
+# Recap
+
+## Recap {.smaller}
+
+::: incremental
+
+-   Statistical inference
+
+-   Five cases
+
+    -   single proportion
+
+    -   difference between two portions
+
+    -   single mean
+
+    -   difference between two means
+
+    -   regression parameters
+
+-   Hypothesis test
+
+-   Confidence interval
+
+-   A first glimpse of modern statistics
+
+    -   HT
+    
+    -   CI
+
+:::

@@ -1,0 +1,419 @@
+---
+title: "Logistic Regression"
+subtitle: "STA 101L - Summer I 2022"
+author: "Raphael Morsomme"
+footer:  "[https://rmorsomme.github.io/website/](https://rmorsomme.github.io/website/)"
+logo: "images/logo.jpg"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    code-fold: false
+    code-summary: "Show the code"
+    scrollable: true
+editor: visual
+execute:
+  freeze: auto
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup}
+#| include: false
+
+knitr::opts_chunk$set(
+  fig.width = 8,
+  fig.asp = 0.618,
+  fig.retina = 3,
+  dpi = 300,
+  out.width = "80%",
+  fig.align = "center"
+)
+
+# load packages
+library(tidyverse)   # for data wrangling and visualization
+library(tidymodels)  # for modeling
+library(countdown)
+library(openintro)
+library(kableExtra)
+library(janitor)
+
+# set default theme and larger font size for ggplot2
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))
+
+options(scipen = 100)
+```
+
+# Welcome
+
+## Announcements
+
+-   
+
+## Recap {.smaller}
+
+## Outline
+
+-   one proportion
+-   two proportions
+-   mathematical approach
+
+# One proportion
+
+## Setup
+
+(Unknown) **population parameter**: proportion $p$
+
+**Sample statistics**: sample proportion $\hat{p}$
+
+$H_0:p=p_0$ where $p_0$ is a number between $0$ and $1$
+
+$H_a:p\neq p_0$
+
+## Example
+
+What proportion of US adults support legalizing marijuana
+
+. . .
+
+Sample: 900 out of the 1500 participants in a survey say they do.
+
+. . .
+
+Question: What is the sample proportion $\hat{p}$?
+
+## HT via simulation
+
+$H_0:p=0.5$
+
+$H_a:p\neq 0.5$
+
+. . .
+
+-   Simulate many sample under $H_0$
+
+-   Determine if the observed data could have plausibly arisen under $H_0$
+
+## 
+
+```{r}
+results <-  tibble(p_hat = numeric())
+for(i in 1 : 1e3){
+  sim   <- rbernoulli(n = 1500, p = 0.5)        # simulate sample under H0
+  p_hat <- mean(sim)                            # compute the sample statistic p_hat
+  results <- results %>% add_row(p_hat = p_hat)
+}
+ggplot(results) + geom_histogram(aes(p_hat))
+```
+
+## Conclusion
+
+We see that $\hat{p}=0.6$ is clearly could not have happen under $H_0:p=0.5$.
+
+We therefore reject the null hypothesis that $p=0.5$.
+
+. . .
+
+If, on the other hand, the sample statistic $\hat{p}=0.51$, then it is plausible that $p=0.5$ and we do not reject $H_0$.
+
+## p-value
+
+What if we do not have a clear-cut case?
+
+-   e.g., $\hat{p}=0.525$
+
+. . .
+
+**p-value**: probability of observing a sample statistics at least as extreme as the observed one under the null hypothesis.
+
+-   the probability that $\hat{p} > 0.525$ or $\hat{p} < 0.475$ if $p=0.5$.
+
+## p-value in `R`
+
+```{r}
+results <- results %>%
+  mutate(is_more_extreme = !between(p_hat, 0.475, 0.525))
+results
+```
+
+```{r}
+summarize(results, p_value = mean(is_more_extreme))
+```
+
+## p-value in practice
+
+In practice, if a p-value is smaller than 0.05 we reject $H_0$
+
+-   less than 5% of the simulated sample were at least as extreme as the observed sample,
+
+-   it is highly unlikely that the observed sample could have arisen if $H_0$ were true.
+
+-   the results are **statistically significant**.
+
+. . .
+
+::: callout-note
+## Why 0.05
+
+To know why 0.05 is widely used, check out this short [video](https://www.openintro.org/book/stat/why05/).
+:::
+
+# CI via bootstrap
+
+Sample with repetition from the observed sample to construct many **bootstrap samples**.
+
+Bootstrap samples $\Rightarrow$ sampling distribution $\Rightarrow$ bootstrap CI
+
+## Bootstrap
+
+![](images/lec-9/bootstrap1.png)
+
+Source: [IMS](https://www.openintro.org/book/ims/)
+
+## Bootstrap in `R`
+
+```{r}
+sample_bootstrap <- function(data){
+  n       <- nrow(data)
+  indices <- sample(1:n, size = n, replace = TRUE)
+  sample_bootstrap <- data[indices,]
+  return(sample_bootstrap)
+}
+sample_observed <- tibble(support = c(rep(1, 900), rep(0, 1500 - 900)))
+sample_observed
+```
+
+```{r, cache=TRUE}
+results <- tibble(p_hat = numeric())
+set.seed(0)
+for(i in 1 : 1e3){
+  d_boot <- sample_bootstrap(sample_observed)
+  results <- results %>% add_row(p_hat = mean(d_boot$support))
+}
+quantile(results$p_hat, c(0.05 , 0.95 )) # 90% CI
+quantile(results$p_hat, c(0.025, 0.975)) # 95% CI
+```
+
+## 
+
+```{r}
+ggplot(results) + geom_histogram(aes(p_hat))
+```
+
+# Two proportions
+
+## Setup
+
+A **population** divided in two groups (group 1 and group 2)
+
+(Unknown) **population parameter**: difference in proportion $p_{diff}=p_1-p_2$
+
+**Sample statistics**: sample proportion $\hat{p}{diff}=\hat{p}_1-\hat{p}_2$
+
+$H_0:\hat{p}_{diff}=0$ (there is no difference between the two groups)
+
+$H_a:\hat{p}_{diff}\neq0$
+
+## Example -- sex discrimination
+
+Are individuals who identify as female discriminated against in promotion decisions made by their managers who identify as male? . . .
+
+```{r, echo=FALSE}
+sex_discrimination %>% 
+  count(decision, sex) %>% 
+  pivot_wider(names_from = decision, values_from = n) %>%
+  adorn_totals(where = c("col", "row")) %>% 
+  kbl(linesep = "", booktabs = TRUE, caption = "Summary results for the sex discrimination study.") %>%
+  kable_styling(bootstrap_options = c("striped", "condensed"), 
+                latex_options = c("striped", "hold_position"), full_width = FALSE) %>%
+  add_header_above(c(" " = 1, "decision" = 2, " " = 1)) %>%
+  column_spec(1:4, width = "7em")
+```
+
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercise - two proportions
+
+What are $\hat{p}_f$, $\hat{p}_m$ and $\hat{p}_{diff}$? Do you *intuitively feel* that there is the data provide convincing evidence of discrimination?
+:::
+
+```{r, echo = F}
+countdown(minutes = 3)
+```
+
+# HT via simulation
+
+$H_0:\hat{p}_{diff}=0$
+
+$H_a:\hat{p}_{diff}\neq 0$
+
+. . .
+
+-   Simulate many sample under $H_0$ (assuming that there is no discrimination)
+
+-   Determine if the observed data could have plausibly arisen under $H_0$
+
+## Simulating under $H_0$
+
+Under the null hypothesis, there is no discrimination; whether someone receives a promotion is independent of their sexual identification.
+
+. . .
+
+Goal: model the randomness that would occur if the null hypothesis was true.
+
+To accomplish that, we can randomly re-assign the $35$ promotions among the $45$ individuals, independently of their sexual identification.
+
+## 
+
+![](images/lec-9/randomization.png)
+Source: [IMS](https://www.openintro.org/book/ims/)
+
+## Simulation result
+
+```{r, echo=FALSE}
+sex_discrimination_rand_1 <- tibble(
+  sex   = c(rep("male", 24), rep("female", 24)),
+  decision = c(rep("promoted", 18), rep("not promoted", 6),
+               rep("promoted", 17), rep("not promoted", 7))
+) %>%
+  mutate(
+    sex   = fct_relevel(sex, "male", "female"),
+    decision = fct_relevel(decision, "promoted", "not promoted")
+  )
+  
+sex_discrimination_rand_1 %>% 
+  count(decision, sex) %>% 
+  pivot_wider(names_from = decision, values_from = n) %>%
+  adorn_totals(where = c("col", "row")) %>% 
+  kbl(linesep = "", booktabs = TRUE, caption = "Simulation results, where the difference in promotion rates between male and female is purely due to random chance.") %>%
+  kable_styling(bootstrap_options = c("striped", "condensed"), 
+                latex_options = c("striped", "hold_position"), full_width = FALSE) %>%
+  add_header_above(c(" " = 1, "decision" = 2, " " = 1)) %>%
+  column_spec(1:4, width = "7em")
+```
+
+## Simulating under `H_0` 
+
+```{r}
+d <- gender_discrimination %>% select(gender)
+promotions_ordered <- c(rep(1, 35), rep(0, 48 - 35)) # 35 promotions and 13 non-promotions
+promotions_sim <- sample(promotions_ordered, 48) # shuffle promotions
+d_sim <- d %>% mutate(response = promotions_sim)
+d_sim
+```
+
+
+## Function for computing the test statistic
+
+```{r}
+compute_p_diff <- function(data){
+  p_hat <- data %>%
+    group_by(gender) %>%
+    summarize(p_hat = mean(response))
+  p_diff_hat <- p_hat$p_hat[1] - p_hat$p_hat[2]
+  return(p_diff_hat)
+}
+compute_p_diff(d_sim)
+```
+
+## For-loop for simulating under `H_0`
+
+```{r, cache=TRUE}
+# Setup
+results <-  tibble(p_diff_hat = numeric())
+d <- gender_discrimination
+promotions <- c(rep(1, 35), rep(0, 48 - 35)) # 35 promotions and 13 non-promotions
+
+# Simulations
+set.seed(0)
+for(i in 1 : 1e3){
+  d_sim <- d %>% mutate(response = sample(promotions, 48)) # Simulate under H0
+  results <- results %>% add_row(p_diff_hat = compute_p_diff(d_sim))  # Compute test statistic
+}
+```
+
+## Sampling distribution
+
+```{r}
+p_diff_obs <- 21 / 24 - 14 / 24
+ggplot(results) + 
+  geom_histogram(aes(p_diff_hat)) +
+  geom_vline(xintercept = p_diff_obs, col = "maroon", size = 2)
+```
+
+## p-value
+
+
+**p-value**: the probability of observing a test statistic at least as extreme as the observed one under the null hypothesis.
+
+-   the probability that $\hat{p}_{diff} > $ `r p_diff_obs` or $\hat{p} < $ `r -p_diff_obs` if there is no discrimination.
+
+```{r}
+results %>%
+  mutate(is_more_extreme = p_diff_hat >= p_diff_obs | p_diff_hat <= -p_diff_obs) %>%
+  summarize(p_value = mean(is_more_extreme))
+```
+
+## significance level $\alpha = 0.05$
+
+Using the usually significance level $\alpha = 0.05$, we **fail to reject** the null hypothesis
+
+-   the data do not provide sufficient evidence to reject the null hypothesis,
+-   it is plausible to observe the sample collected in the study if there is no discrimination just by chance.
+
+::: callout-note
+## Statistician as messengers
+Statisticians are only messengers of the data; they only 
+
+
+# CI via bootstrap
+
+Same idea as before: sample with repetition from the observed sample to construct many **bootstrap samples**.
+
+Bootstrap samples $\Rightarrow$ sampling distribution $\Rightarrow$ bootstrap CI
+
+## Bootstrap
+
+![](images/lec-9/bootstrap2.png)
+
+Source: [IMS](https://www.openintro.org/book/ims/)
+
+## Bootstrap in `R`
+```{r}
+sample_observed_m <- tibble(response = c(rep(1, 21), rep(0, 24 - 21)), gender = "male"  )
+sample_observed_f <- tibble(response = c(rep(1, 14), rep(0, 24 - 14)), gender = "female")
+sample_observed_m
+sample_observed_f
+```
+
+##
+
+```{r}
+sample_bootstrap(sample_observed_m) # bootstrap sample
+sample_bootstrap(sample_observed_f) # bootstrap sample
+```
+
+
+```{r}
+results <- tibble(p_diff_hat = numeric())
+for(i in 1 : 1e3){
+  d_boot_m <- sample_bootstrap(sample_observed_m)
+  d_boot_f <- sample_bootstrap(sample_observed_f)
+  
+  p_diff_hat <- compute_p_diff(rbind(d_boot_m, d_boot_f))
+  
+  results <- results %>% add_row(p_diff_hat = p_diff_hat)
+}
+quantile(results$p_diff_hat, c(0.05 , 0.95 )) # 90% CI
+quantile(results$p_diff_hat, c(0.025, 0.975)) # 95% CI
+```
+
+## 
+
+```{r}
+ggplot(results) + geom_histogram(aes(p_diff_hat))
+```

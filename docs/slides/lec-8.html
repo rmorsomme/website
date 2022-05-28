@@ -400,31 +400,35 @@
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 <ul>
-<li></li>
+<li>Homework 5 due on Sunday</li>
 </ul>
 </section>
 <section id="recap" class="slide level2">
 <h2>Recap</h2>
+<ul>
+<li><p>Types of data</p></li>
+<li><p>Visualization and numerical summaries</p></li>
+<li><p>Regression models</p>
+<ul>
+<li><p>linear rm</p></li>
+<li><p>logistic rm</p></li>
+<li><p>model selection</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="types-of-data" class="slide level2">
+<h2>Types of data</h2>
+
+<img data-src="lec-8_files/figure-revealjs/variables-1.png" alt="Types of variables are broken down into numerical (which can be discrete or continuous) and categorical (which can be ordinal or nominal)." style="width:80.0%" class="r-stretch quarto-figure-center"><p class="caption">Breakdown of variables into their respective types.</p><p>Source: <a href="https://www.openintro.org/book/ims/">IMS</a></p>
 </section>
 <section id="outline" class="slide level2">
 <h2>Outline</h2>
 <ul>
-<li>Statistical inference</li>
-<li>Confidence intervals</li>
-<li>Hypothesis tests
-<ul>
-<li>Types of errors</li>
-</ul></li>
-<li>Five cases
-<ul>
-<li>single proportion</li>
-<li>difference between two portions</li>
-<li>single mean</li>
-<li>difference between two means</li>
-<li>regression parameters</li>
-</ul></li>
-<li>Hypothesis test</li>
-<li>Modern statistics</li>
+<li><p>Statistical inference</p></li>
+<li><p>Five cases</p></li>
+<li><p>Hypothesis test</p></li>
+<li><p>Confidence interval</p></li>
+<li><p>A first glimpse of modern statistics</p></li>
 </ul>
 </section></section>
 <section>
@@ -432,16 +436,18 @@
 <h1>Statistical inference</h1>
 
 </section>
-<section id="statistical-inference-1" class="slide level2">
-<h2>Statistical inference</h2>
-<p>We are want to learn about the (unknown) <strong>parameter</strong> of some <strong>population</strong> of interest.</p>
-<p>We dispose of a <strong>sample</strong></p>
+<section id="population-parameters" class="slide level2">
+<h2>Population parameters</h2>
+<p>We want to learn about some (unknown) <strong>parameter</strong> of some <strong>population</strong> of interest from a (small) <strong>sample</strong> of observations</p>
+<div class="fragment">
+<ul>
+<li>Examples of parameters: proportion of vegetarian among Duke students, average weight gained by Duke students during the Covid-19 pandemic, etc.</li>
+</ul>
+</div>
+<div class="fragment">
 <ul>
 <li>In the remainder of the course, we will always assume that we have a <em>random</em> sample</li>
 </ul>
-<div class="fragment">
-<p><strong>Inference</strong>: estimate the <strong>population parameter</strong> from the <strong>sample</strong>.</p>
-<p><strong>Inference</strong>: estimate the <strong>population parameter</strong> from the <strong>sample</strong> and rigorously quantify our certainty in the estimate.</p>
 </div>
 </section>
 <section id="section" class="slide level2">
@@ -458,25 +464,42 @@
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628f9822" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62924f71" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
 </section>
-<section id="estimating-a-proportion" class="slide level2">
-<h2>Estimating a proportion</h2>
-<p><strong>parameter of interest</strong>: proportion in the population</p>
-<p><strong>sample statistic</strong>: sample proportion</p>
-<p>It seems natural to use the sample proportion as an estimate for the population proportion.</p>
+<section id="statistical-inference-1" class="slide level2">
+<h2>Statistical inference</h2>
+<p><strong>Inference</strong>: to estimate the population parameter from the sample.</p>
+<p><strong>Statistical inference</strong>: to estimate the population parameter from the sample and rigorously quantify our <em>certainty</em> in the estimate.</p>
 </section>
-<section id="our-certainty-in-the-estimate-matters" class="slide level2">
-<h2>Our certainty in the estimate matters</h2>
-<p>A single point does not indicate how confident we are in our estimation.</p>
+<section id="statistic" class="slide level2">
+<h2>Statistic</h2>
+<p><strong>Statistic</strong>: any function of some data. E.g., average, median, iqr, maximum, etc</p>
+<p><strong>sample statistic</strong>: a statistic computed on the sample</p>
+<p><strong>summary statistic</strong>: a statistic used to summarize a sample</p>
+<p><strong>test statistic</strong>: statistic used for statistical inference</p>
+</section>
+<section id="estimating-a-parameter" class="slide level2">
+<h2>Estimating a parameter</h2>
+<p>To estimate a population parameter, we can simply</p>
 <ul>
-<li><p>If we have a <em>large</em> sample, then we can be pretty confident that our estimate will likely be close to the true value fo the parameter,</p></li>
+<li><p>collect data on a representative sample, and</p></li>
+<li><p>use the corresponding sample statistic as an estimate</p>
+<ul>
+<li>to estimate the median age of Duke students, simply compute the median of your sample.</li>
+</ul></li>
+</ul>
+</section>
+<section id="certainty-matters" class="slide level2">
+<h2>Certainty matters</h2>
+<p>A single point (the sample statistic) does not indicate how confident we are in our estimate.</p>
+<ul>
+<li><p>If we have a <em>large</em> sample, then we can be pretty confident that our estimates will be close to the true value of the parameter,</p></li>
 <li><p>if we have a <em>small</em> sample, then we know that our estimate may be far from the truth.</p></li>
-<li><p>e.g.&nbsp;basketball free throws, ratings on Yelp or Amazon</p></li>
+<li><p>e.g.&nbsp;Duke students, basketball free throws.</p></li>
 </ul>
 </section>
 <section id="statistical-inference-2" class="slide level2">
@@ -485,13 +508,11 @@
 <ul>
 <li><p>confidence intervals</p>
 <ul>
-<li><p>range of plausible values for the population parameter</p></li>
-<li><p>“we are 90% confident that the interval <span class="math inline">\((20\%, 30\%)\)</span> captures the true value of the population proportion”.</p></li>
+<li>range of plausible values for the population parameter</li>
 </ul></li>
 <li><p>hypothesis tests</p>
 <ul>
-<li><p>evaluate competing claims using data</p></li>
-<li><p>“we reject the claim that the population proportion is <span class="math inline">\(50\%\)</span>”.</p></li>
+<li>evaluate competing claims using data</li>
 </ul></li>
 </ul>
 </section></section>
@@ -503,92 +524,94 @@
 <section id="case-1-single-proportion" class="slide level2 smaller">
 <h2>Case 1 – Single proportion</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:55%;">
 <p>What is the proportion of vegetarian among Duke students?</p>
-<p>. . .</p>
-<p><strong>Population parameter</strong>: proportion of vegetarian among Duke students (<span class="math inline">\(p\)</span>)</p>
-<p><strong>sample statistics</strong>: proportion of vegetarian in the sample <span class="math inline">\(\hat{p}\)</span></p>
-</div><div class="column" style="width:50%;">
+<p><strong>Population parameter</strong>: proportion of vegetarian among Duke students <span class="math inline">\((p)\)</span></p>
+<p><strong>Sample statistic</strong>: proportion of vegetarian in the sample <span class="math inline">\((\hat{p})\)</span></p>
+</div><div class="column" style="width:40%;">
 <p><img data-src="images/lec-8/vegetarian.jpg"></p>
 </div>
 </div>
 <div class="fragment">
-<p><strong>Confidence interval</strong>: <span class="math inline">\((0.31, 0.43)\)</span></p>
+<p><strong>Confidence interval</strong>: a range a plausible values for the population parameter <span class="math inline">\(p\)</span></p>
 <ul>
-<li>we are 95% confident that the interval <span class="math inline">\((0.31, 0.43)\)</span> capture the proportion of vegetarian among Duke students.</li>
+<li><span class="math inline">\((0.31, 0.43)\)</span></li>
 </ul>
 </div>
 <div class="fragment">
 <p><strong>Hypothesis test</strong>: is the proportion of vegetarian among Duke students <span class="math inline">\(0.5\)</span>?</p>
 <ul>
-<li><p><span class="math inline">\(H_0:p=0.5, H_a:p\neq0.5\)</span></p></li>
-<li><p>The data collected provide strong evidence against <span class="math inline">\(H_0\)</span>, that is, against the hypothesis that half of Duke students are vegetarian. In other words, the data conflict so much with <span class="math inline">\(H_0\)</span>, that the null hypothesis is not plausible.</p></li>
+<li><span class="math inline">\(H_0:p=0.5, \qquad H_a:p\neq0.5\)</span></li>
 </ul>
 </div>
 </section>
 <section id="case-2-difference-between-two-proportions" class="slide level2 smaller">
 <h2>Case 2 – Difference between two proportions</h2>
-<p>Is the proportion of vegetarian the same among undergraduate Duke student and graduate Duke students?</p>
-<p><strong>Population parameter</strong>: difference between the proportion of vegetarian among undergraduate Duke students and graduate Duke students (<span class="math inline">\(p_{diff} = p_{undergrad}-p_{grad}\)</span>)</p>
-<p><strong>sample statistics</strong>: different in proportion of vegetarian in the sample <span class="math inline">\(\hat{p}_{diff} = \hat{p}_{undergrad} - \hat{p}_{grad}\)</span></p>
+<p>Is the proportion of vegetarian the same among Duke undergraduate and graduate students?</p>
+<p><strong>Population parameter</strong>: difference between the proportion of vegetarian among Duke undergraduate and graduate students <span class="math inline">\((p_{diff} = p_{undergrad}-p_{grad})\)</span></p>
+<p><strong>Sample statistic</strong>: difference in proportion of vegetarian in the sample <span class="math inline">\((\hat{p}_{diff} = \hat{p}_{undergrad} - \hat{p}_{grad})\)</span></p>
 <div class="fragment">
-<p><strong>Confidence interval</strong>: <span class="math inline">\((-0.05, 0.08)\)</span></p>
-<ul>
-<li>we are 95% confident that the interval <span class="math inline">\((-0.05, 0.08)\)</span> capture the true value of <span class="math inline">\(p_{diff}\)</span>.</li>
-</ul>
+<p><strong>Confidence interval</strong> for <span class="math inline">\(p_{diff}\)</span>: <span class="math inline">\((-0.05, 0.08)\)</span></p>
 </div>
 <div class="fragment">
-<p><strong>Hypothesis test</strong>: is the proportion of vegetarian the same among undergraduate and graduate Duke students?</p>
+<p><strong>Hypothesis test</strong>: is the proportion of vegetarian the same among Duke undergraduate and graduate students?</p>
 <ul>
-<li><p><span class="math inline">\(H_0:p_{diff}=0, H_a:p_{diff}\neq0\)</span> (no difference)</p></li>
-<li><p>The data collected do not provide strong evidence against <span class="math inline">\(H_0\)</span>, that is, against the hypothesis that <span class="math inline">\(p_{diff}=0\)</span>.</p></li>
+<li><span class="math inline">\(H_0:p_{diff}=0, \qquad H_a:p_{diff}\neq0\)</span></li>
 </ul>
 </div>
 </section>
-<section id="case-3-single-mean" class="slide level2">
+<section id="case-3-single-mean" class="slide level2 smaller">
 <h2>Case 3 – Single mean</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <p>How much time do Duke students sleep on average per night?</p>
-<p>. . .</p>
-<p><strong>Population parameter</strong>: mean amount of time that Duke students sleep per night (<span class="math inline">\(\mu\)</span>)</p>
-<p><strong>sample statistics</strong>: average amount of time that Duke students in the sample sleep per night (<span class="math inline">\(\bar{x}\)</span>)</p>
-</div><div class="column" style="width:50%;">
+<p><strong>Population parameter</strong>: mean amount of time that Duke students sleep per night <span class="math inline">\((\mu)\)</span></p>
+<p><strong>Sample statistic</strong>: average amount of time in the sample <span class="math inline">\((\bar{x})\)</span></p>
+</div><div class="column" style="width:40%;">
 <p><img data-src="images/lec-8/sleep.jpg"></p>
 </div>
 </div>
 <div class="fragment">
-<p><strong>Confidence interval</strong>: <span class="math inline">\((5.5, 7.5)\)</span></p>
-<ul>
-<li>we are 95% confident that the interval <span class="math inline">\((5.5, 7.5)\)</span> capture <span class="math inline">\(\mu\)</span>.</li>
-</ul>
+<p><strong>Confidence interval</strong> for <span class="math inline">\(\mu\)</span>: <span class="math inline">\((5.5, 7.5)\)</span></p>
 </div>
 <div class="fragment">
-<p><strong>Hypothesis test</strong>: is the proportion of vegetarian among Duke students <span class="math inline">\(0.5\)</span>?</p>
+<p><strong>Hypothesis test</strong>: Do Duke students sleep on average <span class="math inline">\(8\)</span> hours per night?</p>
 <ul>
-<li><p><span class="math inline">\(H_0:\mu=8, H_a:\mu\neq8\)</span></p></li>
-<li><p>The data collected provide strong evidence against <span class="math inline">\(H_0\)</span>, that is, against the hypothesis that Duke students sleep on average 8 hours per night.</p></li>
+<li><span class="math inline">\(H_0:\mu=8, H_a:\mu\neq8\)</span></li>
 </ul>
 </div>
 </section>
-<section id="case-4-difference-between-two-proportions" class="slide level2">
+<section id="case-4-difference-between-two-proportions" class="slide level2 smaller">
 <h2>Case 4 – Difference between two proportions</h2>
-<p>Do undergraduate Duke students sleep the same mount of time per night as graduate Duke students do?</p>
+<p>Do Duke undergraduate and graduate students sleep on average the same amount of time per night?</p>
 <div class="fragment">
-<p><strong>Population parameter</strong>: difference between the mean amount of time that Duke undergraduate and graduate students sleep per night (<span class="math inline">\(\mu_{diff} = \mu_{undergrad}-\mu_{grad}\)</span>)</p>
-<p><strong>sample statistics</strong>: difference between the mean amount of time that Duke undergraduate and graduate students in the sample sleep per night (<span class="math inline">\(\bar{x}_{diff} = \bar{x}_{undergrad} - \bar{x}_{grad}\)</span>)</p>
+<p><strong>Population parameter</strong>: difference between the mean amount of time that Duke undergraduate and graduate students sleep per night <span class="math inline">\((\mu_{diff} = \mu_{undergrad}-\mu_{grad})\)</span></p>
+<p><strong>Sample statistic</strong>: difference between the two sample averages <span class="math inline">\((\bar{x}_{diff} = \bar{x}_{undergrad} - \bar{x}_{grad})\)</span></p>
 </div>
 <div class="fragment">
-<p><strong>Confidence interval</strong>: <span class="math inline">\((-0.5, 1)\)</span></p>
+<p><strong>Confidence interval</strong> for <span class="math inline">\(\mu_{diff}\)</span> : <span class="math inline">\((-0.5, 1)\)</span></p>
+</div>
+<div class="fragment">
+<p><strong>Hypothesis test</strong>: Do Duke undergraduate and graduate students sleep on average the same amount of time per night?</p>
 <ul>
-<li>we are 95% confident that the interval <span class="math inline">\((-0.5, 1)\)</span> capture <span class="math inline">\(\mu_{diff}\)</span>.</li>
+<li><span class="math inline">\(H_0:\mu_{diff}=0, H_a:\mu_{diff}\neq0\)</span></li>
 </ul>
 </div>
+</section>
+<section id="case-5-linear-regression" class="slide level2 smaller">
+<h2>Case 5 – Linear regression</h2>
+<p>What is the relation between fuel consumption in the city and on the highway?</p>
 <div class="fragment">
-<p><strong>Hypothesis test</strong>: is the proportion of vegetarian among Duke students <span class="math inline">\(0.5\)</span>?</p>
+<p><strong>Population parameter</strong>: the coefficient <span class="math inline">\(\beta_1\)</span> is the equation <span class="math inline">\(\text{hwy} \approx \beta_0 + \beta_1 \text{cty}\)</span>.</p>
+<p><strong>Sample statistic</strong>: the least-square estimate <span class="math inline">\(\hat{\beta}_1\)</span>.</p>
+</div>
+<div class="fragment">
+<p><strong>Confidence interval</strong> for <span class="math inline">\(\beta_1\)</span>: <span class="math inline">\((1.05, 1.2)\)</span></p>
+</div>
+<div class="fragment">
+<p><strong>Hypothesis test</strong>: are the variables <span class="math inline">\(\text{cty}\)</span> and <span class="math inline">\(\text{hwy}\)</span> independent?</p>
 <ul>
-<li><p><span class="math inline">\(H_0:\mu_{diff}=0, H_a:\mu_{diff}\neq0\)</span></p></li>
-<li><p>The data collected do not provide strong evidence against <span class="math inline">\(H_0\)</span>, that is, against the hypothesis that undergraduate and graduate Duke students sleep on average the amount of time per night.</p></li>
+<li><span class="math inline">\(H_0:\beta_1=0, H_a:\beta_1\neq0\)</span></li>
 </ul>
 </div>
 </section></section>
@@ -599,17 +622,52 @@
 </section>
 <section id="the-null-hypothesis-and-the-alternative-hypothesis" class="slide level2">
 <h2>The null hypothesis and the alternative hypothesis</h2>
+<p>A HT considers two competing hypotheses:</p>
+<ul>
+<li>the <strong>null hypothesis</strong> <span class="math inline">\(H_0\)</span>
+<ul>
+<li>“nothing is going on”: there is no effect, no difference</li>
+</ul></li>
+<li>the <strong>alternative hypothesis</strong> <span class="math inline">\(H_a\)</span>
+<ul>
+<li>“something is going on”: there is an effect, there is a difference</li>
+</ul></li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
 <p>Consider the 2nd case (difference in proportion of vegetarians between undergrad and grad students).</p>
 <ul>
-<li>If <span class="math inline">\(H_0\)</span> is true (the two populations have the same proportion)
+<li><p><span class="math inline">\(H_0:\)</span> the proportion of vegetarian is the same among undergraduate and graduate students (“nothing is going on”) <span class="math display">\[
+H_0: p_{diff}=p_{undegrad}-p_{grad}=0
+\]</span> <span class="math display">\[
+H_0: p_{undegrad}=p_{grad}
+\]</span></p></li>
+<li><p><span class="math inline">\(H_a:\)</span> the proportion of vegetarians among undergraduate and graduate students is not the same (“something is going on”). <span class="math display">\[
+H_0: p_{diff}=p_{undegrad}-p_{grad}\neq0
+\]</span> <span class="math display">\[
+H_0: p_{undegrad}\neq p_{grad}
+\]</span></p></li>
+</ul>
+</section>
+<section id="more-examples" class="slide level2 smaller">
+<h2>More examples</h2>
 <ul>
-<li>we’ll probably still observe a small difference in the sample</li>
+<li>Are the Covid-19 vaccines equally effective?
+<ul>
+<li><span class="math inline">\(H_0:\)</span> all the vaccines are equally effective; <span class="math inline">\(H_a:\)</span> the vaccines are not all equally effective</li>
 </ul></li>
-<li>If <span class="math inline">\(H_a\)</span> is true,
+<li>Does caffeine consumption affect student participation in class
 <ul>
-<li>we’ll probably observed a larger difference in the sample,</li>
-<li>but we might also observe no difference at all,</li>
-<li>or observe a different in the wrong direction!</li>
+<li><span class="math inline">\(H_0:\)</span> caffeine consumption does not affect student participation; <span class="math inline">\(H_a:\)</span> caffeine consumption affects student participation</li>
+</ul></li>
+<li>Are men and women paid equally in the workplace?
+<ul>
+<li><span class="math inline">\(H_0:\)</span> men and women are paid equally; <span class="math inline">\(H_a:\)</span> men and women are not paid equally</li>
+</ul></li>
+<li>Have Duke students gained weight since the start of the Covid-19 pandemic?
+<ul>
+<li><span class="math inline">\(H_0:\)</span> Duke student have not gained weight; <span class="math inline">\(H_a:\)</span> Duke students have gained weight.</li>
 </ul></li>
 </ul>
 </section>
@@ -627,7 +685,7 @@
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628f9524" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62925282" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -635,17 +693,32 @@
 </section>
 <section id="natural-variability" class="slide level2">
 <h2>Natural variability</h2>
+<p>Go back to the 2nd case and suppose that <span class="math inline">\(H_0\)</span> is true.</p>
+<ul>
+<li>We’ll probably still observe a small difference in the sample.</li>
+</ul>
+<div class="fragment">
+<p>Now suppose that <span class="math inline">\(H_a\)</span> is true.</p>
+<ul>
+<li>We’ll probably observed a larger difference in the sample,</li>
+<li>but we might also observe no difference at all,</li>
+<li>or observe a different in the wrong direction!</li>
+</ul>
+</div>
+</section>
+<section id="natural-variability-and-hypothesis-tests" class="slide level2">
+<h2>Natural variability and hypothesis tests</h2>
 <div class="callout callout-warning callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Natural variability and hypothesis tests</strong></p>
+<p><strong>We’ll always observe a difference</strong></p>
 </div>
 <div class="callout-content">
-<p>Observing a difference in the sample is not sufficient to reject <span class="math inline">\(H_0\)</span>. There will always be some natural variability inherent to the data.</p>
-<p>Determining whether the observed difference is due to natural variation or provides convincing evidence of a true difference between the two groups is at the heart of hypothesis tests.</p>
+<p>Observing a difference in the sample is not sufficient to reject <span class="math inline">\(H_0\)</span>. When we collect a sample, there will always be some natural variability inherent to the data.</p>
+<p>Determining whether the observed difference is due to natural variation or provides <strong>convincing evidence</strong> of a true difference between the two groups is at the heart of hypothesis tests.</p>
 </div>
 </div>
 </div>
@@ -658,11 +731,11 @@
 <p><strong>Group exercise - convincing evidence</strong></p>
 </div>
 <div class="callout-content">
-<p>Suppose we have sample of size with the same number of undergrad and grad students and <span class="math inline">\(\hat{p}_{diff} = \hat{p}_{undergrad} - \hat{p}_{grad} = 0.6 - 0.4 = 0.2\)</span>. For what sample sizes <span class="math inline">\(n\)</span> do you <em>intuitively feel</em> that the observed difference provides <strong>convincing evidence</strong> that the two populations are different?</p>
+<p>Suppose we have a sample with the same number of undergrad and grad students and <span class="math inline">\(\hat{p}_{diff} = \hat{p}_{undergrad} - \hat{p}_{grad} = 0.6 - 0.4 = 0.2\)</span>. For what sample sizes <span class="math inline">\(n\)</span> do you <em>intuitively feel</em> that the observed difference provides <strong>convincing evidence</strong> that the two groups are different?</p>
 <ul>
 <li><span class="math inline">\(n=10\)</span> (5 undergrad and 5 grad students)</li>
-<li><span class="math inline">\(n=20\)</span></li>
-<li><span class="math inline">\(n=50\)</span></li>
+<li><span class="math inline">\(n=20\)</span> (10 undergrad and 10 grad students)</li>
+<li><span class="math inline">\(n=50\)</span> (…)</li>
 <li><span class="math inline">\(n=100\)</span></li>
 <li><span class="math inline">\(n=250\)</span></li>
 <li><span class="math inline">\(n=500\)</span></li>
@@ -673,7 +746,7 @@
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628f950e" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6292502f" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -687,10 +760,18 @@
 <section id="confidence-interval-1" class="slide level2">
 <h2>Confidence interval</h2>
 <p><strong>CI</strong>: range of plausible values for the population parameter.</p>
-<p>There always is natural variability in the data</p>
+<p>There always is natural variability in the data.</p>
 <ul>
-<li><p>If we draw a second sample from the population, the proportion in the two sample will probably differ</p></li>
-<li><p>there is thus no reason to believe that the proportion in the first sanoke is exactly equal to the population proportion</p></li>
+<li><p>If we draw a second sample from the population, the two sample statistic will probably differ.</p></li>
+<li><p>There is thus no reason to believe that the sample statistic in the first sample is exactly equal to the population parameter.</p></li>
+</ul>
+</section>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+<ul>
+<li><p>What is the approval rate of the US president?</p></li>
+<li><p>What proportion of Duke students is vegetarian?</p></li>
+<li><p>How much weight have Duke students gained since the start of the Covid-19 pandemic?</p></li>
 </ul>
 </section></section>
 <section>
@@ -700,12 +781,18 @@
 </section>
 <section id="classical-and-modern-approaches" class="slide level2">
 <h2>Classical and modern approaches</h2>
-<p>There will be two approaches for each of the CI and HT for each of the five cases (<span class="math inline">\(2*2*5=20\)</span> methods)</p>
-<p>Luckily, they are all very similar, and most require at most 3 lines of code in <code>R</code> (and most s single line!).</p>
-<div class="fragment">
-<p><strong>Classical approaches</strong> are based on (simple) mathematical formula – pen and paper.</p>
-<p><strong>Modern approaches</strong> rely on (simple) computer simulations – <code>R</code></p>
-</div>
+<p>We will learn two approaches to statistical inference</p>
+<ul>
+<li><strong>classical</strong>
+<ul>
+<li>pen and paper, pre-computer era</li>
+<li>based on simple mathematical formula</li>
+</ul></li>
+<li>modern (computer-intensive)
+<ul>
+<li>we model the variability in the data by repeating a procedure many times (for-loop)</li>
+</ul></li>
+</ul>
 </section></section>
 <section>
 <section id="a-first-glimpse-of-modern-statistics-for-ht" class="title-slide slide level1 center">
@@ -714,15 +801,31 @@
 </section>
 <section id="section-3" class="slide level2">
 <h2></h2>
-<p>::: {.callout-tip icon=“false”} ## Group exercise - simulation Suppose you flip a coin 100 times and count the number of heads. Earlier in the class, you were asked to identify what number of heads would make you doubt that the coin is fair.</p>
-<p>We will run an experiment together to see if you gut feeling was feel was correct.</p>
-<p>Use the following commands to simulate 100 flips of a coin and count the number of heads. Repeat the experiment 20 times, keeping track of the number of heads.</p>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Individual exercise – simulation</strong></p>
+</div>
+<div class="callout-content">
+<p>Suppose you flip a coin 100 times and count the number of heads. In the first lecture, you were asked to identify what number of heads would make you doubt that the coin is fair.</p>
+<p>We will run an experiment together to see if your gut feeling was correct.</p>
+<p>Use the following commands to simulate 100 flips of a coin and count the number of heads. Repeat the experiment 5 times, keeping track of the number of heads.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
-<span id="cb1-2"><a href="#cb1-2"></a>flips <span class="ot">&lt;-</span> <span class="fu">rbernoulli</span>(<span class="dv">100</span>, <span class="at">p =</span> <span class="fl">0.5</span>) <span class="co"># 100 flips -- TRUE is heads and FALSE is tails</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>) <span class="co"># change the seed for each run</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>flips <span class="ot">&lt;-</span> <span class="fu">rbernoulli</span>(<span class="dv">100</span>, <span class="at">p =</span> <span class="fl">0.5</span>) <span class="co"># 100 flips - TRUE is heads and FALSE is tails</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="fu">sum</span>(flips) <span class="co"># number of heads (number of TRUEs)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>[1] 48</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_629251eb" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
 </div>
 </div>
 </section>
@@ -731,20 +834,25 @@
 <p>The following for-loop does the previous experiment more efficiently!</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
-<span id="cb3-2"><a href="#cb3-2"></a>results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">n_heads =</span> <span class="fu">numeric</span>())</span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">3e3</span>){ <span class="co"># repeat the experiment 3,000 times</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">n_heads =</span> <span class="fu">numeric</span>()) <span class="co"># empty data frame to collect the results</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">1e3</span>){ <span class="co"># repeat the experiment 1,000 times</span></span>
 <span id="cb3-4"><a href="#cb3-4"></a>  flips   <span class="ot">&lt;-</span> <span class="fu">rbernoulli</span>(<span class="dv">100</span>, <span class="at">p =</span> <span class="fl">0.5</span>)</span>
 <span id="cb3-5"><a href="#cb3-5"></a>  n_heads <span class="ot">&lt;-</span> <span class="fu">sum</span>(flips)</span>
 <span id="cb3-6"><a href="#cb3-6"></a>  results <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span> <span class="fu">add_row</span>(n_heads)</span>
-<span id="cb3-7"><a href="#cb3-7"></a>}</span>
-<span id="cb3-8"><a href="#cb3-8"></a>results <span class="sc">%&gt;%</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(n_heads), <span class="at">binwidth =</span> <span class="dv">1</span>) <span class="co"># set the binwidth to 1 to ensure that each bin corresponds to exactly one integer.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-7"><a href="#cb3-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<p>Here is the distribution of the sample statistic <span class="math inline">\(\hat{p}\)</span> when <span class="math inline">\(H_0\)</span> is true.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">ggplot</span>(results) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(n_heads), <span class="at">binwidth =</span> <span class="dv">1</span>) <span class="co"># set the binwidth to 1 to ensure that each bin corresponds to exactly one integer.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="lec-8_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
-<section id="hypothesis-test" class="slide level2">
-<h2>Hypothesis test</h2>
+<img data-src="lec-8_files/figure-revealjs/unnamed-chunk-7-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
+<section id="population-and-parameter" class="slide level2">
+<h2>Population and parameter</h2>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -754,29 +862,30 @@
 <p><strong>Population and parameter first</strong></p>
 </div>
 <div class="callout-content">
-<p>Always start with defining the population and the parameter of interest.</p>
+<p>Always start by defining the population and the parameter of interest.</p>
 <p><strong>Population</strong>: flips of the coin</p>
 <p><strong>Parameter</strong>: probability that a flip is head</p>
 </div>
 </div>
 </div>
-<div class="fragment">
+</section>
+<section id="null-and-alternative-hypotheses" class="slide level2">
+<h2>Null and alternative hypotheses</h2>
 <ul>
 <li><p><span class="math inline">\(H_0:p=0.5\)</span> (the coin is fair)</p></li>
 <li><p><span class="math inline">\(H_0:p\neq0.5\)</span> (the coin is not fair)</p></li>
 </ul>
-</div>
 </section>
-<section id="like-a-court-in-the-justice-system" class="slide level2">
-<h2>Like a court in the justice system</h2>
+<section id="like-jurors-in-the-justice-system" class="slide level2 smaller">
+<h2>Like jurors in the justice system</h2>
 <ul>
 <li><p><span class="math inline">\(H_0:\)</span> innocent (the coin is fair)</p></li>
 <li><p><span class="math inline">\(H_0:\)</span> guilty (the coin is not fair)</p></li>
 </ul>
 <p>Question: do the facts (data sample) provide sufficient evidence to reject the claim that the defendant is innocent (that the coin is fair)?</p>
 <ul>
-<li><p>If so, we <strong>reject <span class="math inline">\(H_0\)</span></strong></p></li>
-<li><p>Otherwise, we <strong>fail to reject <span class="math inline">\(H_0\)</span></strong>.</p></li>
+<li><p>If so, we <strong>reject</strong> <span class="math inline">\(H_0\)</span></p></li>
+<li><p>Otherwise, we <strong>fail to reject</strong> <span class="math inline">\(H_0\)</span>.</p></li>
 </ul>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
@@ -792,6 +901,13 @@
 </div>
 </div>
 </section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">ggplot</span>(results) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(n_heads), <span class="at">binwidth =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lec-8_files/figure-revealjs/unnamed-chunk-8-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
 <section id="two-outcomes" class="slide level2 smaller">
 <h2>Two outcomes</h2>
 <p>Suppose you observe the following sample: out of 100 flips, you get <strong>55 heads</strong></p>
@@ -801,20 +917,213 @@
 </ul>
 <div class="fragment">
 <p>Now suppose that out of 100 flips, you observe <strong>65 heads</strong>.</p>
-<p><span class="math inline">\(\Rightarrow\)</span> this result is unlikely under <span class="math inline">\(H_0\)</span>; the observed data provide strong evidence against the null hypothesis; we reject the claim that the coin is fair</p>
+<p><span class="math inline">\(\Rightarrow\)</span> this result is extremely unlikely under <span class="math inline">\(H_0\)</span>; the observed data provide strong evidence against the null hypothesis; we reject the claim that the coin is fair.</p>
 <ul>
-<li>The coin might be fair, but <span class="math inline">\(65\)</span> is extreme enough to make reject the claim that the coin is fair.</li>
+<li>The coin might be fair, but a fair coin could not have plausibly given <span class="math inline">\(65\)</span> heads out of <span class="math inline">\(100\)</span> flips.</li>
 </ul>
 </div>
 </section></section>
-<section id="a-first-glimpse-of-modern-statistics-for-ht-1" class="title-slide slide level1 center">
-<h1>A first glimpse of modern statistics for HT</h1>
+<section>
+<section id="a-first-glimpse-of-modern-statistics-for-ci" class="title-slide slide level1 center">
+<h1>A first glimpse of modern statistics for CI</h1>
+
+</section>
+<section id="natural-variability-1" class="slide level2">
+<h2>Natural variability</h2>
+<p>Due to the natural variability of the data, each sample is different.</p>
+<div class="fragment">
+<p>In practice we only get to observe a single sample. But if we could observe other samples,</p>
+<ul>
+<li>they would all be a bit different</li>
+<li>our estimates (based on the samples) would also be different.</li>
+</ul>
+</div>
+</section>
+<section id="sample-to-sample-variability" class="slide level2">
+<h2>Sample-to-sample variability</h2>
+<p>If the samples are very different</p>
+<ul>
+<li>we say that the sample-to-sample variability is large.</li>
+<li>we would not be very confident in our estimate</li>
+</ul>
+<p>If the samples are all similar</p>
+<ul>
+<li>we say that the sample-to-sample variability is small</li>
+<li>we would be confident that our estimate is close to the truth</li>
+</ul>
+</section>
+<section id="from-a-single-sample-to-bootstrap-samples" class="slide level2">
+<h2>From a single sample to bootstrap samples</h2>
+<p>Problem: we only get to observe a single sample!</p>
+<div class="fragment">
+<p>Solution: Use the sample to approximate the population and take repeated samples from the estimated population to simulate many samples.</p>
+<ul>
+<li>Equivalent to <strong>sampling with repetition</strong> from the sample.</li>
+</ul>
+</div>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+
+<img data-src="images/lec-8/bootstrap.png" class="r-stretch"><p>Source: <a href="https://www.openintro.org/book/ims/">IMS</a></p>
+</section>
+<section id="from-bootstrap-samples-to-ci" class="slide level2">
+<h2>From bootstrap samples to CI</h2>
+<p>Computing the sample statistic of each bootstrap sample provides its <strong>sampling distribution</strong>.</p>
+<p>To construct a 90% CI, we simply identify the 5th and 95th percentiles of the sampling distribution.</p>
+<div class="fragment">
+<p>“We are 90% confident that the interval captures the true value of the population parameter”.</p>
+</div>
+</section>
+<section id="little-variability-rightarrow-narrow-ci" class="slide level2">
+<h2>Little variability <span class="math inline">\(\Rightarrow\)</span> narrow CI</h2>
+<p><strong>Little variability</strong> in the data</p>
+<p><span class="math inline">\(\Rightarrow\)</span> little sample-to-sample variability</p>
+<p><span class="math inline">\(\Rightarrow\)</span> little variability between bootstrap samples</p>
+<p><span class="math inline">\(\Rightarrow\)</span> sampling distribution of mean/proportion is concentrated</p>
+<p><span class="math inline">\(\Rightarrow\)</span> <strong>CI is narrow</strong>.</p>
+</section>
+<section id="much-variability-rightarrow-large-ci" class="slide level2">
+<h2>Much variability <span class="math inline">\(\Rightarrow\)</span> large CI</h2>
+<p>Much variability in the data</p>
+<p><span class="math inline">\(\Rightarrow\)</span> much sample-to-sample variability</p>
+<p><span class="math inline">\(\Rightarrow\)</span> much variability between bootstrap samples</p>
+<p><span class="math inline">\(\Rightarrow\)</span> sampling distribution of mean/proportion is diffuse</p>
+<p><span class="math inline">\(\Rightarrow\)</span> <strong>CI is large</strong>.</p>
+</section>
+<section id="sample_bootstrap" class="slide level2">
+<h2><code>sample_bootstrap</code></h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>sample_bootstrap <span class="ot">&lt;-</span> <span class="cf">function</span>(data){</span>
+<span id="cb6-2"><a href="#cb6-2"></a>  n       <span class="ot">&lt;-</span> <span class="fu">nrow</span>(data)</span>
+<span id="cb6-3"><a href="#cb6-3"></a>  indices <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>n, <span class="at">size =</span> n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-4"><a href="#cb6-4"></a>  sample_bootstrap <span class="ot">&lt;-</span> data[indices,]</span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">return</span>(sample_bootstrap)</span>
+<span id="cb6-6"><a href="#cb6-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="computing-bootstrap-ci" class="slide level2">
+<h2>Computing bootstrap CI</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb7" data-code-line-numbers="2|4|5|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>d <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>mpg</span>
+<span id="cb7-2"><a href="#cb7-2"></a>results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">mean =</span> <span class="fu">numeric</span>(), <span class="at">sd =</span> <span class="fu">numeric</span>())</span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">1e3</span>){</span>
+<span id="cb7-4"><a href="#cb7-4"></a>  d_boot <span class="ot">&lt;-</span> <span class="fu">sample_bootstrap</span>(d)</span>
+<span id="cb7-5"><a href="#cb7-5"></a>  results <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span> </span>
+<span id="cb7-6"><a href="#cb7-6"></a>    <span class="fu">add_row</span>(<span class="at">mean =</span> <span class="fu">mean</span>(d_boot<span class="sc">$</span>cty), <span class="at">sd =</span> <span class="fu">sd</span>(d_boot<span class="sc">$</span>cty))</span>
+<span id="cb7-7"><a href="#cb7-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>(results) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(mean))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lec-8_files/figure-revealjs/unnamed-chunk-11-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">ggplot</span>(results) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(sd))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lec-8_files/figure-revealjs/unnamed-chunk-12-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># 90% bootstrap CI for the mean cty in the population</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">quantile</span>(results<span class="sc">$</span>mean, <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>      5%      95% 
+16.41880 17.32051 </code></pre>
+</div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># 90% bootstrap CI for the sd of cty in the population</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">quantile</span>(results<span class="sc">$</span>sd  , <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>      5%      95% 
+3.839925 4.673212 </code></pre>
+</div>
+</div>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Group exercise - bootstrap CI</strong></p>
+</div>
+<div class="callout-content">
+<p>Exercises <a href="https://openintro-ims.netlify.app/foundations-bootstrapping.html#chp12-exercises">12.1</a>, <a href="https://openintro-ims.netlify.app/foundations-bootstrapping.html#chp12-exercises">12.3</a>, <a href="https://openintro-ims.netlify.app/foundations-bootstrapping.html#chp12-exercises">12.7</a></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_62925000" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">06</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Group exercise - bootstrap CI</strong></p>
+</div>
+<div class="callout-content">
+<p>Re-use the code from the previous slide to compute the 90% bootstrap CI of the variance of <code>cty</code> in the population.</p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_629252e0" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="recap-1" class="title-slide slide level1 center">
+<h1>Recap</h1>
+
+</section>
+<section id="recap-2" class="slide level2 smaller">
+<h2>Recap</h2>
+<div>
+<ul>
+<li class="fragment"><p>Statistical inference</p>
+<ul>
+<li class="fragment"><p>Confidence intervals</p></li>
+<li class="fragment"><p>Hypothesis tests</p></li>
+</ul></li>
+<li class="fragment"><p>Five cases</p>
+<ul>
+<li class="fragment"><p>single proportion</p></li>
+<li class="fragment"><p>difference between two portions</p></li>
+<li class="fragment"><p>single mean</p></li>
+<li class="fragment"><p>difference between two means</p></li>
+<li class="fragment"><p>regression parameters</p></li>
+</ul></li>
+<li class="fragment"><p>Hypothesis test</p></li>
+<li class="fragment"><p>Confidence interval</p></li>
+<li class="fragment"><p>A first glimpse of modern statistics</p>
+<ul>
+<li class="fragment"><p>HT</p></li>
+<li class="fragment"><p>CI</p></li>
+</ul></li>
+</ul>
+</div>
 
 
 <img src="images/logo.jpg" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://rmorsomme.github.io/website/">https://rmorsomme.github.io/website/</a></p>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
