@@ -333,7 +333,7 @@
     "href": "index.html",
     "title": "STA 101L: Data Analysis and Statistical Inference",
     "section": "",
-    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\nDue: Homework 2\n\n\n💻\n✍️\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n💻\n\n\n\n\n\nSun, May 22\nDue: Homework 3\n\n\n\n✍️\n\n\n\n2\nMon, May 23\nModel selection I\n8.3\n🖥️\n\n\n\n\n\n\nTue, May 24\nModel selection II\n8.4; 25.3\n🖥️\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n💻\n\n\n\n\n\nThu, May 26\nLogistic regression\nWork on project\nDue: Homework 4\n9.1-9.3\n🖥️\n\n✍️\n📂\n\n\n\nFri, May 27\nLab 5 - work on prediction project [PP]\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP presentations\nPrinciples of inference\n11.0; 11.3; 12.0; 12.3; 13.1-13.3\n\n\n\nPP model (9:00am)\nPP presentation\n\n\n\nWed, June 1\nLab 6 - Lecture on inference for proportions I\nDue: PP report\n16.1-16.2\n\n\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.3\n\n\n\n\n\n\n\nFri, June 3\nLab 7 - Inference for proportions\n\n\n💻\n\n\n\n\n\nSun, June 5\nDue: homework 5\n\n\n\n\n\n\n\n4\nMon, June 6\nInference for means I\n19.1-19.2\n\n\n\n\n\n\n\nTue, June 7\nInference for means II\n20.1-20.4; 21.1-21.3\n\n\n\n\n\n\n\nWed, June 8\nLab 8 - Inference for means\n\n\n\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.6; 25.1; 26.1-26.2\n\n\n\n\n\n\n\nFri, June 10\nLab 9 - inference for regression\n\n\n\n\n\n\n\n5\nMon, June 13\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n\n\n\n\n\n\n\nTue, June 14\nWork on inference project (IP)\n\n\n\n\n\n\n\n\nWed, June 15\nLab 10 - work on IP\n\n\n\n\n\n\n\n\nThu, June 16\nIP presentations\nWrap up\n\n\n\n\nIP presentation\n\n\n\nFri, June 17\nLab 11 - work on IP\n\n\n\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
+    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\nDue: Homework 2\n\n\n💻\n✍️\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n💻\n\n\n\n\n\nSun, May 22\nDue: Homework 3\n\n\n\n✍️\n\n\n\n2\nMon, May 23\nModel selection I\n8.3\n🖥️\n\n\n\n\n\n\nTue, May 24\nModel selection II\n8.4; 25.3\n🖥️\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n💻\n\n\n\n\n\nThu, May 26\nLogistic regression\nWork on project\nDue: Homework 4\n9.1-9.3\n🖥️\n\n✍️\n📂\n\n\n\nFri, May 27\nLab 5 - work on prediction project [PP]\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP presentations\nPrinciples of inference\n11.0; 11.3; 12.0; 12.3\n🖥️\n\n\nPP model (9:00am)\nPP presentation\n\n\n\nWed, June 1\nLab 6 - Lecture on inference for proportions I\nDue: PP report\n16.1-16.2; 17.1-17.3\n\n\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n13.1-13.3\n\n\n\n\n\n\n\nFri, June 3\nLab 7 - Inference for proportions\n\n\n💻\n\n\n\n\n\nSun, June 5\nDue: homework 5\n\n\n\n\n\n\n\n4\nMon, June 6\nInference for means I\n19.1-19.2\n\n\n\n\n\n\n\nTue, June 7\nInference for means II\n20.1-20.4; 21.1-21.3\n\n\n\n\n\n\n\nWed, June 8\nLab 8 - Inference for means\n\n\n\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.6; 25.1; 26.1-26.2\n\n\n\n\n\n\n\nFri, June 10\nLab 9 - inference for regression\n\n\n\n\n\n\n\n5\nMon, June 13\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n\n\n\n\n\n\n\nTue, June 14\nWork on inference project (IP)\n\n\n\n\n\n\n\n\nWed, June 15\nLab 10 - work on IP\n\n\n\n\n\n\n\n\nThu, June 16\nIP presentations\nWrap up\n\n\n\n\nIP presentation\n\n\n\nFri, June 17\nLab 11 - work on IP\n\n\n\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
   },
   {
     "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
@@ -2646,11 +2646,25 @@
     "text": "Group exercise - stepwise model selection with AIC\n\n\nExercise 9.7\n\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
+    "objectID": "slides/lec-8.html#announcements-presentations",
+    "href": "slides/lec-8.html#announcements-presentations",
+    "title": "Principles of Inference",
+    "section": "Announcements – presentations",
+    "text": "Announcements – presentations\n\n< 5 minutes\nQA – ask a question!\nDiscussion"
+  },
+  {
+    "objectID": "slides/lec-8.html#presentations",
+    "href": "slides/lec-8.html#presentations",
+    "title": "Principles of Inference",
+    "section": "Presentations",
+    "text": "Presentations"
+  },
+  {
     "objectID": "slides/lec-8.html#announcements",
     "href": "slides/lec-8.html#announcements",
     "title": "Principles of Inference",
     "section": "Announcements",
-    "text": "Announcements\n\nHomework 5 due on Sunday"
+    "text": "Announcements\n\nHomework 5 due Sunday"
   },
   {
     "objectID": "slides/lec-8.html#recap",
@@ -2678,7 +2692,7 @@
     "href": "slides/lec-8.html#population-parameters",
     "title": "Principles of Inference",
     "section": "Population parameters",
-    "text": "Population parameters\nWe want to learn about some (unknown) parameter of some population of interest from a (small) sample of observations\n\n\nExamples of parameters: proportion of vegetarian among Duke students, average weight gained by Duke students during the Covid-19 pandemic, etc.\n\n\n\n\nIn the remainder of the course, we will always assume that we have a random sample"
+    "text": "Population parameters\nWe want to learn about some (unknown) parameter of some population of interest from a (small) sample of observations\n\n\nExamples of parameters: proportion of vegetarian among Duke students, average weight gained by US adults during the Covid-19 pandemic, etc.\n\n\n\n\nIn the remainder of the course, we will always assume that we have a random sample"
   },
   {
     "objectID": "slides/lec-8.html#section",
@@ -2699,21 +2713,21 @@
     "href": "slides/lec-8.html#statistic",
     "title": "Principles of Inference",
     "section": "Statistic",
-    "text": "Statistic\nStatistic: any function of some data. E.g., average, median, iqr, maximum, etc\nsample statistic: a statistic computed on the sample\nsummary statistic: a statistic used to summarize a sample\ntest statistic: statistic used for statistical inference"
+    "text": "Statistic\nStatistic: any function of some data; e.g., average, median, iqr, maximum, variance, etc.\nSample statistic: a statistic computed on the sample\nSummary statistic: a statistic used to summarize a sample\nTest statistic: statistic used for statistical inference"
   },
   {
     "objectID": "slides/lec-8.html#estimating-a-parameter",
     "href": "slides/lec-8.html#estimating-a-parameter",
     "title": "Principles of Inference",
     "section": "Estimating a parameter",
-    "text": "Estimating a parameter\nTo estimate a population parameter, we can simply\n\ncollect data on a representative sample, and\nuse the corresponding sample statistic as an estimate\n\nto estimate the median age of Duke students, simply compute the median of your sample."
+    "text": "Estimating a parameter\nTo estimate a population parameter, we can simply\n\ncollect data on a representative sample, and\nuse the corresponding sample statistic as an estimate\n\nto estimate the median age of Duke students, simply compute the median in the sample."
   },
   {
     "objectID": "slides/lec-8.html#certainty-matters",
     "href": "slides/lec-8.html#certainty-matters",
     "title": "Principles of Inference",
     "section": "Certainty matters",
-    "text": "Certainty matters\nA single point (the sample statistic) does not indicate how confident we are in our estimate.\n\nIf we have a large sample, then we can be pretty confident that our estimates will be close to the true value of the parameter,\nif we have a small sample, then we know that our estimate may be far from the truth.\ne.g. Duke students, basketball free throws."
+    "text": "Certainty matters\nA single point (the sample statistic) does not indicate how certain we are in our estimate.\n\nIf we have a large sample, we can be pretty confident that our estimates will be close to the true value of the parameter,\nif we have a small sample, we know that our estimate may be far from the truth.\ne.g. basketball free throws."
   },
   {
     "objectID": "slides/lec-8.html#statistical-inference-2",
@@ -2727,14 +2741,14 @@
     "href": "slides/lec-8.html#case-1-single-proportion",
     "title": "Principles of Inference",
     "section": "Case 1 – Single proportion",
-    "text": "Case 1 – Single proportion\n\n\nWhat is the proportion of vegetarian among Duke students?\nPopulation parameter: proportion of vegetarian among Duke students \\((p)\\)\nSample statistic: proportion of vegetarian in the sample \\((\\hat{p})\\)\n\n\n\n\n\nConfidence interval: a range a plausible values for the population parameter \\(p\\)\n\n\\((0.31, 0.43)\\)\n\n\n\nHypothesis test: is the proportion of vegetarian among Duke students \\(0.5\\)?\n\n\\(H_0:p=0.5, \\qquad H_a:p\\neq0.5\\)"
+    "text": "Case 1 – Single proportion\n\n\nWhat is the proportion of vegetarian among Duke students?\nPopulation parameter: proportion of vegetarians among Duke students \\((p)\\)\nSample statistic: proportion of vegetarian in the sample \\((\\hat{p})\\)\n\n\n\n\n\nConfidence interval: a range a plausible values for the population parameter \\(p\\)\n\n\\((0.31, 0.43)\\)\n\n\n\nHypothesis test: is the proportion of vegetarians among Duke students \\(0.5\\)?\n\n\\(H_0:p=0.5, \\qquad H_a:p\\neq0.5\\)"
   },
   {
     "objectID": "slides/lec-8.html#case-2-difference-between-two-proportions",
     "href": "slides/lec-8.html#case-2-difference-between-two-proportions",
     "title": "Principles of Inference",
     "section": "Case 2 – Difference between two proportions",
-    "text": "Case 2 – Difference between two proportions\nIs the proportion of vegetarian the same among Duke undergraduate and graduate students?\nPopulation parameter: difference between the proportion of vegetarian among Duke undergraduate and graduate students \\((p_{diff} = p_{undergrad}-p_{grad})\\)\nSample statistic: difference in proportion of vegetarian in the sample \\((\\hat{p}_{diff} = \\hat{p}_{undergrad} - \\hat{p}_{grad})\\)\n\nConfidence interval for \\(p_{diff}\\): \\((-0.05, 0.08)\\)\n\n\nHypothesis test: is the proportion of vegetarian the same among Duke undergraduate and graduate students?\n\n\\(H_0:p_{diff}=0, \\qquad H_a:p_{diff}\\neq0\\)"
+    "text": "Case 2 – Difference between two proportions\nIs the proportion of vegetarians the same among Duke undergraduate and graduate students?\nPopulation parameter: difference between the proportion of vegetarians among Duke undergraduate and graduate students \\((p_{diff} = p_{undergrad}-p_{grad})\\)\nSample statistic: difference in proportion of vegetarian in the sample \\((\\hat{p}_{diff} = \\hat{p}_{undergrad} - \\hat{p}_{grad})\\)\n\nConfidence interval for \\(p_{diff}\\): \\((-0.05, 0.08)\\)\n\n\nHypothesis test: is the proportion of vegetarians the same among Duke undergraduate and graduate students?\n\n\\(H_0:p_{diff}=0, \\qquad H_a:p_{diff}\\neq0\\)"
   },
   {
     "objectID": "slides/lec-8.html#case-3-single-mean",
@@ -2762,7 +2776,7 @@
     "href": "slides/lec-8.html#the-null-hypothesis-and-the-alternative-hypothesis",
     "title": "Principles of Inference",
     "section": "The null hypothesis and the alternative hypothesis",
-    "text": "The null hypothesis and the alternative hypothesis\nA HT considers two competing hypotheses:\n\nthe null hypothesis \\(H_0\\)\n\n“nothing is going on”: there is no effect, no difference\n\nthe alternative hypothesis \\(H_a\\)\n\n“something is going on”: there is an effect, there is a difference"
+    "text": "The null hypothesis and the alternative hypothesis\nTwo competing hypotheses:\n\nthe null hypothesis \\(H_0\\)\n\n“nothing is going on”: there is no effect, no difference\n\nthe alternative hypothesis \\(H_a\\)\n\n“something is going on”: there is an effect, there is a difference"
   },
   {
     "objectID": "slides/lec-8.html#example",
@@ -2776,35 +2790,35 @@
     "href": "slides/lec-8.html#more-examples",
     "title": "Principles of Inference",
     "section": "More examples",
-    "text": "More examples\n\nAre the Covid-19 vaccines equally effective?\n\n\\(H_0:\\) all the vaccines are equally effective; \\(H_a:\\) the vaccines are not all equally effective\n\nDoes caffeine consumption affect student participation in class\n\n\\(H_0:\\) caffeine consumption does not affect student participation; \\(H_a:\\) caffeine consumption affects student participation\n\nAre men and women paid equally in the workplace?\n\n\\(H_0:\\) men and women are paid equally; \\(H_a:\\) men and women are not paid equally\n\nHave Duke students gained weight since the start of the Covid-19 pandemic?\n\n\\(H_0:\\) Duke student have not gained weight; \\(H_a:\\) Duke students have gained weight."
+    "text": "More examples\n\nAre the Covid-19 vaccines equally effective?\n\n\\(H_0\\): the vaccines are all equally effective; \\(H_a\\): the vaccines are not all equally effective\n\nDoes caffeine consumption affect student participation in class\n\n\\(H_0\\): caffeine consumption does not affect student participation; \\(H_a\\): caffeine consumption affects student participation\n\nAre men and women paid equally in the workplace?\n\n\\(H_0\\): men and women are paid equally; \\(H_a\\): men and women are not paid equally\n\nHave Duke students gained weight since the start of the Covid-19 pandemic?\n\n\\(H_0\\): Duke student have not gained weight; \\(H_a\\): Duke students have gained weight."
   },
   {
     "objectID": "slides/lec-8.html#section-1",
     "href": "slides/lec-8.html#section-1",
     "title": "Principles of Inference",
     "section": "",
-    "text": "Group exercise - hypotheses\n\n\nExercises 11.3, 11.5\n\n\n\n\n\n\n05:00"
+    "text": "Group exercise - hypotheses\n\n\nExercises 11.3, 11.5\n\n\n\n\n\n\n04:00"
   },
   {
     "objectID": "slides/lec-8.html#natural-variability",
     "href": "slides/lec-8.html#natural-variability",
     "title": "Principles of Inference",
     "section": "Natural variability",
-    "text": "Natural variability\nGo back to the 2nd case and suppose that \\(H_0\\) is true.\n\nWe’ll probably still observe a small difference in the sample.\n\n\nNow suppose that \\(H_a\\) is true.\n\nWe’ll probably observed a larger difference in the sample,\nbut we might also observe no difference at all,\nor observe a different in the wrong direction!"
+    "text": "Natural variability\nGo back to the 2nd case and suppose that \\(H_0\\) is true.\n\nWe’ll probably still observe a small difference between undergrad and grad students in the sample.\n\n\nNow suppose that \\(H_a\\) is true.\n\nWe’ll probably observe a larger difference in the sample,\nbut we might also observe no difference at all,\nor observe a different in the wrong direction!"
   },
   {
     "objectID": "slides/lec-8.html#natural-variability-and-hypothesis-tests",
     "href": "slides/lec-8.html#natural-variability-and-hypothesis-tests",
     "title": "Principles of Inference",
     "section": "Natural variability and hypothesis tests",
-    "text": "Natural variability and hypothesis tests\n\n\n\n\n\n\nWe’ll always observe a difference\n\n\nObserving a difference in the sample is not sufficient to reject \\(H_0\\). When we collect a sample, there will always be some natural variability inherent to the data.\nDetermining whether the observed difference is due to natural variation or provides convincing evidence of a true difference between the two groups is at the heart of hypothesis tests."
+    "text": "Natural variability and hypothesis tests\n\n\n\n\n\n\nWe’ll always observe a difference\n\n\nObserving a difference in the sample is not sufficient to reject \\(H_0\\). When we collect a sample, there always is some natural variability inherent to the data.\nDetermining whether the observed difference is due to natural variation or provides convincing evidence of a true difference between the two groups is at the heart of hypothesis tests."
   },
   {
     "objectID": "slides/lec-8.html#section-2",
     "href": "slides/lec-8.html#section-2",
     "title": "Principles of Inference",
     "section": "",
-    "text": "Group exercise - convincing evidence\n\n\nSuppose we have a sample with the same number of undergrad and grad students and \\(\\hat{p}_{diff} = \\hat{p}_{undergrad} - \\hat{p}_{grad} = 0.6 - 0.4 = 0.2\\). For what sample sizes \\(n\\) do you intuitively feel that the observed difference provides convincing evidence that the two groups are different?\n\n\\(n=10\\) (5 undergrad and 5 grad students)\n\\(n=20\\) (10 undergrad and 10 grad students)\n\\(n=50\\) (…)\n\\(n=100\\)\n\\(n=250\\)\n\\(n=500\\)\n\\(n=1000\\)\n\n\n\n\n\n\n\n04:00"
+    "text": "Group exercise - convincing evidence\n\n\nSuppose we have a sample with the same number of undergrad and grad students and \\(\\hat{p}_{diff} = \\hat{p}_{undergrad} - \\hat{p}_{grad} = 0.6 - 0.4 = 0.2\\). For what sample sizes \\(n\\) do you intuitively feel that the observed difference provides convincing evidence that the two groups are different?\n\n\\(n=10\\) (5 undergrad and 5 grad students)\n\\(n=20\\) (10 undergrad and 10 grad students)\n\\(n=50\\) (…)\n\\(n=100\\)\n\\(n=250\\)\n\\(n=500\\)\n\\(n=1000\\)\n\n\n\n\n\n\n\n03:00"
   },
   {
     "objectID": "slides/lec-8.html#confidence-interval-1",
@@ -2818,21 +2832,21 @@
     "href": "slides/lec-8.html#examples",
     "title": "Principles of Inference",
     "section": "Examples",
-    "text": "Examples\n\nWhat is the approval rate of the US president?\nWhat proportion of Duke students is vegetarian?\nHow much weight have Duke students gained since the start of the Covid-19 pandemic?"
+    "text": "Examples\n\nWhat is the approval rate of the US president?\nWhat proportion of Duke students are vegetarian?\nHow much weight have US adults gained since the start of the Covid-19 pandemic?"
   },
   {
     "objectID": "slides/lec-8.html#classical-and-modern-approaches",
     "href": "slides/lec-8.html#classical-and-modern-approaches",
     "title": "Principles of Inference",
     "section": "Classical and modern approaches",
-    "text": "Classical and modern approaches\nWe will learn two approaches to statistical inference\n\nclassical\n\npen and paper, pre-computer era\nbased on simple mathematical formula\nrequires the data to satisfy certain conditions\n\n\nmodern (computer-intensive)\n\nwe model the variability in the data by repeating a procedure many times (for-loop)\nalways applicable"
+    "text": "Classical and modern approaches\nWe will learn two approaches to statistical inference\n\nclassical\n\npen and paper, pre-computer era\nbased on simple mathematical formula\nrequires the data to satisfy certain conditions\n\nmodern\n\ncomputer-intensive\nmodels the variability in the data by repeating a procedure many times (for-loop)\nalways applicable"
   },
   {
     "objectID": "slides/lec-8.html#section-3",
     "href": "slides/lec-8.html#section-3",
     "title": "Principles of Inference",
     "section": "",
-    "text": "Individual exercise – simulation\n\n\nSuppose you flip a coin 100 times and count the number of heads. In the first lecture, you were asked to identify what number of heads would make you doubt that the coin is fair.\nWe will run an experiment together to see if your gut feeling was correct.\nUse the following commands to simulate 100 flips of a coin and count the number of heads. Repeat the experiment 5 times, keeping track of the number of heads.\n\nset.seed(0) # change the seed for each run\nflips <- rbernoulli(100, p = 0.5) # 100 flips - TRUE is heads and FALSE is tails\nsum(flips) # number of heads (number of TRUEs)\n\n[1] 48\n\n\n\n\n\n\n\n\n03:00"
+    "text": "Individual exercise – simulation\n\n\nSuppose you flip a coin 100 times and count the number of heads. In the first lecture, you were asked to identify what number of heads would make you doubt that the coin is fair.\nWe will run an experiment together to see if your gut feeling was correct.\nUse the following commands to simulate 100 flips of a coin and count the number of heads. Repeat the experiment 5 times, keeping track of the number of heads.\n\nset.seed(0) # change the seed for each run\nflips <- rbernoulli(n = 100, p = 0.5) # 100 flips - TRUE is heads and FALSE is tails\nsum(flips) # number of heads (number of TRUEs)\n\n[1] 48\n\n\n\n\n\n\n\n\n02:00"
   },
   {
     "objectID": "slides/lec-8.html#for-loop",
@@ -2846,7 +2860,7 @@
     "href": "slides/lec-8.html#section-4",
     "title": "Principles of Inference",
     "section": "",
-    "text": "Here is the distribution of the sample statistic \\(\\hat{p}\\) when \\(H_0\\) is true.\n\nggplot(results) +\n  geom_histogram(aes(n_heads), binwidth = 1) # set the binwidth to 1 to ensure that each bin corresponds to exactly one integer."
+    "text": "Distribution of the sample statistic \\(\\hat{p}\\) when \\(H_0\\) is true.\n\nggplot(results) +\n  geom_histogram(aes(n_heads), binwidth = 1) # set the binwidth to 1 to ensure that each bin corresponds to exactly one integer."
   },
   {
     "objectID": "slides/lec-8.html#population-and-parameter",
@@ -2867,35 +2881,35 @@
     "href": "slides/lec-8.html#like-jurors-in-the-justice-system",
     "title": "Principles of Inference",
     "section": "Like jurors in the justice system",
-    "text": "Like jurors in the justice system\n\n\\(H_0:\\) innocent (the coin is fair)\n\\(H_0:\\) guilty (the coin is not fair)\n\nQuestion: do the facts (data sample) provide sufficient evidence to reject the claim that the defendant is innocent (that the coin is fair)?\n\nIf so, we reject \\(H_0\\)\nOtherwise, we fail to reject \\(H_0\\).\n\n\n\n\n\n\n\nNever accept the null hypothesis\n\n\nWe never accept the null hypothesis! We only reject of fail to reject it."
+    "text": "Like jurors in the justice system\n\n\\(H_0:\\) innocent (the coin is fair)\n\\(H_0:\\) guilty (the coin is not fair)\n\nQuestion: do the facts (the sample) provide sufficient evidence to reject the claim that the defendant is innocent (that the coin is fair)?\n\nIf so, we reject \\(H_0\\)\nOtherwise, we fail to reject \\(H_0\\).\n\n\n\n\n\n\n\nNever accept the null hypothesis\n\n\nWe never accept the null hypothesis! We only reject of fail to reject it."
   },
   {
     "objectID": "slides/lec-8.html#section-5",
     "href": "slides/lec-8.html#section-5",
     "title": "Principles of Inference",
     "section": "",
-    "text": "ggplot(results) + geom_histogram(aes(n_heads), binwidth = 1)"
+    "text": "ggplot(results) + \n  geom_histogram(aes(n_heads), binwidth = 1) +\n  geom_vline(xintercept = c(55,65), col = \"red\", size = 2)"
   },
   {
     "objectID": "slides/lec-8.html#two-outcomes",
     "href": "slides/lec-8.html#two-outcomes",
     "title": "Principles of Inference",
     "section": "Two outcomes",
-    "text": "Two outcomes\nSuppose you observe the following sample: out of 100 flips, you get 55 heads\n\\(\\Rightarrow\\) the sample is plausible under \\(H_0\\); the observed data do not provide strong evidence against the null hypothesis; we fail to reject the claim that the coin is fair\n\nThe coin might be unfair, but the data do not provide strong evidence against fairness.\n\n\nNow suppose that out of 100 flips, you observe 65 heads.\n\\(\\Rightarrow\\) this result is extremely unlikely under \\(H_0\\); the observed data provide strong evidence against the null hypothesis; we reject the claim that the coin is fair.\n\nThe coin might be fair, but a fair coin could not have plausibly given \\(65\\) heads out of \\(100\\) flips."
+    "text": "Two outcomes\nSuppose the sample consists in 55 heads of 100 flips\n\\(\\Rightarrow\\) the sample is plausible under \\(H_0\\); the observed data do not provide strong evidence against the null hypothesis; we fail to reject the claim that the coin is fair\n\nThe coin might be unfair, but the data do not provide strong evidence against fairness.\n\n\nNow suppose that out of 100 flips, you observe 65 heads.\n\\(\\Rightarrow\\) this result is extremely unlikely under \\(H_0\\); the observed data provide strong evidence against the null hypothesis; we reject the claim that the coin is fair.\n\nThe coin might be fair, but it is implausible for a fair coin to give \\(65\\) heads out of \\(100\\) flips."
   },
   {
     "objectID": "slides/lec-8.html#natural-variability-1",
     "href": "slides/lec-8.html#natural-variability-1",
     "title": "Principles of Inference",
     "section": "Natural variability",
-    "text": "Natural variability\nDue to the natural variability of the data, each sample is different.\n\nIn practice we only get to observe a single sample. But if we could observe other samples,\n\nthey would all be a bit different\nour estimates (based on the samples) would also be different."
+    "text": "Natural variability\nDue to the natural variability of the data, each sample is different.\n\nIn practice we only get to observe a single sample. But if we could observe other samples,\n\nthey would all be a bit different\n\\(\\Rightarrow\\) the sample statistics would also be different\n\\(\\Rightarrow\\) the estimates would also be different."
   },
   {
     "objectID": "slides/lec-8.html#sample-to-sample-variability",
     "href": "slides/lec-8.html#sample-to-sample-variability",
     "title": "Principles of Inference",
     "section": "Sample-to-sample variability",
-    "text": "Sample-to-sample variability\nIf the samples are very different\n\nwe say that the sample-to-sample variability is large.\nwe would not be very confident in our estimate\n\nIf the samples are all similar\n\nwe say that the sample-to-sample variability is small\nwe would be confident that our estimate is close to the truth"
+    "text": "Sample-to-sample variability\nIf the samples are very different\n\nwe say that the sample-to-sample variability is large.\nwe would not be very confident in the estimate\n\nIf the samples are all similar\n\nwe say that the sample-to-sample variability is small\nwe would be confident that the estimate is close to the truth"
   },
   {
     "objectID": "slides/lec-8.html#from-a-single-sample-to-bootstrap-samples",
@@ -2916,7 +2930,7 @@
     "href": "slides/lec-8.html#from-bootstrap-samples-to-ci",
     "title": "Principles of Inference",
     "section": "From bootstrap samples to CI",
-    "text": "From bootstrap samples to CI\nComputing the sample statistic of each bootstrap sample provides its sampling distribution.\nTo construct a 90% CI, we simply identify the 5th and 95th percentiles of the sampling distribution.\n\n“We are 90% confident that the interval captures the true value of the population parameter”."
+    "text": "From bootstrap samples to CI\nComputing the sample statistic of each bootstrap sample provides its sampling distribution.\nTo construct a 90% CI of some parameter, we simply identify the 5th and 95th percentiles of the sampling distribution of the corresponding sample statistics.\n\nthe 5th and 95th percentiles of the sampling distribution of the median give the 90% CI for the median.\n\n\nInterpretation: “We are 90% confident that the interval captures the true value of the population parameter”."
   },
   {
     "objectID": "slides/lec-8.html#little-variability-rightarrow-narrow-ci",
@@ -2951,42 +2965,42 @@
     "href": "slides/lec-8.html#section-7",
     "title": "Principles of Inference",
     "section": "",
-    "text": "ggplot(results) +\n  geom_histogram(aes(mean))"
+    "text": "ggplot(results) + \n  geom_histogram(aes(mean)) +\n  geom_vline(xintercept = quantile(results$mean, c(0.05, 0.95)), col = \"red\", size = 2)"
   },
   {
     "objectID": "slides/lec-8.html#section-8",
     "href": "slides/lec-8.html#section-8",
     "title": "Principles of Inference",
     "section": "",
-    "text": "ggplot(results) +\n  geom_histogram(aes(sd))"
+    "text": "ggplot(results) +\n  geom_histogram(aes(sd))+\n  geom_vline(xintercept = quantile(results$sd, c(0.05, 0.95)), col = \"red\", size = 2)"
+  },
+  {
+    "objectID": "slides/lec-8.html#computing-the-ci",
+    "href": "slides/lec-8.html#computing-the-ci",
+    "title": "Principles of Inference",
+    "section": "Computing the CI",
+    "text": "Computing the CI\n\n# 90% bootstrap CI for the mean cty in the population\nquantile(results$mean, c(0.05, 0.95))\n\n      5%      95% \n16.41880 17.32051 \n\n# 90% bootstrap CI for the sd of cty in the population\nquantile(results$sd  , c(0.05, 0.95))\n\n      5%      95% \n3.839925 4.673212"
   },
   {
     "objectID": "slides/lec-8.html#section-9",
     "href": "slides/lec-8.html#section-9",
     "title": "Principles of Inference",
     "section": "",
-    "text": "# 90% bootstrap CI for the mean cty in the population\nquantile(results$mean, c(0.05, 0.95))\n\n      5%      95% \n16.41880 17.32051 \n\n# 90% bootstrap CI for the sd of cty in the population\nquantile(results$sd  , c(0.05, 0.95))\n\n      5%      95% \n3.839925 4.673212"
+    "text": "Group exercise - bootstrap CI\n\n\nExercises 12.1, 12.3, 12.7\n\n\n\n\n\n\n06:00"
   },
   {
     "objectID": "slides/lec-8.html#section-10",
     "href": "slides/lec-8.html#section-10",
     "title": "Principles of Inference",
     "section": "",
-    "text": "Group exercise - bootstrap CI\n\n\nExercises 12.1, 12.3, 12.7\n\n\n\n\n\n\n06:00"
-  },
-  {
-    "objectID": "slides/lec-8.html#section-11",
-    "href": "slides/lec-8.html#section-11",
-    "title": "Principles of Inference",
-    "section": "",
-    "text": "Group exercise - bootstrap CI\n\n\nRe-use the code from the previous slide to compute a 90% bootstrap CI of the variance of cty in the population.\n\n\n\n\n\n\n05:00"
+    "text": "Group exercise - bootstrap CI\n\n\nRe-use the code from the previous slide to compute a 90% bootstrap CI of the variance of cty in the population.\n\n\n\n\n\n\n03:00"
   },
   {
     "objectID": "slides/lec-8.html#recap-2",
     "href": "slides/lec-8.html#recap-2",
     "title": "Principles of Inference",
     "section": "Recap",
-    "text": "Recap\n\n\nStatistical inference\nFive cases\n\nsingle proportion\ndifference between two portions\nsingle mean\ndifference between two means\nregression parameters\n\nHypothesis test\nConfidence interval\nA first glimpse of modern statistics\n\nHT\nCI\n\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+    "text": "Recap\n\n\nStatistical inference\nFive cases\n\nsingle proportion\ndifference between two portions\nsingle mean\ndifference between two means\nregression parameters\n\nHypothesis test\nConfidence interval\nA first glimpse of modern statistics\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
     "objectID": "slides/lec-9.html#announcements",

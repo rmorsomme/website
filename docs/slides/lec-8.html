@@ -397,10 +397,22 @@
 <h1>Welcome</h1>
 
 </section>
+<section id="announcements-presentations" class="slide level2">
+<h2>Announcements – presentations</h2>
+<ul>
+<li>&lt; 5 minutes</li>
+<li>QA – ask a question!</li>
+<li>Discussion</li>
+</ul>
+</section>
+<section id="presentations" class="slide level2">
+<h2>Presentations</h2>
+
+<img data-src="images/project/three-dogs-waiting_cropped.jpeg" class="r-stretch quarto-figure-center"></section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 <ul>
-<li>Homework 5 due on Sunday</li>
+<li>Homework 5 due Sunday</li>
 </ul>
 </section>
 <section id="recap" class="slide level2">
@@ -441,7 +453,7 @@
 <p>We want to learn about some (unknown) <strong>parameter</strong> of some <strong>population</strong> of interest from a (small) <strong>sample</strong> of observations</p>
 <div class="fragment">
 <ul>
-<li>Examples of parameters: proportion of vegetarian among Duke students, average weight gained by Duke students during the Covid-19 pandemic, etc.</li>
+<li>Examples of parameters: proportion of vegetarian among Duke students, average weight gained by US adults during the Covid-19 pandemic, etc.</li>
 </ul>
 </div>
 <div class="fragment">
@@ -464,7 +476,7 @@
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_629258b9" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6294b2e0" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -477,10 +489,10 @@
 </section>
 <section id="statistic" class="slide level2">
 <h2>Statistic</h2>
-<p><strong>Statistic</strong>: any function of some data. E.g., average, median, iqr, maximum, etc</p>
-<p><strong>sample statistic</strong>: a statistic computed on the sample</p>
-<p><strong>summary statistic</strong>: a statistic used to summarize a sample</p>
-<p><strong>test statistic</strong>: statistic used for statistical inference</p>
+<p><strong>Statistic</strong>: any function of some data; e.g., average, median, iqr, maximum, variance, etc.</p>
+<p><strong>Sample statistic</strong>: a statistic computed on the sample</p>
+<p><strong>Summary statistic</strong>: a statistic used to summarize a sample</p>
+<p><strong>Test statistic</strong>: statistic used for statistical inference</p>
 </section>
 <section id="estimating-a-parameter" class="slide level2">
 <h2>Estimating a parameter</h2>
@@ -489,17 +501,17 @@
 <li><p>collect data on a representative sample, and</p></li>
 <li><p>use the corresponding sample statistic as an estimate</p>
 <ul>
-<li>to estimate the median age of Duke students, simply compute the median of your sample.</li>
+<li>to estimate the median age of Duke students, simply compute the median in the sample.</li>
 </ul></li>
 </ul>
 </section>
 <section id="certainty-matters" class="slide level2">
 <h2>Certainty matters</h2>
-<p>A single point (the sample statistic) does not indicate how confident we are in our estimate.</p>
+<p>A single point (the sample statistic) does not indicate how certain we are in our estimate.</p>
 <ul>
-<li><p>If we have a <em>large</em> sample, then we can be pretty confident that our estimates will be close to the true value of the parameter,</p></li>
-<li><p>if we have a <em>small</em> sample, then we know that our estimate may be far from the truth.</p></li>
-<li><p>e.g.&nbsp;Duke students, basketball free throws.</p></li>
+<li><p>If we have a <em>large</em> sample, we can be pretty confident that our estimates will be close to the true value of the parameter,</p></li>
+<li><p>if we have a <em>small</em> sample, we know that our estimate may be far from the truth.</p></li>
+<li><p>e.g.&nbsp;basketball free throws.</p></li>
 </ul>
 </section>
 <section id="statistical-inference-2" class="slide level2">
@@ -526,7 +538,7 @@
 <div class="columns">
 <div class="column" style="width:55%;">
 <p>What is the proportion of vegetarian among Duke students?</p>
-<p><strong>Population parameter</strong>: proportion of vegetarian among Duke students <span class="math inline">\((p)\)</span></p>
+<p><strong>Population parameter</strong>: proportion of vegetarians among Duke students <span class="math inline">\((p)\)</span></p>
 <p><strong>Sample statistic</strong>: proportion of vegetarian in the sample <span class="math inline">\((\hat{p})\)</span></p>
 </div><div class="column" style="width:40%;">
 <p><img data-src="images/lec-8/vegetarian.jpg"></p>
@@ -539,7 +551,7 @@
 </ul>
 </div>
 <div class="fragment">
-<p><strong>Hypothesis test</strong>: is the proportion of vegetarian among Duke students <span class="math inline">\(0.5\)</span>?</p>
+<p><strong>Hypothesis test</strong>: is the proportion of vegetarians among Duke students <span class="math inline">\(0.5\)</span>?</p>
 <ul>
 <li><span class="math inline">\(H_0:p=0.5, \qquad H_a:p\neq0.5\)</span></li>
 </ul>
@@ -547,14 +559,14 @@
 </section>
 <section id="case-2-difference-between-two-proportions" class="slide level2 smaller">
 <h2>Case 2 – Difference between two proportions</h2>
-<p>Is the proportion of vegetarian the same among Duke undergraduate and graduate students?</p>
-<p><strong>Population parameter</strong>: difference between the proportion of vegetarian among Duke undergraduate and graduate students <span class="math inline">\((p_{diff} = p_{undergrad}-p_{grad})\)</span></p>
+<p>Is the proportion of vegetarians the same among Duke undergraduate and graduate students?</p>
+<p><strong>Population parameter</strong>: difference between the proportion of vegetarians among Duke undergraduate and graduate students <span class="math inline">\((p_{diff} = p_{undergrad}-p_{grad})\)</span></p>
 <p><strong>Sample statistic</strong>: difference in proportion of vegetarian in the sample <span class="math inline">\((\hat{p}_{diff} = \hat{p}_{undergrad} - \hat{p}_{grad})\)</span></p>
 <div class="fragment">
 <p><strong>Confidence interval</strong> for <span class="math inline">\(p_{diff}\)</span>: <span class="math inline">\((-0.05, 0.08)\)</span></p>
 </div>
 <div class="fragment">
-<p><strong>Hypothesis test</strong>: is the proportion of vegetarian the same among Duke undergraduate and graduate students?</p>
+<p><strong>Hypothesis test</strong>: is the proportion of vegetarians the same among Duke undergraduate and graduate students?</p>
 <ul>
 <li><span class="math inline">\(H_0:p_{diff}=0, \qquad H_a:p_{diff}\neq0\)</span></li>
 </ul>
@@ -622,7 +634,7 @@
 </section>
 <section id="the-null-hypothesis-and-the-alternative-hypothesis" class="slide level2">
 <h2>The null hypothesis and the alternative hypothesis</h2>
-<p>A HT considers two competing hypotheses:</p>
+<p>Two competing hypotheses:</p>
 <ul>
 <li>the <strong>null hypothesis</strong> <span class="math inline">\(H_0\)</span>
 <ul>
@@ -655,19 +667,19 @@ H_0: p_{undegrad}\neq p_{grad}
 <ul>
 <li>Are the Covid-19 vaccines equally effective?
 <ul>
-<li><span class="math inline">\(H_0:\)</span> all the vaccines are equally effective; <span class="math inline">\(H_a:\)</span> the vaccines are not all equally effective</li>
+<li><span class="math inline">\(H_0\)</span>: the vaccines are all equally effective; <span class="math inline">\(H_a\)</span>: the vaccines are not all equally effective</li>
 </ul></li>
 <li>Does caffeine consumption affect student participation in class
 <ul>
-<li><span class="math inline">\(H_0:\)</span> caffeine consumption does not affect student participation; <span class="math inline">\(H_a:\)</span> caffeine consumption affects student participation</li>
+<li><span class="math inline">\(H_0\)</span>: caffeine consumption does not affect student participation; <span class="math inline">\(H_a\)</span>: caffeine consumption affects student participation</li>
 </ul></li>
 <li>Are men and women paid equally in the workplace?
 <ul>
-<li><span class="math inline">\(H_0:\)</span> men and women are paid equally; <span class="math inline">\(H_a:\)</span> men and women are not paid equally</li>
+<li><span class="math inline">\(H_0\)</span>: men and women are paid equally; <span class="math inline">\(H_a\)</span>: men and women are not paid equally</li>
 </ul></li>
 <li>Have Duke students gained weight since the start of the Covid-19 pandemic?
 <ul>
-<li><span class="math inline">\(H_0:\)</span> Duke student have not gained weight; <span class="math inline">\(H_a:\)</span> Duke students have gained weight.</li>
+<li><span class="math inline">\(H_0\)</span>: Duke student have not gained weight; <span class="math inline">\(H_a\)</span>: Duke students have gained weight.</li>
 </ul></li>
 </ul>
 </section>
@@ -685,8 +697,8 @@ H_0: p_{undegrad}\neq p_{grad}
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_6292559d" style="right:0;bottom:0;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<div class="countdown" id="timer_6294b355" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -695,12 +707,12 @@ H_0: p_{undegrad}\neq p_{grad}
 <h2>Natural variability</h2>
 <p>Go back to the 2nd case and suppose that <span class="math inline">\(H_0\)</span> is true.</p>
 <ul>
-<li>We’ll probably still observe a small difference in the sample.</li>
+<li>We’ll probably still observe a small difference between undergrad and grad students in the sample.</li>
 </ul>
 <div class="fragment">
 <p>Now suppose that <span class="math inline">\(H_a\)</span> is true.</p>
 <ul>
-<li>We’ll probably observed a larger difference in the sample,</li>
+<li>We’ll probably observe a larger difference in the sample,</li>
 <li>but we might also observe no difference at all,</li>
 <li>or observe a different in the wrong direction!</li>
 </ul>
@@ -717,7 +729,7 @@ H_0: p_{undegrad}\neq p_{grad}
 <p><strong>We’ll always observe a difference</strong></p>
 </div>
 <div class="callout-content">
-<p>Observing a difference in the sample is not sufficient to reject <span class="math inline">\(H_0\)</span>. When we collect a sample, there will always be some natural variability inherent to the data.</p>
+<p>Observing a difference in the sample is not sufficient to reject <span class="math inline">\(H_0\)</span>. When we collect a sample, there always is some natural variability inherent to the data.</p>
 <p>Determining whether the observed difference is due to natural variation or provides <strong>convincing evidence</strong> of a true difference between the two groups is at the heart of hypothesis tests.</p>
 </div>
 </div>
@@ -746,8 +758,8 @@ H_0: p_{undegrad}\neq p_{grad}
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62925870" style="right:0;bottom:0;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<div class="countdown" id="timer_6294b275" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -770,8 +782,8 @@ H_0: p_{undegrad}\neq p_{grad}
 <h2>Examples</h2>
 <ul>
 <li><p>What is the approval rate of the US president?</p></li>
-<li><p>What proportion of Duke students is vegetarian?</p></li>
-<li><p>How much weight have Duke students gained since the start of the Covid-19 pandemic?</p></li>
+<li><p>What proportion of Duke students are vegetarian?</p></li>
+<li><p>How much weight have US adults gained since the start of the Covid-19 pandemic?</p></li>
 </ul>
 </section></section>
 <section>
@@ -788,12 +800,12 @@ H_0: p_{undegrad}\neq p_{grad}
 <li>pen and paper, pre-computer era</li>
 <li>based on simple mathematical formula</li>
 <li>requires the data to satisfy certain conditions</li>
-<li></li>
 </ul></li>
-<li><strong>modern</strong> (computer-intensive)
+<li><strong>modern</strong>
 <ul>
-<li>we model the variability in the data by repeating a procedure many times (for-loop)</li>
-<li>always applicable</li>
+<li><p>computer-intensive</p></li>
+<li><p>models the variability in the data by repeating a procedure many times (for-loop)</p></li>
+<li><p>always applicable</p></li>
 </ul></li>
 </ul>
 </section></section>
@@ -815,7 +827,7 @@ H_0: p_{undegrad}\neq p_{grad}
 <p>Use the following commands to simulate 100 flips of a coin and count the number of heads. Repeat the experiment 5 times, keeping track of the number of heads.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>) <span class="co"># change the seed for each run</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>flips <span class="ot">&lt;-</span> <span class="fu">rbernoulli</span>(<span class="dv">100</span>, <span class="at">p =</span> <span class="fl">0.5</span>) <span class="co"># 100 flips - TRUE is heads and FALSE is tails</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>flips <span class="ot">&lt;-</span> <span class="fu">rbernoulli</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">p =</span> <span class="fl">0.5</span>) <span class="co"># 100 flips - TRUE is heads and FALSE is tails</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="fu">sum</span>(flips) <span class="co"># number of heads (number of TRUEs)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>[1] 48</code></pre>
@@ -826,8 +838,8 @@ H_0: p_{undegrad}\neq p_{grad}
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_629258b9" style="right:0;bottom:0;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<div class="countdown" id="timer_6294b38a" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -847,7 +859,7 @@ H_0: p_{undegrad}\neq p_{grad}
 </section>
 <section id="section-4" class="slide level2">
 <h2></h2>
-<p>Here is the distribution of the sample statistic <span class="math inline">\(\hat{p}\)</span> when <span class="math inline">\(H_0\)</span> is true.</p>
+<p>Distribution of the sample statistic <span class="math inline">\(\hat{p}\)</span> when <span class="math inline">\(H_0\)</span> is true.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">ggplot</span>(results) <span class="sc">+</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(n_heads), <span class="at">binwidth =</span> <span class="dv">1</span>) <span class="co"># set the binwidth to 1 to ensure that each bin corresponds to exactly one integer.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -885,7 +897,7 @@ H_0: p_{undegrad}\neq p_{grad}
 <li><p><span class="math inline">\(H_0:\)</span> innocent (the coin is fair)</p></li>
 <li><p><span class="math inline">\(H_0:\)</span> guilty (the coin is not fair)</p></li>
 </ul>
-<p>Question: do the facts (data sample) provide sufficient evidence to reject the claim that the defendant is innocent (that the coin is fair)?</p>
+<p>Question: do the facts (the sample) provide sufficient evidence to reject the claim that the defendant is innocent (that the coin is fair)?</p>
 <ul>
 <li><p>If so, we <strong>reject</strong> <span class="math inline">\(H_0\)</span></p></li>
 <li><p>Otherwise, we <strong>fail to reject</strong> <span class="math inline">\(H_0\)</span>.</p></li>
@@ -907,13 +919,15 @@ H_0: p_{undegrad}\neq p_{grad}
 <section id="section-5" class="slide level2">
 <h2></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">ggplot</span>(results) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(n_heads), <span class="at">binwidth =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">ggplot</span>(results) <span class="sc">+</span> </span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(n_heads), <span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>(<span class="dv">55</span>,<span class="dv">65</span>), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="lec-8_files/figure-revealjs/unnamed-chunk-8-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
 <section id="two-outcomes" class="slide level2 smaller">
 <h2>Two outcomes</h2>
-<p>Suppose you observe the following sample: out of 100 flips, you get <strong>55 heads</strong></p>
+<p>Suppose the sample consists in <strong>55 heads</strong> of 100 flips</p>
 <p><span class="math inline">\(\Rightarrow\)</span> the sample is plausible under <span class="math inline">\(H_0\)</span>; the observed data do not provide strong evidence against the null hypothesis; we fail to reject the claim that the coin is fair</p>
 <ul>
 <li>The coin might be unfair, but the data do not provide strong evidence against fairness.</li>
@@ -922,7 +936,7 @@ H_0: p_{undegrad}\neq p_{grad}
 <p>Now suppose that out of 100 flips, you observe <strong>65 heads</strong>.</p>
 <p><span class="math inline">\(\Rightarrow\)</span> this result is extremely unlikely under <span class="math inline">\(H_0\)</span>; the observed data provide strong evidence against the null hypothesis; we reject the claim that the coin is fair.</p>
 <ul>
-<li>The coin might be fair, but a fair coin could not have plausibly given <span class="math inline">\(65\)</span> heads out of <span class="math inline">\(100\)</span> flips.</li>
+<li>The coin might be fair, but it is implausible for a fair coin to give <span class="math inline">\(65\)</span> heads out of <span class="math inline">\(100\)</span> flips.</li>
 </ul>
 </div>
 </section></section>
@@ -937,8 +951,9 @@ H_0: p_{undegrad}\neq p_{grad}
 <div class="fragment">
 <p>In practice we only get to observe a single sample. But if we could observe other samples,</p>
 <ul>
-<li>they would all be a bit different</li>
-<li>our estimates (based on the samples) would also be different.</li>
+<li><p>they would all be a bit different</p>
+<p><span class="math inline">\(\Rightarrow\)</span> the sample statistics would also be different</p>
+<p><span class="math inline">\(\Rightarrow\)</span> the estimates would also be different.</p></li>
 </ul>
 </div>
 </section>
@@ -947,12 +962,12 @@ H_0: p_{undegrad}\neq p_{grad}
 <p>If the samples are very different</p>
 <ul>
 <li>we say that the sample-to-sample variability is large.</li>
-<li>we would not be very confident in our estimate</li>
+<li>we would not be very confident in the estimate</li>
 </ul>
 <p>If the samples are all similar</p>
 <ul>
 <li>we say that the sample-to-sample variability is small</li>
-<li>we would be confident that our estimate is close to the truth</li>
+<li>we would be confident that the estimate is close to the truth</li>
 </ul>
 </section>
 <section id="from-a-single-sample-to-bootstrap-samples" class="slide level2">
@@ -973,9 +988,12 @@ H_0: p_{undegrad}\neq p_{grad}
 <section id="from-bootstrap-samples-to-ci" class="slide level2">
 <h2>From bootstrap samples to CI</h2>
 <p>Computing the sample statistic of each bootstrap sample provides its <strong>sampling distribution</strong>.</p>
-<p>To construct a 90% CI, we simply identify the 5th and 95th percentiles of the sampling distribution.</p>
+<p>To construct a 90% CI of some parameter, we simply identify the 5th and 95th percentiles of the sampling distribution of the corresponding sample statistics.</p>
+<ul>
+<li>the 5th and 95th percentiles of the sampling distribution of the median give the 90% CI for the median.</li>
+</ul>
 <div class="fragment">
-<p>“We are 90% confident that the interval captures the true value of the population parameter”.</p>
+<p><strong>Interpretation</strong>: “We are 90% confident that the interval captures the true value of the population parameter”.</p>
 </div>
 </section>
 <section id="little-variability-rightarrow-narrow-ci" class="slide level2">
@@ -988,7 +1006,7 @@ H_0: p_{undegrad}\neq p_{grad}
 </section>
 <section id="much-variability-rightarrow-large-ci" class="slide level2">
 <h2>Much variability <span class="math inline">\(\Rightarrow\)</span> large CI</h2>
-<p>Much variability in the data</p>
+<p><strong>Much variability</strong> in the data</p>
 <p><span class="math inline">\(\Rightarrow\)</span> much sample-to-sample variability</p>
 <p><span class="math inline">\(\Rightarrow\)</span> much variability between bootstrap samples</p>
 <p><span class="math inline">\(\Rightarrow\)</span> sampling distribution of mean/proportion is diffuse</p>
@@ -1008,7 +1026,7 @@ H_0: p_{undegrad}\neq p_{grad}
 <section id="computing-bootstrap-ci" class="slide level2">
 <h2>Computing bootstrap CI</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb7" data-code-line-numbers="2|4|5|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>d <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>mpg</span>
+<div class="sourceCode" id="cb7" data-code-line-numbers="2|3|4|5,6|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>d <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>mpg</span>
 <span id="cb7-2"><a href="#cb7-2"></a>results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">mean =</span> <span class="fu">numeric</span>(), <span class="at">sd =</span> <span class="fu">numeric</span>())</span>
 <span id="cb7-3"><a href="#cb7-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">1e3</span>){</span>
 <span id="cb7-4"><a href="#cb7-4"></a>  d_boot <span class="ot">&lt;-</span> <span class="fu">sample_bootstrap</span>(d)</span>
@@ -1020,8 +1038,9 @@ H_0: p_{undegrad}\neq p_{grad}
 <section id="section-7" class="slide level2">
 <h2></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>(results) <span class="sc">+</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(mean))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>(results) <span class="sc">+</span> </span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(mean)) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(results<span class="sc">$</span>mean, <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>)), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="lec-8_files/figure-revealjs/unnamed-chunk-11-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
@@ -1029,12 +1048,13 @@ H_0: p_{undegrad}\neq p_{grad}
 <h2></h2>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">ggplot</span>(results) <span class="sc">+</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(sd))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(sd))<span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(results<span class="sc">$</span>sd, <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>)), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="lec-8_files/figure-revealjs/unnamed-chunk-12-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
-<section id="section-9" class="slide level2">
-<h2></h2>
+<section id="computing-the-ci" class="slide level2">
+<h2>Computing the CI</h2>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># 90% bootstrap CI for the mean cty in the population</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a><span class="fu">quantile</span>(results<span class="sc">$</span>mean, <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1050,7 +1070,7 @@ H_0: p_{undegrad}\neq p_{grad}
 </div>
 </div>
 </section>
-<section id="section-10" class="slide level2">
+<section id="section-9" class="slide level2">
 <h2></h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
@@ -1064,13 +1084,13 @@ H_0: p_{undegrad}\neq p_{grad}
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_6292569d" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6294b063" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">06</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
 </section>
-<section id="section-11" class="slide level2">
+<section id="section-10" class="slide level2">
 <h2></h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
@@ -1084,8 +1104,8 @@ H_0: p_{undegrad}\neq p_{grad}
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_6292593b" style="right:0;bottom:0;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<div class="countdown" id="timer_6294b0f0" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -1110,11 +1130,7 @@ H_0: p_{undegrad}\neq p_{grad}
 </ul></li>
 <li class="fragment"><p>Hypothesis test</p></li>
 <li class="fragment"><p>Confidence interval</p></li>
-<li class="fragment"><p>A first glimpse of modern statistics</p>
-<ul>
-<li class="fragment"><p>HT</p></li>
-<li class="fragment"><p>CI</p></li>
-</ul></li>
+<li class="fragment"><p>A first glimpse of modern statistics</p></li>
 </ul>
 </div>
 
