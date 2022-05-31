@@ -1,0 +1,14 @@
+{
+  "hash": "04cfbdc7751c52b235171c454d9503d8",
+  "result": {
+    "markdown": "---\ntitle: \"Prediction Project - Model Evaluation\"\nsubtitle: \"STA 101L - Summer 1 2022\"\neditor: visual\neditor_options: \n  chunk_output_type: console\n---\n\n## Raw Data import\n\n::: {.cell}\n\n```{.r .cell-code}\nknitr::opts_chunk$set(\n  eval = FALSE\n)\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\nlibrary(broom)\n```\n:::\n\n## Import models\n\n::: {.cell}\n\n```{.r .cell-code}\npath <- \"../projects/\"\nload(paste0(path, \"Ma-Yu.RDATA\"))\nm_my <- best_prediction_model\nrm(best_prediction_model)\n\nload(paste0(path, \"Me-Ha.RDATA\"))\nm_mh <- wombp12rf\nrm(wombp12rf)\n\nload(paste0(path, \"Ja-Ke.RDATA\"))\nm_jk <- Gestation_week_inv\nrm(Gestation_week_inv)\n\nrbind(glance(m_my), glance(m_mh), glance(m_jk))\n```\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": [],
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": null
+  }
+}

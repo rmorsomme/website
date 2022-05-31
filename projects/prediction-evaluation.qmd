@@ -1,0 +1,39 @@
+---
+title: "Prediction Project - Model Evaluation"
+subtitle: "STA 101L - Summer 1 2022"
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+## Raw Data import
+
+```{r}
+knitr::opts_chunk$set(
+  eval = FALSE
+)
+```
+
+```{r}
+library(tidyverse)
+library(broom)
+```
+
+## Import models
+
+```{r}
+path <- "../projects/"
+load(paste0(path, "Ma-Yu.RDATA"))
+m_my <- best_prediction_model
+rm(best_prediction_model)
+
+load(paste0(path, "Me-Ha.RDATA"))
+m_mh <- wombp12rf
+rm(wombp12rf)
+
+load(paste0(path, "Ja-Ke.RDATA"))
+m_jk <- Gestation_week_inv
+rm(Gestation_week_inv)
+
+rbind(glance(m_my), glance(m_mh), glance(m_jk))
+```

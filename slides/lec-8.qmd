@@ -49,7 +49,7 @@ options(scipen = 100)
 
 ## Announcements -- presentations
 
--   \< 5 minutes
+-   Presentations are \< 5 minutes
 -   QA -- ask a question!
 -   Discussion
 
@@ -60,18 +60,19 @@ options(scipen = 100)
 ## Announcements
 
 -   Homework 5 due Sunday
+-   Wednesday's schedule: 3:30-4:15 lecture; 4:15-5:45 (Roy's OH)
 
-## Recap
+## Recap -- 1st half of course
 
--   Types of data
+-   Types of data and studies
 
 -   Visualization and numerical summaries
 
 -   Regression models
 
-    -   linear rm
+    -   linear rregression
 
-    -   logistic rm
+    -   logistic regression
 
     -   model selection
 
@@ -106,6 +107,16 @@ par(par_og) # restore original par
 
 Source: [IMS](https://www.openintro.org/book/ims/)
 
+## Outline -- 2nd half of course
+
+-   Statistical inference
+
+    -   proportions
+
+    -   means
+
+    -   linear and logistic regression
+
 ## Outline
 
 -   Statistical inference
@@ -130,7 +141,7 @@ We want to learn about some (unknown) **parameter** of some **population** of in
 
 . . .
 
--   In the remainder of the course, we will always assume that we have a *random* sample
+-   In the remainder of the course, we will always assume that we have a *random* sample of the population.
 
 ## 
 
@@ -146,13 +157,15 @@ countdown(minutes = 3)
 
 ## Statistical inference
 
-**Inference**: to estimate the population parameter from the sample.
+**Inference**: estimating the population parameter from the sample.
 
-**Statistical inference**: to estimate the population parameter from the sample and rigorously quantify our *certainty* in the estimate.
+**Statistical inference**: estimating the population parameter from the sample and rigorously quantify our *certainty* in the estimate.
 
 ## Statistic
 
-**Statistic**: any function of some data; e.g., average, median, iqr, maximum, variance, etc.
+**Statistic**: any function of some data
+
+-   e.g., average, median, iqr, maximum, variance, etc.
 
 **Sample statistic**: a statistic computed on the sample
 
@@ -164,11 +177,11 @@ countdown(minutes = 3)
 
 To estimate a population parameter, we can simply
 
--   collect data on a representative sample, and
+-   obtain a representative sample, and
 
 -   use the corresponding sample statistic as an estimate
 
-    -   to estimate the median age of Duke students, simply compute the median in the sample.
+    -   to estimate the median age of Duke students, simply collect a sample of students and compute their median age.
 
 ## Certainty matters
 
@@ -178,7 +191,7 @@ A single point (the sample statistic) does not indicate how certain we are in ou
 
 -   if we have a *small* sample, we know that our estimate may be far from the truth.
 
--   e.g. basketball free throws.
+-   e.g. free throws in basketball, penalty kicks in soccer.
 
 ## Statistical inference
 
@@ -190,7 +203,7 @@ Framework to make rigorous statements about uncertainty in our estimates
 
 -   hypothesis tests
 
-    -   evaluate competing claims using data
+    -   evaluate competing claims
 
 # Five cases
 
@@ -198,7 +211,7 @@ Framework to make rigorous statements about uncertainty in our estimates
 
 ::: columns
 ::: {.column width="55%"}
-What is the proportion of vegetarian among Duke students?
+What is the proportion of vegetarians among Duke students?
 
 **Population parameter**: proportion of vegetarians among Duke students $(p)$
 
@@ -214,7 +227,7 @@ What is the proportion of vegetarian among Duke students?
 
 **Confidence interval**: a range a plausible values for the population parameter $p$
 
--   $(0.31, 0.43)$
+-   for example, $(0.31, 0.43)$
 
 . . .
 
@@ -228,7 +241,7 @@ Is the proportion of vegetarians the same among Duke undergraduate and graduate 
 
 **Population parameter**: difference between the proportion of vegetarians among Duke undergraduate and graduate students $(p_{diff} = p_{undergrad}-p_{grad})$
 
-**Sample statistic**: difference in proportion of vegetarian in the sample $(\hat{p}_{diff} = \hat{p}_{undergrad} - \hat{p}_{grad})$
+**Sample statistic**: difference in proportion of vegetarians in the sample $(\hat{p}_{diff} = \hat{p}_{undergrad} - \hat{p}_{grad})$
 
 . . .
 
@@ -248,7 +261,7 @@ How much time do Duke students sleep on average per night?
 
 **Population parameter**: mean amount of time that Duke students sleep per night $(\mu)$
 
-**Sample statistic**: average amount of time in the sample $(\bar{x})$
+**Sample statistic**: average amount of time slept in the sample $(\bar{x})$
 :::
 
 ::: {.column width="40%"}
@@ -266,7 +279,7 @@ How much time do Duke students sleep on average per night?
 
 -   $H_0:\mu=8, H_a:\mu\neq8$
 
-## Case 4 -- Difference between two proportions {.smaller}
+## Case 4 -- Difference between two means {.smaller}
 
 Do Duke undergraduate and graduate students sleep on average the same amount of time per night?
 
@@ -336,11 +349,11 @@ Consider the 2nd case (difference in proportion of vegetarians between undergrad
 ## More examples {.smaller}
 
 -   Are the Covid-19 vaccines equally effective?
-    -   $H_0$: the vaccines are all equally effective; $H_a$: the vaccines are not all equally effective
+    -   $H_0$: the vaccines are all equally effective; $H_a$: the vaccines are not all equally effective.
 -   Does caffeine consumption affect student participation in class
-    -   $H_0$: caffeine consumption does not affect student participation; $H_a$: caffeine consumption affects student participation
+    -   $H_0$: caffeine consumption does not affect student participation; $H_a$: caffeine consumption affects student participation.
 -   Are men and women paid equally in the workplace?
-    -   $H_0$: men and women are paid equally; $H_a$: men and women are not paid equally
+    -   $H_0$: men and women are paid equally; $H_a$: men and women are not paid equally.
 -   Have Duke students gained weight since the start of the Covid-19 pandemic?
     -   $H_0$: Duke student have not gained weight; $H_a$: Duke students have gained weight.
 
@@ -385,7 +398,7 @@ Determining whether the observed difference is due to natural variation or provi
 ::: {.callout-tip icon="false"}
 ## Group exercise - convincing evidence
 
-Suppose we have a sample with the same number of undergrad and grad students and $\hat{p}_{diff} = \hat{p}_{undergrad} - \hat{p}_{grad} = 0.6 - 0.4 = 0.2$. For what sample sizes $n$ do you *intuitively feel* that the observed difference provides **convincing evidence** that the two groups are different?
+Suppose we have a sample of Duke students with the same number of undergraduates and graduates, and $\hat{p}_{diff} = \hat{p}_{undergrad} - \hat{p}_{grad} = 0.6 - 0.4 = 0.2$. For what sample sizes $n$ do you *intuitively feel* that the observed difference provides **convincing evidence** that the two groups are different?
 
 -   $n=10$ (5 undergrad and 5 grad students)
 -   $n=20$ (10 undergrad and 10 grad students)
@@ -408,9 +421,9 @@ countdown(minutes = 3)
 
 There always is natural variability in the data.
 
--   If we draw a second sample from the population, the two sample statistic will probably differ.
+-   If we draw a second sample from the population, the two samples will differ and the sample statistics will not be the same (e.g., $\hat{p}_1\neq\hat{p}_2$, $\bar{x}_1\neq\bar{x}_2$ and $\hat{\beta}^{(1)\neq\bar{x}_2$).
 
--   There is thus no reason to believe that the sample statistic in the first sample is exactly equal to the population parameter.
+-   There is thus no reason to believe that the sample statistic in the first sample is exactly equal to the population parameter (e.g. $\hat{p}_1 = p$ and $\bar{x}_1=\mu$).
 
 ## Examples
 
@@ -420,9 +433,11 @@ There always is natural variability in the data.
 
 -   How much weight have US adults gained since the start of the Covid-19 pandemic?
 
+CI: range of plausible values based on a sample.
+
 # Modern statistics
 
-## Classical and modern approaches
+## Classical and modern approach
 
 We will learn two approaches to statistical inference
 
@@ -463,15 +478,17 @@ countdown(minutes = 2)
 
 ## For-loop
 
-The following for-loop does the previous experiment more efficiently!
+The following for-loop does the previous experiment efficiently!
 
 ```{r}
+#| code-line-numbers: "1|2|3,8|4|5,6|7|"
 set.seed(0)
-results <- tibble(n_heads = numeric()) # empty data frame to collect the results
-for(i in 1 : 1e3){ # repeat the experiment 1,000 times
-  flips   <- rbernoulli(100, p = 0.5)
-  n_heads <- sum(flips)
-  results <- results %>% add_row(n_heads)
+results <- tibble(prop_heads = numeric())          # empty data frame to collect the results
+for(i in 1 : 1e3){                              # repeat the experiment 1,000 times
+  flips      <- rbernoulli(100, p = 0.5)        # flip 100 coins (sample)
+  n_heads    <- sum(flips)                      # count the number of heads
+  prop_heads <- n_heads / 100                   # proportion of heads (sample statistic)
+  results    <- results %>% add_row(prop_heads) # add the sample statistic to the data frame `result`
 }
 ```
 
@@ -510,14 +527,14 @@ Always start by defining the population and the parameter of interest.
 
 Question: do the facts (the sample) provide sufficient evidence to reject the claim that the defendant is innocent (that the coin is fair)?
 
--   If so, we **reject** $H_0$
+-   If so, we **reject** $H_0$,
 
--   Otherwise, we **fail to reject** $H_0$.
+-   otherwise, we **fail to reject** $H_0$.
 
 ::: callout-note
 ## Never accept the null hypothesis
 
-We **never** accept the null hypothesis! We only *reject* of *fail to reject* it.
+We **never** accept the null hypothesis! We only *reject* or *fail to reject* it.
 :::
 
 ## 
@@ -530,9 +547,9 @@ ggplot(results) +
 
 ## Two outcomes {.smaller}
 
-Suppose the sample consists in **55 heads** of 100 flips
+Suppose the sample consists of **55 heads** of 100 flips
 
-$\Rightarrow$ the sample is plausible under $H_0$; the observed data do not provide strong evidence against the null hypothesis; we fail to reject the claim that the coin is fair
+$\Rightarrow$ such sample is plausible under $H_0$; the observed data do not provide strong evidence against the null hypothesis; we fail to reject the claim that the coin is fair
 
 -   The coin might be unfair, but the data do not provide strong evidence against fairness.
 
@@ -542,7 +559,7 @@ Now suppose that out of 100 flips, you observe **65 heads**.
 
 $\Rightarrow$ this result is extremely unlikely under $H_0$; the observed data provide strong evidence against the null hypothesis; we reject the claim that the coin is fair.
 
--   The coin might be fair, but it is implausible for a fair coin to give $65$ heads out of $100$ flips.
+-   The coin might be fair, but a fair coin will rarely give $65$ heads out of $100$ flips.
 
 # A first glimpse of modern statistics for CI
 
@@ -604,11 +621,19 @@ To construct a 90% CI of some parameter, we simply identify the 5th and 95th per
 
 **Little variability** in the data
 
+. . .
+
 $\Rightarrow$ little sample-to-sample variability
+
+. . .
 
 $\Rightarrow$ little variability between bootstrap samples
 
+. . .
+
 $\Rightarrow$ sampling distribution of mean/proportion is concentrated
+
+. . .
 
 $\Rightarrow$ **CI is narrow**.
 
@@ -616,35 +641,32 @@ $\Rightarrow$ **CI is narrow**.
 
 **Much variability** in the data
 
+. . .
+
 $\Rightarrow$ much sample-to-sample variability
+
+. . .
 
 $\Rightarrow$ much variability between bootstrap samples
 
+. . .
+
 $\Rightarrow$ sampling distribution of mean/proportion is diffuse
 
+. . .
+
 $\Rightarrow$ **CI is large**.
-
-## `sample_bootstrap`
-
-```{r}
-sample_bootstrap <- function(data){
-  n       <- nrow(data)
-  indices <- sample(1:n, size = n, replace = TRUE)
-  sample_bootstrap <- data[indices,]
-  return(sample_bootstrap)
-}
-```
 
 ## Computing bootstrap CI
 
 ```{r}
-#| code-line-numbers: "2|3|4|5,6|"
+#| code-line-numbers: "2|3,7|4|5,6|"
 d <- ggplot2::mpg
 results <- tibble(mean = numeric(), sd = numeric())
 for(i in 1 : 1e3){
-  d_boot <- sample_bootstrap(d)
+  d_boot <- slice_sample(d, n = nrow(d), replace = TRUE) # sampling from the sample with replacement
   results <- results %>% 
-    add_row(mean = mean(d_boot$cty), sd = sd(d_boot$cty))
+    add_row(mean = mean(d_boot$cty), sd = sd(d_boot$cty)) # sample statistics of the bootstrap sample
 }
 ```
 

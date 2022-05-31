@@ -269,8 +269,7 @@ To accomplish that, we can randomly re-assign the $35$ promotions among the $45$
 
 ## 
 
-![](images/lec-9/randomization.png)
-Source: [IMS](https://www.openintro.org/book/ims/)
+![](images/lec-9/randomization.png) Source: [IMS](https://www.openintro.org/book/ims/)
 
 ## Simulation result
 
@@ -296,7 +295,7 @@ sex_discrimination_rand_1 %>%
   column_spec(1:4, width = "7em")
 ```
 
-## Simulating under `H_0` 
+## Simulating under `H_0`
 
 ```{r}
 d <- gender_discrimination %>% select(gender)
@@ -305,7 +304,6 @@ promotions_sim <- sample(promotions_ordered, 48) # shuffle promotions
 d_sim <- d %>% mutate(response = promotions_sim)
 d_sim
 ```
-
 
 ## Function for computing the test statistic
 
@@ -347,10 +345,9 @@ ggplot(results) +
 
 ## p-value
 
-
 **p-value**: the probability of observing a test statistic at least as extreme as the observed one under the null hypothesis.
 
--   the probability that $\hat{p}_{diff} > $ `r p_diff_obs` or $\hat{p} < $ `r -p_diff_obs` if there is no discrimination.
+-   the probability that \$\hat{p}\_{diff} \> \$ `r p_diff_obs` or \$\hat{p} \< \$ `r -p_diff_obs` if there is no discrimination.
 
 ```{r}
 results %>%
@@ -365,10 +362,7 @@ Using the usually significance level $\alpha = 0.05$, we **fail to reject** the 
 -   the data do not provide sufficient evidence to reject the null hypothesis,
 -   it is plausible to observe the sample collected in the study if there is no discrimination just by chance.
 
-::: callout-note
-## Statistician as messengers
-Statisticians are only messengers of the data; they only 
-
+::: callout-note \## Statistician as messengers Statisticians are only messengers of the data; they only
 
 # CI via bootstrap
 
@@ -383,6 +377,7 @@ Bootstrap samples $\Rightarrow$ sampling distribution $\Rightarrow$ bootstrap CI
 Source: [IMS](https://www.openintro.org/book/ims/)
 
 ## Bootstrap in `R`
+
 ```{r}
 sample_observed_m <- tibble(response = c(rep(1, 21), rep(0, 24 - 21)), gender = "male"  )
 sample_observed_f <- tibble(response = c(rep(1, 14), rep(0, 24 - 14)), gender = "female")
@@ -390,13 +385,12 @@ sample_observed_m
 sample_observed_f
 ```
 
-##
+## 
 
 ```{r}
 sample_bootstrap(sample_observed_m) # bootstrap sample
 sample_bootstrap(sample_observed_f) # bootstrap sample
 ```
-
 
 ```{r}
 results <- tibble(p_diff_hat = numeric())
