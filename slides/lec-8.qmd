@@ -337,13 +337,13 @@ Consider the 2nd case (difference in proportion of vegetarians between undergrad
 -   $H_0:$ the proportion of vegetarian is the same among undergraduate and graduate students ("nothing is going on") $$
     H_0: p_{diff}=p_{undegrad}-p_{grad}=0
     $$ $$
-    H_0: p_{undegrad}=p_{grad}
+    H_a: p_{undegrad}=p_{grad}
     $$
 
 -   $H_a:$ the proportion of vegetarians among undergraduate and graduate students is not the same ("something is going on"). $$
     H_0: p_{diff}=p_{undegrad}-p_{grad}\neq0
     $$ $$
-    H_0: p_{undegrad}\neq p_{grad}
+    H_a: p_{undegrad}\neq p_{grad}
     $$
 
 ## More examples {.smaller}
@@ -421,7 +421,7 @@ countdown(minutes = 3)
 
 There always is natural variability in the data.
 
--   If we draw a second sample from the population, the two samples will differ and the sample statistics will not be the same (e.g., $\hat{p}_1\neq\hat{p}_2$, $\bar{x}_1\neq\bar{x}_2$ and $\hat{\beta}^{(1)\neq\bar{x}_2$).
+-   If we draw a second sample from the population, the two samples will differ and the sample statistics will not be the same (e.g., $\hat{p}_1\neq\hat{p}_2$, $\bar{x}_1\neq\bar{x}_2$ and $\hat{\beta}^{(1)}_1\neq\hat{\beta}^{(2)}_1$).
 
 -   There is thus no reason to believe that the sample statistic in the first sample is exactly equal to the population parameter (e.g. $\hat{p}_1 = p$ and $\bar{x}_1=\mu$).
 
@@ -498,7 +498,7 @@ Distribution of the sample statistic $\hat{p}$ when $H_0$ is true.
 
 ```{r}
 ggplot(results) +
-  geom_histogram(aes(n_heads), binwidth = 1) # set the binwidth to 1 to ensure that each bin corresponds to exactly one integer.
+  geom_histogram(aes(prop_heads), binwidth = 0.01)
 ```
 
 ## Population and parameter
@@ -517,13 +517,13 @@ Always start by defining the population and the parameter of interest.
 
 -   $H_0:p=0.5$ (the coin is fair)
 
--   $H_0:p\neq0.5$ (the coin is not fair)
+-   $H_a:p\neq0.5$ (the coin is not fair)
 
 ## Like jurors in the justice system {.smaller}
 
 -   $H_0:$ innocent (the coin is fair)
 
--   $H_0:$ guilty (the coin is not fair)
+-   $H_a:$ guilty (the coin is not fair)
 
 Question: do the facts (the sample) provide sufficient evidence to reject the claim that the defendant is innocent (that the coin is fair)?
 
@@ -541,8 +541,8 @@ We **never** accept the null hypothesis! We only *reject* or *fail to reject* it
 
 ```{r}
 ggplot(results) + 
-  geom_histogram(aes(n_heads), binwidth = 1) +
-  geom_vline(xintercept = c(55,65), col = "red", size = 2)
+  geom_histogram(aes(prop_heads), binwidth = 0.01) +
+  geom_vline(xintercept = c(0.55, 0.65), col = "red", size = 2)
 ```
 
 ## Two outcomes {.smaller}

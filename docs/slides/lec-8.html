@@ -488,7 +488,7 @@
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62964e37" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6297ff8a" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -668,12 +668,12 @@
 <li><p><span class="math inline">\(H_0:\)</span> the proportion of vegetarian is the same among undergraduate and graduate students (“nothing is going on”) <span class="math display">\[
 H_0: p_{diff}=p_{undegrad}-p_{grad}=0
 \]</span> <span class="math display">\[
-H_0: p_{undegrad}=p_{grad}
+H_a: p_{undegrad}=p_{grad}
 \]</span></p></li>
 <li><p><span class="math inline">\(H_a:\)</span> the proportion of vegetarians among undergraduate and graduate students is not the same (“something is going on”). <span class="math display">\[
 H_0: p_{diff}=p_{undegrad}-p_{grad}\neq0
 \]</span> <span class="math display">\[
-H_0: p_{undegrad}\neq p_{grad}
+H_a: p_{undegrad}\neq p_{grad}
 \]</span></p></li>
 </ul>
 </section>
@@ -712,7 +712,7 @@ H_0: p_{undegrad}\neq p_{grad}
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62964d08" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6297ff23" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -773,7 +773,7 @@ H_0: p_{undegrad}\neq p_{grad}
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62964c5e" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6297fc32" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -789,7 +789,7 @@ H_0: p_{undegrad}\neq p_{grad}
 <p><strong>CI</strong>: range of plausible values for the population parameter.</p>
 <p>There always is natural variability in the data.</p>
 <ul>
-<li><p>If we draw a second sample from the population, the two samples will differ and the sample statistics will not be the same (e.g., <span class="math inline">\(\hat{p}_1\neq\hat{p}_2\)</span>, <span class="math inline">\(\bar{x}_1\neq\bar{x}_2\)</span> and <span class="math inline">\(\hat{\beta}^{(1)\neq\bar{x}_2\)</span>).</p></li>
+<li><p>If we draw a second sample from the population, the two samples will differ and the sample statistics will not be the same (e.g., <span class="math inline">\(\hat{p}_1\neq\hat{p}_2\)</span>, <span class="math inline">\(\bar{x}_1\neq\bar{x}_2\)</span> and <span class="math inline">\(\hat{\beta}^{(1)}_1\neq\hat{\beta}^{(2)}_1\)</span>).</p></li>
 <li><p>There is thus no reason to believe that the sample statistic in the first sample is exactly equal to the population parameter (e.g.&nbsp;<span class="math inline">\(\hat{p}_1 = p\)</span> and <span class="math inline">\(\bar{x}_1=\mu\)</span>).</p></li>
 </ul>
 </section>
@@ -854,7 +854,7 @@ H_0: p_{undegrad}\neq p_{grad}
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62964f0a" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6297fc26" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -879,7 +879,7 @@ H_0: p_{undegrad}\neq p_{grad}
 <p>Distribution of the sample statistic <span class="math inline">\(\hat{p}\)</span> when <span class="math inline">\(H_0\)</span> is true.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">ggplot</span>(results) <span class="sc">+</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(n_heads), <span class="at">binwidth =</span> <span class="dv">1</span>) <span class="co"># set the binwidth to 1 to ensure that each bin corresponds to exactly one integer.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(prop_heads), <span class="at">binwidth =</span> <span class="fl">0.01</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="lec-8_files/figure-revealjs/unnamed-chunk-7-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
@@ -905,14 +905,14 @@ H_0: p_{undegrad}\neq p_{grad}
 <h2>Null and alternative hypotheses</h2>
 <ul>
 <li><p><span class="math inline">\(H_0:p=0.5\)</span> (the coin is fair)</p></li>
-<li><p><span class="math inline">\(H_0:p\neq0.5\)</span> (the coin is not fair)</p></li>
+<li><p><span class="math inline">\(H_a:p\neq0.5\)</span> (the coin is not fair)</p></li>
 </ul>
 </section>
 <section id="like-jurors-in-the-justice-system" class="slide level2 smaller">
 <h2>Like jurors in the justice system</h2>
 <ul>
 <li><p><span class="math inline">\(H_0:\)</span> innocent (the coin is fair)</p></li>
-<li><p><span class="math inline">\(H_0:\)</span> guilty (the coin is not fair)</p></li>
+<li><p><span class="math inline">\(H_a:\)</span> guilty (the coin is not fair)</p></li>
 </ul>
 <p>Question: do the facts (the sample) provide sufficient evidence to reject the claim that the defendant is innocent (that the coin is fair)?</p>
 <ul>
@@ -937,8 +937,8 @@ H_0: p_{undegrad}\neq p_{grad}
 <h2></h2>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">ggplot</span>(results) <span class="sc">+</span> </span>
-<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(n_heads), <span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>(<span class="dv">55</span>,<span class="dv">65</span>), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(prop_heads), <span class="at">binwidth =</span> <span class="fl">0.01</span>) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>(<span class="fl">0.55</span>, <span class="fl">0.65</span>), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="lec-8_files/figure-revealjs/unnamed-chunk-8-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
@@ -1106,7 +1106,7 @@ H_0: p_{undegrad}\neq p_{grad}
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62964c56" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6297fff9" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">06</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1126,7 +1126,7 @@ H_0: p_{undegrad}\neq p_{grad}
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_6296501a" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6297fcae" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>

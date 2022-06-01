@@ -2846,7 +2846,7 @@
     "href": "slides/lec-8.html#example",
     "title": "Principles of Inference",
     "section": "Example",
-    "text": "Example\nConsider the 2nd case (difference in proportion of vegetarians between undergrad and grad students).\n\n\\(H_0:\\) the proportion of vegetarian is the same among undergraduate and graduate students (“nothing is going on”) \\[\nH_0: p_{diff}=p_{undegrad}-p_{grad}=0\n\\] \\[\nH_0: p_{undegrad}=p_{grad}\n\\]\n\\(H_a:\\) the proportion of vegetarians among undergraduate and graduate students is not the same (“something is going on”). \\[\nH_0: p_{diff}=p_{undegrad}-p_{grad}\\neq0\n\\] \\[\nH_0: p_{undegrad}\\neq p_{grad}\n\\]"
+    "text": "Example\nConsider the 2nd case (difference in proportion of vegetarians between undergrad and grad students).\n\n\\(H_0:\\) the proportion of vegetarian is the same among undergraduate and graduate students (“nothing is going on”) \\[\nH_0: p_{diff}=p_{undegrad}-p_{grad}=0\n\\] \\[\nH_a: p_{undegrad}=p_{grad}\n\\]\n\\(H_a:\\) the proportion of vegetarians among undergraduate and graduate students is not the same (“something is going on”). \\[\nH_0: p_{diff}=p_{undegrad}-p_{grad}\\neq0\n\\] \\[\nH_a: p_{undegrad}\\neq p_{grad}\n\\]"
   },
   {
     "objectID": "slides/lec-8.html#more-examples",
@@ -2888,7 +2888,7 @@
     "href": "slides/lec-8.html#confidence-interval-1",
     "title": "Principles of Inference",
     "section": "Confidence interval",
-    "text": "Confidence interval\nCI: range of plausible values for the population parameter.\nThere always is natural variability in the data.\n\nIf we draw a second sample from the population, the two samples will differ and the sample statistics will not be the same (e.g., \\(\\hat{p}_1\\neq\\hat{p}_2\\), \\(\\bar{x}_1\\neq\\bar{x}_2\\) and \\(\\hat{\\beta}^{(1)\\neq\\bar{x}_2\\)).\nThere is thus no reason to believe that the sample statistic in the first sample is exactly equal to the population parameter (e.g. \\(\\hat{p}_1 = p\\) and \\(\\bar{x}_1=\\mu\\))."
+    "text": "Confidence interval\nCI: range of plausible values for the population parameter.\nThere always is natural variability in the data.\n\nIf we draw a second sample from the population, the two samples will differ and the sample statistics will not be the same (e.g., \\(\\hat{p}_1\\neq\\hat{p}_2\\), \\(\\bar{x}_1\\neq\\bar{x}_2\\) and \\(\\hat{\\beta}^{(1)}_1\\neq\\hat{\\beta}^{(2)}_1\\)).\nThere is thus no reason to believe that the sample statistic in the first sample is exactly equal to the population parameter (e.g. \\(\\hat{p}_1 = p\\) and \\(\\bar{x}_1=\\mu\\))."
   },
   {
     "objectID": "slides/lec-8.html#examples",
@@ -2923,7 +2923,7 @@
     "href": "slides/lec-8.html#section-4",
     "title": "Principles of Inference",
     "section": "",
-    "text": "Distribution of the sample statistic \\(\\hat{p}\\) when \\(H_0\\) is true.\n\nggplot(results) +\n  geom_histogram(aes(n_heads), binwidth = 1) # set the binwidth to 1 to ensure that each bin corresponds to exactly one integer."
+    "text": "Distribution of the sample statistic \\(\\hat{p}\\) when \\(H_0\\) is true.\n\nggplot(results) +\n  geom_histogram(aes(prop_heads), binwidth = 0.01)"
   },
   {
     "objectID": "slides/lec-8.html#population-and-parameter",
@@ -2937,21 +2937,21 @@
     "href": "slides/lec-8.html#null-and-alternative-hypotheses",
     "title": "Principles of Inference",
     "section": "Null and alternative hypotheses",
-    "text": "Null and alternative hypotheses\n\n\\(H_0:p=0.5\\) (the coin is fair)\n\\(H_0:p\\neq0.5\\) (the coin is not fair)"
+    "text": "Null and alternative hypotheses\n\n\\(H_0:p=0.5\\) (the coin is fair)\n\\(H_a:p\\neq0.5\\) (the coin is not fair)"
   },
   {
     "objectID": "slides/lec-8.html#like-jurors-in-the-justice-system",
     "href": "slides/lec-8.html#like-jurors-in-the-justice-system",
     "title": "Principles of Inference",
     "section": "Like jurors in the justice system",
-    "text": "Like jurors in the justice system\n\n\\(H_0:\\) innocent (the coin is fair)\n\\(H_0:\\) guilty (the coin is not fair)\n\nQuestion: do the facts (the sample) provide sufficient evidence to reject the claim that the defendant is innocent (that the coin is fair)?\n\nIf so, we reject \\(H_0\\),\notherwise, we fail to reject \\(H_0\\).\n\n\n\n\n\n\n\nNever accept the null hypothesis\n\n\nWe never accept the null hypothesis! We only reject or fail to reject it."
+    "text": "Like jurors in the justice system\n\n\\(H_0:\\) innocent (the coin is fair)\n\\(H_a:\\) guilty (the coin is not fair)\n\nQuestion: do the facts (the sample) provide sufficient evidence to reject the claim that the defendant is innocent (that the coin is fair)?\n\nIf so, we reject \\(H_0\\),\notherwise, we fail to reject \\(H_0\\).\n\n\n\n\n\n\n\nNever accept the null hypothesis\n\n\nWe never accept the null hypothesis! We only reject or fail to reject it."
   },
   {
     "objectID": "slides/lec-8.html#section-5",
     "href": "slides/lec-8.html#section-5",
     "title": "Principles of Inference",
     "section": "",
-    "text": "ggplot(results) + \n  geom_histogram(aes(n_heads), binwidth = 1) +\n  geom_vline(xintercept = c(55,65), col = \"red\", size = 2)"
+    "text": "ggplot(results) + \n  geom_histogram(aes(prop_heads), binwidth = 0.01) +\n  geom_vline(xintercept = c(0.55, 0.65), col = \"red\", size = 2)"
   },
   {
     "objectID": "slides/lec-8.html#two-outcomes",
