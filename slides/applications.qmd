@@ -30,6 +30,7 @@ editor_options:
 -   When data seem to contradict widely held believes
 -   Statistics in psychiatry and agriculture
 -   Can you still predict elections?
+-   Inferring ethnicity from X-rays
 
 ## 7 billion -- are you typical?
 
@@ -94,7 +95,6 @@ In this [article](https://fivethirtyeight.com/features/new-yorkers-will-pay-56-a
 
 ## Can you still predict elections?
 
-
 ::: columns
 ::: {.column width="32%"}
 In this [podcast](https://statsandstories.net/politics1/can-you-still-predict-elections) from **Andrew Gelman**, Professor of statistics and political science at Columbia University, reflects on the use of statistics in election forecasting shortly before the 2020 US election.
@@ -110,4 +110,6 @@ Prof. Gelman is widely decorated and very influential statistician.
 :::
 :::
 
+## Inferring ethnicity from X-rays
 
+In this recent [article](https://www.boston.com/news/health/2022/05/18/scientists-create-ai-race-from-x-rays-dont-know-how-it-works-harvard-mit/), researchers from Harvard and the MIT that AI programs are able to determine a person's self-reported ethnicity from an X-ray image. This is noteworthy since these researchers and medical doctors in general did not know it was even possible to do so from X-rays. Which features of the image are used by the AI algorithms to accomplish this feat is still uknown.
