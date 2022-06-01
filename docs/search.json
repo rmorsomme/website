@@ -312,7 +312,7 @@
     "href": "hw/hw-5.html#problem-set-25-points",
     "title": "HW 5 - Inference for proportions",
     "section": "Problem set (25 points)",
-    "text": "Problem set (25 points)\n\n11.2 (2 points)\n\nDo parts a-d.\nYou do not need to do part e\n\n11.6 (2 points)\n12.2 (2 points)\n12.4 (4 points)\n\nRe-create the figures on R. Hint: use the rbinom command.\nDo the exercise.\n\n12.8 (3 points)\n13 points"
+    "text": "Problem set (25 points)\n\n11.2 (1 points) – parts a-d (skip part e)\n11.4 (1 point) – parts a-b (skip part c)\n11.6 (2 points)\n12.2 (2 points)\n12.6 (4 points)\n12.8 (3 points)\n16.2 (1 point)\n16.10 (4 points)\n17.2 (2 points) – parts a and c (skip part b)\n17.4 (2 points) – parts a and c (skip part b)\n17.6 (3 points)"
   },
   {
     "objectID": "hw/hw-5.html#lab-exercises---the-youth-risk-behavior-surveillance-system-25-points",
@@ -501,7 +501,7 @@
     "href": "slides/applications.html#outline",
     "title": "Data science in action – examples in various fields",
     "section": "Outline",
-    "text": "Outline\n\n7 billion – are you typical?\n200 years of history through health and wealth\nBuilding a better NBA team through data science\nWhen data seem to contradict widely held believes\nStatistics in psychiatry and agriculture\nCan you still predict elections?"
+    "text": "Outline\n\n7 billion – are you typical?\n200 years of history through health and wealth\nBuilding a better NBA team through data science\nWhen data seem to contradict widely held believes\nStatistics in psychiatry and agriculture\nCan you still predict elections?\nInferring ethnicity from X-rays"
   },
   {
     "objectID": "slides/applications.html#billion-are-you-typical",
@@ -550,7 +550,14 @@
     "href": "slides/applications.html#can-you-still-predict-elections",
     "title": "Data science in action – examples in various fields",
     "section": "Can you still predict elections?",
-    "text": "Can you still predict elections?\n\n\nIn this podcast from Andrew Gelman, Professor of statistics and political science at Columbia University, reflects on the use of statistics in election forecasting shortly before the 2020 US election.\nProf. Gelman is widely decorated and very influential statistician.\n\n\n\n\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+    "text": "Can you still predict elections?\n\n\nIn this podcast from Andrew Gelman, Professor of statistics and political science at Columbia University, reflects on the use of statistics in election forecasting shortly before the 2020 US election.\nProf. Gelman is widely decorated and very influential statistician."
+  },
+  {
+    "objectID": "slides/applications.html#inferring-ethnicity-from-x-rays",
+    "href": "slides/applications.html#inferring-ethnicity-from-x-rays",
+    "title": "Data science in action – examples in various fields",
+    "section": "Inferring ethnicity from X-rays",
+    "text": "Inferring ethnicity from X-rays\nIn this recent article, researchers from Harvard and the MIT that AI programs are able to determine a person’s self-reported ethnicity from an X-ray image. This is noteworthy since these researchers and medical doctors in general did not know it was even possible to do so from X-rays. Which features of the image are used by the AI algorithms to accomplish this feat is still uknown.\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
     "objectID": "slides/hw-1-lab-answers.html#setup",
@@ -607,6 +614,41 @@
     "title": "Homework 1 - lab answers",
     "section": "Exercise 7 (5 points)",
     "text": "Exercise 7 (5 points)\n\npresent %>%\n  mutate(total = boys + girls) %>%\n  arrange(desc(total))\n\n# A tibble: 63 x 4\n    year    boys   girls   total\n   <dbl>   <dbl>   <dbl>   <dbl>\n 1  1961 2186274 2082052 4268326\n 2  1960 2179708 2078142 4257850\n 3  1957 2179960 2074824 4254784\n 4  1959 2173638 2071158 4244796\n 5  1958 2152546 2051266 4203812\n 6  1962 2132466 2034896 4167362\n 7  1956 2133588 2029502 4163090\n 8  1990 2129495 2028717 4158212\n 9  1991 2101518 2009389 4110907\n10  1963 2101632 1996388 4098020\n# ... with 53 more rows\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+  },
+  {
+    "objectID": "slides/jsm.html#discrete-time-stochastic-seir",
+    "href": "slides/jsm.html#discrete-time-stochastic-seir",
+    "title": "A Flexible Class of Time-Varying Stochastic Epidemic Models",
+    "section": "Discrete-time, stochastic SEIR",
+    "text": "Discrete-time, stochastic SEIR\n\n\n\n\nCompartmental model:\n\\[\nS\\rightarrow E \\rightarrow I \\rightarrow R\n\\]\nStochastic, discrete time:\n\\[\\begin{align*}\nn^{SE}_t & \\sim Bin\\left(S_t, p_t^{SE}\\right) \\\\\nn^{EI}_t & \\sim Bin\\left(E_t, p^{EI}  \\right) \\\\\nn^{IR}_t & \\sim Bin\\left(I_t, p^{IR}\\right)\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "slides/jsm.html#three-simplifications",
+    "href": "slides/jsm.html#three-simplifications",
+    "title": "A Flexible Class of Time-Varying Stochastic Epidemic Models",
+    "section": "Three simplifications",
+    "text": "Three simplifications\nModerate pandemics in large population:\n\n\\(S_t \\approx N\\)\n\\(Bin\\left(S_t, p_t^{SE}\\right) \\approx Pois\\left(N * p_t^{SE}\\right)\\)\n\\(N * p_t^{SE} = N * 1-\\exp\\{\\beta_t S_t I_t\\} \\approx \\beta_t I_t\\)\n\n\\(\\Rightarrow\\) \\(n^{SE}_t \\sim Pois\\left(\\beta_t I_t\\right)\\)"
+  },
+  {
+    "objectID": "slides/jsm.html#time-varying-infection-rate",
+    "href": "slides/jsm.html#time-varying-infection-rate",
+    "title": "A Flexible Class of Time-Varying Stochastic Epidemic Models",
+    "section": "Time-varying infection rate",
+    "text": "Time-varying infection rate\n\\(\\beta_{t+1} = \\beta_t \\frac{X_t}{\\omega_t}\\) with the shocks \\(X_t\\sim Beta(a_t, w_t a_t)\\)\nWe can show that if\n\\[\n\\beta_{t} \\sim Ga(a_t, b_t),\n\\] then\n\\[\n\\beta_{t+1} \\sim Ga(\\omega_t a_t + I_t, \\omega_t b_t + n^{SE}_t).\n\\]\n\\(\\omega_t\\) discounts past information!\n\n\n\n\n\n\n\nJointly drawing from the full conditional\n\n\nThe vector \\(\\{\\beta_t\\}_t\\) can be jointly updated in a Gibbs step using the FFBS!"
+  },
+  {
+    "objectID": "slides/jsm.html#data-augmented-markov-chain-monte-carlo",
+    "href": "slides/jsm.html#data-augmented-markov-chain-monte-carlo",
+    "title": "A Flexible Class of Time-Varying Stochastic Epidemic Models",
+    "section": "Data-augmented Markov Chain Monte Carlo",
+    "text": "Data-augmented Markov Chain Monte Carlo\nObserved data: daily infection counts \\(\\{n^{EI}_t\\}_t\\) and death counts \\(\\{n^{IR}_t\\}_t\\)\nLatent variables: \\(\\{n_t^{SE}\\}_t\\)\nDA-MCMC: alternate between\n\n\\(\\{n_t^{SE}\\}_t|.\\) using a joint Metropolis-Hastings\n\\(\\{\\beta_t\\}_t|.\\) using Gibbs (FFBS)\n\\((p^{EI}, p^{IR})|.\\) using Gibbs"
+  },
+  {
+    "objectID": "slides/jsm.html#congo-ebola-epidemic",
+    "href": "slides/jsm.html#congo-ebola-epidemic",
+    "title": "A Flexible Class of Time-Varying Stochastic Epidemic Models",
+    "section": "1995 Congo Ebola Epidemic",
+    "text": "1995 Congo Ebola Epidemic\n\n\n\n\n\n\n\n\n\nIntervention around day 70\n\\[\n\\omega_t =\n\\begin{cases}\n0.99, \\quad &t\\le70 \\\\\n0.9, \\quad &t > 70\n\\end{cases}\n\\]\nPandemic under control after the intervention \\((R_0<1)\\), but not before \\((R_0\\ge1)\\)"
   },
   {
     "objectID": "slides/lec-1.html#meet-the-instructor",

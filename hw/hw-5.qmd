@@ -9,18 +9,17 @@ When submitting your work on Gradescope, please assign a page for each question.
 
 ## Problem set (25 points)
 
--   11.2 (2 points)
-    -   Do parts a-d.
-
-    -   You do not need to do part e
+-   11.2 (1 points) -- parts a-d (skip part e)
+-   11.4 (1 point) -- parts a-b (skip part c)
 -   11.6 (2 points)
 -   12.2 (2 points)
--   12.4 (4 points)
-    -   Re-create the figures on `R`. Hint: use the `rbinom` command.
-
-    -   Do the exercise.
+-   12.6 (4 points)
 -   12.8 (3 points)
--   13 points
+-   16.2 (1 point)
+-   16.10 (4 points)
+-   17.2 (2 points) -- parts a and c (skip part b)
+-   17.4 (2 points) -- parts a and c (skip part b)
+-   17.6 (3 points)
 
 ## Lab exercises - the Youth Risk Behavior Surveillance System (25 points)
 
