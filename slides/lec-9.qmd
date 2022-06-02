@@ -67,14 +67,14 @@ options(scipen = 100)
 
 ## Outline
 
--   One proportion
--   Two proportions
+-   One proportion (case 1)
+-   Two proportions (case 2)
 
 # One proportion
 
 ## Setup
 
-(Unknown) **population parameter**: proportion $p$
+**population parameter**: proportion $p$
 
 **Sample statistics**: sample proportion $\hat{p}$
 
@@ -94,13 +94,15 @@ What proportion of US adults support legalizing marijuana?
 
 . . .
 
-Sample: 900 out of the 1500 participants in a survey say they do.
+Observed sample: 900/1500 support it.
 
 . . .
 
-Question: What is the sample proportion $\hat{p}$?
+$$
+\hat{p} = \dfrac{900}{1500}=0.6
+$$
 
-## HT via simulation
+## HT via simulation (parametric bootstrap)
 
 $H_0:p=0.5$
 
@@ -115,12 +117,12 @@ $H_a:p\neq 0.5$
 ## 
 
 ```{r}
-#| code-line-numbers: "1|2|3,7|4|5|6|"
+#| code-line-numbers: "|4|5|6|"
 set.seed(0)
 results <-  tibble(p_hat = numeric())
 for(i in 1 : 1e3){
-  sim     <- rbernoulli(n = 1500, p = 0.5)      # simulate sample under H0
-  p_hat   <- mean(sim)                          # compute sample statistic p_hat
+  sim     <- rbernoulli(n = 1500, p = 0.5) # simulate a sample under H0
+  p_hat   <- mean(sim)                     # compute the sample statistic p_hat
   results <- results %>% add_row(p_hat = p_hat)
 }
 ggplot(results) + geom_histogram(aes(p_hat))
@@ -128,25 +130,21 @@ ggplot(results) + geom_histogram(aes(p_hat))
 
 ## Conclusion
 
-We see that $\hat{p}=0.6$ is extremely unlikely to happen under $H_0:p=0.5$.
+$\hat{p}=0.6$ is extremely unlikely to happen under $H_0:p=0.5$.
 
-We therefore reject the null hypothesis that $p=0.5$.
-
-. . .
-
-If, on the other hand, the sample statistic had been $\hat{p}=0.51$, then it would have been plausible that $p=0.5$, and we would not have rejected $H_0$.
+We therefore **reject the null hypothesis** that $p=0.5$.
 
 ## p-value
 
 What if we do not have a clear-cut case?
 
--   e.g., $\hat{p}=0.52$
+-   e.g., $\hat{p}=0.52 = \dfrac{780}{1500}$
 
 . . .
 
-**p-value**: probability of observing a sample statistics at least as extreme as the observed one under the null hypothesis.
+**p-value**: probability that the sample statistic of a sample simulated under $H_0$ is at least as extreme as that of the observed sample.
 
--   the probability that $\hat{p} > 0.52$ or $\hat{p} < 0.48$ if $p=0.5$.
+-   the probability that $\hat{p}_{sim} > 0.52$ or $\hat{p}_{sim} < 0.48$ if $p=0.5$.
 
 ## p-value in `R`
 
@@ -157,20 +155,22 @@ results
 ```
 
 ```{r}
-summarize(results, p_value = mean(is_more_extreme))
+results %>% summarize(p_value = mean(is_more_extreme))
 ```
 
 ## p-value in practice
 
 In practice, if a p-value is smaller than 0.05 we reject $H_0$
 
--   less than 5% of the simulated samples were at least as extreme as the observed sample,
+-   $\alpha = 0.05$ is called the significance level.
 
--   it is highly unlikely that the observed sample could have arisen if $H_0$ were true.
+-   If $p<0.05$, the observed sample is in the top 5% of the most extreme simulated samples.
 
--   the results are **statistically significant**.
+-   It is highly unlikely that the observed sample could have arisen if $H_0$ were true.
 
-. . .
+-   the difference $\hat{p}-p_0$ is **statistically significant**.
+
+## 
 
 ::: callout-note
 ## Why 0.05?
@@ -180,11 +180,13 @@ To know why 0.05 is widely used in practice, check out this short [video](https:
 
 # CI via bootstrap
 
+## Bootstrapping
+
 Sample with repetition from the observed sample to construct many **bootstrap samples**.
 
-Bootstrap samples $\Rightarrow$ sampling distribution $\Rightarrow$ bootstrap CI
+Bootstrap samples $\Rightarrow$ sampling distribution $\Rightarrow$ CI
 
-## Bootstrap
+## 
 
 ![](images/lec-9/bootstrap1.png)
 
@@ -209,21 +211,32 @@ slice_sample(sample_observed, n = 5) # 5 random rows from the sample
 ## 
 
 ```{r, cache=TRUE}
+#| code-line-numbers: "|4|5|6|"
 results <- tibble(p_hat = numeric()) # empty data frame to collect the results
 set.seed(0)
 for(i in 1 : 1e3){
   d_boot  <- sample_bootstrap(sample_observed) # bootstrap sample
+  stat_boot <- mean(d_boot$support) # bootstrap statistic
   results <- results %>% 
-    add_row(p_hat = mean(d_boot$support)) # sample statistic from bootstrap sample
+    add_row(p_hat = stat_boot) 
 }
+```
+
+```{r}
 quantile(results$p_hat, c(0.05 , 0.95 )) # 90% CI
-quantile(results$p_hat, c(0.025, 0.975)) # 95% CI
+```
+
+```{r}
+quantile(results$p_hat, c(0.025, 0.975)) # 95% CI (wider)
 ```
 
 ## 
 
 ```{r}
-ggplot(results) + geom_histogram(aes(p_hat))
+ggplot(results) + 
+  geom_histogram(aes(p_hat)) + 
+  geom_vline(xintercept = quantile(results$p_hat, c(0.05 , 0.95 )), col = "violet", size = 2) + # 90% CI 
+  geom_vline(xintercept = quantile(results$p_hat, c(0.025 , 0.975 )), col = "maroon", size = 2) # 95% CI
 ```
 
 # Two proportions
@@ -232,11 +245,11 @@ ggplot(results) + geom_histogram(aes(p_hat))
 
 A **population** divided in two groups (group 1 and group 2)
 
-(Unknown) **population parameter**: difference in proportion $p_{diff}=p_1-p_2$
+**Population parameter**: difference in proportion $p_{diff}=p_1-p_2$
 
 **Sample statistics**: sample proportion $\hat{p}_{diff}=\hat{p}_1-\hat{p}_2$
 
-$H_0:p_{diff}=0$ (there is no difference between the two groups)
+$H_0:p_{diff}=0$ (no difference between the two groups)
 
 $H_a:p_{diff}\neq0$
 

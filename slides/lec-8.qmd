@@ -70,7 +70,7 @@ options(scipen = 100)
 
 -   Regression models
 
-    -   linear rregression
+    -   linear regression
 
     -   logistic regression
 
