@@ -312,7 +312,7 @@
     "href": "hw/hw-5.html#problem-set-25-points",
     "title": "HW 5 - Inference for proportions",
     "section": "Problem set (25 points)",
-    "text": "Problem set (25 points)\n\n11.2 (1 points) – parts a-d (skip part e)\n11.4 (1 point) – parts a-b (skip part c)\n11.6 (2 points)\n12.2 (2 points)\n12.6 (4 points)\n12.8 (3 points)\n16.2 (1 point)\n16.10 (4 points)\n17.2 (2 points) – parts a and c (skip part b)\n17.4 (2 points) – parts a and c (skip part b)\n17.6 (3 points)"
+    "text": "Problem set (25 points)\n\n11.2 (1 points) – parts a-d (skip part e)\n11.4 (2 points) – parts a-b (skip part c)\n11.6 (2 points)\n12.2 (2 points)\n12.6 (4 points)\n12.8 (3 points)\n16.2 (1 point)\n16.10 (4 points)\n17.2 (2 points) – parts a and c (skip part b)\n17.4 (1 points) – part c (skip parts a and b)\n17.6 (3 points)"
   },
   {
     "objectID": "hw/hw-5.html#lab-exercises---the-youth-risk-behavior-surveillance-system-25-points",
@@ -2727,7 +2727,7 @@
     "href": "slides/lec-8.html#recap-1st-half-of-course",
     "title": "Principles of Inference",
     "section": "Recap – 1st half of course",
-    "text": "Recap – 1st half of course\n\nTypes of data and studies\nVisualization and numerical summaries\nRegression models\n\nlinear rregression\nlogistic regression\nmodel selection"
+    "text": "Recap – 1st half of course\n\nTypes of data and studies\nVisualization and numerical summaries\nRegression models\n\nlinear regression\nlogistic regression\nmodel selection"
   },
   {
     "objectID": "slides/lec-8.html#types-of-data",

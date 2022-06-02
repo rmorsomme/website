@@ -10,7 +10,7 @@ When submitting your work on Gradescope, please assign a page for each question.
 ## Problem set (25 points)
 
 -   11.2 (1 points) -- parts a-d (skip part e)
--   11.4 (1 point) -- parts a-b (skip part c)
+-   11.4 (2 points) -- parts a-b (skip part c)
 -   11.6 (2 points)
 -   12.2 (2 points)
 -   12.6 (4 points)
@@ -18,7 +18,7 @@ When submitting your work on Gradescope, please assign a page for each question.
 -   16.2 (1 point)
 -   16.10 (4 points)
 -   17.2 (2 points) -- parts a and c (skip part b)
--   17.4 (2 points) -- parts a and c (skip part b)
+-   17.4 (1 points) -- part c (skip parts a and b)
 -   17.6 (3 points)
 
 ## Lab exercises - the Youth Risk Behavior Surveillance System (25 points)
