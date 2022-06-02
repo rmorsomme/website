@@ -379,10 +379,10 @@
       margin-right: 0; 
     }
   </style>
-  <script src="..\site_libs/kePrint-0.0.1/kePrint.js"></script>
-  <link href="..\site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
   <link href="..\site_libs/countdown-0.3.5/countdown.css" rel="stylesheet">
   <script src="..\site_libs/countdown-0.3.5/countdown.js"></script>
+  <script src="..\site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="..\site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 </head>
 <body>
   <div class="reveal">
@@ -403,6 +403,7 @@
 <h2>Announcements</h2>
 <ul>
 <li>Data analysis in action – <a href="https://www.boston.com/news/health/2022/05/18/scientists-create-ai-race-from-x-rays-dont-know-how-it-works-harvard-mit/">Inferring ethnicity from X-rays</a></li>
+<li>Anonymous mid-course feedback</li>
 </ul>
 </section>
 <section id="recap" class="slide level2">
@@ -418,8 +419,8 @@
 <section id="outline" class="slide level2">
 <h2>Outline</h2>
 <ul>
-<li>One proportion</li>
-<li>Two proportions</li>
+<li>One proportion (case 1)</li>
+<li>Two proportions (case 2)</li>
 </ul>
 </section></section>
 <section>
@@ -429,7 +430,7 @@
 </section>
 <section id="setup" class="slide level2">
 <h2>Setup</h2>
-<p>(Unknown) <strong>population parameter</strong>: proportion <span class="math inline">\(p\)</span></p>
+<p><strong>population parameter</strong>: proportion <span class="math inline">\(p\)</span></p>
 <p><strong>Sample statistics</strong>: sample proportion <span class="math inline">\(\hat{p}\)</span></p>
 <div class="fragment">
 <p><strong>Hypothesis testing</strong>:</p>
@@ -440,59 +441,134 @@
 <p><strong>Confidence interval</strong>: range of plausible values for <span class="math inline">\(p\)</span>.</p>
 </div>
 </section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
-<p>What proportion of US adults support legalizing marijuana?</p>
-<div class="fragment">
-<p>Sample: 900 out of the 1500 participants in a survey say they do.</p>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="fragment">
-<p>Question: What is the sample proportion <span class="math inline">\(\hat{p}\)</span>?</p>
+<p><strong>One-sided and two-sided <span class="math inline">\(H_a\)</span></strong></p>
+</div>
+<div class="callout-content">
+<p>One-sided) <span class="math inline">\(H_a:p&gt;p_0\)</span> or <span class="math inline">\(H_a:p&lt;p_0\)</span></p>
+<p>Two-sided) <span class="math inline">\(H_a: p\neq p_0\)</span></p>
+<p>It is never wrong to use a two-sided <span class="math inline">\(H_a\)</span>.</p>
+</div>
+</div>
 </div>
 </section>
-<section id="ht-via-simulation" class="slide level2">
-<h2>HT via simulation</h2>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Individual exercise - Hypotheses</strong></p>
+</div>
+<div class="callout-content">
+<p>Exercise <a href="https://openintro-ims.netlify.app/inference-one-prop.html#chp16-exercises">16.1</a></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_6298eaed" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="example-legalizing-marijuana" class="slide level2">
+<h2>Example – legalizing marijuana</h2>
+<p>What proportion of US adults support legalizing marijuana?</p>
+<div class="fragment">
+<p>Sample: 900/1500 support it.</p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+\hat{p} = \dfrac{900}{1500}=0.6
+\]</span></p>
+</div>
+</section></section>
+<section>
+<section id="hypothesis-test-via-simulation" class="title-slide slide level1 center">
+<h1>Hypothesis test via simulation</h1>
+
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
 <p><span class="math inline">\(H_0:p=0.5\)</span></p>
 <p><span class="math inline">\(H_a:p\neq 0.5\)</span></p>
 <div class="fragment">
 <ul>
-<li><p>Simulate many samples under <span class="math inline">\(H_0\)</span></p></li>
-<li><p>Determine if the observed data could have plausibly arisen under <span class="math inline">\(H_0\)</span></p></li>
+<li><p>Simulate many samples under <span class="math inline">\(H_0\)</span>.</p></li>
+<li><p>Determine if the observed data could have plausibly arisen under <span class="math inline">\(H_0\)</span>.</p></li>
 </ul>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Parametric bootstrap</strong></p>
+</div>
+<div class="callout-content">
+<p>The textbook uses the term (parametric) bootstrap to refer to this procedure.</p>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section id="section" class="slide level2">
+<section id="section-3" class="slide level2">
 <h2></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb1" data-code-line-numbers="1|2|3,7|4|5|6|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
+<div class="sourceCode" id="cb1" data-code-line-numbers="|4|5|6|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
 <span id="cb1-2"><a href="#cb1-2"></a>results <span class="ot">&lt;-</span>  <span class="fu">tibble</span>(<span class="at">p_hat =</span> <span class="fu">numeric</span>())</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">1e3</span>){</span>
-<span id="cb1-4"><a href="#cb1-4"></a>  sim     <span class="ot">&lt;-</span> <span class="fu">rbernoulli</span>(<span class="at">n =</span> <span class="dv">1500</span>, <span class="at">p =</span> <span class="fl">0.5</span>)      <span class="co"># simulate sample under H0</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a>  p_hat   <span class="ot">&lt;-</span> <span class="fu">mean</span>(sim)                          <span class="co"># compute sample statistic p_hat</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  sim     <span class="ot">&lt;-</span> <span class="fu">rbernoulli</span>(<span class="at">n =</span> <span class="dv">1500</span>, <span class="at">p =</span> <span class="fl">0.5</span>) <span class="co"># simulate a sample under H0</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>  p_hat   <span class="ot">&lt;-</span> <span class="fu">mean</span>(sim)                     <span class="co"># compute the sample statistic p_hat</span></span>
 <span id="cb1-6"><a href="#cb1-6"></a>  results <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span> <span class="fu">add_row</span>(<span class="at">p_hat =</span> p_hat)</span>
 <span id="cb1-7"><a href="#cb1-7"></a>}</span>
 <span id="cb1-8"><a href="#cb1-8"></a><span class="fu">ggplot</span>(results) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(p_hat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="lec-9_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="lec-9_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
 <section id="conclusion" class="slide level2">
 <h2>Conclusion</h2>
-<p>We see that <span class="math inline">\(\hat{p}=0.6\)</span> is extremely unlikely to happen under <span class="math inline">\(H_0:p=0.5\)</span>.</p>
-<p>We therefore reject the null hypothesis that <span class="math inline">\(p=0.5\)</span>.</p>
-<div class="fragment">
-<p>If, on the other hand, the sample statistic had been <span class="math inline">\(\hat{p}=0.51\)</span>, then it would have been plausible that <span class="math inline">\(p=0.5\)</span>, and we would not have rejected <span class="math inline">\(H_0\)</span>.</p>
+<p><span class="math inline">\(\hat{p}=0.6\)</span> is extremely unlikely to happen under <span class="math inline">\(H_0:p=0.5\)</span>.</p>
+<p>We therefore <strong>reject the null hypothesis</strong> that half of the people support legalizing marijuana.</p>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Group exercise - HT for one proportion</strong></p>
+</div>
+<div class="callout-content">
+<p>Exercise <a href="https://openintro-ims.netlify.app/inference-one-prop.html#chp16-exercises">16.3</a> – in part d, you do not need to estimate the p-value.</p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_6298eca8" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
 </div>
 </section>
 <section id="p-value" class="slide level2">
 <h2>p-value</h2>
 <p>What if we do not have a clear-cut case?</p>
 <ul>
-<li>e.g., <span class="math inline">\(\hat{p}=0.52\)</span></li>
+<li>e.g., <span class="math inline">\(\hat{p}=0.52 = \dfrac{780}{1500}\)</span></li>
 </ul>
 <div class="fragment">
-<p><strong>p-value</strong>: probability of observing a sample statistics at least as extreme as the observed one under the null hypothesis.</p>
+<p><strong>p-value</strong>: probability that the sample statistic of a sample simulated under <span class="math inline">\(H_0\)</span> is at least as extreme as that of the observed sample.</p>
 <ul>
-<li>the probability that <span class="math inline">\(\hat{p} &gt; 0.52\)</span> or <span class="math inline">\(\hat{p} &lt; 0.48\)</span> if <span class="math inline">\(p=0.5\)</span>.</li>
+<li>the probability that <span class="math inline">\(\hat{p}_{sim} &gt; 0.52\)</span> or <span class="math inline">\(\hat{p}_{sim} &lt; 0.48\)</span>.</li>
 </ul>
 </div>
 </section>
@@ -520,7 +596,7 @@
 </div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">summarize</span>(results, <span class="at">p_value =</span> <span class="fu">mean</span>(is_more_extreme))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>results <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">p_value =</span> <span class="fu">mean</span>(is_more_extreme))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code># A tibble: 1 x 1
   p_value
@@ -533,50 +609,71 @@
 <h2>p-value in practice</h2>
 <p>In practice, if a p-value is smaller than 0.05 we reject <span class="math inline">\(H_0\)</span></p>
 <ul>
-<li><p>less than 5% of the simulated samples were at least as extreme as the observed sample,</p></li>
-<li><p>it is highly unlikely that the observed sample could have arisen if <span class="math inline">\(H_0\)</span> were true.</p></li>
-<li><p>the results are <strong>statistically significant</strong>.</p></li>
+<li><p><span class="math inline">\(\alpha = 0.05\)</span> is called the <strong>significance level</strong>.</p></li>
+<li><p>If <span class="math inline">\(p&lt;0.05\)</span>, the observed sample is in the top 5% of the most extreme simulated samples.</p></li>
+<li><p>It is highly unlikely that the observed sample could have arisen if <span class="math inline">\(H_0\)</span> were true.</p></li>
+<li><p>the difference <span class="math inline">\(\hat{p}-p_0\)</span> is <strong>statistically significant</strong>.</p></li>
 </ul>
-<div class="fragment">
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Why 0.05?</strong></p>
+<p><strong>Why <span class="math inline">\(\alpha = 0.05\)</span>?</strong></p>
 </div>
 <div class="callout-content">
-<p>To know why 0.05 is widely used in practice, check out this short <a href="https://www.openintro.org/book/stat/why05/">video</a>.</p>
+<p>To know why the significance level 0.05 is widely used in practice, check out this short <a href="https://www.openintro.org/book/stat/why05/">video</a>.</p>
 </div>
+</div>
+</div>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Group exercise - HT for one proportion</strong></p>
+</div>
+<div class="callout-content">
+<p>Exercise <a href="https://openintro-ims.netlify.app/inference-one-prop.html#chp16-exercises">16.5</a>.</p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_6298ed8e" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
 </section></section>
 <section>
-<section id="ci-via-bootstrap" class="title-slide slide level1 center">
-<h1>CI via bootstrap</h1>
-<p>Sample with repetition from the observed sample to construct many <strong>bootstrap samples</strong>.</p>
-<p>Bootstrap samples <span class="math inline">\(\Rightarrow\)</span> sampling distribution <span class="math inline">\(\Rightarrow\)</span> bootstrap CI</p>
+<section id="confidence-interval-via-bootstrap" class="title-slide slide level1 center">
+<h1>Confidence interval via bootstrap</h1>
+
 </section>
-<section id="bootstrap" class="slide level2">
-<h2>Bootstrap</h2>
+<section id="bootstrapping" class="slide level2">
+<h2>Bootstrapping</h2>
+<p>Sample with repetition from the observed sample to construct many <strong>bootstrap samples</strong>.</p>
+<p>Bootstrap samples <span class="math inline">\(\Rightarrow\)</span> sampling distribution <span class="math inline">\(\Rightarrow\)</span> CI</p>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
 
 <img data-src="images/lec-9/bootstrap1.png" class="r-stretch"><p>Source: <a href="https://www.openintro.org/book/ims/">IMS</a></p>
 </section>
 <section id="bootstrap-in-r" class="slide level2">
 <h2>Bootstrap in <code>R</code></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>sample_bootstrap <span class="ot">&lt;-</span> <span class="cf">function</span>(data){</span>
-<span id="cb6-2"><a href="#cb6-2"></a>  n                <span class="ot">&lt;-</span> <span class="fu">nrow</span>(data)</span>
-<span id="cb6-3"><a href="#cb6-3"></a>  sample_bootstrap <span class="ot">&lt;-</span> <span class="fu">slice_sample</span>(data, <span class="at">n =</span> n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">return</span>(sample_bootstrap)</span>
-<span id="cb6-5"><a href="#cb6-5"></a>}</span>
-<span id="cb6-6"><a href="#cb6-6"></a>sample_observed <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">support =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">900</span>), <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">1500</span> <span class="sc">-</span> <span class="dv">900</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>sample_observed <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">support =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">900</span>), <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">600</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">slice_sample</span>(sample_observed, <span class="at">n =</span> <span class="dv">5</span>) <span class="co"># 5 random rows from the sample</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">slice_sample</span>(sample_observed, <span class="at">n =</span> <span class="dv">5</span>) <span class="co"># 5 random rows from the data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code># A tibble: 5 x 1
   support
@@ -588,36 +685,70 @@
 5       0</code></pre>
 </div>
 </div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb9" data-code-line-numbers="|1,5|2|3|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>sample_bootstrap <span class="ot">&lt;-</span> <span class="cf">function</span>(data){</span>
+<span id="cb9-2"><a href="#cb9-2"></a>  n                <span class="ot">&lt;-</span> <span class="fu">nrow</span>(data)</span>
+<span id="cb9-3"><a href="#cb9-3"></a>  sample_bootstrap <span class="ot">&lt;-</span> <span class="fu">slice_sample</span>(data, <span class="at">n =</span> n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">return</span>(sample_bootstrap)</span>
+<span id="cb9-5"><a href="#cb9-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
-<div class="cell" data-layout-align="center" data-hash="lec-9_cache/revealjs/unnamed-chunk-6_b9b10598329a1eae10f1d4e918d08058">
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">p_hat =</span> <span class="fu">numeric</span>()) <span class="co"># empty data frame to collect the results</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">1e3</span>){</span>
-<span id="cb9-4"><a href="#cb9-4"></a>  d_boot  <span class="ot">&lt;-</span> <span class="fu">sample_bootstrap</span>(sample_observed) <span class="co"># bootstrap sample</span></span>
-<span id="cb9-5"><a href="#cb9-5"></a>  results <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span> </span>
-<span id="cb9-6"><a href="#cb9-6"></a>    <span class="fu">add_row</span>(<span class="at">p_hat =</span> <span class="fu">mean</span>(d_boot<span class="sc">$</span>support)) <span class="co"># sample statistic from bootstrap sample</span></span>
-<span id="cb9-7"><a href="#cb9-7"></a>}</span>
-<span id="cb9-8"><a href="#cb9-8"></a><span class="fu">quantile</span>(results<span class="sc">$</span>p_hat, <span class="fu">c</span>(<span class="fl">0.05</span> , <span class="fl">0.95</span> )) <span class="co"># 90% CI</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center" data-hash="lec-9_cache/revealjs/unnamed-chunk-10_ebd93964aec7af7f5cba6604b387e586">
+<div class="sourceCode" id="cb10" data-code-line-numbers="|4|5|6|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">p_hat =</span> <span class="fu">numeric</span>()) <span class="co"># empty data frame to collect the results</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">1e3</span>){</span>
+<span id="cb10-4"><a href="#cb10-4"></a>  d_boot    <span class="ot">&lt;-</span> <span class="fu">sample_bootstrap</span>(sample_observed) <span class="co"># bootstrap sample</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>  stat_boot <span class="ot">&lt;-</span> <span class="fu">mean</span>(d_boot<span class="sc">$</span>support)              <span class="co"># bootstrap statistic</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a>  results   <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span> <span class="fu">add_row</span>(<span class="at">p_hat =</span> stat_boot) </span>
+<span id="cb10-7"><a href="#cb10-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">quantile</span>(results<span class="sc">$</span>p_hat, <span class="fu">c</span>(<span class="fl">0.05</span> , <span class="fl">0.95</span> )) <span class="co"># 90% CI</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>       5%       95% 
 0.5813000 0.6206667 </code></pre>
 </div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">quantile</span>(results<span class="sc">$</span>p_hat, <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>)) <span class="co"># 95% CI</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">quantile</span>(results<span class="sc">$</span>p_hat, <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>)) <span class="co"># 95% CI (wider)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>     2.5%     97.5% 
 0.5766667 0.6253500 </code></pre>
 </div>
 </div>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-9" class="slide level2">
 <h2></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">ggplot</span>(results) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(p_hat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">ggplot</span>(results) <span class="sc">+</span> </span>
+<span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(p_hat)) <span class="sc">+</span> </span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(results<span class="sc">$</span>p_hat, <span class="fu">c</span>(<span class="fl">0.05</span> , <span class="fl">0.95</span> )), <span class="at">col =</span> <span class="st">"gold1"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="co"># 90% CI </span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(results<span class="sc">$</span>p_hat, <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>)), <span class="at">col =</span> <span class="st">"maroon"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="co"># 95% CI</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="lec-9_files/figure-revealjs/unnamed-chunk-7-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section></section>
+<img data-src="lec-9_files/figure-revealjs/unnamed-chunk-13-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Group exercise - Bootstrap CI</strong></p>
+</div>
+<div class="callout-content">
+<p>Exercises <a href="https://openintro-ims.netlify.app/inference-one-prop.html#chp16-exercises">12.1</a> and <a href="https://openintro-ims.netlify.app/inference-one-prop.html#chp16-exercises">12.7</a></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_6298ec6a" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+</div>
+</div>
+</div>
+</section></section>
 <section>
 <section id="two-proportions" class="title-slide slide level1 center">
 <h1>Two proportions</h1>
@@ -625,15 +756,23 @@
 </section>
 <section id="setup-1" class="slide level2">
 <h2>Setup</h2>
-<p>A <strong>population</strong> divided in two groups (group 1 and group 2)</p>
-<p>(Unknown) <strong>population parameter</strong>: difference in proportion <span class="math inline">\(p_{diff}=p_1-p_2\)</span></p>
-<p><strong>Sample statistics</strong>: sample proportion <span class="math inline">\(\hat{p}_{diff}=\hat{p}_1-\hat{p}_2\)</span></p>
-<p><span class="math inline">\(H_0:p_{diff}=0\)</span> (there is no difference between the two groups)</p>
+<p>A <strong>population</strong> divided in two groups.</p>
+<p><strong>Population parameter</strong>: difference in proportion</p>
+<p><span class="math display">\[
+p_{diff}=p_1-p_2
+\]</span></p>
+<p><strong>Sample statistics</strong>: difference in proportion in the sample</p>
+<p><span class="math display">\[
+\hat{p}_{diff}=\hat{p}_1-\hat{p}_2
+\]</span></p>
+<div class="fragment">
+<p><span class="math inline">\(H_0:p_{diff}=0\)</span> (no difference between the two groups)</p>
 <p><span class="math inline">\(H_a:p_{diff}\neq0\)</span></p>
+</div>
 </section>
 <section id="example-sex-discrimination" class="slide level2">
 <h2>Example – sex discrimination</h2>
-<p>Are individuals who identify as female discriminated against in promotion decisions made by their managers?</p>
+<p>Are individuals who identify as female discriminated against in promotion decisions?</p>
 <div class="fragment">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -678,7 +817,7 @@
 </div>
 </div>
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-11" class="slide level2">
 <h2></h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
@@ -692,33 +831,35 @@
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_6297ff39" style="right:0;bottom:0;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<div class="countdown" id="timer_6298ee02" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
 </section></section>
 <section>
-<section id="ht-via-simulation-1" class="title-slide slide level1 center">
-<h1>HT via simulation</h1>
-<p><span class="math inline">\(H_0:\hat{p}_{diff}=0\)</span></p>
-<p><span class="math inline">\(H_a:\hat{p}_{diff}\neq 0\)</span></p>
+<section id="hypothesis-test-via-simulation-1" class="title-slide slide level1 center">
+<h1>Hypothesis test via simulation</h1>
+
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<p><span class="math inline">\(H_0:p_{diff}=0\)</span></p>
+<p><span class="math inline">\(H_a:p_{diff}\neq 0\)</span></p>
 <div class="fragment">
 <ul>
-<li><p>Simulate many samples under <span class="math inline">\(H_0\)</span> (assuming that there is no discrimination)</p></li>
+<li><p>Simulate many samples under <span class="math inline">\(H_0\)</span> (no discrimination)</p></li>
 <li><p>Determine if the observed data could have plausibly arisen under <span class="math inline">\(H_0\)</span></p></li>
 </ul>
 </div>
 </section>
 <section id="simulating-under-h_0" class="slide level2">
 <h2>Simulating under <span class="math inline">\(H_0\)</span></h2>
-<p>Under the null hypothesis, there is no discrimination – whether someone receives a promotion is independent of their sexual identification.</p>
-<div class="fragment">
-<p>Goal: model the randomness that would occur if the null hypothesis was true.</p>
-<p>To accomplish that, we can randomly re-assign the <span class="math inline">\(35\)</span> promotions among the <span class="math inline">\(45\)</span> individuals, independently of their sexual identification.</p>
-</div>
+<p>Under <span class="math inline">\(H_0\)</span>, there is no discrimination</p>
+<p><span class="math inline">\(\Rightarrow\)</span> whether someone receives a promotion is independent of their sexual identification,</p>
+<p><span class="math inline">\(\Rightarrow\)</span> randomly re-assign the <span class="math inline">\(35\)</span> promotions independently of the sexual identification.</p>
 </section>
-<section id="section-4" class="slide level2">
+<section id="section-13" class="slide level2">
 <h2></h2>
 <p><img data-src="images/lec-9/randomization.png"> Source: <a href="https://www.openintro.org/book/ims/">IMS</a></p>
 </section>
@@ -764,28 +905,29 @@
 
 </div>
 </div>
+<p>Source: <a href="https://www.openintro.org/book/ims/">IMS</a></p>
 </section>
-<section id="simulating-under-h_0-1" class="slide level2">
-<h2>Simulating under <span class="math inline">\(H_0\)</span></h2>
+<section id="section-14" class="slide level2">
+<h2></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb14" data-code-line-numbers="2|3|4|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>d <span class="ot">&lt;-</span> gender_discrimination <span class="sc">%&gt;%</span> <span class="fu">select</span>(gender)</span>
-<span id="cb14-2"><a href="#cb14-2"></a>promotions_ordered <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">35</span>), <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">48</span> <span class="sc">-</span> <span class="dv">35</span>)) <span class="co"># 35 promotions and 13 non-promotions</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a>promotions_sim <span class="ot">&lt;-</span> <span class="fu">sample</span>(promotions_ordered, <span class="dv">48</span>) <span class="co"># shuffle promotions</span></span>
-<span id="cb14-4"><a href="#cb14-4"></a>d_sim <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">response =</span> promotions_sim)</span>
-<span id="cb14-5"><a href="#cb14-5"></a>d_sim</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16" data-code-line-numbers="|2|3|4|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>d <span class="ot">&lt;-</span> gender_discrimination</span>
+<span id="cb16-2"><a href="#cb16-2"></a>promotions_ordered <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">35</span>), <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">13</span>)) <span class="co"># 35 promotions and 13 non-promotions</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a>promotions_sim <span class="ot">&lt;-</span> <span class="fu">sample</span>(promotions_ordered) <span class="co"># shuffle the promotions</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>d_sim <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">decision =</span> promotions_sim)</span>
+<span id="cb16-5"><a href="#cb16-5"></a>d_sim</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code># A tibble: 48 x 2
-   gender response
+   gender decision
    &lt;fct&gt;     &lt;dbl&gt;
- 1 male          0
+ 1 male          1
  2 male          1
- 3 male          0
+ 3 male          1
  4 male          1
- 5 male          1
- 6 male          1
+ 5 male          0
+ 6 male          0
  7 male          0
  8 male          1
- 9 male          1
+ 9 male          0
 10 male          1
 # ... with 38 more rows</code></pre>
 </div>
@@ -794,55 +936,60 @@
 <section id="function-for-computing-the-test-statistic" class="slide level2">
 <h2>Function for computing the test statistic</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>compute_p_diff <span class="ot">&lt;-</span> <span class="cf">function</span>(data){</span>
-<span id="cb16-2"><a href="#cb16-2"></a>  p_hat <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a>    <span class="fu">group_by</span>(gender) <span class="sc">%&gt;%</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a>    <span class="fu">summarize</span>(<span class="at">p_hat =</span> <span class="fu">mean</span>(response))</span>
-<span id="cb16-5"><a href="#cb16-5"></a>  p_diff_hat <span class="ot">&lt;-</span> p_hat<span class="sc">$</span>p_hat[<span class="dv">1</span>] <span class="sc">-</span> p_hat<span class="sc">$</span>p_hat[<span class="dv">2</span>]</span>
-<span id="cb16-6"><a href="#cb16-6"></a>  <span class="fu">return</span>(p_diff_hat)</span>
-<span id="cb16-7"><a href="#cb16-7"></a>}</span>
-<span id="cb16-8"><a href="#cb16-8"></a><span class="fu">compute_p_diff</span>(d_sim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18" data-code-line-numbers="|3,4|5|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>compute_p_diff <span class="ot">&lt;-</span> <span class="cf">function</span>(data){</span>
+<span id="cb18-2"><a href="#cb18-2"></a>  p_hat <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>    <span class="fu">group_by</span>(gender) <span class="sc">%&gt;%</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>    <span class="fu">summarize</span>(<span class="at">p_hat =</span> <span class="fu">mean</span>(decision))</span>
+<span id="cb18-5"><a href="#cb18-5"></a>  p_diff_hat <span class="ot">&lt;-</span> p_hat<span class="sc">$</span>p_hat[<span class="dv">1</span>] <span class="sc">-</span> p_hat<span class="sc">$</span>p_hat[<span class="dv">2</span>]</span>
+<span id="cb18-6"><a href="#cb18-6"></a>  <span class="fu">return</span>(p_diff_hat)</span>
+<span id="cb18-7"><a href="#cb18-7"></a>}</span>
+<span id="cb18-8"><a href="#cb18-8"></a><span class="fu">compute_p_diff</span>(d_sim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>[1] -0.125</code></pre>
+<pre><code>[1] -0.04166667</code></pre>
 </div>
 </div>
 </section>
 <section id="for-loop-for-simulating-under-h_0" class="slide level2">
 <h2>For-loop for simulating under <span class="math inline">\(H_0\)</span></h2>
-<div class="cell" data-layout-align="center" data-hash="lec-9_cache/revealjs/unnamed-chunk-13_0fa689e02a937437b0b3c25fce6c3d0f">
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Setup</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a>results    <span class="ot">&lt;-</span>  <span class="fu">tibble</span>(<span class="at">p_diff_hat =</span> <span class="fu">numeric</span>())</span>
-<span id="cb18-3"><a href="#cb18-3"></a>d          <span class="ot">&lt;-</span> gender_discrimination</span>
-<span id="cb18-4"><a href="#cb18-4"></a>promotions <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">35</span>), <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">48</span> <span class="sc">-</span> <span class="dv">35</span>))</span>
-<span id="cb18-5"><a href="#cb18-5"></a></span>
-<span id="cb18-6"><a href="#cb18-6"></a><span class="co"># Simulations</span></span>
-<span id="cb18-7"><a href="#cb18-7"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
-<span id="cb18-8"><a href="#cb18-8"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">1e3</span>){</span>
-<span id="cb18-9"><a href="#cb18-9"></a>  d_sim <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">response =</span> <span class="fu">sample</span>(promotions, <span class="dv">48</span>)) <span class="co"># simulate under H0</span></span>
-<span id="cb18-10"><a href="#cb18-10"></a>  results <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span> <span class="fu">add_row</span>(<span class="at">p_diff_hat =</span> <span class="fu">compute_p_diff</span>(d_sim))  <span class="co"># test statistic</span></span>
-<span id="cb18-11"><a href="#cb18-11"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center" data-hash="lec-9_cache/revealjs/unnamed-chunk-20_24096b23b056ae86af362ae48da4e63f">
+<div class="sourceCode" id="cb20" data-code-line-numbers="|9|10|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># Setup</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>results    <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">p_diff_hat =</span> <span class="fu">numeric</span>())</span>
+<span id="cb20-3"><a href="#cb20-3"></a>d          <span class="ot">&lt;-</span> gender_discrimination</span>
+<span id="cb20-4"><a href="#cb20-4"></a>promotions <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">35</span>), <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">13</span>))</span>
+<span id="cb20-5"><a href="#cb20-5"></a></span>
+<span id="cb20-6"><a href="#cb20-6"></a><span class="co"># Simulations</span></span>
+<span id="cb20-7"><a href="#cb20-7"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
+<span id="cb20-8"><a href="#cb20-8"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">1e3</span>){</span>
+<span id="cb20-9"><a href="#cb20-9"></a>  d_sim <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">decision =</span> <span class="fu">sample</span>(promotions)) <span class="co"># simulate under H0</span></span>
+<span id="cb20-10"><a href="#cb20-10"></a>  p_diff_hat <span class="ot">&lt;-</span> <span class="fu">compute_p_diff</span>(d_sim) <span class="co"># test statistic</span></span>
+<span id="cb20-11"><a href="#cb20-11"></a>  results <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span> <span class="fu">add_row</span>(<span class="at">p_diff_hat =</span> p_diff_hat)</span>
+<span id="cb20-12"><a href="#cb20-12"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="sampling-distribution" class="slide level2">
 <h2>Sampling distribution</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>p_diff_obs <span class="ot">&lt;-</span> <span class="dv">21</span> <span class="sc">/</span> <span class="dv">24</span> <span class="sc">-</span> <span class="dv">14</span> <span class="sc">/</span> <span class="dv">24</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a><span class="fu">ggplot</span>(results) <span class="sc">+</span> </span>
-<span id="cb19-3"><a href="#cb19-3"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(p_diff_hat)) <span class="sc">+</span></span>
-<span id="cb19-4"><a href="#cb19-4"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> p_diff_obs, <span class="at">col =</span> <span class="st">"maroon"</span>, <span class="at">size =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>p_diff_obs <span class="ot">&lt;-</span> <span class="dv">21</span> <span class="sc">/</span> <span class="dv">24</span> <span class="sc">-</span> <span class="dv">14</span> <span class="sc">/</span> <span class="dv">24</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>p_diff_obs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>[1] 0.2916667</code></pre>
+</div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">ggplot</span>(results) <span class="sc">+</span> </span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(p_diff_hat)) <span class="sc">+</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> p_diff_obs, <span class="at">col =</span> <span class="st">"maroon"</span>, <span class="at">size =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="lec-9_files/figure-revealjs/unnamed-chunk-14-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="lec-9_files/figure-revealjs/unnamed-chunk-21-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
 <section id="p-value-1" class="slide level2">
 <h2>p-value</h2>
-<p><strong>p-value</strong>: the probability of observing a test statistic at least as extreme as the observed one under the null hypothesis.</p>
+<p><strong>p-value</strong>: probability that the sample statistic of a sample simulated under <span class="math inline">\(H_0\)</span> is at least as extreme as that of the observed sample.</p>
 <ul>
-<li>the probability that <span class="math inline">\(\hat{p}_{diff}&gt;\)</span> 0.29 or <span class="math inline">\(\hat{p}&lt;\)</span> -0.29 if there is no discrimination.</li>
+<li>the probability that <span class="math inline">\(\hat{p}_{diff}^{sim}\ge\)</span> 0.29 or <span class="math inline">\(\hat{p}_{diff}^{sim}\le\)</span> -0.29.</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>results <span class="sc">%&gt;%</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">mutate</span>(<span class="at">is_more_extreme =</span> p_diff_hat <span class="sc">&gt;=</span> p_diff_obs <span class="sc">|</span> p_diff_hat <span class="sc">&lt;=</span> <span class="sc">-</span>p_diff_obs) <span class="sc">%&gt;%</span></span>
-<span id="cb20-3"><a href="#cb20-3"></a>  <span class="fu">summarize</span>(<span class="at">p_value =</span> <span class="fu">mean</span>(is_more_extreme))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>results <span class="sc">%&gt;%</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">mutate</span>(<span class="at">is_more_extreme =</span> p_diff_hat <span class="sc">&gt;=</span> p_diff_obs <span class="sc">|</span> p_diff_hat <span class="sc">&lt;=</span> <span class="sc">-</span>p_diff_obs) <span class="sc">%&gt;%</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="fu">summarize</span>(<span class="at">p_value =</span> <span class="fu">mean</span>(is_more_extreme))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code># A tibble: 1 x 1
   p_value
@@ -853,11 +1000,14 @@
 </section>
 <section id="significance-level-alpha-0.05" class="slide level2">
 <h2>significance level <span class="math inline">\(\alpha = 0.05\)</span></h2>
-<p>Using the usually significance level <span class="math inline">\(\alpha = 0.05\)</span>, we <strong>fail to reject</strong> the null hypothesis</p>
+<p>Using the usual significance level <span class="math inline">\(\alpha = 0.05\)</span>, we <strong>reject</strong> the null hypothesis</p>
 <ul>
-<li>the data do not provide sufficient evidence to reject the null hypothesis,</li>
-<li>it is plausible to observe the sample collected in the study if there is no discrimination just by chance.</li>
+<li>the observed difference in promotions is unlikely to be due to random luck</li>
+<li>the difference is <strong>statistically significant</strong>.</li>
 </ul>
+</section>
+<section id="section-15" class="slide level2">
+<h2></h2>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -867,18 +1017,44 @@
 <p><strong>Statisticians as messengers</strong></p>
 </div>
 <div class="callout-content">
-<p>Statisticians are only messengers of the data; they only interpret what the data are indicating.</p>
+<p>Statisticians are just messengers; they only interpret what the data are indicating.</p>
+<p>If you are a scientist and are not happy with the result of a statistical analysis, change the study not the statistician!</p>
+<ul>
+<li>larger sample</li>
+<li>smaller measurement errors</li>
+<li>new variables, e.g.&nbsp;salary instead of promotion</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="section-16" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Group exercise - HT</strong></p>
+</div>
+<div class="callout-content">
+<p><a href="https://openintro-ims.netlify.app/inference-two-props.html#chp17-exercises">17.1</a> (skip part b)</p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_6298ed55" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
 </section></section>
 <section>
-<section id="ci-via-bootstrap-1" class="title-slide slide level1 center">
-<h1>CI via bootstrap</h1>
+<section id="confidence-interval-via-bootstrap-1" class="title-slide slide level1 center">
+<h1>Confidence interval via bootstrap</h1>
 <p>Same idea as before: sample with repetition from the observed data to construct many <strong>bootstrap samples</strong>.</p>
-<p>Bootstrap samples <span class="math inline">\(\Rightarrow\)</span> sampling distribution <span class="math inline">\(\Rightarrow\)</span> bootstrap CI</p>
+<p>Bootstrap samples <span class="math inline">\(\Rightarrow\)</span> sampling distribution <span class="math inline">\(\Rightarrow\)</span> CI</p>
 </section>
-<section id="bootstrap-1" class="slide level2">
+<section id="bootstrap" class="slide level2">
 <h2>Bootstrap</h2>
 
 <img data-src="images/lec-9/bootstrap2.png" class="r-stretch"><p>Source: <a href="https://www.openintro.org/book/ims/">IMS</a></p>
@@ -886,87 +1062,147 @@
 <section id="bootstrap-in-r-1" class="slide level2">
 <h2>Bootstrap in <code>R</code></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>sample_observed_m <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">response =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">21</span>), <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">3</span> )), <span class="at">gender =</span> <span class="st">"male"</span>  )</span>
-<span id="cb22-2"><a href="#cb22-2"></a>sample_observed_f <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">response =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">14</span>), <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">10</span>)), <span class="at">gender =</span> <span class="st">"female"</span>)</span>
-<span id="cb22-3"><a href="#cb22-3"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
-<span id="cb22-4"><a href="#cb22-4"></a><span class="fu">sample_bootstrap</span>(sample_observed_m) <span class="co"># bootstrap sample</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>d <span class="ot">&lt;-</span> gender_discrimination <span class="sc">%&gt;%</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>  <span class="fu">mutate</span>(<span class="at">decision =</span> <span class="fu">if_else</span>(decision <span class="sc">==</span> <span class="st">"promoted"</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb26-3"><a href="#cb26-3"></a>sample_observed_m <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> <span class="fu">filter</span>(gender <span class="sc">==</span> <span class="st">"male"</span>  )</span>
+<span id="cb26-4"><a href="#cb26-4"></a>sample_observed_f <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> <span class="fu">filter</span>(gender <span class="sc">==</span> <span class="st">"female"</span>)</span>
+<span id="cb26-5"><a href="#cb26-5"></a></span>
+<span id="cb26-6"><a href="#cb26-6"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
+<span id="cb26-7"><a href="#cb26-7"></a><span class="fu">sample_bootstrap</span>(sample_observed_m) <span class="co"># bootstrap sample</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code># A tibble: 24 x 2
-   response gender
-      &lt;dbl&gt; &lt;chr&gt; 
- 1        1 male  
- 2        1 male  
- 3        1 male  
- 4        1 male  
- 5        1 male  
- 6        0 male  
- 7        1 male  
- 8        1 male  
- 9        1 male  
-10        1 male  
+   gender decision
+   &lt;fct&gt;     &lt;dbl&gt;
+ 1 male          1
+ 2 male          1
+ 3 male          1
+ 4 male          1
+ 5 male          1
+ 6 male          0
+ 7 male          1
+ 8 male          1
+ 9 male          1
+10 male          1
 # ... with 14 more rows</code></pre>
 </div>
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">sample_bootstrap</span>(sample_observed_f) <span class="co"># bootstrap sample</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">sample_bootstrap</span>(sample_observed_f) <span class="co"># bootstrap sample</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code># A tibble: 24 x 2
-   response gender
-      &lt;dbl&gt; &lt;chr&gt; 
- 1        1 female
- 2        1 female
- 3        1 female
- 4        1 female
- 5        1 female
- 6        0 female
- 7        1 female
- 8        0 female
- 9        1 female
-10        1 female
+   gender decision
+   &lt;fct&gt;     &lt;dbl&gt;
+ 1 female        1
+ 2 female        1
+ 3 female        1
+ 4 female        1
+ 5 female        1
+ 6 female        0
+ 7 female        1
+ 8 female        0
+ 9 female        1
+10 female        1
 # ... with 14 more rows</code></pre>
 </div>
 </div>
 </section>
-<section id="section-5" class="slide level2">
+<section id="section-17" class="slide level2">
 <h2></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb26" data-code-line-numbers="3,4|5|6|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">p_diff_hat =</span> <span class="fu">numeric</span>())</span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">1e3</span>){</span>
-<span id="cb26-3"><a href="#cb26-3"></a>  d_boot_m   <span class="ot">&lt;-</span> <span class="fu">sample_bootstrap</span>(sample_observed_m) <span class="co"># bootstrap sample</span></span>
-<span id="cb26-4"><a href="#cb26-4"></a>  d_boot_f   <span class="ot">&lt;-</span> <span class="fu">sample_bootstrap</span>(sample_observed_f) <span class="co"># bootstrap sample</span></span>
-<span id="cb26-5"><a href="#cb26-5"></a>  p_diff_hat <span class="ot">&lt;-</span> <span class="fu">compute_p_diff</span>(<span class="fu">rbind</span>(d_boot_m, d_boot_f))</span>
-<span id="cb26-6"><a href="#cb26-6"></a>  results    <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span> <span class="fu">add_row</span>(<span class="at">p_diff_hat =</span> p_diff_hat)</span>
-<span id="cb26-7"><a href="#cb26-7"></a>}</span>
-<span id="cb26-8"><a href="#cb26-8"></a><span class="fu">quantile</span>(results<span class="sc">$</span>p_diff_hat, <span class="fu">c</span>(<span class="fl">0.05</span> , <span class="fl">0.95</span> )) <span class="co"># 90% CI</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
-<pre><code>         5%         95% 
--0.50000000 -0.08333333 </code></pre>
+<div class="sourceCode" id="cb30" data-code-line-numbers="|3,4|5|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">p_diff_hat =</span> <span class="fu">numeric</span>())</span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">1e3</span>){</span>
+<span id="cb30-3"><a href="#cb30-3"></a>  d_boot_m   <span class="ot">&lt;-</span> <span class="fu">sample_bootstrap</span>(sample_observed_m) <span class="co"># bootstrap sample</span></span>
+<span id="cb30-4"><a href="#cb30-4"></a>  d_boot_f   <span class="ot">&lt;-</span> <span class="fu">sample_bootstrap</span>(sample_observed_f) <span class="co"># bootstrap sample</span></span>
+<span id="cb30-5"><a href="#cb30-5"></a>  p_diff_hat <span class="ot">&lt;-</span> <span class="fu">compute_p_diff</span>(<span class="fu">rbind</span>(d_boot_m, d_boot_f)) <span class="co"># bootstrap statistic</span></span>
+<span id="cb30-6"><a href="#cb30-6"></a>  results    <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span> <span class="fu">add_row</span>(<span class="at">p_diff_hat =</span> p_diff_hat)</span>
+<span id="cb30-7"><a href="#cb30-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode" id="cb28" data-code-line-numbers="3,4|5|6|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">quantile</span>(results<span class="sc">$</span>p_diff_hat, <span class="fu">c</span>(<span class="fl">0.05</span> , <span class="fl">0.95</span> )) <span class="sc">%&gt;%</span> <span class="fu">signif</span>(<span class="dv">2</span>) <span class="co"># 90% CI</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">quantile</span>(results<span class="sc">$</span>p_diff_hat, <span class="fu">c</span>(<span class="fl">0.05</span> , <span class="fl">0.95</span> )) <span class="co"># 90% CI</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>    5%    95% 
--0.500 -0.083 </code></pre>
+<pre><code>        5%        95% 
+0.08333333 0.50000000 </code></pre>
 </div>
-<div class="sourceCode" id="cb30" data-code-line-numbers="3,4|5|6|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">quantile</span>(results<span class="sc">$</span>p_diff_hat, <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>)) <span class="sc">%&gt;%</span> <span class="fu">signif</span>(<span class="dv">2</span>) <span class="co"># 95% CI</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">quantile</span>(results<span class="sc">$</span>p_diff_hat, <span class="fu">c</span>(<span class="fl">0.05</span> , <span class="fl">0.95</span> )) <span class="sc">%&gt;%</span> <span class="fu">signif</span>(<span class="dv">2</span>) <span class="co"># 90% CI</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>  2.5%  97.5% 
--0.540 -0.042 </code></pre>
+<pre><code>   5%   95% 
+0.083 0.500 </code></pre>
+</div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">quantile</span>(results<span class="sc">$</span>p_diff_hat, <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>)) <span class="sc">%&gt;%</span> <span class="fu">signif</span>(<span class="dv">2</span>) <span class="co"># 95% CI</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code> 2.5% 97.5% 
+0.042 0.540 </code></pre>
 </div>
 </div>
 </section>
-<section id="section-6" class="slide level2">
+<section id="section-18" class="slide level2">
 <h2></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">ggplot</span>(results) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(p_diff_hat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">ggplot</span>(results) <span class="sc">+</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(p_diff_hat))  <span class="sc">+</span> </span>
+<span id="cb37-3"><a href="#cb37-3"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(results<span class="sc">$</span>p_diff_hat, <span class="fu">c</span>(<span class="fl">0.05</span> , <span class="fl">0.95</span> )), <span class="at">col =</span> <span class="st">"gold1"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="co"># 90% CI </span></span>
+<span id="cb37-4"><a href="#cb37-4"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(results<span class="sc">$</span>p_diff_hat, <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>)), <span class="at">col =</span> <span class="st">"maroon"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="co"># 95% CI</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lec-9_files/figure-revealjs/unnamed-chunk-27-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
+<section id="section-19" class="slide level2">
+<h2></h2>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Two sides of the same coin</strong></p>
+</div>
+<div class="callout-content">
+<p>In the two examples, the HT and the CI agree with one another. This is not a coincidence; they will agree in the vast majority of cases!</p>
+<p>We can show mathematically that a HT and a CI are really two sides of the same coin.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="what-does-90-and-95-mean" class="slide level2">
+<h2>What does 90% and 95% mean?</h2>
+<p>Remember that if we could obtain multiple samples, they’d all be a bit different.</p>
+<p><span class="math inline">\(\Rightarrow\)</span> the corresponding CIs would also be a bit different</p>
+<div class="fragment">
+<ul>
+<li><p>A 90% CI will capture the true value of the parameter 90% of the time.</p></li>
+<li><p>A 95% CI will be wider and thus more likely to capture the truth (95% of the time).</p></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Trade off between being informative and true.</li>
+</ul>
+</div>
+</section>
+<section id="section-20" class="slide level2">
+<h2></h2>
+
+<img data-src="images/lec-9/ci.png" class="r-stretch"><p>Source: <a href="https://www.openintro.org/book/ims/">IMS</a></p>
+</section>
+<section id="section-21" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Group exercises - CI</strong></p>
+</div>
+<div class="callout-content">
+<p>Exercises <a href="https://openintro-ims.netlify.app/inference-two-props.html#chp17-exercises">17.3</a> (only do part c) and <a href="https://openintro-ims.netlify.app/inference-two-props.html#chp17-exercises">17.5</a></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="lec-9_files/figure-revealjs/unnamed-chunk-18-1.png" style="width:80.0%"></p>
-</figure>
+<div class="countdown" id="timer_6298ec2d" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
 
-<p><img src="images/logo.jpg" class="slide-logo"></p>
-<div class="footer footer-default">
+
+<img src="images/logo.jpg" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://rmorsomme.github.io/website/">https://rmorsomme.github.io/website/</a></p>
 </div>
 </section></section>

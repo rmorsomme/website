@@ -3063,7 +3063,7 @@
     "href": "slides/lec-9.html#announcements",
     "title": "Inference for proportions",
     "section": "Announcements",
-    "text": "Announcements\n\nData analysis in action – Inferring ethnicity from X-rays"
+    "text": "Announcements\n\nData analysis in action – Inferring ethnicity from X-rays\nAnonymous mid-course feedback"
   },
   {
     "objectID": "slides/lec-9.html#recap",
@@ -3077,21 +3077,21 @@
     "href": "slides/lec-9.html#outline",
     "title": "Inference for proportions",
     "section": "Outline",
-    "text": "Outline\n\nOne proportion\nTwo proportions"
+    "text": "Outline\n\nOne proportion (case 1)\nTwo proportions (case 2)"
   },
   {
     "objectID": "slides/lec-9.html#setup",
     "href": "slides/lec-9.html#setup",
     "title": "Inference for proportions",
     "section": "Setup",
-    "text": "Setup\n(Unknown) population parameter: proportion \\(p\\)\nSample statistics: sample proportion \\(\\hat{p}\\)\n\nHypothesis testing:\n\n\\(H_0:p=p_0\\) where \\(p_0\\) is a number between \\(0\\) and \\(1\\)\n\\(H_a:p\\neq p_0\\)\n\nConfidence interval: range of plausible values for \\(p\\)."
+    "text": "Setup\npopulation parameter: proportion \\(p\\)\nSample statistics: sample proportion \\(\\hat{p}\\)\n\nHypothesis testing:\n\n\\(H_0:p=p_0\\) where \\(p_0\\) is a number between \\(0\\) and \\(1\\)\n\\(H_a:p\\neq p_0\\)\n\nConfidence interval: range of plausible values for \\(p\\)."
   },
   {
     "objectID": "slides/lec-9.html#example",
     "href": "slides/lec-9.html#example",
     "title": "Inference for proportions",
     "section": "Example",
-    "text": "Example\nWhat proportion of US adults support legalizing marijuana?\n\nSample: 900 out of the 1500 participants in a survey say they do.\n\n\nQuestion: What is the sample proportion \\(\\hat{p}\\)?"
+    "text": "Example\nWhat proportion of US adults support legalizing marijuana?\n\nSample: 900/1500 support it.\n\n\n\\[\n\\hat{p} = \\dfrac{900}{1500}=0.6\n\\]"
   },
   {
     "objectID": "slides/lec-9.html#ht-via-simulation",
@@ -3105,35 +3105,35 @@
     "href": "slides/lec-9.html#section",
     "title": "Inference for proportions",
     "section": "",
-    "text": "set.seed(0)\nresults <-  tibble(p_hat = numeric())\nfor(i in 1 : 1e3){\n  sim     <- rbernoulli(n = 1500, p = 0.5)      # simulate sample under H0\n  p_hat   <- mean(sim)                          # compute sample statistic p_hat\n  results <- results %>% add_row(p_hat = p_hat)\n}\nggplot(results) + geom_histogram(aes(p_hat))"
+    "text": "One-sided and two-sided \\(H_a\\)\n\n\nOne-sided) \\(H_a:p>p_0\\) or \\(H_a:p<p_0\\)\nTwo-sided) \\(H_a: p\\neq p_0\\)\nIt is never wrong to use a two-sided \\(H_a\\)."
   },
   {
     "objectID": "slides/lec-9.html#conclusion",
     "href": "slides/lec-9.html#conclusion",
     "title": "Inference for proportions",
     "section": "Conclusion",
-    "text": "Conclusion\nWe see that \\(\\hat{p}=0.6\\) is extremely unlikely to happen under \\(H_0:p=0.5\\).\nWe therefore reject the null hypothesis that \\(p=0.5\\).\n\nIf, on the other hand, the sample statistic had been \\(\\hat{p}=0.51\\), then it would have been plausible that \\(p=0.5\\), and we would not have rejected \\(H_0\\)."
+    "text": "Conclusion\n\\(\\hat{p}=0.6\\) is extremely unlikely to happen under \\(H_0:p=0.5\\).\nWe therefore reject the null hypothesis that half of the people support legalizing marijuana."
   },
   {
     "objectID": "slides/lec-9.html#p-value",
     "href": "slides/lec-9.html#p-value",
     "title": "Inference for proportions",
     "section": "p-value",
-    "text": "p-value\nWhat if we do not have a clear-cut case?\n\ne.g., \\(\\hat{p}=0.52\\)\n\n\np-value: probability of observing a sample statistics at least as extreme as the observed one under the null hypothesis.\n\nthe probability that \\(\\hat{p} > 0.52\\) or \\(\\hat{p} < 0.48\\) if \\(p=0.5\\)."
+    "text": "p-value\nWhat if we do not have a clear-cut case?\n\ne.g., \\(\\hat{p}=0.52 = \\dfrac{780}{1500}\\)\n\n\np-value: probability that the sample statistic of a sample simulated under \\(H_0\\) is at least as extreme as that of the observed sample.\n\nthe probability that \\(\\hat{p}_{sim} > 0.52\\) or \\(\\hat{p}_{sim} < 0.48\\)."
   },
   {
     "objectID": "slides/lec-9.html#p-value-in-r",
     "href": "slides/lec-9.html#p-value-in-r",
     "title": "Inference for proportions",
     "section": "p-value in R",
-    "text": "p-value in R\n\nresults <- results %>%\n  mutate(is_more_extreme = p_hat <= 0.48 | p_hat >= 0.52)\nresults\n\n# A tibble: 1,000 x 2\n   p_hat is_more_extreme\n   <dbl> <lgl>          \n 1 0.475 TRUE           \n 2 0.485 FALSE          \n 3 0.483 FALSE          \n 4 0.528 TRUE           \n 5 0.51  FALSE          \n 6 0.493 FALSE          \n 7 0.503 FALSE          \n 8 0.5   FALSE          \n 9 0.495 FALSE          \n10 0.503 FALSE          \n# ... with 990 more rows\n\n\n\nsummarize(results, p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.121"
+    "text": "p-value in R\n\nresults <- results %>%\n  mutate(is_more_extreme = p_hat <= 0.48 | p_hat >= 0.52)\nresults\n\n# A tibble: 1,000 x 2\n   p_hat is_more_extreme\n   <dbl> <lgl>          \n 1 0.475 TRUE           \n 2 0.485 FALSE          \n 3 0.483 FALSE          \n 4 0.528 TRUE           \n 5 0.51  FALSE          \n 6 0.493 FALSE          \n 7 0.503 FALSE          \n 8 0.5   FALSE          \n 9 0.495 FALSE          \n10 0.503 FALSE          \n# ... with 990 more rows\n\n\n\nresults %>% summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.121"
   },
   {
     "objectID": "slides/lec-9.html#p-value-in-practice",
     "href": "slides/lec-9.html#p-value-in-practice",
     "title": "Inference for proportions",
     "section": "p-value in practice",
-    "text": "p-value in practice\nIn practice, if a p-value is smaller than 0.05 we reject \\(H_0\\)\n\nless than 5% of the simulated samples were at least as extreme as the observed sample,\nit is highly unlikely that the observed sample could have arisen if \\(H_0\\) were true.\nthe results are statistically significant.\n\n\n\n\n\n\n\n\nWhy 0.05?\n\n\nTo know why 0.05 is widely used in practice, check out this short video."
+    "text": "p-value in practice\nIn practice, if a p-value is smaller than 0.05 we reject \\(H_0\\)\n\n\\(\\alpha = 0.05\\) is called the significance level.\nIf \\(p<0.05\\), the observed sample is in the top 5% of the most extreme simulated samples.\nIt is highly unlikely that the observed sample could have arisen if \\(H_0\\) were true.\nthe difference \\(\\hat{p}-p_0\\) is statistically significant."
   },
   {
     "objectID": "slides/lec-9.html#bootstrap",
@@ -3147,105 +3147,105 @@
     "href": "slides/lec-9.html#bootstrap-in-r",
     "title": "Inference for proportions",
     "section": "Bootstrap in R",
-    "text": "Bootstrap in R\n\nsample_bootstrap <- function(data){\n  n                <- nrow(data)\n  sample_bootstrap <- slice_sample(data, n = n, replace = TRUE)\n  return(sample_bootstrap)\n}\nsample_observed <- tibble(support = c(rep(1, 900), rep(0, 1500 - 900)))\n\n\nset.seed(0)\nslice_sample(sample_observed, n = 5) # 5 random rows from the sample\n\n# A tibble: 5 x 1\n  support\n    <dbl>\n1       0\n2       0\n3       1\n4       1\n5       0"
+    "text": "Bootstrap in R\n\nsample_observed <- tibble(support = c(rep(1, 900), rep(0, 600)))\n\n\nset.seed(0)\nslice_sample(sample_observed, n = 5) # 5 random rows from the data frame\n\n# A tibble: 5 x 1\n  support\n    <dbl>\n1       0\n2       0\n3       1\n4       1\n5       0\n\n\n\nsample_bootstrap <- function(data){\n  n                <- nrow(data)\n  sample_bootstrap <- slice_sample(data, n = n, replace = TRUE)\n  return(sample_bootstrap)\n}"
   },
   {
     "objectID": "slides/lec-9.html#section-1",
     "href": "slides/lec-9.html#section-1",
     "title": "Inference for proportions",
     "section": "",
-    "text": "results <- tibble(p_hat = numeric()) # empty data frame to collect the results\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_boot  <- sample_bootstrap(sample_observed) # bootstrap sample\n  results <- results %>% \n    add_row(p_hat = mean(d_boot$support)) # sample statistic from bootstrap sample\n}\nquantile(results$p_hat, c(0.05 , 0.95 )) # 90% CI\n\n       5%       95% \n0.5813000 0.6206667 \n\nquantile(results$p_hat, c(0.025, 0.975)) # 95% CI\n\n     2.5%     97.5% \n0.5766667 0.6253500"
+    "text": "Individual exercise - Hypotheses\n\n\nExercise 16.1\n\n\n\n\n\n\n01:00"
   },
   {
     "objectID": "slides/lec-9.html#section-2",
     "href": "slides/lec-9.html#section-2",
     "title": "Inference for proportions",
     "section": "",
-    "text": "ggplot(results) + geom_histogram(aes(p_hat))"
+    "text": "\\(H_0:p=0.5\\)\n\\(H_a:p\\neq 0.5\\)\n\n\nSimulate many samples under \\(H_0\\).\nDetermine if the observed data could have plausibly arisen under \\(H_0\\).\n\n\n\n\n\n\n\nParametric bootstrap\n\n\nThe textbook uses the term (parametric) bootstrap to refer to this procedure."
   },
   {
     "objectID": "slides/lec-9.html#setup-1",
     "href": "slides/lec-9.html#setup-1",
     "title": "Inference for proportions",
     "section": "Setup",
-    "text": "Setup\nA population divided in two groups (group 1 and group 2)\n(Unknown) population parameter: difference in proportion \\(p_{diff}=p_1-p_2\\)\nSample statistics: sample proportion \\(\\hat{p}_{diff}=\\hat{p}_1-\\hat{p}_2\\)\n\\(H_0:p_{diff}=0\\) (there is no difference between the two groups)\n\\(H_a:p_{diff}\\neq0\\)"
+    "text": "Setup\nA population divided in two groups.\nPopulation parameter: difference in proportion\n\\[\np_{diff}=p_1-p_2\n\\]\nSample statistics: difference in proportion in the sample\n\\[\n\\hat{p}_{diff}=\\hat{p}_1-\\hat{p}_2\n\\]\n\n\\(H_0:p_{diff}=0\\) (no difference between the two groups)\n\\(H_a:p_{diff}\\neq0\\)"
   },
   {
     "objectID": "slides/lec-9.html#example-sex-discrimination",
     "href": "slides/lec-9.html#example-sex-discrimination",
     "title": "Inference for proportions",
     "section": "Example – sex discrimination",
-    "text": "Example – sex discrimination\nAre individuals who identify as female discriminated against in promotion decisions made by their managers?\n\n\n\n\nSummary results for the sex discrimination study.\n \n\n\ndecision\n\n\n  \n    sex \n    promoted \n    not promoted \n    Total \n  \n \n\n  \n    male \n    21 \n    3 \n    24 \n  \n  \n    female \n    14 \n    10 \n    24 \n  \n  \n    Total \n    35 \n    13 \n    48"
+    "text": "Example – sex discrimination\nAre individuals who identify as female discriminated against in promotion decisions?\n\n\n\n\nSummary results for the sex discrimination study.\n \n\n\ndecision\n\n\n  \n    sex \n    promoted \n    not promoted \n    Total \n  \n \n\n  \n    male \n    21 \n    3 \n    24 \n  \n  \n    female \n    14 \n    10 \n    24 \n  \n  \n    Total \n    35 \n    13 \n    48"
   },
   {
     "objectID": "slides/lec-9.html#section-3",
     "href": "slides/lec-9.html#section-3",
     "title": "Inference for proportions",
     "section": "",
-    "text": "Group exercise - two proportions\n\n\nWhat are \\(\\hat{p}_f\\), \\(\\hat{p}_m\\) and \\(\\hat{p}_{diff}\\)? Do you intuitively feel that the data provide convincing evidence of sex discrimination?\n\n\n\n\n\n\n03:00"
+    "text": "set.seed(0)\nresults <-  tibble(p_hat = numeric())\nfor(i in 1 : 1e3){\n  sim     <- rbernoulli(n = 1500, p = 0.5) # simulate a sample under H0\n  p_hat   <- mean(sim)                     # compute the sample statistic p_hat\n  results <- results %>% add_row(p_hat = p_hat)\n}\nggplot(results) + geom_histogram(aes(p_hat))"
   },
   {
     "objectID": "slides/lec-9.html#simulating-under-h_0",
     "href": "slides/lec-9.html#simulating-under-h_0",
     "title": "Inference for proportions",
     "section": "Simulating under \\(H_0\\)",
-    "text": "Simulating under \\(H_0\\)\nUnder the null hypothesis, there is no discrimination – whether someone receives a promotion is independent of their sexual identification.\n\nGoal: model the randomness that would occur if the null hypothesis was true.\nTo accomplish that, we can randomly re-assign the \\(35\\) promotions among the \\(45\\) individuals, independently of their sexual identification."
+    "text": "Simulating under \\(H_0\\)\nUnder \\(H_0\\), there is no discrimination\n\\(\\Rightarrow\\) whether someone receives a promotion is independent of their sexual identification,\n\\(\\Rightarrow\\) randomly re-assign the \\(35\\) promotions independently of the sexual identification."
   },
   {
     "objectID": "slides/lec-9.html#section-4",
     "href": "slides/lec-9.html#section-4",
     "title": "Inference for proportions",
     "section": "",
-    "text": "Source: IMS"
+    "text": "Group exercise - HT for one proportion\n\n\nExercise 16.3 – in part d, you do not need to estimate the p-value.\n\n\n\n\n\n\n03:00"
   },
   {
     "objectID": "slides/lec-9.html#simulation-result",
     "href": "slides/lec-9.html#simulation-result",
     "title": "Inference for proportions",
     "section": "Simulation result",
-    "text": "Simulation result\n\n\n\n \n\n\ndecision\n\n\n  \n    sex \n    promoted \n    not promoted \n    Total \n  \n \n\n  \n    male \n    18 \n    6 \n    24 \n  \n  \n    female \n    17 \n    7 \n    24 \n  \n  \n    Total \n    35 \n    13 \n    48"
+    "text": "Simulation result\n\n\n\n \n\n\ndecision\n\n\n  \n    sex \n    promoted \n    not promoted \n    Total \n  \n \n\n  \n    male \n    18 \n    6 \n    24 \n  \n  \n    female \n    17 \n    7 \n    24 \n  \n  \n    Total \n    35 \n    13 \n    48 \n  \n\n\n\n\n\nSource: IMS"
   },
   {
     "objectID": "slides/lec-9.html#simulating-under-h_0-1",
     "href": "slides/lec-9.html#simulating-under-h_0-1",
     "title": "Inference for proportions",
     "section": "Simulating under \\(H_0\\)",
-    "text": "Simulating under \\(H_0\\)\n\nd <- gender_discrimination %>% select(gender)\npromotions_ordered <- c(rep(1, 35), rep(0, 48 - 35)) # 35 promotions and 13 non-promotions\npromotions_sim <- sample(promotions_ordered, 48) # shuffle promotions\nd_sim <- d %>% mutate(response = promotions_sim)\nd_sim\n\n# A tibble: 48 x 2\n   gender response\n   <fct>     <dbl>\n 1 male          0\n 2 male          1\n 3 male          0\n 4 male          1\n 5 male          1\n 6 male          1\n 7 male          0\n 8 male          1\n 9 male          1\n10 male          1\n# ... with 38 more rows"
+    "text": "Simulating under \\(H_0\\)\n\nd <- gender_discrimination %>% select(gender)\npromotions_ordered <- c(rep(1, 35), rep(0, 48 - 35)) # 35 promotions and 13 non-promotions\npromotions_sim <- sample(promotions_ordered, 48) # shuffle promotions\nd_sim <- d %>% mutate(response = promotions_sim)\nd_sim\n\n# A tibble: 48 x 2\n   gender response\n   <fct>     <dbl>\n 1 male          1\n 2 male          1\n 3 male          1\n 4 male          1\n 5 male          0\n 6 male          0\n 7 male          0\n 8 male          1\n 9 male          0\n10 male          1\n# ... with 38 more rows"
   },
   {
     "objectID": "slides/lec-9.html#function-for-computing-the-test-statistic",
     "href": "slides/lec-9.html#function-for-computing-the-test-statistic",
     "title": "Inference for proportions",
     "section": "Function for computing the test statistic",
-    "text": "Function for computing the test statistic\n\ncompute_p_diff <- function(data){\n  p_hat <- data %>%\n    group_by(gender) %>%\n    summarize(p_hat = mean(response))\n  p_diff_hat <- p_hat$p_hat[1] - p_hat$p_hat[2]\n  return(p_diff_hat)\n}\ncompute_p_diff(d_sim)\n\n[1] -0.125"
+    "text": "Function for computing the test statistic\n\ncompute_p_diff <- function(data){\n  p_hat <- data %>%\n    group_by(gender) %>%\n    summarize(p_hat = mean(decision))\n  p_diff_hat <- p_hat$p_hat[1] - p_hat$p_hat[2]\n  return(p_diff_hat)\n}\ncompute_p_diff(d_sim)\n\n[1] -0.04166667"
   },
   {
     "objectID": "slides/lec-9.html#for-loop-for-simulating-under-h_0",
     "href": "slides/lec-9.html#for-loop-for-simulating-under-h_0",
     "title": "Inference for proportions",
     "section": "For-loop for simulating under \\(H_0\\)",
-    "text": "For-loop for simulating under \\(H_0\\)\n\n# Setup\nresults    <-  tibble(p_diff_hat = numeric())\nd          <- gender_discrimination\npromotions <- c(rep(1, 35), rep(0, 48 - 35))\n\n# Simulations\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_sim <- d %>% mutate(response = sample(promotions, 48)) # simulate under H0\n  results <- results %>% add_row(p_diff_hat = compute_p_diff(d_sim))  # test statistic\n}"
+    "text": "For-loop for simulating under \\(H_0\\)\n\n# Setup\nresults    <- tibble(p_diff_hat = numeric())\nd          <- gender_discrimination\npromotions <- c(rep(1, 35), rep(0, 13))\n\n# Simulations\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_sim <- d %>% mutate(decision = sample(promotions)) # simulate under H0\n  p_diff_hat <- compute_p_diff(d_sim) # test statistic\n  results <- results %>% add_row(p_diff_hat = p_diff_hat)\n}"
   },
   {
     "objectID": "slides/lec-9.html#sampling-distribution",
     "href": "slides/lec-9.html#sampling-distribution",
     "title": "Inference for proportions",
     "section": "Sampling distribution",
-    "text": "Sampling distribution\n\np_diff_obs <- 21 / 24 - 14 / 24\nggplot(results) + \n  geom_histogram(aes(p_diff_hat)) +\n  geom_vline(xintercept = p_diff_obs, col = \"maroon\", size = 2)"
+    "text": "Sampling distribution\n\np_diff_obs <- 21 / 24 - 14 / 24\np_diff_obs\n\n[1] 0.2916667\n\nggplot(results) + \n  geom_histogram(aes(p_diff_hat)) +\n  geom_vline(xintercept = p_diff_obs, col = \"maroon\", size = 2)"
   },
   {
     "objectID": "slides/lec-9.html#p-value-1",
     "href": "slides/lec-9.html#p-value-1",
     "title": "Inference for proportions",
     "section": "p-value",
-    "text": "p-value\np-value: the probability of observing a test statistic at least as extreme as the observed one under the null hypothesis.\n\nthe probability that \\(\\hat{p}_{diff}>\\) 0.29 or \\(\\hat{p}<\\) -0.29 if there is no discrimination.\n\n\nresults %>%\n  mutate(is_more_extreme = p_diff_hat >= p_diff_obs | p_diff_hat <= -p_diff_obs) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.048"
+    "text": "p-value\np-value: probability that the sample statistic of a sample simulated under \\(H_0\\) is at least as extreme as that of the observed sample.\n\nthe probability that \\(\\hat{p}_{diff}^{sim}\\ge\\) 0.29 or \\(\\hat{p}_{diff}^{sim}\\le\\) -0.29.\n\n\nresults %>%\n  mutate(is_more_extreme = p_diff_hat >= p_diff_obs | p_diff_hat <= -p_diff_obs) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.048"
   },
   {
     "objectID": "slides/lec-9.html#significance-level-alpha-0.05",
     "href": "slides/lec-9.html#significance-level-alpha-0.05",
     "title": "Inference for proportions",
     "section": "significance level \\(\\alpha = 0.05\\)",
-    "text": "significance level \\(\\alpha = 0.05\\)\nUsing the usually significance level \\(\\alpha = 0.05\\), we fail to reject the null hypothesis\n\nthe data do not provide sufficient evidence to reject the null hypothesis,\nit is plausible to observe the sample collected in the study if there is no discrimination just by chance.\n\n\n\n\n\n\n\nStatisticians as messengers\n\n\nStatisticians are only messengers of the data; they only interpret what the data are indicating."
+    "text": "significance level \\(\\alpha = 0.05\\)\nUsing the usual significance level \\(\\alpha = 0.05\\), we reject the null hypothesis\n\nthe observed difference in promotions is unlikely to be due to random luck\nthe difference is statistically significant."
   },
   {
     "objectID": "slides/lec-9.html#bootstrap-1",
@@ -3259,20 +3259,153 @@
     "href": "slides/lec-9.html#bootstrap-in-r-1",
     "title": "Inference for proportions",
     "section": "Bootstrap in R",
-    "text": "Bootstrap in R\n\nsample_observed_m <- tibble(response = c(rep(1, 21), rep(0, 3 )), gender = \"male\"  )\nsample_observed_f <- tibble(response = c(rep(1, 14), rep(0, 10)), gender = \"female\")\nset.seed(0)\nsample_bootstrap(sample_observed_m) # bootstrap sample\n\n# A tibble: 24 x 2\n   response gender\n      <dbl> <chr> \n 1        1 male  \n 2        1 male  \n 3        1 male  \n 4        1 male  \n 5        1 male  \n 6        0 male  \n 7        1 male  \n 8        1 male  \n 9        1 male  \n10        1 male  \n# ... with 14 more rows\n\nsample_bootstrap(sample_observed_f) # bootstrap sample\n\n# A tibble: 24 x 2\n   response gender\n      <dbl> <chr> \n 1        1 female\n 2        1 female\n 3        1 female\n 4        1 female\n 5        1 female\n 6        0 female\n 7        1 female\n 8        0 female\n 9        1 female\n10        1 female\n# ... with 14 more rows"
+    "text": "Bootstrap in R\n\nd <- gender_discrimination %>%\n  mutate(decision = if_else(decision == \"promoted\", 1, 0))\nsample_observed_m <- d %>% filter(gender == \"male\"  )\nsample_observed_f <- d %>% filter(gender == \"female\")\n\nset.seed(0)\nsample_bootstrap(sample_observed_m) # bootstrap sample\n\n# A tibble: 24 x 2\n   gender decision\n   <fct>     <dbl>\n 1 male          1\n 2 male          1\n 3 male          1\n 4 male          1\n 5 male          1\n 6 male          0\n 7 male          1\n 8 male          1\n 9 male          1\n10 male          1\n# ... with 14 more rows\n\nsample_bootstrap(sample_observed_f) # bootstrap sample\n\n# A tibble: 24 x 2\n   gender decision\n   <fct>     <dbl>\n 1 female        1\n 2 female        1\n 3 female        1\n 4 female        1\n 5 female        1\n 6 female        0\n 7 female        1\n 8 female        0\n 9 female        1\n10 female        1\n# ... with 14 more rows"
   },
   {
     "objectID": "slides/lec-9.html#section-5",
     "href": "slides/lec-9.html#section-5",
     "title": "Inference for proportions",
     "section": "",
-    "text": "results <- tibble(p_diff_hat = numeric())\nfor(i in 1 : 1e3){\n  d_boot_m   <- sample_bootstrap(sample_observed_m) # bootstrap sample\n  d_boot_f   <- sample_bootstrap(sample_observed_f) # bootstrap sample\n  p_diff_hat <- compute_p_diff(rbind(d_boot_m, d_boot_f))\n  results    <- results %>% add_row(p_diff_hat = p_diff_hat)\n}\nquantile(results$p_diff_hat, c(0.05 , 0.95 )) # 90% CI\n\n         5%         95% \n-0.50000000 -0.08333333 \n\nquantile(results$p_diff_hat, c(0.05 , 0.95 )) %>% signif(2) # 90% CI\n\n    5%    95% \n-0.500 -0.083 \n\nquantile(results$p_diff_hat, c(0.025, 0.975)) %>% signif(2) # 95% CI\n\n  2.5%  97.5% \n-0.540 -0.042"
+    "text": "Why \\(\\alpha = 0.05\\)?\n\n\nTo know why the significance level 0.05 is widely used in practice, check out this short video."
   },
   {
     "objectID": "slides/lec-9.html#section-6",
     "href": "slides/lec-9.html#section-6",
     "title": "Inference for proportions",
     "section": "",
-    "text": "ggplot(results) + geom_histogram(aes(p_diff_hat))\n\n\n\n\n\n\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+    "text": "Group exercise - HT for one proportion\n\n\nExercise 16.5.\n\n\n\n\n\n\n04:00"
+  },
+  {
+    "objectID": "slides/lec-9.html#ht-via-simulation-parametric-bootstrap",
+    "href": "slides/lec-9.html#ht-via-simulation-parametric-bootstrap",
+    "title": "Inference for proportions",
+    "section": "HT via simulation (parametric bootstrap)",
+    "text": "HT via simulation (parametric bootstrap)\n\\(H_0:p=0.5\\)\n\\(H_a:p\\neq 0.5\\)\n\n\nSimulate many samples under \\(H_0\\)\nDetermine if the observed data could have plausibly arisen under \\(H_0\\)"
+  },
+  {
+    "objectID": "slides/lec-9.html#bootstrapping",
+    "href": "slides/lec-9.html#bootstrapping",
+    "title": "Inference for proportions",
+    "section": "Bootstrapping",
+    "text": "Bootstrapping\nSample with repetition from the observed sample to construct many bootstrap samples.\nBootstrap samples \\(\\Rightarrow\\) sampling distribution \\(\\Rightarrow\\) CI"
+  },
+  {
+    "objectID": "slides/lec-9.html#section-7",
+    "href": "slides/lec-9.html#section-7",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Source: IMS"
+  },
+  {
+    "objectID": "slides/lec-9.html#section-8",
+    "href": "slides/lec-9.html#section-8",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "results <- tibble(p_hat = numeric()) # empty data frame to collect the results\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_boot    <- sample_bootstrap(sample_observed) # bootstrap sample\n  stat_boot <- mean(d_boot$support)              # bootstrap statistic\n  results   <- results %>% add_row(p_hat = stat_boot) \n}\n\n\nquantile(results$p_hat, c(0.05 , 0.95 )) # 90% CI\n\n       5%       95% \n0.5813000 0.6206667 \n\n\n\nquantile(results$p_hat, c(0.025, 0.975)) # 95% CI (wider)\n\n     2.5%     97.5% \n0.5766667 0.6253500"
+  },
+  {
+    "objectID": "slides/lec-9.html#section-9",
+    "href": "slides/lec-9.html#section-9",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "ggplot(results) + \n  geom_histogram(aes(p_hat)) + \n  geom_vline(xintercept = quantile(results$p_hat, c(0.05 , 0.95 )), col = \"gold1\", size = 2) + # 90% CI \n  geom_vline(xintercept = quantile(results$p_hat, c(0.025, 0.975)), col = \"maroon\", size = 2) # 95% CI"
+  },
+  {
+    "objectID": "slides/lec-9.html#section-10",
+    "href": "slides/lec-9.html#section-10",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Group exercise - Bootstrap CI\n\n\nExercises 12.1 and 12.7\n\n\n\n\n\n\n03:30"
+  },
+  {
+    "objectID": "slides/lec-9.html#section-11",
+    "href": "slides/lec-9.html#section-11",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Group exercise - two proportions\n\n\nWhat are \\(\\hat{p}_f\\), \\(\\hat{p}_m\\) and \\(\\hat{p}_{diff}\\)? Do you intuitively feel that the data provide convincing evidence of sex discrimination?\n\n\n\n\n\n\n02:00"
+  },
+  {
+    "objectID": "slides/lec-9.html#section-12",
+    "href": "slides/lec-9.html#section-12",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "\\(H_0:p_{diff}=0\\)\n\\(H_a:p_{diff}\\neq 0\\)\n\n\nSimulate many samples under \\(H_0\\) (no discrimination)\nDetermine if the observed data could have plausibly arisen under \\(H_0\\)"
+  },
+  {
+    "objectID": "slides/lec-9.html#section-13",
+    "href": "slides/lec-9.html#section-13",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Source: IMS"
+  },
+  {
+    "objectID": "slides/lec-9.html#section-14",
+    "href": "slides/lec-9.html#section-14",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "d <- gender_discrimination\npromotions_ordered <- c(rep(1, 35), rep(0, 13)) # 35 promotions and 13 non-promotions\npromotions_sim <- sample(promotions_ordered) # shuffle the promotions\nd_sim <- d %>% mutate(decision = promotions_sim)\nd_sim\n\n# A tibble: 48 x 2\n   gender decision\n   <fct>     <dbl>\n 1 male          1\n 2 male          1\n 3 male          1\n 4 male          1\n 5 male          0\n 6 male          0\n 7 male          0\n 8 male          1\n 9 male          0\n10 male          1\n# ... with 38 more rows"
+  },
+  {
+    "objectID": "slides/lec-9.html#example-legalizing-marijuana",
+    "href": "slides/lec-9.html#example-legalizing-marijuana",
+    "title": "Inference for proportions",
+    "section": "Example – legalizing marijuana",
+    "text": "Example – legalizing marijuana\nWhat proportion of US adults support legalizing marijuana?\n\nSample: 900/1500 support it.\n\n\n\\[\n\\hat{p} = \\dfrac{900}{1500}=0.6\n\\]"
+  },
+  {
+    "objectID": "slides/lec-9.html#section-15",
+    "href": "slides/lec-9.html#section-15",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Statisticians as messengers\n\n\nStatisticians are just messengers; they only interpret what the data are indicating.\nIf you are a scientist and are not happy with the result of a statistical analysis, change the study not the statistician!\n\nlarger sample\nsmaller measurement errors\nnew variables, e.g. salary instead of promotion"
+  },
+  {
+    "objectID": "slides/lec-9.html#section-16",
+    "href": "slides/lec-9.html#section-16",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Group exercise - HT\n\n\n17.1 (skip part b)\n\n\n\n\n\n\n03:00"
+  },
+  {
+    "objectID": "slides/lec-9.html#section-17",
+    "href": "slides/lec-9.html#section-17",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "results <- tibble(p_diff_hat = numeric())\nfor(i in 1 : 1e3){\n  d_boot_m   <- sample_bootstrap(sample_observed_m) # bootstrap sample\n  d_boot_f   <- sample_bootstrap(sample_observed_f) # bootstrap sample\n  p_diff_hat <- compute_p_diff(rbind(d_boot_m, d_boot_f)) # bootstrap statistic\n  results    <- results %>% add_row(p_diff_hat = p_diff_hat)\n}\n\n\nquantile(results$p_diff_hat, c(0.05 , 0.95 )) # 90% CI\n\n        5%        95% \n0.08333333 0.50000000 \n\nquantile(results$p_diff_hat, c(0.05 , 0.95 )) %>% signif(2) # 90% CI\n\n   5%   95% \n0.083 0.500 \n\nquantile(results$p_diff_hat, c(0.025, 0.975)) %>% signif(2) # 95% CI\n\n 2.5% 97.5% \n0.042 0.540"
+  },
+  {
+    "objectID": "slides/lec-9.html#section-18",
+    "href": "slides/lec-9.html#section-18",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "ggplot(results) +\n  geom_histogram(aes(p_diff_hat))  + \n  geom_vline(xintercept = quantile(results$p_diff_hat, c(0.05 , 0.95 )), col = \"gold1\", size = 2) + # 90% CI \n  geom_vline(xintercept = quantile(results$p_diff_hat, c(0.025, 0.975)), col = \"maroon\", size = 2) # 95% CI"
+  },
+  {
+    "objectID": "slides/lec-9.html#what-does-90-and-95-mean",
+    "href": "slides/lec-9.html#what-does-90-and-95-mean",
+    "title": "Inference for proportions",
+    "section": "What does 90% and 95% mean?",
+    "text": "What does 90% and 95% mean?\nRemember that if we could obtain multiple samples, they’d all be a bit different.\n\\(\\Rightarrow\\) the corresponding CIs would also be a bit different\n\n\nA 90% CI will capture the true value of the parameter 90% of the time.\nA 95% CI will be wider and thus more likely to capture the truth (95% of the time).\n\n\n\n\nTrade off between being informative and true."
+  },
+  {
+    "objectID": "slides/lec-9.html#section-19",
+    "href": "slides/lec-9.html#section-19",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Two sides of the same coin\n\n\nIn the two examples, the HT and the CI agree with one another. This is not a coincidence; they will agree in the vast majority of cases!\nWe can show mathematically that a HT and a CI are really two sides of the same coin."
+  },
+  {
+    "objectID": "slides/lec-9.html#section-20",
+    "href": "slides/lec-9.html#section-20",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Source: IMS"
+  },
+  {
+    "objectID": "slides/lec-9.html#section-21",
+    "href": "slides/lec-9.html#section-21",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Group exercises - CI\n\n\nExercises 17.3 (only do part c) and 17.5\n\n\n\n\n\n\n03:00\n\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   }
 ]
