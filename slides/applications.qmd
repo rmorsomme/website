@@ -72,7 +72,7 @@ In this [Ted talk](https://youtu.be/um5gMZcZWm0), Prof. Steven Levitt argues tha
 
 ## Statistics in psychiatry and agriculture
 
-Hear about the work of the statistician [Susan Murphy](https://youtu.be/Bz0e5xGDHaU) and agricultural ecologist [David Lobell](https://youtu.be/Bz0e5xGDHaU), both recipients of the prestigious MacArthur Fellowship.
+Hear about the work of the statistician [Susan Murphy](https://youtu.be/Bz0e5xGDHaU) and agricultural ecologist [David Lobell](https://youtu.be/Tm2cCnRjcOM), both recipients of the prestigious MacArthur Fellowship.
 
 Believe it or not, agriculture is where statistical methods (experiments, hypothesis tests, etc) were first used during the 1920s.
 
