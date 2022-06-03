@@ -517,6 +517,8 @@ countdown(minutes = 3)
 
 # Confidence interval via bootstrap
 
+## 
+
 Same idea as before: sample with repetition from the observed data to construct many **bootstrap samples**.
 
 Bootstrap samples $\Rightarrow$ sampling distribution $\Rightarrow$ CI
@@ -611,3 +613,19 @@ Exercises [17.3](https://openintro-ims.netlify.app/inference-two-props.html#chp1
 ```{r, echo = F}
 countdown(minutes = 3)
 ```
+
+# Recap
+
+## Recap
+
+-   One proportion
+
+    -   HT via simulation
+
+    -   CI via bootstrap
+
+-   Two proportions
+
+    -   HT via simulation
+
+    -   CI via bootstrap
