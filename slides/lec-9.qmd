@@ -304,7 +304,7 @@ ggplot(results) +
 ::: {.callout-tip icon="false"}
 ## Group exercise - Bootstrap CI
 
-Exercises [12.1](https://openintro-ims.netlify.app/inference-one-prop.html#chp16-exercises) and [12.7](https://openintro-ims.netlify.app/inference-one-prop.html#chp16-exercises)
+Exercises [12.1](https://openintro-ims.netlify.app/foundations-bootstrapping.html#chp12-exercises) and [12.7](https://openintro-ims.netlify.app/foundations-bootstrapping.html#chp12-exercises)
 :::
 
 ```{r, echo = F}
@@ -504,10 +504,13 @@ If you are a scientist and are not happy with the result of a statistical analys
 :::
 
 ## 
+
 ::: {.callout-tip icon="false"}
 ## Group exercise - HT
+
 [17.1](https://openintro-ims.netlify.app/inference-two-props.html#chp17-exercises) (skip part b)
 :::
+
 ```{r, echo = F}
 countdown(minutes = 3)
 ```
@@ -598,10 +601,13 @@ $\Rightarrow$ the corresponding CIs would also be a bit different
 Source: [IMS](https://www.openintro.org/book/ims/)
 
 ## 
+
 ::: {.callout-tip icon="false"}
 ## Group exercises - CI
-Exercises [17.3](https://openintro-ims.netlify.app/inference-two-props.html#chp17-exercises) (only do part c) and [17.5](https://openintro-ims.netlify.app/inference-two-props.html#chp17-exercises) 
+
+Exercises [17.3](https://openintro-ims.netlify.app/inference-two-props.html#chp17-exercises) (only do part c) and [17.5](https://openintro-ims.netlify.app/inference-two-props.html#chp17-exercises)
 :::
+
 ```{r, echo = F}
 countdown(minutes = 3)
 ```
