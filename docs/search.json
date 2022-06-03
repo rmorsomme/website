@@ -322,6 +322,27 @@
     "text": "Lab exercises - the Youth Risk Behavior Surveillance System (25 points)\nYou can find the lab here\n\nExercise 1 (2 points)\nExercise 2 (2 points)\nExercise 3 (2 points)\nExercise 4 (2 points)\nExercise 5 (2 points)\nExercise 6 (2 points)\nExercise 7 (2 points)\nExercise 8 (2 points)\nExercise 9 (3 points)\nExercise 10 (3 points)\nExercise 11 (3 points)"
   },
   {
+    "objectID": "hw/hw-6.html",
+    "href": "hw/hw-6.html",
+    "title": "HW 6 - Inference for means",
+    "section": "",
+    "text": "This assignment needs to be completed with RMarkdown and submitted as a PDF on Gradescope. Feel free to re-use the template provided for HW1.\nWhen submitting your work on Gradescope, please assign a page for each question."
+  },
+  {
+    "objectID": "hw/hw-6.html#problem-set-25-points",
+    "href": "hw/hw-6.html#problem-set-25-points",
+    "title": "HW 6 - Inference for means",
+    "section": "Problem set (25 points)",
+    "text": "Problem set (25 points)\n\n19.2 (2 points)\n19.6 (2 points) – part b only\n19.20 (2.5 points)\n20.4 (2 points)\n20.6 (1 point) – part a only\n20.8 (6 points)\n21.2 (2 points)\n21.4 (1.5 points)\n21.6 (2.5 points)\n21.8 (1.5 points) – skip part b; in part c, only interpret CI from part a\n21.10 (2 points)"
+  },
+  {
+    "objectID": "hw/hw-6.html#lab-exercises---the-youth-risk-behavior-surveillance-system-25-points",
+    "href": "hw/hw-6.html#lab-exercises---the-youth-risk-behavior-surveillance-system-25-points",
+    "title": "HW 6 - Inference for means",
+    "section": "Lab exercises - the Youth Risk Behavior Surveillance System (25 points)",
+    "text": "Lab exercises - the Youth Risk Behavior Surveillance System (25 points)\nYou can find the lab here.\n\nExercise 1 (2 points)\nExercise 2 (1 point)\nExercise 3 (2 points) – see the ggplot2 cheatsheet for the command to make violin plot.\nExercise 4 (1 point)\nExercise 5 (1 point)\nExercise 6 (2 points)\nExercise 7 (1 point)\nExercise 8 (1 point)\nExercise 9 (2 points)\nExercise 10 (2 points)\nExercise 11 (2 points)\nExercise 12 (2 points)\nExercise 13 (2 points)\nExercise 14 (4 points)"
+  },
+  {
     "objectID": "hw/template.html",
     "href": "hw/template.html",
     "title": "HW 1 - Introduction to data",
