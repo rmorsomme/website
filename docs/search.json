@@ -3400,5 +3400,572 @@
     "title": "Teaching triangle",
     "section": "",
     "text": "Time\nDate\n\n\n\n\n6:00\nE starts on time\nE lectures (slides) with numerous examples and pictures\n\n\n6:05\nE interacts with students through chat, thumb up/down\n\n\n6:10\n1/4 Zoom cameras on\nNich. Guar. provides answer, E. corrects Nich. (could have asked the rest of the class to correct Nich. instead)\n27 students\n\n\n6:15\nE uses a short video (2 min)\n\n\n6:20\nE answers question from Zoom chat\n\n\n6:25\nE illustrates phonology with many examples\n26 students\n\n\n6:30\nE applies phonology to sign language, many videos\nMuch focus given to sign language\n49 messages in chat\n\n\n6:35\nJaich. Pai. raises hand; E spots Jaich immediately\n\n\n6:40\nSemantics – E connects main topics of lecture to one another\n\n\n6:45\n91 messages in Zoom chat\nMuch interaction with students\n\n\n6:50\nThe exchange with students continues\n\n\n6:55\nThe exchange has just concluded\nVideos about code-switching\n\n\n7:00\nAnother long exchange with students (>10 min)\n\n\n7:16\n127 messages in chat\n25 participants\nbreak\n\n\nQ\n-) English/US-centered; extending discussion before break was irritating\n+) videos"
+  },
+  {
+    "objectID": "slides/lec-10.html#announcements",
+    "href": "slides/lec-10.html#announcements",
+    "title": "Inference for proportions",
+    "section": "Announcements",
+    "text": "Announcements"
+  },
+  {
+    "objectID": "slides/lec-10.html#recap",
+    "href": "slides/lec-10.html#recap",
+    "title": "Inference for proportions",
+    "section": "Recap",
+    "text": "Recap\n\nOne proportion\n\nHT via simulation\nCI via bootstrap\n\nTwo proportions\n\nHT via simulation\nCI via bootstrap"
+  },
+  {
+    "objectID": "slides/lec-10.html#outline",
+    "href": "slides/lec-10.html#outline",
+    "title": "Inference for proportions",
+    "section": "Outline",
+    "text": "Outline\n\nThe normal distribution\nOne mean (case 3)\nTwo means (case 4)\nPaired means (case 3)"
+  },
+  {
+    "objectID": "slides/lec-10.html#two-parameters",
+    "href": "slides/lec-10.html#two-parameters",
+    "title": "Inference for proportions",
+    "section": "Two parameters",
+    "text": "Two parameters\nThe mean (\\(\\mu\\)) – location\nThe standard deviation (\\(\\sigma\\)) – spread\n\\[\nN(\\mu, \\sigma)\n\\] The standard normal distribution \\(N(\\mu = 0, \\sigma = 1)\\) is plotted on the previous slide."
+  },
+  {
+    "objectID": "slides/lec-10.html#section",
+    "href": "slides/lec-10.html#section",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Individual exercise - normal distribution\n\n\nModify the following R code to plot the normal distributions\n\n\\(N(\\mu = 0, \\sigma = 0.5)\\)\n\\(N(\\mu = 1, \\sigma = 0.5)\\)\n\n\ntibble(x = seq(-5, 5, by = 0.01)) %>%\n  mutate(normal = dnorm(x, mean = 0, sd = 1)) %>%\n  ggplot() + \n  geom_line(aes(x, normal))\n\n\n\n\n\n\n\n03:00"
+  },
+  {
+    "objectID": "slides/lec-10.html#property-i",
+    "href": "slides/lec-10.html#property-i",
+    "title": "Inference for proportions",
+    "section": "Property I",
+    "text": "Property I\nIf the variable \\(X\\sim N(\\mu, \\sigma)\\), then for any number \\(a\\) and \\(b\\)\n\\[\nX + a \\sim N(\\mu+a, \\sigma),\n\\]\n\\[\nbX \\sim N(b\\mu, b \\sigma)\n\\]\nand\n\\[\nbX + a \\sim N(b\\mu+a, b\\sigma).\n\\]"
+  },
+  {
+    "objectID": "slides/lec-10.html#property-ii",
+    "href": "slides/lec-10.html#property-ii",
+    "title": "Inference for proportions",
+    "section": "Property II",
+    "text": "Property II\nIf the variables \\(X\\sim N(\\mu_1, \\sigma_1)\\) and \\(Y\\sim N(\\mu_2, \\sigma_2)\\) are independent, then \\[\nX+Y \\sim N(\\mu_{tot} = \\mu_1 + \\mu_2, \\sigma_{tot} = \\sqrt{\\sigma_1^2 + \\sigma_2^2})\n\\]"
+  },
+  {
+    "objectID": "slides/lec-10.html#alternative-parameterization",
+    "href": "slides/lec-10.html#alternative-parameterization",
+    "title": "Inference for proportions",
+    "section": "Alternative parameterization",
+    "text": "Alternative parameterization\n\\(N(\\mu, \\sigma^2)\\), where \\(\\sigma^2\\) is the variance.\n\nProperty I gives\n\\[\nbX + a \\sim N(b\\mu + a, b^2 \\sigma^2)\n\\]\nand property II gives \\[\nX+Y \\sim N(\\mu_{tot} = \\mu_1 + \\mu_2, \\sigma_{tot}^2 = \\sigma_1^2 + \\sigma_2^2)\n\\] . . .\nThe mean of the sum is the sum of the means.\nThe variance of the sum is the sum of the variances."
+  },
+  {
+    "objectID": "slides/lec-10.html#section-1",
+    "href": "slides/lec-10.html#section-1",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Individual exercise - normal property\n\n\nSuppose you have a sample with \\(n=10\\) observations in which each observation follows a standard normal distribution independently. That is, \\[\nX_1 \\sim N(0,1), X_2 \\sim N(0,1), \\dots, X_{10} \\sim N(0, 1)\n\\] independently.\nUse the normal property to derive the distribution of the sample average\n\\[\n\\bar{x} = \\dfrac{X_1 + X_2 + \\dots + X_{10}}{10}\n\\]\nWhat happens to the sd/variance of \\(\\bar{x}\\) as the sample size \\(n\\) increases?\n\n\n\n\n\n\n03:00"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-2",
+    "href": "slides/lec-10.html#section-2",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Individual exercise -\n\n\nExercise 19.5 – for our purpose standard error is equivalent to standard deviation in part b.\n\n\n\n\n\n\n02:00"
+  },
+  {
+    "objectID": "slides/lec-10.html#the-68-95-99.7-rule",
+    "href": "slides/lec-10.html#the-68-95-99.7-rule",
+    "title": "Inference for proportions",
+    "section": "The 68, 95, 99.7 rule",
+    "text": "The 68, 95, 99.7 rule"
+  },
+  {
+    "objectID": "slides/lec-10.html#setup",
+    "href": "slides/lec-10.html#setup",
+    "title": "Inference for proportions",
+    "section": "Setup",
+    "text": "Setup\npopulation parameter: mean \\(\\mu\\)\nSample statistics: sample average \\(\\bar{x}\\)\n\nHypothesis testing:\n\n\\(H_0:\\mu=\\mu_0\\) where \\(\\mu_0\\) is a fixed number\n\\(H_a:\\mu\\neq \\mu_0\\)\n\nConfidence interval: range of plausible values for \\(\\mu\\).\n\n\n\nIndividual exercise - statistic and parameter\n\n\nExercise 19.1\n\n\n\n\n\n\n01:00"
+  },
+  {
+    "objectID": "slides/lec-10.html#example-car-price",
+    "href": "slides/lec-10.html#example-car-price",
+    "title": "Inference for proportions",
+    "section": "Example – car price",
+    "text": "Example – car price\n\n\nWhat is the average price of a car on Awesome Car?\n\\(\\bar{x} = \\dfrac{18,300+20,100+9,600+10,700+27,000}{5}\\)\n\n\n\n\n\n\nSource: IMS"
+  },
+  {
+    "objectID": "slides/lec-10.html#normal-model",
+    "href": "slides/lec-10.html#normal-model",
+    "title": "Inference for proportions",
+    "section": "Normal model",
+    "text": "Normal model\nLet us assume that the price of the cars follow a normal distribution with some mean \\(\\mu\\) and sd \\(\\sigma\\):\n\\[\nX \\sim N(\\mu, \\sigma)\n\\]\n\\(H_0:\\mu=10,000\\)\n\\(H_a:\\mu\\neq 10,000\\)\n\n\nSimulate many samples under \\(H_0\\).\nDetermine if the observed data could have plausibly arisen under \\(H_0\\)."
+  },
+  {
+    "objectID": "slides/lec-10.html#problem",
+    "href": "slides/lec-10.html#problem",
+    "title": "Inference for proportions",
+    "section": "Problem",
+    "text": "Problem\nTo simulate from the normal distribution, we need to specify both the mean and sd.\nProblem: under \\(H_0\\) we only know that \\(\\mu = 10,000\\); we do not know what value to use for the sd!\n\nWe cannot conduct a hypothesis test with the simulation method!"
+  },
+  {
+    "objectID": "slides/lec-10.html#bootstrapping",
+    "href": "slides/lec-10.html#bootstrapping",
+    "title": "Inference for proportions",
+    "section": "Bootstrapping",
+    "text": "Bootstrapping\nSample with repetition from the observed sample to construct many bootstrap samples.\nBootstrap samples \\(\\Rightarrow\\) sampling distribution \\(\\Rightarrow\\) CI"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-3",
+    "href": "slides/lec-10.html#section-3",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Source: IMS"
+  },
+  {
+    "objectID": "slides/lec-10.html#bootstrap-in-r",
+    "href": "slides/lec-10.html#bootstrap-in-r",
+    "title": "Inference for proportions",
+    "section": "Bootstrap in R",
+    "text": "Bootstrap in R\n\nsample_observed <- tibble(price = c(18300, 20100, 9600, 10700, 27000))\n\n\nsample_bootstrap <- function(data){ # same function as before\n  n                <- nrow(data)\n  sample_bootstrap <- slice_sample(data, n = n, replace = TRUE)\n  return(sample_bootstrap)\n}\n\n\nset.seed(1)\nsample_bootstrap(sample_observed)\n\n# A tibble: 5 x 1\n  price\n  <dbl>\n1 18300\n2 10700\n3 18300\n4 20100\n5 27000"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-4",
+    "href": "slides/lec-10.html#section-4",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "results <- tibble(stat_boot = numeric())\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_boot    <- sample_bootstrap(sample_observed) # bootstrap sample\n  stat_boot <- mean(d_boot$price  )              # bootstrap statistic\n  results   <- results %>% add_row(stat_boot) \n}\n\n\nquantile(results$stat_boot, c(0.05 , 0.95 )) # 90% CI\n\n   5%   95% \n12220 22360 \n\n\n\nquantile(results$stat_boot, c(0.025, 0.975)) # 95% CI (wider)\n\n 2.5% 97.5% \n11780 23520"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-5",
+    "href": "slides/lec-10.html#section-5",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "ggplot(results) + \n  geom_histogram(aes(stat_boot), binwidth = 1350) + \n  geom_vline(xintercept = quantile(results$stat_boot, c(0.05 , 0.95 )), col = \"gold1\", size = 2) + # 90% CI \n  geom_vline(xintercept = quantile(results$stat_boot, c(0.025, 0.975)), col = \"maroon\", size = 2) # 95% CI"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-6",
+    "href": "slides/lec-10.html#section-6",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Group exercise - Bootstrap CI\n\n\nExercises 19.11 and 19.13\n\n\n\n\n\n\n03:00"
+  },
+  {
+    "objectID": "slides/lec-10.html#ci-for-the-standard-deviation-sigma",
+    "href": "slides/lec-10.html#ci-for-the-standard-deviation-sigma",
+    "title": "Inference for proportions",
+    "section": "CI for the standard deviation \\(\\sigma\\)",
+    "text": "CI for the standard deviation \\(\\sigma\\)\n\nresults <- tibble(stat_boot = numeric())\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_boot    <- sample_bootstrap(sample_observed)\n  stat_boot <- sd(d_boot$price  )              # sd instead of mean\n  results   <- results %>% add_row(stat_boot) \n}"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-7",
+    "href": "slides/lec-10.html#section-7",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "ggplot(results) + \n  geom_histogram(aes(stat_boot)) + \n  geom_vline(xintercept = quantile(results$stat_boot, c(0.05 , 0.95 )), col = \"gold1\", size = 2) + # 90% CI \n  geom_vline(xintercept = quantile(results$stat_boot, c(0.01, 0.99)), col = \"maroon\", size = 2) # 98% CI"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-8",
+    "href": "slides/lec-10.html#section-8",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "The quality of the sample matters!\n\n\nYour analysis can only be as good as the sample you. Here, a sample of \\(5\\) cars contains limited information about the population; it would be better to have a larger sample."
+  },
+  {
+    "objectID": "slides/lec-10.html#setup-1",
+    "href": "slides/lec-10.html#setup-1",
+    "title": "Inference for proportions",
+    "section": "Setup",
+    "text": "Setup\nA population divided in two groups.\nPopulation parameter: difference in mean\n\\[\n\\mu_{diff}=\\mu_1-\\mu_2\n\\]\nSample statistics: difference in proportion in the sample\n\\[\n\\bar{x}_{diff}=\\bar{x}_1-\\bar{x}_2\n\\]\n\n\\(H_0:\\mu_{diff}=0\\) (no difference between the two groups)\n\\(H_a:\\mu_{diff}\\neq0\\)"
+  },
+  {
+    "objectID": "slides/lec-10.html#example-sex-discrimination",
+    "href": "slides/lec-10.html#example-sex-discrimination",
+    "title": "Inference for proportions",
+    "section": "Example – sex discrimination",
+    "text": "Example – sex discrimination\nAre individuals who identify as female discriminated against in promotion decisions?\n\n\n\n\nSummary results for the sex discrimination study.\n \n\n\ndecision\n\n\n  \n    sex \n    promoted \n    not promoted \n    Total \n  \n \n\n  \n    male \n    21 \n    3 \n    24 \n  \n  \n    female \n    14 \n    10 \n    24 \n  \n  \n    Total \n    35 \n    13 \n    48"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-9",
+    "href": "slides/lec-10.html#section-9",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Individual exercise -\n\n\nExercise 20.1\n\n\n\n\n\n\n01:30"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-10",
+    "href": "slides/lec-10.html#section-10",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "ggplot(d, aes(score, exam, col = exam)) + \n  geom_boxplot() +\n  geom_jitter(width = 0, height = 0.1)"
+  },
+  {
+    "objectID": "slides/lec-10.html#simulating-under-h_0",
+    "href": "slides/lec-10.html#simulating-under-h_0",
+    "title": "Inference for proportions",
+    "section": "Simulating under \\(H_0\\)",
+    "text": "Simulating under \\(H_0\\)\nUnder \\(H_0\\), there is no difference between the two exams\n\\(\\Rightarrow\\) the score is independent of the type of exam\n\\(\\Rightarrow\\) randomly re-assign the scores independently of the exam type.\n\n\n\n\n\n\n\nTip\n\n\nThis is very similar to the procedure for two proportions."
+  },
+  {
+    "objectID": "slides/lec-10.html#section-11",
+    "href": "slides/lec-10.html#section-11",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Group exercise - two proportions\n\n\nCompute are \\(\\bar{x}_a\\), \\(\\bar{x}_b\\) and \\(\\bar{x}_{diff}\\)? Do you intuitively feel that the data provide convincing evidence that the two exams are not equally difficult?\nHint: use the command summarize.\n\nd <- openintro::classdata %>% \n  filter(lecture %in% c(\"a\", \"b\")) %>%\n  rename(score = m1, exam = lecture)\n\n\n\n\n\n\n\n03:00"
+  },
+  {
+    "objectID": "slides/lec-10.html#simulation-result",
+    "href": "slides/lec-10.html#simulation-result",
+    "title": "Inference for proportions",
+    "section": "Simulation result",
+    "text": "Simulation result\n\n\n\n \n\n\ndecision\n\n\n  \n    sex \n    promoted \n    not promoted \n    Total \n  \n \n\n  \n    male \n    18 \n    6 \n    24 \n  \n  \n    female \n    17 \n    7 \n    24 \n  \n  \n    Total \n    35 \n    13 \n    48 \n  \n\n\n\n\n\nSource: IMS"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-12",
+    "href": "slides/lec-10.html#section-12",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "\\(H_0:\\mu_{diff}=0\\)\n\\(H_a:\\mu_{diff}\\neq 0\\)\n\n\nSimulate many samples under \\(H_0\\) (no difference)\nDetermine if the observed data could have plausibly arisen under \\(H_0\\)"
+  },
+  {
+    "objectID": "slides/lec-10.html#function-for-computing-the-test-statistic",
+    "href": "slides/lec-10.html#function-for-computing-the-test-statistic",
+    "title": "Inference for proportions",
+    "section": "Function for computing the test statistic",
+    "text": "Function for computing the test statistic\n\ncompute_x_diff <- function(data){\n  x_bar <- data %>%\n    group_by(exam) %>%\n    summarize(x_bar = mean(score))\n  x_diff_bar <- x_bar$x_bar[1] - x_bar$x_bar[2]\n  return(x_diff_bar)\n}\ncompute_x_diff(d_sim)\n\n[1] -0.437931"
+  },
+  {
+    "objectID": "slides/lec-10.html#for-loop-for-simulating-under-h_0",
+    "href": "slides/lec-10.html#for-loop-for-simulating-under-h_0",
+    "title": "Inference for proportions",
+    "section": "For-loop for simulating under \\(H_0\\)",
+    "text": "For-loop for simulating under \\(H_0\\)\n\n# Setup\nresults   <- tibble(x_diff_bar = numeric())\n\n# Simulations\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_sim <- d %>% mutate(score = sample(score)) # simulate under H0\n  x_diff_bar <- compute_x_diff(d_sim) # test statistic\n  results <- results %>% add_row(x_diff_bar)\n}"
+  },
+  {
+    "objectID": "slides/lec-10.html#sampling-distribution",
+    "href": "slides/lec-10.html#sampling-distribution",
+    "title": "Inference for proportions",
+    "section": "Sampling distribution",
+    "text": "Sampling distribution\n\nx_diff_obs <- compute_x_diff(d)\nx_diff_obs\n\n[1] 3.139812\n\nggplot(results) + \n  geom_histogram(aes(x_diff_bar)) +\n  geom_vline(xintercept = x_diff_obs, col = \"maroon\", size = 2)"
+  },
+  {
+    "objectID": "slides/lec-10.html#p-value",
+    "href": "slides/lec-10.html#p-value",
+    "title": "Inference for proportions",
+    "section": "p-value",
+    "text": "p-value\n\nthe probability that \\(\\bar{x}_{diff}^{sim}\\ge\\) 3.1 or \\(\\bar{x}_{diff}^{sim}\\le\\) -3.1.\n\n\nresults %>%\n  mutate(is_more_extreme = x_diff_bar >= x_diff_obs | x_diff_bar <= -x_diff_obs) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.227"
+  },
+  {
+    "objectID": "slides/lec-10.html#significance-level-alpha-0.05",
+    "href": "slides/lec-10.html#significance-level-alpha-0.05",
+    "title": "Inference for proportions",
+    "section": "significance level \\(\\alpha = 0.05\\)",
+    "text": "significance level \\(\\alpha = 0.05\\)\nUsing the usual significance level \\(\\alpha = 0.05\\), we reject the null hypothesis\n\nthe observed difference in promotions is unlikely to be due to random luck\nthe difference is statistically significant."
+  },
+  {
+    "objectID": "slides/lec-10.html#section-13",
+    "href": "slides/lec-10.html#section-13",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Source: IMS"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-14",
+    "href": "slides/lec-10.html#section-14",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "d_sim <- d %>% mutate(score = sample(score)) # shuffle the scores\nd_sim\n\n# A tibble: 113 x 2\n   score exam \n   <dbl> <fct>\n 1    67 a    \n 2    93 a    \n 3    82 a    \n 4    82 a    \n 5    70 a    \n 6    82 a    \n 7    66 a    \n 8    84 a    \n 9    50 a    \n10    64 a    \n# ... with 103 more rows"
+  },
+  {
+    "objectID": "slides/lec-10.html#bootstrap",
+    "href": "slides/lec-10.html#bootstrap",
+    "title": "Inference for proportions",
+    "section": "Bootstrap",
+    "text": "Bootstrap\n\nSource: IMS"
+  },
+  {
+    "objectID": "slides/lec-10.html#bootstrap-in-r-1",
+    "href": "slides/lec-10.html#bootstrap-in-r-1",
+    "title": "Inference for proportions",
+    "section": "Bootstrap in R",
+    "text": "Bootstrap in R\n\nsample_observed_a <- d %>% filter(exam == \"a\")\nsample_observed_b <- d %>% filter(exam == \"b\")\n\nset.seed(0)\nsample_bootstrap(sample_observed_a) # bootstrap sample\n\n# A tibble: 58 x 2\n   score exam \n   <dbl> <fct>\n 1    58 a    \n 2    59 a    \n 3    81 a    \n 4    71 a    \n 5    67 a    \n 6    58 a    \n 7    80 a    \n 8    72 a    \n 9    58 a    \n10    72 a    \n# ... with 48 more rows\n\nsample_bootstrap(sample_observed_b) # bootstrap sample\n\n# A tibble: 55 x 2\n   score exam \n   <dbl> <fct>\n 1    61 b    \n 2    83 b    \n 3    68 b    \n 4    71 b    \n 5    82 b    \n 6    46 b    \n 7    78 b    \n 8    72 b    \n 9    64 b    \n10    83 b    \n# ... with 45 more rows"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-15",
+    "href": "slides/lec-10.html#section-15",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Group exercise - HT\n\n\n\n\n\n\nExercises 20.3 and 20.7\n\n\n\n04:00"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-16",
+    "href": "slides/lec-10.html#section-16",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Source: IMS"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-17",
+    "href": "slides/lec-10.html#section-17",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "results <- tibble(x_diff_bar = numeric())\nfor(i in 1 : 1e3){\n  d_boot_a   <- sample_bootstrap(sample_observed_a) # bootstrap sample\n  d_boot_b   <- sample_bootstrap(sample_observed_b) # bootstrap sample\n  x_diff_bar <- compute_x_diff(rbind(d_boot_a, d_boot_b)) # bootstrap statistic\n  results    <- results %>% add_row(x_diff_bar)\n}\n\n\nquantile(results$x_diff_bar, c(0.05 , 0.95 )) %>% signif(2) # 90% CI\n\n  5%  95% \n-1.2  7.4 \n\nquantile(results$x_diff_bar, c(0.025, 0.975)) %>% signif(2) # 95% CI\n\n 2.5% 97.5% \n -2.0   8.3"
+  },
+  {
+    "objectID": "slides/lec-10.html#what-does-90-and-95-mean",
+    "href": "slides/lec-10.html#what-does-90-and-95-mean",
+    "title": "Inference for proportions",
+    "section": "What does 90% and 95% mean?",
+    "text": "What does 90% and 95% mean?\nRemember that if we could obtain multiple samples, they’d all be a bit different.\n\\(\\Rightarrow\\) the corresponding CIs would also be a bit different\n\n\nA 90% CI will capture the true value of the parameter 90% of the time.\nA 95% CI will be wider and thus more likely to capture the truth (95% of the time).\n\n\n\n\nTrade off between being informative and true."
+  },
+  {
+    "objectID": "slides/lec-10.html#section-18",
+    "href": "slides/lec-10.html#section-18",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "ggplot(results) +\n  geom_histogram(aes(x_diff_bar))  + \n  geom_vline(xintercept = quantile(results$x_diff_bar, c(0.05 , 0.95 )), col = \"gold1\", size = 2) + # 90% CI \n  geom_vline(xintercept = quantile(results$x_diff_bar, c(0.025, 0.975)), col = \"maroon\", size = 2) # 95% CI"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-19",
+    "href": "slides/lec-10.html#section-19",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Group exercises - CI\n\n\nExercise 20.5 part a only\n\n\n\n\n\n\n03:00"
+  },
+  {
+    "objectID": "slides/lec-10.html#example-two-class-exams",
+    "href": "slides/lec-10.html#example-two-class-exams",
+    "title": "Inference for proportions",
+    "section": "Example – two class exams",
+    "text": "Example – two class exams\nAre the two exams equally difficult?\n\nd <- openintro::classdata %>% \n  filter(lecture %in% c(\"a\", \"b\")) %>%\n  rename(score = m1, exam = lecture)\nd\n\n# A tibble: 113 x 2\n   score exam \n   <dbl> <fct>\n 1    67 a    \n 2    59 a    \n 3   100 a    \n 4    81 a    \n 5    80 a    \n 6    63 a    \n 7   100 a    \n 8    44 a    \n 9    82 a    \n10    67 a    \n# ... with 103 more rows"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-20",
+    "href": "slides/lec-10.html#section-20",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "set.seed(1)\nbias <- runif(25, -0.01, 0.01)\nbrandA <- rnorm(25, bias + 0.310, 0.003)\nbrandB <- rnorm(25, bias + 0.308, 0.003)\ncar <- c(paste(\"car\", 1:25))\nminy <- min(brandA, brandB) - .003\nmaxy <- max(brandA, brandB) + .003\ntires <- tibble(\n  tread = c(brandA, brandB),\n  car = rep(car, 2),\n  brand = c(rep(\"Smooth Turn\", 25), rep(\"Quick Spin\", 25))\n) %>%\n  arrange(car)\nhead(tires)\n\n# A tibble: 6 x 3\n  tread car    brand      \n  <dbl> <chr>  <chr>      \n1 0.304 car 1  Smooth Turn\n2 0.307 car 1  Quick Spin \n3 0.302 car 10 Smooth Turn\n4 0.303 car 10 Quick Spin \n5 0.307 car 11 Smooth Turn\n6 0.305 car 11 Quick Spin"
+  },
+  {
+    "objectID": "slides/lec-10.html#conclusion",
+    "href": "slides/lec-10.html#conclusion",
+    "title": "Inference for proportions",
+    "section": "Conclusion",
+    "text": "Conclusion\nUsing the usual significance level \\(\\alpha = 0.05\\), we fail to reject the null hypothesis\n\nit is plausible that the observed difference in scores is due to random luck\nthe difference is not statistically significant."
+  },
+  {
+    "objectID": "slides/lec-10.html#bootstrap-ci",
+    "href": "slides/lec-10.html#bootstrap-ci",
+    "title": "Inference for proportions",
+    "section": "Bootstrap CI",
+    "text": "Bootstrap CI\nSame idea as before: sample with repetition from the observed data to construct many bootstrap samples.\nBootstrap samples \\(\\Rightarrow\\) sampling distribution \\(\\Rightarrow\\) CI"
+  },
+  {
+    "objectID": "slides/lec-10.html#ct-and-ht",
+    "href": "slides/lec-10.html#ct-and-ht",
+    "title": "Inference for proportions",
+    "section": "CT and HT",
+    "text": "CT and HT\n\n\n\n\n\n\nTwo sides of the same coin\n\n\nThe two CIs include 0. This indicates that 0 is a plausible value for the difference in mean in the population. This is exactly what the HT concluded."
+  },
+  {
+    "objectID": "slides/lec-10.html#recap-2",
+    "href": "slides/lec-10.html#recap-2",
+    "title": "Inference for proportions",
+    "section": "Recap",
+    "text": "Recap\n\nThe normal distribution\nOne mean (case 3)\nTwo means (case 4)\nPaired means (case 3)\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+  },
+  {
+    "objectID": "slides/lec-10.html#paired-data",
+    "href": "slides/lec-10.html#paired-data",
+    "title": "Inference for proportions",
+    "section": "Paired data",
+    "text": "Paired data\nPaired data: two groups in which each observation in one group has exactly one corresponding observation in the other\nExample: pre/post evaluations; supermarket items; batteries and electronic devices; tires and cars\n\nSimilar to the one mean case (case 3)"
+  },
+  {
+    "objectID": "slides/lec-10.html#example",
+    "href": "slides/lec-10.html#example",
+    "title": "Inference for proportions",
+    "section": "Example",
+    "text": "Example\nCompare the longevity of two brands of tires. The response variable is tire tread after 1000 miles."
+  },
+  {
+    "objectID": "slides/lec-10.html#ci-via-booststrap",
+    "href": "slides/lec-10.html#ci-via-booststrap",
+    "title": "Inference for proportions",
+    "section": "CI via booststrap",
+    "text": "CI via booststrap\nExactly the same as for one mean (case 3).\n\n\ntires_diff <- tires %>% \n  pivot_wider(names_from = brand, values_from = tread) %>%\n  mutate(tread_diff = `Smooth Turn` - `Quick Spin`) %>%\n  select(car, tread_diff)\nhead(tires_diff)\n\n# A tibble: 6 x 2\n  car    tread_diff\n  <chr>       <dbl>\n1 car 1    -0.00258\n2 car 10   -0.00107\n3 car 11    0.00192\n4 car 12    0.00251\n5 car 13    0.00271\n6 car 14    0.00639\n\n\n\n\nSimply construct a CI for tread_diff with bootstrap samples."
+  },
+  {
+    "objectID": "slides/lec-10.html#ht-via-simulation",
+    "href": "slides/lec-10.html#ht-via-simulation",
+    "title": "Inference for proportions",
+    "section": "HT via simulation",
+    "text": "HT via simulation\n\\(H_0:\\mu_{diff}=0\\)\n\\(H_a:\\mu_{diff}\\neq 0\\)\n\n\nSimulate many samples under \\(H_0\\) (no difference)\nDetermine if the observed data could have plausibly arisen under \\(H_0\\)"
+  },
+  {
+    "objectID": "slides/lec-10.html#simulating-under-h_0-1",
+    "href": "slides/lec-10.html#simulating-under-h_0-1",
+    "title": "Inference for proportions",
+    "section": "Simulating under \\(H_0\\)",
+    "text": "Simulating under \\(H_0\\)\nUnder \\(H_0\\), there is no difference between the two tire brands\n\\(\\Rightarrow\\) the tire tread is independent of the tire brand\n\\(\\Rightarrow\\) randomly re-assign the tire tread independently of the tire brand.\n\n\n\n\n\n\nRe-assign within\n\n\nThe re-assignment happens within a car; either switch the two values or or keep the original allocation."
+  },
+  {
+    "objectID": "slides/lec-10.html#section-21",
+    "href": "slides/lec-10.html#section-21",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Source: IMS"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-22",
+    "href": "slides/lec-10.html#section-22",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Individual exercise - paired data\n\n\nExercises 21.1, 21.3 and 21.5\n\n\n\n\n\n\n03:00"
+  },
+  {
+    "objectID": "slides/lec-10.html#function-for-computing-the-test-statistic-1",
+    "href": "slides/lec-10.html#function-for-computing-the-test-statistic-1",
+    "title": "Inference for proportions",
+    "section": "Function for computing the test statistic",
+    "text": "Function for computing the test statistic\n\ncompute_x_diff <- function(data){\n  x_bar <- data %>%\n    group_by(exam) %>%\n    summarize(x_bar = mean(score))\n  x_diff_bar <- x_bar$x_bar[1] - x_bar$x_bar[2]\n  return(x_diff_bar)\n}\ncompute_x_diff(d_sim)\n\n[1] 0.9081505"
+  },
+  {
+    "objectID": "slides/lec-10.html#for-loop-for-simulating-under-h_0-1",
+    "href": "slides/lec-10.html#for-loop-for-simulating-under-h_0-1",
+    "title": "Inference for proportions",
+    "section": "For-loop for simulating under \\(H_0\\)",
+    "text": "For-loop for simulating under \\(H_0\\)\n\n# Setup\nresults   <- tibble(x_diff_bar = numeric())\n\n# Simulations\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_sim <- shuffle_data(tires) # simulate under H0\n  x_diff_bar <- compute_stat(d_sim) # test statistic\n  results <- results %>% add_row(x_diff_bar)\n}"
+  },
+  {
+    "objectID": "slides/lec-10.html#sampling-distribution-1",
+    "href": "slides/lec-10.html#sampling-distribution-1",
+    "title": "Inference for proportions",
+    "section": "Sampling distribution",
+    "text": "Sampling distribution\n\nx_diff_obs <- compute_stat(tires)\nx_diff_obs\n\n[1] 0.0020934\n\nggplot(results) + \n  geom_histogram(aes(x_diff_bar)) +\n  geom_vline(xintercept = x_diff_obs, col = \"maroon\", size = 2)"
+  },
+  {
+    "objectID": "slides/lec-10.html#p-value-1",
+    "href": "slides/lec-10.html#p-value-1",
+    "title": "Inference for proportions",
+    "section": "p-value",
+    "text": "p-value\n\nthe probability that \\(\\bar{x}_{diff}^{sim}\\ge\\) 0.0021 or \\(\\bar{x}_{diff}^{sim}\\le\\) -0.0021.\n\n\nresults %>%\n  mutate(is_more_extreme = x_diff_bar >= x_diff_obs | x_diff_bar <= -x_diff_obs) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.012"
+  },
+  {
+    "objectID": "slides/lec-10.html#conclusion-1",
+    "href": "slides/lec-10.html#conclusion-1",
+    "title": "Inference for proportions",
+    "section": "Conclusion",
+    "text": "Conclusion\nUsing the usual significance level \\(\\alpha = 0.05\\), we reject \\(H_0\\)."
+  },
+  {
+    "objectID": "slides/lec-10.html#section-23",
+    "href": "slides/lec-10.html#section-23",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Individual exercise - simulated difference\n\n\nExercise 21.9\n\n\n\n\n\n\n02:00"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-24",
+    "href": "slides/lec-10.html#section-24",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Individual exercise - HT\n\n\nExercise 21.11\n\n\n\n\n\n\n02:00"
+  },
+  {
+    "objectID": "slides/lec-10.html#test1",
+    "href": "slides/lec-10.html#test1",
+    "title": "Inference for proportions",
+    "section": "test1",
+    "text": "test1\n\norigplot"
+  },
+  {
+    "objectID": "slides/lec-10.html#test2",
+    "href": "slides/lec-10.html#test2",
+    "title": "Inference for proportions",
+    "section": "test2",
+    "text": "test2\n\nshuffbrand"
+  },
+  {
+    "objectID": "slides/lec-10.html#test12",
+    "href": "slides/lec-10.html#test12",
+    "title": "Inference for proportions",
+    "section": "test12",
+    "text": "test12\n\norigplot + shuffbrand"
+  },
+  {
+    "objectID": "slides/lec-10.html#re-assigning-two-cars",
+    "href": "slides/lec-10.html#re-assigning-two-cars",
+    "title": "Inference for proportions",
+    "section": "Re-assigning two cars",
+    "text": "Re-assigning two cars"
+  },
+  {
+    "objectID": "slides/lec-10.html#re-assigning-all-cars",
+    "href": "slides/lec-10.html#re-assigning-all-cars",
+    "title": "Inference for proportions",
+    "section": "Re-assigning all cars",
+    "text": "Re-assigning all cars"
+  },
+  {
+    "objectID": "slides/lec-10.html#data",
+    "href": "slides/lec-10.html#data",
+    "title": "Inference for proportions",
+    "section": "Data",
+    "text": "Data\n\nset.seed(47)\nbrandA <- rnorm(25, 0.310, 0.003)\nbrandB <- rnorm(25, 0.308, 0.003)\ncar <- c(paste(\"car\", 1:25))\nminy <- min(brandA, brandB) - .003\nmaxy <- max(brandA, brandB) + .003\ntires <- tibble(\n  tread = c(brandA, brandB),\n  car = rep(car, 2),\n  brand = c(rep(\"Smooth Turn\", 25), rep(\"Quick Spin\", 25))\n)"
+  },
+  {
+    "objectID": "slides/lec-10.html#r-function-to-shuffle-data",
+    "href": "slides/lec-10.html#r-function-to-shuffle-data",
+    "title": "Inference for proportions",
+    "section": "R function to shuffle data",
+    "text": "R function to shuffle data\n\nshuffle_data <- function(data){\n  tires %>%\n  group_by(car) %>%\n  mutate(tread = sample(tread))\n}\n\nset.seed(0)\ntires_shuffled <- shuffle_data(tires)\nhead(tires)\n\n# A tibble: 6 x 3\n  tread car    brand      \n  <dbl> <chr>  <chr>      \n1 0.304 car 1  Smooth Turn\n2 0.307 car 1  Quick Spin \n3 0.302 car 10 Smooth Turn\n4 0.303 car 10 Quick Spin \n5 0.307 car 11 Smooth Turn\n6 0.305 car 11 Quick Spin \n\nhead(tires_shuffled)\n\n# A tibble: 6 x 3\n# Groups:   car [3]\n  tread car    brand      \n  <dbl> <chr>  <chr>      \n1 0.307 car 1  Smooth Turn\n2 0.304 car 1  Quick Spin \n3 0.303 car 10 Smooth Turn\n4 0.302 car 10 Quick Spin \n5 0.307 car 11 Smooth Turn\n6 0.305 car 11 Quick Spin"
+  },
+  {
+    "objectID": "slides/lec-10.html#r-function-for-computing-the-test-statistic",
+    "href": "slides/lec-10.html#r-function-for-computing-the-test-statistic",
+    "title": "Inference for proportions",
+    "section": "R function for computing the test statistic",
+    "text": "R function for computing the test statistic\n\ncompute_stat <- function(data){\n  \n  data %>% \n    pivot_wider(names_from = brand, values_from = tread) %>%\n    mutate(tread_diff = `Smooth Turn` - `Quick Spin`) %>%\n    ungroup() %>%\n    summarise(x_diff_bar = mean(tread_diff)) %>%\n    pull(x_diff_bar)\n  \n}\ncompute_stat(tires_shuffled)\n\n[1] -0.001036578"
+  },
+  {
+    "objectID": "slides/lec-10.html#p-value-and-conclusion",
+    "href": "slides/lec-10.html#p-value-and-conclusion",
+    "title": "Inference for proportions",
+    "section": "p-value and conclusion",
+    "text": "p-value and conclusion\n\nthe probability that \\(\\bar{x}_{diff}^{sim}\\ge\\) 0.0021 or \\(\\bar{x}_{diff}^{sim}\\le\\) -0.0021.\n\n\nresults %>%\n  mutate(is_more_extreme = x_diff_bar >= x_diff_obs | x_diff_bar <= -x_diff_obs) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.012\n\n\nUsing the usual significance level \\(\\alpha = 0.05\\), we reject \\(H_0\\)."
+  },
+  {
+    "objectID": "slides/lec-10.html#paired-versus-independent-data",
+    "href": "slides/lec-10.html#paired-versus-independent-data",
+    "title": "Inference for proportions",
+    "section": "Paired versus independent data",
+    "text": "Paired versus independent data\nIf the data can be paired, you should always do it!\nPairing the data provides an analysis that is more powerful\n\nnarrower CI for \\(\\mu_{diff}\\)\nsmaller p-value"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-25",
+    "href": "slides/lec-10.html#section-25",
+    "title": "Inference for proportions",
+    "section": "",
+    "text": "Always pair\n\n\nIf the data can paired, you should always do so!\nPairing data gives an analysis that is more powerful\n\nnarrower CI\nsmaller p-values"
+  },
+  {
+    "objectID": "slides/lec-10.html#independent-ht",
+    "href": "slides/lec-10.html#independent-ht",
+    "title": "Inference for proportions",
+    "section": "Independent HT",
+    "text": "Independent HT\n\ncompute_x_diff <- function(data){\n  x_bar <- data %>%\n    group_by(brand) %>%\n    summarize(x_bar = mean(tread))\n  x_diff_bar <- x_bar$x_bar[1] - x_bar$x_bar[2]\n  return(x_diff_bar)\n}\ncompute_x_diff(tires)\n\n[1] -0.0020934\n\n\n\nresults   <- tibble(x_diff_bar = numeric())\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_sim <- tires %>% mutate(tread = sample(tread)) # simulate under H0\n  x_diff_bar <- compute_x_diff(d_sim) # test statistic\n  results <- results %>% add_row(x_diff_bar)\n}\n\n\nx_diff_obs <- compute_x_diff(tires)\nresults %>%\n  mutate(is_more_extreme = x_diff_bar >= abs(x_diff_obs) | x_diff_bar <= -abs(x_diff_obs)) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.229\n\n\nWe fail to reject the null."
+  },
+  {
+    "objectID": "slides/lec-10.html#larger-p-value",
+    "href": "slides/lec-10.html#larger-p-value",
+    "title": "Inference for proportions",
+    "section": "Larger p-value",
+    "text": "Larger p-value\n\nggplot(results) + \n  geom_histogram(aes(x_diff_bar)) +\n  geom_vline(xintercept = x_diff_obs, col = \"maroon\", size = 2)"
+  },
+  {
+    "objectID": "slides/lec-10.html#two-mean-ht-case-4",
+    "href": "slides/lec-10.html#two-mean-ht-case-4",
+    "title": "Inference for proportions",
+    "section": "Two-mean HT (case 4)",
+    "text": "Two-mean HT (case 4)\n\ncompute_x_diff <- function(data){\n  x_bar <- data %>%\n    group_by(brand) %>%\n    summarize(x_bar = mean(tread))\n  x_diff_bar <- x_bar$x_bar[1] - x_bar$x_bar[2]\n  return(x_diff_bar)\n}\ncompute_x_diff(tires)\n\n[1] -0.0020934\n\n\n\nresults   <- tibble(x_diff_bar = numeric())\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_sim <- tires %>% mutate(tread = sample(tread)) # simulate under H0\n  x_diff_bar <- compute_x_diff(d_sim) # test statistic\n  results <- results %>% add_row(x_diff_bar)\n}\n\n\nx_diff_obs <- compute_x_diff(tires)\nresults %>%\n  mutate(is_more_extreme = x_diff_bar >= abs(x_diff_obs) | x_diff_bar <= -abs(x_diff_obs)) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.229\n\n\nWe fail to reject the null."
   }
 ]
