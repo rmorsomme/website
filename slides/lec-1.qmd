@@ -10,6 +10,7 @@ format:
     transition: fade
     slide-number: true
     link-external-newwindow: true
+    history: false
 editor: visual
 execute:
   freeze: auto
