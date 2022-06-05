@@ -2,4 +2,4 @@
 title: "Inference project"
 ---
 
-Details about the inference project will be provided during week 4.
+Details about the inference project will be provided in week 4.

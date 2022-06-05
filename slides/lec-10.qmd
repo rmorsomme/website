@@ -1,5 +1,5 @@
 ---
-title: "Inference for proportions"
+title: "Inference for means"
 subtitle: "STA 101L - Summer I 2022"
 author: "Raphael Morsomme"
 footer:  "[https://rmorsomme.github.io/website/](https://rmorsomme.github.io/website/)"
@@ -7,12 +7,12 @@ logo: "images/logo.jpg"
 format: 
   revealjs: 
     theme: slides.scss
-    multiplex: true
     transition: fade
     slide-number: true
     code-fold: false
     code-summary: "Show the code"
     scrollable: true
+    link-external-newwindow: true
 editor: visual
 execute:
   freeze: auto

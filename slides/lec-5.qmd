@@ -7,12 +7,12 @@ logo: "images/logo.jpg"
 format: 
   revealjs: 
     theme: slides.scss
-    multiplex: true
     transition: fade
     slide-number: true
     code-fold: false
     code-summary: "Show the code"
     scrollable: true
+    link-external-newwindow: true
 editor: visual
 execute:
   freeze: auto
@@ -518,7 +518,7 @@ A carefully constructed predictor can do a better job than multiple raw predicto
 
 # Special case of data combination: interaction
 
-## Predicting amateur jogging races duration  {.smaller}
+## Predicting amateur jogging races duration {.smaller}
 
 ::: columns
 ::: {.column width="45%"}

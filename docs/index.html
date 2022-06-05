@@ -375,7 +375,7 @@
 <td>Wed, June 1</td>
 <td><p>Lab 6 - Lecture on inference for proportions I</p>
 <p>Due: PP report</p></td>
-<td style="text-align: center;">16.1-16.2; 17.1-17.3</td>
+<td style="text-align: center;">16.1-16.2;</td>
 <td style="text-align: center;"><a href="./slides/lec-9.html" aria-label="Lecture 4 slides" title="Lecture slides">🖥️</a></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -385,7 +385,7 @@
 <td style="text-align: center;"></td>
 <td>Thu, June 2</td>
 <td>Inference for proportions II</td>
-<td style="text-align: center;">13.1-13.3</td>
+<td style="text-align: center;">17.1-17.3</td>
 <td style="text-align: center;"><a href="./slides/lec-9.html" aria-label="Lecture 4 slides" title="Lecture slides">🖥️</a></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -415,8 +415,8 @@
 <td style="text-align: center;">4</td>
 <td>Mon, June 6</td>
 <td>Inference for means I</td>
-<td style="text-align: center;">19.1-19.2</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">19.1; 13.1</td>
+<td style="text-align: center;"><a href="./slides/lec-10.html" aria-label="Lecture 4 slides" title="Lecture slides">🖥️</a></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -425,8 +425,8 @@
 <td style="text-align: center;"></td>
 <td>Tue, June 7</td>
 <td>Inference for means II</td>
-<td style="text-align: center;">20.1-20.4; 21.1-21.3</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">20.1-20.3; 21.1-21.2</td>
+<td style="text-align: center;"><a href="./slides/lec-9.html" aria-label="Lecture 4 slides" title="Lecture slides">🖥️</a></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -437,7 +437,7 @@
 <td>Lab 8 - Inference for means</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="https://openintro.shinyapps.io/ims-05-infer-07/" aria-label="Lab 1 instructions" title="Lab instructions">💻</a></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
@@ -464,8 +464,8 @@
 <tr class="odd">
 <td style="text-align: center;">5</td>
 <td>Mon, June 13</td>
-<td>ANOVA and <span class="math inline">\(\chi^2\)</span> tests</td>
-<td style="text-align: center;">18.1-18.2; 22.2-22.3</td>
+<td>Classical inference</td>
+<td style="text-align: center;">13.1-13.2</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -474,8 +474,8 @@
 <tr class="even">
 <td style="text-align: center;"></td>
 <td>Tue, June 14</td>
-<td>Work on inference project (IP)</td>
-<td style="text-align: center;"></td>
+<td>ANOVA and <span class="math inline">\(\chi^2\)</span> tests</td>
+<td style="text-align: center;">18.1-18.2; 22.2-22.3</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -494,23 +494,22 @@
 <tr class="even">
 <td style="text-align: center;"></td>
 <td>Thu, June 16</td>
-<td><p>IP presentations</p>
-<p>Wrap up</p></td>
+<td>Work on inference project (IP)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td>Fri, June 17</td>
+<td>Lab 11 - IP presentations</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;">IP presentation</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td>Fri, June 17</td>
-<td>Lab 11 - work on IP</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">6</td>
@@ -733,6 +732,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return popup.innerHTML;
     });
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/https:\/\/rmorsomme\.github\.io\/website\//);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 <nav class="page-navigation">

@@ -7,9 +7,9 @@ logo: "images/logo.jpg"
 format: 
   revealjs: 
     theme: slides.scss
-    multiplex: true
     transition: fade
     slide-number: true
+    link-external-newwindow: true
 editor: visual
 execute:
   freeze: auto
