@@ -61,6 +61,26 @@ options(scipen = 100)
 
 -   Remaining homework due on Mon/Thu instead of Wed/Sun?
 
+## Announcements  {.smaller}
+
+Midterm survey
+
+-   review holdout and CV
+
+-   more live coding (?)
+
+-   more individual assignments in class
+
+-   OH before Sunday's HW $\Rightarrow$ HW due on Monday (OH Monday morning)
+
+-   website
+
+    -   external links will open a new window
+
+    -   slide changes will not be pushed to browser history
+
+-   see these [steps](https://quarto.org/docs/presentations/revealjs/presenting.html#print-to-pdf) to print the slides
+
 ## Recap
 
 -   One proportion
