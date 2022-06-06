@@ -13,6 +13,7 @@ format:
     code-summary: "Show the code"
     scrollable: true
     link-external-newwindow: true
+    history: false
 editor: visual
 execute:
   freeze: auto
@@ -52,7 +53,13 @@ options(scipen = 100)
 
 ## Announcements
 
--   
+-   Homework 6 due **Thursday**
+
+-   Inference project
+
+    -   Start to think about data or a question that interests you.
+
+-   Remaining homework due on Mon/Thu instead of Wed/Sun?
 
 ## Recap
 
@@ -101,7 +108,7 @@ $$ The *standard* normal distribution $N(\mu = 0, \sigma = 1)$ is plotted on the
 ::: {.callout-tip icon="false"}
 ## Individual exercise - normal distribution
 
-Modify the following `R` code to plot the normal distributions
+Modify the following `R` code to plot the two normal distributions
 
 -   $N(\mu = 0, \sigma = 0.5)$
 -   $N(\mu = 1, \sigma = 0.5)$
@@ -138,7 +145,9 @@ $$
 
 ## Property II
 
-If the variables $X\sim N(\mu_1, \sigma_1)$ and $Y\sim N(\mu_2, \sigma_2)$ are independent, then $$
+If the variables $X\sim N(\mu_1, \sigma_1)$ and $Y\sim N(\mu_2, \sigma_2)$ are independent, then
+
+$$
 X+Y \sim N(\mu_{tot} = \mu_1 + \mu_2, \sigma_{tot} = \sqrt{\sigma_1^2 + \sigma_2^2})
 $$
 
@@ -154,9 +163,13 @@ $$
 bX + a \sim N(b\mu + a, b^2 \sigma^2)
 $$
 
-and property II gives $$
+and property II gives
+
+$$
 X+Y \sim N(\mu_{tot} = \mu_1 + \mu_2, \sigma_{tot}^2 = \sigma_1^2 + \sigma_2^2)
-$$ . . .
+$$
+
+. . .
 
 The mean of the sum is the sum of the means.
 
@@ -167,11 +180,13 @@ The variance of the sum is the sum of the variances.
 ::: {.callout-tip icon="false"}
 ## Individual exercise - normal property
 
-Suppose you have a sample with $n=10$ observations in which each observation follows a standard normal distribution independently. That is, $$
-X_1 \sim N(0,1), X_2 \sim N(0,1), \dots, X_{10} \sim N(0, 1) 
-$$ independently.
+Suppose you have a sample with $n=10$ independent observations in which each observation follows a standard normal distribution. That is,
 
-Use the normal property to derive the distribution of the sample average
+$$
+X_1 \sim N(0,1), X_2 \sim N(0,1), \dots, X_{10} \sim N(0, 1). 
+$$
+
+Use the normal properties to derive the distribution of the sample average
 
 $$
 \bar{x} = \dfrac{X_1 + X_2 + \dots + X_{10}}{10}
@@ -181,7 +196,7 @@ What happens to the sd/variance of $\bar{x}$ as the sample size $n$ increases?
 :::
 
 ```{r, echo = F}
-countdown(minutes = 3)
+countdown(minutes = 4)
 ```
 
 ## 
@@ -189,7 +204,7 @@ countdown(minutes = 3)
 ::: {.callout-tip icon="false"}
 ## Individual exercise -
 
-Exercise [19.5](https://openintro-ims.netlify.app/inference-one-mean.html#chp19-exercises) -- for our purpose standard error is equivalent to standard deviation in part b.
+Exercise [19.5](https://openintro-ims.netlify.app/inference-one-mean.html#chp19-exercises) -- for our purpose in part b **standard error** is equivalent to **standard deviation**.
 :::
 
 ```{r, echo = F}
@@ -218,6 +233,8 @@ countdown(minutes = 2)
 
 **Confidence interval**: range of plausible values for $\mu$.
 
+## 
+
 ::: {.callout-tip icon="false"}
 ## Individual exercise - statistic and parameter
 
@@ -230,28 +247,27 @@ countdown(minutes = 1)
 
 ## Example -- car price
 
-::: columns
-::: {.column width="50%"}
 What is the average price of a car on Awesome Car?
 
-$\bar{x} = \dfrac{18,300+20,100+9,600+10,700+27,000}{5}$
-:::
-
-::: {.column width="50%"}
+```{=tex}
+\begin{align*}
+\bar{x}
+& = \dfrac{18,300+20,100+9,600+10,700+27,000}{5} \\
+& = 17,140
+\end{align*}
+```
 ![](images/lec-10/cars.png){fig-align="center"}
 
 Source: [IMS](https://www.openintro.org/book/ims/)
-:::
-:::
 
 # Hypothesis test via simulation
 
 ## Normal model
 
-Let us assume that the price of the cars follow a normal distribution with some mean $\mu$ and sd $\sigma$:
+Let us assume that car prices follow a normal distribution with mean $\mu$ and sd $\sigma$:
 
 $$
-X \sim N(\mu, \sigma)
+\text{price} \sim N(\mu, \sigma)
 $$
 
 $H_0:\mu=10,000$
@@ -266,13 +282,13 @@ $H_a:\mu\neq 10,000$
 
 ## Problem
 
-To simulate from the normal distribution, we need to specify both the mean and sd.
+To simulate from the normal distribution, we need to specify both the mean $\mu$ and the sd $\sigma$.
 
-Problem: under $H_0$ we only know that $\mu = 10,000$; we do not know what value to use for the sd!
+**Problem**: under $H_0$ we only know that $\mu = 10,000$; we do not know what value to use for $\sigma$!
 
 . . .
 
-We cannot conduct a hypothesis test with the simulation method!
+$\Rightarrow$ We cannot conduct a hypothesis test via simulation!
 
 # Confidence interval via bootstrap
 
@@ -314,17 +330,17 @@ results <- tibble(stat_boot = numeric())
 set.seed(0)
 for(i in 1 : 1e3){
   d_boot    <- sample_bootstrap(sample_observed) # bootstrap sample
-  stat_boot <- mean(d_boot$price  )              # bootstrap statistic
+  stat_boot <- mean(d_boot$price)                # bootstrap statistic
   results   <- results %>% add_row(stat_boot) 
 }
 ```
 
 ```{r}
-quantile(results$stat_boot, c(0.05 , 0.95 )) # 90% CI
+quantile(results$stat_boot, c(0.025, 0.975)) # 95% CI
 ```
 
 ```{r}
-quantile(results$stat_boot, c(0.025, 0.975)) # 95% CI (wider)
+quantile(results$stat_boot, c(0.01 , 0.99 )) # 98% CI (wider)
 ```
 
 ## 
@@ -332,8 +348,8 @@ quantile(results$stat_boot, c(0.025, 0.975)) # 95% CI (wider)
 ```{r}
 ggplot(results) + 
   geom_histogram(aes(stat_boot), binwidth = 1350) + 
-  geom_vline(xintercept = quantile(results$stat_boot, c(0.05 , 0.95 )), col = "gold1", size = 2) + # 90% CI 
-  geom_vline(xintercept = quantile(results$stat_boot, c(0.025, 0.975)), col = "maroon", size = 2) # 95% CI
+  geom_vline(xintercept = quantile(results$stat_boot, c(0.025, 0.975)), col = "gold1", size = 2) + # 95% CI 
+  geom_vline(xintercept = quantile(results$stat_boot, c(0.01 , 0.99)), col = "maroon", size = 2) # 98% CI
 ```
 
 ## 
@@ -370,12 +386,18 @@ ggplot(results) +
   geom_vline(xintercept = quantile(results$stat_boot, c(0.01, 0.99)), col = "maroon", size = 2) # 98% CI
 ```
 
-## 
+## Any statistic, but not any sample
+
+::: callout-note
+## Bootstrap any statistic
+
+You can bootstrap almost any statistic you want!
+:::
 
 ::: callout-note
 ## The quality of the sample matters!
 
-Your analysis can only be as good as the sample you. Here, a sample of $5$ cars contains limited information about the population; it would be better to have a larger sample.
+A statistical analysis can only be as good as the sample collected. Here, a sample of $5$ cars contains very limited information about the population; it would be useful to have a larger sample.
 :::
 
 # Two means
@@ -416,7 +438,7 @@ countdown(minutes = 1, seconds = 30)
 
 ## Example -- two class exams
 
-Are the two exams equally difficult?
+A professor considers two designs for an exam. Are the two types of exam equally difficult?
 
 ```{r}
 d <- openintro::classdata %>% 
@@ -430,7 +452,7 @@ d
 ```{r}
 ggplot(d, aes(score, exam, col = exam)) + 
   geom_boxplot() +
-  geom_jitter(width = 0, height = 0.1)
+  geom_jitter(width = 0, height = 0.1) # add vertical jitter
 ```
 
 ## 
@@ -617,7 +639,7 @@ ggplot(results) +
 ::: callout-note
 ## Two sides of the same coin
 
-The two CIs include 0. This indicates that 0 is a plausible value for the difference in mean in the population. This is exactly what the HT concluded.
+The two CIs include 0. This indicates that 0 is a plausible value for the difference in mean in the population. This is exactly what the HT concluded!
 :::
 
 ## 
@@ -636,17 +658,21 @@ countdown(minutes = 3)
 
 ## Paired data
 
-**Paired data**: two groups in which each observation in one group has exactly one corresponding observation in the other
+**Paired data**: two groups in which each observation in one group has exactly one corresponding observation in the other group.
 
-Example: pre/post evaluations; supermarket items; batteries and electronic devices; tires and cars
+Example: pre/post-evaluations; supermarket items; batteries and electronic devices; tires and cars.
 
 . . .
 
-Similar to the one mean case (case 3)
+::: callout-note
+## Paired data is like one mean
 
-## Example
+Paired data can be analyzed like the one-mean case (case 3)!
+:::
 
-Compare the longevity of two brands of tires. The response variable is tire tread after 1000 miles.
+## Example -- tire brand
+
+Compare the longevity of two brands of tire. The response variable is tire tread after 1000 miles.
 
 ## 
 
@@ -756,7 +782,7 @@ $\Rightarrow$ randomly re-assign the tire tread independently of the tire brand.
 ::: callout-note
 ## Re-assign *within*
 
-The re-assignment happens *within* a car; either switch the two values or or keep the original allocation.
+The re-assignment happens *within* a car; either switch the two values or keep the original allocation.
 :::
 
 ## Re-assigning two cars
@@ -894,34 +920,34 @@ compute_stat(tires_shuffled)
 
 ```{r, cache=TRUE}
 # Setup
-results   <- tibble(x_diff_bar = numeric())
+results   <- tibble(stat_sim = numeric())
 
 # Simulations
 set.seed(0)
 for(i in 1 : 1e3){
-  d_sim <- shuffle_data(tires) # simulate under H0
-  x_diff_bar <- compute_stat(d_sim) # test statistic
-  results <- results %>% add_row(x_diff_bar)
+  d_sim    <- shuffle_data(tires) # simulate under H0
+  stat_sim <- compute_stat(d_sim) # test statistic
+  results  <- results %>% add_row(stat_sim)
 }
 ```
 
 ## Sampling distribution
 
 ```{r}
-x_diff_obs <- compute_stat(tires)
-x_diff_obs
+stat_obs <- compute_stat(tires)
+stat_obs
 ggplot(results) + 
-  geom_histogram(aes(x_diff_bar)) +
-  geom_vline(xintercept = x_diff_obs, col = "maroon", size = 2)
+  geom_histogram(aes(stat_sim)) +
+  geom_vline(xintercept = stat_obs, col = "maroon", size = 2)
 ```
 
 ## p-value and conclusion
 
--   the probability that $\bar{x}_{diff}^{sim}\ge$ `r signif(x_diff_obs,2)` or $\bar{x}_{diff}^{sim}\le$ `r -signif(x_diff_obs,2)`.
+-   the probability that $\bar{x}_{diff}^{sim}\ge$ `r signif(stat_obs,2)` or $\bar{x}_{diff}^{sim}\le$ `r -signif(stat_obs,2)`.
 
 ```{r}
 results %>%
-  mutate(is_more_extreme = x_diff_bar >= x_diff_obs | x_diff_bar <= -x_diff_obs) %>%
+  mutate(is_more_extreme = stat_sim >= stat_obs | stat_sim <= -stat_obs) %>%
   summarize(p_value = mean(is_more_extreme))
 ```
 
@@ -946,16 +972,20 @@ countdown(minutes = 2)
 ::: callout-important
 ## Always pair
 
-If the data can paired, you should always do so!
-
-Pairing data gives an analysis that is more *powerful*
+If the data can paired, you should always do it! Pairing data yields an analysis that is more *powerful*:
 
 -   narrower CI
 
 -   smaller p-values
 :::
 
-## Two-mean HT (case 4)
+## HT for two means (case 4)
+
+Let us conduct a hypothesis test for the tire data, but this time without pairing the data.
+
+$\Rightarrow$ This is simply a **hypothesis test for two means**.
+
+## Larger p-value
 
 ```{r}
 compute_x_diff <- function(data){
@@ -972,9 +1002,9 @@ compute_x_diff(tires)
 results   <- tibble(x_diff_bar = numeric())
 set.seed(0)
 for(i in 1 : 1e3){
-  d_sim <- tires %>% mutate(tread = sample(tread)) # simulate under H0
+  d_sim      <- tires %>% mutate(tread = sample(tread)) # simulate under H0
   x_diff_bar <- compute_x_diff(d_sim) # test statistic
-  results <- results %>% add_row(x_diff_bar)
+  results    <- results %>% add_row(x_diff_bar)
 }
 ```
 
@@ -985,9 +1015,9 @@ results %>%
   summarize(p_value = mean(is_more_extreme))
 ```
 
-We fail to reject the null.
+The p-value is larger than $\alpha=0.05$; we fail to reject the null hypothesis.
 
-## Larger p-value
+## 
 
 ```{r}
 ggplot(results) + 
