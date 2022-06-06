@@ -1,6 +1,6 @@
 ---
 title: "HW 6 - Inference for means"
-subtitle: "Due Wednesday, June 8, 9:00pm on Gradescope"
+subtitle: "Due Thursday, June 9, 9:00pm on Gradescope"
 ---
 
 This assignment needs to be completed with RMarkdown and submitted as a PDF on [Gradescope](https://www.gradescope.com/courses/394638). Feel free to re-use the template provided for HW1.
