@@ -354,7 +354,7 @@
     "href": "index.html",
     "title": "STA 101L: Data Analysis and Statistical Inference",
     "section": "",
-    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\nDue: Homework 2\n\n\n💻\n✍️\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n💻\n\n\n\n\n\nSun, May 22\nDue: Homework 3\n\n\n\n✍️\n\n\n\n2\nMon, May 23\nModel selection I\n8.3\n🖥️\n\n\n\n\n\n\nTue, May 24\nModel selection II\n8.4; 25.3\n🖥️\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n💻\n\n\n\n\n\nThu, May 26\nLogistic regression\nWork on project\nDue: Homework 4\n9.1-9.3\n🖥️\n\n✍️\n📂\n\n\n\nFri, May 27\nLab 5 - work on prediction project [PP]\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP presentations\nPrinciples of inference\n11.0; 11.3; 12.0; 12.3\n🖥️\n\n\nPP model (9:00am)\nPP presentation\n\n\n\nWed, June 1\nLab 6 - Lecture on inference for proportions I\nDue: PP report\n16.1-16.2;\n🖥️\n\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.3\n🖥️\n\n\n\n\n\n\nFri, June 3\nLab 7 - Inference for proportions\n\n\n💻\n\n\n\n\n\nSun, June 5\nDue: homework 5\n\n\n\n✍️\n\n\n\n4\nMon, June 6\nInference for means I\n19.1; 13.1\n🖥️\n\n\n\n\n\n\nTue, June 7\nInference for means II\n20.1-20.3; 21.1-21.2\n🖥️\n\n\n\n\n\n\nWed, June 8\nLab 8 - Inference for means\n\n\n💻\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.6; 25.1; 26.1-26.2\n\n\n\n\n\n\n\nFri, June 10\nLab 9 - inference for regression\n\n\n\n\n\n\n\n5\nMon, June 13\nClassical inference\n13.1-13.2\n\n\n\n\n\n\n\nTue, June 14\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n\n\n\n\n\n\n\nWed, June 15\nLab 10 - work on IP\n\n\n\n\n\n\n\n\nThu, June 16\nWork on inference project (IP)\n\n\n\n\n\n\n\n\nFri, June 17\nLab 11 - IP presentations\n\n\n\n\nIP presentation\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
+    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\nDue: Homework 2\n\n\n💻\n✍️\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n💻\n\n\n\n\n\nSun, May 22\nDue: Homework 3\n\n\n\n✍️\n\n\n\n2\nMon, May 23\nModel selection I\n8.3\n🖥️\n\n\n\n\n\n\nTue, May 24\nModel selection II\n8.4; 25.3\n🖥️\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n💻\n\n\n\n\n\nThu, May 26\nLogistic regression\nWork on project\nDue: Homework 4\n9.1-9.3\n🖥️\n\n✍️\n📂\n\n\n\nFri, May 27\nLab 5 - work on prediction project [PP]\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP presentations\nPrinciples of inference\n11.0; 11.3; 12.0; 12.3\n🖥️\n\n\nPP model (9:00am)\nPP presentation\n\n\n\nWed, June 1\nLab 6 - Lecture on inference for proportions I\nDue: PP report\n16.1-16.2;\n🖥️\n\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.3\n🖥️\n\n\n\n\n\n\nFri, June 3\nLab 7 - Inference for proportions\n\n\n💻\n\n\n\n\n\nSun, June 5\nDue: homework 5\n\n\n\n✍️\n\n\n\n4\nMon, June 6\nInference for means I\n19.1; 13.1\n🖥️\n\n\n\n\n\n\nTue, June 7\nInference for means II\n20.1-20.3; 21.1-21.2\n🖥️\n\n\n\n\n\n\nWed, June 8\nLab 8 - Inference for means\n\n\n💻\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.6; 25.1; 26.1-26.2\n\n\n✍️\n\n\n\n\nFri, June 10\nLab 9 - inference for regression\n\n\n\n\n\n\n\n5\nMon, June 13\nClassical inference\n13.1-13.2\n\n\n\n\n\n\n\nTue, June 14\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n\n\n\n\n\n\n\nWed, June 15\nLab 10 - work on IP\n\n\n\n\n\n\n\n\nThu, June 16\nWork on inference project (IP)\n\n\n\n\n\n\n\n\nFri, June 17\nLab 11 - IP presentations\n\n\n\n\nIP presentation\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
   },
   {
     "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
@@ -893,7 +893,7 @@
     "href": "slides/lec-10.html#announcements",
     "title": "Inference for means",
     "section": "Announcements",
-    "text": "Announcements"
+    "text": "Announcements\n\nHomework 6 due Thursday\nInference project\n\nStart to think about data or a question that interests you.\n\nRemaining homework due on Mon/Thu instead of Wed/Sun?"
   },
   {
     "objectID": "slides/lec-10.html#recap",
@@ -921,7 +921,7 @@
     "href": "slides/lec-10.html#section",
     "title": "Inference for means",
     "section": "",
-    "text": "Individual exercise - normal distribution\n\n\nModify the following R code to plot the normal distributions\n\n\\(N(\\mu = 0, \\sigma = 0.5)\\)\n\\(N(\\mu = 1, \\sigma = 0.5)\\)\n\n\ntibble(x = seq(-5, 5, by = 0.01)) %>%\n  mutate(normal = dnorm(x, mean = 0, sd = 1)) %>%\n  ggplot() + \n  geom_line(aes(x, normal))\n\n\n\n\n\n\n\n03:00"
+    "text": "Individual exercise - normal distribution\n\n\nModify the following R code to plot the two normal distributions\n\n\\(N(\\mu = 0, \\sigma = 0.5)\\)\n\\(N(\\mu = 1, \\sigma = 0.5)\\)\n\n\ntibble(x = seq(-5, 5, by = 0.01)) %>%\n  mutate(normal = dnorm(x, mean = 0, sd = 1)) %>%\n  ggplot() + \n  geom_line(aes(x, normal))\n\n\n\n\n\n\n\n03:00"
   },
   {
     "objectID": "slides/lec-10.html#property-i",
@@ -935,28 +935,28 @@
     "href": "slides/lec-10.html#property-ii",
     "title": "Inference for means",
     "section": "Property II",
-    "text": "Property II\nIf the variables \\(X\\sim N(\\mu_1, \\sigma_1)\\) and \\(Y\\sim N(\\mu_2, \\sigma_2)\\) are independent, then \\[\nX+Y \\sim N(\\mu_{tot} = \\mu_1 + \\mu_2, \\sigma_{tot} = \\sqrt{\\sigma_1^2 + \\sigma_2^2})\n\\]"
+    "text": "Property II\nIf the variables \\(X\\sim N(\\mu_1, \\sigma_1)\\) and \\(Y\\sim N(\\mu_2, \\sigma_2)\\) are independent, then\n\\[\nX+Y \\sim N(\\mu_{tot} = \\mu_1 + \\mu_2, \\sigma_{tot} = \\sqrt{\\sigma_1^2 + \\sigma_2^2})\n\\]"
   },
   {
     "objectID": "slides/lec-10.html#alternative-parameterization",
     "href": "slides/lec-10.html#alternative-parameterization",
     "title": "Inference for means",
     "section": "Alternative parameterization",
-    "text": "Alternative parameterization\n\\(N(\\mu, \\sigma^2)\\), where \\(\\sigma^2\\) is the variance.\n\nProperty I gives\n\\[\nbX + a \\sim N(b\\mu + a, b^2 \\sigma^2)\n\\]\nand property II gives \\[\nX+Y \\sim N(\\mu_{tot} = \\mu_1 + \\mu_2, \\sigma_{tot}^2 = \\sigma_1^2 + \\sigma_2^2)\n\\] . . .\nThe mean of the sum is the sum of the means.\nThe variance of the sum is the sum of the variances."
+    "text": "Alternative parameterization\n\\(N(\\mu, \\sigma^2)\\), where \\(\\sigma^2\\) is the variance.\n\nProperty I gives\n\\[\nbX + a \\sim N(b\\mu + a, b^2 \\sigma^2)\n\\]\nand property II gives\n\\[\nX+Y \\sim N(\\mu_{tot} = \\mu_1 + \\mu_2, \\sigma_{tot}^2 = \\sigma_1^2 + \\sigma_2^2)\n\\]\n\n\nThe mean of the sum is the sum of the means.\nThe variance of the sum is the sum of the variances."
   },
   {
     "objectID": "slides/lec-10.html#section-1",
     "href": "slides/lec-10.html#section-1",
     "title": "Inference for means",
     "section": "",
-    "text": "Individual exercise - normal property\n\n\nSuppose you have a sample with \\(n=10\\) observations in which each observation follows a standard normal distribution independently. That is, \\[\nX_1 \\sim N(0,1), X_2 \\sim N(0,1), \\dots, X_{10} \\sim N(0, 1)\n\\] independently.\nUse the normal property to derive the distribution of the sample average\n\\[\n\\bar{x} = \\dfrac{X_1 + X_2 + \\dots + X_{10}}{10}\n\\]\nWhat happens to the sd/variance of \\(\\bar{x}\\) as the sample size \\(n\\) increases?\n\n\n\n\n\n\n03:00"
+    "text": "Individual exercise - normal property\n\n\nSuppose you have a sample with \\(n=10\\) independent observations in which each observation follows a standard normal distribution. That is,\n\\[\nX_1 \\sim N(0,1), X_2 \\sim N(0,1), \\dots, X_{10} \\sim N(0, 1).\n\\]\nUse the normal properties to derive the distribution of the sample average\n\\[\n\\bar{x} = \\dfrac{X_1 + X_2 + \\dots + X_{10}}{10}\n\\]\nWhat happens to the sd/variance of \\(\\bar{x}\\) as the sample size \\(n\\) increases?\n\n\n\n\n\n\n04:00"
   },
   {
     "objectID": "slides/lec-10.html#section-2",
     "href": "slides/lec-10.html#section-2",
     "title": "Inference for means",
     "section": "",
-    "text": "Individual exercise -\n\n\nExercise 19.5 – for our purpose standard error is equivalent to standard deviation in part b.\n\n\n\n\n\n\n02:00"
+    "text": "Individual exercise -\n\n\nExercise 19.5 – for our purpose in part b standard error is equivalent to standard deviation.\n\n\n\n\n\n\n02:00"
   },
   {
     "objectID": "slides/lec-10.html#the-68-95-99.7-rule",
@@ -970,28 +970,35 @@
     "href": "slides/lec-10.html#setup",
     "title": "Inference for means",
     "section": "Setup",
-    "text": "Setup\npopulation parameter: mean \\(\\mu\\)\nSample statistics: sample average \\(\\bar{x}\\)\n\nHypothesis testing:\n\n\\(H_0:\\mu=\\mu_0\\) where \\(\\mu_0\\) is a fixed number\n\\(H_a:\\mu\\neq \\mu_0\\)\n\nConfidence interval: range of plausible values for \\(\\mu\\).\n\n\n\nIndividual exercise - statistic and parameter\n\n\nExercise 19.1\n\n\n\n\n\n\n01:00"
+    "text": "Setup\npopulation parameter: mean \\(\\mu\\)\nSample statistics: sample average \\(\\bar{x}\\)\n\nHypothesis testing:\n\n\\(H_0:\\mu=\\mu_0\\) where \\(\\mu_0\\) is a fixed number\n\\(H_a:\\mu\\neq \\mu_0\\)\n\nConfidence interval: range of plausible values for \\(\\mu\\)."
+  },
+  {
+    "objectID": "slides/lec-10.html#section-3",
+    "href": "slides/lec-10.html#section-3",
+    "title": "Inference for means",
+    "section": "",
+    "text": "Individual exercise - statistic and parameter\n\n\nExercise 19.1\n\n\n\n\n\n\n01:00"
   },
   {
     "objectID": "slides/lec-10.html#example-car-price",
     "href": "slides/lec-10.html#example-car-price",
     "title": "Inference for means",
     "section": "Example – car price",
-    "text": "Example – car price\n\n\nWhat is the average price of a car on Awesome Car?\n\\(\\bar{x} = \\dfrac{18,300+20,100+9,600+10,700+27,000}{5}\\)\n\n\n\n\n\n\nSource: IMS"
+    "text": "Example – car price\nWhat is the average price of a car on Awesome Car?\n\\[\\begin{align*}\n\\bar{x}\n& = \\dfrac{18,300+20,100+9,600+10,700+27,000}{5} \\\\\n& = 17,140\n\\end{align*}\\]\n\nSource: IMS"
   },
   {
     "objectID": "slides/lec-10.html#normal-model",
     "href": "slides/lec-10.html#normal-model",
     "title": "Inference for means",
     "section": "Normal model",
-    "text": "Normal model\nLet us assume that the price of the cars follow a normal distribution with some mean \\(\\mu\\) and sd \\(\\sigma\\):\n\\[\nX \\sim N(\\mu, \\sigma)\n\\]\n\\(H_0:\\mu=10,000\\)\n\\(H_a:\\mu\\neq 10,000\\)\n\n\nSimulate many samples under \\(H_0\\).\nDetermine if the observed data could have plausibly arisen under \\(H_0\\)."
+    "text": "Normal model\nLet us assume that car prices follow a normal distribution with mean \\(\\mu\\) and sd \\(\\sigma\\):\n\\[\n\\text{price} \\sim N(\\mu, \\sigma)\n\\]\n\\(H_0:\\mu=10,000\\)\n\\(H_a:\\mu\\neq 10,000\\)\n\n\nSimulate many samples under \\(H_0\\).\nDetermine if the observed data could have plausibly arisen under \\(H_0\\)."
   },
   {
     "objectID": "slides/lec-10.html#problem",
     "href": "slides/lec-10.html#problem",
     "title": "Inference for means",
     "section": "Problem",
-    "text": "Problem\nTo simulate from the normal distribution, we need to specify both the mean and sd.\nProblem: under \\(H_0\\) we only know that \\(\\mu = 10,000\\); we do not know what value to use for the sd!\n\nWe cannot conduct a hypothesis test with the simulation method!"
+    "text": "Problem\nTo simulate from the normal distribution, we need to specify both the mean \\(\\mu\\) and the sd \\(\\sigma\\).\nProblem: under \\(H_0\\) we only know that \\(\\mu = 10,000\\); we do not know what value to use for \\(\\sigma\\)!\n\n\\(\\Rightarrow\\) We cannot conduct a hypothesis test via simulation!"
   },
   {
     "objectID": "slides/lec-10.html#bootstrapping",
@@ -1001,8 +1008,8 @@
     "text": "Bootstrapping\nSample with repetition from the observed sample to construct many bootstrap samples.\nBootstrap samples \\(\\Rightarrow\\) sampling distribution \\(\\Rightarrow\\) CI"
   },
   {
-    "objectID": "slides/lec-10.html#section-3",
-    "href": "slides/lec-10.html#section-3",
+    "objectID": "slides/lec-10.html#section-4",
+    "href": "slides/lec-10.html#section-4",
     "title": "Inference for means",
     "section": "",
     "text": "Source: IMS"
@@ -1015,22 +1022,22 @@
     "text": "Bootstrap in R\n\nsample_observed <- tibble(price = c(18300, 20100, 9600, 10700, 27000))\n\n\nsample_bootstrap <- function(data){ # same function as before\n  n                <- nrow(data)\n  sample_bootstrap <- slice_sample(data, n = n, replace = TRUE)\n  return(sample_bootstrap)\n}\n\n\nset.seed(1)\nsample_bootstrap(sample_observed)\n\n# A tibble: 5 x 1\n  price\n  <dbl>\n1 18300\n2 10700\n3 18300\n4 20100\n5 27000"
   },
   {
-    "objectID": "slides/lec-10.html#section-4",
-    "href": "slides/lec-10.html#section-4",
-    "title": "Inference for means",
-    "section": "",
-    "text": "results <- tibble(stat_boot = numeric())\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_boot    <- sample_bootstrap(sample_observed) # bootstrap sample\n  stat_boot <- mean(d_boot$price  )              # bootstrap statistic\n  results   <- results %>% add_row(stat_boot) \n}\n\n\nquantile(results$stat_boot, c(0.05 , 0.95 )) # 90% CI\n\n   5%   95% \n12220 22360 \n\n\n\nquantile(results$stat_boot, c(0.025, 0.975)) # 95% CI (wider)\n\n 2.5% 97.5% \n11780 23520"
-  },
-  {
     "objectID": "slides/lec-10.html#section-5",
     "href": "slides/lec-10.html#section-5",
     "title": "Inference for means",
     "section": "",
-    "text": "ggplot(results) + \n  geom_histogram(aes(stat_boot), binwidth = 1350) + \n  geom_vline(xintercept = quantile(results$stat_boot, c(0.05 , 0.95 )), col = \"gold1\", size = 2) + # 90% CI \n  geom_vline(xintercept = quantile(results$stat_boot, c(0.025, 0.975)), col = \"maroon\", size = 2) # 95% CI"
+    "text": "results <- tibble(stat_boot = numeric())\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_boot    <- sample_bootstrap(sample_observed) # bootstrap sample\n  stat_boot <- mean(d_boot$price)                # bootstrap statistic\n  results   <- results %>% add_row(stat_boot) \n}\n\n\nquantile(results$stat_boot, c(0.025, 0.975)) # 95% CI\n\n 2.5% 97.5% \n11780 23520 \n\n\n\nquantile(results$stat_boot, c(0.01 , 0.99 )) # 98% CI (wider)\n\n     1%     99% \n11557.8 24240.0"
   },
   {
     "objectID": "slides/lec-10.html#section-6",
     "href": "slides/lec-10.html#section-6",
+    "title": "Inference for means",
+    "section": "",
+    "text": "ggplot(results) + \n  geom_histogram(aes(stat_boot), binwidth = 1350) + \n  geom_vline(xintercept = quantile(results$stat_boot, c(0.025, 0.975)), col = \"gold1\", size = 2) + # 95% CI \n  geom_vline(xintercept = quantile(results$stat_boot, c(0.01 , 0.99)), col = \"maroon\", size = 2) # 98% CI"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-7",
+    "href": "slides/lec-10.html#section-7",
     "title": "Inference for means",
     "section": "",
     "text": "Group exercise - Bootstrap CI\n\n\nExercises 19.11 and 19.13\n\n\n\n\n\n\n03:00"
@@ -1043,18 +1050,18 @@
     "text": "CI for the standard deviation \\(\\sigma\\)\n\nresults <- tibble(stat_boot = numeric())\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_boot    <- sample_bootstrap(sample_observed)\n  stat_boot <- sd(d_boot$price  )              # sd instead of mean\n  results   <- results %>% add_row(stat_boot) \n}"
   },
   {
-    "objectID": "slides/lec-10.html#section-7",
-    "href": "slides/lec-10.html#section-7",
+    "objectID": "slides/lec-10.html#section-8",
+    "href": "slides/lec-10.html#section-8",
     "title": "Inference for means",
     "section": "",
     "text": "ggplot(results) + \n  geom_histogram(aes(stat_boot)) + \n  geom_vline(xintercept = quantile(results$stat_boot, c(0.05 , 0.95 )), col = \"gold1\", size = 2) + # 90% CI \n  geom_vline(xintercept = quantile(results$stat_boot, c(0.01, 0.99)), col = \"maroon\", size = 2) # 98% CI"
   },
   {
-    "objectID": "slides/lec-10.html#section-8",
-    "href": "slides/lec-10.html#section-8",
+    "objectID": "slides/lec-10.html#any-statistic-but-not-any-sample",
+    "href": "slides/lec-10.html#any-statistic-but-not-any-sample",
     "title": "Inference for means",
-    "section": "",
-    "text": "The quality of the sample matters!\n\n\nYour analysis can only be as good as the sample you. Here, a sample of \\(5\\) cars contains limited information about the population; it would be better to have a larger sample."
+    "section": "Any statistic, but not any sample",
+    "text": "Any statistic, but not any sample\n\n\n\n\n\n\nBootstrap any statistic\n\n\nYou can bootstrap almost any statistic you want!\n\n\n\n\n\n\n\n\n\nThe quality of the sample matters!\n\n\nA statistical analysis can only be as good as the sample collected. Here, a sample of \\(5\\) cars contains very limited information about the population; it would be useful to have a larger sample."
   },
   {
     "objectID": "slides/lec-10.html#setup-1",
@@ -1075,14 +1082,14 @@
     "href": "slides/lec-10.html#example-two-class-exams",
     "title": "Inference for means",
     "section": "Example – two class exams",
-    "text": "Example – two class exams\nAre the two exams equally difficult?\n\nd <- openintro::classdata %>% \n  filter(lecture %in% c(\"a\", \"b\")) %>%\n  rename(score = m1, exam = lecture)\nd\n\n# A tibble: 113 x 2\n   score exam \n   <dbl> <fct>\n 1    67 a    \n 2    59 a    \n 3   100 a    \n 4    81 a    \n 5    80 a    \n 6    63 a    \n 7   100 a    \n 8    44 a    \n 9    82 a    \n10    67 a    \n# ... with 103 more rows"
+    "text": "Example – two class exams\nA professor considers two designs for an exam. Are the two types of exam equally difficult?\n\nd <- openintro::classdata %>% \n  filter(lecture %in% c(\"a\", \"b\")) %>%\n  rename(score = m1, exam = lecture)\nd\n\n# A tibble: 113 x 2\n   score exam \n   <dbl> <fct>\n 1    67 a    \n 2    59 a    \n 3   100 a    \n 4    81 a    \n 5    80 a    \n 6    63 a    \n 7   100 a    \n 8    44 a    \n 9    82 a    \n10    67 a    \n# ... with 103 more rows"
   },
   {
     "objectID": "slides/lec-10.html#section-10",
     "href": "slides/lec-10.html#section-10",
     "title": "Inference for means",
     "section": "",
-    "text": "ggplot(d, aes(score, exam, col = exam)) + \n  geom_boxplot() +\n  geom_jitter(width = 0, height = 0.1)"
+    "text": "ggplot(d, aes(score, exam, col = exam)) + \n  geom_boxplot() +\n  geom_jitter(width = 0, height = 0.1) # add vertical jitter"
   },
   {
     "objectID": "slides/lec-10.html#section-11",
@@ -1201,7 +1208,7 @@
     "href": "slides/lec-10.html#ct-and-ht",
     "title": "Inference for means",
     "section": "CT and HT",
-    "text": "CT and HT\n\n\n\n\n\n\nTwo sides of the same coin\n\n\nThe two CIs include 0. This indicates that 0 is a plausible value for the difference in mean in the population. This is exactly what the HT concluded."
+    "text": "CT and HT\n\n\n\n\n\n\nTwo sides of the same coin\n\n\nThe two CIs include 0. This indicates that 0 is a plausible value for the difference in mean in the population. This is exactly what the HT concluded!"
   },
   {
     "objectID": "slides/lec-10.html#section-19",
@@ -1215,14 +1222,14 @@
     "href": "slides/lec-10.html#paired-data",
     "title": "Inference for means",
     "section": "Paired data",
-    "text": "Paired data\nPaired data: two groups in which each observation in one group has exactly one corresponding observation in the other\nExample: pre/post evaluations; supermarket items; batteries and electronic devices; tires and cars\n\nSimilar to the one mean case (case 3)"
+    "text": "Paired data\nPaired data: two groups in which each observation in one group has exactly one corresponding observation in the other group.\nExample: pre/post-evaluations; supermarket items; batteries and electronic devices; tires and cars.\n\n\n\n\n\n\n\nPaired data is like one mean\n\n\nPaired data can be analyzed like the one-mean case (case 3)!"
   },
   {
-    "objectID": "slides/lec-10.html#example",
-    "href": "slides/lec-10.html#example",
+    "objectID": "slides/lec-10.html#example-tire-brand",
+    "href": "slides/lec-10.html#example-tire-brand",
     "title": "Inference for means",
-    "section": "Example",
-    "text": "Example\nCompare the longevity of two brands of tires. The response variable is tire tread after 1000 miles."
+    "section": "Example – tire brand",
+    "text": "Example – tire brand\nCompare the longevity of two brands of tire. The response variable is tire tread after 1000 miles."
   },
   {
     "objectID": "slides/lec-10.html#section-20",
@@ -1264,7 +1271,7 @@
     "href": "slides/lec-10.html#simulating-under-h_0-1",
     "title": "Inference for means",
     "section": "Simulating under \\(H_0\\)",
-    "text": "Simulating under \\(H_0\\)\nUnder \\(H_0\\), there is no difference between the two tire brands\n\\(\\Rightarrow\\) the tire tread is independent of the tire brand\n\\(\\Rightarrow\\) randomly re-assign the tire tread independently of the tire brand.\n\n\n\n\n\n\nRe-assign within\n\n\nThe re-assignment happens within a car; either switch the two values or or keep the original allocation."
+    "text": "Simulating under \\(H_0\\)\nUnder \\(H_0\\), there is no difference between the two tire brands\n\\(\\Rightarrow\\) the tire tread is independent of the tire brand\n\\(\\Rightarrow\\) randomly re-assign the tire tread independently of the tire brand.\n\n\n\n\n\n\nRe-assign within\n\n\nThe re-assignment happens within a car; either switch the two values or keep the original allocation."
   },
   {
     "objectID": "slides/lec-10.html#re-assigning-two-cars",
@@ -1306,21 +1313,21 @@
     "href": "slides/lec-10.html#for-loop-for-simulating-under-h_0-1",
     "title": "Inference for means",
     "section": "For-loop for simulating under \\(H_0\\)",
-    "text": "For-loop for simulating under \\(H_0\\)\n\n# Setup\nresults   <- tibble(x_diff_bar = numeric())\n\n# Simulations\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_sim <- shuffle_data(tires) # simulate under H0\n  x_diff_bar <- compute_stat(d_sim) # test statistic\n  results <- results %>% add_row(x_diff_bar)\n}"
+    "text": "For-loop for simulating under \\(H_0\\)\n\n# Setup\nresults   <- tibble(stat_sim = numeric())\n\n# Simulations\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_sim    <- shuffle_data(tires) # simulate under H0\n  stat_sim <- compute_stat(d_sim) # test statistic\n  results  <- results %>% add_row(stat_sim)\n}"
   },
   {
     "objectID": "slides/lec-10.html#sampling-distribution-1",
     "href": "slides/lec-10.html#sampling-distribution-1",
     "title": "Inference for means",
     "section": "Sampling distribution",
-    "text": "Sampling distribution\n\nx_diff_obs <- compute_stat(tires)\nx_diff_obs\n\n[1] 0.0020934\n\nggplot(results) + \n  geom_histogram(aes(x_diff_bar)) +\n  geom_vline(xintercept = x_diff_obs, col = \"maroon\", size = 2)"
+    "text": "Sampling distribution\n\nstat_obs <- compute_stat(tires)\nstat_obs\n\n[1] 0.0020934\n\nggplot(results) + \n  geom_histogram(aes(stat_sim)) +\n  geom_vline(xintercept = stat_obs, col = \"maroon\", size = 2)"
   },
   {
     "objectID": "slides/lec-10.html#p-value-and-conclusion",
     "href": "slides/lec-10.html#p-value-and-conclusion",
     "title": "Inference for means",
     "section": "p-value and conclusion",
-    "text": "p-value and conclusion\n\nthe probability that \\(\\bar{x}_{diff}^{sim}\\ge\\) 0.0021 or \\(\\bar{x}_{diff}^{sim}\\le\\) -0.0021.\n\n\nresults %>%\n  mutate(is_more_extreme = x_diff_bar >= x_diff_obs | x_diff_bar <= -x_diff_obs) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.012\n\n\nUsing the usual significance level \\(\\alpha = 0.05\\), we reject \\(H_0\\)."
+    "text": "p-value and conclusion\n\nthe probability that \\(\\bar{x}_{diff}^{sim}\\ge\\) 0.0021 or \\(\\bar{x}_{diff}^{sim}\\le\\) -0.0021.\n\n\nresults %>%\n  mutate(is_more_extreme = stat_sim >= stat_obs | stat_sim <= -stat_obs) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.012\n\n\nUsing the usual significance level \\(\\alpha = 0.05\\), we reject \\(H_0\\)."
   },
   {
     "objectID": "slides/lec-10.html#section-24",
@@ -1334,21 +1341,28 @@
     "href": "slides/lec-10.html#section-25",
     "title": "Inference for means",
     "section": "",
-    "text": "Always pair\n\n\nIf the data can paired, you should always do so!\nPairing data gives an analysis that is more powerful\n\nnarrower CI\nsmaller p-values"
+    "text": "Always pair\n\n\nIf the data can paired, you should always do it! Pairing data yields an analysis that is more powerful:\n\nnarrower CI\nsmaller p-values"
   },
   {
-    "objectID": "slides/lec-10.html#two-mean-ht-case-4",
-    "href": "slides/lec-10.html#two-mean-ht-case-4",
+    "objectID": "slides/lec-10.html#ht-for-two-means-case-4",
+    "href": "slides/lec-10.html#ht-for-two-means-case-4",
     "title": "Inference for means",
-    "section": "Two-mean HT (case 4)",
-    "text": "Two-mean HT (case 4)\n\ncompute_x_diff <- function(data){\n  x_bar <- data %>%\n    group_by(brand) %>%\n    summarize(x_bar = mean(tread))\n  x_diff_bar <- x_bar$x_bar[1] - x_bar$x_bar[2]\n  return(x_diff_bar)\n}\ncompute_x_diff(tires)\n\n[1] -0.0020934\n\n\n\nresults   <- tibble(x_diff_bar = numeric())\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_sim <- tires %>% mutate(tread = sample(tread)) # simulate under H0\n  x_diff_bar <- compute_x_diff(d_sim) # test statistic\n  results <- results %>% add_row(x_diff_bar)\n}\n\n\nx_diff_obs <- compute_x_diff(tires)\nresults %>%\n  mutate(is_more_extreme = x_diff_bar >= abs(x_diff_obs) | x_diff_bar <= -abs(x_diff_obs)) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.229\n\n\nWe fail to reject the null."
+    "section": "HT for two means (case 4)",
+    "text": "HT for two means (case 4)\nLet us conduct a hypothesis test for the tire data, but this time without pairing the data.\n\\(\\Rightarrow\\) This is simply a hypothesis test for two means."
   },
   {
     "objectID": "slides/lec-10.html#larger-p-value",
     "href": "slides/lec-10.html#larger-p-value",
     "title": "Inference for means",
     "section": "Larger p-value",
-    "text": "Larger p-value\n\nggplot(results) + \n  geom_histogram(aes(x_diff_bar)) +\n  geom_vline(xintercept = x_diff_obs, col = \"maroon\", size = 2)"
+    "text": "Larger p-value\n\ncompute_x_diff <- function(data){\n  x_bar <- data %>%\n    group_by(brand) %>%\n    summarize(x_bar = mean(tread))\n  x_diff_bar <- x_bar$x_bar[1] - x_bar$x_bar[2]\n  return(x_diff_bar)\n}\ncompute_x_diff(tires)\n\n[1] -0.0020934\n\n\n\nresults   <- tibble(x_diff_bar = numeric())\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_sim      <- tires %>% mutate(tread = sample(tread)) # simulate under H0\n  x_diff_bar <- compute_x_diff(d_sim) # test statistic\n  results    <- results %>% add_row(x_diff_bar)\n}\n\n\nx_diff_obs <- compute_x_diff(tires)\nresults %>%\n  mutate(is_more_extreme = x_diff_bar >= abs(x_diff_obs) | x_diff_bar <= -abs(x_diff_obs)) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.229\n\n\nThe p-value is larger than \\(\\alpha=0.05\\); we fail to reject the null hypothesis."
+  },
+  {
+    "objectID": "slides/lec-10.html#section-26",
+    "href": "slides/lec-10.html#section-26",
+    "title": "Inference for means",
+    "section": "",
+    "text": "ggplot(results) + \n  geom_histogram(aes(x_diff_bar)) +\n  geom_vline(xintercept = x_diff_obs, col = \"maroon\", size = 2)"
   },
   {
     "objectID": "slides/lec-10.html#recap-2",
@@ -1356,6 +1370,174 @@
     "title": "Inference for means",
     "section": "Recap",
     "text": "Recap\n\nThe normal distribution\nOne mean (case 3)\nTwo means (case 4)\nPaired means (case 3)\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+  },
+  {
+    "objectID": "slides/lec-11.html#announcements",
+    "href": "slides/lec-11.html#announcements",
+    "title": "Inference for regression",
+    "section": "Announcements",
+    "text": "Announcements"
+  },
+  {
+    "objectID": "slides/lec-11.html#recap",
+    "href": "slides/lec-11.html#recap",
+    "title": "Inference for regression",
+    "section": "Recap",
+    "text": "Recap\n\nThe normal distribution\nOne mean\n\nCI via bootstrap\n\nTwo means\n\nHT via simulation\nCI via bootstrap\n\nPaired means\n\nHT via simulation\nCI via bootstrap"
+  },
+  {
+    "objectID": "slides/lec-11.html#outline",
+    "href": "slides/lec-11.html#outline",
+    "title": "Inference for regression",
+    "section": "Outline",
+    "text": "Outline\n\nSimple linear regression\n\nHT via simulation\nCI via bootstrap"
+  },
+  {
+    "objectID": "slides/lec-11.html#setup",
+    "href": "slides/lec-11.html#setup",
+    "title": "Inference for regression",
+    "section": "Setup",
+    "text": "Setup\nSimple linear regression (slr)\n\\[\nY \\approx \\beta_0 + \\beta_1 X\n\\]\nMultiple linear regression (mlr)\n\\[\nY \\approx \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\dots + \\beta_p X_p\n\\]\nLogistic regression\n\\[\np_i = \\dfrac{\\exp\\{\\mu\\}}{1+\\exp\\{\\mu\\}}, \\qquad \\mu \\approx \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\dots + \\beta_p X_p\n\\]"
+  },
+  {
+    "objectID": "slides/lec-11.html#ht-and-ci-for-regression",
+    "href": "slides/lec-11.html#ht-and-ci-for-regression",
+    "title": "Inference for regression",
+    "section": "HT and CI for regression",
+    "text": "HT and CI for regression\nPopulation parameter: slope parameter \\(\\beta_k\\)\nSample statistics: least-square estimate \\(\\hat{\\beta}_k\\)\n\nConfidence interval: range of plausible values for a parameter \\(\\beta_k\\)\nHypothesis test: is the response variable \\(Y\\) independent of the predictor \\(X_k\\)?\n\n\\(H_0:\\beta_k = 0\\) (\\(Y\\) does not depend on \\(X_k\\))\n\\(H_a:\\beta_k\\neq0\\)"
+  },
+  {
+    "objectID": "slides/lec-11.html#section",
+    "href": "slides/lec-11.html#section",
+    "title": "Inference for regression",
+    "section": "",
+    "text": "Individual exercise -\n\n\nExercise 23.1\n\n\n\n\n\n\n02:00"
+  },
+  {
+    "objectID": "slides/lec-11.html#example-birth-weight",
+    "href": "slides/lec-11.html#example-birth-weight",
+    "title": "Inference for regression",
+    "section": "Example – birth weight",
+    "text": "Example – birth weight\n\n\n\nset.seed(47)\nd <- openintro::births14 %>% sample_n(100) %>% select(weight, mage)\nglimpse(d)\n\nRows: 100\nColumns: 2\n$ weight <dbl> 6.94, 9.19, 7.39, 8.82, 7.87, 9.39, 8.00, 7.25, 7.19, 5.64, 6.7~\n$ mage   <dbl> 27, 29, 26, 28, 35, 29, 23, 22, 34, 21, 31, 26, 29, 35, 28, 30,~"
+  },
+  {
+    "objectID": "slides/lec-11.html#original-data",
+    "href": "slides/lec-11.html#original-data",
+    "title": "Inference for regression",
+    "section": "Original data",
+    "text": "Original data\n\nggplot(d, aes(x = mage, y = weight)) +\n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE, col = \"maroon\")"
+  },
+  {
+    "objectID": "slides/lec-11.html#hypotheses-and-simulations",
+    "href": "slides/lec-11.html#hypotheses-and-simulations",
+    "title": "Inference for regression",
+    "section": "Hypotheses and simulations",
+    "text": "Hypotheses and simulations\n\\(H_0:\\beta_1=0\\)\n\\(H_a:\\beta_1\\neq 0\\)\n\n\nSimulate many samples under \\(H_0\\) (the response is independent of the predictor)\nDetermine if the observed data could have plausibly arisen under \\(H_0\\)"
+  },
+  {
+    "objectID": "slides/lec-11.html#simulating-under-h_0",
+    "href": "slides/lec-11.html#simulating-under-h_0",
+    "title": "Inference for regression",
+    "section": "Simulating under \\(H_0\\)",
+    "text": "Simulating under \\(H_0\\)\nUnder \\(H_0\\), there is no relation between the response and the predictor\n\\(\\Rightarrow\\) the newborn’s weight is independent of the mother’s age\n\\(\\Rightarrow\\) randomly re-assign the predictor independently of the response."
+  },
+  {
+    "objectID": "slides/lec-11.html#section-1",
+    "href": "slides/lec-11.html#section-1",
+    "title": "Inference for regression",
+    "section": "",
+    "text": "d_sim <- d %>% mutate(mage = sample(mage)) # shuffle the scores\nhead(d)\n\n# A tibble: 6 x 2\n  weight  mage\n   <dbl> <dbl>\n1   6.94    27\n2   9.19    29\n3   7.39    26\n4   8.82    28\n5   7.87    35\n6   9.39    29\n\nhead(d_sim)\n\n# A tibble: 6 x 2\n  weight  mage\n   <dbl> <dbl>\n1   6.94    32\n2   9.19    34\n3   7.39    27\n4   8.82    29\n5   7.87    23\n6   9.39    34"
+  },
+  {
+    "objectID": "slides/lec-11.html#function-for-computing-the-test-statistic",
+    "href": "slides/lec-11.html#function-for-computing-the-test-statistic",
+    "title": "Inference for regression",
+    "section": "Function for computing the test statistic",
+    "text": "Function for computing the test statistic\n\ncompute_beta_LS <- function(data){\n  m <- lm(weight ~ mage, data = data)\n  coef <- m$coefficients\n  slope <- coef[[\"mage\"]] \n  return(slope)\n}\ncompute_beta_LS(d_sim)\n\n[1] 0.03138472"
+  },
+  {
+    "objectID": "slides/lec-11.html#for-loop-for-simulating-under-h_0",
+    "href": "slides/lec-11.html#for-loop-for-simulating-under-h_0",
+    "title": "Inference for regression",
+    "section": "For-loop for simulating under \\(H_0\\)",
+    "text": "For-loop for simulating under \\(H_0\\)\n\nresults   <- tibble(stat_sim = numeric())\nset.seed(0)\nfor(i in 1 : 20e3){\n  d_sim    <- d %>% mutate(mage = sample(mage)) # simulate under H0\n  stat_sim <- compute_beta_LS(d_sim) # test statistic\n  results  <- results %>% add_row(stat_sim)\n}"
+  },
+  {
+    "objectID": "slides/lec-11.html#sampling-distribution",
+    "href": "slides/lec-11.html#sampling-distribution",
+    "title": "Inference for regression",
+    "section": "Sampling distribution",
+    "text": "Sampling distribution\n\nstat_obs <- compute_beta_LS(d)\nstat_obs\n\n[1] 0.05542352\n\nggplot(results) + \n  geom_histogram(aes(stat_sim)) +\n  geom_vline(xintercept = stat_obs, col = \"maroon\", size = 2)"
+  },
+  {
+    "objectID": "slides/lec-11.html#p-value",
+    "href": "slides/lec-11.html#p-value",
+    "title": "Inference for regression",
+    "section": "p-value",
+    "text": "p-value\n\nthe probability that \\(\\hat{\\beta}_{1}^{sim}\\ge\\) 0.055 or \\(\\hat{\\beta}_{1}^{sim}\\le\\) -0.055.\n\n\nresults %>%\n  mutate(is_more_extreme = stat_sim >= stat_obs | stat_sim <= -stat_obs) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1  0.0208\n\n\nUsing the usual significance level \\(\\alpha = 0.05\\), we reject \\(H_0\\).\n\n\nm <- lm(weight~mage, data = d)\nbroom::tidy(m)\n\n# A tibble: 2 x 5\n  term        estimate std.error statistic  p.value\n  <chr>          <dbl>     <dbl>     <dbl>    <dbl>\n1 (Intercept)   5.59      0.669       8.36 4.35e-13\n2 mage          0.0554    0.0237      2.34 2.13e- 2"
+  },
+  {
+    "objectID": "slides/lec-11.html#section-2",
+    "href": "slides/lec-11.html#section-2",
+    "title": "Inference for regression",
+    "section": "",
+    "text": "Group exercise - HT\n\n\nExercises 20.3 and 20.7\n\n\n\n\n\n\n04:00"
+  },
+  {
+    "objectID": "slides/lec-11.html#bootstrapping",
+    "href": "slides/lec-11.html#bootstrapping",
+    "title": "Inference for regression",
+    "section": "Bootstrapping",
+    "text": "Bootstrapping\nSample with repetition from the observed sample to construct many bootstrap samples.\nBootstrap samples \\(\\Rightarrow\\) sampling distribution \\(\\Rightarrow\\) CI"
+  },
+  {
+    "objectID": "slides/lec-11.html#bootstrap-in-r",
+    "href": "slides/lec-11.html#bootstrap-in-r",
+    "title": "Inference for regression",
+    "section": "Bootstrap in R",
+    "text": "Bootstrap in R\n\nsample_bootstrap <- function(data){ # same function as before\n  n                <- nrow(data)\n  sample_bootstrap <- slice_sample(data, n = n, replace = TRUE)\n  return(sample_bootstrap)\n}\n\n\nset.seed(0)\nsample_bootstrap(d)\n\n# A tibble: 100 x 2\n   weight  mage\n    <dbl> <dbl>\n 1   7.44    35\n 2   6.83    30\n 3   5.3     29\n 4   6.94    27\n 5   5.07    23\n 6   6.03    24\n 7   6.44    26\n 8   7.44    35\n 9   7.13    33\n10   7.25    23\n# ... with 90 more rows"
+  },
+  {
+    "objectID": "slides/lec-11.html#section-3",
+    "href": "slides/lec-11.html#section-3",
+    "title": "Inference for regression",
+    "section": "",
+    "text": "results <- tibble(stat_boot = numeric())\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_boot    <- sample_bootstrap(d) # bootstrap sample\n  stat_boot <- compute_beta_LS(d_boot) # bootstrap statistic\n  results   <- results %>% add_row(stat_boot) \n}\n\n\nquantile(results$stat_boot, c(0.05 , 0.95 )) # 90% CI\n\n        5%        95% \n0.01805457 0.09266791 \n\n\n\nquantile(results$stat_boot, c(0.01, 0.99)) # 98% CI (includes 0)\n\n           1%           99% \n-0.0005464837  0.1117886741"
+  },
+  {
+    "objectID": "slides/lec-11.html#section-4",
+    "href": "slides/lec-11.html#section-4",
+    "title": "Inference for regression",
+    "section": "",
+    "text": "ggplot(results) + \n  geom_histogram(aes(stat_boot)) + \n  geom_vline(xintercept = quantile(results$stat_boot, c(0.05, 0.95)), col = \"gold1\", size = 2) + # 90% CI \n  geom_vline(xintercept = quantile(results$stat_boot, c(0.01, 0.99)), col = \"maroon\", size = 2) # 95% CI"
+  },
+  {
+    "objectID": "slides/lec-11.html#section-5",
+    "href": "slides/lec-11.html#section-5",
+    "title": "Inference for regression",
+    "section": "",
+    "text": "Group exercise - Bootstrap CI\n\n\nExercises\n\n\n\n\n\n\n03:00"
+  },
+  {
+    "objectID": "slides/lec-11.html#ci-and-ht",
+    "href": "slides/lec-11.html#ci-and-ht",
+    "title": "Inference for regression",
+    "section": "CI and HT",
+    "text": "CI and HT\n\n\n\n\n\n\nTwo sides of the same coin\n\n\nThe 95% CI dos not include 0, but the 99% CI does. This indicates that 0 is a plausible at the 5% significance level but not the 1% significance level. This is exactly what the HT concluded."
+  },
+  {
+    "objectID": "slides/lec-11.html#section-6",
+    "href": "slides/lec-11.html#section-6",
+    "title": "Inference for regression",
+    "section": "",
+    "text": "Group exercises - CI\n\n\nExercise\n\n\n\n\n\n\n03:00"
+  },
+  {
+    "objectID": "slides/lec-11.html#recap-2",
+    "href": "slides/lec-11.html#recap-2",
+    "title": "Inference for regression",
+    "section": "Recap",
+    "text": "Recap\n\nSimple linear regression\n\nHT via simulation\nCI via bootstrap\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
     "objectID": "slides/lec-2.html#outline",
@@ -1397,7 +1579,7 @@
     "href": "slides/lec-2.html#observations-and-variables",
     "title": "Introduction to Data",
     "section": "Observations and variables",
-    "text": "Observations and variables\n\n\n\nResults for three patients from the stent study.\n \n  \n    patient \n    group \n    30 days \n    365 days \n  \n \n\n  \n    1 \n    treatment \n    no event \n    no event \n  \n  \n    2 \n    control \n    no event \n    no event \n  \n  \n    3 \n    control \n    no event \n    no event \n  \n\n\n\n\n\n\n\nEach row represents an observation\nEach column represents a variable"
+    "text": "Observations and variables\n\n\n\nResults for three patients from the stent study.\n \n  \n    patient \n    group \n    30 days \n    365 days \n  \n \n\n  \n    1 \n    treatment \n    stroke \n    stroke \n  \n  \n    2 \n    treatment \n    no event \n    no event \n  \n  \n    3 \n    treatment \n    no event \n    no event \n  \n\n\n\n\n\n\n\nEach row represents an observation\nEach column represents a variable"
   },
   {
     "objectID": "slides/lec-2.html#some-examples",

@@ -13,6 +13,7 @@ format:
     code-summary: "Show the code"
     scrollable: true
     link-external-newwindow: true
+    history: false
 editor: visual
 execute:
   freeze: auto

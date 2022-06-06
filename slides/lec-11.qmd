@@ -1,0 +1,345 @@
+---
+title: "Inference for regression"
+subtitle: "STA 101L - Summer I 2022"
+author: "Raphael Morsomme"
+footer:  "[https://rmorsomme.github.io/website/](https://rmorsomme.github.io/website/)"
+logo: "images/logo.jpg"
+format: 
+  revealjs: 
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    code-fold: false
+    code-summary: "Show the code"
+    scrollable: true
+    link-external-newwindow: true
+    history: false
+editor: visual
+execute:
+  freeze: auto
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup}
+#| include: false
+
+knitr::opts_chunk$set(
+  fig.width = 8,
+  fig.asp = 0.618,
+  fig.retina = 3,
+  dpi = 300,
+  out.width = "80%",
+  fig.align = "center"
+)
+
+# load packages
+library(tidyverse)   # for data wrangling and visualization
+library(countdown)
+library(openintro)
+library(kableExtra)
+library(janitor)
+library(patchwork)
+
+# set default theme and larger font size for ggplot2
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))
+
+options(scipen = 100)
+```
+
+# Welcome
+
+## Announcements
+
+-   
+
+## Recap
+
+-   The normal distribution
+
+-   One mean
+
+    -   CI via bootstrap
+
+-   Two means
+
+    -   HT via simulation
+
+    -   CI via bootstrap
+
+-   Paired means
+
+    -   HT via simulation
+
+    -   CI via bootstrap
+
+## Outline
+
+-   Simple linear regression
+    -   HT via simulation
+
+    -   CI via bootstrap
+
+# Simple linear regression
+
+## Setup
+
+**Simple linear regression** (slr)
+
+$$
+Y \approx \beta_0 + \beta_1 X
+$$
+
+**Multiple linear regression** (mlr)
+
+$$
+Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_p X_p
+$$
+
+**Logistic regression**
+
+$$
+p_i = \dfrac{\exp\{\mu\}}{1+\exp\{\mu\}}, \qquad \mu \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_p X_p
+$$
+
+## HT and CI for regression
+
+**Population parameter**: slope parameter $\beta_k$
+
+**Sample statistics**: least-square estimate $\hat{\beta}_k$
+
+. . .
+
+**Confidence interval**: range of plausible values for a parameter $\beta_k$
+
+**Hypothesis test**: is the response variable $Y$ independent of the predictor $X_k$?
+
+-   $H_0:\beta_k = 0$ ($Y$ does not depend on $X_k$)
+
+-   $H_a:\beta_k\neq0$
+
+## 
+
+::: {.callout-tip icon="false"}
+## Individual exercise - 
+
+Exercise [23.1](https://openintro-ims.netlify.app/inference-one-mean.html#chp19-exercises)
+:::
+
+```{r, echo = F}
+countdown(minutes = 2)
+```
+
+## Example -- birth weight
+
+::: columns
+::: {.column width="50%"}
+```{r}
+set.seed(47)
+d <- openintro::births14 %>% sample_n(100) %>% select(weight, mage)
+glimpse(d)
+```
+:::
+
+::: {.column width="45%"}
+![](images/lec-11/newborn.jpg){fig-align="center"}
+:::
+:::
+
+## Original data
+
+```{r}
+ggplot(d, aes(x = mage, y = weight)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, col = "maroon")
+```
+
+# Hypothesis test via simulation
+
+## Hypotheses and simulations
+
+$H_0:\beta_1=0$
+
+$H_a:\beta_1\neq 0$
+
+. . .
+
+-   Simulate many samples under $H_0$ (the response is independent of the predictor)
+
+-   Determine if the observed data could have plausibly arisen under $H_0$
+
+## Simulating under $H_0$
+
+Under $H_0$, there is no relation between the response and the predictor
+
+$\Rightarrow$ the newborn's weight is independent of the mother's age
+
+$\Rightarrow$ randomly re-assign the predictor independently of the response.
+
+## 
+
+```{r}
+d_sim <- d %>% mutate(mage = sample(mage)) # shuffle the scores
+head(d)
+head(d_sim)
+```
+
+## Function for computing the test statistic
+
+```{r}
+#| code-line-numbers: "|2|3|4|"
+compute_beta_LS <- function(data){
+  m <- lm(weight ~ mage, data = data)
+  coef <- m$coefficients
+  slope <- coef[["mage"]] 
+  return(slope)
+}
+compute_beta_LS(d_sim)
+```
+
+## For-loop for simulating under $H_0$
+
+```{r, cache=TRUE}
+results   <- tibble(stat_sim = numeric())
+set.seed(0)
+for(i in 1 : 20e3){
+  d_sim    <- d %>% mutate(mage = sample(mage)) # simulate under H0
+  stat_sim <- compute_beta_LS(d_sim) # test statistic
+  results  <- results %>% add_row(stat_sim)
+}
+```
+
+## Sampling distribution
+
+```{r}
+stat_obs <- compute_beta_LS(d)
+stat_obs
+ggplot(results) + 
+  geom_histogram(aes(stat_sim)) +
+  geom_vline(xintercept = stat_obs, col = "maroon", size = 2)
+```
+
+## p-value
+
+-   the probability that $\hat{\beta}_{1}^{sim}\ge$ `r signif(stat_obs,2)` or $\hat{\beta}_{1}^{sim}\le$ `r -signif(stat_obs,2)`.
+
+```{r}
+results %>%
+  mutate(is_more_extreme = stat_sim >= stat_obs | stat_sim <= -stat_obs) %>%
+  summarize(p_value = mean(is_more_extreme))
+```
+
+Using the usual significance level $\alpha = 0.05$, we **reject** $H_0$.
+
+. . .
+
+```{r}
+m <- lm(weight~mage, data = d)
+broom::tidy(m)
+```
+
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercise - HT
+
+Exercises [20.3](https://openintro-ims.netlify.app/inference-two-means.html#chp20-exercises) and [20.7](https://openintro-ims.netlify.app/inference-two-means.html#chp20-exercises)
+:::
+
+```{r, echo = F}
+countdown(minutes = 4)
+```
+
+# Confidence interval via bootstrap
+
+## Bootstrapping
+
+Sample with repetition from the observed sample to construct many **bootstrap samples**.
+
+Bootstrap samples $\Rightarrow$ sampling distribution $\Rightarrow$ CI
+
+## Bootstrap in `R`
+
+```{r}
+sample_bootstrap <- function(data){ # same function as before
+  n                <- nrow(data)
+  sample_bootstrap <- slice_sample(data, n = n, replace = TRUE)
+  return(sample_bootstrap)
+}
+```
+
+```{r}
+set.seed(0)
+sample_bootstrap(d)
+```
+
+## 
+
+```{r, cache=TRUE}
+results <- tibble(stat_boot = numeric())
+set.seed(0)
+for(i in 1 : 1e3){
+  d_boot    <- sample_bootstrap(d) # bootstrap sample
+  stat_boot <- compute_beta_LS(d_boot) # bootstrap statistic
+  results   <- results %>% add_row(stat_boot) 
+}
+```
+
+```{r}
+quantile(results$stat_boot, c(0.05 , 0.95 )) # 90% CI
+```
+
+```{r}
+quantile(results$stat_boot, c(0.01, 0.99)) # 98% CI (includes 0)
+```
+
+## 
+
+```{r}
+ggplot(results) + 
+  geom_histogram(aes(stat_boot)) + 
+  geom_vline(xintercept = quantile(results$stat_boot, c(0.05, 0.95)), col = "gold1", size = 2) + # 90% CI 
+  geom_vline(xintercept = quantile(results$stat_boot, c(0.01, 0.99)), col = "maroon", size = 2) # 95% CI
+```
+
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercise - Bootstrap CI
+
+Exercises
+:::
+
+```{r, echo = F}
+countdown(minutes = 3)
+```
+
+## CI and HT
+
+::: callout-note
+## Two sides of the same coin
+
+The 95% CI dos not include 0, but the 99% CI does. This indicates that 0 is a plausible at the 5% significance level but not the 1% significance level. This is exactly what the HT concluded.
+:::
+
+## 
+
+::: {.callout-tip icon="false"}
+## Group exercises - CI
+
+Exercise
+:::
+
+```{r, echo = F}
+countdown(minutes = 3)
+```
+
+# Recap
+
+## Recap
+
+-   Simple linear regression
+    -   HT via simulation
+
+    -   CI via bootstrap
