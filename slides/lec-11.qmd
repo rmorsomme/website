@@ -54,13 +54,17 @@ options(scipen = 100)
 
 -   
 
-## Recap
+## Recap {.smaller}
 
 -   The normal distribution
+
+. . .
 
 -   One mean
 
     -   CI via bootstrap
+
+. . .
 
 -   Two means
 
@@ -68,11 +72,15 @@ options(scipen = 100)
 
     -   CI via bootstrap
 
+. . .
+
 -   Paired means
 
     -   HT via simulation
 
     -   CI via bootstrap
+
+    -   Always pair!
 
 ## Outline
 
@@ -85,64 +93,40 @@ options(scipen = 100)
 
 ## Setup
 
-**Simple linear regression** (slr)
+**Simple linear regression** (slr): $Y \approx \beta_0 + \beta_1 X$
 
-$$
-Y \approx \beta_0 + \beta_1 X
-$$
+**Population parameter**: slope parameter $\beta_1$
 
-**Multiple linear regression** (mlr)
-
-$$
-Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_p X_p
-$$
-
-**Logistic regression**
-
-$$
-p_i = \dfrac{\exp\{\mu\}}{1+\exp\{\mu\}}, \qquad \mu \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_p X_p
-$$
-
-## HT and CI for regression
-
-**Population parameter**: slope parameter $\beta_k$
-
-**Sample statistics**: least-square estimate $\hat{\beta}_k$
+**Sample statistic**: least-square estimate $\hat{\beta}_1$
 
 . . .
 
-**Confidence interval**: range of plausible values for a parameter $\beta_k$
+**Confidence interval**: range of plausible values for $\beta_1$
 
-**Hypothesis test**: is the response variable $Y$ independent of the predictor $X_k$?
+**Hypothesis test**: is the response variable $Y$ independent of the predictor $X$?
 
--   $H_0:\beta_k = 0$ ($Y$ does not depend on $X_k$)
+-   $H_0:\beta_1 = 0$ ($Y$ does not depend on $X$)
 
--   $H_a:\beta_k\neq0$
-
-## 
-
-::: {.callout-tip icon="false"}
-## Individual exercise - 
-
-Exercise [23.1](https://openintro-ims.netlify.app/inference-one-mean.html#chp19-exercises)
-:::
-
-```{r, echo = F}
-countdown(minutes = 2)
-```
+-   $H_a:\beta_1\neq0$
 
 ## Example -- birth weight
 
 ::: columns
-::: {.column width="50%"}
+::: {.column width="55%"}
 ```{r}
 set.seed(47)
-d <- openintro::births14 %>% sample_n(100) %>% select(weight, mage)
-glimpse(d)
+d <- openintro::births14 %>%
+  sample_n(100) %>% # take a random sample of 100 births
+  select(weight, mage) %>% # only keep the variables weight (newborn's weight) and mage (mother's age) 
+  rename(mother_age = mage)
+head(d)
 ```
 :::
 
-::: {.column width="45%"}
+::: {.column width="5%"}
+:::
+
+::: {.column width="36%"}
 ![](images/lec-11/newborn.jpg){fig-align="center"}
 :::
 :::
@@ -150,9 +134,21 @@ glimpse(d)
 ## Original data
 
 ```{r}
-ggplot(d, aes(x = mage, y = weight)) +
+ggplot(d, aes(x = mother_age, y = weight)) +
   geom_point() +
-  geom_smooth(method = "lm", se = FALSE, col = "maroon")
+  geom_smooth(method = "lm", se = FALSE, col = "maroon") # regression line
+```
+
+## 
+
+::: {.callout-tip icon="false"}
+## Individual exercise - gut feeling
+
+Do you *intuitively feel* that the pattern could be explained by chance alone?
+:::
+
+```{r, echo = F}
+countdown(minutes = 1)
 ```
 
 # Hypothesis test via simulation
@@ -165,9 +161,9 @@ $H_a:\beta_1\neq 0$
 
 . . .
 
--   Simulate many samples under $H_0$ (the response is independent of the predictor)
+-   Simulate many samples under $H_0$ (the response is independent of the predictor).
 
--   Determine if the observed data could have plausibly arisen under $H_0$
+-   Determine if the observed data could have plausibly arisen under $H_0$.
 
 ## Simulating under $H_0$
 
@@ -180,7 +176,7 @@ $\Rightarrow$ randomly re-assign the predictor independently of the response.
 ## 
 
 ```{r}
-d_sim <- d %>% mutate(mage = sample(mage)) # shuffle the scores
+d_sim <- d %>% mutate(mother_age = sample(mother_age)) # shuffle the response
 head(d)
 head(d_sim)
 ```
@@ -190,9 +186,9 @@ head(d_sim)
 ```{r}
 #| code-line-numbers: "|2|3|4|"
 compute_beta_LS <- function(data){
-  m <- lm(weight ~ mage, data = data)
+  m <- lm(weight ~ mother_age, data = data)
   coef <- m$coefficients
-  slope <- coef[["mage"]] 
+  slope <- coef[["mother_age"]] 
   return(slope)
 }
 compute_beta_LS(d_sim)
@@ -201,10 +197,10 @@ compute_beta_LS(d_sim)
 ## For-loop for simulating under $H_0$
 
 ```{r, cache=TRUE}
-results   <- tibble(stat_sim = numeric())
-set.seed(0)
-for(i in 1 : 20e3){
-  d_sim    <- d %>% mutate(mage = sample(mage)) # simulate under H0
+results <- tibble(stat_sim = numeric())
+set.seed(1)
+for(i in 1 : 5e3){
+  d_sim    <- d %>% mutate(mother_age = sample(mother_age)) # simulate under H0
   stat_sim <- compute_beta_LS(d_sim) # test statistic
   results  <- results %>% add_row(stat_sim)
 }
@@ -222,7 +218,7 @@ ggplot(results) +
 
 ## p-value
 
--   the probability that $\hat{\beta}_{1}^{sim}\ge$ `r signif(stat_obs,2)` or $\hat{\beta}_{1}^{sim}\le$ `r -signif(stat_obs,2)`.
+Probability that $\hat{\beta}_{1}^{sim}\ge \hat{\beta}^{obs}_1$ or $\hat{\beta}_{1}^{sim}\le \hat{\beta}^{obs}_1$.
 
 ```{r}
 results %>%
@@ -235,7 +231,7 @@ Using the usual significance level $\alpha = 0.05$, we **reject** $H_0$.
 . . .
 
 ```{r}
-m <- lm(weight~mage, data = d)
+m <- lm(weight~mother_age, data = d)
 broom::tidy(m)
 ```
 
@@ -244,22 +240,16 @@ broom::tidy(m)
 ::: {.callout-tip icon="false"}
 ## Group exercise - HT
 
-Exercises [20.3](https://openintro-ims.netlify.app/inference-two-means.html#chp20-exercises) and [20.7](https://openintro-ims.netlify.app/inference-two-means.html#chp20-exercises)
+Exercises [24.9](https://openintro-ims.netlify.app/inf-model-slr.html#chp24-exercises) -- in part c, refer to the output of the `lm` command (mathematical model) -- and [24.1](https://openintro-ims.netlify.app/inf-model-slr.html#chp24-exercises).
 :::
 
 ```{r, echo = F}
-countdown(minutes = 4)
+countdown(minutes = 3)
 ```
 
 # Confidence interval via bootstrap
 
-## Bootstrapping
-
-Sample with repetition from the observed sample to construct many **bootstrap samples**.
-
-Bootstrap samples $\Rightarrow$ sampling distribution $\Rightarrow$ CI
-
-## Bootstrap in `R`
+## Bootstrap
 
 ```{r}
 sample_bootstrap <- function(data){ # same function as before
@@ -276,15 +266,38 @@ sample_bootstrap(d)
 
 ## 
 
+![](images/lec-11/bootstrap.png){fig-align="center"}
+
+Source: [IMS](https://www.openintro.org/book/ims/)
+
+##
+
 ```{r, cache=TRUE}
 results <- tibble(stat_boot = numeric())
 set.seed(0)
-for(i in 1 : 1e3){
-  d_boot    <- sample_bootstrap(d) # bootstrap sample
+for(i in 1 : 5e3){
+  d_boot    <- sample_bootstrap(d)     # bootstrap sample
   stat_boot <- compute_beta_LS(d_boot) # bootstrap statistic
   results   <- results %>% add_row(stat_boot) 
 }
 ```
+
+## 
+
+![](images/lec-11/bootstrap_model.png){fig-align="center"}
+
+Source: [IMS](https://www.openintro.org/book/ims/)
+
+## Simulated slopes
+
+```{r}
+ggplot(results) + 
+  geom_histogram(aes(stat_boot)) + 
+  geom_vline(xintercept = quantile(results$stat_boot, c(0.05, 0.95)), col = "gold1", size = 2) + # 90% CI 
+  geom_vline(xintercept = quantile(results$stat_boot, c(0.01, 0.99)), col = "maroon", size = 2) # 98% CI
+```
+
+## 
 
 ```{r}
 quantile(results$stat_boot, c(0.05 , 0.95 )) # 90% CI
@@ -294,41 +307,23 @@ quantile(results$stat_boot, c(0.05 , 0.95 )) # 90% CI
 quantile(results$stat_boot, c(0.01, 0.99)) # 98% CI (includes 0)
 ```
 
-## 
-
-```{r}
-ggplot(results) + 
-  geom_histogram(aes(stat_boot)) + 
-  geom_vline(xintercept = quantile(results$stat_boot, c(0.05, 0.95)), col = "gold1", size = 2) + # 90% CI 
-  geom_vline(xintercept = quantile(results$stat_boot, c(0.01, 0.99)), col = "maroon", size = 2) # 95% CI
-```
-
-## 
-
-::: {.callout-tip icon="false"}
-## Group exercise - Bootstrap CI
-
-Exercises
-:::
-
-```{r, echo = F}
-countdown(minutes = 3)
-```
 
 ## CI and HT
 
 ::: callout-note
 ## Two sides of the same coin
 
-The 95% CI dos not include 0, but the 99% CI does. This indicates that 0 is a plausible at the 5% significance level but not the 1% significance level. This is exactly what the HT concluded.
+The 95% CI dos not include 0, but the 98% CI does. This indicates that 0 is a plausible at the (usual) 5% significance level but not the 2% significance level. Again, this is exactly what the HT concluded.
 :::
 
 ## 
 
 ::: {.callout-tip icon="false"}
-## Group exercises - CI
+## Group exercise - CI
 
-Exercise
+Exercise [24.11](https://openintro-ims.netlify.app/inf-model-slr.html#chp24-exercises). Does the CI include 0? Does it agree with the HT?
+
+Exercise [24.3](https://openintro-ims.netlify.app/inf-model-slr.html#chp24-exercises).
 :::
 
 ```{r, echo = F}

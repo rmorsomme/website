@@ -5,7 +5,7 @@ author: "Raphael Morsomme"
 footer:  "[https://rmorsomme.github.io/website/](https://rmorsomme.github.io/website/)"
 logo: "images/logo.jpg"
 format: 
-  revealjs: 
+  revealjs:
     theme: slides.scss
     transition: fade
     slide-number: true
@@ -786,10 +786,13 @@ head(tires_diff)
 Simply construct a CI for the variable `tread_diff` with bootstrap samples.
 
 ## 
+
 ::: {.callout-tip icon="false"}
 ## Group exercise - CI for paired data
+
 Use the `R` code from the one-mean case (case 3) to construct a CI for the difference in tire tread.
 :::
+
 ```{r, echo = F}
 countdown(minutes = 10)
 ```
@@ -1060,14 +1063,16 @@ ggplot(results) +
   geom_vline(xintercept = x_diff_obs, col = "maroon", size = 2)
 ```
 
-
 ## 
+
 ::: {.callout-tip icon="false"}
 ## Group exercise - wider CI
+
 Use the `R` code from the two-mean case (case 4) to construct a CI for the difference in tire tread (the observations are not paired).
 
 You should obtain a wider interval.
 :::
+
 ```{r, echo = F}
 countdown(minutes = 10)
 ```
