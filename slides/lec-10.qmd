@@ -61,7 +61,7 @@ options(scipen = 100)
 
 -   Remaining homework due on Mon/Thu instead of Wed/Sun?
 
-## Announcements  {.smaller}
+## Announcements {.smaller}
 
 Midterm survey
 
@@ -103,6 +103,8 @@ Midterm survey
 -   Paired means (case 3)
 
 # The normal distribution
+
+## The normal distribution
 
 The distribution of a numerical variable is often modeled with a **normal distribution**.
 
@@ -239,9 +241,9 @@ countdown(minutes = 2)
 
 ## Setup
 
-**population parameter**: mean $\mu$
+**Population parameter**: mean $\mu$
 
-**Sample statistics**: sample average $\bar{x}$
+**Sample statistic**: sample average $\bar{x}$
 
 . . .
 
@@ -432,7 +434,7 @@ $$
 \mu_{diff}=\mu_1-\mu_2
 $$
 
-**Sample statistics**: difference in proportion in the sample
+**Sample statistic**: difference in proportion in the sample
 
 $$
 \bar{x}_{diff}=\bar{x}_1-\bar{x}_2
@@ -594,12 +596,12 @@ Using the usual significance level $\alpha = 0.05$, we **fail to reject** the nu
 
 ::: {.callout-tip icon="false"}
 ## Group exercise - HT
-:::
 
 Exercises [20.3](https://openintro-ims.netlify.app/inference-two-means.html#chp20-exercises) and [20.7](https://openintro-ims.netlify.app/inference-two-means.html#chp20-exercises)
+:::
 
 ```{r, echo = F}
-countdown(minutes = 4)
+countdown(minutes = 3)
 ```
 
 # Confidence interval via bootstrap
@@ -665,7 +667,7 @@ The two CIs include 0. This indicates that 0 is a plausible value for the differ
 ## 
 
 ::: {.callout-tip icon="false"}
-## Group exercises - CI
+## Individual exercises - CI
 
 Exercise [20.5](https://openintro-ims.netlify.app/inference-two-means.html#chp20-exercises) part a only
 :::
@@ -685,14 +687,16 @@ Example: pre/post-evaluations; supermarket items; batteries and electronic devic
 . . .
 
 ::: callout-note
-## Paired data is like one mean
+## Paired data are like one mean data
 
 Paired data can be analyzed like the one-mean case (case 3)!
 :::
 
 ## Example -- tire brand
 
-Compare the longevity of two brands of tire. The response variable is tire tread after 1000 miles.
+We want to compare the longevity of two brands of tire. The response variable is tire tread after 1000 miles.
+
+25 cars drove 1000 miles. On each car, one tire was from Smooth Turn and another one was from Quick Spin. The other two tires were baseline tires.
 
 ## 
 
@@ -754,16 +758,18 @@ Source: [IMS](https://www.openintro.org/book/ims/)
 ::: {.callout-tip icon="false"}
 ## Individual exercise - paired data
 
+Do you *intuitively feel* that the tire data provide convincing evidence that one tire is more durable than the other?
+
 Exercises [21.1](https://openintro-ims.netlify.app/inference-paired-means.html#chp21-exercises), [21.3](https://openintro-ims.netlify.app/inference-paired-means.html#chp21-exercises) and [21.5](https://openintro-ims.netlify.app/inference-paired-means.html#chp21-exercises)
 :::
 
 ```{r, echo = F}
-countdown(minutes = 3)
+countdown(minutes = 4)
 ```
 
 ## CI via booststrap
 
-Exactly the same as for one mean (case 3).
+Exactly the same as with one mean (case 3).
 
 . . .
 
@@ -777,7 +783,16 @@ head(tires_diff)
 
 . . .
 
-Simply construct a CI for `tread_diff` with bootstrap samples.
+Simply construct a CI for the variable `tread_diff` with bootstrap samples.
+
+## 
+::: {.callout-tip icon="false"}
+## Group exercise - CI for paired data
+Use the `R` code from the one-mean case (case 3) to construct a CI for the difference in tire tread.
+:::
+```{r, echo = F}
+countdown(minutes = 10)
+```
 
 ## HT via simulation
 
@@ -795,9 +810,9 @@ $H_a:\mu_{diff}\neq 0$
 
 Under $H_0$, there is no difference between the two tire brands
 
-$\Rightarrow$ the tire tread is independent of the tire brand
+$\Rightarrow$ tire tread is independent of tire brand
 
-$\Rightarrow$ randomly re-assign the tire tread independently of the tire brand.
+$\Rightarrow$ randomly re-assign tire tread independently of tire brand.
 
 ::: callout-note
 ## Re-assign *within*
@@ -967,7 +982,7 @@ ggplot(results) +
 
 ```{r}
 results %>%
-  mutate(is_more_extreme = stat_sim >= stat_obs | stat_sim <= -stat_obs) %>%
+  mutate(is_more_extreme = abs(x_diff_bar) >= abs(x_diff_obs)) %>%
   summarize(p_value = mean(is_more_extreme))
 ```
 
@@ -1031,7 +1046,7 @@ for(i in 1 : 1e3){
 ```{r}
 x_diff_obs <- compute_x_diff(tires)
 results %>%
-  mutate(is_more_extreme = x_diff_bar >= abs(x_diff_obs) | x_diff_bar <= -abs(x_diff_obs)) %>%
+  mutate(is_more_extreme = abs(x_diff_bar) >= abs(x_diff_obs)) %>%
   summarize(p_value = mean(is_more_extreme))
 ```
 
@@ -1043,6 +1058,18 @@ The p-value is larger than $\alpha=0.05$; we fail to reject the null hypothesis.
 ggplot(results) + 
   geom_histogram(aes(x_diff_bar)) +
   geom_vline(xintercept = x_diff_obs, col = "maroon", size = 2)
+```
+
+
+## 
+::: {.callout-tip icon="false"}
+## Group exercise - wider CI
+Use the `R` code from the two-mean case (case 4) to construct a CI for the difference in tire tread (the observations are not paired).
+
+You should obtain a wider interval.
+:::
+```{r, echo = F}
+countdown(minutes = 10)
 ```
 
 # Recap

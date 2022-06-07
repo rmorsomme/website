@@ -7,12 +7,13 @@ logo: "images/logo.jpg"
 format: 
   revealjs: 
     theme: slides.scss
-    multiplex: true
     transition: fade
     slide-number: true
     code-fold: false
     code-summary: "Show the code"
     scrollable: true
+    link-external-newwindow: true
+    history: false
 editor: visual
 execute:
   freeze: auto

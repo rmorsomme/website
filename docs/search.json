@@ -917,6 +917,13 @@
     "text": "Outline\n\nThe normal distribution\nOne mean (case 3)\nTwo means (case 4)\nPaired means (case 3)"
   },
   {
+    "objectID": "slides/lec-10.html#the-normal-distribution-1",
+    "href": "slides/lec-10.html#the-normal-distribution-1",
+    "title": "Inference for means",
+    "section": "The normal distribution",
+    "text": "The normal distribution\nThe distribution of a numerical variable is often modeled with a normal distribution.\n\ntibble(x = seq(-5, 5, by = 0.01)) %>%\n  mutate(normal = dnorm(x, mean = 0, sd = 1)) %>%\n  ggplot() + \n  geom_line(aes(x, normal))"
+  },
+  {
     "objectID": "slides/lec-10.html#two-parameters",
     "href": "slides/lec-10.html#two-parameters",
     "title": "Inference for means",
@@ -977,7 +984,7 @@
     "href": "slides/lec-10.html#setup",
     "title": "Inference for means",
     "section": "Setup",
-    "text": "Setup\npopulation parameter: mean \\(\\mu\\)\nSample statistics: sample average \\(\\bar{x}\\)\n\nHypothesis testing:\n\n\\(H_0:\\mu=\\mu_0\\) where \\(\\mu_0\\) is a fixed number\n\\(H_a:\\mu\\neq \\mu_0\\)\n\nConfidence interval: range of plausible values for \\(\\mu\\)."
+    "text": "Setup\nPopulation parameter: mean \\(\\mu\\)\nSample statistic: sample average \\(\\bar{x}\\)\n\nHypothesis testing:\n\n\\(H_0:\\mu=\\mu_0\\) where \\(\\mu_0\\) is a fixed number\n\\(H_a:\\mu\\neq \\mu_0\\)\n\nConfidence interval: range of plausible values for \\(\\mu\\)."
   },
   {
     "objectID": "slides/lec-10.html#section-3",
@@ -1075,7 +1082,7 @@
     "href": "slides/lec-10.html#setup-1",
     "title": "Inference for means",
     "section": "Setup",
-    "text": "Setup\nA population divided in two groups.\nPopulation parameter: difference in mean\n\\[\n\\mu_{diff}=\\mu_1-\\mu_2\n\\]\nSample statistics: difference in proportion in the sample\n\\[\n\\bar{x}_{diff}=\\bar{x}_1-\\bar{x}_2\n\\]\n\n\\(H_0:\\mu_{diff}=0\\) (no difference between the two groups)\n\\(H_a:\\mu_{diff}\\neq0\\)"
+    "text": "Setup\nA population divided in two groups.\nPopulation parameter: difference in mean\n\\[\n\\mu_{diff}=\\mu_1-\\mu_2\n\\]\nSample statistic: difference in proportion in the sample\n\\[\n\\bar{x}_{diff}=\\bar{x}_1-\\bar{x}_2\n\\]\n\n\\(H_0:\\mu_{diff}=0\\) (no difference between the two groups)\n\\(H_a:\\mu_{diff}\\neq0\\)"
   },
   {
     "objectID": "slides/lec-10.html#section-9",
@@ -1173,7 +1180,7 @@
     "href": "slides/lec-10.html#section-15",
     "title": "Inference for means",
     "section": "",
-    "text": "Group exercise - HT\n\n\n\n\n\n\nExercises 20.3 and 20.7\n\n\n\n04:00"
+    "text": "Group exercise - HT\n\n\nExercises 20.3 and 20.7\n\n\n\n\n\n\n03:00"
   },
   {
     "objectID": "slides/lec-10.html#bootstrap-ci",
@@ -1222,21 +1229,21 @@
     "href": "slides/lec-10.html#section-19",
     "title": "Inference for means",
     "section": "",
-    "text": "Group exercises - CI\n\n\nExercise 20.5 part a only\n\n\n\n\n\n\n03:00"
+    "text": "Individual exercises - CI\n\n\nExercise 20.5 part a only\n\n\n\n\n\n\n03:00"
   },
   {
     "objectID": "slides/lec-10.html#paired-data",
     "href": "slides/lec-10.html#paired-data",
     "title": "Inference for means",
     "section": "Paired data",
-    "text": "Paired data\nPaired data: two groups in which each observation in one group has exactly one corresponding observation in the other group.\nExample: pre/post-evaluations; supermarket items; batteries and electronic devices; tires and cars.\n\n\n\n\n\n\n\nPaired data is like one mean\n\n\nPaired data can be analyzed like the one-mean case (case 3)!"
+    "text": "Paired data\nPaired data: two groups in which each observation in one group has exactly one corresponding observation in the other group.\nExample: pre/post-evaluations; supermarket items; batteries and electronic devices; tires and cars.\n\n\n\n\n\n\n\nPaired data are like one mean data\n\n\nPaired data can be analyzed like the one-mean case (case 3)!"
   },
   {
     "objectID": "slides/lec-10.html#example-tire-brand",
     "href": "slides/lec-10.html#example-tire-brand",
     "title": "Inference for means",
     "section": "Example – tire brand",
-    "text": "Example – tire brand\nCompare the longevity of two brands of tire. The response variable is tire tread after 1000 miles."
+    "text": "Example – tire brand\nWe want to compare the longevity of two brands of tire. The response variable is tire tread after 1000 miles.\n25 cars drove 1000 miles. On each car, one tire was from Smooth Turn and another one was from Quick Spin. The other two tires were baseline tires."
   },
   {
     "objectID": "slides/lec-10.html#section-20",
@@ -1257,14 +1264,21 @@
     "href": "slides/lec-10.html#section-22",
     "title": "Inference for means",
     "section": "",
-    "text": "Individual exercise - paired data\n\n\nExercises 21.1, 21.3 and 21.5\n\n\n\n\n\n\n03:00"
+    "text": "Individual exercise - paired data\n\n\nDo you intuitively feel that the tire data provide convincing evidence that one tire is more durable than the other?\nExercises 21.1, 21.3 and 21.5\n\n\n\n\n\n\n04:00"
   },
   {
     "objectID": "slides/lec-10.html#ci-via-booststrap",
     "href": "slides/lec-10.html#ci-via-booststrap",
     "title": "Inference for means",
     "section": "CI via booststrap",
-    "text": "CI via booststrap\nExactly the same as for one mean (case 3).\n\n\ntires_diff <- tires %>% \n  pivot_wider(names_from = brand, values_from = tread) %>%\n  mutate(tread_diff = `Smooth Turn` - `Quick Spin`) %>%\n  select(car, tread_diff)\nhead(tires_diff)\n\n# A tibble: 6 x 2\n  car    tread_diff\n  <chr>       <dbl>\n1 car 1    -0.00258\n2 car 10   -0.00107\n3 car 11    0.00192\n4 car 12    0.00251\n5 car 13    0.00271\n6 car 14    0.00639\n\n\n\n\nSimply construct a CI for tread_diff with bootstrap samples."
+    "text": "CI via booststrap\nExactly the same as with one mean (case 3).\n\n\ntires_diff <- tires %>% \n  pivot_wider(names_from = brand, values_from = tread) %>%\n  mutate(tread_diff = `Smooth Turn` - `Quick Spin`) %>%\n  select(car, tread_diff)\nhead(tires_diff)\n\n# A tibble: 6 x 2\n  car    tread_diff\n  <chr>       <dbl>\n1 car 1    -0.00258\n2 car 10   -0.00107\n3 car 11    0.00192\n4 car 12    0.00251\n5 car 13    0.00271\n6 car 14    0.00639\n\n\n\n\nSimply construct a CI for the variable tread_diff with bootstrap samples."
+  },
+  {
+    "objectID": "slides/lec-10.html#section-23",
+    "href": "slides/lec-10.html#section-23",
+    "title": "Inference for means",
+    "section": "",
+    "text": "Group exercise - CI for paired data\n\n\nUse the R code from the one-mean case (case 3) to construct a CI for the difference in tire tread.\n\n\n\n\n\n\n10:00"
   },
   {
     "objectID": "slides/lec-10.html#ht-via-simulation",
@@ -1278,7 +1292,7 @@
     "href": "slides/lec-10.html#simulating-under-h_0-1",
     "title": "Inference for means",
     "section": "Simulating under \\(H_0\\)",
-    "text": "Simulating under \\(H_0\\)\nUnder \\(H_0\\), there is no difference between the two tire brands\n\\(\\Rightarrow\\) the tire tread is independent of the tire brand\n\\(\\Rightarrow\\) randomly re-assign the tire tread independently of the tire brand.\n\n\n\n\n\n\nRe-assign within\n\n\nThe re-assignment happens within a car; either switch the two values or keep the original allocation."
+    "text": "Simulating under \\(H_0\\)\nUnder \\(H_0\\), there is no difference between the two tire brands\n\\(\\Rightarrow\\) tire tread is independent of tire brand\n\\(\\Rightarrow\\) randomly re-assign tire tread independently of tire brand.\n\n\n\n\n\n\nRe-assign within\n\n\nThe re-assignment happens within a car; either switch the two values or keep the original allocation."
   },
   {
     "objectID": "slides/lec-10.html#re-assigning-two-cars",
@@ -1295,8 +1309,8 @@
     "text": "Re-assigning all cars"
   },
   {
-    "objectID": "slides/lec-10.html#section-23",
-    "href": "slides/lec-10.html#section-23",
+    "objectID": "slides/lec-10.html#section-24",
+    "href": "slides/lec-10.html#section-24",
     "title": "Inference for means",
     "section": "",
     "text": "Individual exercise - simulated difference\n\n\nExercise 21.9\n\n\n\n\n\n\n02:00"
@@ -1334,18 +1348,18 @@
     "href": "slides/lec-10.html#p-value-and-conclusion",
     "title": "Inference for means",
     "section": "p-value and conclusion",
-    "text": "p-value and conclusion\n\nthe probability that \\(\\bar{x}_{diff}^{sim}\\ge\\) 0.0021 or \\(\\bar{x}_{diff}^{sim}\\le\\) -0.0021.\n\n\nresults %>%\n  mutate(is_more_extreme = stat_sim >= stat_obs | stat_sim <= -stat_obs) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.012\n\n\nUsing the usual significance level \\(\\alpha = 0.05\\), we reject \\(H_0\\)."
+    "text": "p-value and conclusion\n\nthe probability that \\(\\bar{x}_{diff}^{sim}\\ge\\) 0.0021 or \\(\\bar{x}_{diff}^{sim}\\le\\) -0.0021.\n\n\nresults %>%\n  mutate(is_more_extreme = abs(x_diff_bar) >= abs(x_diff_obs)) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1       0\n\n\nUsing the usual significance level \\(\\alpha = 0.05\\), we reject \\(H_0\\)."
   },
   {
-    "objectID": "slides/lec-10.html#section-24",
-    "href": "slides/lec-10.html#section-24",
+    "objectID": "slides/lec-10.html#section-25",
+    "href": "slides/lec-10.html#section-25",
     "title": "Inference for means",
     "section": "",
     "text": "Individual exercise - HT\n\n\nExercise 21.11\n\n\n\n\n\n\n02:00"
   },
   {
-    "objectID": "slides/lec-10.html#section-25",
-    "href": "slides/lec-10.html#section-25",
+    "objectID": "slides/lec-10.html#section-26",
+    "href": "slides/lec-10.html#section-26",
     "title": "Inference for means",
     "section": "",
     "text": "Always pair\n\n\nIf the data can paired, you should always do it! Pairing data yields an analysis that is more powerful:\n\nnarrower CI\nsmaller p-values"
@@ -1362,14 +1376,21 @@
     "href": "slides/lec-10.html#larger-p-value",
     "title": "Inference for means",
     "section": "Larger p-value",
-    "text": "Larger p-value\n\ncompute_x_diff <- function(data){\n  x_bar <- data %>%\n    group_by(brand) %>%\n    summarize(x_bar = mean(tread))\n  x_diff_bar <- x_bar$x_bar[1] - x_bar$x_bar[2]\n  return(x_diff_bar)\n}\ncompute_x_diff(tires)\n\n[1] -0.0020934\n\n\n\nresults   <- tibble(x_diff_bar = numeric())\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_sim      <- tires %>% mutate(tread = sample(tread)) # simulate under H0\n  x_diff_bar <- compute_x_diff(d_sim) # test statistic\n  results    <- results %>% add_row(x_diff_bar)\n}\n\n\nx_diff_obs <- compute_x_diff(tires)\nresults %>%\n  mutate(is_more_extreme = x_diff_bar >= abs(x_diff_obs) | x_diff_bar <= -abs(x_diff_obs)) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.229\n\n\nThe p-value is larger than \\(\\alpha=0.05\\); we fail to reject the null hypothesis."
+    "text": "Larger p-value\n\ncompute_x_diff <- function(data){\n  x_bar <- data %>%\n    group_by(brand) %>%\n    summarize(x_bar = mean(tread))\n  x_diff_bar <- x_bar$x_bar[1] - x_bar$x_bar[2]\n  return(x_diff_bar)\n}\ncompute_x_diff(tires)\n\n[1] -0.0020934\n\n\n\nresults   <- tibble(x_diff_bar = numeric())\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_sim      <- tires %>% mutate(tread = sample(tread)) # simulate under H0\n  x_diff_bar <- compute_x_diff(d_sim) # test statistic\n  results    <- results %>% add_row(x_diff_bar)\n}\n\n\nx_diff_obs <- compute_x_diff(tires)\nresults %>%\n  mutate(is_more_extreme = abs(x_diff_bar) >= abs(x_diff_obs)) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.229\n\n\nThe p-value is larger than \\(\\alpha=0.05\\); we fail to reject the null hypothesis."
   },
   {
-    "objectID": "slides/lec-10.html#section-26",
-    "href": "slides/lec-10.html#section-26",
+    "objectID": "slides/lec-10.html#section-27",
+    "href": "slides/lec-10.html#section-27",
     "title": "Inference for means",
     "section": "",
     "text": "ggplot(results) + \n  geom_histogram(aes(x_diff_bar)) +\n  geom_vline(xintercept = x_diff_obs, col = \"maroon\", size = 2)"
+  },
+  {
+    "objectID": "slides/lec-10.html#section-28",
+    "href": "slides/lec-10.html#section-28",
+    "title": "Inference for means",
+    "section": "",
+    "text": "Group exercise - wider CI\n\n\nUse the R code from the two-mean case (case 4) to construct a CI for the difference in tire tread (the observations are not paired).\nYou should obtain a wider interval.\n\n\n\n\n\n\n10:00"
   },
   {
     "objectID": "slides/lec-10.html#recap-2",

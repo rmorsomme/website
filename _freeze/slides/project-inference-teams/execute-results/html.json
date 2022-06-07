@@ -1,8 +1,10 @@
 {
-  "hash": "84da9e63633da18a6f466cb42bf014fc",
+  "hash": "c8db44326edeb1922dd5e9c0ee8843d8",
   "result": {
-    "markdown": "---\ntitle: \"\"\nsubtitle: \"\"\nauthor: \"Raphael Morsomme\"\nfooter:  \"[https://rmorsomme.github.io/website/](https://rmorsomme.github.io/website/)\"\nlogo: \"images/logo.jpg\"\nformat: \n  revealjs: \n    theme: slides.scss\n    multiplex: true\n    transition: fade\n    slide-number: true\n    code-fold: false\n    code-summary: \"Show the code\"\n    scrollable: true\neditor: visual\nexecute:\n  freeze: auto\n  echo: true\neditor_options: \n  chunk_output_type: console\n---\n\n\n\nHere are the teams for the prediction project.\n\n::: {.cell layout-align=\"center\"}\n\n```{.r .cell-code}\n  set.seed(5) # set the seed for the random number generator\n  teams <- sample(\n    c(\"Hayden\", \"Janice\", \"Kennedy\", \"Maggie\", \"Melissa\", \"Yuanzhi\"), # elements from which to choose\n    size = 6 # number of items to choose\n    )\n  print(paste0(\"Team 1: \", teams[1], \" and \", teams[2]))\n  print(paste0(\"Team 2: \", teams[3], \" and \", teams[4]))\n  print(paste0(\"Team 3: \", teams[5], \" and \", teams[6]))\n```\n\n::: {.cell-output-stdout}\n```\n[1] \"Team 1: Janice and Kennedy\"\n[1] \"Team 2: Hayden and Melissa\"\n[1] \"Team 3: Maggie and Yuanzhi\"\n```\n:::\n:::",
-    "supporting": [],
+    "markdown": "---\ntitle: \"\"\nsubtitle: \"\"\nauthor: \"Raphael Morsomme\"\nfooter:  \"[https://rmorsomme.github.io/website/](https://rmorsomme.github.io/website/)\"\nlogo: \"images/logo.jpg\"\nformat: \n  revealjs: \n    theme: slides.scss\n    transition: fade\n    slide-number: true\n    code-fold: false\n    code-summary: \"Show the code\"\n    scrollable: true\n    link-external-newwindow: true\n    history: false\neditor: visual\nexecute:\n  freeze: auto\n  echo: true\neditor_options: \n  chunk_output_type: console\n---\n\n\n\nHere are the teams for the prediction project.\n\n::: {.cell layout-align=\"center\"}\n\n```{.r .cell-code}\n  set.seed(5) # set the seed for the random number generator\n  teams <- sample(\n    c(\"Hayden\", \"Janice\", \"Kennedy\", \"Maggie\", \"Melissa\", \"Yuanzhi\"), # elements from which to choose\n    size = 6 # number of items to choose\n    )\n  print(paste0(\"Team 1: \", teams[1], \" and \", teams[2]))\n  print(paste0(\"Team 2: \", teams[3], \" and \", teams[4]))\n  print(paste0(\"Team 3: \", teams[5], \" and \", teams[6]))\n```\n\n::: {.cell-output-stdout}\n```\n[1] \"Team 1: Janice and Kennedy\"\n[1] \"Team 2: Hayden and Melissa\"\n[1] \"Team 3: Maggie and Yuanzhi\"\n```\n:::\n:::",
+    "supporting": [
+      "project-inference-teams_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
