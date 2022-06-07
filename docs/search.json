@@ -1218,11 +1218,11 @@
     "text": "ggplot(results) +\n  geom_histogram(aes(x_diff_bar))  + \n  geom_vline(xintercept = quantile(results$x_diff_bar, c(0.05 , 0.95 )), col = \"gold1\", size = 2) + # 90% CI \n  geom_vline(xintercept = quantile(results$x_diff_bar, c(0.025, 0.975)), col = \"maroon\", size = 2) # 95% CI"
   },
   {
-    "objectID": "slides/lec-10.html#ct-and-ht",
-    "href": "slides/lec-10.html#ct-and-ht",
+    "objectID": "slides/lec-10.html#ci-and-ht",
+    "href": "slides/lec-10.html#ci-and-ht",
     "title": "Inference for means",
-    "section": "CT and HT",
-    "text": "CT and HT\n\n\n\n\n\n\nTwo sides of the same coin\n\n\nThe two CIs include 0. This indicates that 0 is a plausible value for the difference in mean in the population. This is exactly what the HT concluded!"
+    "section": "CI and HT",
+    "text": "CI and HT\n\n\n\n\n\n\nTwo sides of the same coin\n\n\nThe two CIs include 0. This indicates that 0 is a plausible value for the difference in mean in the population. This is exactly what the HT concluded!"
   },
   {
     "objectID": "slides/lec-10.html#section-19",
@@ -1348,7 +1348,7 @@
     "href": "slides/lec-10.html#p-value-and-conclusion",
     "title": "Inference for means",
     "section": "p-value and conclusion",
-    "text": "p-value and conclusion\n\nthe probability that \\(\\bar{x}_{diff}^{sim}\\ge\\) 0.0021 or \\(\\bar{x}_{diff}^{sim}\\le\\) -0.0021.\n\n\nresults %>%\n  mutate(is_more_extreme = abs(x_diff_bar) >= abs(x_diff_obs)) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1       0\n\n\nUsing the usual significance level \\(\\alpha = 0.05\\), we reject \\(H_0\\)."
+    "text": "p-value and conclusion\n\nthe probability that \\(\\bar{x}_{diff}^{sim}\\ge\\) 0.0021 or \\(\\bar{x}_{diff}^{sim}\\le\\) -0.0021.\n\n\nresults %>%\n  mutate(is_more_extreme = stat_sim >= stat_obs | stat_sim <= -stat_obs) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.012\n\n\nUsing the usual significance level \\(\\alpha = 0.05\\), we reject \\(H_0\\)."
   },
   {
     "objectID": "slides/lec-10.html#section-25",

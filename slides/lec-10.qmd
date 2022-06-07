@@ -656,7 +656,7 @@ ggplot(results) +
   geom_vline(xintercept = quantile(results$x_diff_bar, c(0.025, 0.975)), col = "maroon", size = 2) # 95% CI
 ```
 
-## CT and HT
+## CI and HT
 
 ::: callout-note
 ## Two sides of the same coin
@@ -985,7 +985,7 @@ ggplot(results) +
 
 ```{r}
 results %>%
-  mutate(is_more_extreme = abs(x_diff_bar) >= abs(x_diff_obs)) %>%
+  mutate(is_more_extreme = stat_sim >= stat_obs | stat_sim <= -stat_obs) %>%
   summarize(p_value = mean(is_more_extreme))
 ```
 
