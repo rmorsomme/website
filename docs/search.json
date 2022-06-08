@@ -389,7 +389,7 @@
     "href": "project-inference.html#data",
     "title": "Inference project",
     "section": "Data",
-    "text": "Data\nThe data set that you analyze in this project needs to have at least 100 observations and 5 meaningful variables (identifier variables such as “name”, “social security number” or “id” do not count), including at least one categorical and one numerical variable.\nYou are welcome to analyze data from your own work/research or to use any real data set that is publicly available. Here are a few examples.\n\nU.S. birth data (see prediction project)\nDuke Lemur Center\nCar fuel economy – EPA"
+    "text": "Data\nThe data set that you analyze needs to have at least 100 observations and 5 meaningful variables (identifier variables such as “name”, “social security number” or “id” do not count), including at least one categorical and one numerical variable.\nYou are welcome to analyze data from your own work/research or to use any real data set that is publicly available. Here are a few examples.\n\nU.S. birth data (see prediction project)\nDuke Lemur Center\nCar fuel economy – EPA"
   },
   {
     "objectID": "project-inference.html#submission",

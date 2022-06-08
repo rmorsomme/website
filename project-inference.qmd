@@ -26,7 +26,7 @@ By participating in this project, you pledge to uphold the Duke Community Standa
 
 ## Data
 
-The data set that you analyze in this project needs to have at least 100 observations and 5 meaningful variables (identifier variables such as "name", "social security number" or "id" do not count), including at least one categorical and one numerical variable.
+The data set that you analyze needs to have at least 100 observations and 5 meaningful variables (identifier variables such as "name", "social security number" or "id" do not count), including at least one categorical and one numerical variable.
 
 You are welcome to analyze data from your own work/research or to use any real data set that is publicly available. Here are a few examples.
 
@@ -59,69 +59,72 @@ The three primary deliverables for this project are:
 The report should include the following sections, though you should feel free to include additional sections as necessary.
 
 -   **Introduction**: introduce the subject matter that you are investigating, the general research question you are exploring, the motivation for this research question and the data you are analyzing to answer that question.
+
 -   **Data**: describe the data set and the variables that you consider in the analysis (no need to list all 500 variables present in your data). Visualize and summarize the response variable, important predictors and any new variable that you have engineered.
+
 -   **Methodology**: describe the modeling and inferential process. Motivate your decisions (type of regression model, type of statistical inference, outliers, feature engineering, model selection, etc).
+
 -   **Results and discussion**: provide the results of your analysis; including the output of the selectd regression model, the confidence interval and the result of the hypothesis test. Interpret the results you have obtained in the context of the subject matter and original research question. Are any of your findings unexpected? Briefly discuss any limitation to your work.
 
 # Rubric (30 points)
 
-+---------------------------------------------------------------------------------------------------+------------+
-| **Part**                                                                                          | **Points** |
-+:==================================================================================================+:==========:+
-| **Report**                                                                                        | **4**      |
-|                                                                                                   |            |
-| -   The analysis is fully reproducible                                                            | 2          |
-|                                                                                                   |            |
-| -   The main body is at most 7 pages long and does not contain any `R` code, warning nor message. | 1          |
-|                                                                                                   |            |
-| -   Subject knowledge is used to guide the analysis                                               | 1          |
-+---------------------------------------------------------------------------------------------------+------------+
-| **Data visualization**                                                                            | **7**      |
-|                                                                                                   |            |
-| -   The data are visually explored with meaningful figures                                        | 1          |
-|                                                                                                   |            |
-| -   At least three figures present 3 or more variables                                            | 3          |
-|                                                                                                   |            |
-| -   The figures are neatly formatted                                                              | 1          |
-|                                                                                                   |            |
-| -   Outliers and missing values, if any, are identified and adequately handled                    | 2          |
-+---------------------------------------------------------------------------------------------------+------------+
-| **Regression**                                                                                    | **7**      |
-|                                                                                                   |            |
-| -   At least two new variables are engineered (transformation or combination)                     | 2          |
-|                                                                                                   |            |
-| -   At least two models are fitted                                                                | 2          |
-|                                                                                                   |            |
-| -   The models are compared using an overall criterion                                            | 1          |
-|                                                                                                   |            |
-| -   The models are compared using a method based on prediction accuracy                           | 1          |
-|                                                                                                   |            |
-| -   The output of the selected regression model is correctly interpreted                          | 1          |
-+---------------------------------------------------------------------------------------------------+------------+
-| **Statistical inference**                                                                         | **7**      |
-|                                                                                                   |            |
-| -   A confidence interval is constructed using bootstrap                                          | 2          |
-|                                                                                                   |            |
-| -   A confidence interval is constructed using the mathematical model                             | 1          |
-|                                                                                                   |            |
-| -   A hypothesis test is conducted using simulation                                               | 2          |
-|                                                                                                   |            |
-| -   A hypothesis test is conducted using the mathematical model                                   | 1          |
-|                                                                                                   |            |
-| -   The conditions for the mathematical model are assessed                                        | 1          |
-+---------------------------------------------------------------------------------------------------+------------+
-| **Presentation**                                                                                  | **5**      |
-|                                                                                                   |            |
-| -   The slides are neatly formatted                                                               | 1          |
-|                                                                                                   |            |
-| -   The presentation is at most 10 minutes long                                                   | 1          |
-|                                                                                                   |            |
-| -   You ask at least one question during QA                                                       | 1          |
-|                                                                                                   |            |
-| -   You make at least one critical comment (suggestion, criticism, etc)                           | 2          |
-+---------------------------------------------------------------------------------------------------+------------+
-| **Total**                                                                                         | 30         |
-+---------------------------------------------------------------------------------------------------+------------+
++----------------------------------------------------------------------------------------------------+------------+
+| **Part**                                                                                           | **Points** |
++:===================================================================================================+:==========:+
+| **Report**                                                                                         | **4**      |
+|                                                                                                    |            |
+| -   The analysis is fully reproducible                                                             | 2          |
+|                                                                                                    |            |
+| -   The main body is at most 10 pages long and does not contain any `R` code, warning nor message. | 1          |
+|                                                                                                    |            |
+| -   Subject knowledge is used to guide the analysis                                                | 1          |
++----------------------------------------------------------------------------------------------------+------------+
+| **Data visualization**                                                                             | **7**      |
+|                                                                                                    |            |
+| -   The data are visually explored with meaningful figures                                         | 1          |
+|                                                                                                    |            |
+| -   At least three figures present 3 or more variables                                             | 3          |
+|                                                                                                    |            |
+| -   The figures are neatly formatted                                                               | 1          |
+|                                                                                                    |            |
+| -   Outliers and missing values, if any, are identified and adequately handled                     | 2          |
++----------------------------------------------------------------------------------------------------+------------+
+| **Regression**                                                                                     | **7**      |
+|                                                                                                    |            |
+| -   At least two new variables are engineered (transformation or combination)                      | 2          |
+|                                                                                                    |            |
+| -   At least two models are fitted                                                                 | 2          |
+|                                                                                                    |            |
+| -   The models are compared using an overall criterion                                             | 1          |
+|                                                                                                    |            |
+| -   The models are compared using a method based on prediction accuracy                            | 1          |
+|                                                                                                    |            |
+| -   The output of the selected regression model is correctly interpreted                           | 1          |
++----------------------------------------------------------------------------------------------------+------------+
+| **Statistical inference**                                                                          | **7**      |
+|                                                                                                    |            |
+| -   A confidence interval is constructed using bootstrap                                           | 2          |
+|                                                                                                    |            |
+| -   A confidence interval is constructed using the mathematical model                              | 1          |
+|                                                                                                    |            |
+| -   A hypothesis test is conducted using simulation                                                | 2          |
+|                                                                                                    |            |
+| -   A hypothesis test is conducted using the mathematical model                                    | 1          |
+|                                                                                                    |            |
+| -   The conditions for the mathematical model are assessed                                         | 1          |
++----------------------------------------------------------------------------------------------------+------------+
+| **Presentation**                                                                                   | **5**      |
+|                                                                                                    |            |
+| -   The slides are neatly formatted                                                                | 1          |
+|                                                                                                    |            |
+| -   The presentation is at most 10 minutes long                                                    | 1          |
+|                                                                                                    |            |
+| -   You ask at least one question during QA                                                        | 1          |
+|                                                                                                    |            |
+| -   You make at least one critical comment (suggestion, criticism, etc)                            | 2          |
++----------------------------------------------------------------------------------------------------+------------+
+| **Total**                                                                                          | 30         |
++----------------------------------------------------------------------------------------------------+------------+
 
 Each component will be graded as follows:
 
