@@ -2,4 +2,130 @@
 title: "Inference project"
 ---
 
-Details about the inference project will be provided in week 4.
+## Overview
+
+In the inference project, you will work in pairs to conduct a statistical analysis of a data set that interests you. You will present your work on **Friday, June 17** during the lab and submit a written report by **Thursday, June 23, 9:00pm**. You can find your teammate [here](/slides/project-inference-teams.html).
+
+🍀 Good luck! 🍀
+
+## Introduction
+
+The goal of the inference project is for you to use data visualization, regression modelling and statistical inference to analyze a data set of your choice, demonstrating proficiency in the techniques covered in class and applying them to a real data set in a meaningful way.
+
+All analyses must be done in RMarkdown, and all components of the project must be reproducible (with the exception of the presentation).
+
+## Academic Integrity
+
+By participating in this project, you pledge to uphold the Duke Community Standard:
+
+-   I will not lie, cheat, or steal in my academic endeavors;
+
+-   I will conduct myself honorably in all my endeavors; and
+
+-   I will act if the Standard is compromised.
+
+## Data
+
+The data set that you analyze in this project needs to have at least 100 observations and 5 meaningful variables (identifier variables such as "name", "social security number" or "id" do not count), including at least one categorical and one numerical variable.
+
+You are welcome to analyze data from your own work/research or to use any real data set that is publicly available. Here are a few examples.
+
+-   U.S. birth data (see prediction project)
+
+-   [Duke Lemur Center](https://www.kaggle.com/datasets/jessemostipak/duke-lemur-center-data)
+
+-   [Car fuel economy -- EPA](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-10-15)
+
+## Submission
+
+The three primary deliverables for this project are:
+
+-   **Formal presentation**: you will present your work orally to rest of the class. The presentation should be no longer than 10 minutes (aim for 10 slides). The two team members should speak roughly the same amount of time. Each presentation will be followed by a short QA session.
+
+-   **Final report (pdf)**: The final report details your work. It needs to be realized using RMarkdown and submitted on Gradescope as a PDF. This report should not contain any `R` code, message or warning. To ensure that this is the case, simply use the following as the first code chunk of your document.
+
+    > \`\`\`{r set-up, include = FALSE}
+    > knitr::opts_chunk\$set(echo = FALSE, warning = FALSE, message = FALSE)
+    >
+    > \`\`\`
+
+    The page limit is 10 pages (excluding the appendix). Figures should go in the appendix, along with any work that you wish to include, but which does not fit in the main body. Grading will largely be based on the content in the main body of the report. You should assume that the reader will not see the material in the appendix unless prompted to view it in the main body of the report.
+
+-   **Final report (RMD)**: You need to submit the RMD file used to make the report for reproducibility. You can simply email it to the instruction team. The instructors need to be able to reproduce your analysis by knitting your document. If the RMD file depends on other files, e.g. data sets, make sure to send these as well.
+
+## Report content
+
+The report should include the following sections, though you should feel free to include additional sections as necessary.
+
+-   **Introduction**: introduce the subject matter that you are investigating, the general research question you are exploring, the motivation for this research question and the data you are analyzing to answer that question.
+-   **Data**: describe the data set and the variables that you consider in the analysis (no need to list all 500 variables present in your data). Visualize and summarize the response variable, important predictors and any new variable that you have engineered.
+-   **Methodology**: describe the modeling and inferential process. Motivate your decisions (type of regression model, type of statistical inference, outliers, feature engineering, model selection, etc).
+-   **Results and discussion**: provide the results of your analysis; including the output of the selectd regression model, the confidence interval and the result of the hypothesis test. Interpret the results you have obtained in the context of the subject matter and original research question. Are any of your findings unexpected? Briefly discuss any limitation to your work.
+
+# Rubric (30 points)
+
++---------------------------------------------------------------------------------------------------+------------+
+| **Part**                                                                                          | **Points** |
++:==================================================================================================+:==========:+
+| **Report**                                                                                        | **4**      |
+|                                                                                                   |            |
+| -   The analysis is fully reproducible                                                            | 2          |
+|                                                                                                   |            |
+| -   The main body is at most 7 pages long and does not contain any `R` code, warning nor message. | 1          |
+|                                                                                                   |            |
+| -   Subject knowledge is used to guide the analysis                                               | 1          |
++---------------------------------------------------------------------------------------------------+------------+
+| **Data visualization**                                                                            | **7**      |
+|                                                                                                   |            |
+| -   The data are visually explored with meaningful figures                                        | 1          |
+|                                                                                                   |            |
+| -   At least three figures present 3 or more variables                                            | 3          |
+|                                                                                                   |            |
+| -   The figures are neatly formatted                                                              | 1          |
+|                                                                                                   |            |
+| -   Outliers and missing values, if any, are identified and adequately handled                    | 2          |
++---------------------------------------------------------------------------------------------------+------------+
+| **Regression**                                                                                    | **7**      |
+|                                                                                                   |            |
+| -   At least two new variables are engineered (transformation or combination)                     | 2          |
+|                                                                                                   |            |
+| -   At least two models are fitted                                                                | 2          |
+|                                                                                                   |            |
+| -   The models are compared using an overall criterion                                            | 1          |
+|                                                                                                   |            |
+| -   The models are compared using a method based on prediction accuracy                           | 1          |
+|                                                                                                   |            |
+| -   The output of the selected regression model is correctly interpreted                          | 1          |
++---------------------------------------------------------------------------------------------------+------------+
+| **Statistical inference**                                                                         | **7**      |
+|                                                                                                   |            |
+| -   A confidence interval is constructed using bootstrap                                          | 2          |
+|                                                                                                   |            |
+| -   A confidence interval is constructed using the mathematical model                             | 1          |
+|                                                                                                   |            |
+| -   A hypothesis test is conducted using simulation                                               | 2          |
+|                                                                                                   |            |
+| -   A hypothesis test is conducted using the mathematical model                                   | 1          |
+|                                                                                                   |            |
+| -   The conditions for the mathematical model are assessed                                        | 1          |
++---------------------------------------------------------------------------------------------------+------------+
+| **Presentation**                                                                                  | **5**      |
+|                                                                                                   |            |
+| -   The slides are neatly formatted                                                               | 1          |
+|                                                                                                   |            |
+| -   The presentation is at most 10 minutes long                                                   | 1          |
+|                                                                                                   |            |
+| -   You ask at least one question during QA                                                       | 1          |
+|                                                                                                   |            |
+| -   You make at least one critical comment (suggestion, criticism, etc)                           | 2          |
++---------------------------------------------------------------------------------------------------+------------+
+| **Total**                                                                                         | 30         |
++---------------------------------------------------------------------------------------------------+------------+
+
+Each component will be graded as follows:
+
+-   **Meets expectations (full credit)**
+
+-   **Close to expectations (half credit)**
+
+-   **Does not meet expectations (no credit)**

@@ -54,7 +54,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 </head>
-<body class="docked fullcontent">
+<body class="docked">
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -158,16 +158,181 @@
     </div>
 </nav>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+<h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+<li><a href="#introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+<li><a href="#academic-integrity" class="nav-link" data-scroll-target="#academic-integrity">Academic Integrity</a></li>
+<li><a href="#data" class="nav-link" data-scroll-target="#data">Data</a></li>
+<li><a href="#submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+<li><a href="#report-content" class="nav-link" data-scroll-target="#report-content">Report content</a></li>
+<li><a href="#rubric-30-points" class="nav-link" data-scroll-target="#rubric-30-points">Rubric (30 points)</a></li>
+</ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rmorsomme/website/edit/main/project-inference.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/rmorsomme/website/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 <header id="title-block-header" class="quarto-title-block default">
 
 <div class="quarto-title"><h1 class="title d-none d-lg-block display-7">Inference project</h1></div></header>
-<p>Details about the inference project will be provided in week 4.</p>
+
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>In the inference project, you will work in pairs to conduct a statistical analysis of a data set that interests you. You will present your work on <strong>Friday, June 17</strong> during the lab and submit a written report by <strong>Thursday, June 23, 9:00pm</strong>. You can find your teammate <a href="./slides/project-inference-teams.html">here</a>.</p>
+<p>🍀 Good luck! 🍀</p>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>The goal of the inference project is for you to use data visualization, regression modelling and statistical inference to analyze a data set of your choice, demonstrating proficiency in the techniques covered in class and applying them to a real data set in a meaningful way.</p>
+<p>All analyses must be done in RMarkdown, and all components of the project must be reproducible (with the exception of the presentation).</p>
+</section>
+<section id="academic-integrity" class="level2">
+<h2 class="anchored" data-anchor-id="academic-integrity">Academic Integrity</h2>
+<p>By participating in this project, you pledge to uphold the Duke Community Standard:</p>
+<ul>
+<li><p>I will not lie, cheat, or steal in my academic endeavors;</p></li>
+<li><p>I will conduct myself honorably in all my endeavors; and</p></li>
+<li><p>I will act if the Standard is compromised.</p></li>
+</ul>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The data set that you analyze in this project needs to have at least 100 observations and 5 meaningful variables (identifier variables such as “name”, “social security number” or “id” do not count), including at least one categorical and one numerical variable.</p>
+<p>You are welcome to analyze data from your own work/research or to use any real data set that is publicly available. Here are a few examples.</p>
+<ul>
+<li><p>U.S. birth data (see prediction project)</p></li>
+<li><p><a href="https://www.kaggle.com/datasets/jessemostipak/duke-lemur-center-data">Duke Lemur Center</a></p></li>
+<li><p><a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-10-15">Car fuel economy – EPA</a></p></li>
+</ul>
+</section>
+<section id="submission" class="level2">
+<h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<p>The three primary deliverables for this project are:</p>
+<ul>
+<li><p><strong>Formal presentation</strong>: you will present your work orally to rest of the class. The presentation should be no longer than 10 minutes (aim for 10 slides). The two team members should speak roughly the same amount of time. Each presentation will be followed by a short QA session.</p></li>
+<li><p><strong>Final report (pdf)</strong>: The final report details your work. It needs to be realized using RMarkdown and submitted on Gradescope as a PDF. This report should not contain any <code>R</code> code, message or warning. To ensure that this is the case, simply use the following as the first code chunk of your document.</p>
+<blockquote class="blockquote">
+<p>```{r set-up, include = FALSE} knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)</p>
+<p>```</p>
+</blockquote>
+<p>The page limit is 10 pages (excluding the appendix). Figures should go in the appendix, along with any work that you wish to include, but which does not fit in the main body. Grading will largely be based on the content in the main body of the report. You should assume that the reader will not see the material in the appendix unless prompted to view it in the main body of the report.</p></li>
+<li><p><strong>Final report (RMD)</strong>: You need to submit the RMD file used to make the report for reproducibility. You can simply email it to the instruction team. The instructors need to be able to reproduce your analysis by knitting your document. If the RMD file depends on other files, e.g.&nbsp;data sets, make sure to send these as well.</p></li>
+</ul>
+</section>
+<section id="report-content" class="level2">
+<h2 class="anchored" data-anchor-id="report-content">Report content</h2>
+<p>The report should include the following sections, though you should feel free to include additional sections as necessary.</p>
+<ul>
+<li><strong>Introduction</strong>: introduce the subject matter that you are investigating, the general research question you are exploring, the motivation for this research question and the data you are analyzing to answer that question.</li>
+<li><strong>Data</strong>: describe the data set and the variables that you consider in the analysis (no need to list all 500 variables present in your data). Visualize and summarize the response variable, important predictors and any new variable that you have engineered.</li>
+<li><strong>Methodology</strong>: describe the modeling and inferential process. Motivate your decisions (type of regression model, type of statistical inference, outliers, feature engineering, model selection, etc).</li>
+<li><strong>Results and discussion</strong>: provide the results of your analysis; including the output of the selectd regression model, the confidence interval and the result of the hypothesis test. Interpret the results you have obtained in the context of the subject matter and original research question. Are any of your findings unexpected? Briefly discuss any limitation to your work.</li>
+</ul>
+</section>
+<section id="rubric-30-points" class="level1">
+<h1>Rubric (30 points)</h1>
+<table class="table">
+<colgroup>
+<col style="width: 88%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Part</strong></th>
+<th style="text-align: center;"><strong>Points</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><p><strong>Report</strong></p>
+<ul>
+<li><p>The analysis is fully reproducible</p></li>
+<li><p>The main body is at most 7 pages long and does not contain any <code>R</code> code, warning nor message.</p></li>
+<li><p>Subject knowledge is used to guide the analysis</p></li>
+</ul></td>
+<td style="text-align: center;"><p><strong>4</strong></p>
+<p>2</p>
+<p>1</p>
+<p>1</p></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><p><strong>Data visualization</strong></p>
+<ul>
+<li><p>The data are visually explored with meaningful figures</p></li>
+<li><p>At least three figures present 3 or more variables</p></li>
+<li><p>The figures are neatly formatted</p></li>
+<li><p>Outliers and missing values, if any, are identified and adequately handled</p></li>
+</ul></td>
+<td style="text-align: center;"><p><strong>7</strong></p>
+<p>1</p>
+<p>3</p>
+<p>1</p>
+<p>2</p></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><p><strong>Regression</strong></p>
+<ul>
+<li><p>At least two new variables are engineered (transformation or combination)</p></li>
+<li><p>At least two models are fitted</p></li>
+<li><p>The models are compared using an overall criterion</p></li>
+<li><p>The models are compared using a method based on prediction accuracy</p></li>
+<li><p>The output of the selected regression model is correctly interpreted</p></li>
+</ul></td>
+<td style="text-align: center;"><p><strong>7</strong></p>
+<p>2</p>
+<p>2</p>
+<p>1</p>
+<p>1</p>
+<p>1</p></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><p><strong>Statistical inference</strong></p>
+<ul>
+<li><p>A confidence interval is constructed using bootstrap</p></li>
+<li><p>A confidence interval is constructed using the mathematical model</p></li>
+<li><p>A hypothesis test is conducted using simulation</p></li>
+<li><p>A hypothesis test is conducted using the mathematical model</p></li>
+<li><p>The conditions for the mathematical model are assessed</p></li>
+</ul></td>
+<td style="text-align: center;"><p><strong>7</strong></p>
+<p>2</p>
+<p>1</p>
+<p>2</p>
+<p>1</p>
+<p>1</p></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><p><strong>Presentation</strong></p>
+<ul>
+<li><p>The slides are neatly formatted</p></li>
+<li><p>The presentation is at most 10 minutes long</p></li>
+<li><p>You ask at least one question during QA</p></li>
+<li><p>You make at least one critical comment (suggestion, criticism, etc)</p></li>
+</ul></td>
+<td style="text-align: center;"><p><strong>5</strong></p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>2</p></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: center;">30</td>
+</tr>
+</tbody>
+</table>
+<p>Each component will be graded as follows:</p>
+<ul>
+<li><p><strong>Meets expectations (full credit)</strong></p></li>
+<li><p><strong>Close to expectations (half credit)</strong></p></li>
+<li><p><strong>Does not meet expectations (no credit)</strong></p></li>
+</ul>
 
 
 
+</section>
 </main> <!-- /main -->
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

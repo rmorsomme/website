@@ -387,20 +387,20 @@
 
 <section class="slide level2">
 
-<p>Here are the teams for the prediction project.</p>
+<p>Here are the teams for the inference project.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>  <span class="fu">set.seed</span>(<span class="dv">5</span>) <span class="co"># set the seed for the random number generator</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>  <span class="fu">set.seed</span>(<span class="dv">22</span>) <span class="co"># set the seed for the random number generator</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a>  teams <span class="ot">&lt;-</span> <span class="fu">sample</span>(</span>
-<span id="cb1-3"><a href="#cb1-3"></a>    <span class="fu">c</span>(<span class="st">"Hayden"</span>, <span class="st">"Janice"</span>, <span class="st">"Kennedy"</span>, <span class="st">"Maggie"</span>, <span class="st">"Melissa"</span>, <span class="st">"Yuanzhi"</span>), <span class="co"># elements from which to choose</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a>    <span class="at">size =</span> <span class="dv">6</span> <span class="co"># number of items to choose</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="fu">c</span>(<span class="st">"Hayden"</span>, <span class="st">"Janice"</span>, <span class="st">"Kennedy"</span>, <span class="st">"Maggie"</span>, <span class="st">"Melissa"</span>, <span class="st">"Yuanzhi"</span>), <span class="co"># students from which to choose</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>    <span class="at">size =</span> <span class="dv">6</span> <span class="co"># number of students to choose</span></span>
 <span id="cb1-5"><a href="#cb1-5"></a>    )</span>
 <span id="cb1-6"><a href="#cb1-6"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Team 1: "</span>, teams[<span class="dv">1</span>], <span class="st">" and "</span>, teams[<span class="dv">2</span>]))</span>
 <span id="cb1-7"><a href="#cb1-7"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Team 2: "</span>, teams[<span class="dv">3</span>], <span class="st">" and "</span>, teams[<span class="dv">4</span>]))</span>
 <span id="cb1-8"><a href="#cb1-8"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Team 3: "</span>, teams[<span class="dv">5</span>], <span class="st">" and "</span>, teams[<span class="dv">6</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>[1] "Team 1: Janice and Kennedy"
-[1] "Team 2: Hayden and Melissa"
-[1] "Team 3: Maggie and Yuanzhi"</code></pre>
+<pre><code>[1] "Team 1: Yuanzhi and Hayden"
+[1] "Team 2: Maggie and Janice"
+[1] "Team 3: Kennedy and Melissa"</code></pre>
 </div>
 </div>
 

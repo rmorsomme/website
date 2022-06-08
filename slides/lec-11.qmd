@@ -52,7 +52,11 @@ options(scipen = 100)
 
 ## Announcements
 
--   
+-   Inference project
+
+    -   teams
+
+    -   2 data sets or topics by tomorrow's lab
 
 ## Recap {.smaller}
 
@@ -270,7 +274,7 @@ sample_bootstrap(d)
 
 Source: [IMS](https://www.openintro.org/book/ims/)
 
-##
+## 
 
 ```{r, cache=TRUE}
 results <- tibble(stat_boot = numeric())
@@ -306,7 +310,6 @@ quantile(results$stat_boot, c(0.05 , 0.95 )) # 90% CI
 ```{r}
 quantile(results$stat_boot, c(0.01, 0.99)) # 98% CI (includes 0)
 ```
-
 
 ## CI and HT
 

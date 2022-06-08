@@ -51,8 +51,8 @@ Here are the teams for the prediction project.
 ```{r, results='hold'}
   set.seed(5) # set the seed for the random number generator
   teams <- sample(
-    c("Hayden", "Janice", "Kennedy", "Maggie", "Melissa", "Yuanzhi"), # elements from which to choose
-    size = 6 # number of items to choose
+    c("Hayden", "Janice", "Kennedy", "Maggie", "Melissa", "Yuanzhi"), # students from which to choose
+    size = 6 # number of students to choose
     )
   print(paste0("Team 1: ", teams[1], " and ", teams[2]))
   print(paste0("Team 2: ", teams[3], " and ", teams[4]))

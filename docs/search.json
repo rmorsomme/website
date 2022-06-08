@@ -368,7 +368,42 @@
     "href": "project-inference.html",
     "title": "Inference project",
     "section": "",
-    "text": "Details about the inference project will be provided in week 4."
+    "text": "In the inference project, you will work in pairs to conduct a statistical analysis of a data set that interests you. You will present your work on Friday, June 17 during the lab and submit a written report by Thursday, June 23, 9:00pm. You can find your teammate here.\n🍀 Good luck! 🍀"
+  },
+  {
+    "objectID": "project-inference.html#introduction",
+    "href": "project-inference.html#introduction",
+    "title": "Inference project",
+    "section": "Introduction",
+    "text": "Introduction\nThe goal of the inference project is for you to use data visualization, regression modelling and statistical inference to analyze a data set of your choice, demonstrating proficiency in the techniques covered in class and applying them to a real data set in a meaningful way.\nAll analyses must be done in RMarkdown, and all components of the project must be reproducible (with the exception of the presentation)."
+  },
+  {
+    "objectID": "project-inference.html#academic-integrity",
+    "href": "project-inference.html#academic-integrity",
+    "title": "Inference project",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nBy participating in this project, you pledge to uphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised."
+  },
+  {
+    "objectID": "project-inference.html#data",
+    "href": "project-inference.html#data",
+    "title": "Inference project",
+    "section": "Data",
+    "text": "Data\nThe data set that you analyze in this project needs to have at least 100 observations and 5 meaningful variables (identifier variables such as “name”, “social security number” or “id” do not count), including at least one categorical and one numerical variable.\nYou are welcome to analyze data from your own work/research or to use any real data set that is publicly available. Here are a few examples.\n\nU.S. birth data (see prediction project)\nDuke Lemur Center\nCar fuel economy – EPA"
+  },
+  {
+    "objectID": "project-inference.html#submission",
+    "href": "project-inference.html#submission",
+    "title": "Inference project",
+    "section": "Submission",
+    "text": "Submission\nThe three primary deliverables for this project are:\n\nFormal presentation: you will present your work orally to rest of the class. The presentation should be no longer than 10 minutes (aim for 10 slides). The two team members should speak roughly the same amount of time. Each presentation will be followed by a short QA session.\nFinal report (pdf): The final report details your work. It needs to be realized using RMarkdown and submitted on Gradescope as a PDF. This report should not contain any R code, message or warning. To ensure that this is the case, simply use the following as the first code chunk of your document.\n\n```{r set-up, include = FALSE} knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)\n```\n\nThe page limit is 10 pages (excluding the appendix). Figures should go in the appendix, along with any work that you wish to include, but which does not fit in the main body. Grading will largely be based on the content in the main body of the report. You should assume that the reader will not see the material in the appendix unless prompted to view it in the main body of the report.\nFinal report (RMD): You need to submit the RMD file used to make the report for reproducibility. You can simply email it to the instruction team. The instructors need to be able to reproduce your analysis by knitting your document. If the RMD file depends on other files, e.g. data sets, make sure to send these as well."
+  },
+  {
+    "objectID": "project-inference.html#report-content",
+    "href": "project-inference.html#report-content",
+    "title": "Inference project",
+    "section": "Report content",
+    "text": "Report content\nThe report should include the following sections, though you should feel free to include additional sections as necessary.\n\nIntroduction: introduce the subject matter that you are investigating, the general research question you are exploring, the motivation for this research question and the data you are analyzing to answer that question.\nData: describe the data set and the variables that you consider in the analysis (no need to list all 500 variables present in your data). Visualize and summarize the response variable, important predictors and any new variable that you have engineered.\nMethodology: describe the modeling and inferential process. Motivate your decisions (type of regression model, type of statistical inference, outliers, feature engineering, model selection, etc).\nResults and discussion: provide the results of your analysis; including the output of the selectd regression model, the confidence interval and the result of the hypothesis test. Interpret the results you have obtained in the context of the subject matter and original research question. Are any of your findings unexpected? Briefly discuss any limitation to your work."
   },
   {
     "objectID": "project-prediction.html",
@@ -635,41 +670,6 @@
     "title": "Homework 1 - lab answers",
     "section": "Exercise 7 (5 points)",
     "text": "Exercise 7 (5 points)\n\npresent %>%\n  mutate(total = boys + girls) %>%\n  arrange(desc(total))\n\n# A tibble: 63 x 4\n    year    boys   girls   total\n   <dbl>   <dbl>   <dbl>   <dbl>\n 1  1961 2186274 2082052 4268326\n 2  1960 2179708 2078142 4257850\n 3  1957 2179960 2074824 4254784\n 4  1959 2173638 2071158 4244796\n 5  1958 2152546 2051266 4203812\n 6  1962 2132466 2034896 4167362\n 7  1956 2133588 2029502 4163090\n 8  1990 2129495 2028717 4158212\n 9  1991 2101518 2009389 4110907\n10  1963 2101632 1996388 4098020\n# ... with 53 more rows\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
-  },
-  {
-    "objectID": "slides/jsm.html#discrete-time-stochastic-seir",
-    "href": "slides/jsm.html#discrete-time-stochastic-seir",
-    "title": "A Flexible Class of Time-Varying Stochastic Epidemic Models",
-    "section": "Discrete-time, stochastic SEIR",
-    "text": "Discrete-time, stochastic SEIR\n\n\n\n\nCompartmental model:\n\\[\nS\\rightarrow E \\rightarrow I \\rightarrow R\n\\]\nStochastic, discrete time:\n\\[\\begin{align*}\nn^{SE}_t & \\sim Bin\\left(S_t, p_t^{SE}\\right) \\\\\nn^{EI}_t & \\sim Bin\\left(E_t, p^{EI}  \\right) \\\\\nn^{IR}_t & \\sim Bin\\left(I_t, p^{IR}\\right)\n\\end{align*}\\]"
-  },
-  {
-    "objectID": "slides/jsm.html#three-simplifications",
-    "href": "slides/jsm.html#three-simplifications",
-    "title": "A Flexible Class of Time-Varying Stochastic Epidemic Models",
-    "section": "Three simplifications",
-    "text": "Three simplifications\nModerate pandemics in large population:\n\n\\(S_t \\approx N\\)\n\\(Bin\\left(S_t, p_t^{SE}\\right) \\approx Pois\\left(N * p_t^{SE}\\right)\\)\n\\(N * p_t^{SE} = N * 1-\\exp\\{\\beta_t S_t I_t\\} \\approx \\beta_t I_t\\)\n\n\\(\\Rightarrow\\) \\(n^{SE}_t \\sim Pois\\left(\\beta_t I_t\\right)\\)"
-  },
-  {
-    "objectID": "slides/jsm.html#time-varying-infection-rate",
-    "href": "slides/jsm.html#time-varying-infection-rate",
-    "title": "A Flexible Class of Time-Varying Stochastic Epidemic Models",
-    "section": "Time-varying infection rate",
-    "text": "Time-varying infection rate\n\\(\\beta_{t+1} = \\beta_t \\frac{X_t}{\\omega_t}\\) with the shocks \\(X_t\\sim Beta(a_t, w_t a_t)\\)\nWe can show that if\n\\[\n\\beta_{t} \\sim Ga(a_t, b_t),\n\\] then\n\\[\n\\beta_{t+1} \\sim Ga(\\omega_t a_t + I_t, \\omega_t b_t + n^{SE}_t).\n\\]\n\\(\\omega_t\\) discounts past information!\n\n\n\n\n\n\n\nJointly drawing from the full conditional\n\n\nThe vector \\(\\{\\beta_t\\}_t\\) can be jointly updated in a Gibbs step using the FFBS!"
-  },
-  {
-    "objectID": "slides/jsm.html#data-augmented-markov-chain-monte-carlo",
-    "href": "slides/jsm.html#data-augmented-markov-chain-monte-carlo",
-    "title": "A Flexible Class of Time-Varying Stochastic Epidemic Models",
-    "section": "Data-augmented Markov Chain Monte Carlo",
-    "text": "Data-augmented Markov Chain Monte Carlo\nObserved data: daily infection counts \\(\\{n^{EI}_t\\}_t\\) and death counts \\(\\{n^{IR}_t\\}_t\\)\nLatent variables: \\(\\{n_t^{SE}\\}_t\\)\nDA-MCMC: alternate between\n\n\\(\\{n_t^{SE}\\}_t|.\\) using a joint Metropolis-Hastings\n\\(\\{\\beta_t\\}_t|.\\) using Gibbs (FFBS)\n\\((p^{EI}, p^{IR})|.\\) using Gibbs"
-  },
-  {
-    "objectID": "slides/jsm.html#congo-ebola-epidemic",
-    "href": "slides/jsm.html#congo-ebola-epidemic",
-    "title": "A Flexible Class of Time-Varying Stochastic Epidemic Models",
-    "section": "1995 Congo Ebola Epidemic",
-    "text": "1995 Congo Ebola Epidemic\n\n\n\n\n\n\n\n\n\nIntervention around day 70\n\\[\n\\omega_t =\n\\begin{cases}\n0.99, \\quad &t\\le70 \\\\\n0.9, \\quad &t > 70\n\\end{cases}\n\\]\nPandemic under control after the intervention \\((R_0<1)\\), but not before \\((R_0\\ge1)\\)"
   },
   {
     "objectID": "slides/lec-1.html#meet-the-instructor",
@@ -1404,7 +1404,7 @@
     "href": "slides/lec-11.html#announcements",
     "title": "Inference for regression",
     "section": "Announcements",
-    "text": "Announcements"
+    "text": "Announcements\n\nInference project\n\nteams\n2 data sets or topics by tomorrow’s lab"
   },
   {
     "objectID": "slides/lec-11.html#recap",
