@@ -45,6 +45,7 @@ The three primary deliverables for this project are:
 -   **Final report (pdf)**: The final report details your work. It needs to be realized using RMarkdown and submitted on Gradescope as a PDF. This report should not contain any `R` code, message or warning. To ensure that this is the case, simply use the following as the first code chunk of your document.
 
     > \`\`\`{r set-up, include = FALSE}
+    >
     > knitr::opts_chunk\$set(echo = FALSE, warning = FALSE, message = FALSE)
     >
     > \`\`\`

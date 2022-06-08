@@ -214,7 +214,8 @@
 <li><p><strong>Formal presentation</strong>: you will present your work orally to rest of the class. The presentation should be no longer than 10 minutes (aim for 10 slides). The two team members should speak roughly the same amount of time. Each presentation will be followed by a short QA session.</p></li>
 <li><p><strong>Final report (pdf)</strong>: The final report details your work. It needs to be realized using RMarkdown and submitted on Gradescope as a PDF. This report should not contain any <code>R</code> code, message or warning. To ensure that this is the case, simply use the following as the first code chunk of your document.</p>
 <blockquote class="blockquote">
-<p>```{r set-up, include = FALSE} knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)</p>
+<p>```{r set-up, include = FALSE}</p>
+<p>knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)</p>
 <p>```</p>
 </blockquote>
 <p>The page limit is 10 pages (excluding the appendix). Figures should go in the appendix, along with any work that you wish to include, but which does not fit in the main body. Grading will largely be based on the content in the main body of the report. You should assume that the reader will not see the material in the appendix unless prompted to view it in the main body of the report.</p></li>
