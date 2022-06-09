@@ -1,5 +1,5 @@
 ---
-title: "HW 7 - Modern statistical inference"
+title: "HW 8 - Inference for means"
 subtitle: "Due Monday, June 13, 9:00pm on Gradescope"
 ---
 
