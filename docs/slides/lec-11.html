@@ -397,7 +397,7 @@
 <h1>Welcome</h1>
 
 </section>
-<section id="announcements-remaining-deadlines" class="slide level2">
+<section id="announcements-remaining-deadlines" class="slide level2 smaller">
 <h2>Announcements – remaining deadlines</h2>
 <ul>
 <li><p>Homework</p>
@@ -406,7 +406,7 @@
 <li><p>7 – Monday, June 13</p></li>
 <li><p>8 – Thursday, June 16</p></li>
 <li><p>9 – Sunday, June 19 (no penalty for 24 hours – Monday, June 20)</p></li>
-<li><p>free one-day extension; homework with lowest grade dropped</p></li>
+<li><p>one free 24-hour deadline extension; lowest grade dropped</p></li>
 </ul></li>
 <li><p>Inference project</p>
 <ul>
@@ -431,7 +431,7 @@
 </ul>
 <div class="fragment">
 <ul>
-<li><p>One mean</p>
+<li><p>One mean (case 3)</p>
 <ul>
 <li>CI via bootstrap</li>
 </ul></li>
@@ -439,7 +439,7 @@
 </div>
 <div class="fragment">
 <ul>
-<li><p>Two means</p>
+<li><p>Two means (case 4)</p>
 <ul>
 <li><p>HT via simulation</p></li>
 <li><p>CI via bootstrap</p></li>
@@ -460,7 +460,7 @@
 <section id="outline" class="slide level2">
 <h2>Outline</h2>
 <ul>
-<li>Simple linear regression
+<li>Simple linear regression (case 5)
 <ul>
 <li><p>HT via simulation</p></li>
 <li><p>CI via bootstrap</p></li>
@@ -474,7 +474,7 @@
 </section>
 <section id="setup" class="slide level2">
 <h2>Setup</h2>
-<p><strong>Simple linear regression</strong> (slr): <span class="math inline">\(Y \approx \beta_0 + \beta_1 X\)</span></p>
+<p><strong>Simple linear regression</strong>: <span class="math inline">\(Y \approx \beta_0 + \beta_1 X\)</span></p>
 <p><strong>Population parameter</strong>: slope parameter <span class="math inline">\(\beta_1\)</span></p>
 <p><strong>Sample statistic</strong>: least-square estimate <span class="math inline">\(\hat{\beta}_1\)</span></p>
 <div class="fragment">
@@ -509,7 +509,7 @@
 6   9.39         29</code></pre>
 </div>
 </div>
-</div><div class="column" style="width:5%;">
+</div><div class="column" style="width:9%;">
 
 </div><div class="column" style="width:36%;">
 <div class="quarto-figure quarto-figure-center">
@@ -543,7 +543,7 @@
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a1eabc" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a20cfc" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -560,7 +560,7 @@
 <p><span class="math inline">\(H_a:\beta_1\neq 0\)</span></p>
 <div class="fragment">
 <ul>
-<li><p>Simulate many samples under <span class="math inline">\(H_0\)</span> (the response is independent of the predictor).</p></li>
+<li><p>Simulate many samples under <span class="math inline">\(H_0\)</span> (the response variable is independent of the predictor).</p></li>
 <li><p>Determine if the observed data could have plausibly arisen under <span class="math inline">\(H_0\)</span>.</p></li>
 </ul>
 </div>
@@ -605,8 +605,8 @@
 <h2>Function for computing the test statistic</h2>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb8" data-code-line-numbers="|2|3|4|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>compute_beta_LS <span class="ot">&lt;-</span> <span class="cf">function</span>(data){</span>
-<span id="cb8-2"><a href="#cb8-2"></a>  m <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> mother_age, <span class="at">data =</span> data)</span>
-<span id="cb8-3"><a href="#cb8-3"></a>  coef <span class="ot">&lt;-</span> m<span class="sc">$</span>coefficients</span>
+<span id="cb8-2"><a href="#cb8-2"></a>  m     <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> mother_age, <span class="at">data =</span> data)</span>
+<span id="cb8-3"><a href="#cb8-3"></a>  coef  <span class="ot">&lt;-</span> m<span class="sc">$</span>coefficients</span>
 <span id="cb8-4"><a href="#cb8-4"></a>  slope <span class="ot">&lt;-</span> coef[[<span class="st">"mother_age"</span>]] </span>
 <span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">return</span>(slope)</span>
 <span id="cb8-6"><a href="#cb8-6"></a>}</span>
@@ -618,12 +618,12 @@
 </section>
 <section id="for-loop-for-simulating-under-h_0" class="slide level2">
 <h2>For-loop for simulating under <span class="math inline">\(H_0\)</span></h2>
-<div class="cell" data-layout-align="center" data-hash="lec-11_cache/revealjs/unnamed-chunk-6_9a3d97644962b3e38912525df8108c83">
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">stat_sim =</span> <span class="fu">numeric</span>())</span>
+<div class="cell" data-layout-align="center" data-hash="lec-11_cache/revealjs/unnamed-chunk-6_3ce77400613ae2a11ef7ef7dbab54b28">
+<div class="sourceCode" id="cb10" data-code-line-numbers="|1,2|3,7|4|5|6|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">stat_sim =</span> <span class="fu">numeric</span>())</span>
 <span id="cb10-2"><a href="#cb10-2"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
-<span id="cb10-3"><a href="#cb10-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">5e3</span>){</span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">10e3</span>){ <span class="co"># 10,000 iterations</span></span>
 <span id="cb10-4"><a href="#cb10-4"></a>  d_sim    <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">mother_age =</span> <span class="fu">sample</span>(mother_age)) <span class="co"># simulate under H0</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a>  stat_sim <span class="ot">&lt;-</span> <span class="fu">compute_beta_LS</span>(d_sim) <span class="co"># test statistic</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>  stat_sim <span class="ot">&lt;-</span> <span class="fu">compute_beta_LS</span>(d_sim) <span class="co"># statistic</span></span>
 <span id="cb10-6"><a href="#cb10-6"></a>  results  <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span> <span class="fu">add_row</span>(stat_sim)</span>
 <span id="cb10-7"><a href="#cb10-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -642,18 +642,19 @@
 
 </div>
 <img data-src="lec-11_files/figure-revealjs/unnamed-chunk-7-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
-<section id="p-value" class="slide level2">
+<section id="p-value" class="slide level2 smaller">
 <h2>p-value</h2>
 <p>Probability that <span class="math inline">\(\hat{\beta}_{1}^{sim}\ge \hat{\beta}^{obs}_1\)</span> or <span class="math inline">\(\hat{\beta}_{1}^{sim}\le \hat{\beta}^{obs}_1\)</span>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>results <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>p_value <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">mutate</span>(<span class="at">is_more_extreme =</span> stat_sim <span class="sc">&gt;=</span> stat_obs <span class="sc">|</span> stat_sim <span class="sc">&lt;=</span> <span class="sc">-</span>stat_obs) <span class="sc">%&gt;%</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">summarize</span>(<span class="at">p_value =</span> <span class="fu">mean</span>(is_more_extreme))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">summarize</span>(<span class="at">p_value =</span> <span class="fu">mean</span>(is_more_extreme))</span>
+<span id="cb14-4"><a href="#cb14-4"></a>p_value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code># A tibble: 1 x 1
   p_value
     &lt;dbl&gt;
-1  0.0242</code></pre>
+1  0.0228</code></pre>
 </div>
 </div>
 <p>Using the usual significance level <span class="math inline">\(\alpha = 0.05\)</span>, we <strong>reject</strong> <span class="math inline">\(H_0\)</span>.</p>
@@ -679,13 +680,14 @@
 <p><strong>Group exercise - HT</strong></p>
 </div>
 <div class="callout-content">
-<p>Exercises <a href="https://openintro-ims.netlify.app/inf-model-slr.html#chp24-exercises">24.9</a> – in part c, refer to the output of the <code>lm</code> command (mathematical model) – and <a href="https://openintro-ims.netlify.app/inf-model-slr.html#chp24-exercises">24.1</a>.</p>
+<p>Exercise <a href="https://openintro-ims.netlify.app/inf-model-slr.html#chp24-exercises">24.1</a> – in part c, refer to the output of the <code>lm</code> command (mathematical model)</p>
+<p>Exercise <a href="https://openintro-ims.netlify.app/inf-model-slr.html#chp24-exercises">24.9</a> – in part c, refer to the output of the <code>lm</code> command (mathematical model)</p>
 </div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a1eaa4" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a20a11" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -733,10 +735,10 @@
 </section>
 <section id="section-4" class="slide level2">
 <h2></h2>
-<div class="cell" data-layout-align="center" data-hash="lec-11_cache/revealjs/unnamed-chunk-13_120b86b2a597a13e4547e14c11cc5711">
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">stat_boot =</span> <span class="fu">numeric</span>())</span>
+<div class="cell" data-layout-align="center" data-hash="lec-11_cache/revealjs/unnamed-chunk-13_027955b331d5387586befe0da8336e92">
+<div class="sourceCode" id="cb21" data-code-line-numbers="|1,2|3,7|4|5|6|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">stat_boot =</span> <span class="fu">numeric</span>())</span>
 <span id="cb21-2"><a href="#cb21-2"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
-<span id="cb21-3"><a href="#cb21-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">5e3</span>){</span>
+<span id="cb21-3"><a href="#cb21-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">5e3</span>){ <span class="co"># 5,000 iterations</span></span>
 <span id="cb21-4"><a href="#cb21-4"></a>  d_boot    <span class="ot">&lt;-</span> <span class="fu">sample_bootstrap</span>(d)     <span class="co"># bootstrap sample</span></span>
 <span id="cb21-5"><a href="#cb21-5"></a>  stat_boot <span class="ot">&lt;-</span> <span class="fu">compute_beta_LS</span>(d_boot) <span class="co"># bootstrap statistic</span></span>
 <span id="cb21-6"><a href="#cb21-6"></a>  results   <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span> <span class="fu">add_row</span>(stat_boot) </span>
@@ -753,15 +755,15 @@
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">ggplot</span>(results) <span class="sc">+</span> </span>
 <span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(stat_boot)) <span class="sc">+</span> </span>
-<span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(results<span class="sc">$</span>stat_boot, <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>)), <span class="at">col =</span> <span class="st">"gold1"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="co"># 90% CI </span></span>
+<span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(results<span class="sc">$</span>stat_boot, <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>)), <span class="at">col =</span> <span class="st">"gold1"</span> , <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="co"># 90% CI </span></span>
 <span id="cb22-4"><a href="#cb22-4"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(results<span class="sc">$</span>stat_boot, <span class="fu">c</span>(<span class="fl">0.01</span>, <span class="fl">0.99</span>)), <span class="at">col =</span> <span class="st">"maroon"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="co"># 98% CI</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="lec-11_files/figure-revealjs/unnamed-chunk-14-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
-<section id="section-6" class="slide level2">
-<h2></h2>
+<section id="ci-and-ht" class="slide level2">
+<h2>CI and HT</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">quantile</span>(results<span class="sc">$</span>stat_boot, <span class="fu">c</span>(<span class="fl">0.05</span> , <span class="fl">0.95</span> )) <span class="co"># 90% CI</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">quantile</span>(results<span class="sc">$</span>stat_boot, <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>)) <span class="co"># 90% CI (doesn't include 0)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>        5%        95% 
 0.01508696 0.09440465 </code></pre>
@@ -774,9 +776,10 @@
 -0.0001734654  0.1117749557 </code></pre>
 </div>
 </div>
-</section>
-<section id="ci-and-ht" class="slide level2">
-<h2>CI and HT</h2>
+<div class="fragment">
+<p>Remember that the p-value is 0.023.</p>
+</div>
+<div class="fragment">
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -786,12 +789,13 @@
 <p><strong>Two sides of the same coin</strong></p>
 </div>
 <div class="callout-content">
-<p>The 95% CI dos not include 0, but the 98% CI does. This indicates that 0 is a plausible at the (usual) 5% significance level but not the 2% significance level. Again, this is exactly what the HT concluded.</p>
+<p>The 95% CI dos not include 0, but the 98% CI does. This indicates that 0 is a value plausible at the (usual) significance level <span class="math inline">\(\alpha=0.05\)</span> but not at the more conservative significance level <span class="math inline">\(\alpha=0.02\)</span>. Again, this is exactly what the HT concluded.</p>
+</div>
 </div>
 </div>
 </div>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-6" class="slide level2">
 <h2></h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
@@ -799,14 +803,14 @@
 <p><strong>Group exercise - CI</strong></p>
 </div>
 <div class="callout-content">
+<p>Exercise <a href="https://openintro-ims.netlify.app/inf-model-slr.html#chp24-exercises">24.3</a>. Does the CI include 0? Does it agree with the HT?</p>
 <p>Exercise <a href="https://openintro-ims.netlify.app/inf-model-slr.html#chp24-exercises">24.11</a>. Does the CI include 0? Does it agree with the HT?</p>
-<p>Exercise <a href="https://openintro-ims.netlify.app/inf-model-slr.html#chp24-exercises">24.3</a>.</p>
 </div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a1eacb" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a20b96" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -820,7 +824,7 @@
 <section id="recap-2" class="slide level2">
 <h2>Recap</h2>
 <ul>
-<li>Simple linear regression
+<li>Simple linear regression (case 5)
 <ul>
 <li><p>HT via simulation</p></li>
 <li><p>CI via bootstrap</p></li>

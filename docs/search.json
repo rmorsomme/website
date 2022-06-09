@@ -1439,7 +1439,7 @@
     "href": "slides/lec-11.html#announcements-remaining-deadlines",
     "title": "Inference for regression",
     "section": "Announcements – remaining deadlines",
-    "text": "Announcements – remaining deadlines\n\nHomework\n\n6 – tonight\n7 – Monday, June 13\n8 – Thursday, June 16\n9 – Sunday, June 19 (no penalty for 24 hours – Monday, June 20)\nfree one-day extension; homework with lowest grade dropped\n\nInference project\n\nPresentation – Friday, June 17 (lab)\nWritten report – Thursday, June 23"
+    "text": "Announcements – remaining deadlines\n\nHomework\n\n6 – tonight\n7 – Monday, June 13\n8 – Thursday, June 16\n9 – Sunday, June 19 (no penalty for 24 hours – Monday, June 20)\none free 24-hour deadline extension; lowest grade dropped\n\nInference project\n\nPresentation – Friday, June 17 (lab)\nWritten report – Thursday, June 23"
   },
   {
     "objectID": "slides/lec-11.html#announcements-inference-project",
@@ -1453,21 +1453,21 @@
     "href": "slides/lec-11.html#recap",
     "title": "Inference for regression",
     "section": "Recap",
-    "text": "Recap\n\nThe normal distribution\n\n\n\nOne mean\n\nCI via bootstrap\n\n\n\n\n\nTwo means\n\nHT via simulation\nCI via bootstrap\n\n\n\n\n\nPaired means (similar to one mean)\n\nHT via simulation\nCI via bootstrap\nAlways pair!"
+    "text": "Recap\n\nThe normal distribution\n\n\n\nOne mean (case 3)\n\nCI via bootstrap\n\n\n\n\n\nTwo means (case 4)\n\nHT via simulation\nCI via bootstrap\n\n\n\n\n\nPaired means (similar to one mean)\n\nHT via simulation\nCI via bootstrap\nAlways pair!"
   },
   {
     "objectID": "slides/lec-11.html#outline",
     "href": "slides/lec-11.html#outline",
     "title": "Inference for regression",
     "section": "Outline",
-    "text": "Outline\n\nSimple linear regression\n\nHT via simulation\nCI via bootstrap"
+    "text": "Outline\n\nSimple linear regression (case 5)\n\nHT via simulation\nCI via bootstrap"
   },
   {
     "objectID": "slides/lec-11.html#setup",
     "href": "slides/lec-11.html#setup",
     "title": "Inference for regression",
     "section": "Setup",
-    "text": "Setup\nSimple linear regression (slr): \\(Y \\approx \\beta_0 + \\beta_1 X\\)\nPopulation parameter: slope parameter \\(\\beta_1\\)\nSample statistic: least-square estimate \\(\\hat{\\beta}_1\\)\n\nConfidence interval: range of plausible values for \\(\\beta_1\\)\nHypothesis test: is the response variable \\(Y\\) independent of the predictor \\(X\\)?\n\n\\(H_0:\\beta_1 = 0\\) (\\(Y\\) does not depend on \\(X\\))\n\\(H_a:\\beta_1\\neq0\\)"
+    "text": "Setup\nSimple linear regression: \\(Y \\approx \\beta_0 + \\beta_1 X\\)\nPopulation parameter: slope parameter \\(\\beta_1\\)\nSample statistic: least-square estimate \\(\\hat{\\beta}_1\\)\n\nConfidence interval: range of plausible values for \\(\\beta_1\\)\nHypothesis test: is the response variable \\(Y\\) independent of the predictor \\(X\\)?\n\n\\(H_0:\\beta_1 = 0\\) (\\(Y\\) does not depend on \\(X\\))\n\\(H_a:\\beta_1\\neq0\\)"
   },
   {
     "objectID": "slides/lec-11.html#example-birth-weight",
@@ -1495,7 +1495,7 @@
     "href": "slides/lec-11.html#hypotheses-and-simulations",
     "title": "Inference for regression",
     "section": "Hypotheses and simulations",
-    "text": "Hypotheses and simulations\n\\(H_0:\\beta_1=0\\)\n\\(H_a:\\beta_1\\neq 0\\)\n\n\nSimulate many samples under \\(H_0\\) (the response is independent of the predictor).\nDetermine if the observed data could have plausibly arisen under \\(H_0\\)."
+    "text": "Hypotheses and simulations\n\\(H_0:\\beta_1=0\\)\n\\(H_a:\\beta_1\\neq 0\\)\n\n\nSimulate many samples under \\(H_0\\) (the response variable is independent of the predictor).\nDetermine if the observed data could have plausibly arisen under \\(H_0\\)."
   },
   {
     "objectID": "slides/lec-11.html#simulating-under-h_0",
@@ -1516,14 +1516,14 @@
     "href": "slides/lec-11.html#function-for-computing-the-test-statistic",
     "title": "Inference for regression",
     "section": "Function for computing the test statistic",
-    "text": "Function for computing the test statistic\n\ncompute_beta_LS <- function(data){\n  m <- lm(weight ~ mother_age, data = data)\n  coef <- m$coefficients\n  slope <- coef[[\"mother_age\"]] \n  return(slope)\n}\ncompute_beta_LS(d_sim)\n\n[1] 0.03606311"
+    "text": "Function for computing the test statistic\n\ncompute_beta_LS <- function(data){\n  m     <- lm(weight ~ mother_age, data = data)\n  coef  <- m$coefficients\n  slope <- coef[[\"mother_age\"]] \n  return(slope)\n}\ncompute_beta_LS(d_sim)\n\n[1] 0.03606311"
   },
   {
     "objectID": "slides/lec-11.html#for-loop-for-simulating-under-h_0",
     "href": "slides/lec-11.html#for-loop-for-simulating-under-h_0",
     "title": "Inference for regression",
     "section": "For-loop for simulating under \\(H_0\\)",
-    "text": "For-loop for simulating under \\(H_0\\)\n\nresults <- tibble(stat_sim = numeric())\nset.seed(1)\nfor(i in 1 : 5e3){\n  d_sim    <- d %>% mutate(mother_age = sample(mother_age)) # simulate under H0\n  stat_sim <- compute_beta_LS(d_sim) # test statistic\n  results  <- results %>% add_row(stat_sim)\n}"
+    "text": "For-loop for simulating under \\(H_0\\)\n\nresults <- tibble(stat_sim = numeric())\nset.seed(1)\nfor(i in 1 : 10e3){ # 10,000 iterations\n  d_sim    <- d %>% mutate(mother_age = sample(mother_age)) # simulate under H0\n  stat_sim <- compute_beta_LS(d_sim) # statistic\n  results  <- results %>% add_row(stat_sim)\n}"
   },
   {
     "objectID": "slides/lec-11.html#sampling-distribution",
@@ -1537,14 +1537,14 @@
     "href": "slides/lec-11.html#p-value",
     "title": "Inference for regression",
     "section": "p-value",
-    "text": "p-value\nProbability that \\(\\hat{\\beta}_{1}^{sim}\\ge \\hat{\\beta}^{obs}_1\\) or \\(\\hat{\\beta}_{1}^{sim}\\le \\hat{\\beta}^{obs}_1\\).\n\nresults %>%\n  mutate(is_more_extreme = stat_sim >= stat_obs | stat_sim <= -stat_obs) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1  0.0242\n\n\nUsing the usual significance level \\(\\alpha = 0.05\\), we reject \\(H_0\\).\n\n\nm <- lm(weight~mother_age, data = d)\nbroom::tidy(m)\n\n# A tibble: 2 x 5\n  term        estimate std.error statistic  p.value\n  <chr>          <dbl>     <dbl>     <dbl>    <dbl>\n1 (Intercept)   5.59      0.669       8.36 4.35e-13\n2 mother_age    0.0554    0.0237      2.34 2.13e- 2"
+    "text": "p-value\nProbability that \\(\\hat{\\beta}_{1}^{sim}\\ge \\hat{\\beta}^{obs}_1\\) or \\(\\hat{\\beta}_{1}^{sim}\\le \\hat{\\beta}^{obs}_1\\).\n\np_value <- results %>%\n  mutate(is_more_extreme = stat_sim >= stat_obs | stat_sim <= -stat_obs) %>%\n  summarize(p_value = mean(is_more_extreme))\np_value\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1  0.0228\n\n\nUsing the usual significance level \\(\\alpha = 0.05\\), we reject \\(H_0\\).\n\n\nm <- lm(weight~mother_age, data = d)\nbroom::tidy(m)\n\n# A tibble: 2 x 5\n  term        estimate std.error statistic  p.value\n  <chr>          <dbl>     <dbl>     <dbl>    <dbl>\n1 (Intercept)   5.59      0.669       8.36 4.35e-13\n2 mother_age    0.0554    0.0237      2.34 2.13e- 2"
   },
   {
     "objectID": "slides/lec-11.html#section-2",
     "href": "slides/lec-11.html#section-2",
     "title": "Inference for regression",
     "section": "",
-    "text": "Group exercise - HT\n\n\nExercises 24.9 – in part c, refer to the output of the lm command (mathematical model) – and 24.1.\n\n\n\n\n\n\n03:00"
+    "text": "Group exercise - HT\n\n\nExercise 24.1 – in part c, refer to the output of the lm command (mathematical model)\nExercise 24.9 – in part c, refer to the output of the lm command (mathematical model)\n\n\n\n\n\n\n03:00"
   },
   {
     "objectID": "slides/lec-11.html#bootstrap",
@@ -1565,7 +1565,7 @@
     "href": "slides/lec-11.html#section-4",
     "title": "Inference for regression",
     "section": "",
-    "text": "results <- tibble(stat_boot = numeric())\nset.seed(0)\nfor(i in 1 : 5e3){\n  d_boot    <- sample_bootstrap(d)     # bootstrap sample\n  stat_boot <- compute_beta_LS(d_boot) # bootstrap statistic\n  results   <- results %>% add_row(stat_boot) \n}"
+    "text": "results <- tibble(stat_boot = numeric())\nset.seed(0)\nfor(i in 1 : 5e3){ # 5,000 iterations\n  d_boot    <- sample_bootstrap(d)     # bootstrap sample\n  stat_boot <- compute_beta_LS(d_boot) # bootstrap statistic\n  results   <- results %>% add_row(stat_boot) \n}"
   },
   {
     "objectID": "slides/lec-11.html#section-5",
@@ -1579,21 +1579,21 @@
     "href": "slides/lec-11.html#simulated-slopes",
     "title": "Inference for regression",
     "section": "Simulated slopes",
-    "text": "Simulated slopes\n\nggplot(results) + \n  geom_histogram(aes(stat_boot)) + \n  geom_vline(xintercept = quantile(results$stat_boot, c(0.05, 0.95)), col = \"gold1\", size = 2) + # 90% CI \n  geom_vline(xintercept = quantile(results$stat_boot, c(0.01, 0.99)), col = \"maroon\", size = 2) # 98% CI"
+    "text": "Simulated slopes\n\nggplot(results) + \n  geom_histogram(aes(stat_boot)) + \n  geom_vline(xintercept = quantile(results$stat_boot, c(0.05, 0.95)), col = \"gold1\" , size = 2) + # 90% CI \n  geom_vline(xintercept = quantile(results$stat_boot, c(0.01, 0.99)), col = \"maroon\", size = 2) # 98% CI"
   },
   {
     "objectID": "slides/lec-11.html#section-6",
     "href": "slides/lec-11.html#section-6",
     "title": "Inference for regression",
     "section": "",
-    "text": "quantile(results$stat_boot, c(0.05 , 0.95 )) # 90% CI\n\n        5%        95% \n0.01508696 0.09440465 \n\n\n\nquantile(results$stat_boot, c(0.01, 0.99)) # 98% CI (includes 0)\n\n           1%           99% \n-0.0001734654  0.1117749557"
+    "text": "Group exercise - CI\n\n\nExercise 24.3. Does the CI include 0? Does it agree with the HT?\nExercise 24.11. Does the CI include 0? Does it agree with the HT?\n\n\n\n\n\n\n03:00"
   },
   {
     "objectID": "slides/lec-11.html#ci-and-ht",
     "href": "slides/lec-11.html#ci-and-ht",
     "title": "Inference for regression",
     "section": "CI and HT",
-    "text": "CI and HT\n\n\n\n\n\n\nTwo sides of the same coin\n\n\nThe 95% CI dos not include 0, but the 98% CI does. This indicates that 0 is a plausible at the (usual) 5% significance level but not the 2% significance level. Again, this is exactly what the HT concluded."
+    "text": "CI and HT\n\nquantile(results$stat_boot, c(0.05, 0.95)) # 90% CI (doesn't include 0)\n\n        5%        95% \n0.01508696 0.09440465 \n\n\n\nquantile(results$stat_boot, c(0.01, 0.99)) # 98% CI (includes 0)\n\n           1%           99% \n-0.0001734654  0.1117749557 \n\n\n\nRemember that the p-value is 0.023.\n\n\n\n\n\n\n\n\nTwo sides of the same coin\n\n\nThe 95% CI dos not include 0, but the 98% CI does. This indicates that 0 is a value plausible at the (usual) significance level \\(\\alpha=0.05\\) but not at the more conservative significance level \\(\\alpha=0.02\\). Again, this is exactly what the HT concluded."
   },
   {
     "objectID": "slides/lec-11.html#section-7",
@@ -1607,7 +1607,7 @@
     "href": "slides/lec-11.html#recap-2",
     "title": "Inference for regression",
     "section": "Recap",
-    "text": "Recap\n\nSimple linear regression\n\nHT via simulation\nCI via bootstrap\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+    "text": "Recap\n\nSimple linear regression (case 5)\n\nHT via simulation\nCI via bootstrap\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
     "objectID": "slides/lec-2.html#outline",
