@@ -50,13 +50,33 @@ options(scipen = 100)
 
 # Welcome
 
-## Announcements
+## Announcements -- remaining deadlines
+
+-   Homework
+
+    -   6 -- tonight
+
+    -   7 -- Monday, June 13
+
+    -   8 -- Thursday, June 16
+
+    -   free one-day extension; homework with lowest grade dropped
 
 -   Inference project
 
-    -   teams
+    -   Presentation -- Friday, June 17 (lab)
 
-    -   2 data sets or topics by tomorrow's lab
+    -   Written report -- Thursday, June 23
+
+## Announcements -- inference project
+
+-   [Teams](/slides/project-inference-teams.html)
+
+-   [Overview](/project-inference.html)
+
+-   2 data sets or topics before tomorrow's lab
+
+-   Leave lab with a data set
 
 ## Recap {.smaller}
 

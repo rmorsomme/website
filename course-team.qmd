@@ -8,13 +8,10 @@ title: "Teaching team"
 
 Raphael Morsomme (he/him/his) is a Ph.D. candidate at the Department of Statistical Science at Duke University. Raphael's work focuses on the development of flexible and scalable stochastic epidemic models along with efficient Markov Chain Monte Carlo algorithms to fit these models. In addition, he uses data augmentation to study the overdiagnosis rate of breast cancer.
 
-+--------------------------+--------------------------------------------------------------+
 | Office hours             | Location                                                     |
-+==========================+==============================================================+
+|--------------------------|--------------------------------------------------------------|
 | Monday, 10:00-11:00am    | [Zoom](https://duke.zoom.us/j/92450195802 "Zoom meeting id") |
-+--------------------------+--------------------------------------------------------------+
 | Wednesday, 10:00-11:00am | [Zoom](https://duke.zoom.us/j/92450195802 "Zoom meeting id") |
-+--------------------------+--------------------------------------------------------------+
 
 If these times don't work for you or you'd like to schedule a one-on-one meeting, simply send an email to [raphael.morsomme\@duke.edu](mailto:raphael.morsomme@duke.edu "email").
 

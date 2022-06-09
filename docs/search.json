@@ -343,6 +343,41 @@
     "text": "Lab exercises - the Youth Risk Behavior Surveillance System (25 points)\nYou can find the lab here.\n\nExercise 1 (2 points)\nExercise 2 (1 point)\nExercise 3 (2 points) – see the ggplot2 cheatsheet for the command to make violin plot.\nExercise 4 (1 point)\nExercise 5 (1 point)\nExercise 6 (2 points)\nExercise 7 (1 point)\nExercise 8 (1 point)\nExercise 9 (2 points)\nExercise 10 (2 points)\nExercise 11 (2 points)\nExercise 12 (2 points)\nExercise 13 (2 points)\nExercise 14 (4 points)"
   },
   {
+    "objectID": "hw/hw-7.html",
+    "href": "hw/hw-7.html",
+    "title": "HW 6 - Inference for means",
+    "section": "",
+    "text": "This assignment needs to be completed with RMarkdown and submitted as a PDF on Gradescope. Feel free to re-use the template provided for HW1.\nWhen submitting your work on Gradescope, please assign a page for each question."
+  },
+  {
+    "objectID": "hw/hw-7.html#problem-set-10-points",
+    "href": "hw/hw-7.html#problem-set-10-points",
+    "title": "HW 6 - Inference for means",
+    "section": "Problem set (10 points)",
+    "text": "Problem set (10 points)\n\n9.2 – parts b and d (1 point)\n9.4 (4 points) – Hint: use the symbol $ to write mathematical equations; for instance, to write the fraction \\(\\frac{e^{\\mu}}{\\beta_0}\\) simply use $\\frac{e^{\\mu}}{\\beta_0}$.\n9.8 (3 points)\n24.8 – parts b-c with a percentile bootstrap interval, the usual bootstrap interval that we have constructed in class (2 points)\n\nFor the remaining exercises, use the birth data set\n\nlibrary(readr)\nd <- read_csv(\"https://rmorsomme.github.io/website/projects/training_set.csv\")"
+  },
+  {
+    "objectID": "hw/hw-7.html#confidence-intervals-via-bootstrap-18-points",
+    "href": "hw/hw-7.html#confidence-intervals-via-bootstrap-18-points",
+    "title": "HW 6 - Inference for means",
+    "section": "Confidence intervals via bootstrap (18 points)",
+    "text": "Confidence intervals via bootstrap (18 points)\nConstruct (5 points) and interpret in the context of the problem (1 point) a 95% confidence interval using 10000 bootstrap samples for\n\nthe proportion of female newborn (6 points)\nthe mean weight of newborns (6 points)\nthe slope of gestation week in a simple linear regression model for newborn_birth_weight (6 points)"
+  },
+  {
+    "objectID": "hw/hw-7.html#hypothesis-test-via-simulation-21-points",
+    "href": "hw/hw-7.html#hypothesis-test-via-simulation-21-points",
+    "title": "HW 6 - Inference for means",
+    "section": "Hypothesis test via simulation (21 points)",
+    "text": "Hypothesis test via simulation (21 points)\nConduct a hypothesis test using simulation for the following cases. State the hypotheses in words and in mathematical symbols (2 points) and use 10000 samples simulated samples and the significance level \\(\\alpha=0.05\\) (5 points).\n\nYou want to determine whether exactly half of the newborns are female (7 points)\nYou want to determine whether the mean weight of newborns is 3500 grams (7 points)\nYou want to determine whether newborn_birth_weight is independent of gestation week (7 points)"
+  },
+  {
+    "objectID": "hw/hw-7.html#reproducibility-1-point",
+    "href": "hw/hw-7.html#reproducibility-1-point",
+    "title": "HW 6 - Inference for means",
+    "section": "Reproducibility (1 point)",
+    "text": "Reproducibility (1 point)\nA seed is set with the command set.seed before any code with a stochastic component."
+  },
+  {
     "objectID": "hw/template.html",
     "href": "hw/template.html",
     "title": "HW 1 - Introduction to data",
@@ -354,7 +389,7 @@
     "href": "index.html",
     "title": "STA 101L: Data Analysis and Statistical Inference",
     "section": "",
-    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\nDue: Homework 2\n\n\n💻\n✍️\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n💻\n\n\n\n\n\nSun, May 22\nDue: Homework 3\n\n\n\n✍️\n\n\n\n2\nMon, May 23\nModel selection I\n8.3\n🖥️\n\n\n\n\n\n\nTue, May 24\nModel selection II\n8.4; 25.3\n🖥️\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n💻\n\n\n\n\n\nThu, May 26\nLogistic regression\nWork on project\nDue: Homework 4\n9.1-9.3\n🖥️\n\n✍️\n📂\n\n\n\nFri, May 27\nLab 5 - work on prediction project [PP]\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP presentations\nPrinciples of inference\n11.0; 11.3; 12.0; 12.3\n🖥️\n\n\nPP model (9:00am)\nPP presentation\n\n\n\nWed, June 1\nLab 6 - Lecture on inference for proportions I\nDue: PP report\n16.1\n🖥️\n\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.2\n🖥️\n\n\n\n\n\n\nFri, June 3\nLab 7 - Inference for proportions\n\n\n💻\n\n\n\n\n\nSun, June 5\nDue: homework 5\n\n\n\n✍️\n\n\n\n4\nMon, June 6\nInference for means I\n13.2; 19.1; 20.1-20.2\n🖥️\n\n\n\n\n\n\nTue, June 7\nInference for means II\n21.1-21.2\n🖥️\n\n\n\n\n\n\nWed, June 8\nLab 8 - Inference for means\n\n\n💻\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.3\n🖥️\n\n✍️\n\n\n\n\nFri, June 10\nLab 9 - inference for regression\n\n\n💻\n\n\n\n\n5\nMon, June 13\nClassical inference\n13.1-13.2\n\n\n\n\n\n\n\nTue, June 14\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n\n\n\n\n\n\n\nWed, June 15\nLab 10 - work on IP\n\n\n\n\n\n\n\n\nThu, June 16\nWork on inference project (IP)\n\n\n\n\n\n\n\n\nFri, June 17\nLab 11 - IP presentations\n\n\n\n\nIP presentation\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
+    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\nDue: Homework 2\n\n\n💻\n✍️\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n💻\n\n\n\n\n\nSun, May 22\nDue: Homework 3\n\n\n\n✍️\n\n\n\n2\nMon, May 23\nModel selection I\n8.3\n🖥️\n\n\n\n\n\n\nTue, May 24\nModel selection II\n8.4; 25.3\n🖥️\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n💻\n\n\n\n\n\nThu, May 26\nLogistic regression\nWork on project\nDue: Homework 4\n9.1-9.3\n🖥️\n\n✍️\n📂\n\n\n\nFri, May 27\nLab 5 - work on prediction project [PP]\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model\nPP presentations\nPrinciples of inference\n11.0; 11.3; 12.0; 12.3\n🖥️\n\n\nPP model (9:00am)\nPP presentation\n\n\n\nWed, June 1\nLab 6 - Lecture on inference for proportions I\nDue: PP report\n16.1\n🖥️\n\n\nPP report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.2\n🖥️\n\n\n\n\n\n\nFri, June 3\nLab 7 - Inference for proportions\n\n\n💻\n\n\n\n\n\nSun, June 5\nDue: homework 5\n\n\n\n✍️\n\n\n\n4\nMon, June 6\nInference for means I\n13.2; 19.1; 20.1-20.2\n🖥️\n\n\n\n\n\n\nTue, June 7\nInference for means II\n21.1-21.2\n🖥️\n\n\n\n\n\n\nWed, June 8\nLab 8 - Inference for means\n\n\n💻\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.3\n🖥️\n\n✍️\n\n\n\n\nFri, June 10\nLab 9 - inference for regression\n\n\n💻\n\n\n\n\n5\nMon, June 13\nClassical inference\n13.1-13.2\n\n\n✍️\n\n\n\n\nTue, June 14\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n\n\n\n\n\n\n\nWed, June 15\nLab 10 - work on IP\n\n\n\n\n\n\n\n\nThu, June 16\nWork on inference project (IP)\n\n\n\n\n\n\n\n\nFri, June 17\nLab 11 - IP presentations\n\n\n\n\nIP presentation\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP report\n\n\n\n\nIP report"
   },
   {
     "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
@@ -1404,7 +1439,7 @@
     "href": "slides/lec-11.html#announcements",
     "title": "Inference for regression",
     "section": "Announcements",
-    "text": "Announcements\n\nInference project\n\nteams\n2 data sets or topics by tomorrow’s lab"
+    "text": "Announcements\n\nInference project\n\nTeams\nOverview\n2 data sets or topics before tomorrow’s lab\nLeave lab with a data set"
   },
   {
     "objectID": "slides/lec-11.html#recap",
