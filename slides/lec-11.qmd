@@ -60,6 +60,8 @@ options(scipen = 100)
 
     -   8 -- Thursday, June 16
 
+    -   9 -- Sunday, June 19 (no penalty for 24 hours -- Monday, June 20)
+
     -   free one-day extension; homework with lowest grade dropped
 
 -   Inference project
