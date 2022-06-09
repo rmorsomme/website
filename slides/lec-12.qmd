@@ -1,0 +1,273 @@
+---
+title: "Classical inference"
+subtitle: "STA 101L - Summer I 2022"
+author: "Raphael Morsomme"
+footer:  "[https://rmorsomme.github.io/website/](https://rmorsomme.github.io/website/)"
+logo: "images/logo.jpg"
+format: 
+  revealjs: 
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    code-fold: false
+    code-summary: "Show the code"
+    scrollable: true
+    link-external-newwindow: true
+    history: false
+editor: visual
+execute:
+  freeze: auto
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup}
+#| include: false
+
+knitr::opts_chunk$set(
+  fig.width = 8,
+  fig.asp = 0.618,
+  fig.retina = 3,
+  dpi = 300,
+  out.width = "80%",
+  fig.align = "center"
+)
+
+# load packages
+library(tidyverse)   # for data wrangling and visualization
+library(countdown)
+library(openintro)
+library(kableExtra)
+library(janitor)
+library(patchwork)
+
+# set default theme and larger font size for ggplot2
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))
+
+options(scipen = 100)
+```
+
+# Welcome
+
+## Announcements {.smaller}
+
+-   
+
+## Recap {.smaller}
+
+-   Simple linear regression (case 5)
+
+    -   HT via simulation
+
+    -   CI via bootstrap
+
+## Outline
+
+-   Normal approximation
+-   Statistical inference via normal approximation
+    -   Hypothesis test
+
+    -   Confidence interval
+-   Conditions
+
+# Normal approximation
+
+## Normal distribution
+
+```{r}
+tibble(x = seq(-5, 5, by = 0.01)) %>%
+  mutate(normal = dnorm(x, mean = 0, sd = 1)) %>%
+  ggplot() + 
+  geom_line(aes(x, normal))
+```
+
+$\Rightarrow$ unimodal, symmetric, thin tails -- bell-shaped
+
+## Normal approximation
+
+The normal distribution describes the variability of the different statistics
+
+-   $\hat{p}$, $\bar{x}$, $\hat{\beta}$
+
+-   simply look at all the histograms we have constructed from simulated samples (HT) bootstrap samples (CI)!
+
+. . .
+
+**Classical statistics**: instead of simulating the sampling distribution via simulation (HT) or bootstrapping (CI), we approximate it with a normal distribution.
+
+## Normal approximation for $\bar{x}$
+
+You have seen that if a numerical random variable is normally distributed
+
+$$
+X\sim N(\mu, \sigma^2)
+$$
+
+then the sample average is also normally distributed
+
+$$
+\bar{x} \sim N\left(\mu, \frac{\sigma^2}{n}\right)
+$$
+
+## Condition for the normality of $\bar{x}$
+
+In practice, we cannot assume that the random variable $X$ is *exactly normally* distributed.
+
+But as long as
+
+-   the sample is large enough $(n\ge 10)$ (condition 1)
+
+-   the variable is approximately normal: unimodal, roughly symmetric and does not have serious outliers (condition 2)
+
+the sample average is well approximated by a normal distribution
+
+$$
+\bar{x} \sim N\left(\mu, \frac{\sigma^2}{n}\right)
+$$
+
+. . .
+
+See the numerous histograms for case 3 (one mean) where the distribution of $\bar{x}$ always looks pretty normal.
+
+## Normal approximation for $\hat{p}$
+
+If
+
+1.  the sample is large enough $(n\ge30)$ (condition 1)
+
+2.  $p$ is not extreme $(pn\ge 10 \text{ and } (1-p)n\ge 10)$ (condition 2)
+
+then the distribution of $\hat{p}$ can be approximated by a normal distribution
+
+$$
+\hat{p} \sim N\left(p, \frac{p(1-p)}{n}\right)
+$$
+
+. . .
+
+See the numerous histograms for case 1 (one proportion) where the distribution of $\hat{p}$ always looks pretty normal.
+
+## Conditions are satisfied
+
+```{r, cache=TRUE}
+p <- 0.4; n <- 100 # conditions are satisfied: n>30, p*n>10 and (1-p)*n>10
+results <- tibble(p_hat = numeric())
+for(i in 1 : 1e4){
+  sim     <- purrr::rbernoulli(n, p)
+  p_hat   <- mean(sim)
+  results <- results %>% add_row(p_hat)
+}
+ggplot(results) + geom_histogram(aes(p_hat), binwidth = 0.01)
+```
+
+## Normal approximation
+
+```{r, cache=TRUE}
+tibble(p_hat = seq(0.2, 0.6, by = 0.001)) %>%
+  mutate(normal_approximation = dnorm(p_hat, mean = p, sd = sqrt(p*(1-p)/n))) %>%
+  ggplot() +
+  geom_line(aes(x = p_hat, y = normal_approximation))
+```
+
+## Conditions are *not* satisfied
+
+```{r, cache=TRUE}
+p <- 0.025; n <- 100 # conditions are not satisfied: p*n<10 
+results <- tibble(p_hat = numeric())
+for(i in 1 : 1e4){
+  sim     <- purrr::rbernoulli(n, p)
+  p_hat   <- mean(sim)
+  results <- results %>% add_row(p_hat)
+}
+ggplot(results) + geom_histogram(aes(p_hat), binwidth = 0.01) + xlim(-0.05, 0.1)
+```
+
+## Normal approximation fails
+
+```{r, cache=TRUE}
+tibble(p_hat = seq(-0.05, 0.1, by = 0.001)) %>%
+  mutate(normal_approximation = dnorm(p_hat, mean = p, sd = sqrt(p*(1-p)/n))) %>%
+  ggplot() + geom_line(aes(x = p_hat, y = normal_approximation)) + xlim(-0.05, 0.1)
+```
+
+## Normal approximation for $\hat{\beta}$
+
+If
+
+the distribution of $\hat{\beta}$ can also be approximated by a normal distribution.
+
+## Standard error
+
+**Standard error**: standard deviation of statistic
+
+-   the sd of $\hat{p}$ is $SE=\sqrt{\frac{p(1-p)}{n}}$
+
+-   the sd of $\bar{x}$ is $SE=\sqrt{\frac{\sigma^2}{n}} \approx \sqrt{\frac{s^2}{n}}$ where $s^2$ is an estimate of the population variance $\sigma^2$ based on the sample.
+
+-   the sd of $\hat{\beta}$ has a complicated form.
+
+## Hypothesis test
+
+How many SE is the observed sample from the null value?
+
+$$
+\dfrac{\text{point estimate} - \text{null value}}{SE}
+$$
+
+-   For one proportion: $Z = \dfrac{\hat{p}-p_0}{SE} = \dfrac{\hat{p}-p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}$
+
+-   For one mean: $t = \dfrac{\bar{x}-\mu_0}{SE} = \dfrac{\bar{x}-\mu_0}{\sqrt{\frac{s^2}{n}}}$
+
+-   For the slope in a regression model: $t = \dfrac{\hat{\beta}-0}{SE}$
+
+## 
+
+If the observed statistic is many SE away from the null value, then the observed sample is unlikely to have occurred under $H_0$.
+
+. . .
+
+**Question**: how many SE is enough?
+
+**Answer**: use the normal approximation to compute a p-value!
+
+. . .
+
+`R` will compute the p-value for you.
+
+## Confidence interval
+
+$$
+CI = \text{point estimate} \pm \text{critical value} *SE
+$$
+
+The critical value depends on the confidence level (90%, 95%, 99% CI) and the type of data.
+
+To find the critical value corresponding to the confidence level `cl` use the following commands
+
+-   Proportion: `qnorm(1-(1-cl)/2)`
+
+    -   for a 95% CI, the critical value is 1.96, for a 99% CI it is 2.57
+
+-   Mean and regression slope: `qt(1-(1-cl)/2, n-1)` where $n$ is the sample size.
+
+    -   these critical values are slightly larger than those for proportions
+
+    -   as $n$ increases, this difference decreases.
+
+## Larger sample give a smaller SE
+
+::: callout-note
+## Sample size matters
+
+Note that as $n$ increases, the SE decreases. This means that a larger sample will give narrower CI and smaller p-values.
+:::
+
+# Recap
+
+## Recap
+
+-   Simple linear regression (case 5)
+    -   HT via simulation
+
+    -   CI via bootstrap

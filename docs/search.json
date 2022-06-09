@@ -1572,7 +1572,7 @@
     "href": "slides/lec-11.html#p-value",
     "title": "Inference for regression",
     "section": "p-value",
-    "text": "p-value\nProbability that \\(\\hat{\\beta}_{1}^{sim}\\ge \\hat{\\beta}^{obs}_1\\) or \\(\\hat{\\beta}_{1}^{sim}\\le \\hat{\\beta}^{obs}_1\\).\n\np_value <- results %>%\n  mutate(is_more_extreme = stat_sim >= stat_obs | stat_sim <= -stat_obs) %>%\n  summarize(p_value = mean(is_more_extreme))\np_value\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1  0.0228\n\n\nUsing the usual significance level \\(\\alpha = 0.05\\), we reject \\(H_0\\).\n\n\nm <- lm(weight~mother_age, data = d)\nbroom::tidy(m)\n\n# A tibble: 2 x 5\n  term        estimate std.error statistic  p.value\n  <chr>          <dbl>     <dbl>     <dbl>    <dbl>\n1 (Intercept)   5.59      0.669       8.36 4.35e-13\n2 mother_age    0.0554    0.0237      2.34 2.13e- 2"
+    "text": "p-value\nProbability that \\(\\hat{\\beta}_{1}^{sim}\\ge \\hat{\\beta}^{obs}_1\\) or \\(\\hat{\\beta}_{1}^{sim}\\le -\\hat{\\beta}^{obs}_1\\).\n\np_value <- results %>%\n  mutate(is_more_extreme = stat_sim >= stat_obs | stat_sim <= -stat_obs) %>%\n  summarize(p_value = mean(is_more_extreme))\np_value\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1  0.0228\n\n\nUsing the usual significance level \\(\\alpha = 0.05\\), we reject \\(H_0\\).\n\n\nm <- lm(weight~mother_age, data = d)\nbroom::tidy(m)\n\n# A tibble: 2 x 5\n  term        estimate std.error statistic  p.value\n  <chr>          <dbl>     <dbl>     <dbl>    <dbl>\n1 (Intercept)   5.59      0.669       8.36 4.35e-13\n2 mother_age    0.0554    0.0237      2.34 2.13e- 2"
   },
   {
     "objectID": "slides/lec-11.html#section-2",
@@ -1634,6 +1634,139 @@
     "objectID": "slides/lec-11.html#recap-2",
     "href": "slides/lec-11.html#recap-2",
     "title": "Inference for regression",
+    "section": "Recap",
+    "text": "Recap\n\nSimple linear regression (case 5)\n\nHT via simulation\nCI via bootstrap\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+  },
+  {
+    "objectID": "slides/lec-12.html#announcements",
+    "href": "slides/lec-12.html#announcements",
+    "title": "Classical inference",
+    "section": "Announcements",
+    "text": "Announcements"
+  },
+  {
+    "objectID": "slides/lec-12.html#recap",
+    "href": "slides/lec-12.html#recap",
+    "title": "Classical inference",
+    "section": "Recap",
+    "text": "Recap\n\nSimple linear regression (case 5)\n\nHT via simulation\nCI via bootstrap"
+  },
+  {
+    "objectID": "slides/lec-12.html#outline",
+    "href": "slides/lec-12.html#outline",
+    "title": "Classical inference",
+    "section": "Outline",
+    "text": "Outline\n\nNormal approximation\nStatistical inference via normal approximation\n\nHypothesis test\nConfidence interval\n\nConditions"
+  },
+  {
+    "objectID": "slides/lec-12.html#normal-distribution",
+    "href": "slides/lec-12.html#normal-distribution",
+    "title": "Classical inference",
+    "section": "Normal distribution",
+    "text": "Normal distribution\n\ntibble(x = seq(-5, 5, by = 0.01)) %>%\n  mutate(normal = dnorm(x, mean = 0, sd = 1)) %>%\n  ggplot() + \n  geom_line(aes(x, normal))\n\n\n\\(\\Rightarrow\\) unimodal, symmetric, thin tails – bell-shaped"
+  },
+  {
+    "objectID": "slides/lec-12.html#normal-approximation-1",
+    "href": "slides/lec-12.html#normal-approximation-1",
+    "title": "Classical inference",
+    "section": "Normal approximation",
+    "text": "Normal approximation\nThe normal distribution describes the variability of the different statistics\n\n\\(\\hat{p}\\), \\(\\bar{x}\\), \\(\\hat{\\beta}\\)\nsimply look at all the histograms we have constructed from simulated samples (HT) bootstrap samples (CI)!\n\n\nClassical statistics: instead of simulating the sampling distribution via simulation (HT) or bootstrapping (CI), we approximate it with a normal distribution."
+  },
+  {
+    "objectID": "slides/lec-12.html#normal-approximation-for-barx",
+    "href": "slides/lec-12.html#normal-approximation-for-barx",
+    "title": "Classical inference",
+    "section": "Normal approximation for \\(\\bar{x}\\)",
+    "text": "Normal approximation for \\(\\bar{x}\\)\nYou have seen that if a numerical random variable is normally distributed\n\\[\nX\\sim N(\\mu, \\sigma^2)\n\\]\nthen the sample average is also normally distributed\n\\[\n\\bar{x} \\sim N\\left(\\mu, \\frac{\\sigma^2}{n}\\right)\n\\]"
+  },
+  {
+    "objectID": "slides/lec-12.html#condition-for-the-normality-of-barx",
+    "href": "slides/lec-12.html#condition-for-the-normality-of-barx",
+    "title": "Classical inference",
+    "section": "Condition for the normality of \\(\\bar{x}\\)",
+    "text": "Condition for the normality of \\(\\bar{x}\\)\nIn practice, we cannot assume that the random variable \\(X\\) is exactly normally distributed.\nBut as long as\n\nthe sample is large enough \\((n\\ge 10)\\) (condition 1)\nthe variable is approximately normal: unimodal, roughly symmetric and does not have serious outliers (condition 2)\n\nthe sample average is well approximated by a normal distribution\n\\[\n\\bar{x} \\sim N\\left(\\mu, \\frac{\\sigma^2}{n}\\right)\n\\]\n\nSee the numerous histograms for case 3 (one mean) where the distribution of \\(\\bar{x}\\) always looks pretty normal."
+  },
+  {
+    "objectID": "slides/lec-12.html#normal-approximation-for-hatp",
+    "href": "slides/lec-12.html#normal-approximation-for-hatp",
+    "title": "Classical inference",
+    "section": "Normal approximation for \\(\\hat{p}\\)",
+    "text": "Normal approximation for \\(\\hat{p}\\)\nIf\n\nthe sample is large enough \\((n\\ge30)\\) (condition 1)\n\\(p\\) is not extreme \\((pn\\ge 10 \\text{ and } (1-p)n\\ge 10)\\) (condition 2)\n\nthen the distribution of \\(\\hat{p}\\) can be approximated by a normal distribution\n\\[\n\\hat{p} \\sim N\\left(p, \\frac{p(1-p)}{n}\\right)\n\\]\n\nSee the numerous histograms for case 1 (one proportion) where the distribution of \\(\\hat{p}\\) always looks pretty normal."
+  },
+  {
+    "objectID": "slides/lec-12.html#conditions-are-satisfied",
+    "href": "slides/lec-12.html#conditions-are-satisfied",
+    "title": "Classical inference",
+    "section": "Conditions are satisfied",
+    "text": "Conditions are satisfied\n\np <- 0.4; n <- 100 # conditions are satisfied: n>30, p*n>10 and (1-p)*n>10\nresults <- tibble(p_hat = numeric())\nfor(i in 1 : 1e4){\n  sim     <- purrr::rbernoulli(n, p)\n  p_hat   <- mean(sim)\n  results <- results %>% add_row(p_hat)\n}\nggplot(results) + geom_histogram(aes(p_hat), binwidth = 0.01)"
+  },
+  {
+    "objectID": "slides/lec-12.html#normal-approximation-2",
+    "href": "slides/lec-12.html#normal-approximation-2",
+    "title": "Classical inference",
+    "section": "Normal approximation",
+    "text": "Normal approximation\n\ntibble(p_hat = seq(0.2, 0.6, by = 0.001)) %>%\n  mutate(normal_approximation = dnorm(p_hat, mean = p, sd = sqrt(p*(1-p)/n))) %>%\n  ggplot() +\n  geom_line(aes(x = p_hat, y = normal_approximation))"
+  },
+  {
+    "objectID": "slides/lec-12.html#conditions-are-not-satisfied",
+    "href": "slides/lec-12.html#conditions-are-not-satisfied",
+    "title": "Classical inference",
+    "section": "Conditions are not satisfied",
+    "text": "Conditions are not satisfied\n\np <- 0.025; n <- 100 # conditions are not satisfied: p*n<10 \nresults <- tibble(p_hat = numeric())\nfor(i in 1 : 1e4){\n  sim     <- purrr::rbernoulli(n, p)\n  p_hat   <- mean(sim)\n  results <- results %>% add_row(p_hat)\n}\nggplot(results) + geom_histogram(aes(p_hat), binwidth = 0.01) + xlim(-0.05, 0.1)"
+  },
+  {
+    "objectID": "slides/lec-12.html#normal-approximation-fails",
+    "href": "slides/lec-12.html#normal-approximation-fails",
+    "title": "Classical inference",
+    "section": "Normal approximation fails",
+    "text": "Normal approximation fails\n\ntibble(p_hat = seq(-0.05, 0.1, by = 0.001)) %>%\n  mutate(normal_approximation = dnorm(p_hat, mean = p, sd = sqrt(p*(1-p)/n))) %>%\n  ggplot() + geom_line(aes(x = p_hat, y = normal_approximation)) + xlim(-0.05, 0.1)"
+  },
+  {
+    "objectID": "slides/lec-12.html#normal-approximation-for-hatbeta",
+    "href": "slides/lec-12.html#normal-approximation-for-hatbeta",
+    "title": "Classical inference",
+    "section": "Normal approximation for \\(\\hat{\\beta}\\)",
+    "text": "Normal approximation for \\(\\hat{\\beta}\\)\nIf\nthe distribution of \\(\\hat{\\beta}\\) can also be approximated by a normal distribution."
+  },
+  {
+    "objectID": "slides/lec-12.html#standard-error",
+    "href": "slides/lec-12.html#standard-error",
+    "title": "Classical inference",
+    "section": "Standard error",
+    "text": "Standard error\nStandard error: standard deviation of statistic\n\nthe sd of \\(\\hat{p}\\) is \\(SE=\\sqrt{\\frac{p(1-p)}{n}}\\)\nthe sd of \\(\\bar{x}\\) is \\(SE=\\sqrt{\\frac{\\sigma^2}{n}} \\approx \\sqrt{\\frac{s^2}{n}}\\) where \\(s^2\\) is an estimate of the population variance \\(\\sigma^2\\) based on the sample.\nthe sd of \\(\\hat{\\beta}\\) has a complicated form."
+  },
+  {
+    "objectID": "slides/lec-12.html#hypothesis-test",
+    "href": "slides/lec-12.html#hypothesis-test",
+    "title": "Classical inference",
+    "section": "Hypothesis test",
+    "text": "Hypothesis test\nHow many SE is the observed sample from the null value?\n\\[\n\\dfrac{\\text{point estimate} - \\text{null value}}{SE}\n\\]\n\nFor one proportion: \\(Z = \\dfrac{\\hat{p}-p_0}{SE} = \\dfrac{\\hat{p}-p_0}{\\sqrt{\\frac{p_0(1-p_0)}{n}}}\\)\nFor one mean: \\(t = \\dfrac{\\bar{x}-\\mu_0}{SE} = \\dfrac{\\bar{x}-\\mu_0}{\\sqrt{\\frac{s^2}{n}}}\\)\nFor the slope in a regression model: \\(t = \\dfrac{\\hat{\\beta}-0}{SE}\\)"
+  },
+  {
+    "objectID": "slides/lec-12.html#section",
+    "href": "slides/lec-12.html#section",
+    "title": "Classical inference",
+    "section": "",
+    "text": "If the observed statistic is many SE away from the null value, then the observed sample is unlikely to have occurred under \\(H_0\\).\n\nQuestion: how many SE is enough?\nAnswer: use the normal approximation to compute a p-value!\n\n\nR will compute the p-value for you."
+  },
+  {
+    "objectID": "slides/lec-12.html#confidence-interval",
+    "href": "slides/lec-12.html#confidence-interval",
+    "title": "Classical inference",
+    "section": "Confidence interval",
+    "text": "Confidence interval\n\\[\nCI = \\text{point estimate} \\pm \\text{critical value} *SE\n\\]\nThe critical value depends on the confidence level (90%, 95%, 99% CI) and the type of data.\nTo find the critical value corresponding to the confidence level cl use the following commands\n\nProportion: qnorm(1-(1-cl)/2)\n\nfor a 95% CI, the critical value is 1.96, for a 99% CI it is 2.57\n\nMean and regression slope: qt(1-(1-cl)/2, n-1) where \\(n\\) is the sample size.\n\nthese critical values are slightly larger than those for proportions\nas \\(n\\) increases, this difference decreases."
+  },
+  {
+    "objectID": "slides/lec-12.html#larger-sample-give-a-smaller-se",
+    "href": "slides/lec-12.html#larger-sample-give-a-smaller-se",
+    "title": "Classical inference",
+    "section": "Larger sample give a smaller SE",
+    "text": "Larger sample give a smaller SE\n\n\n\n\n\n\nSample size matters\n\n\nNote that as \\(n\\) increases, the SE decreases. This means that a larger sample will give narrower CI and smaller p-values."
+  },
+  {
+    "objectID": "slides/lec-12.html#recap-2",
+    "href": "slides/lec-12.html#recap-2",
+    "title": "Classical inference",
     "section": "Recap",
     "text": "Recap\n\nSimple linear regression (case 5)\n\nHT via simulation\nCI via bootstrap\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   },

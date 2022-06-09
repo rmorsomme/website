@@ -50,7 +50,7 @@ options(scipen = 100)
 
 # Welcome
 
-## Announcements -- remaining deadlines  {.smaller}
+## Announcements -- remaining deadlines {.smaller}
 
 -   Homework
 
@@ -243,9 +243,9 @@ ggplot(results) +
   geom_vline(xintercept = stat_obs, col = "maroon", size = 2)
 ```
 
-## p-value  {.smaller}
+## p-value {.smaller}
 
-Probability that $\hat{\beta}_{1}^{sim}\ge \hat{\beta}^{obs}_1$ or $\hat{\beta}_{1}^{sim}\le \hat{\beta}^{obs}_1$.
+Probability that $\hat{\beta}_{1}^{sim}\ge \hat{\beta}^{obs}_1$ or $\hat{\beta}_{1}^{sim}\le -\hat{\beta}^{obs}_1$.
 
 ```{r}
 p_value <- results %>%
