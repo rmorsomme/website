@@ -78,7 +78,7 @@ options(scipen = 100)
 
 . . .
 
--   Paired means
+-   Paired means (similar to one mean)
 
     -   HT via simulation
 
