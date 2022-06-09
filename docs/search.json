@@ -1582,13 +1582,6 @@
     "text": "Simulated slopes\n\nggplot(results) + \n  geom_histogram(aes(stat_boot)) + \n  geom_vline(xintercept = quantile(results$stat_boot, c(0.05, 0.95)), col = \"gold1\" , size = 2) + # 90% CI \n  geom_vline(xintercept = quantile(results$stat_boot, c(0.01, 0.99)), col = \"maroon\", size = 2) # 98% CI"
   },
   {
-    "objectID": "slides/lec-11.html#section-6",
-    "href": "slides/lec-11.html#section-6",
-    "title": "Inference for regression",
-    "section": "",
-    "text": "Group exercise - CI\n\n\nExercise 24.3. Does the CI include 0? Does it agree with the HT?\nExercise 24.11. Does the CI include 0? Does it agree with the HT?\n\n\n\n\n\n\n03:00"
-  },
-  {
     "objectID": "slides/lec-11.html#ci-and-ht",
     "href": "slides/lec-11.html#ci-and-ht",
     "title": "Inference for regression",
@@ -1596,11 +1589,11 @@
     "text": "CI and HT\n\nquantile(results$stat_boot, c(0.05, 0.95)) # 90% CI (doesn't include 0)\n\n        5%        95% \n0.01508696 0.09440465 \n\n\n\nquantile(results$stat_boot, c(0.01, 0.99)) # 98% CI (includes 0)\n\n           1%           99% \n-0.0001734654  0.1117749557 \n\n\n\nRemember that the p-value is 0.023.\n\n\n\n\n\n\n\n\nTwo sides of the same coin\n\n\nThe 95% CI dos not include 0, but the 98% CI does. This indicates that 0 is a value plausible at the (usual) significance level \\(\\alpha=0.05\\) but not at the more conservative significance level \\(\\alpha=0.02\\). Again, this is exactly what the HT concluded."
   },
   {
-    "objectID": "slides/lec-11.html#section-7",
-    "href": "slides/lec-11.html#section-7",
+    "objectID": "slides/lec-11.html#section-6",
+    "href": "slides/lec-11.html#section-6",
     "title": "Inference for regression",
     "section": "",
-    "text": "Group exercise - CI\n\n\nExercise 24.11. Does the CI include 0? Does it agree with the HT?\nExercise 24.3.\n\n\n\n\n\n\n03:00"
+    "text": "Group exercise - CI\n\n\nExercise 24.3. Does the CI include 0? Does it agree with the HT?\nExercise 24.11. Does the CI include 0? Does it agree with the HT?\n\n\n\n\n\n\n03:00"
   },
   {
     "objectID": "slides/lec-11.html#recap-2",
