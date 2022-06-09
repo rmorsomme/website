@@ -1,5 +1,5 @@
 ---
-title: "HW 8 - Inference for means"
+title: "HW 8 - Modern statistical inference (two groups)"
 subtitle: "Due Monday, June 13, 9:00pm on Gradescope"
 ---
 
@@ -7,12 +7,9 @@ This assignment needs to be completed with RMarkdown and submitted as a PDF on [
 
 When submitting your work on Gradescope, please assign a page for each question.
 
-## Problem set (10 points)
+## Problem set (19 points)
 
--   9.2 -- parts b and d (1 point)
--   9.4 (4 points) -- Hint: use the symbol `$` to write mathematical equations; for instance, to write the fraction $\frac{e^{\mu}}{\beta_0}$ simply use `$\frac{e^{\mu}}{\beta_0}$`.
 -   9.8 (3 points)
--   24.8 -- parts b-c with a **percentile** bootstrap interval, the usual bootstrap interval that we have constructed in class (2 points)
 
 For the remaining exercises, use the birth data set
 
@@ -21,25 +18,21 @@ library(readr)
 d <- read_csv("https://rmorsomme.github.io/website/projects/training_set.csv")
 ```
 
-## Confidence intervals via bootstrap (18 points)
+## Confidence intervals via bootstrap (14 points)
 
-Construct (5 points) and interpret in the context of the problem (1 point) a 95% confidence interval using 10000 bootstrap samples for
+Construct (7 points) and interpret in the context of the problem (1 point) a 95% confidence interval using 10000 bootstrap samples for
 
--   the proportion of female newborn (6 points)
+-   the difference in proportion of female newborns among women with and without risk factor (7 points)
 
--   the mean weight of newborns (6 points)
+-   the difference in the mean weight of newborns among women with and without risk factor (7 points)
 
--   the slope of `gestation week` in a simple linear regression model for `newborn_birth_weight` (6 points)
+## Hypothesis test via simulation (16 points)
 
-## Hypothesis test via simulation (21 points)
+Conduct a hypothesis test using simulation for the following cases. State the hypotheses in words and in mathematical symbols (2 points) and use 10000 samples simulated samples and the significance level $\alpha=0.05$ (6 points).
 
-Conduct a hypothesis test using simulation for the following cases. State the hypotheses in words and in mathematical symbols (2 points) and use 10000 samples simulated samples and the significance level $\alpha=0.05$ (5 points).
+-   You want to determine whether women with and without risk factor have the same proportion of female newborns (8 points)
 
--   You want to determine whether exactly half of the newborns are female (7 points)
-
--   You want to determine whether the mean weight of newborns is 3500 grams (7 points)
-
--   You want to determine whether `newborn_birth_weight` is independent of `gestation week` (7 points)
+-   You want to determine whether women with and without risk factor have newborns with the same mean weight (8 points)
 
 ## Reproducibility (1 point)
 
