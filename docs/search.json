@@ -459,7 +459,7 @@
     "href": "project-inference.html#data",
     "title": "Inference project",
     "section": "Data",
-    "text": "Data\nThe data set that you analyze needs to have at least 100 observations and 5 meaningful variables (identifier variables such as “name”, “social security number” or “id” do not count), including at least one categorical and one numerical variable.\nYou are welcome to analyze data from your own work/research or to use any real data set that is publicly available. Here are a few examples.\n\nU.S. birth data (see prediction project)\nDuke Lemur Center\nCar fuel economy – EPA"
+    "text": "Data\nThe data set that you analyze needs to have at least 100 observations and 5 meaningful variables (identifier variables such as “name”, “social security number” or “id” do not count), including at least one categorical and one numerical variable.\nYou are welcome to analyze data from your own work/research or to use any real data set that is publicly available. Here are a few examples.\n\nU.S. birth data (see prediction project)\nWorld birth data\nDuke Lemur Center\nCar fuel economy – EPA"
   },
   {
     "objectID": "project-inference.html#submission",
@@ -4296,5 +4296,47 @@
     "title": "Teaching triangle",
     "section": "",
     "text": "Time\nDate\n\n\n\n\n6:00\nE starts on time\nE lectures (slides) with numerous examples and pictures\n\n\n6:05\nE interacts with students through chat, thumb up/down\n\n\n6:10\n1/4 Zoom cameras on\nNich. Guar. provides answer, E. corrects Nich. (could have asked the rest of the class to correct Nich. instead)\n27 students\n\n\n6:15\nE uses a short video (2 min)\n\n\n6:20\nE answers question from Zoom chat\n\n\n6:25\nE illustrates phonology with many examples\n26 students\n\n\n6:30\nE applies phonology to sign language, many videos\nMuch focus given to sign language\n49 messages in chat\n\n\n6:35\nJaich. Pai. raises hand; E spots Jaich immediately\n\n\n6:40\nSemantics – E connects main topics of lecture to one another\n\n\n6:45\n91 messages in Zoom chat\nMuch interaction with students\n\n\n6:50\nThe exchange with students continues\n\n\n6:55\nThe exchange has just concluded\nVideos about code-switching\n\n\n7:00\nAnother long exchange with students (>10 min)\n\n\n7:16\n127 messages in chat\n25 participants\nbreak\n\n\nQ\n-) English/US-centered; extending discussion before break was irritating\n+) videos"
+  },
+  {
+    "objectID": "slides/lec-12.html#the-classical-approach",
+    "href": "slides/lec-12.html#the-classical-approach",
+    "title": "Classical inference",
+    "section": "The classical approach",
+    "text": "The classical approach\nStep 1: we are interested in the distribution of the statistic under \\(H_0\\).\n\nModern approach: directly simulate from this distribution\nClassical approach: approximate this distribution with a normal distribution\n\n\nStep 2: we want to compute the p-value\n\nModern approach: the p-value is the proportion of simulations with a statistic at least as extreme as that of the observed sample\nClassical approach: the p-value is the area under the curve of the normal distribution that is at least as extreme as the observed statistic."
+  },
+  {
+    "objectID": "slides/lec-12.html#the-classical-approach-in-r",
+    "href": "slides/lec-12.html#the-classical-approach-in-r",
+    "title": "Classical inference",
+    "section": "The classical approach in R",
+    "text": "The classical approach in R\nR will compute the p-value for you"
+  },
+  {
+    "objectID": "slides/lec-12.html#ht-for-proportions",
+    "href": "slides/lec-12.html#ht-for-proportions",
+    "title": "Classical inference",
+    "section": "HT for proportions",
+    "text": "HT for proportions"
+  },
+  {
+    "objectID": "slides/lec-12.html#ht-for-means",
+    "href": "slides/lec-12.html#ht-for-means",
+    "title": "Classical inference",
+    "section": "HT for means",
+    "text": "HT for means"
+  },
+  {
+    "objectID": "slides/lec-12.html#ht-for-regression",
+    "href": "slides/lec-12.html#ht-for-regression",
+    "title": "Classical inference",
+    "section": "HT for regression",
+    "text": "HT for regression"
+  },
+  {
+    "objectID": "slides/lec-12.html#ht-for-logistic-regression",
+    "href": "slides/lec-12.html#ht-for-logistic-regression",
+    "title": "Classical inference",
+    "section": "HT for logistic regression",
+    "text": "HT for logistic regression"
   }
 ]

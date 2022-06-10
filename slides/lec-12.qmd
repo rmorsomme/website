@@ -197,6 +197,36 @@ If
 
 the distribution of $\hat{\beta}$ can also be approximated by a normal distribution.
 
+# The classical approach to HT
+
+## The classical approach
+
+Step 1: we are interested in the distribution of the statistic under $H_0$.
+
+-   **Modern approach**: directly *simulate* from this distribution
+
+-   **Classical approach**: *approximate* this distribution with a normal distribution
+
+. . .
+
+Step 2: we want to compute the p-value
+
+-   **Modern approach**: the p-value is the proportion of simulations with a statistic at least as extreme as that of the observed sample
+
+-   **Classical approach**: the p-value is the *area under the curve* of the normal distribution that is at least as extreme as the observed statistic.
+
+## The classical approach in `R`
+
+`R` will compute the p-value for you
+
+## HT for proportions
+
+## HT for means
+
+## HT for regression
+
+## HT for logistic regression
+
 ## Standard error
 
 **Standard error**: standard deviation of statistic

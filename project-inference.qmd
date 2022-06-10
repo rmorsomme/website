@@ -32,6 +32,8 @@ You are welcome to analyze data from your own work/research or to use any real d
 
 -   U.S. birth data (see prediction project)
 
+-   [World birth data](https://www.openintro.org/data/?data=sowc_maternal_newborn)
+
 -   [Duke Lemur Center](https://www.kaggle.com/datasets/jessemostipak/duke-lemur-center-data)
 
 -   [Car fuel economy -- EPA](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-10-15)

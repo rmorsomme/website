@@ -543,6 +543,42 @@ X\sim N(\mu, \sigma^2)
 <h2>Normal approximation for <span class="math inline">\(\hat{\beta}\)</span></h2>
 <p>If</p>
 <p>the distribution of <span class="math inline">\(\hat{\beta}\)</span> can also be approximated by a normal distribution.</p>
+</section></section>
+<section>
+<section id="the-classical-approach-to-ht" class="title-slide slide level1 center">
+<h1>The classical approach to HT</h1>
+
+</section>
+<section id="the-classical-approach" class="slide level2">
+<h2>The classical approach</h2>
+<p>Step 1: we are interested in the distribution of the statistic under <span class="math inline">\(H_0\)</span>.</p>
+<ul>
+<li><p><strong>Modern approach</strong>: directly <em>simulate</em> from this distribution</p></li>
+<li><p><strong>Classical approach</strong>: <em>approximate</em> this distribution with a normal distribution</p></li>
+</ul>
+<div class="fragment">
+<p>Step 2: we want to compute the p-value</p>
+<ul>
+<li><p><strong>Modern approach</strong>: the p-value is the proportion of simulations with a statistic at least as extreme as that of the observed sample</p></li>
+<li><p><strong>Classical approach</strong>: the p-value is the <em>area under the curve</em> of the normal distribution that is at least as extreme as the observed statistic.</p></li>
+</ul>
+</div>
+</section>
+<section id="the-classical-approach-in-r" class="slide level2">
+<h2>The classical approach in <code>R</code></h2>
+<p><code>R</code> will compute the p-value for you</p>
+</section>
+<section id="ht-for-proportions" class="slide level2">
+<h2>HT for proportions</h2>
+</section>
+<section id="ht-for-means" class="slide level2">
+<h2>HT for means</h2>
+</section>
+<section id="ht-for-regression" class="slide level2">
+<h2>HT for regression</h2>
+</section>
+<section id="ht-for-logistic-regression" class="slide level2">
+<h2>HT for logistic regression</h2>
 </section>
 <section id="standard-error" class="slide level2">
 <h2>Standard error</h2>
