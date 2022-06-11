@@ -154,7 +154,7 @@ The textbook uses the term (parametric) bootstrap to refer to this procedure.
 #| code-line-numbers: "|4|5|6|"
 set.seed(0)
 results <-  tibble(p_hat = numeric())
-for(i in 1 : 1e3){
+for(i in 1 : 1e4){
   sim     <- rbernoulli(n = 1500, p = 0.5) # simulate a sample under H0
   p_hat   <- mean(sim)                     # compute the sample statistic p_hat
   results <- results %>% add_row(p_hat = p_hat)
@@ -276,7 +276,7 @@ sample_bootstrap <- function(data){
 #| code-line-numbers: "|4|5|6|"
 results <- tibble(p_hat = numeric()) # empty data frame to collect the results
 set.seed(0)
-for(i in 1 : 1e3){
+for(i in 1 : 1e4){
   d_boot    <- sample_bootstrap(sample_observed) # bootstrap sample
   stat_boot <- mean(d_boot$support)              # bootstrap statistic
   results   <- results %>% add_row(p_hat = stat_boot) 
@@ -421,11 +421,9 @@ Source: [IMS](https://www.openintro.org/book/ims/)
 ## 
 
 ```{r}
-#| code-line-numbers: "|2|3|4|"
+#| code-line-numbers: "|1|2|3|"
 d <- gender_discrimination
-promotions_ordered <- c(rep(1, 35), rep(0, 13)) # 35 promotions and 13 non-promotions
-promotions_sim <- sample(promotions_ordered) # shuffle the promotions
-d_sim <- d %>% mutate(decision = promotions_sim)
+d_sim <- d %>% mutate(decision = sample(decision)) # shuffle the promotions
 d_sim
 ```
 
@@ -436,7 +434,7 @@ d_sim
 compute_p_diff <- function(data){
   p_hat <- data %>%
     group_by(gender) %>%
-    summarize(p_hat = mean(decision))
+    summarize(p_hat = mean(decision == "promoted"))
   p_diff_hat <- p_hat$p_hat[1] - p_hat$p_hat[2]
   return(p_diff_hat)
 }
@@ -446,18 +444,16 @@ compute_p_diff(d_sim)
 ## For-loop for simulating under $H_0$
 
 ```{r, cache=TRUE}
-#| code-line-numbers: "|9|10|"
 # Setup
 results    <- tibble(p_diff_hat = numeric())
 d          <- gender_discrimination
-promotions <- c(rep(1, 35), rep(0, 13))
 
 # Simulations
 set.seed(0)
-for(i in 1 : 1e3){
-  d_sim <- d %>% mutate(decision = sample(promotions)) # simulate under H0
+for(i in 1 : 1e4){
+  d_sim      <- d %>% mutate(decision = sample(decision)) # simulate under H0
   p_diff_hat <- compute_p_diff(d_sim) # test statistic
-  results <- results %>% add_row(p_diff_hat = p_diff_hat)
+  results    <- results %>% add_row(p_diff_hat = p_diff_hat)
 }
 ```
 

@@ -20,11 +20,13 @@ knitr::opts_chunk$set(
 set.seed(0)
 library(tidyverse)
 
-d_sub <- read_csv(
+d_raw <- read_csv(
   "../Nat2020us/Nat2020PublicUS.c20210506.r20210812.txt",
   col_names = FALSE, trim_ws = FALSE
   ) %>%
-  slice_sample(n = 5e4)
+  slice_sample(n = 10e3)
+
+save(d_raw, file = "projects/d_raw.RDATA")
 ```
 
 ## Variable extraction

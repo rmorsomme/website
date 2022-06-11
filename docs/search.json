@@ -1670,28 +1670,28 @@
     "href": "slides/lec-12.html#normal-approximation-1",
     "title": "Classical inference",
     "section": "Normal approximation",
-    "text": "Normal approximation\nThe normal distribution describes the variability of the different statistics\n\n\\(\\hat{p}\\), \\(\\bar{x}\\), \\(\\hat{\\beta}\\)\nsimply look at all the histograms we have constructed from simulated samples (HT) bootstrap samples (CI)!\n\n\nClassical statistics: instead of simulating the sampling distribution via simulation (HT) or bootstrapping (CI), we approximate it with a normal distribution."
+    "text": "Normal approximation\nThe normal distribution describes the variability of the different statistics\n\n\\(\\hat{p}\\), \\(\\bar{x}\\), \\(\\hat{\\beta}\\)\nsimply look at all the histograms we have constructed from simulated samples (HT) and bootstrap samples (CI)!\n\n\nClassical approach: instead of simulating the sampling distribution via simulation (HT) or bootstrapping (CI), we approximate it with a normal distribution."
   },
   {
     "objectID": "slides/lec-12.html#normal-approximation-for-barx",
     "href": "slides/lec-12.html#normal-approximation-for-barx",
     "title": "Classical inference",
     "section": "Normal approximation for \\(\\bar{x}\\)",
-    "text": "Normal approximation for \\(\\bar{x}\\)\nYou have seen that if a numerical random variable is normally distributed\n\\[\nX\\sim N(\\mu, \\sigma^2)\n\\]\nthen the sample average is also normally distributed\n\\[\n\\bar{x} \\sim N\\left(\\mu, \\frac{\\sigma^2}{n}\\right)\n\\]"
+    "text": "Normal approximation for \\(\\bar{x}\\)\nWe have seen that if a numerical variable \\(X\\) is normally distributed\n\\[\nX\\sim N(\\mu, \\sigma^2)\n\\]\nthen the sample average is also normally distributed\n\\[\n\\bar{x} \\sim N\\left(\\mu, \\frac{\\sigma^2}{n}\\right)\n\\]"
   },
   {
     "objectID": "slides/lec-12.html#condition-for-the-normality-of-barx",
     "href": "slides/lec-12.html#condition-for-the-normality-of-barx",
     "title": "Classical inference",
     "section": "Condition for the normality of \\(\\bar{x}\\)",
-    "text": "Condition for the normality of \\(\\bar{x}\\)\nIn practice, we cannot assume that the random variable \\(X\\) is exactly normally distributed.\nBut as long as\n\nthe sample is large enough \\((n\\ge 10)\\) (condition 1)\nthe variable is approximately normal: unimodal, roughly symmetric and does not have serious outliers (condition 2)\n\nthe sample average is well approximated by a normal distribution\n\\[\n\\bar{x} \\sim N\\left(\\mu, \\frac{\\sigma^2}{n}\\right)\n\\]\n\nSee the numerous histograms for case 3 (one mean) where the distribution of \\(\\bar{x}\\) always looks pretty normal."
+    "text": "Condition for the normality of \\(\\bar{x}\\)\nIn practice, we cannot assume that the variable \\(X\\) is exactly normally distributed.\nBut as long as\n\nthe sample is large \\((n\\ge 30)\\), or\nthe variable is approximately normal: unimodal, roughly symmetric and no serious outlier\n\n\\(\\bar{x}\\) is well approximated by a normal distribution\n\\[\n\\bar{x} \\sim N\\left(\\mu, \\frac{\\sigma^2}{n}\\right)\n\\]\n\nSee the numerous histograms for case 3 (one mean) where the distribution of \\(\\bar{x}\\) always looks pretty normal."
   },
   {
     "objectID": "slides/lec-12.html#normal-approximation-for-hatp",
     "href": "slides/lec-12.html#normal-approximation-for-hatp",
     "title": "Classical inference",
     "section": "Normal approximation for \\(\\hat{p}\\)",
-    "text": "Normal approximation for \\(\\hat{p}\\)\nIf\n\nthe sample is large enough \\((n\\ge30)\\) (condition 1)\n\\(p\\) is not extreme \\((pn\\ge 10 \\text{ and } (1-p)n\\ge 10)\\) (condition 2)\n\nthen the distribution of \\(\\hat{p}\\) can be approximated by a normal distribution\n\\[\n\\hat{p} \\sim N\\left(p, \\frac{p(1-p)}{n}\\right)\n\\]\n\nSee the numerous histograms for case 1 (one proportion) where the distribution of \\(\\hat{p}\\) always looks pretty normal."
+    "text": "Normal approximation for \\(\\hat{p}\\)\nIf\n\nthe sample is large enough \\((n\\ge30)\\)\n\\(p\\) is not extreme \\((pn\\ge 10 \\text{ and } (1-p)n\\ge 10)\\)\n\nthe distribution of \\(\\hat{p}\\) can be approximated by a normal distribution\n\\[\n\\hat{p} \\sim N\\left(p, \\frac{p(1-p)}{n}\\right)\n\\]\n\nSee the numerous histograms for case 1 (one proportion) where the distribution of \\(\\hat{p}\\) always looks pretty normal."
   },
   {
     "objectID": "slides/lec-12.html#conditions-are-satisfied",
@@ -1729,6 +1729,97 @@
     "text": "Normal approximation for \\(\\hat{\\beta}\\)\nIf\nthe distribution of \\(\\hat{\\beta}\\) can also be approximated by a normal distribution."
   },
   {
+    "objectID": "slides/lec-12.html#the-classical-approach",
+    "href": "slides/lec-12.html#the-classical-approach",
+    "title": "Classical inference",
+    "section": "The classical approach",
+    "text": "The classical approach\nStep 1: we are interested in the distribution of the statistic under \\(H_0\\).\n\nModern approach: simulate from this distribution\nClassical approach: approximate this distribution with a normal distribution\n\n\nStep 2: we want to compute the p-value\n\nModern approach: the p-value is the proportion of simulations with a statistic at least as extreme as that of the observed sample\nClassical approach: the p-value is the area under the curve of the normal distribution that is at least as extreme as the observed statistic."
+  },
+  {
+    "objectID": "slides/lec-12.html#the-classical-approach-in-r",
+    "href": "slides/lec-12.html#the-classical-approach-in-r",
+    "title": "Classical inference",
+    "section": "The classical approach in R",
+    "text": "The classical approach in R\nR will compute the p-value for you. Here is what R does behind the scene:"
+  },
+  {
+    "objectID": "slides/lec-12.html#ht-for-one-proportion",
+    "href": "slides/lec-12.html#ht-for-one-proportion",
+    "title": "Classical inference",
+    "section": "HT for one proportion",
+    "text": "HT for one proportion\n\nn <- 1500 # sample size\nx <- 780  # number of successes\nprop.test(\n  x, n,             # observed data\n  p = 0.5,          # value in the null hypothesis\n  conf.level = 0.99 # confidence level for CI\n  )\n\n\n    1-sample proportions test with continuity correction\n\ndata:  x out of n, null probability 0.5\nX-squared = 2.3207, df = 1, p-value = 0.1277\nalternative hypothesis: true p is not equal to 0.5\n99 percent confidence interval:\n 0.4864251 0.5533970\nsample estimates:\n   p \n0.52"
+  },
+  {
+    "objectID": "slides/lec-12.html#comparison-with-simulation-based-ht",
+    "href": "slides/lec-12.html#comparison-with-simulation-based-ht",
+    "title": "Classical inference",
+    "section": "Comparison with simulation-based HT",
+    "text": "Comparison with simulation-based HT\nThe simulation-based HT yielded a p-value of 0.127.\n\n\n\n\n\n\nA good normal approximation\n\n\nWhen the conditions for the normal approximation are satisfied, the results based on simulations (modern) and the normal approximation (classical) will be similar."
+  },
+  {
+    "objectID": "slides/lec-12.html#section",
+    "href": "slides/lec-12.html#section",
+    "title": "Classical inference",
+    "section": "",
+    "text": "Individual exercise - HT for one proportion\n\n\nSuppose you interview 2000 US adults about their political preferences and 1200 of them say that they are democrat. What is the 95% confidence interval for \\(p\\), the proportion of US adults who are democrats? What is the length of the interval?\nWhat 95% CI do you obtained if 6000 out of 10000 US adults say they are democrat? What is its length?\n\n\n\n\n\n\n03:00"
+  },
+  {
+    "objectID": "slides/lec-12.html#ht-for-two-proportions",
+    "href": "slides/lec-12.html#ht-for-two-proportions",
+    "title": "Classical inference",
+    "section": "HT for two proportions",
+    "text": "HT for two proportions\n\nn_m <- 24; n_f <- 24     # sample sizes\nx_m <- 14; x_f <- 21     # numbers of promotions\nprop.test(\n  c(x_m, x_f), c(n_m, n_f), # observed data\n  )\n\n\n    2-sample test for equality of proportions with continuity correction\n\ndata:  c(x_m, x_f) out of c(n_m, n_f)\nX-squared = 3.7978, df = 1, p-value = 0.05132\nalternative hypothesis: two.sided\n95 percent confidence interval:\n -0.57084188 -0.01249145\nsample estimates:\n   prop 1    prop 2 \n0.5833333 0.8750000"
+  },
+  {
+    "objectID": "slides/lec-12.html#comparison-with-simulation-based-ht-1",
+    "href": "slides/lec-12.html#comparison-with-simulation-based-ht-1",
+    "title": "Classical inference",
+    "section": "Comparison with simulation-based HT",
+    "text": "Comparison with simulation-based HT\nUsing the simulation-based HT, we found a p-value of 0.0435.\n\n\n\n\n\n\nA good normal approximation\n\n\nWhen the conditions for the normal approximation are not satisfied, the results based on simulations (modern) and the normal approximation (classical) may differ.\nA simulation-based HT will always give exact results. A HT based on the normal distribution will only give the same (exact) results when the conditions are satisfied."
+  },
+  {
+    "objectID": "slides/lec-12.html#ht-for-one-mean",
+    "href": "slides/lec-12.html#ht-for-one-mean",
+    "title": "Classical inference",
+    "section": "HT for one mean",
+    "text": "HT for one mean\n\nd <- ggplot2::mpg\nx <- d$hwy\nt.test(x, mu = 25)\n\n\n    One Sample t-test\n\ndata:  x\nt = -4.0071, df = 233, p-value = 0.00008274\nalternative hypothesis: true mean is not equal to 25\n95 percent confidence interval:\n 22.67324 24.20710\nsample estimates:\nmean of x \n 23.44017"
+  },
+  {
+    "objectID": "slides/lec-12.html#section-1",
+    "href": "slides/lec-12.html#section-1",
+    "title": "Classical inference",
+    "section": "",
+    "text": "Individual exercise - HT for one mean\n\n\nConstruct a 99% CI for hwy.\nHint: use the command help(t.test) to access the help file of the function t.test and see what parameter determines the confidence level.\n\n\n\n\n\n\n03:00"
+  },
+  {
+    "objectID": "slides/lec-12.html#ht-for-two-means",
+    "href": "slides/lec-12.html#ht-for-two-means",
+    "title": "Classical inference",
+    "section": "HT for two means",
+    "text": "HT for two means\n\nd <- ggplot2::mpg\nx1 <- d$hwy\nx2 <- d$cty\nt.test(x1, x2)\n\n\n    Welch Two Sample t-test\n\ndata:  x1 and x2\nt = 13.755, df = 421.79, p-value < 2.2e-16\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n 5.640710 7.521683\nsample estimates:\nmean of x mean of y \n 23.44017  16.85897"
+  },
+  {
+    "objectID": "slides/lec-12.html#ht-for-simple-linear-regression",
+    "href": "slides/lec-12.html#ht-for-simple-linear-regression",
+    "title": "Classical inference",
+    "section": "HT for simple linear regression",
+    "text": "HT for simple linear regression\n\nm <- lm(hwy ~ cty, data = mpg)\ntidy(m)\n\n# A tibble: 2 x 5\n  term        estimate std.error statistic   p.value\n  <chr>          <dbl>     <dbl>     <dbl>     <dbl>\n1 (Intercept)    0.892    0.469       1.90 5.84e-  2\n2 cty            1.34     0.0270     49.6  1.87e-125"
+  },
+  {
+    "objectID": "slides/lec-12.html#ht-for-multiple-linear-regression",
+    "href": "slides/lec-12.html#ht-for-multiple-linear-regression",
+    "title": "Classical inference",
+    "section": "HT for multiple linear regression",
+    "text": "HT for multiple linear regression\n\nm <- lm(hwy ~ cty + displ, data = mpg)\ntidy(m)\n\n# A tibble: 3 x 5\n  term        estimate std.error statistic  p.value\n  <chr>          <dbl>     <dbl>     <dbl>    <dbl>\n1 (Intercept)   1.15      1.21       0.949 3.43e- 1\n2 cty           1.33      0.0449    29.6   1.43e-80\n3 displ        -0.0343    0.148     -0.232 8.17e- 1"
+  },
+  {
+    "objectID": "slides/lec-12.html#ht-for-logistic-regression",
+    "href": "slides/lec-12.html#ht-for-logistic-regression",
+    "title": "Classical inference",
+    "section": "HT for logistic regression",
+    "text": "HT for logistic regression\n\nd <- heart_transplant %>% mutate(survived_binary = survived == \"alive\")\nm <- glm(survived_binary ~ age + transplant, family = \"binomial\", data = d)\ntidy(m)\n\n# A tibble: 3 x 5\n  term                estimate std.error statistic p.value\n  <chr>                  <dbl>     <dbl>     <dbl>   <dbl>\n1 (Intercept)           0.973     1.08       0.904 0.366  \n2 age                  -0.0763    0.0255    -2.99  0.00277\n3 transplanttreatment   1.82      0.668      2.73  0.00635"
+  },
+  {
     "objectID": "slides/lec-12.html#standard-error",
     "href": "slides/lec-12.html#standard-error",
     "title": "Classical inference",
@@ -1743,8 +1834,8 @@
     "text": "Hypothesis test\nHow many SE is the observed sample from the null value?\n\\[\n\\dfrac{\\text{point estimate} - \\text{null value}}{SE}\n\\]\n\nFor one proportion: \\(Z = \\dfrac{\\hat{p}-p_0}{SE} = \\dfrac{\\hat{p}-p_0}{\\sqrt{\\frac{p_0(1-p_0)}{n}}}\\)\nFor one mean: \\(t = \\dfrac{\\bar{x}-\\mu_0}{SE} = \\dfrac{\\bar{x}-\\mu_0}{\\sqrt{\\frac{s^2}{n}}}\\)\nFor the slope in a regression model: \\(t = \\dfrac{\\hat{\\beta}-0}{SE}\\)"
   },
   {
-    "objectID": "slides/lec-12.html#section",
-    "href": "slides/lec-12.html#section",
+    "objectID": "slides/lec-12.html#section-2",
+    "href": "slides/lec-12.html#section-2",
     "title": "Classical inference",
     "section": "",
     "text": "If the observed statistic is many SE away from the null value, then the observed sample is unlikely to have occurred under \\(H_0\\).\n\nQuestion: how many SE is enough?\nAnswer: use the normal approximation to compute a p-value!\n\n\nR will compute the p-value for you."
@@ -3343,7 +3434,7 @@
     "href": "slides/lec-7.html#data",
     "title": "Logistic Regression",
     "section": "Data",
-    "text": "Data\n\nd <- as_tibble(heart_transplant)\nd\n\n# A tibble: 103 x 8\n      id acceptyear   age survived survtime prior transplant  wait\n   <int>      <int> <int> <fct>       <int> <fct> <fct>      <int>\n 1    15         68    53 dead            1 no    control       NA\n 2    43         70    43 dead            2 no    control       NA\n 3    61         71    52 dead            2 no    control       NA\n 4    75         72    52 dead            2 no    control       NA\n 5     6         68    54 dead            3 no    control       NA\n 6    42         70    36 dead            3 no    control       NA\n 7    54         71    47 dead            3 no    control       NA\n 8    38         70    41 dead            5 no    treatment      5\n 9    85         73    47 dead            5 no    control       NA\n10     2         68    51 dead            6 no    control       NA\n# ... with 93 more rows"
+    "text": "Data\n\nd <- heart_transplant\nd\n\n# A tibble: 103 x 8\n      id acceptyear   age survived survtime prior transplant  wait\n   <int>      <int> <int> <fct>       <int> <fct> <fct>      <int>\n 1    15         68    53 dead            1 no    control       NA\n 2    43         70    43 dead            2 no    control       NA\n 3    61         71    52 dead            2 no    control       NA\n 4    75         72    52 dead            2 no    control       NA\n 5     6         68    54 dead            3 no    control       NA\n 6    42         70    36 dead            3 no    control       NA\n 7    54         71    47 dead            3 no    control       NA\n 8    38         70    41 dead            5 no    treatment      5\n 9    85         73    47 dead            5 no    control       NA\n10     2         68    51 dead            6 no    control       NA\n# ... with 93 more rows"
   },
   {
     "objectID": "slides/lec-7.html#effect-of-age-on-survival",
@@ -4022,7 +4113,7 @@
     "href": "slides/lec-9.html#section-3",
     "title": "Inference for proportions",
     "section": "",
-    "text": "set.seed(0)\nresults <-  tibble(p_hat = numeric())\nfor(i in 1 : 1e3){\n  sim     <- rbernoulli(n = 1500, p = 0.5) # simulate a sample under H0\n  p_hat   <- mean(sim)                     # compute the sample statistic p_hat\n  results <- results %>% add_row(p_hat = p_hat)\n}\nggplot(results) + geom_histogram(aes(p_hat))"
+    "text": "set.seed(0)\nresults <-  tibble(p_hat = numeric())\nfor(i in 1 : 1e4){\n  sim     <- rbernoulli(n = 1500, p = 0.5) # simulate a sample under H0\n  p_hat   <- mean(sim)                     # compute the sample statistic p_hat\n  results <- results %>% add_row(p_hat = p_hat)\n}\nggplot(results) + geom_histogram(aes(p_hat))"
   },
   {
     "objectID": "slides/lec-9.html#conclusion",
@@ -4050,7 +4141,7 @@
     "href": "slides/lec-9.html#p-value-in-r",
     "title": "Inference for proportions",
     "section": "p-value in R",
-    "text": "p-value in R\n\nresults <- results %>%\n  mutate(is_more_extreme = p_hat <= 0.48 | p_hat >= 0.52)\nresults\n\n# A tibble: 1,000 x 2\n   p_hat is_more_extreme\n   <dbl> <lgl>          \n 1 0.475 TRUE           \n 2 0.485 FALSE          \n 3 0.483 FALSE          \n 4 0.528 TRUE           \n 5 0.51  FALSE          \n 6 0.493 FALSE          \n 7 0.503 FALSE          \n 8 0.5   FALSE          \n 9 0.495 FALSE          \n10 0.503 FALSE          \n# ... with 990 more rows\n\n\n\nresults %>% summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.121"
+    "text": "p-value in R\n\nresults <- results %>%\n  mutate(is_more_extreme = p_hat <= 0.48 | p_hat >= 0.52)\nresults\n\n# A tibble: 10,000 x 2\n   p_hat is_more_extreme\n   <dbl> <lgl>          \n 1 0.475 TRUE           \n 2 0.485 FALSE          \n 3 0.483 FALSE          \n 4 0.528 TRUE           \n 5 0.51  FALSE          \n 6 0.493 FALSE          \n 7 0.503 FALSE          \n 8 0.5   FALSE          \n 9 0.495 FALSE          \n10 0.503 FALSE          \n# ... with 9,990 more rows\n\n\n\nresults %>% summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.127"
   },
   {
     "objectID": "slides/lec-9.html#p-value-in-practice",
@@ -4099,7 +4190,7 @@
     "href": "slides/lec-9.html#section-8",
     "title": "Inference for proportions",
     "section": "",
-    "text": "results <- tibble(p_hat = numeric()) # empty data frame to collect the results\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_boot    <- sample_bootstrap(sample_observed) # bootstrap sample\n  stat_boot <- mean(d_boot$support)              # bootstrap statistic\n  results   <- results %>% add_row(p_hat = stat_boot) \n}\n\n\nquantile(results$p_hat, c(0.05 , 0.95 )) # 90% CI\n\n       5%       95% \n0.5813000 0.6206667 \n\n\n\nquantile(results$p_hat, c(0.025, 0.975)) # 95% CI (wider)\n\n     2.5%     97.5% \n0.5766667 0.6253500"
+    "text": "results <- tibble(p_hat = numeric()) # empty data frame to collect the results\nset.seed(0)\nfor(i in 1 : 1e4){\n  d_boot    <- sample_bootstrap(sample_observed) # bootstrap sample\n  stat_boot <- mean(d_boot$support)              # bootstrap statistic\n  results   <- results %>% add_row(p_hat = stat_boot) \n}\n\n\nquantile(results$p_hat, c(0.05 , 0.95 )) # 90% CI\n\n       5%       95% \n0.5793333 0.6206667 \n\n\n\nquantile(results$p_hat, c(0.025, 0.975)) # 95% CI (wider)\n\n     2.5%     97.5% \n0.5753333 0.6253333"
   },
   {
     "objectID": "slides/lec-9.html#section-9",
@@ -4169,21 +4260,21 @@
     "href": "slides/lec-9.html#section-14",
     "title": "Inference for proportions",
     "section": "",
-    "text": "d <- gender_discrimination\npromotions_ordered <- c(rep(1, 35), rep(0, 13)) # 35 promotions and 13 non-promotions\npromotions_sim <- sample(promotions_ordered) # shuffle the promotions\nd_sim <- d %>% mutate(decision = promotions_sim)\nd_sim\n\n# A tibble: 48 x 2\n   gender decision\n   <fct>     <dbl>\n 1 male          1\n 2 male          1\n 3 male          1\n 4 male          1\n 5 male          0\n 6 male          0\n 7 male          0\n 8 male          1\n 9 male          0\n10 male          1\n# ... with 38 more rows"
+    "text": "d <- gender_discrimination\nd_sim <- d %>% mutate(decision = sample(decision)) # shuffle the promotions\nd_sim\n\n# A tibble: 48 x 2\n   gender decision    \n   <fct>  <fct>       \n 1 male   not promoted\n 2 male   not promoted\n 3 male   promoted    \n 4 male   promoted    \n 5 male   promoted    \n 6 male   promoted    \n 7 male   promoted    \n 8 male   not promoted\n 9 male   promoted    \n10 male   not promoted\n# ... with 38 more rows"
   },
   {
     "objectID": "slides/lec-9.html#function-for-computing-the-test-statistic",
     "href": "slides/lec-9.html#function-for-computing-the-test-statistic",
     "title": "Inference for proportions",
     "section": "Function for computing the test statistic",
-    "text": "Function for computing the test statistic\n\ncompute_p_diff <- function(data){\n  p_hat <- data %>%\n    group_by(gender) %>%\n    summarize(p_hat = mean(decision))\n  p_diff_hat <- p_hat$p_hat[1] - p_hat$p_hat[2]\n  return(p_diff_hat)\n}\ncompute_p_diff(d_sim)\n\n[1] -0.04166667"
+    "text": "Function for computing the test statistic\n\ncompute_p_diff <- function(data){\n  p_hat <- data %>%\n    group_by(gender) %>%\n    summarize(p_hat = mean(decision == \"promoted\"))\n  p_diff_hat <- p_hat$p_hat[1] - p_hat$p_hat[2]\n  return(p_diff_hat)\n}\ncompute_p_diff(d_sim)\n\n[1] -0.04166667"
   },
   {
     "objectID": "slides/lec-9.html#for-loop-for-simulating-under-h_0",
     "href": "slides/lec-9.html#for-loop-for-simulating-under-h_0",
     "title": "Inference for proportions",
     "section": "For-loop for simulating under \\(H_0\\)",
-    "text": "For-loop for simulating under \\(H_0\\)\n\n# Setup\nresults    <- tibble(p_diff_hat = numeric())\nd          <- gender_discrimination\npromotions <- c(rep(1, 35), rep(0, 13))\n\n# Simulations\nset.seed(0)\nfor(i in 1 : 1e3){\n  d_sim <- d %>% mutate(decision = sample(promotions)) # simulate under H0\n  p_diff_hat <- compute_p_diff(d_sim) # test statistic\n  results <- results %>% add_row(p_diff_hat = p_diff_hat)\n}"
+    "text": "For-loop for simulating under \\(H_0\\)\n\n# Setup\nresults    <- tibble(p_diff_hat = numeric())\nd          <- gender_discrimination\n\n# Simulations\nset.seed(0)\nfor(i in 1 : 1e4){\n  d_sim      <- d %>% mutate(decision = sample(decision)) # simulate under H0\n  p_diff_hat <- compute_p_diff(d_sim) # test statistic\n  results    <- results %>% add_row(p_diff_hat = p_diff_hat)\n}"
   },
   {
     "objectID": "slides/lec-9.html#sampling-distribution",
@@ -4197,7 +4288,7 @@
     "href": "slides/lec-9.html#p-value-1",
     "title": "Inference for proportions",
     "section": "p-value",
-    "text": "p-value\np-value: probability that the sample statistic of a sample simulated under \\(H_0\\) is at least as extreme as that of the observed sample.\n\nthe probability that \\(\\hat{p}_{diff}^{sim}\\ge\\) 0.29 or \\(\\hat{p}_{diff}^{sim}\\le\\) -0.29.\n\n\nresults %>%\n  mutate(is_more_extreme = p_diff_hat >= p_diff_obs | p_diff_hat <= -p_diff_obs) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1   0.048"
+    "text": "p-value\np-value: probability that the sample statistic of a sample simulated under \\(H_0\\) is at least as extreme as that of the observed sample.\n\nthe probability that \\(\\hat{p}_{diff}^{sim}\\ge\\) 0.29 or \\(\\hat{p}_{diff}^{sim}\\le\\) -0.29.\n\n\nresults %>%\n  mutate(is_more_extreme = p_diff_hat >= p_diff_obs | p_diff_hat <= -p_diff_obs) %>%\n  summarize(p_value = mean(is_more_extreme))\n\n# A tibble: 1 x 1\n  p_value\n    <dbl>\n1  0.0435"
   },
   {
     "objectID": "slides/lec-9.html#significance-level-alpha-0.05",
@@ -4246,7 +4337,7 @@
     "href": "slides/lec-9.html#section-18",
     "title": "Inference for proportions",
     "section": "",
-    "text": "results <- tibble(p_diff_hat = numeric())\nfor(i in 1 : 1e3){\n  d_boot_m   <- sample_bootstrap(sample_observed_m) # bootstrap sample\n  d_boot_f   <- sample_bootstrap(sample_observed_f) # bootstrap sample\n  p_diff_hat <- compute_p_diff(rbind(d_boot_m, d_boot_f)) # bootstrap statistic\n  results    <- results %>% add_row(p_diff_hat = p_diff_hat)\n}\n\n\nquantile(results$p_diff_hat, c(0.05 , 0.95 )) # 90% CI\n\n        5%        95% \n0.08333333 0.50000000 \n\nquantile(results$p_diff_hat, c(0.05 , 0.95 )) %>% signif(2) # 90% CI\n\n   5%   95% \n0.083 0.500 \n\nquantile(results$p_diff_hat, c(0.025, 0.975)) %>% signif(2) # 95% CI\n\n 2.5% 97.5% \n0.042 0.540"
+    "text": "results <- tibble(p_diff_hat = numeric())\nfor(i in 1 : 1e3){\n  d_boot_m   <- sample_bootstrap(sample_observed_m) # bootstrap sample\n  d_boot_f   <- sample_bootstrap(sample_observed_f) # bootstrap sample\n  p_diff_hat <- compute_p_diff(rbind(d_boot_m, d_boot_f)) # bootstrap statistic\n  results    <- results %>% add_row(p_diff_hat = p_diff_hat)\n}\n\n\nquantile(results$p_diff_hat, c(0.05 , 0.95 )) # 90% CI\n\n 5% 95% \n  0   0 \n\nquantile(results$p_diff_hat, c(0.05 , 0.95 )) %>% signif(2) # 90% CI\n\n 5% 95% \n  0   0 \n\nquantile(results$p_diff_hat, c(0.025, 0.975)) %>% signif(2) # 95% CI\n\n 2.5% 97.5% \n    0     0"
   },
   {
     "objectID": "slides/lec-9.html#section-19",
@@ -4298,45 +4389,10 @@
     "text": "Time\nDate\n\n\n\n\n6:00\nE starts on time\nE lectures (slides) with numerous examples and pictures\n\n\n6:05\nE interacts with students through chat, thumb up/down\n\n\n6:10\n1/4 Zoom cameras on\nNich. Guar. provides answer, E. corrects Nich. (could have asked the rest of the class to correct Nich. instead)\n27 students\n\n\n6:15\nE uses a short video (2 min)\n\n\n6:20\nE answers question from Zoom chat\n\n\n6:25\nE illustrates phonology with many examples\n26 students\n\n\n6:30\nE applies phonology to sign language, many videos\nMuch focus given to sign language\n49 messages in chat\n\n\n6:35\nJaich. Pai. raises hand; E spots Jaich immediately\n\n\n6:40\nSemantics – E connects main topics of lecture to one another\n\n\n6:45\n91 messages in Zoom chat\nMuch interaction with students\n\n\n6:50\nThe exchange with students continues\n\n\n6:55\nThe exchange has just concluded\nVideos about code-switching\n\n\n7:00\nAnother long exchange with students (>10 min)\n\n\n7:16\n127 messages in chat\n25 participants\nbreak\n\n\nQ\n-) English/US-centered; extending discussion before break was irritating\n+) videos"
   },
   {
-    "objectID": "slides/lec-12.html#the-classical-approach",
-    "href": "slides/lec-12.html#the-classical-approach",
+    "objectID": "slides/lec-12.html#normal-approximation-is-good",
+    "href": "slides/lec-12.html#normal-approximation-is-good",
     "title": "Classical inference",
-    "section": "The classical approach",
-    "text": "The classical approach\nStep 1: we are interested in the distribution of the statistic under \\(H_0\\).\n\nModern approach: directly simulate from this distribution\nClassical approach: approximate this distribution with a normal distribution\n\n\nStep 2: we want to compute the p-value\n\nModern approach: the p-value is the proportion of simulations with a statistic at least as extreme as that of the observed sample\nClassical approach: the p-value is the area under the curve of the normal distribution that is at least as extreme as the observed statistic."
-  },
-  {
-    "objectID": "slides/lec-12.html#the-classical-approach-in-r",
-    "href": "slides/lec-12.html#the-classical-approach-in-r",
-    "title": "Classical inference",
-    "section": "The classical approach in R",
-    "text": "The classical approach in R\nR will compute the p-value for you"
-  },
-  {
-    "objectID": "slides/lec-12.html#ht-for-proportions",
-    "href": "slides/lec-12.html#ht-for-proportions",
-    "title": "Classical inference",
-    "section": "HT for proportions",
-    "text": "HT for proportions"
-  },
-  {
-    "objectID": "slides/lec-12.html#ht-for-means",
-    "href": "slides/lec-12.html#ht-for-means",
-    "title": "Classical inference",
-    "section": "HT for means",
-    "text": "HT for means"
-  },
-  {
-    "objectID": "slides/lec-12.html#ht-for-regression",
-    "href": "slides/lec-12.html#ht-for-regression",
-    "title": "Classical inference",
-    "section": "HT for regression",
-    "text": "HT for regression"
-  },
-  {
-    "objectID": "slides/lec-12.html#ht-for-logistic-regression",
-    "href": "slides/lec-12.html#ht-for-logistic-regression",
-    "title": "Classical inference",
-    "section": "HT for logistic regression",
-    "text": "HT for logistic regression"
+    "section": "Normal approximation is good",
+    "text": "Normal approximation is good\n\ntibble(p_hat = seq(0.2, 0.6, by = 0.001)) %>%\n  mutate(normal_approximation = dnorm(p_hat, mean = p, sd = sqrt(p*(1-p)/n))) %>%\n  ggplot() +\n  geom_line(aes(x = p_hat, y = normal_approximation))"
   }
 ]

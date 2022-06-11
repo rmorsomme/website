@@ -379,6 +379,8 @@
       margin-right: 0; 
     }
   </style>
+  <link href="..\site_libs/countdown-0.3.5/countdown.css" rel="stylesheet">
+  <script src="..\site_libs/countdown-0.3.5/countdown.js"></script>
 </head>
 <body>
   <div class="reveal">
@@ -444,15 +446,15 @@
 <p>The normal distribution describes the variability of the different statistics</p>
 <ul>
 <li><p><span class="math inline">\(\hat{p}\)</span>, <span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(\hat{\beta}\)</span></p></li>
-<li><p>simply look at all the histograms we have constructed from simulated samples (HT) bootstrap samples (CI)!</p></li>
+<li><p>simply look at all the histograms we have constructed from simulated samples (HT) and bootstrap samples (CI)!</p></li>
 </ul>
 <div class="fragment">
-<p><strong>Classical statistics</strong>: instead of simulating the sampling distribution via simulation (HT) or bootstrapping (CI), we approximate it with a normal distribution.</p>
+<p><strong>Classical approach</strong>: instead of simulating the sampling distribution via simulation (HT) or bootstrapping (CI), we approximate it with a normal distribution.</p>
 </div>
 </section>
 <section id="normal-approximation-for-barx" class="slide level2">
 <h2>Normal approximation for <span class="math inline">\(\bar{x}\)</span></h2>
-<p>You have seen that if a numerical random variable is normally distributed</p>
+<p>We have seen that if a numerical variable <span class="math inline">\(X\)</span> is normally distributed</p>
 <p><span class="math display">\[
 X\sim N(\mu, \sigma^2)
 \]</span></p>
@@ -461,15 +463,15 @@ X\sim N(\mu, \sigma^2)
 \bar{x} \sim N\left(\mu, \frac{\sigma^2}{n}\right)
 \]</span></p>
 </section>
-<section id="condition-for-the-normality-of-barx" class="slide level2">
+<section id="condition-for-the-normality-of-barx" class="slide level2 smaller">
 <h2>Condition for the normality of <span class="math inline">\(\bar{x}\)</span></h2>
-<p>In practice, we cannot assume that the random variable <span class="math inline">\(X\)</span> is <em>exactly normally</em> distributed.</p>
+<p>In practice, we cannot assume that the variable <span class="math inline">\(X\)</span> is <em>exactly</em> normally distributed.</p>
 <p>But as long as</p>
-<ul>
-<li><p>the sample is large enough <span class="math inline">\((n\ge 10)\)</span> (condition 1)</p></li>
-<li><p>the variable is approximately normal: unimodal, roughly symmetric and does not have serious outliers (condition 2)</p></li>
-</ul>
-<p>the sample average is well approximated by a normal distribution</p>
+<ol type="1">
+<li><p>the sample is large <span class="math inline">\((n\ge 30)\)</span>, or</p></li>
+<li><p>the variable is <em>approximately</em> normal: unimodal, roughly symmetric and no serious outlier</p></li>
+</ol>
+<p><span class="math inline">\(\bar{x}\)</span> is well approximated by a normal distribution</p>
 <p><span class="math display">\[
 \bar{x} \sim N\left(\mu, \frac{\sigma^2}{n}\right)
 \]</span></p>
@@ -481,10 +483,10 @@ X\sim N(\mu, \sigma^2)
 <h2>Normal approximation for <span class="math inline">\(\hat{p}\)</span></h2>
 <p>If</p>
 <ol type="1">
-<li><p>the sample is large enough <span class="math inline">\((n\ge30)\)</span> (condition 1)</p></li>
-<li><p><span class="math inline">\(p\)</span> is not extreme <span class="math inline">\((pn\ge 10 \text{ and } (1-p)n\ge 10)\)</span> (condition 2)</p></li>
+<li><p>the sample is large enough <span class="math inline">\((n\ge30)\)</span></p></li>
+<li><p><span class="math inline">\(p\)</span> is not extreme <span class="math inline">\((pn\ge 10 \text{ and } (1-p)n\ge 10)\)</span></p></li>
 </ol>
-<p>then the distribution of <span class="math inline">\(\hat{p}\)</span> can be approximated by a normal distribution</p>
+<p>the distribution of <span class="math inline">\(\hat{p}\)</span> can be approximated by a normal distribution</p>
 <p><span class="math display">\[
 \hat{p} \sim N\left(p, \frac{p(1-p)}{n}\right)
 \]</span></p>
@@ -506,8 +508,8 @@ X\sim N(\mu, \sigma^2)
 
 </div>
 <img data-src="lec-12_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
-<section id="normal-approximation-2" class="slide level2">
-<h2>Normal approximation</h2>
+<section id="normal-approximation-is-good" class="slide level2">
+<h2>Normal approximation is good</h2>
 <div class="cell" data-layout-align="center" data-hash="lec-12_cache/revealjs/unnamed-chunk-3_de9547af6da84a70f9c2e0dd7accb0af">
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">tibble</span>(<span class="at">p_hat =</span> <span class="fu">seq</span>(<span class="fl">0.2</span>, <span class="fl">0.6</span>, <span class="at">by =</span> <span class="fl">0.001</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">mutate</span>(<span class="at">normal_approximation =</span> <span class="fu">dnorm</span>(p_hat, <span class="at">mean =</span> p, <span class="at">sd =</span> <span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n))) <span class="sc">%&gt;%</span></span>
@@ -553,7 +555,7 @@ X\sim N(\mu, \sigma^2)
 <h2>The classical approach</h2>
 <p>Step 1: we are interested in the distribution of the statistic under <span class="math inline">\(H_0\)</span>.</p>
 <ul>
-<li><p><strong>Modern approach</strong>: directly <em>simulate</em> from this distribution</p></li>
+<li><p><strong>Modern approach</strong>: <em>simulate</em> from this distribution</p></li>
 <li><p><strong>Classical approach</strong>: <em>approximate</em> this distribution with a normal distribution</p></li>
 </ul>
 <div class="fragment">
@@ -566,19 +568,220 @@ X\sim N(\mu, \sigma^2)
 </section>
 <section id="the-classical-approach-in-r" class="slide level2">
 <h2>The classical approach in <code>R</code></h2>
-<p><code>R</code> will compute the p-value for you</p>
+<p><code>R</code> will compute the p-value for you. Here is what <code>R</code> does behind the scene:</p>
 </section>
-<section id="ht-for-proportions" class="slide level2">
-<h2>HT for proportions</h2>
+<section id="ht-for-one-proportion" class="slide level2">
+<h2>HT for one proportion</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1500</span> <span class="co"># sample size</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>x <span class="ot">&lt;-</span> <span class="dv">780</span>  <span class="co"># number of successes</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">prop.test</span>(</span>
+<span id="cb6-4"><a href="#cb6-4"></a>  x, n,             <span class="co"># observed data</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="at">p =</span> <span class="fl">0.5</span>,          <span class="co"># value in the null hypothesis</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>  <span class="at">conf.level =</span> <span class="fl">0.99</span> <span class="co"># confidence level for CI</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>
+    1-sample proportions test with continuity correction
+
+data:  x out of n, null probability 0.5
+X-squared = 2.3207, df = 1, p-value = 0.1277
+alternative hypothesis: true p is not equal to 0.5
+99 percent confidence interval:
+ 0.4864251 0.5533970
+sample estimates:
+   p 
+0.52 </code></pre>
+</div>
+</div>
 </section>
-<section id="ht-for-means" class="slide level2">
-<h2>HT for means</h2>
+<section id="comparison-with-simulation-based-ht" class="slide level2">
+<h2>Comparison with simulation-based HT</h2>
+<p>The simulation-based HT yielded a p-value of 0.127.</p>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>A good normal approximation</strong></p>
+</div>
+<div class="callout-content">
+<p>When the conditions for the normal approximation are satisfied, the results based on simulations (modern) and the normal approximation (classical) will be similar.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="ht-for-regression" class="slide level2">
-<h2>HT for regression</h2>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Individual exercise - HT for one proportion</strong></p>
+</div>
+<div class="callout-content">
+<p>Suppose you interview 2000 US adults about their political preferences and 1200 of them say that they are democrat. What is the 95% confidence interval for <span class="math inline">\(p\)</span>, the proportion of US adults who are democrats? What is the length of the interval?</p>
+<p>What 95% CI do you obtained if 6000 out of 10000 US adults say they are democrat? What is its length?</p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_62a4c5de" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="ht-for-two-proportions" class="slide level2">
+<h2>HT for two proportions</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>n_m <span class="ot">&lt;-</span> <span class="dv">24</span>; n_f <span class="ot">&lt;-</span> <span class="dv">24</span>     <span class="co"># sample sizes</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>x_m <span class="ot">&lt;-</span> <span class="dv">14</span>; x_f <span class="ot">&lt;-</span> <span class="dv">21</span>     <span class="co"># numbers of promotions</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="fu">prop.test</span>(</span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">c</span>(x_m, x_f), <span class="fu">c</span>(n_m, n_f), <span class="co"># observed data</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>
+    2-sample test for equality of proportions with continuity correction
+
+data:  c(x_m, x_f) out of c(n_m, n_f)
+X-squared = 3.7978, df = 1, p-value = 0.05132
+alternative hypothesis: two.sided
+95 percent confidence interval:
+ -0.57084188 -0.01249145
+sample estimates:
+   prop 1    prop 2 
+0.5833333 0.8750000 </code></pre>
+</div>
+</div>
+</section>
+<section id="comparison-with-simulation-based-ht-1" class="slide level2">
+<h2>Comparison with simulation-based HT</h2>
+<p>Using the simulation-based HT, we found a p-value of 0.0435.</p>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>A good normal approximation</strong></p>
+</div>
+<div class="callout-content">
+<p>When the conditions for the normal approximation are <em>not</em> satisfied, the results based on simulations (modern) and the normal approximation (classical) may differ.</p>
+<p>A simulation-based HT will always give exact results. A HT based on the normal distribution will only give the same (exact) results when the conditions are satisfied.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="ht-for-one-mean" class="slide level2">
+<h2>HT for one mean</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>d <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>mpg</span>
+<span id="cb10-2"><a href="#cb10-2"></a>x <span class="ot">&lt;-</span> d<span class="sc">$</span>hwy</span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="fu">t.test</span>(x, <span class="at">mu =</span> <span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>
+    One Sample t-test
+
+data:  x
+t = -4.0071, df = 233, p-value = 0.00008274
+alternative hypothesis: true mean is not equal to 25
+95 percent confidence interval:
+ 22.67324 24.20710
+sample estimates:
+mean of x 
+ 23.44017 </code></pre>
+</div>
+</div>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Individual exercise - HT for one mean</strong></p>
+</div>
+<div class="callout-content">
+<p>Construct a 99% CI for <code>hwy</code>.</p>
+<p>Hint: use the command <code>help(t.test)</code> to access the help file of the function <code>t.test</code> and see what parameter determines the confidence level.</p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_62a4c651" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="ht-for-two-means" class="slide level2">
+<h2>HT for two means</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>d <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>mpg</span>
+<span id="cb12-2"><a href="#cb12-2"></a>x1 <span class="ot">&lt;-</span> d<span class="sc">$</span>hwy</span>
+<span id="cb12-3"><a href="#cb12-3"></a>x2 <span class="ot">&lt;-</span> d<span class="sc">$</span>cty</span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="fu">t.test</span>(x1, x2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  x1 and x2
+t = 13.755, df = 421.79, p-value &lt; 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5.640710 7.521683
+sample estimates:
+mean of x mean of y 
+ 23.44017  16.85897 </code></pre>
+</div>
+</div>
+</section>
+<section id="ht-for-simple-linear-regression" class="slide level2">
+<h2>HT for simple linear regression</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>m <span class="ot">&lt;-</span> <span class="fu">lm</span>(hwy <span class="sc">~</span> cty, <span class="at">data =</span> mpg)</span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="fu">tidy</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 2 x 5
+  term        estimate std.error statistic   p.value
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)    0.892    0.469       1.90 5.84e-  2
+2 cty            1.34     0.0270     49.6  1.87e-125</code></pre>
+</div>
+</div>
+</section>
+<section id="ht-for-multiple-linear-regression" class="slide level2">
+<h2>HT for multiple linear regression</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>m <span class="ot">&lt;-</span> <span class="fu">lm</span>(hwy <span class="sc">~</span> cty <span class="sc">+</span> displ, <span class="at">data =</span> mpg)</span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">tidy</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 3 x 5
+  term        estimate std.error statistic  p.value
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)   1.15      1.21       0.949 3.43e- 1
+2 cty           1.33      0.0449    29.6   1.43e-80
+3 displ        -0.0343    0.148     -0.232 8.17e- 1</code></pre>
+</div>
+</div>
 </section>
 <section id="ht-for-logistic-regression" class="slide level2">
 <h2>HT for logistic regression</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>d <span class="ot">&lt;-</span> heart_transplant <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">survived_binary =</span> survived <span class="sc">==</span> <span class="st">"alive"</span>)</span>
+<span id="cb18-2"><a href="#cb18-2"></a>m <span class="ot">&lt;-</span> <span class="fu">glm</span>(survived_binary <span class="sc">~</span> age <span class="sc">+</span> transplant, <span class="at">family =</span> <span class="st">"binomial"</span>, <span class="at">data =</span> d)</span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="fu">tidy</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 3 x 5
+  term                estimate std.error statistic p.value
+  &lt;chr&gt;                  &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+1 (Intercept)           0.973     1.08       0.904 0.366  
+2 age                  -0.0763    0.0255    -2.99  0.00277
+3 transplanttreatment   1.82      0.668      2.73  0.00635</code></pre>
+</div>
+</div>
 </section>
 <section id="standard-error" class="slide level2">
 <h2>Standard error</h2>
@@ -601,7 +804,7 @@ X\sim N(\mu, \sigma^2)
 <li><p>For the slope in a regression model: <span class="math inline">\(t = \dfrac{\hat{\beta}-0}{SE}\)</span></p></li>
 </ul>
 </section>
-<section id="section" class="slide level2">
+<section id="section-2" class="slide level2">
 <h2></h2>
 <p>If the observed statistic is many SE away from the null value, then the observed sample is unlikely to have occurred under <span class="math inline">\(H_0\)</span>.</p>
 <div class="fragment">

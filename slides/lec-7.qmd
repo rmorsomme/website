@@ -98,7 +98,7 @@ options(scipen = 100)
 ## Data
 
 ```{r}
-d <- as_tibble(heart_transplant)
+d <- heart_transplant
 d
 ```
 

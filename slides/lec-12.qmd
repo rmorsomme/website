@@ -36,16 +36,17 @@ knitr::opts_chunk$set(
 
 # load packages
 library(tidyverse)   # for data wrangling and visualization
-library(countdown)
-library(openintro)
+library(countdown)   # for countdown for in-class exercises
+library(openintro)   # for textbook data sets
 library(kableExtra)
 library(janitor)
-library(patchwork)
+library(patchwork)   # for combining ggplot figures
+library(broom)       # for tidy model output
 
 # set default theme and larger font size for ggplot2
-ggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))
+theme_set(theme_minimal(base_size = 16))
 
-options(scipen = 100)
+options(scipen = 5)
 ```
 
 # Welcome
@@ -90,15 +91,15 @@ The normal distribution describes the variability of the different statistics
 
 -   $\hat{p}$, $\bar{x}$, $\hat{\beta}$
 
--   simply look at all the histograms we have constructed from simulated samples (HT) bootstrap samples (CI)!
+-   simply look at all the histograms we have constructed from simulated samples (HT) and bootstrap samples (CI)!
 
 . . .
 
-**Classical statistics**: instead of simulating the sampling distribution via simulation (HT) or bootstrapping (CI), we approximate it with a normal distribution.
+**Classical approach**: instead of simulating the sampling distribution via simulation (HT) or bootstrapping (CI), we approximate it with a normal distribution.
 
 ## Normal approximation for $\bar{x}$
 
-You have seen that if a numerical random variable is normally distributed
+We have seen that if a numerical variable $X$ is normally distributed
 
 $$
 X\sim N(\mu, \sigma^2)
@@ -110,17 +111,17 @@ $$
 \bar{x} \sim N\left(\mu, \frac{\sigma^2}{n}\right)
 $$
 
-## Condition for the normality of $\bar{x}$
+## Condition for the normality of $\bar{x}$  {.smaller}
 
-In practice, we cannot assume that the random variable $X$ is *exactly normally* distributed.
+In practice, we cannot assume that the variable $X$ is *exactly* normally distributed.
 
 But as long as
 
--   the sample is large enough $(n\ge 10)$ (condition 1)
+1.  the sample is large $(n\ge 30)$, or
 
--   the variable is approximately normal: unimodal, roughly symmetric and does not have serious outliers (condition 2)
+2.  the variable is *approximately* normal: unimodal, roughly symmetric and no serious outlier
 
-the sample average is well approximated by a normal distribution
+$\bar{x}$ is well approximated by a normal distribution
 
 $$
 \bar{x} \sim N\left(\mu, \frac{\sigma^2}{n}\right)
@@ -134,11 +135,11 @@ See the numerous histograms for case 3 (one mean) where the distribution of $\ba
 
 If
 
-1.  the sample is large enough $(n\ge30)$ (condition 1)
+1.  the sample is large enough $(n\ge30)$
 
-2.  $p$ is not extreme $(pn\ge 10 \text{ and } (1-p)n\ge 10)$ (condition 2)
+2.  $p$ is not extreme $(pn\ge 10 \text{ and } (1-p)n\ge 10)$
 
-then the distribution of $\hat{p}$ can be approximated by a normal distribution
+the distribution of $\hat{p}$ can be approximated by a normal distribution
 
 $$
 \hat{p} \sim N\left(p, \frac{p(1-p)}{n}\right)
@@ -161,7 +162,7 @@ for(i in 1 : 1e4){
 ggplot(results) + geom_histogram(aes(p_hat), binwidth = 0.01)
 ```
 
-## Normal approximation
+## Normal approximation is good
 
 ```{r, cache=TRUE}
 tibble(p_hat = seq(0.2, 0.6, by = 0.001)) %>%
@@ -203,7 +204,7 @@ the distribution of $\hat{\beta}$ can also be approximated by a normal distribut
 
 Step 1: we are interested in the distribution of the statistic under $H_0$.
 
--   **Modern approach**: directly *simulate* from this distribution
+-   **Modern approach**: *simulate* from this distribution
 
 -   **Classical approach**: *approximate* this distribution with a normal distribution
 
@@ -217,53 +218,135 @@ Step 2: we want to compute the p-value
 
 ## The classical approach in `R`
 
-`R` will compute the p-value for you
+`R` will compute the p-value for you. Here is what `R` does behind the scene:
 
-## HT for proportions
+## HT for one proportion
 
-## HT for means
+```{r}
+n <- 1500 # sample size
+x <- 780  # number of successes
+prop.test(
+  x, n,             # observed data
+  p = 0.5,          # value in the null hypothesis
+  conf.level = 0.99 # confidence level for CI
+  )
+```
 
-## HT for regression
+## Comparison with simulation-based HT
 
-## HT for logistic regression
+The simulation-based HT yielded a p-value of 0.127.
 
-## Standard error
+::: callout-note
+## A good normal approximation
 
-**Standard error**: standard deviation of statistic
-
--   the sd of $\hat{p}$ is $SE=\sqrt{\frac{p(1-p)}{n}}$
-
--   the sd of $\bar{x}$ is $SE=\sqrt{\frac{\sigma^2}{n}} \approx \sqrt{\frac{s^2}{n}}$ where $s^2$ is an estimate of the population variance $\sigma^2$ based on the sample.
-
--   the sd of $\hat{\beta}$ has a complicated form.
-
-## Hypothesis test
-
-How many SE is the observed sample from the null value?
-
-$$
-\dfrac{\text{point estimate} - \text{null value}}{SE}
-$$
-
--   For one proportion: $Z = \dfrac{\hat{p}-p_0}{SE} = \dfrac{\hat{p}-p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}$
-
--   For one mean: $t = \dfrac{\bar{x}-\mu_0}{SE} = \dfrac{\bar{x}-\mu_0}{\sqrt{\frac{s^2}{n}}}$
-
--   For the slope in a regression model: $t = \dfrac{\hat{\beta}-0}{SE}$
+When the conditions for the normal approximation are satisfied, the results based on simulations (modern) and the normal approximation (classical) will be similar.
+:::
 
 ## 
 
-If the observed statistic is many SE away from the null value, then the observed sample is unlikely to have occurred under $H_0$.
+::: {.callout-tip icon="false"}
+## Individual exercise - HT for one proportion
 
-. . .
+Suppose you interview 2000 US adults about their political preferences and 1200 of them say that they are democrat. What is the 95% confidence interval for $p$, the proportion of US adults who are democrats? What is the length of the interval?
 
-**Question**: how many SE is enough?
+What 95% CI do you obtained if 6000 out of 10000 US adults say they are democrat? What is its length?
+:::
 
-**Answer**: use the normal approximation to compute a p-value!
+```{r, echo = F}
+countdown(minutes = 3)
+```
 
-. . .
+## HT for two proportions
 
-`R` will compute the p-value for you.
+```{r}
+n_m <- 24; n_f <- 24     # sample sizes
+x_m <- 14; x_f <- 21     # numbers of promotions
+prop.test(
+  c(x_m, x_f), c(n_m, n_f), # observed data
+  )
+```
+
+## Comparison with simulation-based HT
+
+Using the simulation-based HT, we found a p-value of 0.0435.
+
+::: callout-note
+## A good normal approximation
+
+When the conditions for the normal approximation are *not* satisfied, the results based on simulations (modern) and the normal approximation (classical) may differ.
+
+A simulation-based HT will always give exact results. A HT based on the normal distribution will only give the same (exact) results when the conditions are satisfied.
+:::
+
+## HT for one mean
+
+```{r}
+d <- ggplot2::mpg
+x <- d$hwy
+t.test(x, mu = 25)
+```
+
+## 
+
+::: {.callout-tip icon="false"}
+## Individual exercise - HT for one mean
+
+Construct a 99% CI for `hwy`.
+
+Hint: use the command `help(t.test)` to access the help file of the function `t.test` and see what parameter determines the confidence level.
+:::
+
+```{r, echo = F}
+countdown(minutes = 3)
+```
+
+## HT for two means
+
+```{r}
+d <- ggplot2::mpg
+x1 <- d$hwy
+x2 <- d$cty
+t.test(x1, x2)
+```
+
+## HT for simple linear regression
+
+```{r}
+m <- lm(hwy ~ cty, data = mpg)
+tidy(m)
+```
+
+## HT for multiple linear regression
+
+```{r}
+m <- lm(hwy ~ cty + displ, data = mpg)
+tidy(m)
+```
+
+## HT for logistic regression
+
+```{r}
+d <- heart_transplant %>% mutate(survived_binary = survived == "alive")
+m <- glm(survived_binary ~ age + transplant, family = "binomial", data = d)
+tidy(m)
+```
+
+# Standard error
+
+## Standard error 
+
+**Standard error (SE)**: standard deviation of the normal approximation
+
+-   $SE(\hat{p})=\sqrt{\frac{p(1-p)}{n}}$
+
+-   $SE(\bar{x})=\sqrt{\frac{\sigma^2}{n}} \approx \sqrt{\frac{s^2}{n}}$ where $s^2$ is an estimate of the population variance $\sigma^2$ based on the sample.
+
+-   $SE(\hat{\beta})$ has a complicated form.
+
+```{=html}
+<!-- -->
+```
+-   
 
 ## Confidence interval
 
@@ -290,14 +373,17 @@ To find the critical value corresponding to the confidence level `cl` use the fo
 ::: callout-note
 ## Sample size matters
 
-Note that as $n$ increases, the SE decreases. This means that a larger sample will give narrower CI and smaller p-values.
+Large $n$
+
+$\Rightarrow$ small SE
+
+$\Rightarrow$ normal approximation with small sd
+
+$\Rightarrow$ normal approximation is more concentrated
+
+$\Rightarrow$ tighter CI and smaller p-values.
 :::
 
 # Recap
 
 ## Recap
-
--   Simple linear regression (case 5)
-    -   HT via simulation
-
-    -   CI via bootstrap
