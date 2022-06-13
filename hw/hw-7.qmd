@@ -33,7 +33,7 @@ Construct (5 points) and interpret in the context of the problem (1 point) a 95%
 
 ## Hypothesis test via simulation (21 points)
 
-Conduct a hypothesis test using simulation for the following cases. State the hypotheses in words and in mathematical symbols (2 points) and use 10000 samples simulated samples and the significance level $\alpha=0.05$ (5 points).
+Conduct a hypothesis test using simulation for the following cases. State the hypotheses in words and in mathematical symbols (2 points) and use 10000 simulated samples and the significance level $\alpha=0.05$ (5 points).
 
 -   You want to determine whether exactly half of the newborns are female (7 points)
 
