@@ -400,16 +400,24 @@
 <section id="announcements" class="slide level2 smaller">
 <h2>Announcements</h2>
 <ul>
-<li></li>
+<li><p>Tuesday: lecture</p></li>
+<li><p>Wednesday: work on project</p></li>
+<li><p>Thursday: work on project (3:30-5:00pm)</p></li>
+<li><p>Friday: presentations</p></li>
 </ul>
 </section>
-<section id="recap" class="slide level2">
+<section id="recap" class="slide level2 smaller">
 <h2>Recap</h2>
-<ul>
-<li><p>Simple linear regression (case 5)</p>
 <ul>
 <li><p>HT via simulation</p></li>
 <li><p>CI via bootstrap</p></li>
+<li><p>5 cases</p>
+<ul>
+<li><p>one proprotion</p></li>
+<li><p>two proportions</p></li>
+<li><p>one mean</p></li>
+<li><p>two means</p></li>
+<li><p>linear regression</p></li>
 </ul></li>
 </ul>
 </section>
@@ -417,15 +425,7 @@
 <h2>Outline</h2>
 <ul>
 <li>Normal approximation</li>
-<li>Classical approach to statistical inference
-<ul>
-<li>case 1 – one proportion</li>
-<li>case 2 – two proportions</li>
-<li>case 3 – one mean</li>
-<li>case 4 – two means</li>
-<li>case 4bis – paired means</li>
-<li>case 5 – regression</li>
-</ul></li>
+<li>Classical approach to statistical inference</li>
 <li>Standard error</li>
 </ul>
 </section>
@@ -445,7 +445,7 @@
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a78f33" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a78fea" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -459,7 +459,7 @@
 <section id="normal-distribution" class="slide level2">
 <h2>Normal distribution</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="at">by =</span> <span class="fl">0.01</span>)) <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="at">by =</span> <span class="fl">0.001</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">mutate</span>(<span class="at">normal =</span> <span class="fu">dnorm</span>(x, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
 <span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(x, normal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -560,7 +560,7 @@ X\sim N(\mu, \sigma^2)
 <section id="normal-approximation-is-good" class="slide level2">
 <h2>Normal approximation is good</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">tibble</span>(<span class="at">p_hat =</span> <span class="fu">seq</span>(<span class="fl">0.2</span>, <span class="fl">0.6</span>, <span class="at">by =</span> <span class="fl">0.01</span>)) <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">tibble</span>(<span class="at">p_hat =</span> <span class="fu">seq</span>(<span class="fl">0.2</span>, <span class="fl">0.6</span>, <span class="at">by =</span> <span class="fl">0.001</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">mutate</span>(<span class="at">normal_approximation =</span> <span class="fu">dnorm</span>(p_hat, <span class="at">mean =</span> p, <span class="at">sd =</span> <span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n))) <span class="sc">%&gt;%</span></span>
 <span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> p_hat, <span class="at">y =</span> normal_approximation))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -600,7 +600,7 @@ X\sim N(\mu, \sigma^2)
 <section id="normal-approximation-fails" class="slide level2">
 <h2>Normal approximation fails</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">tibble</span>(<span class="at">p_hat =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="at">by =</span> <span class="fl">0.01</span>)) <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">tibble</span>(<span class="at">p_hat =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="at">by =</span> <span class="fl">0.001</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">mutate</span>(<span class="at">normal_approximation =</span> <span class="fu">dnorm</span>(p_hat, <span class="at">mean =</span> p, <span class="at">sd =</span> <span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n))) <span class="sc">%&gt;%</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> p_hat, <span class="at">y =</span> normal_approximation)) <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="fl">0.05</span>, <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
@@ -722,7 +722,7 @@ sample estimates:
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a78cd9" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a79187" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -792,7 +792,7 @@ sample estimates:
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a78d35" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a78fd2" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">06</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -857,7 +857,7 @@ mean of x
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a78fd3" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a79143" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -933,7 +933,7 @@ mean of x mean of y
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a7904e" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a79100" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -982,7 +982,7 @@ mean of the differences
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a78d45" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a79097" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1092,7 +1092,7 @@ mean of the differences
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a78de6" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a793b0" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1107,7 +1107,7 @@ mean of the differences
 <h1>Standard error</h1>
 
 </section>
-<section id="standard-error-1" class="slide level2">
+<section id="standard-error-1" class="slide level2 smaller">
 <h2>Standard error</h2>
 <p><strong>Standard error (SE)</strong>: standard deviation of the normal approximation</p>
 <p>It measures the variability of the sample statistic.</p>
@@ -1168,8 +1168,8 @@ mean of the differences
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a78d91" style="right:0;bottom:0;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<div class="countdown" id="timer_62a79337" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>

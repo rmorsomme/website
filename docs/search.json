@@ -1656,21 +1656,21 @@
     "href": "slides/lec-12.html#announcements",
     "title": "Classical inference",
     "section": "Announcements",
-    "text": "Announcements"
+    "text": "Announcements\n\nTuesday: lecture\nWednesday: work on project\nThursday: work on project (3:30-5:00pm)\nFriday: presentations"
   },
   {
     "objectID": "slides/lec-12.html#recap",
     "href": "slides/lec-12.html#recap",
     "title": "Classical inference",
     "section": "Recap",
-    "text": "Recap\n\nSimple linear regression (case 5)\n\nHT via simulation\nCI via bootstrap"
+    "text": "Recap\n\nHT via simulation\nCI via bootstrap\n5 cases\n\none proprotion\ntwo proportions\none mean\ntwo means\nlinear regression"
   },
   {
     "objectID": "slides/lec-12.html#outline",
     "href": "slides/lec-12.html#outline",
     "title": "Classical inference",
     "section": "Outline",
-    "text": "Outline\n\nNormal approximation\nClassical approach to statistical inference\n\ncase 1 – one proportion\ncase 2 – two proportions\ncase 3 – one mean\ncase 4 – two means\ncase 4bis – paired means\ncase 5 – regression\n\nStandard error"
+    "text": "Outline\n\nNormal approximation\nClassical approach to statistical inference\nStandard error"
   },
   {
     "objectID": "slides/lec-12.html#section",
@@ -1684,7 +1684,7 @@
     "href": "slides/lec-12.html#normal-distribution",
     "title": "Classical inference",
     "section": "Normal distribution",
-    "text": "Normal distribution\n\ntibble(x = seq(-5, 5, by = 0.01)) %>%\n  mutate(normal = dnorm(x, mean = 0, sd = 1)) %>%\n  ggplot() + \n  geom_line(aes(x, normal))\n\n\n\\(\\Rightarrow\\) unimodal, symmetric, thin tails – bell-shaped"
+    "text": "Normal distribution\n\ntibble(x = seq(-5, 5, by = 0.001)) %>%\n  mutate(normal = dnorm(x, mean = 0, sd = 1)) %>%\n  ggplot() + \n  geom_line(aes(x, normal))\n\n\n\\(\\Rightarrow\\) unimodal, symmetric, thin tails – bell-shaped"
   },
   {
     "objectID": "slides/lec-12.html#ht-using-a-normal-approximation",
@@ -1740,7 +1740,7 @@
     "href": "slides/lec-12.html#normal-approximation-is-good",
     "title": "Classical inference",
     "section": "Normal approximation is good",
-    "text": "Normal approximation is good\n\ntibble(p_hat = seq(0.2, 0.6, by = 0.01)) %>%\n  mutate(normal_approximation = dnorm(p_hat, mean = p, sd = sqrt(p*(1-p)/n))) %>%\n  ggplot() +\n  geom_line(aes(x = p_hat, y = normal_approximation))"
+    "text": "Normal approximation is good\n\ntibble(p_hat = seq(0.2, 0.6, by = 0.001)) %>%\n  mutate(normal_approximation = dnorm(p_hat, mean = p, sd = sqrt(p*(1-p)/n))) %>%\n  ggplot() +\n  geom_line(aes(x = p_hat, y = normal_approximation))"
   },
   {
     "objectID": "slides/lec-12.html#section-1",
@@ -1761,7 +1761,7 @@
     "href": "slides/lec-12.html#normal-approximation-fails",
     "title": "Classical inference",
     "section": "Normal approximation fails",
-    "text": "Normal approximation fails\n\ntibble(p_hat = seq(-0.05, 0.1, by = 0.01)) %>%\n  mutate(normal_approximation = dnorm(p_hat, mean = p, sd = sqrt(p*(1-p)/n))) %>%\n  ggplot() + geom_line(aes(x = p_hat, y = normal_approximation)) + xlim(-0.05, 0.1)"
+    "text": "Normal approximation fails\n\ntibble(p_hat = seq(-0.05, 0.1, by = 0.001)) %>%\n  mutate(normal_approximation = dnorm(p_hat, mean = p, sd = sqrt(p*(1-p)/n))) %>%\n  ggplot() + geom_line(aes(x = p_hat, y = normal_approximation)) + xlim(-0.05, 0.1)"
   },
   {
     "objectID": "slides/lec-12.html#section-2",
@@ -1964,7 +1964,7 @@
     "href": "slides/lec-12.html#section-9",
     "title": "Classical inference",
     "section": "",
-    "text": "Individual exercise - sample size and CI\n\n\nExercise 16.13 – part e\nExercise 16.15 – part b\nExercise 13.4 – part d\n\n\n\n\n\n\n01:00"
+    "text": "Individual exercise - sample size and CI\n\n\nExercise 16.13 – part e\nExercise 16.15 – part b\nExercise 13.4 – part d\n\n\n\n\n\n\n02:00"
   },
   {
     "objectID": "slides/lec-12.html#recap-2",
