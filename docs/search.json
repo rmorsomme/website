@@ -368,7 +368,7 @@
     "href": "hw/hw-7.html#hypothesis-test-via-simulation-21-points",
     "title": "HW 7 - Modern statistical inference (one group)",
     "section": "Hypothesis test via simulation (21 points)",
-    "text": "Hypothesis test via simulation (21 points)\nConduct a hypothesis test using simulation for the following cases. State the hypotheses in words and in mathematical symbols (2 points) and use 10000 samples simulated samples and the significance level \\(\\alpha=0.05\\) (5 points).\n\nYou want to determine whether exactly half of the newborns are female (7 points)\nYou want to determine whether the mean weight of newborns is 3500 grams (7 points)\nYou want to determine whether newborn_birth_weight is independent of gestation week (7 points)"
+    "text": "Hypothesis test via simulation (21 points)\nConduct a hypothesis test using simulation for the following cases. State the hypotheses in words and in mathematical symbols (2 points) and use 10000 simulated samples and the significance level \\(\\alpha=0.05\\) (5 points).\n\nYou want to determine whether exactly half of the newborns are female (7 points)\nYou want to determine whether the mean weight of newborns is 3500 grams (7 points)\nYou want to determine whether newborn_birth_weight is independent of gestation week (7 points)"
   },
   {
     "objectID": "hw/hw-7.html#reproducibility-1-point",
@@ -1677,7 +1677,7 @@
     "href": "slides/lec-12.html#section",
     "title": "Classical inference",
     "section": "",
-    "text": "Individual exercise - warm up\n\n\nExercise 14.5\nExercise 17.2 part a and c\nExercise 17.4 part c\n\n\n\n\n\n\n02:00"
+    "text": "Individual exercise - warm up\n\n\nExercise 14.5\nExercise 17.2 – parts a and c\nExercise 17.4 – part c\n\n\n\n\n\n\n03:00"
   },
   {
     "objectID": "slides/lec-12.html#normal-distribution",
@@ -1685,6 +1685,20 @@
     "title": "Classical inference",
     "section": "Normal distribution",
     "text": "Normal distribution\n\ntibble(x = seq(-5, 5, by = 0.01)) %>%\n  mutate(normal = dnorm(x, mean = 0, sd = 1)) %>%\n  ggplot() + \n  geom_line(aes(x, normal))\n\n\n\\(\\Rightarrow\\) unimodal, symmetric, thin tails – bell-shaped"
+  },
+  {
+    "objectID": "slides/lec-12.html#ht-using-a-normal-approximation",
+    "href": "slides/lec-12.html#ht-using-a-normal-approximation",
+    "title": "Classical inference",
+    "section": "HT using a normal approximation",
+    "text": "HT using a normal approximation\n\nSource: IMS"
+  },
+  {
+    "objectID": "slides/lec-12.html#ci-using-a-normal-approximation",
+    "href": "slides/lec-12.html#ci-using-a-normal-approximation",
+    "title": "Classical inference",
+    "section": "CI using a normal approximation",
+    "text": "CI using a normal approximation\n\nSource: IMS"
   },
   {
     "objectID": "slides/lec-12.html#normal-approximation-1",
@@ -1705,7 +1719,7 @@
     "href": "slides/lec-12.html#condition-for-the-normality-of-barx",
     "title": "Classical inference",
     "section": "Condition for the normality of \\(\\bar{x}\\)",
-    "text": "Condition for the normality of \\(\\bar{x}\\)\nIn practice, we cannot assume that the variable \\(X\\) is exactly normally distributed.\nBut as long as\n\nthe sample is large \\((n\\ge 30)\\), or\nthe variable is approximately normal: unimodal, roughly symmetric and no serious outlier\n\n\\(\\bar{x}\\) is well approximated by a normal distribution\n\\[\n\\bar{x} \\sim N\\left(\\mu, \\frac{\\sigma^2}{n}\\right)\n\\]\n\nSee the numerous histograms for case 3 (one mean) where the distribution of \\(\\bar{x}\\) always looks pretty normal."
+    "text": "Condition for the normality of \\(\\bar{x}\\)\nIn practice, we cannot assume that the variable \\(X\\) is exactly normally distributed.\nBut as long as\n\nthe sample is large, or\nthe variable is approximately normal: unimodal, roughly symmetric and no serious outlier\n\n\\(\\bar{x}\\) is well approximated by a normal distribution\n\\[\n\\bar{x} \\sim N\\left(\\mu, \\frac{\\sigma^2}{n}\\right)\n\\]\n\nSee the numerous histograms for case 3 (one mean) where the distribution of \\(\\bar{x}\\) always looks pretty normal."
   },
   {
     "objectID": "slides/lec-12.html#normal-approximation-for-hatp",
@@ -1719,56 +1733,77 @@
     "href": "slides/lec-12.html#conditions-are-satisfied",
     "title": "Classical inference",
     "section": "Conditions are satisfied",
-    "text": "Conditions are satisfied\n\np <- 0.4; n <- 100 # conditions are satisfied: n>30, p*n>10 and (1-p)*n>10\nresults <- tibble(p_hat = numeric())\nfor(i in 1 : 1e4){\n  sim     <- purrr::rbernoulli(n, p)\n  p_hat   <- mean(sim)\n  results <- results %>% add_row(p_hat)\n}\nggplot(results) + geom_histogram(aes(p_hat), binwidth = 0.01)"
+    "text": "Conditions are satisfied\n\np <- 0.4; n <- 100 # conditions are satisfied: p*n>10 and (1-p)*n>10\nresults <- tibble(p_hat = numeric())\nfor(i in 1 : 5e3){\n  sim     <- purrr::rbernoulli(n, p)\n  p_hat   <- mean(sim)\n  results <- results %>% add_row(p_hat)\n}\nggplot(results) + geom_histogram(aes(p_hat), binwidth = 0.01)"
   },
   {
     "objectID": "slides/lec-12.html#normal-approximation-is-good",
     "href": "slides/lec-12.html#normal-approximation-is-good",
     "title": "Classical inference",
     "section": "Normal approximation is good",
-    "text": "Normal approximation is good\n\ntibble(p_hat = seq(0.2, 0.6, by = 0.001)) %>%\n  mutate(normal_approximation = dnorm(p_hat, mean = p, sd = sqrt(p*(1-p)/n))) %>%\n  ggplot() +\n  geom_line(aes(x = p_hat, y = normal_approximation))"
-  },
-  {
-    "objectID": "slides/lec-12.html#conditions-are-not-satisfied",
-    "href": "slides/lec-12.html#conditions-are-not-satisfied",
-    "title": "Classical inference",
-    "section": "Conditions are not satisfied",
-    "text": "Conditions are not satisfied\n\np <- 0.025; n <- 100 # conditions are not satisfied: p*n<10 \nresults <- tibble(p_hat = numeric())\nfor(i in 1 : 1e4){\n  sim     <- purrr::rbernoulli(n, p)\n  p_hat   <- mean(sim)\n  results <- results %>% add_row(p_hat)\n}\nggplot(results) + geom_histogram(aes(p_hat), binwidth = 0.01) + xlim(-0.05, 0.1)"
-  },
-  {
-    "objectID": "slides/lec-12.html#normal-approximation-fails",
-    "href": "slides/lec-12.html#normal-approximation-fails",
-    "title": "Classical inference",
-    "section": "Normal approximation fails",
-    "text": "Normal approximation fails\n\ntibble(p_hat = seq(-0.05, 0.1, by = 0.001)) %>%\n  mutate(normal_approximation = dnorm(p_hat, mean = p, sd = sqrt(p*(1-p)/n))) %>%\n  ggplot() + geom_line(aes(x = p_hat, y = normal_approximation)) + xlim(-0.05, 0.1)"
+    "text": "Normal approximation is good\n\ntibble(p_hat = seq(0.2, 0.6, by = 0.01)) %>%\n  mutate(normal_approximation = dnorm(p_hat, mean = p, sd = sqrt(p*(1-p)/n))) %>%\n  ggplot() +\n  geom_line(aes(x = p_hat, y = normal_approximation))"
   },
   {
     "objectID": "slides/lec-12.html#section-1",
     "href": "slides/lec-12.html#section-1",
     "title": "Classical inference",
     "section": "",
-    "text": "When conditions are not satisfied\n\n\nWhen the conditions are not satisfied, the normal distribution will not be a good approximation to the sampling distribution. In this case, we should not use the classical approach to statistical inference, but instead use simulation (HT) or bootstrap (CI).\n\n\n\n\n\n\n\n\n\nWhen the conditions are satisfied\n\n\nWhen the conditions are satisfied, the normal distribution will be a good approximation. The classical and modern (simulation, bootstrap) approaches to statistical inference will give the same results."
+    "text": "When the conditions are satisfied\n\n\nWhen the conditions are satisfied, the normal distribution will be a good approximation. The classical and modern (simulation, bootstrap) approaches to statistical inference will give the same results."
   },
   {
-    "objectID": "slides/lec-12.html#normal-approximation-for-hatbeta",
-    "href": "slides/lec-12.html#normal-approximation-for-hatbeta",
+    "objectID": "slides/lec-12.html#conditions-are-not-satisfied",
+    "href": "slides/lec-12.html#conditions-are-not-satisfied",
     "title": "Classical inference",
-    "section": "Normal approximation for \\(\\hat{\\beta}\\)",
-    "text": "Normal approximation for \\(\\hat{\\beta}\\)\nIf\nthe distribution of \\(\\hat{\\beta}\\) can also be approximated by a normal distribution."
+    "section": "Conditions are not satisfied",
+    "text": "Conditions are not satisfied\n\np <- 0.025; n <- 100 # conditions are not satisfied: p*n<10 \nresults <- tibble(p_hat = numeric())\nfor(i in 1 : 5e3){\n  sim     <- purrr::rbernoulli(n, p)\n  p_hat   <- mean(sim)\n  results <- results %>% add_row(p_hat)\n}\nggplot(results) + geom_histogram(aes(p_hat), binwidth = 0.01) + xlim(-0.05, 0.1)"
+  },
+  {
+    "objectID": "slides/lec-12.html#normal-approximation-fails",
+    "href": "slides/lec-12.html#normal-approximation-fails",
+    "title": "Classical inference",
+    "section": "Normal approximation fails",
+    "text": "Normal approximation fails\n\ntibble(p_hat = seq(-0.05, 0.1, by = 0.01)) %>%\n  mutate(normal_approximation = dnorm(p_hat, mean = p, sd = sqrt(p*(1-p)/n))) %>%\n  ggplot() + geom_line(aes(x = p_hat, y = normal_approximation)) + xlim(-0.05, 0.1)"
+  },
+  {
+    "objectID": "slides/lec-12.html#section-2",
+    "href": "slides/lec-12.html#section-2",
+    "title": "Classical inference",
+    "section": "",
+    "text": "When conditions are not satisfied\n\n\nWhen the conditions are not satisfied, the normal distribution will not be a good approximation to the sampling distribution. In this case, we should not use the classical approach to statistical inference, but instead use simulation (HT) or bootstrap (CI)."
   },
   {
     "objectID": "slides/lec-12.html#the-classical-approach",
     "href": "slides/lec-12.html#the-classical-approach",
     "title": "Classical inference",
     "section": "The classical approach",
-    "text": "The classical approach\nStep 1: we are interested in the distribution of the statistic under \\(H_0\\).\n\nModern approach: simulate from this distribution\nClassical approach: approximate this distribution with a normal distribution\n\n\nStep 2: we want to compute the p-value\n\nModern approach: the p-value is the proportion of simulations with a statistic at least as extreme as that of the observed sample\nClassical approach: the p-value is the area under the curve of the normal distribution that is at least as extreme as the observed statistic."
+    "text": "The classical approach\nStep 1: we are interested in the distribution of the statistic under \\(H_0\\).\n\nModern approach: simulate from this distribution\nClassical approach: approximate this distribution with a normal distribution"
   },
   {
-    "objectID": "slides/lec-12.html#the-classical-approach-in-r",
-    "href": "slides/lec-12.html#the-classical-approach-in-r",
+    "objectID": "slides/lec-12.html#ht",
+    "href": "slides/lec-12.html#ht",
     "title": "Classical inference",
-    "section": "The classical approach in R",
-    "text": "The classical approach in R\nR will compute the p-value for you. Here is what R does behind the scene:"
+    "section": "HT",
+    "text": "HT\nStep 2: we want to compute the p-value\n\nModern approach: the p-value is the proportion of simulations with a statistic at least as extreme as that of the observed sample\nClassical approach: the p-value is the area under the curve of the normal distribution that is at least as extreme as the observed statistic."
+  },
+  {
+    "objectID": "slides/lec-12.html#what-r-does",
+    "href": "slides/lec-12.html#what-r-does",
+    "title": "Classical inference",
+    "section": "What R does",
+    "text": "What R does\nR will compute the p-value for you. Here is what R does behind the scene:"
+  },
+  {
+    "objectID": "slides/lec-12.html#ci",
+    "href": "slides/lec-12.html#ci",
+    "title": "Classical inference",
+    "section": "CI",
+    "text": "CI\nStep 2: identify the upper and lower bounds of the CI\n\nModern approach: find the appropriate percentiles among the simulated values\nClassical approach:find the appropriate percentiles of the normal approximation"
+  },
+  {
+    "objectID": "slides/lec-12.html#what-r-does-1",
+    "href": "slides/lec-12.html#what-r-does-1",
+    "title": "Classical inference",
+    "section": "What R does",
+    "text": "What R does\nR will compute the upper and lower bounds for you. Here is what R does behind the scene:"
   },
   {
     "objectID": "slides/lec-12.html#case-1-one-proportion",
@@ -1785,11 +1820,11 @@
     "text": "Comparison with simulation-based HT\nThe simulation-based HT yielded a p-value of 0.127.\n\n\n\n\n\n\nA good normal approximation\n\n\nWhen the conditions for the normal approximation are satisfied, the results based on simulations (modern) and the normal approximation (classical) will be similar.\n\n\n\nConditions: independence, success-failure condition"
   },
   {
-    "objectID": "slides/lec-12.html#section-2",
-    "href": "slides/lec-12.html#section-2",
+    "objectID": "slides/lec-12.html#section-3",
+    "href": "slides/lec-12.html#section-3",
     "title": "Classical inference",
     "section": "",
-    "text": "Individual exercise - the classical approach for one proportion\n\n\nSuppose you interview 2000 US adults about their political preferences and 1200 of them say that they are democrat. What is the 95% confidence interval for \\(p\\), the proportion of US adults who are democrats? What is the length of the interval?\nWhat 95% CI do you obtained if 6000 out of 10000 US adults say they are democrat? What is its length?\nExercise 16.19 – find the 95% CI. Are the conditions satisfied?\nExercise 16.21\nExercise 16.25\n\n\n\n\n\n\n05:00"
+    "text": "Individual exercise - the classical approach for one proportion\n\n\nSuppose you interview 2000 US adults about their political preferences and 1200 of them say that they are democrat. What is the 95% confidence interval for \\(p\\), the proportion of US adults who are democrats? What is the length of the interval?\nWhat 95% CI do you obtain if 6000 out of 10000 US adults say they are democrat? What is its length?\nExercise 16.19 – find the 95% CI. Are the conditions satisfied?\nExercise 16.21\nExercise 16.25\n\n\n\n\n\n\n05:00"
   },
   {
     "objectID": "slides/lec-12.html#case-2-two-proportions",
@@ -1813,11 +1848,11 @@
     "text": "Comparison with simulation-based HT\nUsing the simulation-based HT, we found a p-value of 0.0435.\n\n\n\n\n\n\nA good normal approximation\n\n\nWhen the conditions for the normal approximation are not satisfied, the results based on simulations (modern) and the normal approximation (classical) may differ.\nA simulation-based HT will always give exact results. A HT based on the normal distribution will only give the same (exact) results when the conditions are satisfied."
   },
   {
-    "objectID": "slides/lec-12.html#section-3",
-    "href": "slides/lec-12.html#section-3",
+    "objectID": "slides/lec-12.html#section-4",
+    "href": "slides/lec-12.html#section-4",
     "title": "Classical inference",
     "section": "",
-    "text": "Individual exercise - the classical approach for two proportions\n\n\nExercise 17.7\nExercise 17.13\nExercise 17.19\n\n\n\n\n\n\n07:00"
+    "text": "Individual exercise - the classical approach for two proportions\n\n\nExercise 17.7\nExercise 17.13\nExercise 17.19\n\n\n\n\n\n\n06:00"
   },
   {
     "objectID": "slides/lec-12.html#case-3-one-mean",
@@ -1834,11 +1869,11 @@
     "text": "Conditions\n\nIndependence\nNormality – can be relaxed for larger samples \\((n\\ge30)\\)\n\n\n\n\n\n\n\n\nStatistics as an art\n\n\nThe normality assumption is vague. The most important feature of the sample to verify is the presence of outliers.\nRule of thumb: if \\(n<30\\), there should not be any clear outlier; if \\(n\\ge30\\), there should not be any extreme outlier."
   },
   {
-    "objectID": "slides/lec-12.html#section-4",
-    "href": "slides/lec-12.html#section-4",
+    "objectID": "slides/lec-12.html#section-5",
+    "href": "slides/lec-12.html#section-5",
     "title": "Classical inference",
     "section": "",
-    "text": "Individual exercise - the classical approach for one mean\n\n\nMake a histogram and a boxplot of the variable. Are the conditions satisfied?\nConstruct a 99% CI for hwy.\nHint: use the command help(t.test) to access the help file of the function t.test and see what parameter determines the confidence level.\n\n\n\n\n\n\n03:00"
+    "text": "Individual exercise - the classical approach for one mean\n\n\nMake a histogram and a boxplot of the variable. Are the conditions satisfied?\nConstruct a 99% CI for hwy.\nHint: run the command help(t.test) to access the help file of the function t.test and see what parameter determines the confidence level.\n\n\n\n\n\n\n03:00"
   },
   {
     "objectID": "slides/lec-12.html#case-4-two-means",
@@ -1855,11 +1890,11 @@
     "text": "Conditions\n\nIndependence within groups\nIndependence between groups\nNormality in each group (same as case 3 – one mean)"
   },
   {
-    "objectID": "slides/lec-12.html#section-5",
-    "href": "slides/lec-12.html#section-5",
+    "objectID": "slides/lec-12.html#section-6",
+    "href": "slides/lec-12.html#section-6",
     "title": "Classical inference",
     "section": "",
-    "text": "Individual exercise - the classical approach for two means\n\n\nWhat is the 99% CI for the difference in fuel efficiency on the highway and in the city? How long is this CI?\nAre the conditions satisfied?\n\n\n\n\n\n\n03:00"
+    "text": "Individual exercise - the classical approach for two means\n\n\nWhat is the 99% CI for the difference in fuel efficiency on the highway and in the city? How long is this CI?\nAre the conditions satisfied?\n\n\n\n\n\n\n02:00"
   },
   {
     "objectID": "slides/lec-12.html#case-4bis-paired-means",
@@ -1876,29 +1911,29 @@
     "text": "Conditions\n\nPaired observations\nIndependence between pairs\nNormality"
   },
   {
-    "objectID": "slides/lec-12.html#section-6",
-    "href": "slides/lec-12.html#section-6",
+    "objectID": "slides/lec-12.html#section-7",
+    "href": "slides/lec-12.html#section-7",
     "title": "Classical inference",
     "section": "",
-    "text": "Individual exercise - the classical approach for paired means\n\n\nWhat is the 99% CI for the difference in fuel efficiency on the highway and in the city? How long is this CI?\nAre the conditions satisfied?\n\n\n\n\n\n\n03:00\n\n\n\n\n\n\n\n\n\n\nAlways pair the observations\n\n\nIf the data can paired, you should always do it! Pairing data yields an analysis that is more powerful:\n\nnarrower CI\nsmaller p-value"
+    "text": "Individual exercise - the classical approach for paired means\n\n\nWhat is the 99% CI for the difference in fuel efficiency on the highway and in the city? How long is this CI?\nAre the conditions satisfied?\n\n\n\n\n\n\n02:00\n\n\n\n\n\n\n\n\n\n\nAlways pair the observations\n\n\nIf the data can paired, you should always do it! Pairing data yields an analysis that is more powerful:\n\nnarrower CI\nsmaller p-value"
   },
   {
     "objectID": "slides/lec-12.html#case-5-regression",
     "href": "slides/lec-12.html#case-5-regression",
     "title": "Classical inference",
     "section": "Case 5 – regression",
-    "text": "Case 5 – regression\n\nsimple linear regressionmultiple linear regressionlogistic regression\n\n\n\nm <- lm(hwy ~ cty, data = mpg)\ntidy(m)\n\n# A tibble: 2 x 5\n  term        estimate std.error statistic   p.value\n  <chr>          <dbl>     <dbl>     <dbl>     <dbl>\n1 (Intercept)    0.892    0.469       1.90 5.84e-  2\n2 cty            1.34     0.0270     49.6  1.87e-125\n\n\n\n\n\nm <- lm(hwy ~ cty + displ, data = mpg)\ntidy(m)\n\n# A tibble: 3 x 5\n  term        estimate std.error statistic  p.value\n  <chr>          <dbl>     <dbl>     <dbl>    <dbl>\n1 (Intercept)   1.15      1.21       0.949 3.43e- 1\n2 cty           1.33      0.0449    29.6   1.43e-80\n3 displ        -0.0343    0.148     -0.232 8.17e- 1\n\n\n\\(H_0: \\beta_1 = 0\\) when displ is included in the model\n\\(H_a: \\beta_1 \\neq 0\\) when displ is included in the model\n. . .\n\\(H_0: \\beta_2 = 0\\) when cty is included in the model\n\\(H_a: \\beta_2 \\neq 0\\) when cty is included in the model\n\n\n\nd <- heart_transplant %>% mutate(survived_binary = survived == \"alive\")\nm <- glm(survived_binary ~ age + transplant, family = \"binomial\", data = d)\ntidy(m)\n\n# A tibble: 3 x 5\n  term                estimate std.error statistic p.value\n  <chr>                  <dbl>     <dbl>     <dbl>   <dbl>\n1 (Intercept)           0.973     1.08       0.904 0.366  \n2 age                  -0.0763    0.0255    -2.99  0.00277\n3 transplanttreatment   1.82      0.668      2.73  0.00635"
+    "text": "Case 5 – regression\n\nsimple linear regressionmultiple linear regressionlogistic regression\n\n\n\nm <- lm(hwy ~ cty, data = mpg)\ntidy(m)\n\n# A tibble: 2 x 5\n  term        estimate std.error statistic   p.value\n  <chr>          <dbl>     <dbl>     <dbl>     <dbl>\n1 (Intercept)    0.892    0.469       1.90 5.84e-  2\n2 cty            1.34     0.0270     49.6  1.87e-125\n\n\n\n\n\nm <- lm(hwy ~ cty + displ, data = mpg)\ntidy(m)\n\n# A tibble: 3 x 5\n  term        estimate std.error statistic  p.value\n  <chr>          <dbl>     <dbl>     <dbl>    <dbl>\n1 (Intercept)   1.15      1.21       0.949 3.43e- 1\n2 cty           1.33      0.0449    29.6   1.43e-80\n3 displ        -0.0343    0.148     -0.232 8.17e- 1\n\n\n\\(H_0: \\beta_1 = 0\\) when displ is included in the model\n\\(H_a: \\beta_1 \\neq 0\\) when displ is included in the model\n\\(H_0: \\beta_2 = 0\\) when cty is included in the model\n\\(H_a: \\beta_2 \\neq 0\\) when cty is included in the model\n\n\n\nd <- heart_transplant %>% mutate(survived_binary = survived == \"alive\")\nm <- glm(survived_binary ~ age + transplant, family = \"binomial\", data = d)\ntidy(m)\n\n# A tibble: 3 x 5\n  term                estimate std.error statistic p.value\n  <chr>                  <dbl>     <dbl>     <dbl>   <dbl>\n1 (Intercept)           0.973     1.08       0.904 0.366  \n2 age                  -0.0763    0.0255    -2.99  0.00277\n3 transplanttreatment   1.82      0.668      2.73  0.00635"
   },
   {
-    "objectID": "slides/lec-12.html#conditions-linear-regression",
-    "href": "slides/lec-12.html#conditions-linear-regression",
+    "objectID": "slides/lec-12.html#conditions-line-linear-regression",
+    "href": "slides/lec-12.html#conditions-line-linear-regression",
     "title": "Classical inference",
-    "section": "Conditions – linear regression",
-    "text": "Conditions – linear regression\n\nLinearity\nIndependence\nNormality\nEqual variability (homoskedasticity)\n\n\\(\\Rightarrow\\) verify with a residual plot!"
+    "section": "Conditions (LINE) – linear regression",
+    "text": "Conditions (LINE) – linear regression\n\nLinearity\nIndependence\nNormality\nEqual variability (homoskedasticity)\n\n\\(\\Rightarrow\\) verify with a residual plot!"
   },
   {
-    "objectID": "slides/lec-12.html#section-7",
-    "href": "slides/lec-12.html#section-7",
+    "objectID": "slides/lec-12.html#section-8",
+    "href": "slides/lec-12.html#section-8",
     "title": "Classical inference",
     "section": "",
     "text": "Individual exercise - the classical approach for regression\n\n\nWhat condition(s) are violated by each of the following data sets (see next slide)?\nExercise 24.10\nExercise 24.13 – parts a and b\nExercise 24.15 – part b\nExercise 25.3\nExercise 25.7\nExercise 26.1\nExercise 26.1\n\n\n\n\n\n\n10:00"
@@ -1925,8 +1960,8 @@
     "text": "Larger samples have a smaller SE\n\n\n\n\n\n\nSample size matters\n\n\nLarge \\(n\\)\n\\(\\Rightarrow\\) small SE\n\\(\\Rightarrow\\) normal approximation with small sd\n\\(\\Rightarrow\\) normal approximation is more concentrated\n\\(\\Rightarrow\\) tighter CI and smaller p-values."
   },
   {
-    "objectID": "slides/lec-12.html#section-8",
-    "href": "slides/lec-12.html#section-8",
+    "objectID": "slides/lec-12.html#section-9",
+    "href": "slides/lec-12.html#section-9",
     "title": "Classical inference",
     "section": "",
     "text": "Individual exercise - sample size and CI\n\n\nExercise 16.13 – part e\nExercise 16.15 – part b\nExercise 13.4 – part d\n\n\n\n\n\n\n01:00"
@@ -4407,14 +4442,14 @@
     "href": "slides/lec-9.html#bootstrap-in-r-1",
     "title": "Inference for proportions",
     "section": "Bootstrap in R",
-    "text": "Bootstrap in R\n\nd <- gender_discrimination %>%\n  mutate(decision = if_else(decision == \"promoted\", 1, 0))\nsample_observed_m <- d %>% filter(gender == \"male\"  )\nsample_observed_f <- d %>% filter(gender == \"female\")\n\nset.seed(0)\nsample_bootstrap(sample_observed_m) # bootstrap sample\n\n# A tibble: 24 x 2\n   gender decision\n   <fct>     <dbl>\n 1 male          1\n 2 male          1\n 3 male          1\n 4 male          1\n 5 male          1\n 6 male          0\n 7 male          1\n 8 male          1\n 9 male          1\n10 male          1\n# ... with 14 more rows\n\nsample_bootstrap(sample_observed_f) # bootstrap sample\n\n# A tibble: 24 x 2\n   gender decision\n   <fct>     <dbl>\n 1 female        1\n 2 female        1\n 3 female        1\n 4 female        1\n 5 female        1\n 6 female        0\n 7 female        1\n 8 female        0\n 9 female        1\n10 female        1\n# ... with 14 more rows"
+    "text": "Bootstrap in R\n\nsample_observed_m <- gender_discrimination %>% filter(gender == \"male\"  )\nsample_observed_f <- gender_discrimination %>% filter(gender == \"female\")\n\nset.seed(0)\nsample_bootstrap(sample_observed_m) # bootstrap sample\n\n# A tibble: 24 x 2\n   gender decision    \n   <fct>  <fct>       \n 1 male   promoted    \n 2 male   promoted    \n 3 male   promoted    \n 4 male   promoted    \n 5 male   promoted    \n 6 male   not promoted\n 7 male   promoted    \n 8 male   promoted    \n 9 male   promoted    \n10 male   promoted    \n# ... with 14 more rows\n\nsample_bootstrap(sample_observed_f) # bootstrap sample\n\n# A tibble: 24 x 2\n   gender decision    \n   <fct>  <fct>       \n 1 female promoted    \n 2 female promoted    \n 3 female promoted    \n 4 female promoted    \n 5 female promoted    \n 6 female not promoted\n 7 female promoted    \n 8 female not promoted\n 9 female promoted    \n10 female promoted    \n# ... with 14 more rows"
   },
   {
     "objectID": "slides/lec-9.html#section-18",
     "href": "slides/lec-9.html#section-18",
     "title": "Inference for proportions",
     "section": "",
-    "text": "results <- tibble(p_diff_hat = numeric())\nfor(i in 1 : 1e3){\n  d_boot_m   <- sample_bootstrap(sample_observed_m) # bootstrap sample\n  d_boot_f   <- sample_bootstrap(sample_observed_f) # bootstrap sample\n  p_diff_hat <- compute_p_diff(rbind(d_boot_m, d_boot_f)) # bootstrap statistic\n  results    <- results %>% add_row(p_diff_hat = p_diff_hat)\n}\n\n\nquantile(results$p_diff_hat, c(0.05 , 0.95 )) # 90% CI\n\n 5% 95% \n  0   0 \n\nquantile(results$p_diff_hat, c(0.05 , 0.95 )) %>% signif(2) # 90% CI\n\n 5% 95% \n  0   0 \n\nquantile(results$p_diff_hat, c(0.025, 0.975)) %>% signif(2) # 95% CI\n\n 2.5% 97.5% \n    0     0"
+    "text": "results <- tibble(p_diff_hat = numeric())\nfor(i in 1 : 1e4){\n  d_boot_m   <- sample_bootstrap(sample_observed_m) # bootstrap sample\n  d_boot_f   <- sample_bootstrap(sample_observed_f) # bootstrap sample\n  p_diff_hat <- compute_p_diff(rbind(d_boot_m, d_boot_f)) # bootstrap statistic\n  results    <- results %>% add_row(p_diff_hat = p_diff_hat)\n}\n\n\nquantile(results$p_diff_hat, c(0.05 , 0.95 )) # 90% CI\n\n        5%        95% \n0.08333333 0.50000000 \n\nquantile(results$p_diff_hat, c(0.05 , 0.95 )) %>% signif(2) # 90% CI\n\n   5%   95% \n0.083 0.500 \n\nquantile(results$p_diff_hat, c(0.025, 0.975)) %>% signif(2) # 95% CI\n\n 2.5% 97.5% \n0.042 0.540"
   },
   {
     "objectID": "slides/lec-9.html#section-19",

@@ -403,7 +403,7 @@
 <li></li>
 </ul>
 </section>
-<section id="recap" class="slide level2 smaller">
+<section id="recap" class="slide level2">
 <h2>Recap</h2>
 <ul>
 <li><p>Simple linear regression (case 5)</p>
@@ -438,15 +438,15 @@
 </div>
 <div class="callout-content">
 <p>Exercise <a href="https://openintro-ims.netlify.app/decerr.html#chp14-exercises">14.5</a></p>
-<p>Exercise <a href="https://openintro-ims.netlify.app/inference-two-props.html#chp17-exercises">17.2</a> part a and c</p>
-<p>Exercise <a href="https://openintro-ims.netlify.app/inference-two-props.html#chp17-exercises">17.4</a> part c</p>
+<p>Exercise <a href="https://openintro-ims.netlify.app/inference-two-props.html#chp17-exercises">17.2</a> – parts a and c</p>
+<p>Exercise <a href="https://openintro-ims.netlify.app/inference-two-props.html#chp17-exercises">17.4</a> – part c</p>
 </div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a7722a" style="right:0;bottom:0;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<div class="countdown" id="timer_62a78f33" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -466,6 +466,16 @@
 
 </div>
 <img data-src="lec-12_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"><p><span class="math inline">\(\Rightarrow\)</span> unimodal, symmetric, thin tails – bell-shaped</p>
+</section>
+<section id="ht-using-a-normal-approximation" class="slide level2">
+<h2>HT using a normal approximation</h2>
+
+<img data-src="images/lec-12/p-value.png" class="r-stretch quarto-figure-center"><p>Source: <a href="https://www.openintro.org/book/ims/">IMS</a></p>
+</section>
+<section id="ci-using-a-normal-approximation" class="slide level2">
+<h2>CI using a normal approximation</h2>
+
+<img data-src="images/lec-12/3-sigma.png" class="r-stretch quarto-figure-center"><p>Source: <a href="https://www.openintro.org/book/ims/">IMS</a></p>
 </section>
 <section id="normal-approximation-1" class="slide level2">
 <h2>Normal approximation</h2>
@@ -494,7 +504,7 @@ X\sim N(\mu, \sigma^2)
 <p>In practice, we cannot assume that the variable <span class="math inline">\(X\)</span> is <em>exactly</em> normally distributed.</p>
 <p>But as long as</p>
 <ol type="1">
-<li><p>the sample is large <span class="math inline">\((n\ge 30)\)</span>, or</p></li>
+<li><p>the sample is large, or</p></li>
 <li><p>the variable is <em>approximately</em> normal: unimodal, roughly symmetric and no serious outlier</p></li>
 </ol>
 <p><span class="math inline">\(\bar{x}\)</span> is well approximated by a normal distribution</p>
@@ -535,10 +545,10 @@ X\sim N(\mu, \sigma^2)
 </section>
 <section id="conditions-are-satisfied" class="slide level2">
 <h2>Conditions are satisfied</h2>
-<div class="cell" data-layout-align="center" data-hash="lec-12_cache/revealjs/unnamed-chunk-3_8aa7f2e0a64fffb11c7239836465d17f">
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.4</span>; n <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="co"># conditions are satisfied: n&gt;30, p*n&gt;10 and (1-p)*n&gt;10</span></span>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.4</span>; n <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="co"># conditions are satisfied: p*n&gt;10 and (1-p)*n&gt;10</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">p_hat =</span> <span class="fu">numeric</span>())</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">1e4</span>){</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">5e3</span>){</span>
 <span id="cb2-4"><a href="#cb2-4"></a>  sim     <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">rbernoulli</span>(n, p)</span>
 <span id="cb2-5"><a href="#cb2-5"></a>  p_hat   <span class="ot">&lt;-</span> <span class="fu">mean</span>(sim)</span>
 <span id="cb2-6"><a href="#cb2-6"></a>  results <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span> <span class="fu">add_row</span>(p_hat)</span>
@@ -549,20 +559,36 @@ X\sim N(\mu, \sigma^2)
 <img data-src="lec-12_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
 <section id="normal-approximation-is-good" class="slide level2">
 <h2>Normal approximation is good</h2>
-<div class="cell" data-layout-align="center" data-hash="lec-12_cache/revealjs/unnamed-chunk-4_27750c864ba67a2197b289ae260774a3">
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">tibble</span>(<span class="at">p_hat =</span> <span class="fu">seq</span>(<span class="fl">0.2</span>, <span class="fl">0.6</span>, <span class="at">by =</span> <span class="fl">0.001</span>)) <span class="sc">%&gt;%</span></span>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">tibble</span>(<span class="at">p_hat =</span> <span class="fu">seq</span>(<span class="fl">0.2</span>, <span class="fl">0.6</span>, <span class="at">by =</span> <span class="fl">0.01</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">mutate</span>(<span class="at">normal_approximation =</span> <span class="fu">dnorm</span>(p_hat, <span class="at">mean =</span> p, <span class="at">sd =</span> <span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n))) <span class="sc">%&gt;%</span></span>
 <span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> p_hat, <span class="at">y =</span> normal_approximation))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="lec-12_files/figure-revealjs/unnamed-chunk-4-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>When the conditions are satisfied</strong></p>
+</div>
+<div class="callout-content">
+<p>When the conditions are satisfied, the normal distribution will be a good approximation. The classical and modern (simulation, bootstrap) approaches to statistical inference will give the same results.</p>
+</div>
+</div>
+</div>
+</section>
 <section id="conditions-are-not-satisfied" class="slide level2">
 <h2>Conditions are <em>not</em> satisfied</h2>
-<div class="cell" data-layout-align="center" data-hash="lec-12_cache/revealjs/unnamed-chunk-5_d2da372ae26ac5e5b8d249978f8fcbd1">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.025</span>; n <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="co"># conditions are not satisfied: p*n&lt;10 </span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">p_hat =</span> <span class="fu">numeric</span>())</span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">1e4</span>){</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">5e3</span>){</span>
 <span id="cb4-4"><a href="#cb4-4"></a>  sim     <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">rbernoulli</span>(n, p)</span>
 <span id="cb4-5"><a href="#cb4-5"></a>  p_hat   <span class="ot">&lt;-</span> <span class="fu">mean</span>(sim)</span>
 <span id="cb4-6"><a href="#cb4-6"></a>  results <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span> <span class="fu">add_row</span>(p_hat)</span>
@@ -573,14 +599,14 @@ X\sim N(\mu, \sigma^2)
 <img data-src="lec-12_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
 <section id="normal-approximation-fails" class="slide level2">
 <h2>Normal approximation fails</h2>
-<div class="cell" data-layout-align="center" data-hash="lec-12_cache/revealjs/unnamed-chunk-6_a52a305b8b83263af360af8442675b8c">
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">tibble</span>(<span class="at">p_hat =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="at">by =</span> <span class="fl">0.001</span>)) <span class="sc">%&gt;%</span></span>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">tibble</span>(<span class="at">p_hat =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="at">by =</span> <span class="fl">0.01</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">mutate</span>(<span class="at">normal_approximation =</span> <span class="fu">dnorm</span>(p_hat, <span class="at">mean =</span> p, <span class="at">sd =</span> <span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n))) <span class="sc">%&gt;%</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> p_hat, <span class="at">y =</span> normal_approximation)) <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="fl">0.05</span>, <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="lec-12_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
-<section id="section-1" class="slide level2">
+<section id="section-2" class="slide level2">
 <h2></h2>
 <div class="callout callout-important callout-captioned callout-style-default">
 <div class="callout-body">
@@ -595,28 +621,10 @@ X\sim N(\mu, \sigma^2)
 </div>
 </div>
 </div>
-<div class="callout callout-important callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>When the conditions are satisfied</strong></p>
-</div>
-<div class="callout-content">
-<p>When the conditions are satisfied, the normal distribution will be a good approximation. The classical and modern (simulation, bootstrap) approaches to statistical inference will give the same results.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="normal-approximation-for-hatbeta" class="slide level2">
-<h2>Normal approximation for <span class="math inline">\(\hat{\beta}\)</span></h2>
-<p>If</p>
-<p>the distribution of <span class="math inline">\(\hat{\beta}\)</span> can also be approximated by a normal distribution.</p>
 </section></section>
 <section>
-<section id="the-classical-approach-to-ht" class="title-slide slide level1 center">
-<h1>The classical approach to HT</h1>
+<section id="the-classical-approach-to-ht-and-ci" class="title-slide slide level1 center">
+<h1>The classical approach to HT and CI</h1>
 
 </section>
 <section id="the-classical-approach" class="slide level2">
@@ -626,18 +634,33 @@ X\sim N(\mu, \sigma^2)
 <li><p><strong>Modern approach</strong>: <em>simulate</em> from this distribution</p></li>
 <li><p><strong>Classical approach</strong>: <em>approximate</em> this distribution with a normal distribution</p></li>
 </ul>
-<div class="fragment">
+</section>
+<section id="ht" class="slide level2">
+<h2>HT</h2>
 <p>Step 2: we want to compute the p-value</p>
 <ul>
 <li><p><strong>Modern approach</strong>: the p-value is the proportion of simulations with a statistic at least as extreme as that of the observed sample</p></li>
 <li><p><strong>Classical approach</strong>: the p-value is the <em>area under the curve</em> of the normal distribution that is at least as extreme as the observed statistic.</p></li>
 </ul>
-</div>
 </section>
-<section id="the-classical-approach-in-r" class="slide level2">
-<h2>The classical approach in <code>R</code></h2>
+<section id="what-r-does" class="slide level2">
+<h2>What <code>R</code> does</h2>
 <p><code>R</code> will compute the p-value for you. Here is what <code>R</code> does behind the scene:</p>
+
+<img data-src="images/lec-12/p-value.png" class="r-stretch quarto-figure-center"></section>
+<section id="ci" class="slide level2">
+<h2>CI</h2>
+<p>Step 2: identify the upper and lower bounds of the CI</p>
+<ul>
+<li><p><strong>Modern approach</strong>: find the appropriate percentiles among the simulated values</p></li>
+<li><p><strong>Classical approach</strong>:find the appropriate percentiles of the normal approximation</p></li>
+</ul>
 </section>
+<section id="what-r-does-1" class="slide level2">
+<h2>What <code>R</code> does</h2>
+<p><code>R</code> will compute the upper and lower bounds for you. Here is what <code>R</code> does behind the scene:</p>
+
+<img data-src="images/lec-12/3-sigma.png" class="r-stretch quarto-figure-center"></section>
 <section id="case-1-one-proportion" class="slide level2">
 <h2>Case 1 – one proportion</h2>
 <div class="cell" data-layout-align="center">
@@ -681,7 +704,7 @@ sample estimates:
 </div>
 <p><strong>Conditions</strong>: independence, success-failure condition</p>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-3" class="slide level2">
 <h2></h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
@@ -690,7 +713,7 @@ sample estimates:
 </div>
 <div class="callout-content">
 <p>Suppose you interview 2000 US adults about their political preferences and 1200 of them say that they are democrat. What is the 95% confidence interval for <span class="math inline">\(p\)</span>, the proportion of US adults who are democrats? What is the length of the interval?</p>
-<p>What 95% CI do you obtained if 6000 out of 10000 US adults say they are democrat? What is its length?</p>
+<p>What 95% CI do you obtain if 6000 out of 10000 US adults say they are democrat? What is its length?</p>
 <p>Exercise <a href="https://openintro-ims.netlify.app/inference-one-prop.html#chp16-exercises">16.19</a> – find the 95% CI. Are the conditions satisfied?</p>
 <p>Exercise <a href="https://openintro-ims.netlify.app/inference-one-prop.html#chp16-exercises">16.21</a></p>
 <p>Exercise <a href="https://openintro-ims.netlify.app/inference-one-prop.html#chp16-exercises">16.25</a></p>
@@ -699,7 +722,7 @@ sample estimates:
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a7759a" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a78cd9" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -753,7 +776,7 @@ sample estimates:
 </div>
 </div>
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-4" class="slide level2">
 <h2></h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
@@ -769,8 +792,8 @@ sample estimates:
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a7738b" style="right:0;bottom:0;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">07</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<div class="countdown" id="timer_62a78d35" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">06</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -818,7 +841,7 @@ mean of x
 </div>
 </div>
 </section>
-<section id="section-4" class="slide level2">
+<section id="section-5" class="slide level2">
 <h2></h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
@@ -828,13 +851,13 @@ mean of x
 <div class="callout-content">
 <p>Make a histogram and a boxplot of the variable. Are the conditions satisfied?</p>
 <p>Construct a 99% CI for <code>hwy</code>.</p>
-<p>Hint: use the command <code>help(t.test)</code> to access the help file of the function <code>t.test</code> and see what parameter determines the confidence level.</p>
+<p>Hint: run the command <code>help(t.test)</code> to access the help file of the function <code>t.test</code> and see what parameter determines the confidence level.</p>
 </div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a77596" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a78fd3" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -895,7 +918,7 @@ mean of x mean of y
 <li><p>Normality in each group (same as case 3 – one mean)</p></li>
 </ol>
 </section>
-<section id="section-5" class="slide level2">
+<section id="section-6" class="slide level2">
 <h2></h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
@@ -910,8 +933,8 @@ mean of x mean of y
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a77584" style="right:0;bottom:0;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<div class="countdown" id="timer_62a7904e" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -944,7 +967,7 @@ mean of the differences
 <li><p>Normality</p></li>
 </ol>
 </section>
-<section id="section-6" class="slide level2">
+<section id="section-7" class="slide level2">
 <h2></h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
@@ -959,8 +982,8 @@ mean of the differences
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a7743d" style="right:0;bottom:0;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<div class="countdown" id="timer_62a78d45" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -1017,7 +1040,6 @@ mean of the differences
 </div>
 <p><span class="math inline">\(H_0: \beta_1 = 0\)</span> when <code>displ</code> is included in the model</p>
 <p><span class="math inline">\(H_a: \beta_1 \neq 0\)</span> when <code>displ</code> is included in the model</p>
-<p>. . .</p>
 <p><span class="math inline">\(H_0: \beta_2 = 0\)</span> when <code>cty</code> is included in the model</p>
 <p><span class="math inline">\(H_a: \beta_2 \neq 0\)</span> when <code>cty</code> is included in the model</p>
 </div>
@@ -1039,8 +1061,8 @@ mean of the differences
 </div>
 </div>
 </section>
-<section id="conditions-linear-regression" class="slide level2">
-<h2>Conditions – linear regression</h2>
+<section id="conditions-line-linear-regression" class="slide level2">
+<h2>Conditions (LINE) – linear regression</h2>
 <ol type="1">
 <li><p>Linearity</p></li>
 <li><p>Independence</p></li>
@@ -1049,7 +1071,7 @@ mean of the differences
 </ol>
 <p><span class="math inline">\(\Rightarrow\)</span> verify with a residual plot!</p>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
@@ -1070,7 +1092,7 @@ mean of the differences
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a772d8" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a78de6" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1130,7 +1152,7 @@ mean of the differences
 </div>
 </div>
 </section>
-<section id="section-8" class="slide level2">
+<section id="section-9" class="slide level2">
 <h2></h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
@@ -1146,7 +1168,7 @@ mean of the differences
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a7746a" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a78d91" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>

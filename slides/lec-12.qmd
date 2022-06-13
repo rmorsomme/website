@@ -55,7 +55,7 @@ options(scipen = 5)
 
 -   
 
-## Recap {.smaller}
+## Recap
 
 -   Simple linear regression (case 5)
 
@@ -82,13 +82,13 @@ options(scipen = 5)
 
 Exercise [14.5](https://openintro-ims.netlify.app/decerr.html#chp14-exercises)
 
-Exercise [17.2](https://openintro-ims.netlify.app/inference-two-props.html#chp17-exercises) part a and c
+Exercise [17.2](https://openintro-ims.netlify.app/inference-two-props.html#chp17-exercises) -- parts a and c
 
-Exercise [17.4](https://openintro-ims.netlify.app/inference-two-props.html#chp17-exercises) part c
+Exercise [17.4](https://openintro-ims.netlify.app/inference-two-props.html#chp17-exercises) -- part c
 :::
 
 ```{r, echo = F}
-countdown(minutes = 2)
+countdown(minutes = 3)
 ```
 
 # Normal approximation
@@ -103,6 +103,18 @@ tibble(x = seq(-5, 5, by = 0.01)) %>%
 ```
 
 $\Rightarrow$ unimodal, symmetric, thin tails -- bell-shaped
+
+## HT using a normal approximation
+
+![](images/lec-12/p-value.png){fig-align="center"}
+
+Source: [IMS](https://www.openintro.org/book/ims/)
+
+## CI using a normal approximation
+
+![](images/lec-12/3-sigma.png){fig-align="center"}
+
+Source: [IMS](https://www.openintro.org/book/ims/)
 
 ## Normal approximation
 
@@ -136,7 +148,7 @@ In practice, we cannot assume that the variable $X$ is *exactly* normally distri
 
 But as long as
 
-1.  the sample is large $(n\ge 30)$, or
+1.  the sample is large, or
 
 2.  the variable is *approximately* normal: unimodal, roughly symmetric and no serious outlier
 
@@ -176,10 +188,10 @@ $$
 
 ## Conditions are satisfied
 
-```{r, cache=TRUE}
-p <- 0.4; n <- 100 # conditions are satisfied: n>30, p*n>10 and (1-p)*n>10
+```{r}
+p <- 0.4; n <- 100 # conditions are satisfied: p*n>10 and (1-p)*n>10
 results <- tibble(p_hat = numeric())
-for(i in 1 : 1e4){
+for(i in 1 : 5e3){
   sim     <- purrr::rbernoulli(n, p)
   p_hat   <- mean(sim)
   results <- results %>% add_row(p_hat)
@@ -189,19 +201,27 @@ ggplot(results) + geom_histogram(aes(p_hat), binwidth = 0.01)
 
 ## Normal approximation is good
 
-```{r, cache=TRUE}
-tibble(p_hat = seq(0.2, 0.6, by = 0.001)) %>%
+```{r}
+tibble(p_hat = seq(0.2, 0.6, by = 0.01)) %>%
   mutate(normal_approximation = dnorm(p_hat, mean = p, sd = sqrt(p*(1-p)/n))) %>%
   ggplot() +
   geom_line(aes(x = p_hat, y = normal_approximation))
 ```
 
+## 
+
+::: callout-tip
+## When the conditions are satisfied
+
+When the conditions are satisfied, the normal distribution will be a good approximation. The classical and modern (simulation, bootstrap) approaches to statistical inference will give the same results.
+:::
+
 ## Conditions are *not* satisfied
 
-```{r, cache=TRUE}
+```{r}
 p <- 0.025; n <- 100 # conditions are not satisfied: p*n<10 
 results <- tibble(p_hat = numeric())
-for(i in 1 : 1e4){
+for(i in 1 : 5e3){
   sim     <- purrr::rbernoulli(n, p)
   p_hat   <- mean(sim)
   results <- results %>% add_row(p_hat)
@@ -211,8 +231,8 @@ ggplot(results) + geom_histogram(aes(p_hat), binwidth = 0.01) + xlim(-0.05, 0.1)
 
 ## Normal approximation fails
 
-```{r, cache=TRUE}
-tibble(p_hat = seq(-0.05, 0.1, by = 0.001)) %>%
+```{r}
+tibble(p_hat = seq(-0.05, 0.1, by = 0.01)) %>%
   mutate(normal_approximation = dnorm(p_hat, mean = p, sd = sqrt(p*(1-p)/n))) %>%
   ggplot() + geom_line(aes(x = p_hat, y = normal_approximation)) + xlim(-0.05, 0.1)
 ```
@@ -225,19 +245,7 @@ tibble(p_hat = seq(-0.05, 0.1, by = 0.001)) %>%
 When the conditions are not satisfied, the normal distribution will not be a good approximation to the sampling distribution. In this case, we should not use the classical approach to statistical inference, but instead use simulation (HT) or bootstrap (CI).
 :::
 
-::: callout-important
-## When the conditions are satisfied
-
-When the conditions are satisfied, the normal distribution will be a good approximation. The classical and modern (simulation, bootstrap) approaches to statistical inference will give the same results.
-:::
-
-## Normal approximation for $\hat{\beta}$
-
-If
-
-the distribution of $\hat{\beta}$ can also be approximated by a normal distribution.
-
-# The classical approach to HT
+# The classical approach to HT and CI
 
 ## The classical approach
 
@@ -247,7 +255,7 @@ Step 1: we are interested in the distribution of the statistic under $H_0$.
 
 -   **Classical approach**: *approximate* this distribution with a normal distribution
 
-. . .
+## HT
 
 Step 2: we want to compute the p-value
 
@@ -255,9 +263,25 @@ Step 2: we want to compute the p-value
 
 -   **Classical approach**: the p-value is the *area under the curve* of the normal distribution that is at least as extreme as the observed statistic.
 
-## The classical approach in `R`
+## What `R` does
 
 `R` will compute the p-value for you. Here is what `R` does behind the scene:
+
+![](images/lec-12/p-value.png){fig-align="center"}
+
+## CI
+
+Step 2: identify the upper and lower bounds of the CI
+
+-   **Modern approach**: find the appropriate percentiles among the simulated values
+
+-   **Classical approach**:find the appropriate percentiles of the normal approximation
+
+## What `R` does
+
+`R` will compute the upper and lower bounds for you. Here is what `R` does behind the scene:
+
+![](images/lec-12/3-sigma.png){fig-align="center"}
 
 ## Case 1 -- one proportion
 
@@ -290,7 +314,7 @@ When the conditions for the normal approximation are satisfied, the results base
 
 Suppose you interview 2000 US adults about their political preferences and 1200 of them say that they are democrat. What is the 95% confidence interval for $p$, the proportion of US adults who are democrats? What is the length of the interval?
 
-What 95% CI do you obtained if 6000 out of 10000 US adults say they are democrat? What is its length?
+What 95% CI do you obtain if 6000 out of 10000 US adults say they are democrat? What is its length?
 
 Exercise [16.19](https://openintro-ims.netlify.app/inference-one-prop.html#chp16-exercises) -- find the 95% CI. Are the conditions satisfied?
 
@@ -346,7 +370,7 @@ Exercise [17.19](https://openintro-ims.netlify.app/inference-two-props.html#chp1
 :::
 
 ```{r, echo = F}
-countdown(minutes = 7)
+countdown(minutes = 6)
 ```
 
 ## Case 3 -- one mean
@@ -381,7 +405,7 @@ Make a histogram and a boxplot of the variable. Are the conditions satisfied?
 
 Construct a 99% CI for `hwy`.
 
-Hint: use the command `help(t.test)` to access the help file of the function `t.test` and see what parameter determines the confidence level.
+Hint: run the command `help(t.test)` to access the help file of the function `t.test` and see what parameter determines the confidence level.
 :::
 
 ```{r, echo = F}
@@ -427,7 +451,7 @@ Are the conditions satisfied?
 :::
 
 ```{r, echo = F}
-countdown(minutes = 3)
+countdown(minutes = 2)
 ```
 
 ## Case 4bis -- paired means
@@ -456,7 +480,7 @@ Are the conditions satisfied?
 :::
 
 ```{r, echo = F}
-countdown(minutes = 3)
+countdown(minutes = 2)
 ```
 
 . . .
@@ -492,8 +516,6 @@ $H_0: \beta_1 = 0$ when `displ` is included in the model
 
 $H_a: \beta_1 \neq 0$ when `displ` is included in the model
 
-. . .
-
 $H_0: \beta_2 = 0$ when `cty` is included in the model
 
 $H_a: \beta_2 \neq 0$ when `cty` is included in the model
@@ -507,7 +529,7 @@ tidy(m)
 ```
 :::
 
-## Conditions -- linear regression
+## Conditions (LINE) -- linear regression
 
 1.  Linearity
 
@@ -539,7 +561,6 @@ Exercise [25.7](https://openintro-ims.netlify.app/inf-model-mlr.html#chp25-exerc
 Exercise [26.1](https://openintro-ims.netlify.app/inf-model-logistic.html)
 
 Exercise [26.1](https://openintro-ims.netlify.app/inf-model-logistic.html)
-
 :::
 
 ```{r, echo = F}
@@ -607,8 +628,6 @@ countdown(minutes = 1)
 # Recap
 
 ## Recap
-
-
 
 -   Normal approximation
 -   Classical approach to statistical inference

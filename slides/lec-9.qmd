@@ -529,10 +529,8 @@ Source: [IMS](https://www.openintro.org/book/ims/)
 ## Bootstrap in `R`
 
 ```{r}
-d <- gender_discrimination %>%
-  mutate(decision = if_else(decision == "promoted", 1, 0))
-sample_observed_m <- d %>% filter(gender == "male"  )
-sample_observed_f <- d %>% filter(gender == "female")
+sample_observed_m <- gender_discrimination %>% filter(gender == "male"  )
+sample_observed_f <- gender_discrimination %>% filter(gender == "female")
 
 set.seed(0)
 sample_bootstrap(sample_observed_m) # bootstrap sample
@@ -544,7 +542,7 @@ sample_bootstrap(sample_observed_f) # bootstrap sample
 ```{r}
 #| code-line-numbers: "|3,4|5|"
 results <- tibble(p_diff_hat = numeric())
-for(i in 1 : 1e3){
+for(i in 1 : 1e4){
   d_boot_m   <- sample_bootstrap(sample_observed_m) # bootstrap sample
   d_boot_f   <- sample_bootstrap(sample_observed_f) # bootstrap sample
   p_diff_hat <- compute_p_diff(rbind(d_boot_m, d_boot_f)) # bootstrap statistic
