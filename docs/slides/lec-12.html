@@ -417,12 +417,16 @@
 <h2>Outline</h2>
 <ul>
 <li>Normal approximation</li>
-<li>Statistical inference via normal approximation
+<li>Classical approach to statistical inference
 <ul>
-<li><p>Hypothesis test</p></li>
-<li><p>Confidence interval</p></li>
+<li>case 1 – one proportion</li>
+<li>case 2 – two proportions</li>
+<li>case 3 – one mean</li>
+<li>case 4 – two means</li>
+<li>case 4bis – paired means</li>
+<li>case 5 – regression</li>
 </ul></li>
-<li>Conditions</li>
+<li>Standard error</li>
 </ul>
 </section>
 <section id="section" class="slide level2">
@@ -430,16 +434,18 @@
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
-<p><strong>Individual exercise - CI</strong></p>
+<p><strong>Individual exercise - warm up</strong></p>
 </div>
 <div class="callout-content">
-<p>Exercises <a href="https://openintro-ims.netlify.app/foundations-mathematical.html#chp13-exercises">13.4</a> and <a href="https://openintro-ims.netlify.app/decerr.html#chp14-exercises">14.5</a></p>
+<p>Exercise <a href="https://openintro-ims.netlify.app/decerr.html#chp14-exercises">14.5</a></p>
+<p>Exercise <a href="https://openintro-ims.netlify.app/inference-two-props.html#chp17-exercises">17.2</a> part a and c</p>
+<p>Exercise <a href="https://openintro-ims.netlify.app/inference-two-props.html#chp17-exercises">17.4</a> part c</p>
 </div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a770f0" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a7722a" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -693,7 +699,7 @@ sample estimates:
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a76ff9" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a7759a" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -763,7 +769,7 @@ sample estimates:
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a76f9a" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a7738b" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">07</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -828,7 +834,7 @@ mean of x
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a7721a" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a77596" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -904,7 +910,7 @@ mean of x mean of y
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a76f45" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a77584" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -953,7 +959,7 @@ mean of the differences
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a770d2" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a7743d" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1064,7 +1070,7 @@ mean of the differences
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a7714a" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a772d8" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1140,7 +1146,7 @@ mean of the differences
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a77176" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a7746a" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1153,6 +1159,19 @@ mean of the differences
 </section>
 <section id="recap-2" class="slide level2">
 <h2>Recap</h2>
+<ul>
+<li>Normal approximation</li>
+<li>Classical approach to statistical inference
+<ul>
+<li>case 1 – one proportion</li>
+<li>case 2 – two proportions</li>
+<li>case 3 – one mean</li>
+<li>case 4 – two means</li>
+<li>case 4bis – paired means</li>
+<li>case 5 – regression</li>
+</ul></li>
+<li>Standard error</li>
+</ul>
 
 
 <img src="images/logo.jpg" class="slide-logo r-stretch"><div class="footer footer-default">

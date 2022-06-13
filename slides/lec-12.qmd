@@ -82,7 +82,6 @@ options(scipen = 5)
 
 Exercise [14.5](https://openintro-ims.netlify.app/decerr.html#chp14-exercises)
 
-
 Exercise [17.2](https://openintro-ims.netlify.app/inference-two-props.html#chp17-exercises) part a and c
 
 Exercise [17.4](https://openintro-ims.netlify.app/inference-two-props.html#chp17-exercises) part c
@@ -608,3 +607,15 @@ countdown(minutes = 1)
 # Recap
 
 ## Recap
+
+
+
+-   Normal approximation
+-   Classical approach to statistical inference
+    -   case 1 -- one proportion
+    -   case 2 -- two proportions
+    -   case 3 -- one mean
+    -   case 4 -- two means
+    -   case 4bis -- paired means
+    -   case 5 -- regression
+-   Standard error
