@@ -51,13 +51,13 @@ options(scipen = 5)
 
 # Welcome
 
-## Announcements {.smaller}
+## Announcements
 
--   Tuesday: lecture
+-   Tuesday: lecture + QA
 
--   Wednesday: work on project
+-   Wednesday: work on project (online OH)
 
--   Thursday: work on project (3:30-5:00pm)
+-   Thursday: work on project (online OH)
 
 -   Friday: presentations
 
@@ -69,7 +69,7 @@ options(scipen = 5)
 
 -   5 cases
 
-    -   one proprotion
+    -   one proportion
 
     -   two proportions
 
@@ -571,7 +571,6 @@ Exercise [26.1](https://openintro-ims.netlify.app/inf-model-logistic.html)
 countdown(minutes = 5)
 ```
 
-
 # Standard error
 
 ## Standard error {.smaller}
@@ -592,6 +591,7 @@ The SE measures the variability of the statistic.
 
 ::: callout-note
 ## Sample size and SE
+
 Note the role of the sample size on the SE!
 :::
 
@@ -856,15 +856,16 @@ ggplot(mlb_players_18) +
   facet_grid(position ~ .)
 ```
 
-
 ## 
+
 ::: {.callout-tip icon="false"}
 ## Individual exercise - ANOVA
+
 Exercise [22.5](https://openintro-ims.netlify.app/inference-many-means.html#chp22-exercises)
 
 Exercise [22.9](https://openintro-ims.netlify.app/inference-many-means.html#chp22-exercises) -- parts a and b
-
 :::
+
 ```{r, echo = F}
 countdown(minutes = 3)
 ```

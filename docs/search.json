@@ -1656,14 +1656,14 @@
     "href": "slides/lec-12.html#announcements",
     "title": "Classical inference",
     "section": "Announcements",
-    "text": "Announcements\n\nTuesday: lecture\nWednesday: work on project\nThursday: work on project (3:30-5:00pm)\nFriday: presentations"
+    "text": "Announcements\n\nTuesday: lecture + QA\nWednesday: work on project (online OH)\nThursday: work on project (online OH)\nFriday: presentations"
   },
   {
     "objectID": "slides/lec-12.html#recap",
     "href": "slides/lec-12.html#recap",
     "title": "Classical inference",
     "section": "Recap",
-    "text": "Recap\n\nHT via simulation\nCI via bootstrap\n5 cases\n\none proprotion\ntwo proportions\none mean\ntwo means\nlinear regression"
+    "text": "Recap\n\nHT via simulation\nCI via bootstrap\n5 cases\n\none proportion\ntwo proportions\none mean\ntwo means\nlinear regression"
   },
   {
     "objectID": "slides/lec-12.html#outline",
