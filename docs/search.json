@@ -1670,7 +1670,7 @@
     "href": "slides/lec-12.html#outline",
     "title": "Classical inference",
     "section": "Outline",
-    "text": "Outline\n\nNormal approximation\nClassical approach to statistical inference\nStandard error"
+    "text": "Outline\n\nNormal approximation\nClassical approach to statistical inference\nStandard error\nCase 6 – many proportions (\\(\\chi^2\\) test)\nCase 7 – many means (ANOVA)"
   },
   {
     "objectID": "slides/lec-12.html#section",
@@ -1880,7 +1880,7 @@
     "href": "slides/lec-12.html#case-4-two-means",
     "title": "Classical inference",
     "section": "Case 4 – two means",
-    "text": "Case 4 – two means\nThere are two implementation; which on is more convenient depends on the structure of the data.\n\nTwo vectorsFormula\n\n\n\nd <- ggplot2::mpg\nt.test(hwy ~ year, data = d)\n\n\n    Welch Two Sample t-test\n\ndata:  hwy by year\nt = -0.032864, df = 231.64, p-value = 0.9738\nalternative hypothesis: true difference in means between group 1999 and group 2008 is not equal to 0\n95 percent confidence interval:\n -1.562854  1.511572\nsample estimates:\nmean in group 1999 mean in group 2008 \n          23.42735           23.45299 \n\n\n\n\n\nd <- ggplot2::mpg\nt.test(d$cty, d$hwy)\n\n\n    Welch Two Sample t-test\n\ndata:  d$cty and d$hwy\nt = -13.755, df = 421.79, p-value < 2.2e-16\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -7.521683 -5.640710\nsample estimates:\nmean of x mean of y \n 16.85897  23.44017"
+    "text": "Case 4 – two means\nThere are two implementation; which one is more convenient depends on the structure of the data.\n\nTwo vectorsFormula\n\n\n\nd <- ggplot2::mpg\nt.test(hwy ~ year, data = d)\n\n\n    Welch Two Sample t-test\n\ndata:  hwy by year\nt = -0.032864, df = 231.64, p-value = 0.9738\nalternative hypothesis: true difference in means between group 1999 and group 2008 is not equal to 0\n95 percent confidence interval:\n -1.562854  1.511572\nsample estimates:\nmean in group 1999 mean in group 2008 \n          23.42735           23.45299 \n\n\n\n\n\nd <- ggplot2::mpg\nt.test(d$cty, d$hwy)\n\n\n    Welch Two Sample t-test\n\ndata:  d$cty and d$hwy\nt = -13.755, df = 421.79, p-value < 2.2e-16\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -7.521683 -5.640710\nsample estimates:\nmean of x mean of y \n 16.85897  23.44017"
   },
   {
     "objectID": "slides/lec-12.html#conditions-2",
@@ -1894,7 +1894,7 @@
     "href": "slides/lec-12.html#section-6",
     "title": "Classical inference",
     "section": "",
-    "text": "Individual exercise - the classical approach for two means\n\n\nWhat is the 99% CI for the difference in fuel efficiency on the highway and in the city? How long is this CI?\nAre the conditions satisfied?\n\n\n\n\n\n\n02:00"
+    "text": "Individual exercise - the classical approach for two means\n\n\nWhat is the 99% CI for the difference in fuel efficiency on the highway and in the city? What is the length of this CI?\nAre the conditions satisfied?\n\n\n\n\n\n\n01:00"
   },
   {
     "objectID": "slides/lec-12.html#case-4bis-paired-means",
@@ -1915,14 +1915,14 @@
     "href": "slides/lec-12.html#section-7",
     "title": "Classical inference",
     "section": "",
-    "text": "Individual exercise - the classical approach for paired means\n\n\nWhat is the 99% CI for the difference in fuel efficiency on the highway and in the city? How long is this CI?\nAre the conditions satisfied?\n\n\n\n\n\n\n02:00\n\n\n\n\n\n\n\n\n\n\nAlways pair the observations\n\n\nIf the data can paired, you should always do it! Pairing data yields an analysis that is more powerful:\n\nnarrower CI\nsmaller p-value"
+    "text": "Individual exercise - the classical approach for paired means\n\n\nWhat is the 99% CI for the difference in fuel efficiency on the highway and in the city? What is the length of this CI? Compare it with the CI obtained when the observations were not paired.\n\n\n\n\n\n\n01:00\n\n\n\n\n\n\n\n\n\n\nAlways pair the observations\n\n\nIf the data can paired, you should always do it! Pairing data yields an analysis that is more powerful:\n\nnarrower CI\nsmaller p-value"
   },
   {
     "objectID": "slides/lec-12.html#case-5-regression",
     "href": "slides/lec-12.html#case-5-regression",
     "title": "Classical inference",
     "section": "Case 5 – regression",
-    "text": "Case 5 – regression\n\nsimple linear regressionmultiple linear regressionlogistic regression\n\n\n\nm <- lm(hwy ~ cty, data = mpg)\ntidy(m)\n\n# A tibble: 2 x 5\n  term        estimate std.error statistic   p.value\n  <chr>          <dbl>     <dbl>     <dbl>     <dbl>\n1 (Intercept)    0.892    0.469       1.90 5.84e-  2\n2 cty            1.34     0.0270     49.6  1.87e-125\n\n\n\n\n\nm <- lm(hwy ~ cty + displ, data = mpg)\ntidy(m)\n\n# A tibble: 3 x 5\n  term        estimate std.error statistic  p.value\n  <chr>          <dbl>     <dbl>     <dbl>    <dbl>\n1 (Intercept)   1.15      1.21       0.949 3.43e- 1\n2 cty           1.33      0.0449    29.6   1.43e-80\n3 displ        -0.0343    0.148     -0.232 8.17e- 1\n\n\n\\(H_0: \\beta_1 = 0\\) when displ is included in the model\n\\(H_a: \\beta_1 \\neq 0\\) when displ is included in the model\n\\(H_0: \\beta_2 = 0\\) when cty is included in the model\n\\(H_a: \\beta_2 \\neq 0\\) when cty is included in the model\n\n\n\nd <- heart_transplant %>% mutate(survived_binary = survived == \"alive\")\nm <- glm(survived_binary ~ age + transplant, family = \"binomial\", data = d)\ntidy(m)\n\n# A tibble: 3 x 5\n  term                estimate std.error statistic p.value\n  <chr>                  <dbl>     <dbl>     <dbl>   <dbl>\n1 (Intercept)           0.973     1.08       0.904 0.366  \n2 age                  -0.0763    0.0255    -2.99  0.00277\n3 transplanttreatment   1.82      0.668      2.73  0.00635"
+    "text": "Case 5 – regression\n\nsimple linear regressionmultiple linear regressionlogistic regression\n\n\n\nm <- lm(hwy ~ cty, data = mpg)\ntidy(m)\n\n# A tibble: 2 x 5\n  term        estimate std.error statistic   p.value\n  <chr>          <dbl>     <dbl>     <dbl>     <dbl>\n1 (Intercept)    0.892    0.469       1.90 5.84e-  2\n2 cty            1.34     0.0270     49.6  1.87e-125\n\n\n\n\n\nm <- lm(hwy ~ cty + displ, data = mpg)\ntidy(m)\n\n# A tibble: 3 x 5\n  term        estimate std.error statistic  p.value\n  <chr>          <dbl>     <dbl>     <dbl>    <dbl>\n1 (Intercept)   1.15      1.21       0.949 3.43e- 1\n2 cty           1.33      0.0449    29.6   1.43e-80\n3 displ        -0.0343    0.148     -0.232 8.17e- 1\n\n\n\n\n\nd <- heart_transplant %>% mutate(survived_binary = survived == \"alive\")\nm <- glm(survived_binary ~ age + transplant, family = \"binomial\", data = d)\ntidy(m)\n\n# A tibble: 3 x 5\n  term                estimate std.error statistic p.value\n  <chr>                  <dbl>     <dbl>     <dbl>   <dbl>\n1 (Intercept)           0.973     1.08       0.904 0.366  \n2 age                  -0.0763    0.0255    -2.99  0.00277\n3 transplanttreatment   1.82      0.668      2.73  0.00635"
   },
   {
     "objectID": "slides/lec-12.html#conditions-line-linear-regression",
@@ -1932,13 +1932,6 @@
     "text": "Conditions (LINE) – linear regression\n\nLinearity\nIndependence\nNormality\nEqual variability (homoskedasticity)\n\n\\(\\Rightarrow\\) verify with a residual plot!"
   },
   {
-    "objectID": "slides/lec-12.html#section-8",
-    "href": "slides/lec-12.html#section-8",
-    "title": "Classical inference",
-    "section": "",
-    "text": "Individual exercise - the classical approach for regression\n\n\nWhat condition(s) are violated by each of the following data sets (see next slide)?\nExercise 24.10\nExercise 24.13 – parts a and b\nExercise 24.15 – part b\nExercise 25.3\nExercise 25.7\nExercise 26.1\nExercise 26.1\n\n\n\n\n\n\n10:00"
-  },
-  {
     "objectID": "slides/lec-12.html#data-sets",
     "href": "slides/lec-12.html#data-sets",
     "title": "Classical inference",
@@ -1946,18 +1939,25 @@
     "text": "Data sets"
   },
   {
+    "objectID": "slides/lec-12.html#section-8",
+    "href": "slides/lec-12.html#section-8",
+    "title": "Classical inference",
+    "section": "",
+    "text": "Individual exercise - the classical approach for regression\n\n\nWhat condition(s) are violated by each of the following data sets (see next slide)?\nExercise 24.10\nExercise 24.13 – parts a and b\nExercise 24.15 – part b\nExercise 25.3\nExercise 25.7\nExercise 26.1\n\n\n\n\n\n\n05:00"
+  },
+  {
     "objectID": "slides/lec-12.html#standard-error-1",
     "href": "slides/lec-12.html#standard-error-1",
     "title": "Classical inference",
     "section": "Standard error",
-    "text": "Standard error\nStandard error (SE): standard deviation of the normal approximation\nIt measures the variability of the sample statistic.\n\n\\(SE(\\hat{p})=\\sqrt{\\frac{p(1-p)}{n}}\\)\n\\(SE(\\hat{p}_{diff})=\\sqrt{\\frac{p_1(1-p_1)}{n_1}+\\frac{p_2(1-p_2)}{n_2}}\\)\n\\(SE(\\bar{x}) = \\sqrt{\\frac{\\sigma^2}{n}}\\)\n\\(SE(\\bar{x}_{diff}) = \\sqrt{\\frac{\\sigma^2_1}{n_1}+\\frac{\\sigma^2_2}{n_2}}\\)\n\\(SE(\\hat{\\beta})\\) has a complicated form.\n\n\n\n\n\n\n\nNote\n\n\nNote the role of the sample size!"
+    "text": "Standard error\nStandard error (SE): standard deviation of the normal approximation.\nThe SE measures the variability of the statistic.\n\n\\(SE(\\hat{p})=\\sqrt{\\frac{p(1-p)}{n}}\\)\n\\(SE(\\hat{p}_{diff})=\\sqrt{\\frac{p_1(1-p_1)}{n_1}+\\frac{p_2(1-p_2)}{n_2}}\\)\n\\(SE(\\bar{x}) = \\sqrt{\\frac{\\sigma^2}{n}}\\)\n\\(SE(\\bar{x}_{diff}) = \\sqrt{\\frac{\\sigma^2_1}{n_1}+\\frac{\\sigma^2_2}{n_2}}\\)\n\\(SE(\\hat{\\beta})\\) has a complicated form.\n\n\n\n\n\n\n\nSample size and SE\n\n\nNote the role of the sample size on the SE!"
   },
   {
     "objectID": "slides/lec-12.html#larger-samples-have-a-smaller-se",
     "href": "slides/lec-12.html#larger-samples-have-a-smaller-se",
     "title": "Classical inference",
     "section": "Larger samples have a smaller SE",
-    "text": "Larger samples have a smaller SE\n\n\n\n\n\n\nSample size matters\n\n\nLarge \\(n\\)\n\\(\\Rightarrow\\) small SE\n\\(\\Rightarrow\\) normal approximation with small sd\n\\(\\Rightarrow\\) normal approximation is more concentrated\n\\(\\Rightarrow\\) tighter CI and smaller p-values."
+    "text": "Larger samples have a smaller SE\n\n\n\n\n\n\nSample size matters\n\n\nLarger \\(n\\)\n\\(\\Rightarrow\\) smaller SE\n\\(\\Rightarrow\\) normal approximation with smaller sd\n\\(\\Rightarrow\\) normal approximation is more concentrated\n\\(\\Rightarrow\\) tighter CI and smaller p-value."
   },
   {
     "objectID": "slides/lec-12.html#section-9",
@@ -1974,11 +1974,11 @@
     "text": "Reproducibility\n\nask <- openintro::ask %>%\n  mutate(\n    response = if_else(response == \"disclose\", \"Disclose problem\", \"Hide problem\"),\n    question_class = case_when(\n      question_class == \"general\" ~ \"General\",\n      question_class == \"neg_assumption\" ~ \"Negative assumption\",\n      question_class == \"pos_assumption\" ~ \"Positive assumption\"\n    ),\n    question_class = fct_relevel(question_class, \"General\", \"Positive assumption\", \"Negative assumption\")\n  )"
   },
   {
-    "objectID": "slides/lec-12.html#example-defect-ipod",
-    "href": "slides/lec-12.html#example-defect-ipod",
+    "objectID": "slides/lec-12.html#example-defective-ipod",
+    "href": "slides/lec-12.html#example-defective-ipod",
     "title": "Classical inference",
-    "section": "Example – defect iPod",
-    "text": "Example – defect iPod\n\n\n\n\n \n  \n    Question \n    Disclose problem \n    Hide problem \n    Total \n  \n \n\n  \n    General \n    2 \n    71 \n    73 \n  \n  \n    Positive assumption \n    23 \n    50 \n    73 \n  \n  \n    Negative assumption \n    36 \n    37 \n    73 \n  \n  \n    Total \n    61 \n    158 \n    219 \n  \n\n\n\n\n\nSource: IMS"
+    "section": "Example – defective iPod",
+    "text": "Example – defective iPod\n\n\n\n\n \n  \n    Question \n    Disclose problem \n    Hide problem \n    Total \n  \n \n\n  \n    General \n    2 \n    71 \n    73 \n  \n  \n    Positive assumption \n    23 \n    50 \n    73 \n  \n  \n    Negative assumption \n    36 \n    37 \n    73 \n  \n  \n    Total \n    61 \n    158 \n    219 \n  \n\n\n\n\n\nSource: IMS"
   },
   {
     "objectID": "slides/lec-12.html#ht-no-ci",
@@ -1992,14 +1992,14 @@
     "href": "slides/lec-12.html#expected-counts",
     "title": "Classical inference",
     "section": "Expected counts",
-    "text": "Expected counts\n\nask_chi_sq <- chisq.test(ask$response, ask$question_class)\nask_chi_sq_obs <- ask_chi_sq$observed %>% \n  as_tibble() %>% \n  mutate(type = \"observed\")\nask_chi_sq_exp <- ask_chi_sq$expected %>%\n  as.table() %>%\n  as_tibble() %>% \n  mutate(type = \"expected\")\nask_chi_sq_tabs <- bind_rows(ask_chi_sq_obs, ask_chi_sq_exp) %>%\n  rename_with(.fn = str_remove, .cols = everything(), \"ask\\\\$\")\nask_chi_sq_tabs %>%\n  mutate(response_type = paste0(response, \"-\", type)) %>%\n  select(-response, -type) %>%\n  pivot_wider(names_from = response_type, values_from = n) %>%\n  relocate(\n    question_class,\n    contains(\"Disclose\"),\n    contains(\"Hide\")\n  ) %>%\n  mutate(across(contains(\"expected\"), ~paste0(\"(\", round(.x, 2), \")\"))) %>%\n  rowwise() %>%\n  mutate(Total = sum(c_across(contains(\"observed\")))) %>%\n  adorn_totals(where = \"row\") %>%\n  mutate(\n    `Disclose problem-expected` = ifelse(`Disclose problem-expected` == \"-\", NA, `Disclose problem-expected`),\n    `Hide problem-expected` = ifelse(`Hide problem-expected` == \"-\", NA, `Hide problem-expected`)\n  ) %>%\n kbl(linesep = \"\", booktabs = TRUE,\n   col.names = c(\"\", \"\", \"\", \"\", \"\", \"\")\n   ) %>%\n  column_spec(1, width = \"15em\") %>%\n  column_spec(3, color = IMSCOL[\"blue\", \"full\"], italic = TRUE) %>%\n  column_spec(5, color = IMSCOL[\"blue\", \"full\"], italic = TRUE) %>%\n  column_spec(6, width = \"5em\") %>%\n  add_header_above(c(\" \", \"Disclose problem\" =2, \"Hide problem\" = 2, \"Total\")) %>%\n  kable_styling(bootstrap_options = c(\"striped\", \"condensed\"), \n                latex_options = c(\"striped\", \"hold_position\"), full_width = FALSE)\n\n\n\n \n\n\nDisclose problem\nHide problem\nTotal\n\n  \n     \n     \n     \n     \n     \n     \n  \n \n\n  \n    General \n    2 \n    (20.33) \n    71 \n    (52.67) \n    73 \n  \n  \n    Positive assumption \n    23 \n    (20.33) \n    50 \n    (52.67) \n    73 \n  \n  \n    Negative assumption \n    36 \n    (20.33) \n    37 \n    (52.67) \n    73 \n  \n  \n    Total \n    61 \n    NA \n    158 \n    NA \n    219 \n  \n\n\n\n\n\nSource: IMS"
+    "text": "Expected counts\n\n\n\n\n \n\n\nDisclose problem\nHide problem\nTotal\n\n  \n     \n     \n     \n     \n     \n     \n  \n \n\n  \n    General \n    2 \n    (20.33) \n    71 \n    (52.67) \n    73 \n  \n  \n    Positive assumption \n    23 \n    (20.33) \n    50 \n    (52.67) \n    73 \n  \n  \n    Negative assumption \n    36 \n    (20.33) \n    37 \n    (52.67) \n    73 \n  \n  \n    Total \n    61 \n    NA \n    158 \n    NA \n    219 \n  \n\n\n\n\n\nSource: IMS"
   },
   {
     "objectID": "slides/lec-12.html#chance-or-effect",
     "href": "slides/lec-12.html#chance-or-effect",
     "title": "Classical inference",
     "section": "Chance or effect?",
-    "text": "Chance or effect?\nThe difference between the expected and observed counts is due to\n\nchance alone, or\nthe fact that the way people responded depended on the question asked\n\n\n\\(\\chi^2\\) (“Kai-squared”) statistics:\n\\[\n\\chi^2 = \\dfrac{(O_{11} - E_{11})^2}{E_{11}} + \\dfrac{(O_{21} - E_{21})^2}{E_{21}} + \\dots + \\dfrac{(O_{32} - E_{32})^2}{E_{32}}\n\\]"
+    "text": "Chance or effect?\nIs the difference between the expected and observed counts is due to\n\nchance alone, or\nthe fact that the way people responded depended on the question asked?\n\n\n\\(\\chi^2\\) (“Kai-squared”) statistic:\n\\[\n\\chi^2 = \\dfrac{(O_{11} - E_{11})^2}{E_{11}} + \\dfrac{(O_{21} - E_{21})^2}{E_{21}} + \\dots + \\dfrac{(O_{32} - E_{32})^2}{E_{32}}\n\\]"
   },
   {
     "objectID": "slides/lec-12.html#computing-chi2",
@@ -2076,7 +2076,7 @@
     "href": "slides/lec-12.html#conditions-4",
     "title": "Classical inference",
     "section": "Conditions",
-    "text": "Conditions\n\nIndependence within\nIndependence between\nNormality (sample size and outliers)\nconstant variance\n\nVerify assumptions 3 and 4 with histograms"
+    "text": "Conditions\n\nIndependence within\nIndependence between\nNormality (sample size and outliers)\nConstant variance\n\nVerify assumptions 3 and 4 with side-sby-side histograms"
   },
   {
     "objectID": "slides/lec-12.html#side-by-side-histograms",

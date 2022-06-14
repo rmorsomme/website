@@ -84,6 +84,8 @@ options(scipen = 5)
 -   Normal approximation
 -   Classical approach to statistical inference
 -   Standard error
+-   Case 6 -- many proportions ($\chi^2$ test)
+-   Case 7 -- many means (ANOVA)
 
 ## 
 
@@ -424,7 +426,7 @@ countdown(minutes = 3)
 
 ## Case 4 -- two means
 
-There are two implementation; which on is more convenient depends on the structure of the data.
+There are two implementation; which one is more convenient depends on the structure of the data.
 
 ::: panel-tabset
 ## Two vectors
@@ -455,13 +457,13 @@ t.test(d$cty, d$hwy)
 ::: {.callout-tip icon="false"}
 ## Individual exercise - the classical approach for two means
 
-What is the 99% CI for the difference in fuel efficiency on the highway and in the city? How long is this CI?
+What is the 99% CI for the difference in fuel efficiency on the highway and in the city? What is the length of this CI?
 
 Are the conditions satisfied?
 :::
 
 ```{r, echo = F}
-countdown(minutes = 2)
+countdown(minutes = 1)
 ```
 
 ## Case 4bis -- paired means
@@ -484,13 +486,11 @@ t.test(d$cty, d$hwy, paired = TRUE)
 ::: {.callout-tip icon="false"}
 ## Individual exercise - the classical approach for paired means
 
-What is the 99% CI for the difference in fuel efficiency on the highway and in the city? How long is this CI?
-
-Are the conditions satisfied?
+What is the 99% CI for the difference in fuel efficiency on the highway and in the city? What is the length of this CI? Compare it with the CI obtained when the observations were not paired.
 :::
 
 ```{r, echo = F}
-countdown(minutes = 2)
+countdown(minutes = 1)
 ```
 
 . . .
@@ -522,14 +522,6 @@ m <- lm(hwy ~ cty + displ, data = mpg)
 tidy(m)
 ```
 
-$H_0: \beta_1 = 0$ when `displ` is included in the model
-
-$H_a: \beta_1 \neq 0$ when `displ` is included in the model
-
-$H_0: \beta_2 = 0$ when `cty` is included in the model
-
-$H_a: \beta_2 \neq 0$ when `cty` is included in the model
-
 ## logistic regression
 
 ```{r}
@@ -551,6 +543,10 @@ tidy(m)
 
 $\Rightarrow$ verify with a residual plot!
 
+## Data sets
+
+![](images/lec-12/conditions.png){fig-align="center"}
+
 ## 
 
 ::: {.callout-tip icon="false"}
@@ -569,25 +565,20 @@ Exercise [25.3](https://openintro-ims.netlify.app/inf-model-mlr.html#chp25-exerc
 Exercise [25.7](https://openintro-ims.netlify.app/inf-model-mlr.html#chp25-exercises)
 
 Exercise [26.1](https://openintro-ims.netlify.app/inf-model-logistic.html)
-
-Exercise [26.1](https://openintro-ims.netlify.app/inf-model-logistic.html)
 :::
 
 ```{r, echo = F}
-countdown(minutes = 10)
+countdown(minutes = 5)
 ```
 
-## Data sets
-
-![](images/lec-12/conditions.png){fig-align="center"}
 
 # Standard error
 
 ## Standard error {.smaller}
 
-**Standard error (SE)**: standard deviation of the normal approximation
+**Standard error (SE)**: standard deviation of the normal approximation.
 
-It measures the variability of the sample statistic.
+The SE measures the variability of the statistic.
 
 -   $SE(\hat{p})=\sqrt{\frac{p(1-p)}{n}}$
 
@@ -600,7 +591,8 @@ It measures the variability of the sample statistic.
 -   $SE(\hat{\beta})$ has a complicated form.
 
 ::: callout-note
-Note the role of the sample size!
+## Sample size and SE
+Note the role of the sample size on the SE!
 :::
 
 ## Larger samples have a smaller SE
@@ -608,15 +600,15 @@ Note the role of the sample size!
 ::: callout-note
 ## Sample size matters
 
-Large $n$
+Larger $n$
 
-$\Rightarrow$ small SE
+$\Rightarrow$ smaller SE
 
-$\Rightarrow$ normal approximation with small sd
+$\Rightarrow$ normal approximation with smaller sd
 
 $\Rightarrow$ normal approximation is more concentrated
 
-$\Rightarrow$ tighter CI and smaller p-values.
+$\Rightarrow$ tighter CI and smaller p-value.
 :::
 
 ## 
@@ -652,7 +644,7 @@ ask <- openintro::ask %>%
   )
 ```
 
-## Example -- defect iPod
+## Example -- defective iPod
 
 ```{r, echo=FALSE}
 ask %>%
@@ -678,7 +670,7 @@ We will not quantify the differences between the three question with CIs.
 
 ## Expected counts
 
-```{r}
+```{r, echo = FALSE}
 ask_chi_sq <- chisq.test(ask$response, ask$question_class)
 ask_chi_sq_obs <- ask_chi_sq$observed %>% 
   as_tibble() %>% 
@@ -722,21 +714,21 @@ Source: [IMS](https://www.openintro.org/book/ims/)
 
 ## Chance or effect?
 
-The difference between the *expected* and *observed* counts is due to
+Is the difference between the *expected* and *observed* counts is due to
 
 -   chance alone, or
 
--   the fact that the way people responded depended on the question asked
+-   the fact that the way people responded depended on the question asked?
 
 . . .
 
-$\chi^2$ ("Kai-squared") statistics:
+$\chi^2$ ("Kai-squared") statistic:
 
 $$
 \chi^2 = \dfrac{(O_{11} - E_{11})^2}{E_{11}} + \dfrac{(O_{21} - E_{21})^2}{E_{21}} + \dots + \dfrac{(O_{32} - E_{32})^2}{E_{32}}
 $$
 
-## Computing $\chi^2$
+## Computing $\chi^2$ {.smaller}
 
 $$
 \begin{aligned}
@@ -793,7 +785,7 @@ Exercise [18.15](https://openintro-ims.netlify.app/inference-tables.html#chp18-e
 countdown(minutes = 1, seconds = 30)
 ```
 
-## HT via simulation
+## HT via simulation {.smaller}
 
 When the conditions are not met, you need to conduct a HT via *simulation*.
 
@@ -852,9 +844,9 @@ tidy(m)
 
 3.  Normality (sample size and outliers)
 
-4.  constant variance
+4.  Constant variance
 
-Verify assumptions 3 and 4 with histograms
+Verify assumptions 3 and 4 with side-sby-side histograms
 
 ## Side-by-side histograms
 
@@ -877,7 +869,7 @@ Exercise [22.9](https://openintro-ims.netlify.app/inference-many-means.html#chp2
 countdown(minutes = 3)
 ```
 
-## HT via simulation
+## HT via simulation {.smaller}
 
 When the conditions are not met, you need to conduct a HT via *simulation*.
 
