@@ -424,7 +424,7 @@
     "href": "index.html",
     "title": "STA 101L: Data Analysis and Statistical Inference",
     "section": "",
-    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️\n🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\nDue: Homework 2\n\n\n💻\n✍️\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n💻\n\n\n\n\n\nSun, May 22\nDue: Homework 3\n\n\n\n✍️\n\n\n\n2\nMon, May 23\nModel selection I\n8.3\n🖥️\n\n\n\n\n\n\nTue, May 24\nModel selection II\n8.4; 25.3\n🖥️\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n💻\n\n\n\n\n\nThu, May 26\nLogistic regression\nWork on project\nDue: Homework 4\n9.1-9.3\n🖥️\n\n✍️\n📂\n\n\n\nFri, May 27\nLab 5 - work on prediction project (PP)\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model and presentation\nPrinciples of inference\n11.0; 11.3; 12.0; 12.3\n🖥️\n\n\nPP model (9:00am)\nPP presentation\n\n\n\nWed, June 1\nLab 6 - Lecture on inference for proportions I\nDue: PP written report\n16.1\n🖥️\n\n\nPP written report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.2\n🖥️\n\n\n\n\n\n\nFri, June 3\nLab 7 - Inference for proportions\n\n\n💻\n\n\n\n\n\nSun, June 5\nDue: homework 5\n\n\n\n✍️\n\n\n\n4\nMon, June 6\nInference for means I\n13.2; 19.1; 20.1-20.2\n🖥️\n\n\n\n\n\n\nTue, June 7\nInference for means II\n21.1-21.2\n🖥️\n\n\n\n\n\n\nWed, June 8\nLab 8 - Inference for means\n\n\n💻\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.3\n🖥️\n\n✍️\n\n\n\n\nFri, June 10\nLab 9 - inference for regression\n\n\n💻\n\n\n\n\n5\nMon, June 13\nClassical inference I\nDue: Homework 7\n13.1-13.2\n🖥️\n\n✍️\n\n\n\n\nTue, June 14\nClassical inference II\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n🖥️\n\n\n\n\n\n\nWed, June 15\nLab 10 - work on inference project (IP)\n\n\n\n\n\n\n\n\nThu, June 16\nWork on IP\nDue: Homework 8\n\n\n\n✍️\n\n\n\n\nFri, June 17\nLab 11 - IP presentations\n\n\n\n\nIP presentation\n\n\n\nSun, June 19\nDue: Homework 9\n\n\n\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP written report\n\n\n\n\nIP written report"
+    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\nTypes of data and studies\n(1.2; 2.2-3)\n🖥️ |\n🖥️ |\n                                                                                                                                            |\n\n                                                                                                                                            |\n               |\n\n               |\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️ |\n                                                                                                                                            |\n               |\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️ |\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️ |\n                                                                                                                                            |\n               |\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️ |\n                                                                                                                                            |\n               |\n\n\n\n\nWed, May 18\nLab 2 - Visualization\nDue: Homework 2\n\n\n💻\n✍️ |\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️ |\n                                                                                                                                            |\n               |\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n💻\n\n\n\n\n\nSun, May 22\nDue: Homework 3\n\n\n\n✍️ |\n\n\n\n2\nMon, May 23\nModel selection I\n8.3\n🖥️ |\n                                                                                                                                            |\n               |\n\n\n\n\nTue, May 24\nModel selection II\n8.4; 25.3\n🖥️ |\n                                                                                                                                            |\n               |\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n💻\n\n\n\n\n\nThu, May 26\nLogistic regression\nWork on project\nDue: Homework 4\n9.1-9.3\n🖥️ |\n                                                                                                                                            |\n✍️ | [\n📂](/projects/rmd_tips.Rmd “Tips for rmd”){aria-label=“Lecture 4 slides”}\n\n\n\nFri, May 27\nLab 5 - work on prediction project (PP)\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model and presentation\nPrinciples of inference\n11.0; 11.3; 12.0; 12.3\n🖥️ |\n                                                                                                                                            |\n               |\nPP model (9:00am)\nPP presentation\n\n\n\nWed, June 1\nLab 6 - Lecture on inference for proportions I\nDue: PP written report\n16.1\n🖥️ |\n                                                                                                                                            |\n               |\nPP written report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.2\n🖥️ |\n                                                                                                                                            |\n               |\n\n\n\n\nFri, June 3\nLab 7 - Inference for proportions\n\n\n💻\n\n\n\n\n\nSun, June 5\nDue: homework 5\n\n\n\n✍️ |\n\n\n\n4\nMon, June 6\nInference for means I\n13.2; 19.1; 20.1-20.2\n🖥️ |\n                                                                                                                                            |\n               |\n\n\n\n\nTue, June 7\nInference for means II\n21.1-21.2\n🖥️ |\n                                                                                                                                            |\n               |\n\n\n\n\nWed, June 8\nLab 8 - Inference for means\n\n\n💻\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.3\n🖥️ |\n                                                                                                                                            |\n✍️ |\n\n\n\n\nFri, June 10\nLab 9 - inference for regression\n\n\n💻\n\n\n\n\n5\nMon, June 13\nClassical inference I\nDue: Homework 7\n13.1-13.2\n🖥️ |\n                                                                                                                                            |\n✍️ |\n\n\n\n\nTue, June 14\nClassical inference II\nANOVA and \\(\\chi^2\\) tests\n18.1-18.2; 22.2-22.3\n🖥️ |\n                                                                                                                                            |\n               |\n\n\n\n\nWed, June 15\nLab 10 - work on inference project (IP)\n\n\n\n\n\n\n\n\nThu, June 16\nWork on IP\nDue: Homework 8\n\n\n\n✍️ |\n\n\n\n\nFri, June 17\nLab 11 - IP presentations\n\n\n\n\nIP presentation\n\n\n\nSun, June 19\nDue: Homework 9\n\n\n\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP written report\n\n\n\n\nIP written report"
   },
   {
     "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
@@ -1967,11 +1967,144 @@
     "text": "Individual exercise - sample size and CI\n\n\nExercise 16.13 – part e\nExercise 16.15 – part b\nExercise 13.4 – part d\n\n\n\n\n\n\n02:00"
   },
   {
+    "objectID": "slides/lec-12.html#reproducibility",
+    "href": "slides/lec-12.html#reproducibility",
+    "title": "Classical inference",
+    "section": "Reproducibility",
+    "text": "Reproducibility\n\nask <- openintro::ask %>%\n  mutate(\n    response = if_else(response == \"disclose\", \"Disclose problem\", \"Hide problem\"),\n    question_class = case_when(\n      question_class == \"general\" ~ \"General\",\n      question_class == \"neg_assumption\" ~ \"Negative assumption\",\n      question_class == \"pos_assumption\" ~ \"Positive assumption\"\n    ),\n    question_class = fct_relevel(question_class, \"General\", \"Positive assumption\", \"Negative assumption\")\n  )"
+  },
+  {
+    "objectID": "slides/lec-12.html#example-defect-ipod",
+    "href": "slides/lec-12.html#example-defect-ipod",
+    "title": "Classical inference",
+    "section": "Example – defect iPod",
+    "text": "Example – defect iPod\n\n\n\n\n \n  \n    Question \n    Disclose problem \n    Hide problem \n    Total \n  \n \n\n  \n    General \n    2 \n    71 \n    73 \n  \n  \n    Positive assumption \n    23 \n    50 \n    73 \n  \n  \n    Negative assumption \n    36 \n    37 \n    73 \n  \n  \n    Total \n    61 \n    158 \n    219 \n  \n\n\n\n\n\nSource: IMS"
+  },
+  {
+    "objectID": "slides/lec-12.html#ht-no-ci",
+    "href": "slides/lec-12.html#ht-no-ci",
+    "title": "Classical inference",
+    "section": "HT, no CI",
+    "text": "HT, no CI\n\\(H_0\\): the response is independent of the question asked\n\\(H_a\\): the response depends on the question asked\nWe will not quantify the differences between the three question with CIs."
+  },
+  {
+    "objectID": "slides/lec-12.html#expected-counts",
+    "href": "slides/lec-12.html#expected-counts",
+    "title": "Classical inference",
+    "section": "Expected counts",
+    "text": "Expected counts\n\nask_chi_sq <- chisq.test(ask$response, ask$question_class)\nask_chi_sq_obs <- ask_chi_sq$observed %>% \n  as_tibble() %>% \n  mutate(type = \"observed\")\nask_chi_sq_exp <- ask_chi_sq$expected %>%\n  as.table() %>%\n  as_tibble() %>% \n  mutate(type = \"expected\")\nask_chi_sq_tabs <- bind_rows(ask_chi_sq_obs, ask_chi_sq_exp) %>%\n  rename_with(.fn = str_remove, .cols = everything(), \"ask\\\\$\")\nask_chi_sq_tabs %>%\n  mutate(response_type = paste0(response, \"-\", type)) %>%\n  select(-response, -type) %>%\n  pivot_wider(names_from = response_type, values_from = n) %>%\n  relocate(\n    question_class,\n    contains(\"Disclose\"),\n    contains(\"Hide\")\n  ) %>%\n  mutate(across(contains(\"expected\"), ~paste0(\"(\", round(.x, 2), \")\"))) %>%\n  rowwise() %>%\n  mutate(Total = sum(c_across(contains(\"observed\")))) %>%\n  adorn_totals(where = \"row\") %>%\n  mutate(\n    `Disclose problem-expected` = ifelse(`Disclose problem-expected` == \"-\", NA, `Disclose problem-expected`),\n    `Hide problem-expected` = ifelse(`Hide problem-expected` == \"-\", NA, `Hide problem-expected`)\n  ) %>%\n kbl(linesep = \"\", booktabs = TRUE,\n   col.names = c(\"\", \"\", \"\", \"\", \"\", \"\")\n   ) %>%\n  column_spec(1, width = \"15em\") %>%\n  column_spec(3, color = IMSCOL[\"blue\", \"full\"], italic = TRUE) %>%\n  column_spec(5, color = IMSCOL[\"blue\", \"full\"], italic = TRUE) %>%\n  column_spec(6, width = \"5em\") %>%\n  add_header_above(c(\" \", \"Disclose problem\" =2, \"Hide problem\" = 2, \"Total\")) %>%\n  kable_styling(bootstrap_options = c(\"striped\", \"condensed\"), \n                latex_options = c(\"striped\", \"hold_position\"), full_width = FALSE)\n\n\n\n \n\n\nDisclose problem\nHide problem\nTotal\n\n  \n     \n     \n     \n     \n     \n     \n  \n \n\n  \n    General \n    2 \n    (20.33) \n    71 \n    (52.67) \n    73 \n  \n  \n    Positive assumption \n    23 \n    (20.33) \n    50 \n    (52.67) \n    73 \n  \n  \n    Negative assumption \n    36 \n    (20.33) \n    37 \n    (52.67) \n    73 \n  \n  \n    Total \n    61 \n    NA \n    158 \n    NA \n    219 \n  \n\n\n\n\n\nSource: IMS"
+  },
+  {
+    "objectID": "slides/lec-12.html#chance-or-effect",
+    "href": "slides/lec-12.html#chance-or-effect",
+    "title": "Classical inference",
+    "section": "Chance or effect?",
+    "text": "Chance or effect?\nThe difference between the expected and observed counts is due to\n\nchance alone, or\nthe fact that the way people responded depended on the question asked\n\n\n\\(\\chi^2\\) (“Kai-squared”) statistics:\n\\[\n\\chi^2 = \\dfrac{(O_{11} - E_{11})^2}{E_{11}} + \\dfrac{(O_{21} - E_{21})^2}{E_{21}} + \\dots + \\dfrac{(O_{32} - E_{32})^2}{E_{32}}\n\\]"
+  },
+  {
+    "objectID": "slides/lec-12.html#computing-chi2",
+    "href": "slides/lec-12.html#computing-chi2",
+    "title": "Classical inference",
+    "section": "Computing \\(\\chi^2\\)",
+    "text": "Computing \\(\\chi^2\\)\n\\[\n\\begin{aligned}\n&\\text{General formula} &&\n    \\frac{(\\text{observed count } - \\text{expected count})^2}\n        {\\text{expected count}} \\\\\n&\\text{Row 1, Col 1} &&\n    \\frac{(2 - 20.33)^2}{20.33} = 16.53 \\\\\n&\\text{Row 2, Col 1} &&\n    \\frac{(23 - 20.33)^2}{20.33} = 0.35 \\\\\n& \\hspace{9mm}\\vdots &&\n    \\hspace{13mm}\\vdots \\\\\n&\\text{Row 3, Col 2} &&\n    \\frac{(37 - 52.67)^2}{52.67} = 4.66\n\\end{aligned}\n\\]\n\\[\\chi^2 = 16.53 + 0.35 + \\dots + 4.66 = 40.13\\]\nSource: IMS"
+  },
+  {
+    "objectID": "slides/lec-12.html#the-approximate-distribution-of-chi2",
+    "href": "slides/lec-12.html#the-approximate-distribution-of-chi2",
+    "title": "Classical inference",
+    "section": "The approximate distribution of \\(\\chi^2\\)",
+    "text": "The approximate distribution of \\(\\chi^2\\)\nWhen the conditions of\n\nindependence\n\\(>5\\) expected counts per cell\n\nare satisfied, the \\(\\chi^2\\) statistic approximately follows a \\(\\chi^2\\) distribution."
+  },
+  {
+    "objectID": "slides/lec-12.html#computing-the-p-value",
+    "href": "slides/lec-12.html#computing-the-p-value",
+    "title": "Classical inference",
+    "section": "Computing the p-value",
+    "text": "Computing the p-value\n\nSource: IMS"
+  },
+  {
+    "objectID": "slides/lec-12.html#the-chi2-test-in-r",
+    "href": "slides/lec-12.html#the-chi2-test-in-r",
+    "title": "Classical inference",
+    "section": "The \\(\\chi^2\\) test in R",
+    "text": "The \\(\\chi^2\\) test in R\n\nhead(ask)\n\n# A tibble: 6 x 3\n  question_class      question                               response        \n  <fct>               <chr>                                  <chr>           \n1 General             What can you tell me about it?         Hide problem    \n2 Positive assumption It doesn't have any problems, does it? Hide problem    \n3 Positive assumption It doesn't have any problems, does it? Disclose problem\n4 Negative assumption What problems does it have?            Disclose problem\n5 General             What can you tell me about it?         Hide problem    \n6 Negative assumption What problems does it have?            Disclose problem\n\nchisq.test(ask$response, ask$question_class)\n\n\n    Pearson's Chi-squared test\n\ndata:  ask$response and ask$question_class\nX-squared = 40.128, df = 2, p-value = 0.000000001933"
+  },
+  {
+    "objectID": "slides/lec-12.html#section-10",
+    "href": "slides/lec-12.html#section-10",
+    "title": "Classical inference",
+    "section": "",
+    "text": "Individual exercise - \\(\\chi^2\\) test\n\n\nExercise 18.15\n\n\n\n\n\n\n01:30"
+  },
+  {
+    "objectID": "slides/lec-12.html#ht-via-simulation",
+    "href": "slides/lec-12.html#ht-via-simulation",
+    "title": "Classical inference",
+    "section": "HT via simulation",
+    "text": "HT via simulation\nWhen the conditions are not met, you need to conduct a HT via simulation.\n\nSimulate artificial samples under \\(H_0\\) by shuffling the response variable\nCompute the \\(\\chi^2\\) statistic of each simulated sample\nDetermine how extreme the \\(\\chi^2\\) statistic of the observed sample is by computing a p-value\n\nSee Section 18.1 for an example."
+  },
+  {
+    "objectID": "slides/lec-12.html#reproducibility-1",
+    "href": "slides/lec-12.html#reproducibility-1",
+    "title": "Classical inference",
+    "section": "Reproducibility",
+    "text": "Reproducibility\n\nmlb_players_18 <- openintro::mlb_players_18 %>%\n  filter(\n    AB >= 100, \n    !position %in% c(\"P\", \"DH\")\n  ) %>%\n  mutate(\n    position = case_when(\n      position %in% c(\"LF\", \"CF\", \"RF\")       ~ \"OF\",\n      position %in% c(\"1B\", \"2B\", \"3B\", \"SS\") ~ \"IF\",\n      TRUE                                    ~ position\n    ),\n    position = fct_relevel(position, \"OF\", \"IF\", \"C\")\n  )"
+  },
+  {
+    "objectID": "slides/lec-12.html#example-batting-performance-and-position",
+    "href": "slides/lec-12.html#example-batting-performance-and-position",
+    "title": "Classical inference",
+    "section": "Example – batting performance and position",
+    "text": "Example – batting performance and position\n\nSource: IMS"
+  },
+  {
+    "objectID": "slides/lec-12.html#ht-no-ci-1",
+    "href": "slides/lec-12.html#ht-no-ci-1",
+    "title": "Classical inference",
+    "section": "HT, no CI",
+    "text": "HT, no CI\n\\(H_0: \\mu_{OF} = \\mu_{IF} = \\mu_{C}\\): (the batting performance is the same across all three positions)\n\\(H_a\\): at least one mean is different\nWe will not quantify the differences between the three positions with CIs."
+  },
+  {
+    "objectID": "slides/lec-12.html#anova-in-r",
+    "href": "slides/lec-12.html#anova-in-r",
+    "title": "Classical inference",
+    "section": "ANOVA in R",
+    "text": "ANOVA in R\n\nm <- aov(OBP ~ position, data = mlb_players_18)\ntidy(m)\n\n# A tibble: 2 x 6\n  term         df  sumsq  meansq statistic  p.value\n  <chr>     <dbl>  <dbl>   <dbl>     <dbl>    <dbl>\n1 position      2 0.0161 0.00803      5.08  0.00662\n2 Residuals   426 0.674  0.00158     NA    NA"
+  },
+  {
+    "objectID": "slides/lec-12.html#conditions-4",
+    "href": "slides/lec-12.html#conditions-4",
+    "title": "Classical inference",
+    "section": "Conditions",
+    "text": "Conditions\n\nIndependence within\nIndependence between\nNormality (sample size and outliers)\nconstant variance\n\nVerify assumptions 3 and 4 with histograms"
+  },
+  {
+    "objectID": "slides/lec-12.html#side-by-side-histograms",
+    "href": "slides/lec-12.html#side-by-side-histograms",
+    "title": "Classical inference",
+    "section": "Side-by-side histograms",
+    "text": "Side-by-side histograms\n\nggplot(mlb_players_18) +\n  geom_histogram(aes(OBP)) +\n  facet_grid(position ~ .)"
+  },
+  {
+    "objectID": "slides/lec-12.html#section-11",
+    "href": "slides/lec-12.html#section-11",
+    "title": "Classical inference",
+    "section": "",
+    "text": "Individual exercise - ANOVA\n\n\nExercise 22.5\nExercise 22.9 – parts a and b\n\n\n\n\n\n\n03:00"
+  },
+  {
+    "objectID": "slides/lec-12.html#ht-via-simulation-1",
+    "href": "slides/lec-12.html#ht-via-simulation-1",
+    "title": "Classical inference",
+    "section": "HT via simulation",
+    "text": "HT via simulation\nWhen the conditions are not met, you need to conduct a HT via simulation.\n\nSimulate artificial samples under \\(H_0\\) by shuffling the response variable\nCompute the \\(F\\) statistic of each simulated sample (see Section 22.2)\nDetermine how extreme the \\(F\\) statistic of the observed sample is by computing a p-value\n\nSee Section 22.2 for an example."
+  },
+  {
     "objectID": "slides/lec-12.html#recap-2",
     "href": "slides/lec-12.html#recap-2",
     "title": "Classical inference",
     "section": "Recap",
-    "text": "Recap\n\nNormal approximation\nClassical approach to statistical inference\n\ncase 1 – one proportion\ncase 2 – two proportions\ncase 3 – one mean\ncase 4 – two means\ncase 4bis – paired means\ncase 5 – regression\n\nStandard error\n\n\n\n\nhttps://rmorsomme.github.io/website/"
+    "text": "Recap\n\nNormal approximation\nClassical approach to statistical inference\nStandard error\nCase 6 – many proportions (\\(\\chi^2\\) test)\nCase 7 – many means (ANOVA)\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
     "objectID": "slides/lec-2.html#outline",
@@ -2013,7 +2146,7 @@
     "href": "slides/lec-2.html#observations-and-variables",
     "title": "Introduction to Data",
     "section": "Observations and variables",
-    "text": "Observations and variables\n\n\n\nResults for three patients from the stent study.\n \n  \n    patient \n    group \n    30 days \n    365 days \n  \n \n\n  \n    1 \n    treatment \n    stroke \n    stroke \n  \n  \n    2 \n    treatment \n    no event \n    no event \n  \n  \n    3 \n    treatment \n    no event \n    no event \n  \n\n\n\n\n\n\n\nEach row represents an observation\nEach column represents a variable"
+    "text": "Observations and variables\n\n\n\n\nResults for three patients from the stent study.\n \n  \n    patient \n    group \n    30 days \n    365 days \n  \n \n\n  \n    1 \n    treatment \n    stroke \n    stroke \n  \n  \n    2 \n    treatment \n    no event \n    no event \n  \n  \n    3 \n    treatment \n    no event \n    no event \n  \n\n\n\n\n\n\n\nEach row represents an observation\nEach column represents a variable"
   },
   {
     "objectID": "slides/lec-2.html#some-examples",
@@ -2475,7 +2608,7 @@
     "href": "slides/lec-3.html#editing-tables",
     "title": "Data Summary and Visualization",
     "section": "Editing tables",
-    "text": "Editing tables\n\ntable(d_car$class, d_car$drv) %>%\n  prop.table(1) %>%\n  round(2) %>%\n  kbl(caption = \"Distribution of drive type per class of car\") %>%\n  kable_classic(full_width = FALSE, c(\"striped\", \"hover\"))\n\n\nDistribution of drive type per class of car\n \n  \n      \n    4 \n    f \n    r \n  \n \n\n  \n    2seater \n    0.00 \n    0.00 \n    1.00 \n  \n  \n    compact \n    0.26 \n    0.74 \n    0.00 \n  \n  \n    midsize \n    0.07 \n    0.93 \n    0.00 \n  \n  \n    minivan \n    0.00 \n    1.00 \n    0.00 \n  \n  \n    pickup \n    1.00 \n    0.00 \n    0.00 \n  \n  \n    subcompact \n    0.11 \n    0.63 \n    0.26 \n  \n  \n    suv \n    0.82 \n    0.00 \n    0.18 \n  \n\n\n\n\n\n📋 See this vignette for more details on editing tables"
+    "text": "Editing tables\n\ntable(d_car$class, d_car$drv) %>%\n  prop.table(1) %>%\n  round(2) %>%\n  kbl(caption = \"Distribution of drive type per class of car\") %>%\n  kable_classic(full_width = FALSE, c(\"striped\", \"hover\"))\n\n\n\nDistribution of drive type per class of car\n \n  \n      \n    4 \n    f \n    r \n  \n \n\n  \n    2seater \n    0.00 \n    0.00 \n    1.00 \n  \n  \n    compact \n    0.26 \n    0.74 \n    0.00 \n  \n  \n    midsize \n    0.07 \n    0.93 \n    0.00 \n  \n  \n    minivan \n    0.00 \n    1.00 \n    0.00 \n  \n  \n    pickup \n    1.00 \n    0.00 \n    0.00 \n  \n  \n    subcompact \n    0.11 \n    0.63 \n    0.26 \n  \n  \n    suv \n    0.82 \n    0.00 \n    0.18 \n  \n\n\n\n\n\n📋 See this vignette for more details on editing tables"
   },
   {
     "objectID": "slides/lec-3.html#statistics-as-an-art---figures",
@@ -2657,7 +2790,7 @@
     "href": "slides/lec-4.html#reading-r-output",
     "title": "Simple Linear Regression Models",
     "section": "Reading R output",
-    "text": "Reading R output\nR can provide the results of a model in different formats.\n\nm <- lm(hwy ~ cty, data = d)\n\n\nEstimates onlyRaw R outputTidy R output\n\n\n\nm\n\n\nCall:\nlm(formula = hwy ~ cty, data = d)\n\nCoefficients:\n(Intercept)          cty  \n      0.892        1.337  \n\n\nPrinting the model itself provides the least-square estimates. This is sufficient for now.\n\n\n\nsummary(m)\n\n\nCall:\nlm(formula = hwy ~ cty, data = d)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-5.3408 -1.2790  0.0214  1.0338  4.0461 \n\nCoefficients:\n            Estimate Std. Error t value Pr(>|t|)    \n(Intercept)  0.89204    0.46895   1.902   0.0584 .  \ncty          1.33746    0.02697  49.585   <2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.752 on 232 degrees of freedom\nMultiple R-squared:  0.9138,    Adjusted R-squared:  0.9134 \nF-statistic:  2459 on 1 and 232 DF,  p-value: < 2.2e-16\n\n\nThis format contains information that will be useful when we do inference. It is, however, difficult to read.\n\n\n\nsummary(m) %>%\n  tidy() %>%\n  kable(digits = 2)\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    0.89 \n    0.47 \n    1.90 \n    0.06 \n  \n  \n    cty \n    1.34 \n    0.03 \n    49.58 \n    0.00 \n  \n\n\n\n\n\nThis format contains the information necessary for doing inference and is easy to read. This is the format used the textbook."
+    "text": "Reading R output\nR can provide the results of a model in different formats.\n\nm <- lm(hwy ~ cty, data = d)\n\n\nEstimates onlyRaw R outputTidy R output\n\n\n\nm\n\n\nCall:\nlm(formula = hwy ~ cty, data = d)\n\nCoefficients:\n(Intercept)          cty  \n      0.892        1.337  \n\n\nPrinting the model itself provides the least-square estimates. This is sufficient for now.\n\n\n\nsummary(m)\n\n\nCall:\nlm(formula = hwy ~ cty, data = d)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-5.3408 -1.2790  0.0214  1.0338  4.0461 \n\nCoefficients:\n            Estimate Std. Error t value Pr(>|t|)    \n(Intercept)  0.89204    0.46895   1.902   0.0584 .  \ncty          1.33746    0.02697  49.585   <2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.752 on 232 degrees of freedom\nMultiple R-squared:  0.9138,    Adjusted R-squared:  0.9134 \nF-statistic:  2459 on 1 and 232 DF,  p-value: < 2.2e-16\n\n\nThis format contains information that will be useful when we do inference. It is, however, difficult to read.\n\n\n\nsummary(m) %>%\n  tidy() %>%\n  kable(digits = 2)\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    0.89 \n    0.47 \n    1.90 \n    0.06 \n  \n  \n    cty \n    1.34 \n    0.03 \n    49.58 \n    0.00 \n  \n\n\n\n\n\nThis format contains the information necessary for doing inference and is easy to read. This is the format used the textbook."
   },
   {
     "objectID": "slides/lec-4.html#exploring-the-model",
@@ -3952,7 +4085,7 @@
     "href": "slides/lec-8.html#example",
     "title": "Principles of Inference",
     "section": "Example",
-    "text": "Example\nConsider the 2nd case (difference in proportion of vegetarians between undergrad and grad students).\n\n\\(H_0:\\) the proportion of vegetarian is the same among undergraduate and graduate students (“nothing is going on”) \\[\nH_0: p_{diff}=p_{undegrad}-p_{grad}=0\n\\] \\[\nH_a: p_{undegrad}=p_{grad}\n\\]\n\\(H_a:\\) the proportion of vegetarians among undergraduate and graduate students is not the same (“something is going on”). \\[\nH_0: p_{diff}=p_{undegrad}-p_{grad}\\neq0\n\\] \\[\nH_a: p_{undegrad}\\neq p_{grad}\n\\]"
+    "text": "Example\nConsider the 2nd case (difference in proportion of vegetarians between undergrad and grad students).\n\n\\(H_0:\\) the proportion of vegetarian is the same among undergraduate and graduate students (“nothing is going on”) $$ H_0: p_{diff}=p_{undegrad}-p_{grad}=0\n\\[ \\]\nH_a: p_{undegrad}=p_{grad} $$\n\\(H_a:\\) the proportion of vegetarians among undergraduate and graduate students is not the same (“something is going on”). $$ H_0: p_{diff}=p_{undegrad}-p_{grad}\n\\[ \\]\nH_a: p_{undegrad}p_{grad} $$"
   },
   {
     "objectID": "slides/lec-8.html#more-examples",
@@ -4330,7 +4463,7 @@
     "href": "slides/lec-9.html#example-sex-discrimination",
     "title": "Inference for proportions",
     "section": "Example – sex discrimination",
-    "text": "Example – sex discrimination\nAre individuals who identify as female discriminated against in promotion decisions?\n\n\n\n\nSummary results for the sex discrimination study.\n \n\n\ndecision\n\n\n  \n    sex \n    promoted \n    not promoted \n    Total \n  \n \n\n  \n    male \n    21 \n    3 \n    24 \n  \n  \n    female \n    14 \n    10 \n    24 \n  \n  \n    Total \n    35 \n    13 \n    48"
+    "text": "Example – sex discrimination\nAre individuals who identify as female discriminated against in promotion decisions?\n\n\n\n\n\nSummary results for the sex discrimination study.\n \n\n\ndecision\n\n\n  \n    sex \n    promoted \n    not promoted \n    Total \n  \n \n\n  \n    male \n    21 \n    3 \n    24 \n  \n  \n    female \n    14 \n    10 \n    24 \n  \n  \n    Total \n    35 \n    13 \n    48"
   },
   {
     "objectID": "slides/lec-9.html#section-11",
@@ -4365,7 +4498,7 @@
     "href": "slides/lec-9.html#simulation-result",
     "title": "Inference for proportions",
     "section": "Simulation result",
-    "text": "Simulation result\n\n\n\n \n\n\ndecision\n\n\n  \n    sex \n    promoted \n    not promoted \n    Total \n  \n \n\n  \n    male \n    18 \n    6 \n    24 \n  \n  \n    female \n    17 \n    7 \n    24 \n  \n  \n    Total \n    35 \n    13 \n    48 \n  \n\n\n\n\n\nSource: IMS"
+    "text": "Simulation result\n\n\n\n\n \n\n\ndecision\n\n\n  \n    sex \n    promoted \n    not promoted \n    Total \n  \n \n\n  \n    male \n    18 \n    6 \n    24 \n  \n  \n    female \n    17 \n    7 \n    24 \n  \n  \n    Total \n    35 \n    13 \n    48 \n  \n\n\n\n\n\nSource: IMS"
   },
   {
     "objectID": "slides/lec-9.html#section-14",

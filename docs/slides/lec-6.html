@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-  <meta charset="utf-8">
-  <meta name="generator" content="quarto-0.9.151">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-0.9.580">
+
   <meta name="author" content="Raphael Morsomme">
   <title>STA 101L - Summer I 2022 - Model Selection</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -46,49 +53,42 @@
       }
     pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
     div.sourceCode
-      {   }
+      { color: #003b4f; background-color: #f1f3f5; }
     @media screen {
     pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
     code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
-
-  <script src="../site_libs/clipboard/clipboard.min.js"></script>
-  <script src="../site_libs/quarto-html/tabby.min.js"></script>
-  <script src="../site_libs/quarto-html/popper.min.js"></script>
-  <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-  <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-  <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet">
-  <link id="quarto-text-highlighting-styles" href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -102,7 +102,7 @@
   }
 
   .callout.callout-style-simple { 
-    padding: 0em 0.7em;
+    padding: 0em 0.5em;
     border-left: solid #acacac .3rem;
     border-right: solid 1px silver;
     border-top: solid 1px silver;
@@ -213,8 +213,7 @@
     display: none !important;
   }
 
-  .callout.callout-captioned .callout-body > :last-child,
-  .callout.callout-captioned .callout-body > div > :last-child {
+  .callout.callout-captioned .callout-body > .callout-content > :last-child {
     margin-bottom: 0.5rem;
   }
 
@@ -464,7 +463,7 @@ Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots +  + \beta_p X_p
 <h2>A nonlinear association?</h2>
 <p>Suppose we want to predict volume using only the variable <code>girth</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
 <span id="cb1-2"><a href="#cb1-2"></a>d_tree <span class="ot">&lt;-</span> datasets<span class="sc">::</span>trees <span class="sc">%&gt;%</span> </span>
 <span id="cb1-3"><a href="#cb1-3"></a>  <span class="fu">mutate</span>(<span class="at">Girth =</span> Girth <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">nrow</span>(.), <span class="dv">0</span>, <span class="fl">0.5</span>)) <span class="co"># add some random noise to girth for illustration purpose</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="fu">ggplot</span>(d_tree) <span class="sc">+</span></span>
@@ -476,7 +475,7 @@ Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots +  + \beta_p X_p
 <section id="function-to-compute-r2" class="slide level2">
 <h2>Function to compute <span class="math inline">\(R^2\)</span></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>compute_R2 <span class="ot">&lt;-</span> <span class="cf">function</span>(model){</span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>compute_R2 <span class="ot">&lt;-</span> <span class="cf">function</span>(model){</span>
 <span id="cb2-2"><a href="#cb2-2"></a>  </span>
 <span id="cb2-3"><a href="#cb2-3"></a>  model_glanced <span class="ot">&lt;-</span> <span class="fu">glance</span>(model)</span>
 <span id="cb2-4"><a href="#cb2-4"></a>  R2 <span class="ot">&lt;-</span> model_glanced<span class="sc">$</span>r.squared</span>
@@ -494,7 +493,7 @@ Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots +  + \beta_p X_p
 \text{Volume} \approx \beta_0 + \beta_1 \text{girth}
 \]</span></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> Girth, <span class="at">data =</span> d_tree)</span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> Girth, <span class="at">data =</span> d_tree)</span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="fu">compute_R2</span>(m1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>[1] 0.933</code></pre>
@@ -508,7 +507,7 @@ Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots +  + \beta_p X_p
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>Girth_new <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(d_tree<span class="sc">$</span>Girth), <span class="fu">max</span>(d_tree<span class="sc">$</span>Girth), <span class="at">by =</span> <span class="fl">0.001</span>)</span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>Girth_new <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(d_tree<span class="sc">$</span>Girth), <span class="fu">max</span>(d_tree<span class="sc">$</span>Girth), <span class="at">by =</span> <span class="fl">0.001</span>)</span>
 <span id="cb5-2"><a href="#cb5-2"></a>new_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Girth =</span> Girth_new)</span>
 <span id="cb5-3"><a href="#cb5-3"></a>Volume_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(m1, new_data)</span>
 <span id="cb5-4"><a href="#cb5-4"></a>new_data <span class="ot">&lt;-</span> <span class="fu">mutate</span>(new_data, <span class="at">Volume_pred =</span> Volume_pred)</span>
@@ -528,7 +527,7 @@ Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots +  + \beta_p X_p
 </div>
 <div id="tabset-1-2">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> d_tree  , <span class="fu">aes</span>(Girth, Volume     )) <span class="sc">+</span></span>
 <span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">geom_line</span> (<span class="at">data =</span> new_data, <span class="fu">aes</span>(Girth, Volume_pred))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -551,7 +550,7 @@ Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots +  + \beta_p X_p
 \]</span></p>
 <p>The command to fit this model is</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>d_tree2 <span class="ot">&lt;-</span> <span class="fu">mutate</span>(d_tree, <span class="at">Girth2 =</span> Girth<span class="sc">^</span><span class="dv">2</span>)</span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>d_tree2 <span class="ot">&lt;-</span> <span class="fu">mutate</span>(d_tree, <span class="at">Girth2 =</span> Girth<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb8-2"><a href="#cb8-2"></a>m2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> Girth <span class="sc">+</span> Girth2, <span class="at">data =</span> d_tree2)</span>
 <span id="cb8-3"><a href="#cb8-3"></a><span class="fu">compute_R2</span>(m2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
@@ -569,7 +568,7 @@ Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots +  + \beta_p X_p
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>Girth_new <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(d_tree<span class="sc">$</span>Girth), <span class="fu">max</span>(d_tree<span class="sc">$</span>Girth), <span class="at">by =</span> <span class="fl">0.001</span>)</span>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>Girth_new <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(d_tree<span class="sc">$</span>Girth), <span class="fu">max</span>(d_tree<span class="sc">$</span>Girth), <span class="at">by =</span> <span class="fl">0.001</span>)</span>
 <span id="cb10-2"><a href="#cb10-2"></a>new_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Girth =</span> Girth_new) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Girth2 =</span> Girth<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb10-3"><a href="#cb10-3"></a>Volume_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(m2, new_data)</span>
 <span id="cb10-4"><a href="#cb10-4"></a>new_data <span class="ot">&lt;-</span> <span class="fu">mutate</span>(new_data, <span class="at">Volume_pred =</span> Volume_pred)</span>
@@ -589,7 +588,7 @@ Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots +  + \beta_p X_p
 </div>
 <div id="tabset-2-2">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> d_tree  , <span class="fu">aes</span>(Girth, Volume     )) <span class="sc">+</span></span>
 <span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">geom_line</span> (<span class="at">data =</span> new_data, <span class="fu">aes</span>(Girth, Volume_pred))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -611,7 +610,7 @@ Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots +  + \beta_p X_p
 \text{Volume} \approx \beta_0 + \beta_1 \text{girth} + \beta_2 \text{girth}^2 + \beta_3 \text{girth}^3
 \]</span></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>d_tree3 <span class="ot">&lt;-</span> <span class="fu">mutate</span>(d_tree, <span class="at">Girth2 =</span> Girth<span class="sc">^</span><span class="dv">2</span>, <span class="at">Girth3 =</span> Girth<span class="sc">^</span><span class="dv">3</span>)</span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>d_tree3 <span class="ot">&lt;-</span> <span class="fu">mutate</span>(d_tree, <span class="at">Girth2 =</span> Girth<span class="sc">^</span><span class="dv">2</span>, <span class="at">Girth3 =</span> Girth<span class="sc">^</span><span class="dv">3</span>)</span>
 <span id="cb13-2"><a href="#cb13-2"></a>m3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> Girth <span class="sc">+</span> Girth2 <span class="sc">+</span> Girth3, <span class="at">data =</span> d_tree3)</span>
 <span id="cb13-3"><a href="#cb13-3"></a><span class="fu">compute_R2</span>(m3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
@@ -629,7 +628,7 @@ Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots +  + \beta_p X_p
 <div class="tab-content">
 <div id="tabset-3-1">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>Girth_new <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(d_tree<span class="sc">$</span>Girth), <span class="fu">max</span>(d_tree<span class="sc">$</span>Girth), <span class="at">by =</span> <span class="fl">0.001</span>)</span>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>Girth_new <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(d_tree<span class="sc">$</span>Girth), <span class="fu">max</span>(d_tree<span class="sc">$</span>Girth), <span class="at">by =</span> <span class="fl">0.001</span>)</span>
 <span id="cb15-2"><a href="#cb15-2"></a>new_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Girth =</span> Girth_new) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Girth2 =</span> Girth<span class="sc">^</span><span class="dv">2</span>, <span class="at">Girth3 =</span> Girth<span class="sc">^</span><span class="dv">3</span>)</span>
 <span id="cb15-3"><a href="#cb15-3"></a>Volume_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(m3, new_data)</span>
 <span id="cb15-4"><a href="#cb15-4"></a>new_data <span class="ot">&lt;-</span> <span class="fu">mutate</span>(new_data, <span class="at">Volume_pred =</span> Volume_pred)</span>
@@ -649,7 +648,7 @@ Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots +  + \beta_p X_p
 </div>
 <div id="tabset-3-2">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> d_tree  , <span class="fu">aes</span>(Girth, Volume     )) <span class="sc">+</span></span>
 <span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">geom_line</span> (<span class="at">data =</span> new_data, <span class="fu">aes</span>(Girth, Volume_pred))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -672,7 +671,7 @@ Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots +  + \beta_p X_p
 \text{Volume} \approx \beta_0 + \beta_1 \text{girth} + \beta_2 \text{girth}^2 + \dots + \beta_{81} \text{girth}^{81}
 \]</span></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>m_extreme <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">81</span>, <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> d_tree)</span>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>m_extreme <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> <span class="fu">poly</span>(Girth, <span class="at">degree =</span> <span class="dv">81</span>, <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="at">data =</span> d_tree)</span>
 <span id="cb18-2"><a href="#cb18-2"></a><span class="fu">compute_R2</span>(m_extreme)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>[1] 0.981</code></pre>
@@ -711,7 +710,7 @@ Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots +  + \beta_p X_p
 <div class="tab-content">
 <div id="tabset-4-1">
 <div class="cell" data-layout-align="center" data-hash="lec-6_cache/revealjs/unnamed-chunk-13_d84467c58d1b332409a92ca52ebf2c56">
-<div class="sourceCode" id="cb20" data-code-line-numbers="1|2|3|4|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>Girth_new <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(d_tree<span class="sc">$</span>Girth), <span class="fu">max</span>(d_tree<span class="sc">$</span>Girth), <span class="at">by =</span> <span class="fl">0.0001</span>)</span>
+<div class="sourceCode cell-code" id="cb20" data-code-line-numbers="1|2|3|4|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>Girth_new <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(d_tree<span class="sc">$</span>Girth), <span class="fu">max</span>(d_tree<span class="sc">$</span>Girth), <span class="at">by =</span> <span class="fl">0.0001</span>)</span>
 <span id="cb20-2"><a href="#cb20-2"></a>new_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Girth =</span> Girth_new)</span>
 <span id="cb20-3"><a href="#cb20-3"></a>Volume_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(m_extreme, new_data)</span>
 <span id="cb20-4"><a href="#cb20-4"></a>new_data <span class="ot">&lt;-</span> <span class="fu">mutate</span>(new_data, <span class="at">Volume_pred =</span> Volume_pred)</span>
@@ -731,7 +730,7 @@ Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots +  + \beta_p X_p
 </div>
 <div id="tabset-4-2">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> d_tree  , <span class="fu">aes</span>(Girth, Volume     )) <span class="sc">+</span></span>
 <span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">geom_line</span> (<span class="at">data =</span> new_data, <span class="fu">aes</span>(Girth, Volume_pred))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -745,7 +744,7 @@ Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots +  + \beta_p X_p
 </div>
 <div id="tabset-4-3">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> d_tree  , <span class="fu">aes</span>(Girth, Volume     )) <span class="sc">+</span></span>
 <span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">geom_line</span> (<span class="at">data =</span> new_data, <span class="fu">aes</span>(Girth, Volume_pred)) <span class="sc">+</span></span>
 <span id="cb23-4"><a href="#cb23-4"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">90</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -813,7 +812,7 @@ R^2_{\text{adj}} = 1 - \dfrac{SSR}{SST}\dfrac{n-1}{n-p-1}
 <div class="callout-content">
 <p>Consider the function <code>compute_R2</code> which takes a model as input and returns its <span class="math inline">\(R^2\)</span> rounded to the 3rd decimal.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>compute_R2 <span class="ot">&lt;-</span> <span class="cf">function</span>(model){</span>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>compute_R2 <span class="ot">&lt;-</span> <span class="cf">function</span>(model){</span>
 <span id="cb24-2"><a href="#cb24-2"></a>  </span>
 <span id="cb24-3"><a href="#cb24-3"></a>  model_glanced <span class="ot">&lt;-</span> <span class="fu">glance</span>(model)</span>
 <span id="cb24-4"><a href="#cb24-4"></a>  R2 <span class="ot">&lt;-</span> model_glanced<span class="sc">$</span>r.squared</span>
@@ -885,7 +884,7 @@ AIC = 2p - \text{GoF}, \qquad BIC = \ln(n)p- \text{GoF}
 <h2>Computing AIC and BIC</h2>
 <p>AIC and BIC are easily accessible in <code>R</code> with the command <code>glance</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">rbind</span>(<span class="fu">glance</span>(m1), <span class="fu">glance</span>(m2), <span class="fu">glance</span>(m3), <span class="fu">glance</span>(m_extreme))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">rbind</span>(<span class="fu">glance</span>(m1), <span class="fu">glance</span>(m2), <span class="fu">glance</span>(m3), <span class="fu">glance</span>(m_extreme))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code># A tibble: 4 x 12
   r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC
@@ -974,7 +973,7 @@ AIC = 2p - \text{GoF}, \qquad BIC = \ln(n)p- \text{GoF}
 <h2>Step 1: training and test sets</h2>
 <p>The following <code>R</code> function splits a sample into a training and a test set</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>construct_training_test <span class="ot">&lt;-</span> <span class="cf">function</span>(sample, <span class="at">prop_training =</span> <span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>){</span>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>construct_training_test <span class="ot">&lt;-</span> <span class="cf">function</span>(sample, <span class="at">prop_training =</span> <span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>){</span>
 <span id="cb27-2"><a href="#cb27-2"></a>  </span>
 <span id="cb27-3"><a href="#cb27-3"></a>  n          <span class="ot">&lt;-</span> <span class="fu">nrow</span>(sample)</span>
 <span id="cb27-4"><a href="#cb27-4"></a>  n_training <span class="ot">&lt;-</span> <span class="fu">round</span>(n <span class="sc">*</span> prop_training)</span>
@@ -997,7 +996,7 @@ AIC = 2p - \text{GoF}, \qquad BIC = \ln(n)p- \text{GoF}
 <div class="tab-content">
 <div id="tabset-5-1">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>d_tree <span class="co"># entire sample</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>d_tree <span class="co"># entire sample</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>       Girth Height Volume
 1   8.931477     70   10.3
@@ -1036,7 +1035,7 @@ AIC = 2p - \text{GoF}, \qquad BIC = \ln(n)p- \text{GoF}
 </div>
 <div id="tabset-5-2">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>) <span class="co"># set the seed of the random number generator to 0</span></span>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>) <span class="co"># set the seed of the random number generator to 0</span></span>
 <span id="cb30-2"><a href="#cb30-2"></a>training_test_sets <span class="ot">&lt;-</span> <span class="fu">construct_training_test</span>(d_tree) </span>
 <span id="cb30-3"><a href="#cb30-3"></a>training_set <span class="ot">&lt;-</span> training_test_sets[[<span class="st">"training"</span>]]</span>
 <span id="cb30-4"><a href="#cb30-4"></a>training_set</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1068,7 +1067,7 @@ AIC = 2p - \text{GoF}, \qquad BIC = \ln(n)p- \text{GoF}
 </div>
 <div id="tabset-5-3">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>test_set <span class="ot">&lt;-</span> training_test_sets[[<span class="st">"test"</span>]]</span>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>test_set <span class="ot">&lt;-</span> training_test_sets[[<span class="st">"test"</span>]]</span>
 <span id="cb32-2"><a href="#cb32-2"></a>test_set</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>      Girth Height Volume
@@ -1092,14 +1091,14 @@ AIC = 2p - \text{GoF}, \qquad BIC = \ln(n)p- \text{GoF}
 <h2>Step 2: fit the model to the training set</h2>
 <p>We simply fit our regression model to the <strong>training set</strong>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> Girth, <span class="at">data =</span> training_set)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Volume <span class="sc">~</span> Girth, <span class="at">data =</span> training_set)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="step-3-evaluate-the-prediction-accuracy-on-the-test-set" class="slide level2">
 <h2>Step 3: Evaluate the prediction accuracy on the test set</h2>
 <p>To evaluate the prediction accuracy, we start by computing the predictions for the observations in the <strong>test set</strong>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>Volume_hat <span class="ot">&lt;-</span> <span class="fu">predict</span>(m1, test_set)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>Volume_hat <span class="ot">&lt;-</span> <span class="fu">predict</span>(m1, test_set)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p>A good model will make predictions that are closed to the true values of the response variable.</p>
@@ -1113,7 +1112,7 @@ SSE = (y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}_2)^2 + \dots + (y_m - \hat{y}_m)^2
 \]</span></p>
 <p>Small SSE is better.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>Volume <span class="ot">&lt;-</span> test_set<span class="sc">$</span>Volume</span>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>Volume <span class="ot">&lt;-</span> test_set<span class="sc">$</span>Volume</span>
 <span id="cb36-2"><a href="#cb36-2"></a><span class="fu">sum</span>((Volume <span class="sc">-</span> Volume_hat)<span class="sc">^</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>[1] 211.4543</code></pre>
@@ -1133,7 +1132,7 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <section id="section-8" class="slide level2">
 <h2></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>SSE <span class="ot">&lt;-</span> <span class="fu">sum</span> ((Volume <span class="sc">-</span> Volume_hat)<span class="sc">^</span><span class="dv">2</span>)</span>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>SSE <span class="ot">&lt;-</span> <span class="fu">sum</span> ((Volume <span class="sc">-</span> Volume_hat)<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb38-2"><a href="#cb38-2"></a>MSE <span class="ot">&lt;-</span> <span class="fu">mean</span>((Volume <span class="sc">-</span> Volume_hat)<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb38-3"><a href="#cb38-3"></a>RMSE <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(MSE)</span>
 <span id="cb38-4"><a href="#cb38-4"></a>SSE; MSE; RMSE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1175,7 +1174,7 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <section id="function-to-compute-the-rmse" class="slide level2">
 <h2>Function to compute the RMSE</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>compute_RMSE <span class="ot">&lt;-</span> <span class="cf">function</span>(test_set, model){</span>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>compute_RMSE <span class="ot">&lt;-</span> <span class="cf">function</span>(test_set, model){</span>
 <span id="cb42-2"><a href="#cb42-2"></a>  </span>
 <span id="cb42-3"><a href="#cb42-3"></a>  y     <span class="ot">&lt;-</span> test_set<span class="sc">$</span>Volume <span class="co"># truth</span></span>
 <span id="cb42-4"><a href="#cb42-4"></a>  y_hat <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, test_set) <span class="co"># predicted value</span></span>
@@ -1192,7 +1191,7 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <section id="section-9" class="slide level2">
 <h2></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># Step 1 - partition sample into a training set and a test set</span></span>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># Step 1 - partition sample into a training set and a test set</span></span>
 <span id="cb43-2"><a href="#cb43-2"></a><span class="co"># already done</span></span>
 <span id="cb43-3"><a href="#cb43-3"></a></span>
 <span id="cb43-4"><a href="#cb43-4"></a><span class="co"># Step 2 - fit models to training set</span></span>
@@ -1226,7 +1225,7 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <section id="section-10" class="slide level2">
 <h2></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb45" data-code-line-numbers="2|"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># Step 1</span></span>
+<div class="sourceCode cell-code" id="cb45" data-code-line-numbers="2|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># Step 1</span></span>
 <span id="cb45-2"><a href="#cb45-2"></a><span class="fu">set.seed</span>(<span class="dv">1</span>) <span class="co"># new seed</span></span>
 <span id="cb45-3"><a href="#cb45-3"></a>training_test_sets <span class="ot">&lt;-</span> <span class="fu">construct_training_test</span>(d_tree) </span>
 <span id="cb45-4"><a href="#cb45-4"></a>training_set <span class="ot">&lt;-</span> training_test_sets[[<span class="st">"training"</span>]]</span>
@@ -1275,7 +1274,7 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <p>Copy and paste the following code in your <code>R</code> session. Try a few different seed numbers for step 1. Keep track of which model has the lowest RMSE. Is <code>m1</code> ever the best model?</p>
 <p>You can safely ignore the warning messages.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="co"># Setup</span></span>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="co"># Setup</span></span>
 <span id="cb47-2"><a href="#cb47-2"></a><span class="fu">set.seed</span>(<span class="dv">0</span>) <span class="co"># do not change this seed number</span></span>
 <span id="cb47-3"><a href="#cb47-3"></a>d_tree <span class="ot">&lt;-</span> datasets<span class="sc">::</span>trees <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Girth =</span> Girth <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">nrow</span>(.), <span class="dv">0</span>, <span class="fl">0.5</span>))</span>
 <span id="cb47-4"><a href="#cb47-4"></a>compute_RMSE <span class="ot">&lt;-</span> <span class="cf">function</span>(test_set, model){</span>
@@ -1367,7 +1366,7 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <section id="step-0" class="slide level2">
 <h2>Step 0</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
 <span id="cb48-2"><a href="#cb48-2"></a></span>
 <span id="cb48-3"><a href="#cb48-3"></a><span class="co"># Setup</span></span>
 <span id="cb48-4"><a href="#cb48-4"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(d_tree)</span>
@@ -1382,7 +1381,7 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <pre><code> [1]  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5
 [26]  6  7  8  9 10  1</code></pre>
 </div>
-<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="co"># Step 1</span></span>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="co"># Step 1</span></span>
 <span id="cb50-2"><a href="#cb50-2"></a>d_tree_fold <span class="ot">&lt;-</span> d_tree <span class="sc">%&gt;%</span></span>
 <span id="cb50-3"><a href="#cb50-3"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> n) <span class="sc">%&gt;%</span> <span class="co"># shuffle the rows</span></span>
 <span id="cb50-4"><a href="#cb50-4"></a>  <span class="fu">mutate</span>(<span class="at">fold =</span> folds)</span>
@@ -1401,7 +1400,7 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <section id="steps-1-4-setup" class="slide level2">
 <h2>Steps 1-4 – Setup</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a>create_empty_RMSE <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a>create_empty_RMSE <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
 <span id="cb52-2"><a href="#cb52-2"></a>  <span class="fu">tibble</span>(</span>
 <span id="cb52-3"><a href="#cb52-3"></a>    <span class="at">fold     =</span> <span class="fu">numeric</span>(),</span>
 <span id="cb52-4"><a href="#cb52-4"></a>    <span class="at">rmse_m1  =</span> <span class="fu">numeric</span>(), </span>
@@ -1423,7 +1422,7 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <section id="steps-1-4" class="slide level2">
 <h2>Steps 1-4</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb54"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a>RMSE <span class="ot">&lt;-</span> <span class="fu">create_empty_RMSE</span>()</span>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a>RMSE <span class="ot">&lt;-</span> <span class="fu">create_empty_RMSE</span>()</span>
 <span id="cb54-2"><a href="#cb54-2"></a></span>
 <span id="cb54-3"><a href="#cb54-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> n_folds){</span>
 <span id="cb54-4"><a href="#cb54-4"></a>  </span>
@@ -1453,7 +1452,7 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <h2>Model selection with RMSE</h2>
 <p>Which model has the lowest RMSE across all folds?</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb55"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a>RMSE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a>RMSE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code># A tibble: 10 x 5
     fold rmse_m1 rmse_m2 rmse_m3   rmse_m48
@@ -1471,14 +1470,14 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 </div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb57"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="fu">summarise_all</span>(RMSE, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="fu">summarise_all</span>(RMSE, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code># A tibble: 1 x 5
    fold rmse_m1 rmse_m2 rmse_m3 rmse_m48
   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
 1   5.5    4.16    3.44    3.49  248237.</code></pre>
 </div>
-<div class="sourceCode" id="cb59"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a><span class="fu">summarise_all</span>(RMSE, sum ) <span class="co"># what the book uses</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a><span class="fu">summarise_all</span>(RMSE, sum ) <span class="co"># what the book uses</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code># A tibble: 1 x 5
    fold rmse_m1 rmse_m2 rmse_m3 rmse_m48
@@ -1528,7 +1527,7 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <section id="loocv" class="slide level2 smaller">
 <h2>LOOCV</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb61"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a>RMSE <span class="ot">&lt;-</span> <span class="fu">create_empty_RMSE</span>()</span>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a>RMSE <span class="ot">&lt;-</span> <span class="fu">create_empty_RMSE</span>()</span>
 <span id="cb61-2"><a href="#cb61-2"></a></span>
 <span id="cb61-3"><a href="#cb61-3"></a><span class="co"># Step 0</span></span>
 <span id="cb61-4"><a href="#cb61-4"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(d_tree)</span>
@@ -1622,7 +1621,7 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <div class="callout-content">
 <p>Exercise <a href="https://openintro-ims.netlify.app/model-mlr.html#chp8-exercises">8.13</a>. In addition, fit the candidate model (a single model) in <code>R</code> with the command <code>lm</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb63"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a><span class="fu">library</span>(openintro)</span>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a><span class="fu">library</span>(openintro)</span>
 <span id="cb63-2"><a href="#cb63-2"></a>d <span class="ot">&lt;-</span> openintro<span class="sc">::</span>births14</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -1655,7 +1654,7 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 <div class="callout-content">
 <p>Exercise <a href="https://openintro-ims.netlify.app/model-mlr.html#chp8-exercises">8.11</a>. In addition, fit the current and candidate models in <code>R</code> with the command <code>lm</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb64"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a><span class="fu">library</span>(openintro)</span>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a><span class="fu">library</span>(openintro)</span>
 <span id="cb64-2"><a href="#cb64-2"></a>d <span class="ot">&lt;-</span> openintro<span class="sc">::</span>births14</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -1741,19 +1740,19 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
   <script src="../site_libs/revealjs/dist/reveal.js"></script>
-
   <!-- reveal.js plugins -->
   <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
   <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
   <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
   <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
   <script src="../site_libs/revealjs/plugin/search/search.js"></script>
   <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
   <script src="../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
 
   <script>
 
@@ -1767,10 +1766,9 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
-
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'smaller': false,
-
+ 
         // Display controls in the bottom right corner
         controls: false,
 
@@ -1990,7 +1988,7 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
       })();
     </script>
 
-    <script type="application/javascript">
+    <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
       tabsets.forEach(function(tabset) {
@@ -2008,7 +2006,10 @@ RMSE = \sqrt{\dfrac{SSE}{m}} = \sqrt{\dfrac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}
         button.blur();
         // flash "checked"
         button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
         setTimeout(function() {
+          button.setAttribute("title", currentTitle);
           button.classList.remove('code-copy-button-checked');
         }, 1000);
         // clear code selection

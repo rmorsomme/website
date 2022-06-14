@@ -61,7 +61,7 @@ options(scipen = 5)
 
 -   Friday: presentations
 
-## Recap  {.smaller}
+## Recap {.smaller}
 
 -   HT via simulation
 
@@ -583,7 +583,7 @@ countdown(minutes = 10)
 
 # Standard error
 
-## Standard error  {.smaller}
+## Standard error {.smaller}
 
 **Standard error (SE)**: standard deviation of the normal approximation
 
@@ -635,16 +635,264 @@ Exercise [13.4](https://openintro-ims.netlify.app/foundations-mathematical.html#
 countdown(minutes = 2)
 ```
 
+# Case 6 -- many proportions ($\chi^2$ test)
+
+## Reproducibility
+
+```{r}
+ask <- openintro::ask %>%
+  mutate(
+    response = if_else(response == "disclose", "Disclose problem", "Hide problem"),
+    question_class = case_when(
+      question_class == "general" ~ "General",
+      question_class == "neg_assumption" ~ "Negative assumption",
+      question_class == "pos_assumption" ~ "Positive assumption"
+    ),
+    question_class = fct_relevel(question_class, "General", "Positive assumption", "Negative assumption")
+  )
+```
+
+## Example -- defect iPod
+
+```{r, echo=FALSE}
+ask %>%
+  count(question_class, response) %>%
+  pivot_wider(names_from = response, values_from = n) %>%
+  adorn_totals(where = c("row", "col")) %>%
+  kbl(linesep = "", booktabs = TRUE,
+      col.names = c("Question", "Disclose problem", "Hide problem", "Total")
+    ) %>%
+  kable_styling(bootstrap_options = c("striped", "condensed"), 
+                latex_options = c("striped", "hold_position"), full_width = FALSE)
+```
+
+Source: [IMS](https://www.openintro.org/book/ims/)
+
+## HT, no CI
+
+$H_0$: the response is independent of the question asked
+
+$H_a$: the response depends on the question asked
+
+We will not quantify the differences between the three question with CIs.
+
+## Expected counts
+
+```{r}
+ask_chi_sq <- chisq.test(ask$response, ask$question_class)
+ask_chi_sq_obs <- ask_chi_sq$observed %>% 
+  as_tibble() %>% 
+  mutate(type = "observed")
+ask_chi_sq_exp <- ask_chi_sq$expected %>%
+  as.table() %>%
+  as_tibble() %>% 
+  mutate(type = "expected")
+ask_chi_sq_tabs <- bind_rows(ask_chi_sq_obs, ask_chi_sq_exp) %>%
+  rename_with(.fn = str_remove, .cols = everything(), "ask\\$")
+ask_chi_sq_tabs %>%
+  mutate(response_type = paste0(response, "-", type)) %>%
+  select(-response, -type) %>%
+  pivot_wider(names_from = response_type, values_from = n) %>%
+  relocate(
+    question_class,
+    contains("Disclose"),
+    contains("Hide")
+  ) %>%
+  mutate(across(contains("expected"), ~paste0("(", round(.x, 2), ")"))) %>%
+  rowwise() %>%
+  mutate(Total = sum(c_across(contains("observed")))) %>%
+  adorn_totals(where = "row") %>%
+  mutate(
+    `Disclose problem-expected` = ifelse(`Disclose problem-expected` == "-", NA, `Disclose problem-expected`),
+    `Hide problem-expected` = ifelse(`Hide problem-expected` == "-", NA, `Hide problem-expected`)
+  ) %>%
+ kbl(linesep = "", booktabs = TRUE,
+   col.names = c("", "", "", "", "", "")
+   ) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(3, color = IMSCOL["blue", "full"], italic = TRUE) %>%
+  column_spec(5, color = IMSCOL["blue", "full"], italic = TRUE) %>%
+  column_spec(6, width = "5em") %>%
+  add_header_above(c(" ", "Disclose problem" =2, "Hide problem" = 2, "Total")) %>%
+  kable_styling(bootstrap_options = c("striped", "condensed"), 
+                latex_options = c("striped", "hold_position"), full_width = FALSE)
+```
+
+Source: [IMS](https://www.openintro.org/book/ims/)
+
+## Chance or effect?
+
+The difference between the *expected* and *observed* counts is due to
+
+-   chance alone, or
+
+-   the fact that the way people responded depended on the question asked
+
+. . .
+
+$\chi^2$ ("Kai-squared") statistics:
+
+$$
+\chi^2 = \dfrac{(O_{11} - E_{11})^2}{E_{11}} + \dfrac{(O_{21} - E_{21})^2}{E_{21}} + \dots + \dfrac{(O_{32} - E_{32})^2}{E_{32}}
+$$
+
+## Computing $\chi^2$
+
+$$
+\begin{aligned}
+&\text{General formula} &&
+    \frac{(\text{observed count } - \text{expected count})^2}
+        {\text{expected count}} \\
+&\text{Row 1, Col 1} &&
+    \frac{(2 - 20.33)^2}{20.33} = 16.53 \\
+&\text{Row 2, Col 1} &&
+    \frac{(23 - 20.33)^2}{20.33} = 0.35 \\
+& \hspace{9mm}\vdots &&
+    \hspace{13mm}\vdots \\
+&\text{Row 3, Col 2} &&
+    \frac{(37 - 52.67)^2}{52.67} = 4.66
+\end{aligned}
+$$
+
+$$\chi^2 = 16.53 + 0.35 + \dots + 4.66 = 40.13$$
+
+Source: [IMS](https://www.openintro.org/book/ims/)
+
+## The approximate distribution of $\chi^2$
+
+When the conditions of
+
+1.  independence
+
+2.  $>5$ expected counts per cell
+
+are satisfied, the $\chi^2$ statistic approximately follows a $\chi^2$ distribution.
+
+## Computing the p-value
+
+![](images/lec-12/chi-squared.png){fig-align="center"}
+
+Source: [IMS](https://www.openintro.org/book/ims/)
+
+## The $\chi^2$ test in `R`
+
+```{r}
+head(ask)
+chisq.test(ask$response, ask$question_class)
+```
+
+## 
+
+::: {.callout-tip icon="false"}
+## Individual exercise - $\chi^2$ test
+
+Exercise [18.15](https://openintro-ims.netlify.app/inference-tables.html#chp18-exercises)
+:::
+
+```{r, echo = F}
+countdown(minutes = 1, seconds = 30)
+```
+
+## HT via simulation
+
+When the conditions are not met, you need to conduct a HT via *simulation*.
+
+1.  Simulate artificial samples under $H_0$ by shuffling the response variable
+2.  Compute the $\chi^2$ statistic of each simulated sample
+3.  Determine how extreme the $\chi^2$ statistic of the observed sample is by computing a p-value
+
+See [Section 18.1](https://openintro-ims.netlify.app/inference-tables.html#randomization-test-of-independence) for an example.
+
+# Case 7 -- many means (ANOVA)
+
+## Reproducibility
+
+```{r}
+mlb_players_18 <- openintro::mlb_players_18 %>%
+  filter(
+    AB >= 100, 
+    !position %in% c("P", "DH")
+  ) %>%
+  mutate(
+    position = case_when(
+      position %in% c("LF", "CF", "RF")       ~ "OF",
+      position %in% c("1B", "2B", "3B", "SS") ~ "IF",
+      TRUE                                    ~ position
+    ),
+    position = fct_relevel(position, "OF", "IF", "C")
+  )
+```
+
+## Example -- batting performance and position
+
+![](images/lec-12/anova-data.png){fig-align="center"}
+
+Source: [IMS](https://www.openintro.org/book/ims/)
+
+## HT, no CI
+
+$H_0: \mu_{OF} = \mu_{IF} = \mu_{C}$: (the batting performance is the same across all three positions)
+
+$H_a$: at least one mean is different
+
+We will not quantify the differences between the three positions with CIs.
+
+## ANOVA in `R`
+
+```{r}
+m <- aov(OBP ~ position, data = mlb_players_18)
+tidy(m)
+```
+
+## Conditions
+
+1.  Independence within
+
+2.  Independence between
+
+3.  Normality (sample size and outliers)
+
+4.  constant variance
+
+Verify assumptions 3 and 4 with histograms
+
+## Side-by-side histograms
+
+```{r}
+ggplot(mlb_players_18) +
+  geom_histogram(aes(OBP)) +
+  facet_grid(position ~ .)
+```
+
+
+## 
+::: {.callout-tip icon="false"}
+## Individual exercise - ANOVA
+Exercise [22.5](https://openintro-ims.netlify.app/inference-many-means.html#chp22-exercises)
+
+Exercise [22.9](https://openintro-ims.netlify.app/inference-many-means.html#chp22-exercises) -- parts a and b
+
+:::
+```{r, echo = F}
+countdown(minutes = 3)
+```
+
+## HT via simulation
+
+When the conditions are not met, you need to conduct a HT via *simulation*.
+
+1.  Simulate artificial samples under $H_0$ by shuffling the response variable
+2.  Compute the $F$ statistic of each simulated sample (see [Section 22.2](https://openintro-ims.netlify.app/inference-many-means.html#randANOVA))
+3.  Determine how extreme the $F$ statistic of the observed sample is by computing a p-value
+
+See [Section 22.2](https://openintro-ims.netlify.app/inference-many-means.html#randANOVA) for an example.
+
 # Recap
 
 ## Recap
 
 -   Normal approximation
 -   Classical approach to statistical inference
-    -   case 1 -- one proportion
-    -   case 2 -- two proportions
-    -   case 3 -- one mean
-    -   case 4 -- two means
-    -   case 4bis -- paired means
-    -   case 5 -- regression
 -   Standard error
+-   Case 6 -- many proportions ($\chi^2$ test)
+-   Case 7 -- many means (ANOVA)

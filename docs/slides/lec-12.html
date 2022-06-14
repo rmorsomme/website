@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-  <meta charset="utf-8">
-  <meta name="generator" content="quarto-0.9.151">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-0.9.580">
+
   <meta name="author" content="Raphael Morsomme">
   <title>STA 101L - Summer I 2022 - Classical inference</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -46,49 +53,42 @@
       }
     pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
     div.sourceCode
-      {   }
+      { color: #003b4f; background-color: #f1f3f5; }
     @media screen {
     pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
     code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
-
-  <script src="../site_libs/clipboard/clipboard.min.js"></script>
-  <script src="../site_libs/quarto-html/tabby.min.js"></script>
-  <script src="../site_libs/quarto-html/popper.min.js"></script>
-  <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-  <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-  <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet">
-  <link id="quarto-text-highlighting-styles" href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -102,7 +102,7 @@
   }
 
   .callout.callout-style-simple { 
-    padding: 0em 0.7em;
+    padding: 0em 0.5em;
     border-left: solid #acacac .3rem;
     border-right: solid 1px silver;
     border-top: solid 1px silver;
@@ -213,8 +213,7 @@
     display: none !important;
   }
 
-  .callout.callout-captioned .callout-body > :last-child,
-  .callout.callout-captioned .callout-body > div > :last-child {
+  .callout.callout-captioned .callout-body > .callout-content > :last-child {
     margin-bottom: 0.5rem;
   }
 
@@ -379,8 +378,11 @@
       margin-right: 0; 
     }
   </style>
-  <link href="..\site_libs/countdown-0.3.5/countdown.css" rel="stylesheet">
-  <script src="..\site_libs/countdown-0.3.5/countdown.js"></script>
+  
+  <link href="../site_libs/countdown-0.3.5/countdown.css" rel="stylesheet">
+  <script src="../site_libs/countdown-0.3.5/countdown.js"></script>
+  <script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 </head>
 <body>
   <div class="reveal">
@@ -445,7 +447,7 @@
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a78fea" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a8c8b3" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -459,7 +461,7 @@
 <section id="normal-distribution" class="slide level2">
 <h2>Normal distribution</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="at">by =</span> <span class="fl">0.001</span>)) <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="at">by =</span> <span class="fl">0.001</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">mutate</span>(<span class="at">normal =</span> <span class="fu">dnorm</span>(x, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
 <span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(x, normal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -546,7 +548,7 @@ X\sim N(\mu, \sigma^2)
 <section id="conditions-are-satisfied" class="slide level2">
 <h2>Conditions are satisfied</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.4</span>; n <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="co"># conditions are satisfied: p*n&gt;10 and (1-p)*n&gt;10</span></span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.4</span>; n <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="co"># conditions are satisfied: p*n&gt;10 and (1-p)*n&gt;10</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">p_hat =</span> <span class="fu">numeric</span>())</span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">5e3</span>){</span>
 <span id="cb2-4"><a href="#cb2-4"></a>  sim     <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">rbernoulli</span>(n, p)</span>
@@ -560,7 +562,7 @@ X\sim N(\mu, \sigma^2)
 <section id="normal-approximation-is-good" class="slide level2">
 <h2>Normal approximation is good</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">tibble</span>(<span class="at">p_hat =</span> <span class="fu">seq</span>(<span class="fl">0.2</span>, <span class="fl">0.6</span>, <span class="at">by =</span> <span class="fl">0.001</span>)) <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">tibble</span>(<span class="at">p_hat =</span> <span class="fu">seq</span>(<span class="fl">0.2</span>, <span class="fl">0.6</span>, <span class="at">by =</span> <span class="fl">0.001</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">mutate</span>(<span class="at">normal_approximation =</span> <span class="fu">dnorm</span>(p_hat, <span class="at">mean =</span> p, <span class="at">sd =</span> <span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n))) <span class="sc">%&gt;%</span></span>
 <span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> p_hat, <span class="at">y =</span> normal_approximation))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -586,7 +588,7 @@ X\sim N(\mu, \sigma^2)
 <section id="conditions-are-not-satisfied" class="slide level2">
 <h2>Conditions are <em>not</em> satisfied</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.025</span>; n <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="co"># conditions are not satisfied: p*n&lt;10 </span></span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.025</span>; n <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="co"># conditions are not satisfied: p*n&lt;10 </span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">p_hat =</span> <span class="fu">numeric</span>())</span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span> <span class="sc">:</span> <span class="fl">5e3</span>){</span>
 <span id="cb4-4"><a href="#cb4-4"></a>  sim     <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">rbernoulli</span>(n, p)</span>
@@ -600,7 +602,7 @@ X\sim N(\mu, \sigma^2)
 <section id="normal-approximation-fails" class="slide level2">
 <h2>Normal approximation fails</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">tibble</span>(<span class="at">p_hat =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="at">by =</span> <span class="fl">0.001</span>)) <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">tibble</span>(<span class="at">p_hat =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="at">by =</span> <span class="fl">0.001</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">mutate</span>(<span class="at">normal_approximation =</span> <span class="fu">dnorm</span>(p_hat, <span class="at">mean =</span> p, <span class="at">sd =</span> <span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n))) <span class="sc">%&gt;%</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> p_hat, <span class="at">y =</span> normal_approximation)) <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="fl">0.05</span>, <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
@@ -664,14 +666,14 @@ X\sim N(\mu, \sigma^2)
 <section id="case-1-one-proportion" class="slide level2">
 <h2>Case 1 – one proportion</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1500</span> <span class="co"># sample size</span></span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1500</span> <span class="co"># sample size</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>x <span class="ot">&lt;-</span> <span class="dv">780</span>  <span class="co"># number of successes</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a><span class="fu">prop.test</span>(</span>
 <span id="cb6-4"><a href="#cb6-4"></a>  x, n,             <span class="co"># observed data</span></span>
 <span id="cb6-5"><a href="#cb6-5"></a>  <span class="at">p =</span> <span class="fl">0.5</span>,          <span class="co"># value in the null hypothesis</span></span>
 <span id="cb6-6"><a href="#cb6-6"></a>  <span class="at">conf.level =</span> <span class="fl">0.99</span> <span class="co"># confidence level for CI</span></span>
 <span id="cb6-7"><a href="#cb6-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>
     1-sample proportions test with continuity correction
 
@@ -722,7 +724,7 @@ sample estimates:
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a79187" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a8c5b4" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -732,10 +734,10 @@ sample estimates:
 <h2>Case 2 – two proportions</h2>
 <p>Consider the gender discrimination study.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>n_m <span class="ot">&lt;-</span> <span class="dv">24</span>; n_f <span class="ot">&lt;-</span> <span class="dv">24</span> <span class="co"># sample sizes</span></span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>n_m <span class="ot">&lt;-</span> <span class="dv">24</span>; n_f <span class="ot">&lt;-</span> <span class="dv">24</span> <span class="co"># sample sizes</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>x_m <span class="ot">&lt;-</span> <span class="dv">14</span>; x_f <span class="ot">&lt;-</span> <span class="dv">21</span> <span class="co"># numbers of promotions</span></span>
 <span id="cb8-3"><a href="#cb8-3"></a><span class="fu">prop.test</span>(<span class="fu">c</span>(x_m, x_f), <span class="fu">c</span>(n_m, n_f))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>
     2-sample test for equality of proportions with continuity correction
 
@@ -792,7 +794,7 @@ sample estimates:
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a78fd2" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a8c92e" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">06</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -801,9 +803,9 @@ sample estimates:
 <section id="case-3-one-mean" class="slide level2">
 <h2>Case 3 – one mean</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>d <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>mpg</span>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>d <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>mpg</span>
 <span id="cb10-2"><a href="#cb10-2"></a><span class="fu">t.test</span>(d<span class="sc">$</span>hwy, <span class="at">mu =</span> <span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>
     One Sample t-test
 
@@ -857,7 +859,7 @@ mean of x
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a79143" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a8c7c0" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -871,9 +873,9 @@ mean of x
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>d <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>mpg</span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>d <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>mpg</span>
 <span id="cb12-2"><a href="#cb12-2"></a><span class="fu">t.test</span>(hwy <span class="sc">~</span> year, <span class="at">data =</span> d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
 
@@ -890,9 +892,9 @@ mean in group 1999 mean in group 2008
 </div>
 <div id="tabset-1-2">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>d <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>mpg</span>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>d <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>mpg</span>
 <span id="cb14-2"><a href="#cb14-2"></a><span class="fu">t.test</span>(d<span class="sc">$</span>cty, d<span class="sc">$</span>hwy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
 
@@ -933,7 +935,7 @@ mean of x mean of y
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a79100" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a8c869" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -942,9 +944,9 @@ mean of x mean of y
 <section id="case-4bis-paired-means" class="slide level2">
 <h2>Case 4bis – paired means</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>d <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>mpg</span>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>d <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>mpg</span>
 <span id="cb16-2"><a href="#cb16-2"></a><span class="fu">t.test</span>(d<span class="sc">$</span>cty, d<span class="sc">$</span>hwy, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>
     Paired t-test
 
@@ -982,7 +984,7 @@ mean of the differences
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a79097" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a8c74f" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1014,9 +1016,9 @@ mean of the differences
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>m <span class="ot">&lt;-</span> <span class="fu">lm</span>(hwy <span class="sc">~</span> cty, <span class="at">data =</span> mpg)</span>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>m <span class="ot">&lt;-</span> <span class="fu">lm</span>(hwy <span class="sc">~</span> cty, <span class="at">data =</span> mpg)</span>
 <span id="cb18-2"><a href="#cb18-2"></a><span class="fu">tidy</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 x 5
   term        estimate std.error statistic   p.value
   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
@@ -1027,9 +1029,9 @@ mean of the differences
 </div>
 <div id="tabset-2-2">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>m <span class="ot">&lt;-</span> <span class="fu">lm</span>(hwy <span class="sc">~</span> cty <span class="sc">+</span> displ, <span class="at">data =</span> mpg)</span>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>m <span class="ot">&lt;-</span> <span class="fu">lm</span>(hwy <span class="sc">~</span> cty <span class="sc">+</span> displ, <span class="at">data =</span> mpg)</span>
 <span id="cb20-2"><a href="#cb20-2"></a><span class="fu">tidy</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 x 5
   term        estimate std.error statistic  p.value
   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
@@ -1045,10 +1047,10 @@ mean of the differences
 </div>
 <div id="tabset-2-3">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>d <span class="ot">&lt;-</span> heart_transplant <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">survived_binary =</span> survived <span class="sc">==</span> <span class="st">"alive"</span>)</span>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>d <span class="ot">&lt;-</span> heart_transplant <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">survived_binary =</span> survived <span class="sc">==</span> <span class="st">"alive"</span>)</span>
 <span id="cb22-2"><a href="#cb22-2"></a>m <span class="ot">&lt;-</span> <span class="fu">glm</span>(survived_binary <span class="sc">~</span> age <span class="sc">+</span> transplant, <span class="at">family =</span> <span class="st">"binomial"</span>, <span class="at">data =</span> d)</span>
 <span id="cb22-3"><a href="#cb22-3"></a><span class="fu">tidy</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 x 5
   term                estimate std.error statistic p.value
   &lt;chr&gt;                  &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
@@ -1092,7 +1094,7 @@ mean of the differences
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a793b0" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a8c669" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1168,11 +1170,383 @@ mean of the differences
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_62a79337" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62a8c71c" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="case-6-many-proportions-chi2-test" class="title-slide slide level1 center">
+<h1>Case 6 – many proportions (<span class="math inline">\(\chi^2\)</span> test)</h1>
+
+</section>
+<section id="reproducibility" class="slide level2">
+<h2>Reproducibility</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>ask <span class="ot">&lt;-</span> openintro<span class="sc">::</span>ask <span class="sc">%&gt;%</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb24-3"><a href="#cb24-3"></a>    <span class="at">response =</span> <span class="fu">if_else</span>(response <span class="sc">==</span> <span class="st">"disclose"</span>, <span class="st">"Disclose problem"</span>, <span class="st">"Hide problem"</span>),</span>
+<span id="cb24-4"><a href="#cb24-4"></a>    <span class="at">question_class =</span> <span class="fu">case_when</span>(</span>
+<span id="cb24-5"><a href="#cb24-5"></a>      question_class <span class="sc">==</span> <span class="st">"general"</span> <span class="sc">~</span> <span class="st">"General"</span>,</span>
+<span id="cb24-6"><a href="#cb24-6"></a>      question_class <span class="sc">==</span> <span class="st">"neg_assumption"</span> <span class="sc">~</span> <span class="st">"Negative assumption"</span>,</span>
+<span id="cb24-7"><a href="#cb24-7"></a>      question_class <span class="sc">==</span> <span class="st">"pos_assumption"</span> <span class="sc">~</span> <span class="st">"Positive assumption"</span></span>
+<span id="cb24-8"><a href="#cb24-8"></a>    ),</span>
+<span id="cb24-9"><a href="#cb24-9"></a>    <span class="at">question_class =</span> <span class="fu">fct_relevel</span>(question_class, <span class="st">"General"</span>, <span class="st">"Positive assumption"</span>, <span class="st">"Negative assumption"</span>)</span>
+<span id="cb24-10"><a href="#cb24-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="example-defect-ipod" class="slide level2">
+<h2>Example – defect iPod</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+
+<table class="table table-striped table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Question </th>
+   <th style="text-align:right;"> Disclose problem </th>
+   <th style="text-align:right;"> Hide problem </th>
+   <th style="text-align:right;"> Total </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> General </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 71 </td>
+   <td style="text-align:right;"> 73 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Positive assumption </td>
+   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 50 </td>
+   <td style="text-align:right;"> 73 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Negative assumption </td>
+   <td style="text-align:right;"> 36 </td>
+   <td style="text-align:right;"> 37 </td>
+   <td style="text-align:right;"> 73 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Total </td>
+   <td style="text-align:right;"> 61 </td>
+   <td style="text-align:right;"> 158 </td>
+   <td style="text-align:right;"> 219 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<p>Source: <a href="https://www.openintro.org/book/ims/">IMS</a></p>
+</section>
+<section id="ht-no-ci" class="slide level2">
+<h2>HT, no CI</h2>
+<p><span class="math inline">\(H_0\)</span>: the response is independent of the question asked</p>
+<p><span class="math inline">\(H_a\)</span>: the response depends on the question asked</p>
+<p>We will not quantify the differences between the three question with CIs.</p>
+</section>
+<section id="expected-counts" class="slide level2">
+<h2>Expected counts</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>ask_chi_sq <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(ask<span class="sc">$</span>response, ask<span class="sc">$</span>question_class)</span>
+<span id="cb25-2"><a href="#cb25-2"></a>ask_chi_sq_obs <span class="ot">&lt;-</span> ask_chi_sq<span class="sc">$</span>observed <span class="sc">%&gt;%</span> </span>
+<span id="cb25-3"><a href="#cb25-3"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb25-4"><a href="#cb25-4"></a>  <span class="fu">mutate</span>(<span class="at">type =</span> <span class="st">"observed"</span>)</span>
+<span id="cb25-5"><a href="#cb25-5"></a>ask_chi_sq_exp <span class="ot">&lt;-</span> ask_chi_sq<span class="sc">$</span>expected <span class="sc">%&gt;%</span></span>
+<span id="cb25-6"><a href="#cb25-6"></a>  <span class="fu">as.table</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb25-7"><a href="#cb25-7"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb25-8"><a href="#cb25-8"></a>  <span class="fu">mutate</span>(<span class="at">type =</span> <span class="st">"expected"</span>)</span>
+<span id="cb25-9"><a href="#cb25-9"></a>ask_chi_sq_tabs <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(ask_chi_sq_obs, ask_chi_sq_exp) <span class="sc">%&gt;%</span></span>
+<span id="cb25-10"><a href="#cb25-10"></a>  <span class="fu">rename_with</span>(<span class="at">.fn =</span> str_remove, <span class="at">.cols =</span> <span class="fu">everything</span>(), <span class="st">"ask</span><span class="sc">\\</span><span class="st">$"</span>)</span>
+<span id="cb25-11"><a href="#cb25-11"></a>ask_chi_sq_tabs <span class="sc">%&gt;%</span></span>
+<span id="cb25-12"><a href="#cb25-12"></a>  <span class="fu">mutate</span>(<span class="at">response_type =</span> <span class="fu">paste0</span>(response, <span class="st">"-"</span>, type)) <span class="sc">%&gt;%</span></span>
+<span id="cb25-13"><a href="#cb25-13"></a>  <span class="fu">select</span>(<span class="sc">-</span>response, <span class="sc">-</span>type) <span class="sc">%&gt;%</span></span>
+<span id="cb25-14"><a href="#cb25-14"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> response_type, <span class="at">values_from =</span> n) <span class="sc">%&gt;%</span></span>
+<span id="cb25-15"><a href="#cb25-15"></a>  <span class="fu">relocate</span>(</span>
+<span id="cb25-16"><a href="#cb25-16"></a>    question_class,</span>
+<span id="cb25-17"><a href="#cb25-17"></a>    <span class="fu">contains</span>(<span class="st">"Disclose"</span>),</span>
+<span id="cb25-18"><a href="#cb25-18"></a>    <span class="fu">contains</span>(<span class="st">"Hide"</span>)</span>
+<span id="cb25-19"><a href="#cb25-19"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb25-20"><a href="#cb25-20"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">contains</span>(<span class="st">"expected"</span>), <span class="sc">~</span><span class="fu">paste0</span>(<span class="st">"("</span>, <span class="fu">round</span>(.x, <span class="dv">2</span>), <span class="st">")"</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb25-21"><a href="#cb25-21"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb25-22"><a href="#cb25-22"></a>  <span class="fu">mutate</span>(<span class="at">Total =</span> <span class="fu">sum</span>(<span class="fu">c_across</span>(<span class="fu">contains</span>(<span class="st">"observed"</span>)))) <span class="sc">%&gt;%</span></span>
+<span id="cb25-23"><a href="#cb25-23"></a>  <span class="fu">adorn_totals</span>(<span class="at">where =</span> <span class="st">"row"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb25-24"><a href="#cb25-24"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb25-25"><a href="#cb25-25"></a>    <span class="st">`</span><span class="at">Disclose problem-expected</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">ifelse</span>(<span class="st">`</span><span class="at">Disclose problem-expected</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"-"</span>, <span class="cn">NA</span>, <span class="st">`</span><span class="at">Disclose problem-expected</span><span class="st">`</span>),</span>
+<span id="cb25-26"><a href="#cb25-26"></a>    <span class="st">`</span><span class="at">Hide problem-expected</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">ifelse</span>(<span class="st">`</span><span class="at">Hide problem-expected</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"-"</span>, <span class="cn">NA</span>, <span class="st">`</span><span class="at">Hide problem-expected</span><span class="st">`</span>)</span>
+<span id="cb25-27"><a href="#cb25-27"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb25-28"><a href="#cb25-28"></a> <span class="fu">kbl</span>(<span class="at">linesep =</span> <span class="st">""</span>, <span class="at">booktabs =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb25-29"><a href="#cb25-29"></a>   <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">""</span>, <span class="st">""</span>, <span class="st">""</span>, <span class="st">""</span>, <span class="st">""</span>, <span class="st">""</span>)</span>
+<span id="cb25-30"><a href="#cb25-30"></a>   ) <span class="sc">%&gt;%</span></span>
+<span id="cb25-31"><a href="#cb25-31"></a>  <span class="fu">column_spec</span>(<span class="dv">1</span>, <span class="at">width =</span> <span class="st">"15em"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb25-32"><a href="#cb25-32"></a>  <span class="fu">column_spec</span>(<span class="dv">3</span>, <span class="at">color =</span> IMSCOL[<span class="st">"blue"</span>, <span class="st">"full"</span>], <span class="at">italic =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb25-33"><a href="#cb25-33"></a>  <span class="fu">column_spec</span>(<span class="dv">5</span>, <span class="at">color =</span> IMSCOL[<span class="st">"blue"</span>, <span class="st">"full"</span>], <span class="at">italic =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb25-34"><a href="#cb25-34"></a>  <span class="fu">column_spec</span>(<span class="dv">6</span>, <span class="at">width =</span> <span class="st">"5em"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb25-35"><a href="#cb25-35"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">" "</span>, <span class="st">"Disclose problem"</span> <span class="ot">=</span><span class="dv">2</span>, <span class="st">"Hide problem"</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">"Total"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb25-36"><a href="#cb25-36"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"condensed"</span>), </span>
+<span id="cb25-37"><a href="#cb25-37"></a>                <span class="at">latex_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hold_position"</span>), <span class="at">full_width =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<table class="table table-striped table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1"></th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">Disclose problem</div></th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">Hide problem</div></th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">Total</div></th>
+</tr>
+  <tr>
+   <th style="text-align:left;">  </th>
+   <th style="text-align:right;">  </th>
+   <th style="text-align:left;">  </th>
+   <th style="text-align:right;">  </th>
+   <th style="text-align:left;">  </th>
+   <th style="text-align:right;">  </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;width: 15em; "> General </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;font-style: italic;color: #569BBD !important;"> (20.33) </td>
+   <td style="text-align:right;"> 71 </td>
+   <td style="text-align:left;font-style: italic;color: #569BBD !important;"> (52.67) </td>
+   <td style="text-align:right;width: 5em; "> 73 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 15em; "> Positive assumption </td>
+   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:left;font-style: italic;color: #569BBD !important;"> (20.33) </td>
+   <td style="text-align:right;"> 50 </td>
+   <td style="text-align:left;font-style: italic;color: #569BBD !important;"> (52.67) </td>
+   <td style="text-align:right;width: 5em; "> 73 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 15em; "> Negative assumption </td>
+   <td style="text-align:right;"> 36 </td>
+   <td style="text-align:left;font-style: italic;color: #569BBD !important;"> (20.33) </td>
+   <td style="text-align:right;"> 37 </td>
+   <td style="text-align:left;font-style: italic;color: #569BBD !important;"> (52.67) </td>
+   <td style="text-align:right;width: 5em; "> 73 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 15em; "> Total </td>
+   <td style="text-align:right;"> 61 </td>
+   <td style="text-align:left;font-style: italic;color: #569BBD !important;"> NA </td>
+   <td style="text-align:right;"> 158 </td>
+   <td style="text-align:left;font-style: italic;color: #569BBD !important;"> NA </td>
+   <td style="text-align:right;width: 5em; "> 219 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<p>Source: <a href="https://www.openintro.org/book/ims/">IMS</a></p>
+</section>
+<section id="chance-or-effect" class="slide level2">
+<h2>Chance or effect?</h2>
+<p>The difference between the <em>expected</em> and <em>observed</em> counts is due to</p>
+<ul>
+<li><p>chance alone, or</p></li>
+<li><p>the fact that the way people responded depended on the question asked</p></li>
+</ul>
+<div class="fragment">
+<p><span class="math inline">\(\chi^2\)</span> (“Kai-squared”) statistics:</p>
+<p><span class="math display">\[
+\chi^2 = \dfrac{(O_{11} - E_{11})^2}{E_{11}} + \dfrac{(O_{21} - E_{21})^2}{E_{21}} + \dots + \dfrac{(O_{32} - E_{32})^2}{E_{32}}
+\]</span></p>
+</div>
+</section>
+<section id="computing-chi2" class="slide level2">
+<h2>Computing <span class="math inline">\(\chi^2\)</span></h2>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\text{General formula} &amp;&amp;
+    \frac{(\text{observed count } - \text{expected count})^2}
+        {\text{expected count}} \\
+&amp;\text{Row 1, Col 1} &amp;&amp;
+    \frac{(2 - 20.33)^2}{20.33} = 16.53 \\
+&amp;\text{Row 2, Col 1} &amp;&amp;
+    \frac{(23 - 20.33)^2}{20.33} = 0.35 \\
+&amp; \hspace{9mm}\vdots &amp;&amp;
+    \hspace{13mm}\vdots \\
+&amp;\text{Row 3, Col 2} &amp;&amp;
+    \frac{(37 - 52.67)^2}{52.67} = 4.66
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[\chi^2 = 16.53 + 0.35 + \dots + 4.66 = 40.13\]</span></p>
+<p>Source: <a href="https://www.openintro.org/book/ims/">IMS</a></p>
+</section>
+<section id="the-approximate-distribution-of-chi2" class="slide level2">
+<h2>The approximate distribution of <span class="math inline">\(\chi^2\)</span></h2>
+<p>When the conditions of</p>
+<ol type="1">
+<li><p>independence</p></li>
+<li><p><span class="math inline">\(&gt;5\)</span> expected counts per cell</p></li>
+</ol>
+<p>are satisfied, the <span class="math inline">\(\chi^2\)</span> statistic approximately follows a <span class="math inline">\(\chi^2\)</span> distribution.</p>
+</section>
+<section id="computing-the-p-value" class="slide level2">
+<h2>Computing the p-value</h2>
+
+<img data-src="images/lec-12/chi-squared.png" class="r-stretch quarto-figure-center"><p>Source: <a href="https://www.openintro.org/book/ims/">IMS</a></p>
+</section>
+<section id="the-chi2-test-in-r" class="slide level2">
+<h2>The <span class="math inline">\(\chi^2\)</span> test in <code>R</code></h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">head</span>(ask)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 x 3
+  question_class      question                               response        
+  &lt;fct&gt;               &lt;chr&gt;                                  &lt;chr&gt;           
+1 General             What can you tell me about it?         Hide problem    
+2 Positive assumption It doesn't have any problems, does it? Hide problem    
+3 Positive assumption It doesn't have any problems, does it? Disclose problem
+4 Negative assumption What problems does it have?            Disclose problem
+5 General             What can you tell me about it?         Hide problem    
+6 Negative assumption What problems does it have?            Disclose problem</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">chisq.test</span>(ask<span class="sc">$</span>response, ask<span class="sc">$</span>question_class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's Chi-squared test
+
+data:  ask$response and ask$question_class
+X-squared = 40.128, df = 2, p-value = 0.000000001933</code></pre>
+</div>
+</div>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Individual exercise - <span class="math inline">\(\chi^2\)</span> test</strong></p>
+</div>
+<div class="callout-content">
+<p>Exercise <a href="https://openintro-ims.netlify.app/inference-tables.html#chp18-exercises">18.15</a></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_62a8c77d" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="ht-via-simulation" class="slide level2">
+<h2>HT via simulation</h2>
+<p>When the conditions are not met, you need to conduct a HT via <em>simulation</em>.</p>
+<ol type="1">
+<li>Simulate artificial samples under <span class="math inline">\(H_0\)</span> by shuffling the response variable</li>
+<li>Compute the <span class="math inline">\(\chi^2\)</span> statistic of each simulated sample</li>
+<li>Determine how extreme the <span class="math inline">\(\chi^2\)</span> statistic of the observed sample is by computing a p-value</li>
+</ol>
+<p>See <a href="https://openintro-ims.netlify.app/inference-tables.html#randomization-test-of-independence">Section 18.1</a> for an example.</p>
+</section></section>
+<section>
+<section id="case-7-many-means-anova" class="title-slide slide level1 center">
+<h1>Case 7 – many means (ANOVA)</h1>
+
+</section>
+<section id="reproducibility-1" class="slide level2">
+<h2>Reproducibility</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>mlb_players_18 <span class="ot">&lt;-</span> openintro<span class="sc">::</span>mlb_players_18 <span class="sc">%&gt;%</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">filter</span>(</span>
+<span id="cb30-3"><a href="#cb30-3"></a>    AB <span class="sc">&gt;=</span> <span class="dv">100</span>, </span>
+<span id="cb30-4"><a href="#cb30-4"></a>    <span class="sc">!</span>position <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"P"</span>, <span class="st">"DH"</span>)</span>
+<span id="cb30-5"><a href="#cb30-5"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb30-6"><a href="#cb30-6"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb30-7"><a href="#cb30-7"></a>    <span class="at">position =</span> <span class="fu">case_when</span>(</span>
+<span id="cb30-8"><a href="#cb30-8"></a>      position <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"LF"</span>, <span class="st">"CF"</span>, <span class="st">"RF"</span>)       <span class="sc">~</span> <span class="st">"OF"</span>,</span>
+<span id="cb30-9"><a href="#cb30-9"></a>      position <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"1B"</span>, <span class="st">"2B"</span>, <span class="st">"3B"</span>, <span class="st">"SS"</span>) <span class="sc">~</span> <span class="st">"IF"</span>,</span>
+<span id="cb30-10"><a href="#cb30-10"></a>      <span class="cn">TRUE</span>                                    <span class="sc">~</span> position</span>
+<span id="cb30-11"><a href="#cb30-11"></a>    ),</span>
+<span id="cb30-12"><a href="#cb30-12"></a>    <span class="at">position =</span> <span class="fu">fct_relevel</span>(position, <span class="st">"OF"</span>, <span class="st">"IF"</span>, <span class="st">"C"</span>)</span>
+<span id="cb30-13"><a href="#cb30-13"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="example-batting-performance-and-position" class="slide level2">
+<h2>Example – batting performance and position</h2>
+
+<img data-src="images/lec-12/anova-data.png" class="r-stretch quarto-figure-center"><p>Source: <a href="https://www.openintro.org/book/ims/">IMS</a></p>
+</section>
+<section id="ht-no-ci-1" class="slide level2">
+<h2>HT, no CI</h2>
+<p><span class="math inline">\(H_0: \mu_{OF} = \mu_{IF} = \mu_{C}\)</span>: (the batting performance is the same across all three positions)</p>
+<p><span class="math inline">\(H_a\)</span>: at least one mean is different</p>
+<p>We will not quantify the differences between the three positions with CIs.</p>
+</section>
+<section id="anova-in-r" class="slide level2">
+<h2>ANOVA in <code>R</code></h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>m <span class="ot">&lt;-</span> <span class="fu">aov</span>(OBP <span class="sc">~</span> position, <span class="at">data =</span> mlb_players_18)</span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="fu">tidy</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 x 6
+  term         df  sumsq  meansq statistic  p.value
+  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 position      2 0.0161 0.00803      5.08  0.00662
+2 Residuals   426 0.674  0.00158     NA    NA      </code></pre>
+</div>
+</div>
+</section>
+<section id="conditions-4" class="slide level2">
+<h2>Conditions</h2>
+<ol type="1">
+<li><p>Independence within</p></li>
+<li><p>Independence between</p></li>
+<li><p>Normality (sample size and outliers)</p></li>
+<li><p>constant variance</p></li>
+</ol>
+<p>Verify assumptions 3 and 4 with histograms</p>
+</section>
+<section id="side-by-side-histograms" class="slide level2">
+<h2>Side-by-side histograms</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">ggplot</span>(mlb_players_18) <span class="sc">+</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(OBP)) <span class="sc">+</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">facet_grid</span>(position <span class="sc">~</span> .)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lec-12_files/figure-revealjs/unnamed-chunk-30-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Individual exercise - ANOVA</strong></p>
+</div>
+<div class="callout-content">
+<p>Exercise <a href="https://openintro-ims.netlify.app/inference-many-means.html#chp22-exercises">22.5</a></p>
+<p>Exercise <a href="https://openintro-ims.netlify.app/inference-many-means.html#chp22-exercises">22.9</a> – parts a and b</p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_62a8c833" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="ht-via-simulation-1" class="slide level2">
+<h2>HT via simulation</h2>
+<p>When the conditions are not met, you need to conduct a HT via <em>simulation</em>.</p>
+<ol type="1">
+<li>Simulate artificial samples under <span class="math inline">\(H_0\)</span> by shuffling the response variable</li>
+<li>Compute the <span class="math inline">\(F\)</span> statistic of each simulated sample (see <a href="https://openintro-ims.netlify.app/inference-many-means.html#randANOVA">Section 22.2</a>)</li>
+<li>Determine how extreme the <span class="math inline">\(F\)</span> statistic of the observed sample is by computing a p-value</li>
+</ol>
+<p>See <a href="https://openintro-ims.netlify.app/inference-many-means.html#randANOVA">Section 22.2</a> for an example.</p>
 </section></section>
 <section>
 <section id="recap-1" class="title-slide slide level1 center">
@@ -1183,16 +1557,10 @@ mean of the differences
 <h2>Recap</h2>
 <ul>
 <li>Normal approximation</li>
-<li>Classical approach to statistical inference
-<ul>
-<li>case 1 – one proportion</li>
-<li>case 2 – two proportions</li>
-<li>case 3 – one mean</li>
-<li>case 4 – two means</li>
-<li>case 4bis – paired means</li>
-<li>case 5 – regression</li>
-</ul></li>
+<li>Classical approach to statistical inference</li>
 <li>Standard error</li>
+<li>Case 6 – many proportions (<span class="math inline">\(\chi^2\)</span> test)</li>
+<li>Case 7 – many means (ANOVA)</li>
 </ul>
 
 
@@ -1205,19 +1573,19 @@ mean of the differences
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
   <script src="../site_libs/revealjs/dist/reveal.js"></script>
-
   <!-- reveal.js plugins -->
   <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
   <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
   <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
   <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
   <script src="../site_libs/revealjs/plugin/search/search.js"></script>
   <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
   <script src="../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
 
   <script>
 
@@ -1231,10 +1599,9 @@ mean of the differences
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
-
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'smaller': false,
-
+ 
         // Display controls in the bottom right corner
         controls: false,
 
@@ -1454,7 +1821,7 @@ mean of the differences
       })();
     </script>
 
-    <script type="application/javascript">
+    <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
       tabsets.forEach(function(tabset) {
@@ -1472,7 +1839,10 @@ mean of the differences
         button.blur();
         // flash "checked"
         button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
         setTimeout(function() {
+          button.setAttribute("title", currentTitle);
           button.classList.remove('code-copy-button-checked');
         }, 1000);
         // clear code selection
