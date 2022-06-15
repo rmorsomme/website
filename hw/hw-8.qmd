@@ -1,6 +1,6 @@
 ---
 title: "HW 8 - Modern statistical inference (two groups)"
-subtitle: "Due Monday, June 13, 9:00pm on Gradescope"
+subtitle: "Due Thursday, June 16, 9:00pm on Gradescope"
 ---
 
 This assignment needs to be completed with RMarkdown and submitted as a PDF on [Gradescope](https://www.gradescope.com/courses/394638). Feel free to re-use the template provided for HW1.
