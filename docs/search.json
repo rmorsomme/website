@@ -413,6 +413,27 @@
     "text": "Reproducibility (1 point)\nA seed is set with the command set.seed before any code with a stochastic component."
   },
   {
+    "objectID": "hw/hw-9.html",
+    "href": "hw/hw-9.html",
+    "title": "HW 9 - Classical statistical inference",
+    "section": "",
+    "text": "This assignment needs to be completed with RMarkdown and submitted as a PDF on Gradescope. Feel free to re-use the template provided for HW1.\nWhen submitting your work on Gradescope, please assign a page to each question.\nYou are exceptionally allowed to submit you work until Monday, June 20, 9:00pm without a penalty."
+  },
+  {
+    "objectID": "hw/hw-9.html#problem-set-34-points",
+    "href": "hw/hw-9.html#problem-set-34-points",
+    "title": "HW 9 - Classical statistical inference",
+    "section": "Problem set (34 points)",
+    "text": "Problem set (34 points)\n\n17.10 (2 points)\n17.12 (2 points) – part a\n17.14 (1 point)\n17.20 (1 point)\n17.22 (3 points)\n18.14 (2 points)\n19.14 (5 points)\n22.8 (3 points)\n22.10 (3 points)\n22.14 (2 points)\n24.6 (2 points) – parts a and b\n24.14 (4 points) – skip part d\n25.6 (1 point) – part b\n26.2 (3 points) – in part b only report the p-value"
+  },
+  {
+    "objectID": "hw/hw-9.html#hypothesis-tests-16-points",
+    "href": "hw/hw-9.html#hypothesis-tests-16-points",
+    "title": "HW 9 - Classical statistical inference",
+    "section": "Hypothesis tests (16 points)",
+    "text": "Hypothesis tests (16 points)\nUsing variables from the data set your group has chosen for the inference project, briefly describe a question that can be answered using each of the following hypothesis tests\n\na HT for one proportion (2 points)\na HT for two proportions (2 points)\na HT for 3 or more proportions (2 points)\na HT for one mean (2 points)\na HT for two means (2 points)\na HT for 3 or more means (2 points)\na HT for a linear regression model (2 points)\na HT for a logistic regression model (2 points)\n\nMake sure to state the hypotheses. You do not need to implement these tests in R."
+  },
+  {
     "objectID": "hw/template.html",
     "href": "hw/template.html",
     "title": "HW 1 - Introduction to data",
@@ -424,7 +445,7 @@
     "href": "index.html",
     "title": "STA 101L: Data Analysis and Statistical Inference",
     "section": "",
-    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\n(1.2; 2.2-3)\n🖥️ 🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\n\n\n💻\n✍️\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n💻\n\n\n\n\n\nSun, May 22\nDue: Homework 3\n\n\n\n✍️\n\n\n\n2\nMon, May 23\nModel selection I\n8.3\n🖥️\n\n\n\n\n\n\nTue, May 24\nModel selection II\n8.4; 25.3\n🖥️\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n💻\n\n\n\n\n\nThu, May 26\nLogistic regression\n9.1-9.3\n🖥️\n\n✍️\n📂\n\n\n\nFri, May 27\nLab 5 - work on prediction project (PP)\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model and presentation\n11.0; 11.3; 12.0; 12.3\n🖥️\n\n\nPP model (9:00am) and presentation\n\n\n\nWed, June 1\nLab 6 - Lecture on inference for proportions I\n16.1\n🖥️\n\n\nPP written report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.2\n🖥️\n\n\n\n\n\n\nFri, June 3\nLab 7 - Inference for proportions\n\n\n💻\n\n\n\n\n\nSun, June 5\nDue: homework 5\n\n\n\n✍️\n\n\n\n4\nMon, June 6\nInference for means I\n13.2; 19.1; 20.1-20.2\n🖥️\n\n\n\n\n\n\nTue, June 7\nInference for means II\n21.1-21.2\n🖥️\n\n\n\n\n\n\nWed, June 8\nLab 8 - Inference for means\n\n\n💻\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.3\n🖥️\n\n✍️\n\n\n\n\nFri, June 10\nLab 9 - inference for regression\n\n\n💻\n\n\n\n\n5\nMon, June 13\nClassical inference\n13.1-13.2\n🖥️\n\n✍️\n\n\n\n\nTue, June 14\nANOVA and \\(\\chi^2\\) test\n18.1-18.2; 22.2-22.3\n🖥️\n\n\n\n\n\n\nWed, June 15\nLab 10 - work on inference project (IP)\n\n\n\n\n\n\n\n\nThu, June 16\nWork on IP\n\n\n\n✍️\n\n\n\n\nFri, June 17\nLab 11 - IP presentations\n\n\n\n\nIP presentation\n\n\n\nSun, June 19\nDue: Homework 9\n\n\n\n\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP written report\n\n\n\n\nIP written report"
+    "text": "Week\nDate\nTopic\nReading\nSlides\nLab\nHW\nProject\n\n\n\n\n0.5\nWed, May 11\nWelcome to STA 101!\n(1.2; 2.2-3)\n🖥️ 🖥️\n\n\n\n\n\n\nThu, May 12\nVisualization I\n5.1-5.6\n🖥️\n\n\n\n\n\n\nFri, May 13\nLab 1 - Introduction to R and RStudio\n\n\n💻\n\n\n\n\n\nSun, May 15\nDue: homework 1\n\n\n\n✍️\n\n\n\n1\nMon, May 16\nVisualization II\n4.1-4.5\n🖥️\n\n\n\n\n\n\nTue, May 17\nSimple linear regression\n7.1-7.3\n🖥️\n\n\n\n\n\n\nWed, May 18\nLab 2 - Visualization\n\n\n💻\n✍️\n\n\n\n\nThu, May 19\nMultiple linear regression\n8.1-8.2\n🖥️\n\n\n\n\n\n\nFri, May 20\nLab 3 - Linear regression\n\n\n💻\n\n\n\n\n\nSun, May 22\nDue: Homework 3\n\n\n\n✍️\n\n\n\n2\nMon, May 23\nModel selection I\n8.3\n🖥️\n\n\n\n\n\n\nTue, May 24\nModel selection II\n8.4; 25.3\n🖥️\n\n\n\n\n\n\nWed, May 25\nLab 4 - functions, loops\n\n\n💻\n\n\n\n\n\nThu, May 26\nLogistic regression\n9.1-9.3\n🖥️\n\n✍️\n📂\n\n\n\nFri, May 27\nLab 5 - work on prediction project (PP)\n\n\n\n\n\n\n\n3\nMon, May 30\nMemorial Day holiday\n\n\n\n\n\n\n\n\nTue, May 31\nDue: PP model and presentation\n11.0; 11.3; 12.0; 12.3\n🖥️\n\n\nPP model (9:00am) and presentation\n\n\n\nWed, June 1\nLab 6 - Lecture on inference for proportions I\n16.1\n🖥️\n\n\nPP written report\n\n\n\nThu, June 2\nInference for proportions II\n17.1-17.2\n🖥️\n\n\n\n\n\n\nFri, June 3\nLab 7 - Inference for proportions\n\n\n💻\n\n\n\n\n\nSun, June 5\nDue: homework 5\n\n\n\n✍️\n\n\n\n4\nMon, June 6\nInference for means I\n13.2; 19.1; 20.1-20.2\n🖥️\n\n\n\n\n\n\nTue, June 7\nInference for means II\n21.1-21.2\n🖥️\n\n\n\n\n\n\nWed, June 8\nLab 8 - Inference for means\n\n\n💻\n\n\n\n\n\nThu, June 9\nInference for regression\n24.2-24.3\n🖥️\n\n✍️\n\n\n\n\nFri, June 10\nLab 9 - inference for regression\n\n\n💻\n\n\n\n\n5\nMon, June 13\nClassical inference\n13.1-13.2\n🖥️\n\n✍️\n\n\n\n\nTue, June 14\nANOVA and \\(\\chi^2\\) test\n18.1-18.2; 22.2-22.3\n🖥️\n\n\n\n\n\n\nWed, June 15\nLab 10 - work on inference project (IP)\n\n\n\n\n\n\n\n\nThu, June 16\nWork on IP\n\n\n\n✍️\n\n\n\n\nFri, June 17\nLab 11 - IP presentations\n\n\n\n\nIP presentation\n\n\n\nSun, June 19\n\n\n\n\n✍️\n\n\n\n6\nMon, June 20\nJuneteenth holiday\n\n\n\n\n\n\n\n\nTue, June 21\nReading period\n\n\n\n\n\n\n\n\nWed, June 22\n\n\n\n\n\n\n\n\n\nThu, June 23\nDue: IP written report\n\n\n\n\nIP written report"
   },
   {
     "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
@@ -698,62 +719,6 @@
     "title": "Data science in action – examples in various fields",
     "section": "Inferring ethnicity from X-rays",
     "text": "Inferring ethnicity from X-rays\nIn this recent article, researchers from Harvard and the MIT that AI programs are able to determine a person’s self-reported ethnicity from an X-ray image. This is noteworthy since these researchers and medical doctors in general did not know it was even possible to do so from X-rays. Which features of the image are used by the AI algorithms to accomplish this feat is still uknown.\n\n\n\nhttps://rmorsomme.github.io/website/"
-  },
-  {
-    "objectID": "slides/hw-1-lab-answers.html#setup",
-    "href": "slides/hw-1-lab-answers.html#setup",
-    "title": "Homework 1 - lab answers",
-    "section": "Setup",
-    "text": "Setup\nYou can find the lab here.\n\nlibrary(tidyverse)\nlibrary(openintro)"
-  },
-  {
-    "objectID": "slides/hw-1-lab-answers.html#exercise-1-2-points",
-    "href": "slides/hw-1-lab-answers.html#exercise-1-2-points",
-    "title": "Homework 1 - lab answers",
-    "section": "Exercise 1 (2 points)",
-    "text": "Exercise 1 (2 points)\n\narbuthnot$girls\n\n [1] 4683 4457 4102 4590 4839 4820 4928 4605 4457 4952 4784 5332 5200 4910 4617\n[16] 3997 3919 3395 3536 3181 2746 2722 2840 2908 2959 3179 3349 3382 3289 3013\n[31] 2781 3247 4107 4803 4881 5681 4858 4319 5322 5560 5829 5719 6061 6120 5822\n[46] 5738 5717 5847 6203 6033 6041 6299 6533 6744 7158 7127 7246 7119 7214 7101\n[61] 7167 7302 7392 7316 7483 6647 6713 7229 7767 7626 7452 7061 7514 7656 7683\n[76] 5738 7779 7417 7687 7623 7380 7288"
-  },
-  {
-    "objectID": "slides/hw-1-lab-answers.html#exercise-2-3-points",
-    "href": "slides/hw-1-lab-answers.html#exercise-2-3-points",
-    "title": "Homework 1 - lab answers",
-    "section": "Exercise 2 (3 points)",
-    "text": "Exercise 2 (3 points)\n\narbuthnot %>%\n  ggplot(aes(x = year, y = girls)) +\n  geom_point() +\n  geom_line()\n\n\n\n\n\n\n\narbuthnot %>%\n  ggplot() +\n  geom_line(aes(x = year, y = girls))"
-  },
-  {
-    "objectID": "slides/hw-1-lab-answers.html#exercise-3-4-points",
-    "href": "slides/hw-1-lab-answers.html#exercise-3-4-points",
-    "title": "Homework 1 - lab answers",
-    "section": "Exercise 3 (4 points)",
-    "text": "Exercise 3 (4 points)\n\narbuthnot %>%\n  mutate(prop_boys = boys / (boys + girls)) %>%\n  ggplot() +\n  geom_line(aes(year, prop_boys))"
-  },
-  {
-    "objectID": "slides/hw-1-lab-answers.html#exercise-4-4-points",
-    "href": "slides/hw-1-lab-answers.html#exercise-4-4-points",
-    "title": "Homework 1 - lab answers",
-    "section": "Exercise 4 (4 points)",
-    "text": "Exercise 4 (4 points)\n\npresent\n\n# A tibble: 63 x 3\n    year    boys   girls\n   <dbl>   <dbl>   <dbl>\n 1  1940 1211684 1148715\n 2  1941 1289734 1223693\n 3  1942 1444365 1364631\n 4  1943 1508959 1427901\n 5  1944 1435301 1359499\n 6  1945 1404587 1330869\n 7  1946 1691220 1597452\n 8  1947 1899876 1800064\n 9  1948 1813852 1721216\n10  1949 1826352 1733177\n# ... with 53 more rows\n\npresent$year\n\n [1] 1940 1941 1942 1943 1944 1945 1946 1947 1948 1949 1950 1951 1952 1953 1954\n[16] 1955 1956 1957 1958 1959 1960 1961 1962 1963 1964 1965 1966 1967 1968 1969\n[31] 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984\n[46] 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999\n[61] 2000 2001 2002\n\nmin(present$year)\n\n[1] 1940\n\nmax(present$year)\n\n[1] 2002\n\nnrow(present)\n\n[1] 63\n\nncol(present)\n\n[1] 3\n\ndim(present)\n\n[1] 63  3\n\npresent\n\n# A tibble: 63 x 3\n    year    boys   girls\n   <dbl>   <dbl>   <dbl>\n 1  1940 1211684 1148715\n 2  1941 1289734 1223693\n 3  1942 1444365 1364631\n 4  1943 1508959 1427901\n 5  1944 1435301 1359499\n 6  1945 1404587 1330869\n 7  1946 1691220 1597452\n 8  1947 1899876 1800064\n 9  1948 1813852 1721216\n10  1949 1826352 1733177\n# ... with 53 more rows"
-  },
-  {
-    "objectID": "slides/hw-1-lab-answers.html#exercise-5-2-points",
-    "href": "slides/hw-1-lab-answers.html#exercise-5-2-points",
-    "title": "Homework 1 - lab answers",
-    "section": "Exercise 5 (2 points)",
-    "text": "Exercise 5 (2 points)\n\n# Insert code for Exercise 5 here"
-  },
-  {
-    "objectID": "slides/hw-1-lab-answers.html#exercise-6-5-points",
-    "href": "slides/hw-1-lab-answers.html#exercise-6-5-points",
-    "title": "Homework 1 - lab answers",
-    "section": "Exercise 6 (5 points)",
-    "text": "Exercise 6 (5 points)\n\npresent %>%\n  mutate(prop_boys = boys / (boys + girls)) %>%\n  ggplot() +\n  geom_line(aes(year, prop_boys))"
-  },
-  {
-    "objectID": "slides/hw-1-lab-answers.html#exercise-7-5-points",
-    "href": "slides/hw-1-lab-answers.html#exercise-7-5-points",
-    "title": "Homework 1 - lab answers",
-    "section": "Exercise 7 (5 points)",
-    "text": "Exercise 7 (5 points)\n\npresent %>%\n  mutate(total = boys + girls) %>%\n  arrange(desc(total))\n\n# A tibble: 63 x 4\n    year    boys   girls   total\n   <dbl>   <dbl>   <dbl>   <dbl>\n 1  1961 2186274 2082052 4268326\n 2  1960 2179708 2078142 4257850\n 3  1957 2179960 2074824 4254784\n 4  1959 2173638 2071158 4244796\n 5  1958 2152546 2051266 4203812\n 6  1962 2132466 2034896 4167362\n 7  1956 2133588 2029502 4163090\n 8  1990 2129495 2028717 4158212\n 9  1991 2101518 2009389 4110907\n10  1963 2101632 1996388 4098020\n# ... with 53 more rows\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
   },
   {
     "objectID": "slides/lec-1.html#meet-the-instructor",
@@ -4625,12 +4590,5 @@
     "title": "Inference for proportions",
     "section": "Recap",
     "text": "Recap\n\nOne proportion\n\nHT via simulation\nCI via bootstrap\n\nTwo proportions\n\nHT via simulation\nCI via bootstrap\n\n\n\n\n\nhttps://rmorsomme.github.io/website/"
-  },
-  {
-    "objectID": "teaching-triangle.html",
-    "href": "teaching-triangle.html",
-    "title": "Teaching triangle",
-    "section": "",
-    "text": "Time\nDate\n\n\n\n\n6:00\nE starts on time\nE lectures (slides) with numerous examples and pictures\n\n\n6:05\nE interacts with students through chat, thumb up/down\n\n\n6:10\n1/4 Zoom cameras on\nNich. Guar. provides answer, E. corrects Nich. (could have asked the rest of the class to correct Nich. instead)\n27 students\n\n\n6:15\nE uses a short video (2 min)\n\n\n6:20\nE answers question from Zoom chat\n\n\n6:25\nE illustrates phonology with many examples\n26 students\n\n\n6:30\nE applies phonology to sign language, many videos\nMuch focus given to sign language\n49 messages in chat\n\n\n6:35\nJaich. Pai. raises hand; E spots Jaich immediately\n\n\n6:40\nSemantics – E connects main topics of lecture to one another\n\n\n6:45\n91 messages in Zoom chat\nMuch interaction with students\n\n\n6:50\nThe exchange with students continues\n\n\n6:55\nThe exchange has just concluded\nVideos about code-switching\n\n\n7:00\nAnother long exchange with students (>10 min)\n\n\n7:16\n127 messages in chat\n25 participants\nbreak\n\n\nQ\n-) English/US-centered; extending discussion before break was irritating\n+) videos"
   }
 ]

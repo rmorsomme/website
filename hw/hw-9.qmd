@@ -1,0 +1,42 @@
+---
+title: "HW 9 - Classical statistical inference"
+subtitle: "Due Sunday, June 19, 9:00pm on Gradescope"
+---
+
+This assignment needs to be completed with RMarkdown and submitted as a PDF on [Gradescope](https://www.gradescope.com/courses/394638). Feel free to re-use the template provided for HW1.
+
+When submitting your work on Gradescope, please assign a page to each question.
+
+You are exceptionally allowed to submit you work until **Monday, June 20, 9:00pm** without a penalty.
+
+## Problem set (34 points)
+
+-   17.10 (2 points)
+-   17.12 (2 points) -- part a
+-   17.14 (1 point)
+-   17.20 (1 point)
+-   17.22 (3 points)
+-   18.14 (2 points)
+-   19.14 (5 points)
+-   22.8 (3 points)
+-   22.10 (3 points)
+-   22.14 (2 points)
+-   24.6 (2 points) -- parts a and b
+-   24.14 (4 points) -- skip part d
+-   25.6 (1 point) -- part b
+-   26.2 (3 points) -- in part b only report the p-value
+
+## Hypothesis tests (16 points)
+
+Using variables from the data set your group has chosen for the inference project, briefly describe a question that can be answered using each of the following hypothesis tests
+
+-   a HT for one proportion (2 points)
+-   a HT for two proportions (2 points)
+-   a HT for 3 or more proportions (2 points)
+-   a HT for one mean (2 points)
+-   a HT for two means (2 points)
+-   a HT for 3 or more means (2 points)
+-   a HT for a linear regression model (2 points)
+-   a HT for a logistic regression model (2 points)
+
+Make sure to state the hypotheses. You do not need to implement these tests in `R`.
