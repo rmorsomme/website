@@ -1,0 +1,18 @@
+{
+  "hash": "119251167172528e387b6157ffbb6bf9",
+  "result": {
+    "markdown": "---\ntitle: \"\"\nsubtitle: \"STA 101L - Summer I 2022\"\nauthor: \"Raphael Morsomme\"\nfooter:  \"[https://rmorsomme.github.io/website/](https://rmorsomme.github.io/website/)\"\nlogo: \"images/logo.jpg\"\nformat: \n  revealjs: \n    theme: slides.scss\n    transition: fade\n    slide-number: true\n    code-fold: false\n    code-summary: \"Show the code\"\n    scrollable: true\n    link-external-newwindow: true\n    history: false\neditor: visual\nexecute:\n  freeze: auto\n  echo: true\neditor_options: \n  chunk_output_type: console\n---\n\n\n\n\n## \n\n![](images/project/three-dogs-waiting_cropped.jpeg){fig-align=\"center\"}\n\n## Announcements\n\n-   Presentations\n\n    -   $\\le 10$ minutes\n\n    -   ask a question\n\n    -   provide a critical comment\n\n-   [Course](https://duke.evaluationkit.com/) and TA eval\n\n    -   5 bonus points on final HW if $> 80$% participation.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\r\n<script>\r\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\r\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\r\n  // slide changes (different for each slide format).\r\n  (function () {\r\n    function fireSlideChanged(previousSlide, currentSlide) {\r\n\r\n      // dispatch for htmlwidgets\r\n      const event = window.document.createEvent(\"Event\");\r\n      event.initEvent(\"slideenter\", true, true);\r\n      window.document.dispatchEvent(event);\r\n\r\n      // dispatch for shiny\r\n      if (window.jQuery) {\r\n        if (previousSlide) {\r\n          window.jQuery(previousSlide).trigger(\"hidden\");\r\n        }\r\n        if (currentSlide) {\r\n          window.jQuery(currentSlide).trigger(\"shown\");\r\n        }\r\n      }\r\n    }\r\n\r\n    // hookup for reveal\r\n    if (window.Reveal) {\r\n      window.Reveal.addEventListener(\"slidechanged\", function(event) {\r\n        fireSlideChanged(event.previousSlide, event.currentSlide);\r\n      });\r\n    }\r\n\r\n    // hookup for slidy\r\n    if (window.w3c_slidy) {\r\n      window.w3c_slidy.add_observer(function (slide_num) {\r\n        // slide_num starts at position 1\r\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\r\n      });\r\n    }\r\n\r\n  })();\r\n</script>\r\n\r\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
